@@ -1,11 +1,11 @@
 <template>
   <div class="shop-shell">
     <header class="shop-header">
-      <router-link class="shop-brand" to="/shop">ELPSY <span>COLLECTIBLES</span></router-link>
+      <router-link class="shop-brand" to="/shop">Figura <span>COLLECTIBLES</span></router-link>
       <nav aria-label="商店導覽"><router-link to="/shop/products">所有商品</router-link><router-link to="/shop/preorders">預購情報</router-link><router-link to="/shop/cart">購物車</router-link><router-link to="/shop/orders">我的訂單</router-link><router-link to="/shop/preorder-orders">我的預購</router-link><router-link to="/shop/account">會員中心</router-link><router-link to="/shop/login">顧客登入</router-link><router-link to="/admin/login">員工入口</router-link></nav>
     </header>
     <main class="shop-main"><router-view /></main>
-    <footer class="shop-footer">ELPSY SHOP · 公仔與收藏品<br><span>商品主圖、現貨訂單與限時庫存保留已開放；付款僅提供模擬，不會實際收款；配送、退貨驗收與退款皆為模擬演練，不會實際轉帳。</span></footer>
+    <footer class="shop-footer">FIGURA · 公仔與收藏品<br><span>商品主圖、現貨訂單與限時庫存保留已開放；付款僅提供模擬，不會實際收款；配送、退貨驗收與退款皆為模擬演練，不會實際轉帳。</span></footer>
   </div>
 </template>
 <style>

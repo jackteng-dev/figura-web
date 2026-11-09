@@ -3,7 +3,7 @@ import { useUserInfoStore } from '@/stores/userInfo'
 const user = useUserInfoStore()
 </script>
 <template>
-  <div class="page-header"><h4>ELPSY Shop 工作首頁</h4></div>
+  <div class="page-header"><h4>Figura 工作首頁</h4></div>
   <div class="card"><div class="card-body">
     <h5>公仔與收藏品商店</h5>
     <p>{{ user.info?.username }}，員工登入已完成。左側入口依目前授權顯示。</p>
