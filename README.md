@@ -2,14 +2,16 @@
 
 *A Vue 3 and TypeScript storefront and staff console for a figure and collectibles shop.*
 
-Figura 是面向公仔／收藏品單店的電商作品，提供顧客購物網站與員工管理後台，原名 ELPSY Shop，介面仍沿用舊名稱。
+Figura 是面向公仔／收藏品單店的電商作品，提供顧客購物網站與員工管理後台（原名 ELPSY Shop）。
 顧客可瀏覽商品、管理購物車並追蹤訂單；店員可處理商品、庫存、現貨與預購流程，集中核對交易狀態與異動紀錄。
 本倉庫負責 Web 介面；[Spring Boot API](https://github.com/jackteng-dev/figura-api) 與 [Flutter App](https://github.com/jackteng-dev/figura-app) 各自獨立維護。
 
 ## 展示
 
-- [公開唯讀展示](https://swaggyserver.tail5b604b.ts.net:8443/demos/shop/)：目前沒有商品；僅供瀏覽，不提供交易或後台操作。
-- 完整購物與員工操作需自行啟動隔離展示環境，使用自己的私有展示帳密；沒有公開測試帳密。
+- [線上沙盒 figura.jackteng.dev](https://figura.jackteng.dev)：可實際瀏覽商品、加入購物車、下單並模擬付款，也能用示範帳號進入員工後台（`/admin/login`）處理出貨與退貨。資料皆為虛構，每天 04:00（台北時間）自動重置。
+  - 顧客：`demo_customer` / `figura-demo-customer`（也可自行註冊）
+  - 店長：`shop_admin` / `figura-demo-admin`；員工：`shop_staff` / `figura-demo-staff`
+- 沙盒與正式部署使用相同版本；為了讓每位訪客都能使用，停用員工／角色異動與商品圖片上傳。
 
 ## 主要功能
 
