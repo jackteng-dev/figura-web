@@ -1,0 +1,12 @@
+{
+  "project": "shop",
+  "repository": "Shop_back",
+  "accepted_main": "ae3b026b73e8a313098060791bec662733c7f77e",
+  "accepted_ci": 39040792589,
+  "source_paths": [
+    "src",
+    "public",
+    "package-lock.json"
+  ],
+  "github_repository": "figura-web"
+}
