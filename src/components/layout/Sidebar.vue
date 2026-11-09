@@ -34,7 +34,7 @@ const leftbarData = computed(() => transferDataToTree(userInfoStore.permissions)
     <div class="navbar-wrapper">
       <div class="m-header">
         <router-link to="/home" class="b-brand text-primary">
-          <img src="@/assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="Figura">
+          <img src="@/brand/figura-logo.svg" class="img-fluid logo-lg" alt="Figura">
         </router-link>
       </div>
       <div class="navbar-content">
