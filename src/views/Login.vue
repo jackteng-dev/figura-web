@@ -30,7 +30,7 @@ async function login() {
     <div class="auth-wrapper v3">
       <div class="auth-form">
         <div class="auth-header">
-          <a href="#"><img src="@/assets/images/logo-dark.svg" alt="img"></a>
+          <a href="#"><img src="@/assets/images/logo-dark.svg" alt="Figura"></a>
         </div>
         <div class="card my-5">
           <div class="card-body">
