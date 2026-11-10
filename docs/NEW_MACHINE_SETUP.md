@@ -7,7 +7,7 @@
 ```sh
 npm ci
 npm run build
-VITE_API_PROXY_TARGET=http://127.0.0.1:19092/ELPSY npm run preview -- --host 127.0.0.1 --port 15176 --strictPort
+VITE_API_PROXY_TARGET=http://127.0.0.1:19092/figura npm run preview -- --host 127.0.0.1 --port 15176 --strictPort
 ```
 
 進入 localhost 的 /admin/login，使用自己的私有展示帳密，沒有預填密碼。/api 由 preview／dev 代理；真正部署 dist 時需同源 HTTPS 反向代理，後端保持 Secure Cookie。VITE_* 不放秘密。

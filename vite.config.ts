@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const target = env.VITE_API_PROXY_TARGET || 'http://127.0.0.1:19092/ELPSY'
+  const target = env.VITE_API_PROXY_TARGET || 'http://127.0.0.1:19092/figura'
   return {
     plugins: [vue()],
     resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
