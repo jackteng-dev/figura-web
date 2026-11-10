@@ -66,7 +66,7 @@ flowchart LR
 ```sh
 npm ci
 npm run build
-VITE_API_PROXY_TARGET=http://127.0.0.1:19092/ELPSY npm run preview -- --host 127.0.0.1 --port 15176 --strictPort
+VITE_API_PROXY_TARGET=http://127.0.0.1:19092/figura npm run preview -- --host 127.0.0.1 --port 15176 --strictPort
 ```
 
 瀏覽 `http://127.0.0.1:15176/shop`，員工入口為 `/admin/login`。
