@@ -10,6 +10,7 @@
   - 新商品卡 `ProductCard.vue`（現貨／預購／售完標籤、截單日）；首頁改為主打預購、截單倒數、最新上架分頁、依作品逛；商品列表加篩選側欄並同步到網址 query；商品頁加款式卡片、數量步進、該商品的開放預購批次區塊與相關商品；購物車改為商品列＋右側訂單摘要。
   - 其他顧客頁（登入、註冊、訂單、預購、地址、付款面板）只換成新配色，邏輯未變。
 - **保留**：購物車、下單、付款、預購的程式邏輯與 smoke 腳本使用的可及名稱／`data-testid` 均未改（加入購物車、加入數量、款式 radio、有庫存／暫無庫存、cart-subtotal、order-total、確認下單，保留庫存 等）。相關商品卡不顯示庫存文字，避免與主商品的「有庫存」重複造成 Playwright strict mode 衝突。
+- **smoke 相容補正**：首頁保留含「讓喜歡的角色」的 h1（customer／catalog smoke 以此判斷商店入口）；商品頁品牌／作品／類型標籤列帶 `.eyebrow`（masters smoke 讀取作品名稱）。
 - **驗證**：`npm run build`（vue-tsc＋Vite）成功。本機 Docker demo（全新 figura_shop_demo、虛構 10 件商品與 4 個開放批次）以瀏覽器手動確認：桌面與 375px 手機的首頁、列表（類型篩選、關鍵字搜尋）、商品頁（款式、數量、預購區塊）、加入購物車→購物車小計與地址、預購情報頁；手機無水平捲動。
 - **未跑**：Playwright 瀏覽器 smoke 腳本（`scripts/smoke_*_browser.cjs`）本輪未執行，不能宣稱通過。
 - **已知問題**：`index.html` 原本就引用 `/src/assets/js/plugins/simplebar.min.js`，production build 下 404（非本次造成，未修改）。商品只有一張主圖；熱門排行、原價／折扣需後端資料，未實作。

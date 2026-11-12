@@ -61,7 +61,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
 
       <div class="buy">
         <section class="shop-card info">
-          <div class="tags">
+          <div class="tags eyebrow">
             <router-link :to="{ path: '/shop/products', query: { brand: product.brand } }">{{ product.brand }}</router-link>
             <router-link v-if="product.work" :to="{ path: '/shop/products', query: { work: product.work } }">{{ product.work }}</router-link>
             <router-link :to="{ path: '/shop/products', query: { category: product.category } }">{{ product.category }}</router-link>

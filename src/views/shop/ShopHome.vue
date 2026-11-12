@@ -25,6 +25,7 @@ onMounted(() => load())
 
 <template>
   <div class="home">
+    <h1 class="home-title">讓喜歡的角色，走進你的日常<span>PVC・GK・可動模型與景品，現貨與預購一次看齊</span></h1>
     <div v-if="error" class="shop-error" role="alert">{{ error }} <button class="shop-button" @click="load(true)">重新載入</button></div>
 
     <div class="hero-row">
@@ -164,4 +165,6 @@ onMounted(() => load())
   .block { padding: 16px; }
   .days { font-size: 12px; padding: 6px 8px; }
 }
+.home-title { margin: 0; font-size: 22px; font-weight: 900; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.home-title span { font-size: 14px; font-weight: 400; color: #4b5060; }
 </style>
