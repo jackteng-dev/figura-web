@@ -1,0 +1,91 @@
+/* Figura 員工後台主題（B 熱血玩具屋）。
+   覆蓋 Mantis／Bootstrap 樣式，範圍限定在 .fg-admin，避免影響顧客商店。
+   src/assets/ 屬 CD 受保護路徑，主題一律放在 src/brand/。 */
+.fg-admin {
+  --fg-ink: #15161a; --fg-muted: #4b5060; --fg-subtle: #6b7080; --fg-line: #e3e5ec; --fg-bg: #f3f4f8;
+  --fg-navy: #1b1f3b; --fg-navy-2: #2a2f57; --fg-yellow: #ffd23f; --fg-orange: #c2410c; --fg-orange-soft: #fff1e8; --fg-orange-ink: #9a3412;
+  --fg-blue: #1d4ed8; --fg-blue-soft: #e8eefc; --fg-blue-ink: #1e3a8a; --fg-danger: #8a1c1c; --fg-danger-soft: #fdecec;
+  --el-color-primary: #1b1f3b; --el-color-primary-light-3: #4a5080; --el-color-primary-light-5: #8a8fb3; --el-color-primary-light-7: #c5c8dc; --el-color-primary-light-8: #d9dbe8; --el-color-primary-light-9: #eceef4; --el-color-primary-dark-2: #15182f;
+  --bs-primary: #1b1f3b; --bs-primary-rgb: 27, 31, 59; --bs-link-color: #1d4ed8; --bs-link-hover-color: #1e3a8a;
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  color: var(--fg-ink);
+  background: var(--fg-bg);
+}
+.fg-admin a { color: var(--fg-blue); }
+.fg-admin a:hover { color: var(--fg-blue-ink); }
+.fg-admin :focus-visible { outline: 3px solid var(--fg-blue); outline-offset: 2px; }
+.fg-admin h1, .fg-admin h2, .fg-admin h3, .fg-admin h4, .fg-admin h5 { color: var(--fg-ink); font-family: inherit; font-weight: 900; }
+.fg-admin h1 { font-size: 26px; }
+.fg-admin .text-muted { color: var(--fg-muted) !important; }
+
+/* ===== 版面：流動寬度（同 Bootstrap container-fluid），依 Bootstrap 斷點調整 =====
+   斷點：sm 576／md 768／lg 992／xl 1200／xxl 1400。
+   內容永遠撐滿側欄右側可用寬度；欄數與間距隨螢幕寬度變化。 */
+.fg-admin .fg-main > * { width: 100%; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; box-sizing: border-box; }
+
+/* 左列表＋右詳情的工作區（商品管理、訂單管理） */
+.fg-admin .catalog-workspace, .fg-admin .workspace { grid-template-columns: minmax(0, 1fr) !important; }
+@media (min-width: 992px) {
+  .fg-admin .catalog-workspace, .fg-admin .workspace { grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr) !important; }
+}
+@media (min-width: 1400px) {
+  .fg-admin .catalog-workspace, .fg-admin .workspace { grid-template-columns: minmax(320px, 420px) minmax(0, 1fr) !important; }
+}
+
+/* 卡片清單（預購批次）：一列放得下幾張就放幾張 */
+.fg-admin .batch-list { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)) !important; }
+
+/* 表單欄位網格：窄螢幕單欄 */
+@media (max-width: 575.98px) {
+  .fg-admin .metadata-grid, .fg-admin .columns { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* 卡片 */
+.fg-admin .card { border: 0; border-radius: 14px; box-shadow: none; background: #fff; }
+.fg-admin .card-body { padding: 20px; }
+
+/* 按鈕 */
+.fg-admin .btn { border-radius: 10px; font-weight: 700; padding: 9px 16px; min-height: 40px; }
+.fg-admin .btn-sm { padding: 5px 10px; min-height: 32px; font-size: 13px; }
+.fg-admin .btn-primary, .fg-admin .btn-dark { background: var(--fg-navy); border-color: var(--fg-navy); color: #fff; }
+.fg-admin .btn-primary:hover, .fg-admin .btn-dark:hover, .fg-admin .btn-primary:focus, .fg-admin .btn-dark:focus { background: var(--fg-navy-2); border-color: var(--fg-navy-2); color: #fff; }
+.fg-admin .btn-outline-primary, .fg-admin .btn-outline-dark { color: var(--fg-navy); border: 2px solid var(--fg-navy); background: #fff; }
+.fg-admin .btn-outline-primary:hover, .fg-admin .btn-outline-dark:hover { background: var(--fg-navy); color: #fff; }
+.fg-admin .btn-danger { background: var(--fg-danger); border-color: var(--fg-danger); }
+.fg-admin .btn-outline-danger { color: var(--fg-danger); border: 2px solid #e8b4b4; background: #fff; }
+.fg-admin .btn-outline-danger:hover { background: var(--fg-danger); border-color: var(--fg-danger); color: #fff; }
+.fg-admin .btn:disabled, .fg-admin .btn.disabled { opacity: .5; }
+
+/* 表單 */
+.fg-admin .form-control, .fg-admin .form-select { border: 1px solid #d5d8e1; border-radius: 10px; min-height: 42px; color: var(--fg-ink); }
+.fg-admin textarea.form-control { min-height: 72px; }
+.fg-admin .form-control:focus, .fg-admin .form-select:focus { border-color: var(--fg-navy); box-shadow: 0 0 0 3px rgba(27, 31, 59, .12); }
+.fg-admin .form-label, .fg-admin label { font-weight: 700; font-size: 13px; color: var(--fg-ink); }
+.fg-admin .form-check-input:checked { background-color: var(--fg-navy); border-color: var(--fg-navy); }
+.fg-admin input[type=checkbox], .fg-admin input[type=radio] { accent-color: var(--fg-navy); }
+
+/* 提示 */
+.fg-admin .alert { border: 0; border-radius: 12px; }
+.fg-admin .alert-success { background: var(--fg-blue-soft); color: var(--fg-blue-ink); }
+.fg-admin .alert-danger { background: var(--fg-danger-soft); color: var(--fg-danger); }
+.fg-admin .alert-warning { background: var(--fg-orange-soft); color: var(--fg-orange-ink); }
+.fg-admin .alert-info { background: var(--fg-blue-soft); color: var(--fg-blue-ink); }
+
+/* 表格 */
+.fg-admin table { border-collapse: collapse; }
+.fg-admin table th { color: var(--fg-muted); font-weight: 500; font-size: 12px; }
+.fg-admin .table > :not(caption) > * > * { border-color: #eceef4; }
+
+/* 舊頁面內的 details／pre（稽核內容） */
+.fg-admin details { border-radius: 10px; }
+.fg-admin pre { background: var(--fg-bg); border-radius: 10px; padding: 12px; font-size: 12px; }
+
+/* Element Plus 確認框掛在 body 下（不在 .fg-admin 內），主要按鈕另外指定品牌色。 */
+.el-message-box .el-button--primary { background: #1b1f3b; border-color: #1b1f3b; }
+.el-message-box .el-button--primary:hover { background: #2a2f57; border-color: #2a2f57; }
+.el-message-box { border-radius: 14px; }
+
+/* Element Plus 元件圓角 */
+.fg-admin .el-button { border-radius: 10px; }
+.fg-admin .el-input__wrapper, .fg-admin .el-select__wrapper { border-radius: 10px; }
+.fg-admin .el-card { border: 0; border-radius: 14px; }
