@@ -28,5 +28,5 @@ onMounted(load)
  </section>
 </template>
 <style scoped>
-.address-actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.address-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:24px}.address-card,.address-form{background:#fffdf8;padding:24px;border:1px solid #dedfd1;border-radius:12px;overflow-wrap:anywhere}.address-card h2,.address-form h2{font-size:22px}.address-form{max-width:560px;margin-top:32px}.address-form fieldset{border:0;padding:0;min-width:0}.address-form small{display:block;margin-top:8px}
+.address-actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.address-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;margin-top:24px}.address-card,.address-form{background:#ffffff;padding:24px;border:1px solid #e3e5ec;border-radius:12px;overflow-wrap:anywhere}.address-card h2,.address-form h2{font-size:22px}.address-form{max-width:560px;margin-top:32px}.address-form fieldset{border:0;padding:0;min-width:0}.address-form small{display:block;margin-top:8px}
 </style>

@@ -46,5 +46,5 @@ onMounted(load)
   </section>
 </template>
 <style scoped>
-.preorder-payment-panel{border-top:1px solid #d9d9cd;margin-top:24px;padding-top:20px;overflow-wrap:anywhere}h3{font-size:19px}button{margin:6px 8px 6px 0;max-width:100%;white-space:normal}small{display:block;margin:6px 0;font-size:12px}ul{padding-left:20px}
+.preorder-payment-panel{border-top:1px solid #e3e5ec;margin-top:24px;padding-top:20px;overflow-wrap:anywhere}h3{font-size:19px}button{margin:6px 8px 6px 0;max-width:100%;white-space:normal}small{display:block;margin:6px 0;font-size:12px}ul{padding-left:20px}
 </style>
