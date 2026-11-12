@@ -66,7 +66,7 @@ const active = (path: string) => route.path === path || route.path.startsWith(pa
 .fg-link.on { background: #2a2f57; color: #fff !important; font-weight: 700; box-shadow: inset 3px 0 0 #ffd23f; }
 .fg-shop-link { font-size: 13px; color: #c9cce0 !important; text-decoration: none; padding: 10px 12px; border: 1px solid #3a4070; border-radius: 10px; text-align: center; }
 .fg-shop-link:hover { color: #fff !important; border-color: #ffd23f; }
-@media (max-width: 1024px) {
+@media (max-width: 991.98px) {
   .fg-sidebar { position: fixed; left: 0; top: 0; transform: translateX(-100%); visibility: hidden; transition: transform .2s, visibility .2s; }
   .fg-sidebar.open { transform: none; visibility: visible; box-shadow: 8px 0 24px rgba(0, 0, 0, .2); }
 }

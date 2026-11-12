@@ -18,8 +18,27 @@
 .fg-admin h1 { font-size: 26px; }
 .fg-admin .text-muted { color: var(--fg-muted) !important; }
 
-/* 版面寬度：各頁根元素統一最寬 1680px 並置中（覆蓋各頁自己的 max-width:1400px 靠左），寬螢幕不再擠在左上角。 */
-.fg-admin .fg-main > * { width: 100%; max-width: 1680px !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
+/* ===== 版面：流動寬度（同 Bootstrap container-fluid），依 Bootstrap 斷點調整 =====
+   斷點：sm 576／md 768／lg 992／xl 1200／xxl 1400。
+   內容永遠撐滿側欄右側可用寬度；欄數與間距隨螢幕寬度變化。 */
+.fg-admin .fg-main > * { width: 100%; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; box-sizing: border-box; }
+
+/* 左列表＋右詳情的工作區（商品管理、訂單管理） */
+.fg-admin .catalog-workspace, .fg-admin .workspace { grid-template-columns: minmax(0, 1fr) !important; }
+@media (min-width: 992px) {
+  .fg-admin .catalog-workspace, .fg-admin .workspace { grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr) !important; }
+}
+@media (min-width: 1400px) {
+  .fg-admin .catalog-workspace, .fg-admin .workspace { grid-template-columns: minmax(320px, 420px) minmax(0, 1fr) !important; }
+}
+
+/* 卡片清單（預購批次）：一列放得下幾張就放幾張 */
+.fg-admin .batch-list { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)) !important; }
+
+/* 表單欄位網格：窄螢幕單欄 */
+@media (max-width: 575.98px) {
+  .fg-admin .metadata-grid, .fg-admin .columns { grid-template-columns: minmax(0, 1fr) !important; }
+}
 
 /* 卡片 */
 .fg-admin .card { border: 0; border-radius: 14px; box-shadow: none; background: #fff; }

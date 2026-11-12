@@ -5,7 +5,8 @@
 分支 `feat/admin-redesign`（從 main 開出，與顧客商店改版 `feat/shop-redesign-hobby` 分開）。未動 `package-lock.json`、`src/assets/`、API 或後端。
 
 - **完成**：
-  - 新後台外框 `BaseLayout.vue`／`Sidebar.vue`／`Header.vue`：深藍側欄依「營運／商品／預購／系統」分組（仍由權限決定顯示哪些頁），頂列為麵包屑（一般文字，不是 heading，避免與各頁 h1 重複）與使用者選單（登出、前往商店）。1024px 以下側欄改為抽屜。不再使用 Mantis `pc-*` 版型與 `pcoded.js`；刪除未使用的 `MobileHeader.vue`、`Footer.vue`（含 Mantis／Codedthemes 字樣）。
+  - 新後台外框 `BaseLayout.vue`／`Sidebar.vue`／`Header.vue`：深藍側欄依「營運／商品／預購／系統」分組（仍由權限決定顯示哪些頁），頂列為麵包屑（一般文字，不是 heading，避免與各頁 h1 重複）與使用者選單（登出、前往商店）。992px 以下側欄改為抽屜。不再使用 Mantis `pc-*` 版型與 `pcoded.js`；刪除未使用的 `MobileHeader.vue`、`Footer.vue`（含 Mantis／Codedthemes 字樣）。
+  - 版面為流動寬度（同 Bootstrap `container-fluid`），沿用 Bootstrap 斷點 576／768／992／1200／1400：992 以下側欄改抽屜、商品／訂單工作區改單欄；1400 以上列表欄固定 320–420px、詳情撐滿；預購批次卡片依寬度自動排列。
   - 主題樣式 `src/brand/admin-theme.css`（於 `main.ts` 在 Mantis CSS 之後載入），以 `.fg-admin` 為範圍覆蓋 Bootstrap 按鈕、卡片、表單、提示與 Element Plus 主色。
   - 工作首頁 `Main.vue` 改為儀表板：待出貨／待付款／待確認送達／預購保留中數字、待出貨訂單、開放中預購批次配額條、通知佇列。數字全部取自既有列表 API 的 `total`，且只呼叫目前使用者有權限的 API。
   - 員工登入頁 `Login.vue` 改為左右分欄；登入按鈕改為 `type="submit"`，**按 Enter 可登入**（原本不行）。

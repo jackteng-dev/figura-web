@@ -73,7 +73,7 @@ const logout = () => {
 </template>
 
 <style scoped>
-.fg-topbar { position: sticky; top: 0; z-index: 30; background: #fff; border-bottom: 1px solid #e3e5ec; padding: 10px 28px; display: flex; align-items: center; gap: 14px; min-height: 64px; box-sizing: border-box; }
+.fg-topbar { position: sticky; top: 0; z-index: 30; background: #fff; border-bottom: 1px solid #e3e5ec; padding: 10px 24px; display: flex; align-items: center; gap: 14px; min-height: 64px; box-sizing: border-box; }
 .fg-menu-btn { display: none; width: 44px; height: 44px; border: 0; background: #f3f4f8; border-radius: 10px; align-items: center; justify-content: center; cursor: pointer; }
 .fg-menu-btn svg, .chev { width: 22px; height: 22px; fill: none; stroke: #15161a; stroke-width: 2; }
 .chev { width: 16px; height: 16px; stroke: #4b5060; }
@@ -90,9 +90,10 @@ const logout = () => {
 .fg-user-menu a, .fg-user-menu button { text-align: left; padding: 10px 12px; border-radius: 8px; font-size: 14px; color: #15161a !important; text-decoration: none; border: 0; background: transparent; font: inherit; cursor: pointer; }
 .fg-user-menu a:hover, .fg-user-menu button:hover { background: #f3f4f8; }
 .fg-user-menu .danger { color: #8a1c1c !important; border-top: 1px solid #eceef4; border-radius: 0 0 8px 8px; margin-top: 4px; }
-@media (max-width: 1024px) {
+@media (max-width: 991.98px) {
   .fg-topbar { padding: 10px 16px; }
   .fg-menu-btn { display: inline-flex; }
 }
 @media (max-width: 560px) { .who { display: none; } }
+@media (min-width: 1400px) { .fg-topbar { padding: 10px 32px; } }
 </style>
