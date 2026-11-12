@@ -1,5 +1,23 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-13：員工後台介面改版（B 熱血玩具屋）
+
+分支 `feat/admin-redesign`（從 main 開出，與顧客商店改版 `feat/shop-redesign-hobby` 分開）。未動 `package-lock.json`、`src/assets/`、API 或後端。
+
+- **完成**：
+  - 新後台外框 `BaseLayout.vue`／`Sidebar.vue`／`Header.vue`：深藍側欄依「營運／商品／預購／系統」分組（仍由權限決定顯示哪些頁），頂列為麵包屑（一般文字，不是 heading，避免與各頁 h1 重複）與使用者選單（登出、前往商店）。1024px 以下側欄改為抽屜。不再使用 Mantis `pc-*` 版型與 `pcoded.js`；刪除未使用的 `MobileHeader.vue`、`Footer.vue`（含 Mantis／Codedthemes 字樣）。
+  - 主題樣式 `src/brand/admin-theme.css`（於 `main.ts` 在 Mantis CSS 之後載入），以 `.fg-admin` 為範圍覆蓋 Bootstrap 按鈕、卡片、表單、提示與 Element Plus 主色。
+  - 工作首頁 `Main.vue` 改為儀表板：待出貨／待付款／待確認送達／預購保留中數字、待出貨訂單、開放中預購批次配額條、通知佇列。數字全部取自既有列表 API 的 `total`，且只呼叫目前使用者有權限的 API。
+  - 員工登入頁 `Login.vue` 改為左右分欄；登入按鈕改為 `type="submit"`，**按 Enter 可登入**（原本不行）。
+  - 各管理頁只換配色；商品與訂單列表加選取／hover 樣式與商品狀態標籤。
+- **保留**：所有頁面邏輯、smoke 依賴的文字（`Figura 工作首頁`、`前往顧客入口 →`、側欄連結名稱、各頁 h1、登入 placeholder 與 `Login` 按鈕）未變。
+- **移除的入口**：使用者選單不再連到 `/admin/user/info`（呼叫舊 `/api/admin/user/{username}` 回 403）與 `/admin/user/resetPassword`（未完成的占位頁）；路由本身保留。
+- **驗證**：`npm run build` 成功。本機以 `shop_admin` 瀏覽器確認：登出／登入（含 Enter）、儀表板數字與批次、12 個管理頁都有標題且無水平捲動、商品列表選取、375px 手機抽屜選單。
+- **未跑**：Playwright 員工 smoke（`scripts/smoke_*_browser.cjs`）本輪未執行，不能宣稱通過。
+- **已知問題**：`index.html` 仍引用不存在的 `simplebar.min.js`（既有，非本次造成）。
+
+---
+
 ## 2026-11-08：自動更新端到端驗證（ELPSY Shop（前端））
 
 本次只增加此交接段落；不變更應用邏輯、資料庫、帳號、映像 recipe、CI 或部署契約。
