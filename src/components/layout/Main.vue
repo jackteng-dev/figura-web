@@ -127,7 +127,7 @@ const quick = computed(() => [
 </template>
 
 <style scoped>
-.dash { display: flex; flex-direction: column; gap: 20px; max-width: 1400px; }
+.dash { display: flex; flex-direction: column; gap: 20px; }
 .dash-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
 .dash-head h1 { margin: 0 0 4px; }
 .dash-head p { margin: 0; color: #4b5060; }

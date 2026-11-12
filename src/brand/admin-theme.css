@@ -18,6 +18,9 @@
 .fg-admin h1 { font-size: 26px; }
 .fg-admin .text-muted { color: var(--fg-muted) !important; }
 
+/* 版面寬度：各頁根元素統一最寬 1680px 並置中（覆蓋各頁自己的 max-width:1400px 靠左），寬螢幕不再擠在左上角。 */
+.fg-admin .fg-main > * { width: 100%; max-width: 1680px !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
+
 /* 卡片 */
 .fg-admin .card { border: 0; border-radius: 14px; box-shadow: none; background: #fff; }
 .fg-admin .card-body { padding: 20px; }
