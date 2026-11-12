@@ -49,5 +49,5 @@ onMounted(load)
   </section>
 </template>
 <style scoped>
-.preorder-checkout{max-width:700px;overflow-wrap:anywhere}form,.summary{margin-top:24px;padding:24px;background:#fffdf8;border:1px solid #dedfd1;border-radius:12px}fieldset{border:0;padding:0;min-width:0}select{width:100%;padding:12px;border:1px solid #c9cec2;border-radius:5px;background:white;color:#292e29}button{max-width:100%;white-space:normal}h2{font-size:22px}
+.preorder-checkout{max-width:700px;overflow-wrap:anywhere}form,.summary{margin-top:24px;padding:24px;background:#ffffff;border:1px solid #e3e5ec;border-radius:12px}fieldset{border:0;padding:0;min-width:0}select{width:100%;padding:12px;border:1px solid #d5d8e1;border-radius:5px;background:white;color:#15161a}button{max-width:100%;white-space:normal}h2{font-size:22px}
 </style>
