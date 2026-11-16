@@ -13,6 +13,7 @@ import '@/assets/fonts/fontawesome.css'
 import '@/assets/fonts/material.css'
 import '@/assets/css/style.css'
 import '@/assets/css/style-preset.css'
+import '@/brand/admin-theme.css'
 
 // // JS 插件（只在特定頁面需要的話，建議移到 mounted 中載入）
 
