@@ -2,14 +2,23 @@
 import { computed } from 'vue'
 import ProductCover from './ProductCover.vue'
 import { money, type PublicProduct } from '@/api/catalog'
-import { batchesByProduct, inStock, minPrice, shortDate } from './useCatalog'
-// compact：商品頁「相關商品」使用，不顯示庫存文字，避免與主商品的款式庫存文字重複。
+import { buyState, minPrice, shortDate } from './useCatalog'
+// compact：商品頁「相關商品」使用，不顯示狀態文字，避免與主商品的款式庫存文字重複。
 const props = defineProps<{ product: PublicProduct; compact?: boolean }>()
-const batch = computed(() => batchesByProduct.value.get(props.product.id)?.[0])
-const available = computed(() => inStock(props.product))
-const badge = computed(() => batch.value ? { text: '預購', cls: 'pre' } : available.value ? { text: '現貨', cls: 'stock' } : { text: '售完', cls: 'out' })
+// 預購商品看配額與截單日，不顯示現貨庫存；只有現貨才顯示「有庫存／暫無庫存」。
+const state = computed(() => buyState(props.product))
+const badge = computed(() => {
+  switch (state.value.kind) {
+    case 'stock': case 'stock-pre': return { text: '現貨', cls: 'stock' }
+    case 'pre': return { text: '預購', cls: 'pre' }
+    case 'pre-full': return { text: '額滿', cls: 'out' }
+    default: return { text: '售完', cls: 'out' }
+  }
+})
 const price = computed(() => {
-  const min = minPrice(props.product), multi = new Set(props.product.skus.map(s => s.priceTwd)).size > 1
+  const s = state.value
+  if (s.kind === 'pre' || s.kind === 'pre-full') return money(s.batch.priceTwd)
+  const min = minPrice(props.product), multi = new Set(props.product.skus.map(x => x.priceTwd)).size > 1
   return money(min) + (multi ? ' 起' : '')
 })
 </script>
@@ -23,8 +32,10 @@ const price = computed(() => {
     <span class="title">{{ product.title }}</span>
     <strong class="price">{{ price }}</strong>
     <span v-if="!compact" class="state">
-      <span :class="available ? 'ok' : 'none'">{{ available ? '有庫存' : '暫無庫存' }}</span>
-      <template v-if="batch"> ・預購 {{ shortDate(batch.deadlineAt) }} 截單</template>
+      <template v-if="state.kind === 'pre'"><span class="pre">預購中</span>・{{ shortDate(state.batch.deadlineAt) }} 截單</template>
+      <template v-else-if="state.kind === 'pre-full'"><span class="none">預購額滿</span></template>
+      <template v-else-if="state.kind === 'stock-pre'"><span class="ok">有庫存</span>・另有預購 {{ shortDate(state.batch.deadlineAt) }} 截單</template>
+      <span v-else :class="state.kind === 'stock' ? 'ok' : 'none'">{{ state.kind === 'stock' ? '有庫存' : '暫無庫存' }}</span>
     </span>
   </router-link>
 </template>
@@ -39,5 +50,5 @@ const price = computed(() => {
 .title { font-size: 14px; line-height: 1.5; font-weight: 500; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 42px; }
 .price { font-size: 18px; font-weight: 900; color: #c2410c; }
 .state { font-size: 12px; color: #4b5060; }
-.state .ok { color: #1e3a8a; } .state .none { color: #6b7080; }
+.state .ok { color: #1e3a8a; } .state .none { color: #6b7080; } .state .pre { color: #9a3412; font-weight: 700; }
 </style>

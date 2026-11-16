@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import type { ProductImage } from '@/api/catalog'
-const props = defineProps<{ image: ProductImage | null | undefined; category?: string }>(), failed = ref(false)
+// eager：首頁輪播等一開始就會輪到的圖片，不延遲載入，避免換張時閃空白。
+const props = defineProps<{ image: ProductImage | null | undefined; category?: string; eager?: boolean }>(), failed = ref(false)
 watch(() => props.image?.id, () => failed.value = false)
 </script>
 <template>
   <div class="cover">
-    <img v-if="image && !failed" :src="image.url" :alt="image.alt" loading="lazy" @error="failed = true">
+    <img v-if="image && !failed" :src="image.url" :alt="image.alt" :loading="eager ? 'eager' : 'lazy'" @error="failed = true">
     <div v-else class="cover-empty" aria-hidden="false">
       <span class="mark" aria-hidden="true">F</span>
       <small>{{ failed ? '商品圖片暫時無法載入' : (category ? category + '・圖片準備中' : '圖片準備中') }}</small>

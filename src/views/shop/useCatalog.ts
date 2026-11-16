@@ -1,5 +1,5 @@
 import { computed, ref } from 'vue'
-import { publicProducts, type PublicProduct } from '@/api/catalog'
+import { publicProducts, type ProductImage, type PublicProduct } from '@/api/catalog'
 import { publicBatches, type PublicBatch } from '@/api/preorders'
 
 // 公開 API 目前只支援分頁，搜尋／篩選／排序在瀏覽器端進行；
@@ -67,6 +67,32 @@ export const minPrice = (p: PublicProduct) => p.skus.length ? Math.min(...p.skus
 export const inStock = (p: PublicProduct) => p.skus.some(s => s.available)
 export const onPreorder = (p: PublicProduct) => batchesByProduct.value.has(p.id)
 
+/** 開放中但配額已滿（不可下單）的批次，依商品分組；用來顯示「預購額滿」。 */
+const fullBatchesByProduct = computed(() => {
+  const map = new Map<string, PublicBatch[]>()
+  for (const b of batches.value) {
+    if (b.status === 'OPEN' && !b.orderingEnabled && b.availableQuota <= 0) map.set(b.productId, [...(map.get(b.productId) || []), b])
+  }
+  return map
+})
+
+/**
+ * 商品的購買狀態。預購看配額與截單日，不看現貨庫存：
+ *  stock＝有現貨；stock-pre＝有現貨另有預購；pre＝僅預購（可下單）；pre-full＝預購額滿；out＝暫無庫存。
+ */
+export type BuyState =
+  | { kind: 'stock' } | { kind: 'out' }
+  | { kind: 'stock-pre' | 'pre'; batch: PublicBatch }
+  | { kind: 'pre-full'; batch: PublicBatch }
+export function buyState(p: PublicProduct): BuyState {
+  const open = batchesByProduct.value.get(p.id)?.[0]
+  const stock = inStock(p)
+  if (open) return { kind: stock ? 'stock-pre' : 'pre', batch: open }
+  if (stock) return { kind: 'stock' }
+  const full = fullBatchesByProduct.value.get(p.id)?.[0]
+  return full ? { kind: 'pre-full', batch: full } : { kind: 'out' }
+}
+
 function countBy(key: (p: PublicProduct) => string | null) {
   const m = new Map<string, number>()
   for (const p of products.value) { const k = key(p); if (k) m.set(k, (m.get(k) || 0) + 1) }
@@ -83,6 +109,12 @@ export function daysLeft(deadlineAt: string) {
 }
 export function shortDate(value: string) {
   return new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', month: 'numeric', day: 'numeric' }).format(new Date(value))
+}
+
+/** 首頁主視覺輪播的一張。 */
+export interface HeroSlide {
+  key: string; to: string; pill: string; title: string; sub: string; price: string; cta: string
+  image: ProductImage | null | undefined; category?: string
 }
 
 export function useCatalog() {

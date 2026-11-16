@@ -2,17 +2,42 @@
 import { computed, onMounted, ref } from 'vue'
 import ProductCard from './ProductCard.vue'
 import ProductCover from './ProductCover.vue'
+import HeroCarousel from './HeroCarousel.vue'
 import { money } from '@/api/catalog'
-import { useCatalog, inStock, daysLeft, shortDate } from './useCatalog'
+import { useCatalog, inStock, minPrice, daysLeft, shortDate, type HeroSlide } from './useCatalog'
 const { products, openBatches, batchesByProduct, works, loading, error, load } = useCatalog()
 const tab = ref<'all' | 'pre' | 'stock'>('all')
 
 const productById = computed(() => new Map(products.value.map(p => [p.id, p])))
-const hero = computed(() => {
-  const b = [...openBatches.value].sort((x, y) => y.availableQuota - x.availableQuota)[0] || openBatches.value[0]
-  if (b) return { kind: 'pre' as const, batch: b, product: productById.value.get(b.productId) }
-  const p = products.value.find(inStock) || products.value[0]
-  return p ? { kind: 'stock' as const, product: p, batch: undefined } : null
+
+// 主視覺輪播：最多 4 個預購批次（依截單日，每個商品一張、優先有圖）與 2 件現貨商品交錯，共 6 張。
+const slides = computed<HeroSlide[]>(() => {
+  const seen = new Set<string>()
+  const pre: HeroSlide[] = []
+  const batches = [...openBatches.value].sort((a, b) =>
+    Number(!productById.value.get(a.productId)?.image) - Number(!productById.value.get(b.productId)?.image) || a.deadlineAt.localeCompare(b.deadlineAt))
+  for (const b of batches) {
+    if (pre.length >= 4 || seen.has(b.productId)) continue
+    seen.add(b.productId)
+    const p = productById.value.get(b.productId)
+    pre.push({
+      key: 'b-' + b.id, to: '/shop/preorders/' + b.id, pill: `預購受付中・${shortDate(b.deadlineAt)} 截單`,
+      title: b.productTitle, sub: `${b.skuLabel}・剩餘配額 ${b.availableQuota} 件`, price: money(b.priceTwd), cta: '立即預購',
+      image: p?.image, category: p?.category
+    })
+  }
+  const stock: HeroSlide[] = products.value.filter(p => inStock(p) && p.image && !seen.has(p.id)).slice(0, 2).map(p => ({
+    key: 'p-' + p.id, to: '/shop/products/' + p.id, pill: '現貨供應中',
+    title: p.title, sub: p.brand + (p.work ? '・' + p.work : ''),
+    price: money(minPrice(p)) + (new Set(p.skus.map(s => s.priceTwd)).size > 1 ? ' 起' : ''), cta: '查看商品',
+    image: p.image, category: p.category
+  }))
+  const out: HeroSlide[] = []
+  while (pre.length || stock.length) {
+    out.push(...pre.splice(0, 2))
+    if (stock.length) out.push(stock.shift()!)
+  }
+  return out
 })
 const closingFirst = computed(() => openBatches.value[0])
 const stockCount = computed(() => products.value.filter(inStock).length)
@@ -29,19 +54,7 @@ onMounted(() => load())
     <div v-if="error" class="shop-error" role="alert">{{ error }} <button class="shop-button" @click="load(true)">重新載入</button></div>
 
     <div class="hero-row">
-      <router-link v-if="hero" class="hero" :to="hero.kind === 'pre' ? '/shop/preorders/' + hero.batch!.id : '/shop/products/' + hero.product!.id">
-        <div class="hero-copy">
-          <span class="pill">{{ hero.kind === 'pre' ? '預購受付中・' + shortDate(hero.batch!.deadlineAt) + ' 截單' : '現貨供應中' }}</span>
-          <span class="hero-title">{{ hero.kind === 'pre' ? hero.batch!.productTitle : hero.product!.title }}</span>
-          <span class="hero-sub">
-            <template v-if="hero.kind === 'pre'">{{ hero.batch!.skuLabel }}・剩餘配額 {{ hero.batch!.availableQuota }} 件</template>
-            <template v-else>{{ hero.product!.brand }}<template v-if="hero.product!.work">・{{ hero.product!.work }}</template></template>
-          </span>
-          <span class="hero-price">{{ hero.kind === 'pre' ? money(hero.batch!.priceTwd) : money(Math.min(...hero.product!.skus.map(s => s.priceTwd))) }}</span>
-          <span class="hero-cta">{{ hero.kind === 'pre' ? '立即預購' : '查看商品' }}</span>
-        </div>
-        <div class="hero-art"><ProductCover :image="hero.product?.image" :category="hero.product?.category" /></div>
-      </router-link>
+      <HeroCarousel v-if="slides.length" :slides="slides" />
       <div v-else class="hero hero-empty">
         <div class="hero-copy">
           <span class="pill">Figura 公仔收藏</span>

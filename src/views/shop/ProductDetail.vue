@@ -8,7 +8,7 @@ import { getCart,setCartItem } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
 import { taipeiTime } from '@/api/preorders'
 import { useRouter } from 'vue-router'
-import { useCatalog, daysLeft } from './useCatalog'
+import { useCatalog, daysLeft, shortDate } from './useCatalog'
 const router=useRouter(),quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
 const catalog = useCatalog()
@@ -39,6 +39,12 @@ const displayPrice = computed(() => {
   return money(Math.min(...prices)) + (new Set(prices).size > 1 ? ' 起' : '')
 })
 const batches = computed(() => product.value ? catalog.batchesByProduct.value.get(product.value.id) || [] : [])
+// 僅預購：沒有任何現貨款式但有開放中的預購批次。此時不顯示現貨庫存與購物車，改引導到預購批次。
+const preorderOnly = computed(() => !!product.value && batches.value.length > 0 && !product.value.skus.some(s => s.available))
+const preorderPrice = computed(() => {
+  const prices = batches.value.map(b => b.priceTwd)
+  return prices.length ? money(Math.min(...prices)) + (new Set(prices).size > 1 ? ' 起' : '') : ''
+})
 const related = computed(() => {
   const p = product.value
   if (!p) return []
@@ -67,8 +73,16 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
             <router-link :to="{ path: '/shop/products', query: { category: product.category } }">{{ product.category }}</router-link>
           </div>
           <h1>{{ product.title }}</h1>
-          <div class="price-row"><span class="price">{{ displayPrice }}</span><span class="muted">含稅・運費 NT$ 0</span></div>
+          <div class="price-row"><span class="price">{{ preorderOnly ? preorderPrice : displayPrice }}</span><span class="muted">含稅・運費 NT$ 0</span></div>
 
+          <template v-if="preorderOnly">
+            <div class="preorder-only">
+              <span class="po-pill">預購中</span>
+              <p>此商品目前接受預購，最近一批 <b>{{ shortDate(batches[0].deadlineAt) }}</b> 截單、剩餘配額 <b>{{ batches[0].availableQuota }}</b> 件。預購不需加入購物車，請從下方批次直接下單。</p>
+              <a class="shop-button primary" :href="'#batch-' + batches[0].id">選擇預購批次 ↓</a>
+            </div>
+          </template>
+          <template v-else>
           <fieldset v-if="product.skus.length" class="sku-options">
             <legend>選擇款式</legend>
             <label v-for="sku in product.skus" :key="sku.id" class="sku-choice" :class="{ on: selected === sku.id, off: !sku.available }">
@@ -98,9 +112,10 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <p v-if="message" class="shop-success" role="status">{{ message }} <router-link to="/shop/cart">查看購物車 →</router-link></p>
           <p v-if="addError" class="shop-error" role="alert">{{ addError }} <router-link to="/shop/cart">核對購物車 →</router-link></p>
           <p class="purchase-note">加入購物車不保留庫存，價格與可用狀態會在下單時重新核對。付款與配送目前為模擬演練。</p>
+          </template>
         </section>
 
-        <section v-for="b in batches" :key="b.id" class="preorder-box" :aria-label="'預購批次 ' + b.name">
+        <section v-for="b in batches" :id="'batch-' + b.id" :key="b.id" class="preorder-box" :aria-label="'預購批次 ' + b.name">
           <div class="pre-head"><span class="pre-title">預購批次：{{ b.name }}</span><span class="pre-days">剩 {{ daysLeft(b.deadlineAt) }} 天截單</span></div>
           <p class="pre-sku">款式：{{ b.skuLabel }}・<b>{{ money(b.priceTwd) }}</b></p>
           <dl class="pre-grid">
@@ -161,6 +176,9 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
 .sku-choice strong { margin-left: auto; white-space: nowrap; }
 .sku-availability { display: block; font-size: 12px; font-weight: 400; margin-top: 2px; }
 .sku-availability.ok { color: #1e3a8a; } .sku-availability.none { color: #6b7080; }
+.preorder-only { background: #fff1e8; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.preorder-only p { margin: 0; font-size: 14px; line-height: 1.7; color: #15161a; }
+.po-pill { background: #c2410c; color: #fff; font-weight: 900; font-size: 13px; padding: 4px 12px; border-radius: 999px; }
 .stock-note { background: #eef3ff; color: #1e3a8a; border-radius: 10px; padding: 10px 14px; font-size: 14px; }
 .stock-note.none { background: #f3f4f8; color: #4b5060; }
 .add-form { display: flex; flex-direction: column; gap: 12px; }
