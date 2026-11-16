@@ -1,5 +1,19 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-16：預購狀態、首頁輪播、批次詳情頁
+
+分支 `feat/shop-redesign-hobby`（PR #7 追加 commit `1766bdc`、`18e7ac9`）。只改 `src/views/shop/`；未動 `package-lock.json`、`src/assets/`、API、後端或資料。
+
+- **預購不看現貨庫存**：新增 `buyState()`（`useCatalog.ts`）。商品卡：僅預購顯示「預購中・截單日」、配額滿顯示「預購額滿」、現貨＋預購顯示「有庫存・另有預購」；只有現貨的商品維持「有庫存／暫無庫存」（inventory smoke 依賴）。商品頁：僅預購的商品隱藏現貨款式與購物車表單，改為預購說明與「選擇預購批次 ↓」，價格用批次價。
+- **首頁主視覺輪播** `HeroCarousel.vue`：最多 4 個預購批次＋2 件現貨交錯；6 秒自動播放，滑鼠移入／鍵盤聚焦／分頁隱藏時暫停，暫停按鈕、上一張／下一張、指示點、觸控滑動；`prefers-reduced-motion` 不自動播放。圖片不延遲載入（`ProductCover` 新增 `eager`）。
+- **預購入口改連商品頁**：首頁輪播、截單倒數卡與倒數列表連到 `/shop/products/<id>#batch-<batchId>`，商品頁渲染後捲到該批次並短暫標示；商品頁移除重複的「批次詳情」按鈕。
+- **批次詳情頁** `/shop/preorders/:id` 重做：左商品圖、右批次條件（倒數、價格、截止／到貨／配額、預購下單、須知、批次說明）；「重新載入」改為小文字按鈕，讀取失敗時錯誤訊息也提供。保留 smoke 錨點（批次名稱 heading、`.preorder-cards` 內無圖片、「截止時間（台北）」、「預購下單」、「重新載入」）。批次列表頁未改。
+- **驗證**：`npm run build` 成功；本機 demo（含另行匯入的真實公仔資料，只在本機 DB）以瀏覽器確認桌面與 375px：輪播自動／手動換張、商品卡狀態文字、僅預購商品頁、批次詳情頁，無水平捲動。
+- **未跑**：Playwright smoke。預覽窗格隱藏時無法目視平滑捲動動畫（以瞬間捲動確認位置正確）。
+- **注意**：本機 demo 的真實公仔圖片與價格取自第三方零售網站，只存在本機 DB／SeaweedFS 與 API repo 的 `work/`（已忽略），不在 Git，也不隨 CD 部署。
+
+---
+
 ## 2026-11-12：顧客商店介面改版（B 熱血玩具屋）
 
 分支 `feat/shop-redesign-hobby`。只改 `src/views/shop/`；未動 `package-lock.json`、`src/assets/`、API 合約、員工後台或後端。
