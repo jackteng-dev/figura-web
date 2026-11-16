@@ -5,10 +5,14 @@ import ProductCover from './ProductCover.vue'
 import HeroCarousel from './HeroCarousel.vue'
 import { money } from '@/api/catalog'
 import { useCatalog, inStock, minPrice, daysLeft, shortDate, batchLink, type HeroSlide } from './useCatalog'
-const { products, openBatches, batchesByProduct, works, loading, error, load } = useCatalog()
+const { products, openBatches, batchesByProduct, works, loading, error, truncated, load } = useCatalog()
 const tab = ref<'all' | 'pre' | 'stock'>('all')
 
 const productById = computed(() => new Map(products.value.map(p => [p.id, p])))
+const isGeneratedCatalog = computed(() =>
+  !loading.value && !error.value && !truncated.value && products.value.length > 0 &&
+  products.value.every(product => product.description.startsWith('AI 生成概念圖｜展示商品'))
+)
 
 // 主視覺輪播：最多 4 個預購批次（依截單日，每個商品一張、優先有圖）與 2 件現貨商品交錯，共 6 張。
 const slides = computed<HeroSlide[]>(() => {
@@ -50,7 +54,13 @@ onMounted(() => load())
 
 <template>
   <div class="home">
-    <h1 class="home-title">讓喜歡的角色，走進你的日常<span>PVC・GK・可動模型與景品，現貨與預購一次看齊</span></h1>
+    <header class="home-intro">
+      <h1 class="home-title">讓喜歡的角色，走進你的日常<span>PVC・GK・可動模型與景品，現貨與預購一次看齊</span></h1>
+      <p v-if="isGeneratedCatalog" class="catalog-notice">
+        <strong>AI 生成商品</strong>
+        <span>本站商品名稱、系列與圖片皆由 AI 生成。價格與庫存僅供商店功能展示。</span>
+      </p>
+    </header>
     <div v-if="error" class="shop-error" role="alert">{{ error }} <button class="shop-button" @click="load(true)">重新載入</button></div>
 
     <div class="hero-row">
@@ -180,4 +190,20 @@ onMounted(() => load())
 }
 .home-title { margin: 0; font-size: 22px; font-weight: 900; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
 .home-title span { font-size: 14px; font-weight: 400; color: #4b5060; }
+.home-intro { display: grid; gap: 10px; }
+.catalog-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 0;
+  padding: 10px 14px;
+  border-inline-start: 3px solid #9a5608;
+  border-radius: 8px;
+  background: #fff6df;
+  color: #4f371c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.catalog-notice strong { color: #683b07; }
 </style>
