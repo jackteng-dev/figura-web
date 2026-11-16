@@ -4,9 +4,15 @@ import { useRoute, useRouter } from 'vue-router'
 import { useCustomerStore } from '@/stores/customer'
 import { useCatalog } from './useCatalog'
 import { getCustomer } from '@/api/customer'
+import { getCart } from '@/api/shopping'
+import { guestCount, serverCount, countOf, rememberReturn } from './guestCart'
 const route = useRoute(), router = useRouter(), customer = useCustomerStore(), { categories, load } = useCatalog()
 const keyword = ref(typeof route.query.q === 'string' ? route.query.q : '')
 watch(() => route.query.q, q => { keyword.value = typeof q === 'string' ? q : '' })
+// 頁首購物車件數：登入看伺服器購物車，未登入看這台裝置的訪客購物車
+const cartCount = computed(() => customer.profile ? (serverCount.value ?? 0) : guestCount.value)
+// 從頁首點登入：登入後回到目前頁面
+const loginFromHere = () => rememberReturn(route.fullPath)
 const navCategories = computed(() => categories.value.slice(0, 6))
 const memberName = computed(() => customer.profile?.displayName || customer.profile?.username || '')
 function search() {
@@ -17,7 +23,10 @@ const isActive = (query: Record<string, string>) => route.path === '/shop/produc
 // 靜默讀取登入狀態，只用於頁首顯示會員名稱；未登入時忽略錯誤。
 onMounted(() => {
   load()
+  const loadCount = () => getCart().then(c => { serverCount.value = countOf(c) }).catch(() => {})
   if (!customer.profile) getCustomer().then(p => { customer.profile = p }).catch(() => {})
+  // 登入（或靜默讀到登入狀態）後讀一次伺服器購物車件數；登出時歸零
+  watch(() => customer.profile?.id, id => { if (id) loadCount(); else serverCount.value = null }, { immediate: true })
 })
 </script>
 
@@ -39,10 +48,10 @@ onMounted(() => {
         </form>
         <nav class="shop-member" aria-label="會員">
           <router-link v-if="memberName" to="/shop/account" class="member-link">{{ memberName }}</router-link>
-          <router-link v-else to="/shop/login" class="member-link">登入 / 註冊</router-link>
+          <router-link v-else to="/shop/login" class="member-link" @click="loginFromHere">登入 / 註冊</router-link>
           <router-link to="/shop/orders" class="member-link hide-sm">我的訂單</router-link>
           <router-link to="/shop/preorder-orders" class="member-link hide-sm">我的預購</router-link>
-          <router-link to="/shop/cart" class="cart-link">購物車</router-link>
+          <router-link to="/shop/cart" class="cart-link">購物車<span v-if="cartCount" class="cart-count"><span class="visually-hidden">，</span>{{ cartCount > 99 ? '99+' : cartCount }}<span class="visually-hidden"> 件</span></span></router-link>
         </nav>
       </div>
       <nav class="shop-cats" aria-label="商品分類">
@@ -116,6 +125,8 @@ onMounted(() => {
 .shop-shell .member-link:hover { background: var(--bg); color: var(--ink); }
 .shop-shell .cart-link { background: var(--orange); color: #fff; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 10px; }
 .shop-shell .cart-link:hover { background: #9a3412; color: #fff; }
+.shop-shell .cart-link { display: inline-flex; align-items: center; gap: 6px; }
+.cart-count { background: #fff; color: #9a3412; font-size: 12px; font-weight: 900; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
 
 .shop-cats { background: var(--navy); }
 .shop-cats-row { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }

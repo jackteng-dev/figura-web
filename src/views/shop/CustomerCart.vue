@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { computed,onMounted,ref } from 'vue'
+import { computed,onBeforeUnmount,onMounted,ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { CustomerApiError } from '@/api/customer'
+import { CustomerApiError, getCustomer } from '@/api/customer'
+import { useCustomerStore } from '@/stores/customer'
+import { guestLines, setGuest, removeGuest, mergeGuestCart, lastMerge, rememberReturn, serverCount, countOf, MAX_QTY } from './guestCart'
 import { getCart,setCartItem,removeCartItem,issueText,type CartView } from '@/api/shopping'
 import { getAddresses,type AddressView } from '@/api/shopping'
 import { placeOrder,type PlaceOrder } from '@/api/orders'
@@ -13,9 +15,9 @@ onMounted(()=>catalog.load())
 const router=useRouter(),cart=ref<CartView>(),quantities=ref<Record<string,number>>({}),busy=ref(false),error=ref(''),success=ref(''),needsReload=ref(false)
 const addresses=ref<AddressView[]>([]),addressId=ref(''),orderAttempt=ref<PlaceOrder>(),orderUnknown=ref(false)
 const selectedAddress=computed(()=>addresses.value.find(a=>a.id===addressId.value))
-async function load(){if(orderUnknown.value)return;if(busy.value)return;busy.value=true;error.value='';try{const [loadedCart,loadedAddresses]=await Promise.all([getCart(),getAddresses()]);cart.value=loadedCart;addresses.value=loadedAddresses;if(!addresses.value.some(a=>a.id===addressId.value))addressId.value=addresses.value[0]?.id||'';quantities.value=Object.fromEntries(cart.value.items.map(i=>[i.skuId,i.quantity]));needsReload.value=false}catch(e){await failure(e)}finally{busy.value=false}}
-async function failure(e:unknown){error.value=e instanceof Error?e.message:'操作失敗';if(e instanceof CustomerApiError&&e.status===401)await router.replace('/shop/login')}
-async function change(skuId:string,remove=false){if(busy.value||!cart.value||needsReload.value||orderUnknown.value)return;busy.value=true;error.value='';success.value='';try{cart.value=remove?await removeCartItem(skuId,cart.value.version):await setCartItem(skuId,quantities.value[skuId],cart.value.version);quantities.value=Object.fromEntries(cart.value.items.map(i=>[i.skuId,i.quantity]));success.value=remove?'款式已移除。':'數量已更新。'}catch(e){needsReload.value=!(e instanceof CustomerApiError&&e.status===400);await failure(e);if(!(e instanceof CustomerApiError))error.value='回應未確認，請重新核對購物車後再操作。'}finally{busy.value=false}}
+async function load(){if(orderUnknown.value)return;if(busy.value)return;busy.value=true;error.value='';try{const [loadedCart,loadedAddresses]=await Promise.all([getCart(),getAddresses()]);cart.value=loadedCart;serverCount.value=countOf(loadedCart);addresses.value=loadedAddresses;if(!addresses.value.some(a=>a.id===addressId.value))addressId.value=addresses.value[0]?.id||'';quantities.value=Object.fromEntries(cart.value.items.map(i=>[i.skuId,i.quantity]));needsReload.value=false}catch(e){await failure(e)}finally{busy.value=false}}
+async function failure(e:unknown){error.value=e instanceof Error?e.message:'操作失敗';if(e instanceof CustomerApiError&&e.status===401){rememberReturn('/shop/cart');await router.replace('/shop/login')}}
+async function change(skuId:string,remove=false){if(busy.value||!cart.value||needsReload.value||orderUnknown.value)return;busy.value=true;error.value='';success.value='';try{cart.value=remove?await removeCartItem(skuId,cart.value.version):await setCartItem(skuId,quantities.value[skuId],cart.value.version);serverCount.value=countOf(cart.value);quantities.value=Object.fromEntries(cart.value.items.map(i=>[i.skuId,i.quantity]));success.value=remove?'款式已移除。':'數量已更新。'}catch(e){needsReload.value=!(e instanceof CustomerApiError&&e.status===400);await failure(e);if(!(e instanceof CustomerApiError))error.value='回應未確認，請重新核對購物車後再操作。'}finally{busy.value=false}}
 async function checkout(){
  if(busy.value||!cart.value||needsReload.value)return
  if(!orderUnknown.value){
@@ -30,7 +32,37 @@ async function checkout(){
  catch(e){await failure(e);orderUnknown.value=!(e instanceof CustomerApiError&&[400,404,409].includes(e.status));if(orderUnknown.value)error.value='下單結果未確認，請用同一操作重試，或到我的訂單核對；不要重新建立另一筆。';else{needsReload.value=true;orderAttempt.value=undefined}}
  finally{busy.value=false}
 }
-onMounted(load)
+// ---- 訪客／會員模式 ----
+// 未登入：顯示這台瀏覽器的訪客購物車（只存款式與數量），價格與狀態取公開商品資料；結帳時才要求登入。
+// 已登入：若有訪客購物車先合併，再讀本人伺服器購物車（原有流程）。
+const customerStore=useCustomerStore(),mode=ref<'loading'|'guest'|'member'>('loading'),mergeNote=ref(lastMerge.value)
+async function start(){
+ mode.value='loading';error.value=''
+ try{customerStore.profile=await getCustomer()}
+ catch(e){if(e instanceof CustomerApiError&&e.status===401){customerStore.clear();mode.value='guest';return}error.value=e instanceof Error?e.message:'讀取登入狀態失敗，請重試。';return}
+ mode.value='member'
+ if(guestLines.value.length){busy.value=true;try{mergeNote.value=await mergeGuestCart()}finally{busy.value=false}}
+ await load()
+}
+onMounted(start)
+onBeforeUnmount(()=>{lastMerge.value=null})
+const mergeText=computed(()=>{const m=mergeNote.value;if(!m)return '';const parts=[];if(m.merged)parts.push(`已把登入前加入的 ${m.merged} 種款式合併進你的購物車（同款數量相加）`);if(m.skipped.length)parts.push(`${m.skipped.length} 種款式已下架或無法購買，未加入`);return parts.join('；')})
+const guestQty=ref<Record<string,number>>({})
+const guestView=computed(()=>{
+ const products=new Map(catalog.products.value.map(p=>[p.id,p]))
+ return guestLines.value.map(l=>{
+  const p=products.get(l.productId),sku=p?.skus.find(s=>s.id===l.skuId)
+  const issue=!p||!sku?'UNAVAILABLE':!sku.available?'SOLD_OUT':null
+  return {...l,title:p?.title||'已下架商品',label:sku?.label||'—',price:sku?.priceTwd??null,image:p?.image,issue,lineTotal:sku&&!issue?sku.priceTwd*l.quantity:null}
+ })
+})
+const guestSubtotal=computed(()=>guestView.value.reduce((s,l)=>s+(l.lineTotal||0),0))
+const guestReady=computed(()=>guestView.value.some(l=>!l.issue))
+function syncGuestQty(){guestQty.value=Object.fromEntries(guestLines.value.map(l=>[l.skuId,l.quantity]))}
+syncGuestQty()
+function guestUpdate(skuId:string){error.value='';success.value='';try{setGuest(skuId,Number(guestQty.value[skuId]));success.value='數量已更新。'}catch(e){error.value=e instanceof Error?e.message:'數量不正確';syncGuestQty()}}
+function guestRemove(skuId:string){error.value='';removeGuest(skuId);syncGuestQty();success.value='款式已移除。'}
+function goLogin(path:'/shop/login'|'/shop/register'){rememberReturn('/shop/cart');router.push(path)}
 </script>
 <template>
  <section class="cart-page">
@@ -39,7 +71,36 @@ onMounted(load)
    <ol class="steps" aria-label="結帳步驟"><li aria-current="step">1 購物車</li><li>2 建立訂單</li><li>3 付款</li></ol>
   </div>
   <p v-if="error" role="alert" class="shop-error">{{ error }}</p><p v-if="success" role="status" class="shop-success">{{ success }}</p>
-  <div class="cart-layout">
+  <p v-if="mode==='member'&&mergeText" class="shop-success merge-note" role="status">{{ mergeText }}</p>
+  <p v-if="mode==='loading'&&!error" role="status">正在載入…</p>
+  <button v-if="mode==='loading'&&error" class="shop-button" @click="start">重新載入</button>
+
+  <!-- 訪客購物車 -->
+  <div v-if="mode==='guest'" class="cart-layout">
+   <div class="cart-lines">
+    <div class="cart-toolbar"><span>尚未登入：購物車先存在這台裝置，結帳時再登入；價格與庫存以下單時伺服器核對為準。</span></div>
+    <p v-if="!guestView.length" data-testid="guest-cart-empty" class="shop-empty">購物車目前是空的。<router-link to="/shop/products">探索收藏商品 →</router-link></p>
+    <article v-for="item in guestView" :key="item.skuId" class="cart-line" :class="{ issue: item.issue }" :data-testid="'guest-cart-'+item.skuId">
+     <router-link class="thumb" :to="'/shop/products/'+item.productId" :aria-label="'查看商品 '+item.title"><ProductCover :image="item.image" /></router-link>
+     <div class="line-info"><h2>{{ item.title }}</h2><p>款式：{{ item.label }}</p><p>{{ item.price===null?'下架款式暫不計價':money(item.price)+'／件' }}</p><p v-if="item.issue" class="shop-error">{{ issueText(item.issue as any) }}</p></div>
+     <form class="qty-form" @submit.prevent="guestUpdate(item.skuId)"><label :for="'gqty-'+item.skuId">數量</label><input :id="'gqty-'+item.skuId" v-model.number="guestQty[item.skuId]" type="number" min="1" :max="MAX_QTY" step="1" required :disabled="item.issue==='UNAVAILABLE'"><button class="shop-button ghost" :disabled="item.issue==='UNAVAILABLE'">更新數量</button></form>
+     <div class="line-end"><strong class="line-total">{{ item.lineTotal===null?'不計價':money(item.lineTotal) }}</strong><button class="remove-button" @click="guestRemove(item.skuId)">移除款式</button></div>
+    </article>
+    <p v-if="guestView.some(i=>i.issue)" class="issue-note">有問題的款式未計入小計，請調整或移除。</p>
+    <div class="pre-hint">預購商品不會放進購物車，請在商品頁直接「預購下單」。</div>
+   </div>
+   <aside v-if="guestView.length" class="checkout-panel" aria-labelledby="guest-checkout-title">
+    <h2 id="guest-checkout-title">結帳</h2>
+    <div class="sum-row"><span>預估商品小計</span><span data-testid="guest-cart-subtotal">{{ money(guestSubtotal) }}</span></div>
+    <div class="sum-row"><span>運費</span><span>NT$ 0</span></div>
+    <div class="sum-row total"><span>預估金額</span><strong>{{ money(guestSubtotal) }}</strong></div>
+    <p class="fine">登入後購物車會自動合併到你的帳號，並由伺服器重新核對價格與庫存，再選擇收件地址下單。</p>
+    <button class="shop-button primary checkout-btn" :disabled="!guestReady" @click="goLogin('/shop/login')">登入後結帳</button>
+    <p class="fine guest-register">還沒有帳號？<a href="/shop/register" @click.prevent="goLogin('/shop/register')">建立顧客帳號</a></p>
+   </aside>
+  </div>
+
+  <div v-if="mode==='member'" class="cart-layout">
    <div class="cart-lines">
     <div class="cart-toolbar"><span>價格與商品狀態由伺服器重新核對，購物車不保留庫存。</span><button class="shop-button ghost" :disabled="busy||orderUnknown" @click="load">重新核對購物車</button></div>
     <p v-if="busy&&!cart" role="status">正在載入…</p>
@@ -86,6 +147,7 @@ onMounted(load)
 .line-end{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:96px}.line-total{font-size:17px;font-weight:900}
 .remove-button{border:0;background:transparent;color:#4b5060;font:inherit;font-size:14px;text-decoration:underline;padding:8px 4px;cursor:pointer;min-height:40px}.remove-button:disabled{opacity:.5;cursor:not-allowed}
 .issue-note{margin:0;font-size:14px}
+.merge-note{margin:0 0 12px}.guest-register{text-align:center;font-size:14px}
 .pre-hint{background:#fff7f1;border:1px solid #fed7bd;border-radius:12px;padding:14px 16px;font-size:14px;color:#7c2d12}.shop-shell .pre-hint a{color:#9a3412;font-weight:700}
 .checkout-panel{flex:1 1 340px;min-width:0;background:#fff;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px;position:sticky;top:140px}
 .checkout-panel h2{font-size:20px;margin:0 0 4px}

@@ -22,7 +22,7 @@ function check(name, ok) { if (!ok) throw Error('Check failed: ' + name); checks
     check('合成顧客建立', (await api(ctx, '/customer/auth/register', 'POST', { username, password, displayName: '預購UI測試' })).status === 201);
     await page.goto(base + '/shop/preorders/' + crypto.randomUUID() + '/checkout'); await page.waitForURL('**/shop/login');
     check('預購結帳需本人登入', await page.getByRole('heading', { name: '顧客登入', exact: true }).isVisible());
-    await page.getByLabel('顧客帳號', { exact: true }).fill(username); await page.getByLabel('密碼', { exact: true }).fill(password); await page.getByRole('button', { name: '登入會員', exact: true }).click(); await page.waitForURL('**/shop/account');
+    await page.getByLabel('顧客帳號', { exact: true }).fill(username); await page.getByLabel('密碼', { exact: true }).fill(password); await page.getByRole('button', { name: '登入會員', exact: true }).click(); await page.waitForURL('**/shop/preorders/*/checkout'); check('登入後回到原本的預購結帳頁', true);
     const aid = crypto.randomUUID(), address = { expectedVersion: 0, recipientName: '合成收件人', phone: '0912345678', postalCode: '100', city: '測試市', district: '測試區', street: '合成路 1 號' };
     check('本人地址建立', (await api(ctx, '/customer/addresses/' + aid, 'PUT', address)).status === 200);
     async function fixture(capacity = 5) {
