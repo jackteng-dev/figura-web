@@ -41,5 +41,5 @@ onMounted(load)
   </section>
 </template>
 <style scoped>
-.my-preorders{min-width:0;overflow-wrap:anywhere}article{padding:24px;margin:24px 0;background:#fffdf8;border:1px solid #dedfd1;border-radius:12px}h2{font-size:22px}button{max-width:100%;white-space:normal}.pagination{display:flex;align-items:center;gap:12px}
+.my-preorders{min-width:0;overflow-wrap:anywhere}article{padding:24px;margin:24px 0;background:#ffffff;border:1px solid #e3e5ec;border-radius:12px}h2{font-size:22px}button{max-width:100%;white-space:normal}.pagination{display:flex;align-items:center;gap:12px}
 </style>
