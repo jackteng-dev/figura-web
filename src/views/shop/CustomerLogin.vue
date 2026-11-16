@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { loginCustomer } from '@/api/customer'
+import { loginCustomer, CustomerApiError } from '@/api/customer'
+import PasswordField from '@/components/PasswordField.vue'
 import { useCustomerStore } from '@/stores/customer'
 import { guestLines, mergeGuestCart, takeReturn } from './guestCart'
 const router=useRouter(),route=useRoute(),store=useCustomerStore()
@@ -17,16 +18,23 @@ async function submit() {
     const hadGuest=guestLines.value.length>0
     if(hadGuest)await mergeGuestCart().catch(()=>null)
     await router.replace(takeReturn()||(hadGuest?'/shop/cart':'/shop/account'))
-  } catch(e) { error.value=e instanceof Error?e.message:'登入失敗，請稍後再試' }
+  } catch(e) {
+    // 401：帳密不符或帳號不可用。後端訊息「登入狀態無效」容易誤解，改成具體說明
+    error.value=e instanceof CustomerApiError&&e.status===401?'帳號或密碼不正確。員工帳號請從員工後台登入。':e instanceof Error?e.message:'登入失敗，請稍後再試'
+  }
   finally { pending.value=false }
 }
 </script>
 <template>
   <section class="shop-panel"><h1>顧客登入</h1><p>登入後管理會員資料；購物車裡的商品會自動保留。</p><p v-if="route.query.registered==='1'" class="shop-success" role="status">帳號已建立，請登入。</p>
     <form @submit.prevent="submit"><label for="customer-username">顧客帳號</label><input id="customer-username" v-model="username" autocomplete="username" required maxlength="32">
-      <label for="customer-password">密碼</label><input id="customer-password" v-model="password" type="password" autocomplete="current-password" required>
+      <label for="customer-password">密碼</label><PasswordField id="customer-password" v-model="password" autocomplete="current-password" required />
       <label class="shop-check"><input v-model="remember" type="checkbox">保持登入</label>
       <p v-if="error" class="shop-error" role="alert">{{ error }}</p><button class="shop-button" :disabled="pending">{{ pending?'登入中…':'登入會員' }}</button>
     </form><p style="margin-top:24px">還沒有帳號？<router-link to="/shop/register">建立顧客帳號</router-link></p>
+    <p class="staff-hint">店內員工？請由 <router-link to="/admin/login">員工後台登入</router-link></p>
   </section>
 </template>
+<style scoped>
+.staff-hint{margin:8px 0 0;font-size:13px;color:#4b5060}
+</style>
