@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import ProductCover from './ProductCover.vue'
 import ProductCard from './ProductCard.vue'
 import { useRoute } from 'vue-router'
@@ -41,6 +41,18 @@ const displayPrice = computed(() => {
 const batches = computed(() => product.value ? catalog.batchesByProduct.value.get(product.value.id) || [] : [])
 // 僅預購：沒有任何現貨款式但有開放中的預購批次。此時不顯示現貨庫存與購物車，改引導到預購批次。
 const preorderOnly = computed(() => !!product.value && batches.value.length > 0 && !product.value.skus.some(s => s.available))
+// 從首頁等預購入口帶 #batch-<id> 進來時，商品與批次載入後捲到該批次並短暫標示。
+const highlighted = ref('')
+let scrolledFor = ''
+watch([() => route.fullPath, product, loading, () => batches.value.length], async () => {
+  const id = route.hash.startsWith('#batch-') ? route.hash.slice(7) : ''
+  if (!id || !product.value || loading.value || scrolledFor === route.fullPath || !batches.value.some(b => b.id === id)) return
+  scrolledFor = route.fullPath
+  await nextTick()
+  document.getElementById('batch-' + id)?.scrollIntoView({ behavior: 'auto', block: 'center' }) // 依 CSS：一般平滑，減少動態時瞬移
+  highlighted.value = id
+  window.setTimeout(() => { if (highlighted.value === id) highlighted.value = '' }, 2400)
+}, { immediate: true })
 const preorderPrice = computed(() => {
   const prices = batches.value.map(b => b.priceTwd)
   return prices.length ? money(Math.min(...prices)) + (new Set(prices).size > 1 ? ' 起' : '') : ''
@@ -115,7 +127,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           </template>
         </section>
 
-        <section v-for="b in batches" :id="'batch-' + b.id" :key="b.id" class="preorder-box" :aria-label="'預購批次 ' + b.name">
+        <section v-for="b in batches" :id="'batch-' + b.id" :key="b.id" class="preorder-box" :class="{ flash: highlighted === b.id }" :aria-label="'預購批次 ' + b.name">
           <div class="pre-head"><span class="pre-title">預購批次：{{ b.name }}</span><span class="pre-days">剩 {{ daysLeft(b.deadlineAt) }} 天截單</span></div>
           <p class="pre-sku">款式：{{ b.skuLabel }}・<b>{{ money(b.priceTwd) }}</b></p>
           <dl class="pre-grid">
@@ -126,7 +138,6 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <p class="pre-note">預購不放入購物車，直接建立預購訂單；下單保留配額，請於時限內付款，到貨前可整筆退款。</p>
           <div class="actions">
             <router-link class="shop-button primary" :to="'/shop/preorders/' + b.id + '/checkout'">預購下單・保留配額</router-link>
-            <router-link class="shop-button ghost" :to="'/shop/preorders/' + b.id">批次詳情</router-link>
           </div>
         </section>
       </div>
@@ -192,7 +203,9 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
 .actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .actions > * { flex: 1 1 180px; font-size: 16px; padding: 14px; }
 .purchase-note { font-size: 13px; margin: 0; border-top: 1px solid #e3e5ec; padding-top: 12px; }
-.preorder-box { background: #fff7f1; border: 1px solid #fed7bd; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.preorder-box { background: #fff7f1; border: 1px solid #fed7bd; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px; scroll-margin-top: 140px; transition: box-shadow .3s; }
+.preorder-box.flash { box-shadow: 0 0 0 3px #c2410c; }
+@media (prefers-reduced-motion: reduce) { .preorder-box { transition: none; } }
 .pre-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 .pre-title { font-weight: 900; color: #9a3412; }
 .pre-days { color: #9a3412; font-weight: 700; font-size: 14px; }

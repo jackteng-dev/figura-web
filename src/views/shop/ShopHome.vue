@@ -4,7 +4,7 @@ import ProductCard from './ProductCard.vue'
 import ProductCover from './ProductCover.vue'
 import HeroCarousel from './HeroCarousel.vue'
 import { money } from '@/api/catalog'
-import { useCatalog, inStock, minPrice, daysLeft, shortDate, type HeroSlide } from './useCatalog'
+import { useCatalog, inStock, minPrice, daysLeft, shortDate, batchLink, type HeroSlide } from './useCatalog'
 const { products, openBatches, batchesByProduct, works, loading, error, load } = useCatalog()
 const tab = ref<'all' | 'pre' | 'stock'>('all')
 
@@ -21,7 +21,7 @@ const slides = computed<HeroSlide[]>(() => {
     seen.add(b.productId)
     const p = productById.value.get(b.productId)
     pre.push({
-      key: 'b-' + b.id, to: '/shop/preorders/' + b.id, pill: `預購受付中・${shortDate(b.deadlineAt)} 截單`,
+      key: 'b-' + b.id, to: batchLink(b), pill: `預購受付中・${shortDate(b.deadlineAt)} 截單`,
       title: b.productTitle, sub: `${b.skuLabel}・剩餘配額 ${b.availableQuota} 件`, price: money(b.priceTwd), cta: '立即預購',
       image: p?.image, category: p?.category
     })
@@ -64,7 +64,7 @@ onMounted(() => load())
       </div>
 
       <div class="side-cards">
-        <router-link v-if="closingFirst" class="side-card yellow" :to="'/shop/preorders/' + closingFirst.id">
+        <router-link v-if="closingFirst" class="side-card yellow" :to="batchLink(closingFirst)">
           <span class="side-label">截單倒數</span>
           <span class="side-title">{{ closingFirst.productTitle }}<br>剩 {{ daysLeft(closingFirst.deadlineAt) }} 天</span>
           <span>配額剩 {{ closingFirst.availableQuota }} 件 →</span>
@@ -101,7 +101,7 @@ onMounted(() => load())
       <section class="shop-card block closing" aria-labelledby="home-closing">
         <div class="shop-section-head"><h2 id="home-closing">預購截單倒數</h2><router-link to="/shop/preorders">全部批次 →</router-link></div>
         <div v-if="openBatches.length" class="closing-list">
-          <router-link v-for="b in openBatches.slice(0, 5)" :key="b.id" :to="'/shop/preorders/' + b.id" class="closing-item">
+          <router-link v-for="b in openBatches.slice(0, 5)" :key="b.id" :to="batchLink(b)" class="closing-item">
             <div class="thumb"><ProductCover :image="productById.get(b.productId)?.image" /></div>
             <div class="closing-copy">
               <span class="closing-title">{{ b.productTitle }}<span class="sku">・{{ b.skuLabel }}</span></span>

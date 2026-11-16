@@ -111,6 +111,9 @@ export function shortDate(value: string) {
   return new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', month: 'numeric', day: 'numeric' }).format(new Date(value))
 }
 
+/** 預購入口連到商品頁並捲到該批次（商品頁就能選批次下單，不必多經過批次頁）。 */
+export const batchLink = (b: Pick<PublicBatch, 'id' | 'productId'>) => `/shop/products/${b.productId}#batch-${b.id}`
+
 /** 首頁主視覺輪播的一張。 */
 export interface HeroSlide {
   key: string; to: string; pill: string; title: string; sub: string; price: string; cta: string
