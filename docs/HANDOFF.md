@@ -1,5 +1,14 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-16・AI 展示型錄首頁提示
+
+- `src/views/shop/ShopHome.vue` 在首頁主標題下方顯示 AI 生成商品提示。提示條件是商品讀取成功、全量載入且所有公開商品的說明以 `AI 生成概念圖｜展示商品` 開頭。
+- `npm run build` 通過，含 vue-tsc 和 Vite。瀏覽器驗證未標記型錄不顯示提示。AI 型錄在桌面及 390px 手機顯示提示，五頁共 95 張主圖可讀，系列篩選回傳 12 件。
+- 本機 demo 透過商品、主圖、庫存及預購 API 上架 95 件 AI 生成商品、8 個新系列、30 件展示現貨與 64 個展示預購批次。舊型錄已下架封存，歷史資料保留。生成素材、提示詞、型錄與驗證放在後端忽略路徑 `work/figura-ai-catalog/`。
+- `package-lock.json`、`src/assets/` 與 API 合約皆無異動。正式主機的資料更換及部署待後續處理。
+
+---
+
 ## 2026-11-13：員工後台介面改版（B 熱血玩具屋）
 
 分支 `feat/admin-redesign`（從 main 開出，與顧客商店改版 `feat/shop-redesign-hobby` 分開）。未動 `package-lock.json`、`src/assets/`、API 或後端。
