@@ -19,8 +19,8 @@ async function submit() {
     if(hadGuest)await mergeGuestCart().catch(()=>null)
     await router.replace(takeReturn()||(hadGuest?'/shop/cart':'/shop/account'))
   } catch(e) {
-    // 401：帳密不符或帳號不可用。後端訊息「登入狀態無效」容易誤解，改成具體說明
-    error.value=e instanceof CustomerApiError&&e.status===401?'帳號或密碼不正確。員工帳號請從員工後台登入。':e instanceof Error?e.message:'登入失敗，請稍後再試'
+    // 401：一律只說帳號或密碼不正確，不透露帳號是否存在、是否為其他身分（如員工）的帳號
+    error.value=e instanceof CustomerApiError&&e.status===401?'帳號或密碼不正確。':e instanceof Error?e.message:'登入失敗，請稍後再試'
   }
   finally { pending.value=false }
 }
@@ -32,9 +32,5 @@ async function submit() {
       <label class="shop-check"><input v-model="remember" type="checkbox">保持登入</label>
       <p v-if="error" class="shop-error" role="alert">{{ error }}</p><button class="shop-button" :disabled="pending">{{ pending?'登入中…':'登入會員' }}</button>
     </form><p style="margin-top:24px">還沒有帳號？<router-link to="/shop/register">建立顧客帳號</router-link></p>
-    <p class="staff-hint">店內員工？請由 <router-link to="/admin/login">員工後台登入</router-link></p>
   </section>
 </template>
-<style scoped>
-.staff-hint{margin:8px 0 0;font-size:13px;color:#4b5060}
-</style>

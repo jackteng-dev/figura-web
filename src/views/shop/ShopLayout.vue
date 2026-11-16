@@ -78,7 +78,7 @@ onMounted(() => {
         <div><div class="foot-logo">Figura<span>.</span></div>公仔・PVC・GK 收藏專門店</div>
         <div><div class="foot-title">購物</div><router-link to="/shop/products">所有商品</router-link><br><router-link to="/shop/preorders">預購情報</router-link><br><router-link to="/shop/cart">購物車</router-link></div>
         <div><div class="foot-title">會員</div><router-link to="/shop/orders">我的訂單</router-link><br><router-link to="/shop/preorder-orders">我的預購</router-link><br><router-link to="/shop/addresses">收件地址</router-link></div>
-        <div><div class="foot-title">其他</div><router-link to="/shop/account">會員中心</router-link><br><router-link to="/admin/login">員工入口</router-link></div>
+        <div><div class="foot-title">其他</div><router-link to="/shop/account">會員中心</router-link></div>
       </div>
       <p class="foot-note">付款、配送、退貨與退款皆為模擬演練，不會實際收款或轉帳。</p>
     </footer>
