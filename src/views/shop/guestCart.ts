@@ -210,7 +210,7 @@ async function doMerge(customerId: string): Promise<MergeResult> {
 /* 登入後回到原頁：存在 sessionStorage（不放網址，避免改變 /shop/login 路徑），30 分鐘內有效。 */
 const RETURN_KEY = 'figura.loginReturn.v1'
 export function rememberReturn(path: string) {
-  if (!path.startsWith('/shop/') || path.startsWith('//') || path.startsWith('/shop/login') || path.startsWith('/shop/register')) return
+  if (!path.startsWith('/shop/') || path.startsWith('//') || path.startsWith('/shop/login') || path.startsWith('/shop/register') || path.startsWith('/shop/reset-password') || path.startsWith('/shop/verify-email') || path.startsWith('/shop/forgot-password')) return
   try { sessionStorage.setItem(RETURN_KEY, JSON.stringify({ path, at: Date.now() })) } catch { /* ignore */ }
 }
 export function takeReturn(): string | null {

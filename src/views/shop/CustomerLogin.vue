@@ -5,6 +5,7 @@ import { loginCustomer, CustomerApiError } from '@/api/customer'
 import PasswordField from '@/components/PasswordField.vue'
 import { useCustomerStore } from '@/stores/customer'
 import { guestLines, mergeGuestCart, takeReturn, reloadGuest } from './guestCart'
+import SocialLogin from './SocialLogin.vue'
 const router=useRouter(),route=useRoute(),store=useCustomerStore()
 const username=ref(typeof route.query.username==='string'?route.query.username:''),password=ref(''),remember=ref(false),pending=ref(false),error=ref('')
 async function submit() {
@@ -27,11 +28,17 @@ async function submit() {
 }
 </script>
 <template>
-  <section class="shop-panel"><h1>顧客登入</h1><p>登入後管理會員資料；購物車裡的商品會自動保留。</p><p v-if="route.query.registered==='1'" class="shop-success" role="status">帳號已建立，請登入。</p>
-    <form @submit.prevent="submit"><label for="customer-username">顧客帳號</label><input id="customer-username" v-model="username" autocomplete="username" required maxlength="32">
+  <section class="shop-panel"><h1>顧客登入</h1><p>登入後管理會員資料；購物車裡的商品會自動保留。</p><p v-if="route.query.registered==='1'" class="shop-success" role="status">帳號已建立，請登入。驗證信已寄到你的 Email。</p><p v-if="route.query.reset==='1'" class="shop-success" role="status">密碼已重設，請用新密碼登入。</p>
+    <form @submit.prevent="submit"><label for="customer-username">手機或 Email</label><input id="customer-username" v-model="username" autocomplete="username" required maxlength="254" placeholder="0912345678 或 name@example.com">
       <label for="customer-password">密碼</label><PasswordField id="customer-password" v-model="password" autocomplete="current-password" required />
-      <label class="shop-check"><input v-model="remember" type="checkbox">保持登入</label>
+      <div class="login-row"><label class="shop-check"><input v-model="remember" type="checkbox">保持登入</label><router-link to="/shop/forgot-password" class="forgot">忘記密碼？</router-link></div>
       <p v-if="error" class="shop-error" role="alert">{{ error }}</p><button class="shop-button" :disabled="pending">{{ pending?'登入中…':'登入會員' }}</button>
-    </form><p style="margin-top:24px">還沒有帳號？<router-link to="/shop/register">建立顧客帳號</router-link></p>
+    </form>
+    <SocialLogin />
+    <p style="margin-top:24px">還沒有帳號？<router-link to="/shop/register">建立顧客帳號</router-link></p>
   </section>
 </template>
+<style scoped>
+.login-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.forgot{font-size:14px}
+</style>
