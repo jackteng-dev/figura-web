@@ -58,20 +58,43 @@ export const countOf = (cart: CartView) => cart.items.reduce((n, i) => n + i.qua
 export interface MergeIssue { skuId: string; productId: string; quantity: number; reason: string }
 export interface MergeResult { merged: number; skipped: MergeIssue[]; uncertain: MergeIssue[]; error?: string }
 /*
- * 待核對清單：合併結果未確認（可能已寫入）的款式。存在 localStorage 並累積，
- * 直到顧客在購物車頁按「已核對」才清除；重新整理或之後再合併都不會遺失。
+ * 合併紀錄（每位會員分開保存在 localStorage，直到該會員在購物車頁按「我已了解」）：
+ * - uncertain：合併結果未確認（可能已寫入），請顧客核對數量。
+ * - skipped：沒有加入購物車的款式與原因（下架、庫存不足…）。
+ * 寫入時一律先重讀 localStorage 再合併，並透過 storage 事件同步其他分頁，避免互相覆蓋。
  */
-const REVIEW_KEY = 'figura.guestCart.review.v1'
-function readReview(): MergeIssue[] {
-  try { const r = JSON.parse(localStorage.getItem(REVIEW_KEY) || '[]'); return Array.isArray(r) ? r.filter((x: any) => typeof x?.skuId === 'string').slice(0, MAX_LINES) : [] } catch { return [] }
+export interface ReviewItem extends MergeIssue { kind: 'uncertain' | 'skipped'; at: number }
+const REVIEW_PREFIX = 'figura.guestCart.review.v2.'
+const REVIEW_LIMIT = 200
+let reviewOwner = ''
+const reviewKey = (customerId: string) => REVIEW_PREFIX + customerId
+function readReview(customerId: string): ReviewItem[] {
+  try {
+    const r = JSON.parse(localStorage.getItem(reviewKey(customerId)) || '[]')
+    return Array.isArray(r) ? r.filter((x: any) => typeof x?.skuId === 'string' && (x.kind === 'uncertain' || x.kind === 'skipped')) : []
+  } catch { return [] }
 }
-export const reviewItems = ref<MergeIssue[]>(readReview())
-function addReview(item: MergeIssue) {
-  const next = [...reviewItems.value.filter(r => r.skuId !== item.skuId), item].slice(-MAX_LINES)
-  reviewItems.value = next
-  try { localStorage.setItem(REVIEW_KEY, JSON.stringify(next)) } catch { /* 僅留在記憶體 */ }
+export const reviewItems = ref<ReviewItem[]>([])
+/** 切換到目前登入的會員；之後顯示與清除都只針對這位會員。 */
+export function loadReview(customerId: string) {
+  reviewOwner = customerId
+  reviewItems.value = customerId ? readReview(customerId) : []
+  try { localStorage.removeItem('figura.guestCart.review.v1') } catch { /* 舊版共用清單，不再使用 */ }
 }
-export function clearReview() { reviewItems.value = []; try { localStorage.removeItem(REVIEW_KEY) } catch { /* ignore */ } }
+function addReview(customerId: string, item: ReviewItem) {
+  const current = readReview(customerId).filter(r => !(r.kind === item.kind && r.skuId === item.skuId))
+  const next = [...current, item].slice(-REVIEW_LIMIT)
+  try { localStorage.setItem(reviewKey(customerId), JSON.stringify(next)) } catch { /* 僅留在記憶體 */ }
+  if (reviewOwner === customerId) reviewItems.value = next
+}
+export function clearReview() {
+  if (!reviewOwner) return
+  try { localStorage.removeItem(reviewKey(reviewOwner)) } catch { /* ignore */ }
+  reviewItems.value = []
+}
+if (typeof window !== 'undefined') window.addEventListener('storage', e => {
+  if (reviewOwner && e.key === reviewKey(reviewOwner)) reviewItems.value = readReview(reviewOwner)
+})
 /** 最近一次合併的結果，購物車頁顯示用（登入頁合併後導回購物車時）。 */
 export const lastMerge = ref<MergeResult | null>(null)
 let merging: Promise<MergeResult> | null = null
@@ -96,16 +119,16 @@ const issue = (l: GuestLine, reason: string): MergeIssue => ({ skuId: l.skuId, p
  * - 400／404／422：伺服器明確拒絕、未寫入，列出原因並繼續。
  * - 網路錯誤或 5xx：結果未知，不自動重送；該款列為待核對並停止，其餘保留下次合併。
  */
-export function mergeGuestCart(): Promise<MergeResult> {
+export function mergeGuestCart(customerId: string): Promise<MergeResult> {
   if (merging) return merging
   const locks = (typeof navigator !== 'undefined' ? (navigator as any).locks : undefined)
-  const run = () => doMerge()
+  const run = () => doMerge(customerId)
   merging = (locks?.request ? locks.request('figura-guest-cart-merge', run) as Promise<MergeResult> : run())
     .finally(() => { merging = null })
   return merging
 }
 
-async function doMerge(): Promise<MergeResult> {
+async function doMerge(customerId: string): Promise<MergeResult> {
   const result: MergeResult = { merged: 0, skipped: [], uncertain: [] }
   const finish = () => {
     if (result.merged || result.skipped.length || result.uncertain.length || result.error) lastMerge.value = result
@@ -114,7 +137,7 @@ async function doMerge(): Promise<MergeResult> {
   guestLines.value = read()
   for (const l of guestLines.value.filter(l => l.pending)) {
     const it = issue(l, '上次合併被中斷，請核對購物車數量')
-    result.uncertain.push(it); addReview(it)
+    result.uncertain.push(it); addReview(customerId, { ...it, kind: 'uncertain', at: Date.now() })
     removeGuest(l.skuId)
   }
   for (const line of guestLines.value.filter(l => !l.pending)) {
@@ -133,7 +156,7 @@ async function doMerge(): Promise<MergeResult> {
       } catch (e) {
         if (!(e instanceof CustomerApiError) || e.status >= 500) {
           const it = issue(line, '合併結果未確認，請核對購物車數量')
-          result.uncertain.push(it); addReview(it)
+          result.uncertain.push(it); addReview(customerId, { ...it, kind: 'uncertain', at: Date.now() })
           removeGuest(line.skuId)
           result.error = UNCERTAIN
           return finish()
@@ -149,7 +172,8 @@ async function doMerge(): Promise<MergeResult> {
           // 版本相同：是這款本身的問題（下架、庫存不足、款式數上限），列出原因並繼續其他款式
         }
         removeGuest(line.skuId)
-        result.skipped.push(issue(line, e.message || '無法加入購物車'))
+        const skipped = issue(line, e.message || '無法加入購物車')
+        result.skipped.push(skipped); addReview(customerId, { ...skipped, kind: 'skipped', at: Date.now() })
         break
       }
     }

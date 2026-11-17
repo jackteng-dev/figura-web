@@ -18,7 +18,7 @@ async function submit() {
     // 有訪客購物車就合併進本人購物車；結果在購物車頁顯示，不阻擋登入
     reloadGuest()
     const hadGuest=guestLines.value.length>0
-    if(hadGuest)await mergeGuestCart().catch(()=>null)
+    if(hadGuest&&store.profile)await mergeGuestCart(store.profile.id).catch(()=>null)
     await router.replace(takeReturn()||(hadGuest?'/shop/cart':'/shop/account'))
   } catch(e) {
     // 401：一律只說帳號或密碼不正確，不透露帳號是否存在、是否為其他身分（如員工）的帳號
