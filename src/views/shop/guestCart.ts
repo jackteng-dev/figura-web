@@ -8,7 +8,8 @@ import { CustomerApiError } from '@/api/customer'
  * 登入後合併進本人伺服器購物車（同款數量相加，上限 99），每一步都帶整車版本，
  * 回應未確認時不自動重送，停下並保留尚未合併的款式。
  */
-export interface GuestLine { skuId: string; productId: string; quantity: number }
+// pending：已送出合併寫入但尚未確認結果（見 mergeGuestCart）
+export interface GuestLine { skuId: string; productId: string; quantity: number; pending?: boolean }
 const KEY = 'figura.guestCart.v1'
 export const MAX_QTY = 99
 export const MAX_LINES = 30
@@ -18,7 +19,7 @@ function read(): GuestLine[] {
     const raw = JSON.parse(localStorage.getItem(KEY) || '[]')
     if (!Array.isArray(raw)) return []
     return raw.filter((l: any) => typeof l?.skuId === 'string' && typeof l?.productId === 'string' && Number.isInteger(l?.quantity) && l.quantity >= 1)
-      .map((l: any) => ({ skuId: l.skuId, productId: l.productId, quantity: Math.min(MAX_QTY, l.quantity) }))
+      .map((l: any) => ({ skuId: l.skuId, productId: l.productId, quantity: Math.min(MAX_QTY, l.quantity), ...(l.pending === true ? { pending: true } : {}) }))
       .slice(0, MAX_LINES)
   } catch { return [] }
 }
@@ -52,50 +53,84 @@ export function removeGuest(skuId: string) { write(guestLines.value.filter(l => 
 export const serverCount = ref<number | null>(null)
 export const countOf = (cart: CartView) => cart.items.reduce((n, i) => n + i.quantity, 0)
 
-export interface MergeResult { merged: number; skipped: string[]; error?: string; uncertain?: boolean; uncertainSkus?: string[] }
+export interface MergeIssue { skuId: string; productId: string; quantity: number; reason: string }
+export interface MergeResult { merged: number; skipped: MergeIssue[]; uncertain: MergeIssue[]; error?: string }
 /** 最近一次合併的結果，購物車頁顯示用（登入頁合併後導回購物車時）。 */
 export const lastMerge = ref<MergeResult | null>(null)
 let merging: Promise<MergeResult> | null = null
+const LOGIN_LOST = '登入狀態已失效，訪客購物車保留在這台裝置，請重新登入。'
+const READ_FAILED = '暫時無法讀取你的購物車，訪客購物車已保留，下次開啟購物車會再合併。'
+const UNCERTAIN = '有款式的合併結果未確認，請核對下方購物車數量；其餘尚未合併的款式仍保留在這台裝置。'
+
+function setPending(skuId: string, pending: boolean) {
+  write(guestLines.value.map(l => l.skuId === skuId ? { ...l, pending } : l))
+}
+const issue = (l: GuestLine, reason: string): MergeIssue => ({ skuId: l.skuId, productId: l.productId, quantity: l.quantity, reason })
+
 /**
- * 把訪客購物車合併進已登入顧客的伺服器購物車。
- * 每款：重讀整車 → 以目前版本寫入「原數量＋訪客數量」（上限 99）→ 成功才從訪客購物車移除。
- * 400 類（款式下架、數量不合法）略過並保留說明；未確認回應（網路／5xx）停止，剩餘款式留在訪客購物車。
+ * 把訪客購物車合併進已登入顧客的伺服器購物車（同款數量相加，上限 99）。
+ * - 跨分頁：用 Web Locks 讓同一瀏覽器同時只有一個分頁在合併，並在鎖內重讀 localStorage 的最新內容。
+ * - 每款寫入前先標記 pending；寫入成功才移除。若分頁在「已送出、未確認」時被關閉，下次看到 pending
+ *   不會再自動相加（可能已寫入），改列為待核對，避免數量重複。
+ * - 讀取購物車失敗：什麼都沒寫入，保留全部訪客款式，之後再合併。
+ * - 409：重讀後整車版本不同才是「別處剛更新」，重試一次；版本相同代表款式本身的問題
+ *   （下架、庫存不足、款式數上限），列出原因並繼續處理其他款式。
+ * - 400／404／422：伺服器明確拒絕、未寫入，列出原因並繼續。
+ * - 網路錯誤或 5xx：結果未知，不自動重送；該款列為待核對並停止，其餘保留下次合併。
  */
 export function mergeGuestCart(): Promise<MergeResult> {
   if (merging) return merging
-  merging = (async () => {
-    const result: MergeResult = { merged: 0, skipped: [] }
-    outer: for (const line of [...guestLines.value]) {
-      // 409（整車版本已變）代表這次寫入沒有生效，重讀後再試一次是安全的
-      for (let attempt = 0; attempt < 2; attempt++) {
-        try {
-          const cart = await getCart()
-          const current = cart.items.find(i => i.skuId === line.skuId)?.quantity || 0
-          const target = Math.min(MAX_QTY, current + line.quantity)
-          const updated = target === current ? cart : await setCartItem(line.skuId, target, cart.version)
-          serverCount.value = countOf(updated)
+  const locks = (typeof navigator !== 'undefined' ? (navigator as any).locks : undefined)
+  const run = () => doMerge()
+  merging = (locks?.request ? locks.request('figura-guest-cart-merge', run) as Promise<MergeResult> : run())
+    .finally(() => { merging = null })
+  return merging
+}
+
+async function doMerge(): Promise<MergeResult> {
+  const result: MergeResult = { merged: 0, skipped: [], uncertain: [] }
+  const finish = () => {
+    if (result.merged || result.skipped.length || result.uncertain.length || result.error) lastMerge.value = result
+    return result
+  }
+  guestLines.value = read()
+  for (const l of guestLines.value.filter(l => l.pending)) {
+    result.uncertain.push(issue(l, '上次合併被中斷，請核對購物車數量'))
+    removeGuest(l.skuId)
+  }
+  for (const line of guestLines.value.filter(l => !l.pending)) {
+    let retried = false
+    for (;;) {
+      let cart: CartView
+      try { cart = await getCart() }
+      catch (e) { result.error = e instanceof CustomerApiError && e.status === 401 ? LOGIN_LOST : READ_FAILED; return finish() }
+      const current = cart.items.find(i => i.skuId === line.skuId)?.quantity || 0
+      const target = Math.min(MAX_QTY, current + line.quantity)
+      if (target === current) { removeGuest(line.skuId); result.merged++; break }
+      setPending(line.skuId, true)
+      try {
+        serverCount.value = countOf(await setCartItem(line.skuId, target, cart.version))
+        removeGuest(line.skuId); result.merged++; break
+      } catch (e) {
+        if (!(e instanceof CustomerApiError) || e.status >= 500) {
           removeGuest(line.skuId)
-          result.merged++
-          continue outer
-        } catch (e) {
-          if (e instanceof CustomerApiError && e.status === 409 && attempt === 0) continue
-          if (e instanceof CustomerApiError && e.status === 401) { result.error = '登入狀態已失效，訪客購物車保留在這台裝置。'; break outer }
-          if (e instanceof CustomerApiError && [400, 404, 422].includes(e.status)) { result.skipped.push(line.skuId); removeGuest(line.skuId); continue outer }
-          if (e instanceof CustomerApiError && e.status === 409) { result.error = '購物車剛被其他裝置更新，尚未合併的款式保留在這台裝置，請重新整理購物車。'; break outer }
-          // 回應未確認：伺服器可能已寫入，不能再自動合併同一款（會重複相加）。
-          // 從訪客購物車移出並列出，請顧客在購物車核對數量；其餘未處理款式保留，下次再合併。
-          result.uncertain = true
-          result.uncertainSkus = [line.skuId]
-          removeGuest(line.skuId)
-          result.error = '有款式的合併結果未確認，請核對下方購物車數量；其餘尚未合併的款式仍保留在這台裝置。'
-          break outer
+          result.uncertain.push(issue(line, '合併結果未確認，請核對購物車數量'))
+          result.error = UNCERTAIN
+          return finish()
         }
+        setPending(line.skuId, false)
+        if (e.status === 401) { result.error = LOGIN_LOST; return finish() }
+        if (e.status === 409 && !retried) {
+          const now = await getCart().catch(() => null)
+          if (now && now.version !== cart.version) { retried = true; continue }
+        }
+        removeGuest(line.skuId)
+        result.skipped.push(issue(line, e.message || '無法加入購物車'))
+        break
       }
     }
-    if (result.merged || result.skipped.length || result.error) lastMerge.value = result
-    return result
-  })().finally(() => { merging = null })
-  return merging
+  }
+  return finish()
 }
 
 /* 登入後回到原頁：存在 sessionStorage（不放網址，避免改變 /shop/login 路徑），30 分鐘內有效。 */
