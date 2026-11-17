@@ -9,6 +9,7 @@ export interface DirectOrder { requestId:string;productId:string;skuId:string;qu
 /** 直接購買：只下單這一款，不經過也不清空購物車。 */
 export const placeDirectOrder=(body:DirectOrder)=>customerRequest<{order:OrderView;replayed:boolean}>('/orders/direct','POST',body)
 export const placeOrder=(body:PlaceOrder)=>customerRequest<{order:OrderView;replayed:boolean}>('/orders','POST',body)
+export const getOrder=(id:string)=>customerRequest<OrderView>(`/orders/${encodeURIComponent(id)}`)
 export const getOrders=(page=1)=>customerRequest<Page<OrderView>>(`/orders?page=${page}&pageSize=10`)
 export const cancelOrder=(id:string,expectedVersion:number)=>customerRequest<OrderView>(`/orders/${encodeURIComponent(id)}/cancel`,'POST',{expectedVersion})
 export const orderStatus=(status:OrderView['status'])=>({PENDING_PAYMENT:'待付款',CANCELLED:'已取消',EXPIRED:'已逾時',PAID:'已付款',REFUNDED:'已退款（模擬）'})[status]

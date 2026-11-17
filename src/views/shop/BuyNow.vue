@@ -1,16 +1,20 @@
 <script setup lang="ts">
 // 直接購買：只買這一款，不經過也不改動購物車。未登入時由路由守衛導向登入，登入後回到這一頁。
 // 下單成功後直接前往該筆訂單的付款區。
+// 送出後若回應未確認，把原操作（同一 requestId／內容）保存在這個分頁，離頁或重新登入回來後只能用同一操作重試，避免重複下單。
 import { computed, onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
 import ProductCover from './ProductCover.vue'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
 import { getAddresses, type AddressView } from '@/api/shopping'
 import { placeDirectOrder, type DirectOrder } from '@/api/orders'
-import { CustomerApiError } from '@/api/customer'
+import { CustomerApiError, getCustomer } from '@/api/customer'
+import { useCustomerStore } from '@/stores/customer'
+import { rememberReturn } from './guestCart'
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
-const route = useRoute(), router = useRouter()
+const PENDING_KEY = 'figura.buyNow.pending.v1'
+const route = useRoute(), router = useRouter(), store = useCustomerStore()
 const productId = typeof route.query.product === 'string' && UUID.test(route.query.product) ? route.query.product : ''
 const skuId = typeof route.query.sku === 'string' && UUID.test(route.query.sku) ? route.query.sku : ''
 const rawQty = Number(route.query.qty)
@@ -18,24 +22,39 @@ const quantity = ref(Number.isInteger(rawQty) && rawQty >= 1 && rawQty <= 99 ? r
 
 const product = ref<PublicProduct>(), addresses = ref<AddressView[]>([]), addressId = ref('')
 const busy = ref(false), error = ref(''), needsReload = ref(false), attempt = ref<DirectOrder>(), unknown = ref(false)
-const sku = computed(() => product.value?.skus.find(s => s.id === skuId))
-const subtotal = computed(() => sku.value ? sku.value.priceTwd * quantity.value : 0)
+// 恢復未確認操作時，顯示的是原操作的款式與金額
+const sku = computed(() => product.value?.skus.find(s => s.id === (attempt.value?.skuId || skuId)))
+const subtotal = computed(() => unknown.value && attempt.value ? attempt.value.expectedSubtotalTwd : sku.value ? sku.value.priceTwd * quantity.value : 0)
 const selectedAddress = computed(() => addresses.value.find(a => a.id === addressId.value))
 const validQty = computed(() => Number.isInteger(quantity.value) && quantity.value >= 1 && quantity.value <= 99)
 
+function savePending(customerId: string, body: DirectOrder) { try { sessionStorage.setItem(PENDING_KEY, JSON.stringify({ customerId, body })) } catch { /* 無法保存時只保留在記憶體 */ } }
+function clearPending() { try { sessionStorage.removeItem(PENDING_KEY) } catch { /* ignore */ } }
+function readPending(customerId: string): DirectOrder | undefined {
+  try { const v = JSON.parse(sessionStorage.getItem(PENDING_KEY) || 'null'); return v && v.customerId === customerId && v.body && UUID.test(v.body.requestId) ? v.body : undefined } catch { return undefined }
+}
+async function toLogin() { rememberReturn(route.fullPath); await router.replace('/shop/login') }
+
 async function load() {
-  if (busy.value || unknown.value) return
+  if (busy.value) return
   busy.value = true; error.value = ''
   try {
-    if (!productId || !skuId) { error.value = '找不到要購買的商品，請回商品頁重新選擇。'; return }
-    const [p, list] = await Promise.all([publicProduct(productId), getAddresses()])
+    const me = await getCustomer(); store.profile = me
+    // 先前未確認的直接購買：恢復原操作，只允許同一操作重試
+    const pending = readPending(me.id)
+    if (pending) { attempt.value = pending; unknown.value = true; quantity.value = pending.quantity }
+    const pid = pending?.productId || productId, sid = pending?.skuId || skuId
+    if (!pid || !sid) { error.value = '找不到要購買的商品，請回商品頁重新選擇。'; return }
+    const [p, list] = await Promise.all([publicProduct(pid), getAddresses()])
     product.value = p; addresses.value = list
-    if (!list.some(a => a.id === addressId.value)) addressId.value = list[0]?.id || ''
-    if (!sku.value) error.value = '這個款式已不存在，請回商品頁重新選擇。'
+    if (pending) addressId.value = pending.addressId
+    else if (!list.some(a => a.id === addressId.value)) addressId.value = list[0]?.id || ''
+    if (pending) error.value = '上一次下單結果未確認，請按「用同一操作重試」，或到我的訂單核對；不要重新建立另一筆。'
+    else if (!sku.value) error.value = '這個款式已不存在，請回商品頁重新選擇。'
     else if (!sku.value.available) error.value = '這個款式目前沒有庫存。'
     needsReload.value = false
   } catch (e) {
-    if (e instanceof CustomerApiError && e.status === 401) { await router.replace('/shop/login'); return }
+    if (e instanceof CustomerApiError && e.status === 401) { busy.value = false; await toLogin(); return }
     error.value = e instanceof Error ? e.message : '無法載入商品'
   } finally { busy.value = false }
 }
@@ -44,23 +63,39 @@ async function submit() {
   if (busy.value || needsReload.value) return
   if (!unknown.value) {
     const address = selectedAddress.value
-    if (!product.value || !sku.value || !sku.value.available || !address) return
+    if (!product.value || !sku.value || !sku.value.available || !address || !store.profile) return
     if (!validQty.value) { error.value = '數量需為 1–99 的整數。'; return }
     attempt.value = { requestId: crypto.randomUUID(), productId, skuId, quantity: quantity.value, addressId: address.id, addressVersion: address.version, expectedSubtotalTwd: subtotal.value }
+    // 送出前先保存：若回應遺失或離頁，回來後仍是同一操作
+    savePending(store.profile.id, attempt.value)
   }
   busy.value = true; error.value = ''
   try {
     const result = await placeDirectOrder(attempt.value!)
-    unknown.value = false
+    clearPending(); unknown.value = false; attempt.value = undefined
     await router.replace({ path: '/shop/orders', query: { pay: result.order.id } })
   } catch (e) {
-    error.value = e instanceof Error ? e.message : '下單失敗'
-    unknown.value = !(e instanceof CustomerApiError && [400, 401, 404, 409].includes(e.status))
-    if (e instanceof CustomerApiError && e.status === 401) { await router.replace('/shop/login'); return }
-    if (unknown.value) error.value = '下單結果未確認，請按「用同一操作重試」，或到我的訂單核對；不要重新建立另一筆。'
-    else { needsReload.value = true; attempt.value = undefined }
+    if (e instanceof CustomerApiError && e.status === 401) {
+      // 未授權只代表這次沒被處理，不能證明先前沒成功：保留原操作，重新登入後回到這頁用同一操作重試
+      unknown.value = true; error.value = '登入已失效，請重新登入後用同一操作重試。'; busy.value = false; await toLogin(); return
+    }
+    const known = e instanceof CustomerApiError && [400, 404, 409].includes(e.status)
+    if (known) { clearPending(); unknown.value = false; attempt.value = undefined; needsReload.value = true; error.value = e instanceof Error ? e.message : '下單失敗' }
+    else { unknown.value = true; error.value = '下單結果未確認，請按「用同一操作重試」，或到我的訂單核對；不要重新建立另一筆。' }
   } finally { busy.value = false }
 }
+/** 核對後放棄：只有使用者確認已在我的訂單核對過才清除保存的操作。 */
+function abandon() {
+  if (!window.confirm('確定已在「我的訂單」核對過，要放棄這次未確認的下單嗎？')) return
+  clearPending(); unknown.value = false; attempt.value = undefined; error.value = ''; needsReload.value = true
+}
+onBeforeRouteLeave(to => {
+  // 本頁自己的去向（成功後到付款、登入失效到登入頁）一律放行
+  if (to.path === '/shop/orders' || to.path === '/shop/login') return true
+  if (busy.value) return false
+  if (unknown.value) return window.confirm('下單結果尚未確認。離開後回到此頁仍會保留同一操作，確定離開？')
+  return true
+})
 onMounted(load)
 </script>
 
@@ -70,14 +105,14 @@ onMounted(load)
    <h1>直接購買</h1>
    <ol class="steps" aria-label="結帳步驟"><li aria-current="step">1 確認訂單</li><li>2 付款</li></ol>
   </div>
-  <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" class="link" @click="load">重新核對</button></p>
-  <div v-if="product && sku" class="layout">
+  <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" class="link" @click="load">重新核對</button><router-link v-if="unknown" to="/shop/orders">到我的訂單核對 →</router-link> <button v-if="unknown" class="link" @click="abandon">已核對，放棄這次下單</button></p>
+  <div v-if="product && (sku || unknown)" class="layout">
    <article class="item" data-testid="buy-now-item">
     <router-link class="thumb" :to="'/shop/products/' + product.id" :aria-label="'查看商品 ' + product.title"><ProductCover :image="product.image" :category="product.category" /></router-link>
     <div class="info">
      <h2>{{ product.title }}</h2>
-     <p>款式：{{ sku.label }}</p>
-     <p>{{ money(sku.priceTwd) }} / 件</p>
+     <p>款式：{{ sku?.label || '—' }}</p>
+     <p v-if="sku">{{ money(sku.priceTwd) }} / 件</p>
     </div>
     <div class="qty">
      <label for="buy-qty">數量</label>
@@ -99,7 +134,7 @@ onMounted(load)
     <p v-if="selectedAddress" class="ship-to">{{ selectedAddress.recipientName }} · {{ selectedAddress.phone }}<br>{{ selectedAddress.postalCode }} {{ selectedAddress.city }}{{ selectedAddress.district }}{{ selectedAddress.street }}</p>
     <p v-if="!addresses.length" class="shop-error">請先新增收件地址，再回到這一頁。</p>
     <router-link to="/shop/addresses" class="addr-link">管理收件地址 →</router-link>
-    <button class="shop-button primary submit" data-testid="buy-now-submit" :disabled="busy || needsReload || (!unknown && (!sku.available || !addressId || !validQty))" @click="submit">{{ unknown ? '用同一操作重試' : '確認下單並前往付款' }}</button>
+    <button class="shop-button primary submit" data-testid="buy-now-submit" :disabled="busy || needsReload || (!unknown && (!sku?.available || !addressId || !validQty))" @click="submit">{{ unknown ? '用同一操作重試' : '確認下單並前往付款' }}</button>
     <p class="fine">只購買這一款，不會改動購物車。送出後保留庫存 30 分鐘，請在時限內完成付款；逾時自動取消。</p>
    </aside>
   </div>

@@ -2,7 +2,7 @@
 import { nextTick,onBeforeUnmount,onMounted,ref } from 'vue'
 import { useRoute,useRouter } from 'vue-router'
 import { CustomerApiError } from '@/api/customer'
-import { getOrders,cancelOrder,orderStatus,fulfillmentStatus,type OrderView } from '@/api/orders'
+import { getOrders,getOrder,cancelOrder,orderStatus,fulfillmentStatus,type OrderView } from '@/api/orders'
 import CustomerReturnPanel from '@/views/shop/CustomerReturnPanel.vue'
 import MockPaymentPanel from '@/views/shop/MockPaymentPanel.vue'
 import { money,type Page } from '@/api/catalog'
@@ -12,6 +12,12 @@ async function failure(e:unknown){error.value=e instanceof Error?e.message:'操�
 async function load(next=page.value){if(busy.value)return;busy.value=true;error.value='';try{orders.value=await getOrders(next);page.value=next}catch(e){await failure(e)}finally{busy.value=false}}
 async function cancel(order:OrderView){if(busy.value||!window.confirm('取消這筆訂單並釋放保留庫存？'))return;busy.value=true;error.value='';try{const result=await cancelOrder(order.id,order.version);if(orders.value)orders.value.items=orders.value.items.map(o=>o.id===result.id?result:o)}catch(e){await failure(e);if(!(e instanceof CustomerApiError))error.value='取消結果未確認，請重新核對訂單。再次取消同一筆不會重複釋放庫存。'}finally{busy.value=false}}
 function updateOrder(order:OrderView){if(orders.value)orders.value.items=orders.value.items.map(o=>o.id===order.id?order:o)}
+async function landOnPayment(id:string){
+ let order=orders.value?.items.find(o=>o.id===id)
+ if(!order){try{order=await getOrder(id);if(orders.value)orders.value.items=[order,...orders.value.items]}catch(e){await failure(e);return}}
+ await nextTick();document.querySelector(`[data-testid="payment-panel-${id}"]`)?.scrollIntoView({block:'center',behavior:'instant'})
+ returnNotice.value=order.status==='PENDING_PAYMENT'?`訂單已建立，請在 ${time(order.expiresAt)}（台北時間）前完成付款。`:`這筆訂單目前狀態：${orderStatus(order.status)}。`
+}
 let returnTimer:number|undefined,left=false
 /** 從綠界返回只代表瀏覽器回來了；付款結果以綠界伺服器通知為準，這裡只重新讀取狀態。 */
 async function checkReturn(attempt=0){
@@ -28,8 +34,8 @@ onMounted(async()=>{
  const id=pick(route.query.ecpay),pay=pick(route.query.pay)
  if(id||pay)await router.replace({path:route.path,query:{}})
  await load()
- // 直接購買下單後：捲到該筆訂單的付款區
- if(pay){await nextTick();document.querySelector(`[data-testid="payment-panel-${pay}"]`)?.scrollIntoView({block:'center',behavior:'instant'});returnNotice.value='訂單已建立，請在 30 分鐘內完成付款。';return}
+ // 直接購買下單後：捲到該筆訂單的付款區；不在目前這頁時，單獨讀取這筆本人訂單放在最上面
+ if(pay){await landOnPayment(pay);return}
  if(!id)return
  returned.value=id;await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start',behavior:'instant'});await checkReturn()
 })
