@@ -8,7 +8,7 @@ export interface PlaceOrder { requestId:string;cartVersion:number;addressId:stri
 export const placeOrder=(body:PlaceOrder)=>customerRequest<{order:OrderView;replayed:boolean}>('/orders','POST',body)
 export const getOrders=(page=1)=>customerRequest<Page<OrderView>>(`/orders?page=${page}&pageSize=10`)
 export const cancelOrder=(id:string,expectedVersion:number)=>customerRequest<OrderView>(`/orders/${encodeURIComponent(id)}/cancel`,'POST',{expectedVersion})
-export const orderStatus=(status:OrderView['status'])=>({PENDING_PAYMENT:'待付款',CANCELLED:'已取消',EXPIRED:'已逾時',PAID:'已付款（模擬）',REFUNDED:'已退款（模擬）'})[status]
+export const orderStatus=(status:OrderView['status'])=>({PENDING_PAYMENT:'待付款',CANCELLED:'已取消',EXPIRED:'已逾時',PAID:'已付款',REFUNDED:'已退款（模擬）'})[status]
 
 export const fulfillmentStatus=(status:FulfillmentProgress['status'])=>({UNFULFILLED:'尚未出貨',SHIPPED:'已模擬出貨',DELIVERED:'已模擬送達'})[status]
 export const orderTime=(value:string)=>new Intl.DateTimeFormat('zh-TW',{dateStyle:'short',timeStyle:'medium',timeZone:'Asia/Taipei'}).format(new Date(value+'+08:00'))

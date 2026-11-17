@@ -1,5 +1,15 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-17：綠界測試環境信用卡付款
+
+分支 `feat/ecpay`（基於 `feat/customer-email-phone`，需與後端 `feat/ecpay`／V20 一起上線）。
+
+- `src/api/payments.ts`：`startEcpayPayment`、`submitEcpay`（只允許 `https://payment-stage.ecpay.com.tw`，建立隱藏表單 POST）、`ecpayStatus`；付款 `provider` 可為 `ECPAY`。
+- `MockPaymentPanel.vue`：標題改「付款」，分「信用卡（綠界測試環境）」與「付款模擬」兩區；未確認回應保留同一 requestId 重試（同 mock 規則）。
+- `CustomerOrders.vue`：讀 `?ecpay=<訂單ID>`（ClientBackURL）→ 清掉 query、捲到該訂單、每 3 秒重讀最多 6 次等綠界伺服器通知；返回頁本身不改狀態。
+- 訂單狀態文字 `已付款（模擬）`→`已付款`、`模擬付款時間`→`付款時間`（綠界與模擬共用），smoke 已同步。
+- 驗證：`npm run build` 通過；瀏覽器實測見下方本輪紀錄。
+
 ## 2026-11-17：手機＋Email＋密碼註冊、Email 驗證、忘記密碼、FB／LINE 按鈕
 
 分支 `feat/customer-email-phone`（接在 `feat/guest-cart` 之後）。**依賴後端 figura-api 同名分支的 V19 API；後端 PR 有 schema 變更，需作者受控切換後才能部署，兩個 PR 要一起上線。** 未動 `package-lock.json`、`src/assets/`。
