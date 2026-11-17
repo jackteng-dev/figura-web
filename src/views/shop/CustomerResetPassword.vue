@@ -4,9 +4,10 @@ import { useRoute, useRouter } from 'vue-router'
 import { resetPassword } from '@/api/customer'
 import PasswordField from '@/components/PasswordField.vue'
 const route=useRoute(),router=useRouter(),password=ref(''),confirm=ref(''),pending=ref(false),error=ref('')
-// 讀取連結中的 token 後立刻從網址移除，避免留在瀏覽紀錄或被分享出去
-const token=ref(typeof route.query.token==='string'?route.query.token:'')
-onMounted(()=>{if(route.query.token)router.replace({path:route.path})})
+// token 放在網址 # 之後（#token=…）：不會送到伺服器，也不會出現在 Referer。讀出後立刻從網址移除。
+const fromHash=new URLSearchParams(route.hash.replace(/^#/,'')).get('token')||''
+const token=ref(fromHash)
+onMounted(()=>{if(route.hash)router.replace({path:route.path})})
 async function submit(){
  if(pending.value)return
  if(password.value!==confirm.value){error.value='兩次輸入的密碼不一致';return}

@@ -25,7 +25,7 @@ const checks=[],errors=[];function check(name,ok){if(!ok)throw Error(name);check
   await page.getByRole('button',{name:'登出會員',exact:true}).click();await page.waitForURL('**/shop/login');await page.goto(base+'/home');await page.getByRole('heading',{name:'Figura 工作首頁'}).waitFor();check('登出顧客不登出員工',true);
   await page.goto(base+'/shop/account');await page.waitForURL('**/shop/login');check('員工登入不能代替顧客身分',true);
   check('localStorage／sessionStorage 不存顧客密碼',await page.evaluate(secret=>!JSON.stringify({...localStorage,...sessionStorage}).includes(secret),password));
-  await page.setViewportSize({width:390,height:844});await page.goto(base+'/shop/register');await page.getByRole('heading',{name:'建立顧客帳號',exact:true}).waitFor();check('390px 顧客註冊頁無橫向溢出',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.setViewportSize({width:390,height:844});await page.goto(base+'/shop/register');await page.getByRole('heading',{name:'註冊會員',exact:true}).waitFor();check('390px 顧客註冊頁無橫向溢出',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   check('正式 build 無未捕捉 JavaScript 錯誤',errors.length===0);
   fs.mkdirSync('work/customer-20261007',{recursive:true});fs.writeFileSync('work/customer-20261007/browser-customer.json',JSON.stringify({passed:checks.length,checks,errors,syntheticAccountsCreated:1},null,2));await page.screenshot({path:'work/customer-20261007/customer-register-mobile.png',fullPage:true});console.log('顧客正式瀏覽器驗證通過',checks.length,'項');
  }finally{await browser.close()}
