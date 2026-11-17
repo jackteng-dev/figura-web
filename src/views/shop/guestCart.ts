@@ -76,10 +76,18 @@ function readReview(customerId: string): ReviewItem[] {
   } catch { return [] }
 }
 export const reviewItems = ref<ReviewItem[]>([])
+const sameReview = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && a.skuId === b.skuId
+/** 目前應顯示的清單＝磁碟紀錄＋從未寫入磁碟的紀錄；已出現在磁碟上的記憶體紀錄同時從 unsaved 移除，避免重複。 */
+function combined(customerId: string): ReviewItem[] {
+  const disk = readReview(customerId)
+  const mem = (unsaved.get(customerId) || []).filter(m => !disk.some(d => sameReview(d, m)))
+  if (mem.length) unsaved.set(customerId, mem); else unsaved.delete(customerId)
+  return [...disk, ...mem]
+}
 /** 切換到目前登入的會員；之後顯示與清除都只針對這位會員。 */
 export function loadReview(customerId: string) {
   reviewOwner = customerId
-  reviewItems.value = customerId ? [...readReview(customerId), ...(unsaved.get(customerId) || [])] : []
+  reviewItems.value = customerId ? combined(customerId) : []
   try { localStorage.removeItem('figura.guestCart.review.v1') } catch { /* 舊版共用清單，不再使用 */ }
 }
 function addReview(customerId: string, item: ReviewItem) {
@@ -102,9 +110,7 @@ export function clearReview() {
 if (typeof window !== 'undefined') window.addEventListener('storage', e => {
   if (!reviewOwner || e.key !== reviewKey(reviewOwner)) return
   // 其他分頁更新了清單：以磁碟內容為主，再補上本分頁寫入失敗、只存在記憶體的紀錄
-  const disk = readReview(reviewOwner)
-  const mem = (unsaved.get(reviewOwner) || []).filter(m => !disk.some(d => d.kind === m.kind && d.skuId === m.skuId))
-  reviewItems.value = [...disk, ...mem]
+  reviewItems.value = combined(reviewOwner)
 })
 /** 最近一次合併的結果，購物車頁顯示用（登入頁合併後導回購物車時）。 */
 export const lastMerge = ref<MergeResult | null>(null)
