@@ -98,7 +98,11 @@ export function clearReview() {
   reviewItems.value = []
 }
 if (typeof window !== 'undefined') window.addEventListener('storage', e => {
-  if (reviewOwner && e.key === reviewKey(reviewOwner)) reviewItems.value = readReview(reviewOwner)
+  if (!reviewOwner || e.key !== reviewKey(reviewOwner)) return
+  // 其他分頁更新了清單：以磁碟內容為主，再補上本分頁寫入失敗、只存在記憶體的紀錄
+  const disk = readReview(reviewOwner)
+  const mem = (unsaved.get(reviewOwner) || []).filter(m => !disk.some(d => d.kind === m.kind && d.skuId === m.skuId))
+  reviewItems.value = [...disk, ...mem]
 })
 /** 最近一次合併的結果，購物車頁顯示用（登入頁合併後導回購物車時）。 */
 export const lastMerge = ref<MergeResult | null>(null)
