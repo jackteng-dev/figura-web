@@ -29,6 +29,8 @@ function write(lines: GuestLine[]) {
 }
 
 export const guestLines = ref<GuestLine[]>(read())
+/** 重新讀取 localStorage（登入前呼叫，取得其他分頁或上次中斷留下的最新內容）。 */
+export function reloadGuest() { guestLines.value = read() }
 export const guestCount = computed(() => guestLines.value.reduce((n, l) => n + l.quantity, 0))
 if (typeof window !== 'undefined') window.addEventListener('storage', e => { if (e.key === KEY) guestLines.value = read() })
 

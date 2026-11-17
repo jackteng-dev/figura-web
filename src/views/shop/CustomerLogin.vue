@@ -4,7 +4,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { loginCustomer, CustomerApiError } from '@/api/customer'
 import PasswordField from '@/components/PasswordField.vue'
 import { useCustomerStore } from '@/stores/customer'
-import { guestLines, mergeGuestCart, takeReturn } from './guestCart'
+import { guestLines, mergeGuestCart, takeReturn, reloadGuest } from './guestCart'
 const router=useRouter(),route=useRoute(),store=useCustomerStore()
 const username=ref(typeof route.query.username==='string'?route.query.username:''),password=ref(''),remember=ref(false),pending=ref(false),error=ref('')
 async function submit() {
@@ -15,6 +15,7 @@ async function submit() {
     store.profile=await loginCustomer({username:username.value.trim(),password:password.value,deviceId,rememberMe:remember.value})
     password.value=''
     // 有訪客購物車就合併進本人購物車；結果在購物車頁顯示，不阻擋登入
+    reloadGuest()
     const hadGuest=guestLines.value.length>0
     if(hadGuest)await mergeGuestCart().catch(()=>null)
     await router.replace(takeReturn()||(hadGuest?'/shop/cart':'/shop/account'))
