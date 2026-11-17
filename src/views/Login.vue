@@ -4,6 +4,7 @@ import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { adminLoginService } from '@/api/user'
 import type { LoginData } from '@/types/user'
+import PasswordField from '@/components/PasswordField.vue'
 const router = useRouter()
 const pending = ref(false)
 const registerData = ref<LoginData>({ username: '', password: '', rememberMe: false, deviceId: '' })
@@ -42,8 +43,8 @@ async function login() {
         </div>
         <div>
           <label class="form-label" for="login-password">密碼</label>
-          <input id="login-password" type="password" class="form-control" placeholder="請輸入密碼" autocomplete="current-password"
-            v-model="registerData.password">
+          <PasswordField id="login-password" class="form-control" placeholder="請輸入密碼" autocomplete="current-password"
+            v-model="registerData.password" />
           <div class="invalid-feedback">密碼過長</div>
         </div>
         <div class="row-between">

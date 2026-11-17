@@ -7,9 +7,9 @@ import { publicProduct, money, type PublicProduct } from '@/api/catalog'
 import { getCart,setCartItem } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
 import { taipeiTime } from '@/api/preorders'
-import { useRouter } from 'vue-router'
 import { useCatalog, daysLeft, shortDate } from './useCatalog'
-const router=useRouter(),quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
+import { addGuest, serverCount, countOf } from './guestCart'
+const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
 const catalog = useCatalog()
 let request = 0
@@ -24,10 +24,12 @@ async function add(){
   if(adding.value||uncertain.value||!selected.value)return;adding.value=true;message.value='';addError.value=''
   const skuId=selected.value,amount=quantity.value
   try{
-    await getCustomer();const cart=await getCart();const old=cart.items.find(i=>i.skuId===skuId);const total=(old?.quantity||0)+amount
+    // 未登入：放進這台裝置的訪客購物車，結帳時再登入
+    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,skuId,amount);message.value='已加入購物車。';return}throw e}
+    const cart=await getCart();const old=cart.items.find(i=>i.skuId===skuId);const total=(old?.quantity||0)+amount
     if(!Number.isInteger(total)||total<1||total>99)throw new Error('同款式最多 99 件，請核對購物車數量。')
-    await setCartItem(skuId,total,cart.version);message.value='已加入購物車。'
-  }catch(e){if(e instanceof CustomerApiError&&e.status===401)await router.push('/shop/login');else if(e instanceof TypeError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
+    serverCount.value=countOf(await setCartItem(skuId,total,cart.version));message.value='已加入購物車。'
+  }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
 }
 watch(() => route.params.id, load, { immediate: true })
 

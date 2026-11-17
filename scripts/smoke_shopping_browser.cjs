@@ -19,7 +19,7 @@ async function member(context){const name='webcart_'+crypto.randomUUID().replace
   const sku=product.skus[0].id,pp='/admin/products/'+product.id,inv=pp+'/skus/'+sku+'/inventory';
   r=await api(admin,inv+'/adjustments','POST',{requestId:crypto.randomUUID(),expectedVersion:0,delta:10,reason:'RESTOCK',note:'合成頁面測試'});if(r.status!==201)throw Error('restock');product=(await api(admin,pp+'/publication','PATCH',{expectedVersion:0,published:true})).data;
   const context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>errors.push(e.message));await page.route('**/*',route=>new URL(route.request().url()).hostname===new URL(base).hostname?route.continue():route.abort());
-  await page.goto(base+'/shop/cart');await page.waitForURL('**/shop/login');check('匿名購物車導向顧客登入',true);
+  await page.goto(base+'/shop/cart');await page.getByTestId('guest-cart-empty').waitFor();check('匿名購物車顯示訪客購物車（結帳時才登入）',new URL(page.url()).pathname==='/shop/cart');
   await page.goto(base+'/shop/addresses');await page.waitForURL('**/shop/login');check('匿名地址導向顧客登入',true);
   await member(context);await page.goto(base+'/shop/cart');await page.getByTestId('cart-empty').waitFor();check('本人初始購物車空白',true);
   await page.goto(base+'/shop/products/'+product.id);await page.getByRole('heading',{name:product.title,exact:true}).waitFor();await page.getByLabel('加入數量',{exact:true}).fill('2');await page.getByRole('button',{name:'加入購物車',exact:true}).click();await page.getByRole('status').filter({hasText:'已加入購物車'}).waitFor();check('商品詳情真實加入購物車',true);
