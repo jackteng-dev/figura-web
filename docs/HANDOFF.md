@@ -1,5 +1,13 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-17：移除暱稱與帳號名稱顯示
+
+分支 `feat/contact-only-login`，需與後端同名分支一起上線（後端關閉帳號名稱登入與暱稱 API）。
+
+- 會員中心只顯示 Email（驗證狀態／重寄）與手機；移除「帳號：…」、「你好，暱稱」與暱稱表單；`updateCustomer` 移除。
+- 頁首登入後顯示「會員中心」，不再顯示暱稱。
+- smoke 腳本的合成會員全部改為手機＋Email 註冊並以 Email 登入；顧客 smoke 改為檢查會員中心沒有暱稱。smoke 未實跑（只做語法檢查）。
+
 ## 2026-11-17：綠界測試環境信用卡付款
 
 分支 `feat/ecpay`（基於 `feat/customer-email-phone`，需與後端 `feat/ecpay`／V20 一起上線）。

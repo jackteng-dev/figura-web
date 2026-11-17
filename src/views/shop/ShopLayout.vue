@@ -14,7 +14,8 @@ const cartCount = computed(() => customer.profile ? (serverCount.value ?? 0) : g
 // 從頁首點登入：登入後回到目前頁面
 const loginFromHere = () => rememberReturn(route.fullPath)
 const navCategories = computed(() => categories.value.slice(0, 6))
-const memberName = computed(() => customer.profile?.displayName || customer.profile?.username || '')
+// 暱稱與帳號名稱已停用：登入後一律顯示「會員中心」
+const memberName = computed(() => customer.profile ? '會員中心' : '')
 function search() {
   const q = keyword.value.trim()
   router.push({ path: '/shop/products', query: q ? { q } : {} })

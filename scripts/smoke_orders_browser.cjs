@@ -10,7 +10,7 @@ async function api(context,path,method='GET',body,form=false){
  const r=await context.request.fetch(base+'/api'+path,{method,headers:method==='GET'?{}:{'X-XSRF-TOKEN':token},...(body===undefined?{}:form?{form:body}:{data:body})});
  return {status:r.status(),...(await r.json())};
 }
-async function member(context){const name='webcart_'+crypto.randomUUID().replaceAll('-','').slice(0,18),password=crypto.randomBytes(18).toString('base64url');let r=await api(context,'/customer/auth/register','POST',{username:name,password,displayName:'合成購物會員'});if(r.status!==201)throw Error('member register');r=await api(context,'/customer/auth/login','POST',{username:name,password,deviceId:crypto.randomUUID(),rememberMe:false});if(r.status!==200)throw Error('member login');return r.data}
+async function member(context){const name='webcart_'+crypto.randomUUID().replaceAll('-','').slice(0,18),password=crypto.randomBytes(18).toString('base64url');let r=await api(context,'/customer/auth/register','POST',{email:name+'@example.test',phone:'09'+String(crypto.randomInt(100000000)).padStart(8,'0'),password});if(r.status!==201)throw Error('member register');r=await api(context,'/customer/auth/login','POST',{username:name+'@example.test',password,deviceId:crypto.randomUUID(),rememberMe:false});if(r.status!==200)throw Error('member login');return r.data}
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_PATH||undefined});
  let customerContext,other;

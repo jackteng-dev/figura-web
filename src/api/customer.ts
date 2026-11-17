@@ -25,7 +25,6 @@ export async function customerRequest<T>(path: string, method = 'GET', body?: un
   return result.data as T
 }
 export const getCustomer = () => customerRequest<CustomerView>('/me')
-export const updateCustomer = (displayName: string) => customerRequest<CustomerView>('/me','PATCH',{displayName})
 export const registerCustomer = (data: {email:string;phone:string;password:string}) => customerRequest<CustomerView>('/auth/register','POST',data)
 export const verifyEmail = (token: string) => customerRequest<CustomerView>('/auth/email/verify','POST',{token})
 export const forgotPassword = (email: string) => customerRequest<void>('/auth/password/forgot','POST',{email})
