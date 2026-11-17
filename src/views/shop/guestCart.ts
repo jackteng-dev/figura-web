@@ -154,7 +154,7 @@ async function doMerge(customerId: string): Promise<MergeResult> {
     if (result.merged || result.skipped.length || result.uncertain.length || result.error) lastMerge.value = result
     return result
   }
-  guestLines.value = read()
+  reloadGuest() // 寫入失敗過就保留記憶體內容，不用磁碟覆蓋
   for (const l of guestLines.value.filter(l => l.pending)) {
     const it = issue(l, '上次合併被中斷，請核對購物車數量')
     // 記在當時合併的那位會員名下（可能不是現在登入的會員）
