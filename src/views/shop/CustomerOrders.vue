@@ -16,9 +16,12 @@ function updateOrder(order:OrderView){if(orders.value)orders.value.items=orders.
 const payTarget=ref('')
 async function landOnPayment(id:string){
  let order=orders.value?.items.find(o=>o.id===id)
- if(!order){try{order=await getOrder(id);if(orders.value)orders.value.items=[order,...orders.value.items.filter(o=>o.id!==id)]}catch(e){await failure(e);return}}
+ if(!order){try{const found=await getOrder(id);order=found;orders.value=orders.value?{...orders.value,items:[found,...orders.value.items.filter(o=>o.id!==id)]}:{items:[found],page:1,pageSize:10,total:1}}catch(e){await failure(e);return}}
+ await nextTick();const panel=document.querySelector(`[data-testid="payment-panel-${id}"]`)
+ if(!panel)return
+ panel.scrollIntoView({block:'center',behavior:'instant'})
+ // 付款區確實出現在畫面上才清除目標與網址參數
  payTarget.value='';if(route.query.pay)await router.replace({path:route.path,query:{}})
- await nextTick();document.querySelector(`[data-testid="payment-panel-${id}"]`)?.scrollIntoView({block:'center',behavior:'instant'})
  returnNotice.value=order.status==='PENDING_PAYMENT'?`訂單已建立，請在 ${time(order.expiresAt)}（台北時間）前完成付款。`:`這筆訂單目前狀態：${orderStatus(order.status)}。`
 }
 async function reload(){await load();if(payTarget.value)await landOnPayment(payTarget.value)}
