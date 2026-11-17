@@ -2,7 +2,7 @@
 import { computed, nextTick, ref, watch } from 'vue'
 import ProductCover from './ProductCover.vue'
 import ProductCard from './ProductCard.vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
 import { getCart,setCartItem } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
@@ -11,7 +11,7 @@ import { useCatalog, daysLeft, shortDate } from './useCatalog'
 import { addGuest, serverCount, countOf } from './guestCart'
 const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
-const catalog = useCatalog()
+const catalog = useCatalog(), router = useRouter()
 let request = 0
 async function load() {
   const generation = ++request; loading.value = true; error.value = ''; product.value = undefined
@@ -20,16 +20,17 @@ async function load() {
   finally { if (generation === request) loading.value = false }
   catalog.load()
 }
-async function add(){
-  if(adding.value||uncertain.value||!selected.value)return;adding.value=true;message.value='';addError.value=''
+/** buyNow：加入成功後直接前往購物車結帳（未登入時在結帳步驟才登入）。 */
+async function add(buyNow=false){
+  if(adding.value||uncertain.value||!selected.value)return;let added=false;adding.value=true;message.value='';addError.value=''
   const skuId=selected.value,amount=quantity.value
   try{
     // 未登入：放進這台裝置的訪客購物車，結帳時再登入
-    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,skuId,amount);message.value='已加入購物車。';return}throw e}
+    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,skuId,amount);message.value='已加入購物車。';added=true;return}throw e}
     const cart=await getCart();const old=cart.items.find(i=>i.skuId===skuId);const total=(old?.quantity||0)+amount
     if(!Number.isInteger(total)||total<1||total>99)throw new Error('同款式最多 99 件，請核對購物車數量。')
-    serverCount.value=countOf(await setCartItem(skuId,total,cart.version));message.value='已加入購物車。'
-  }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
+    serverCount.value=countOf(await setCartItem(skuId,total,cart.version));message.value='已加入購物車。';added=true
+  }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false;if(added&&buyNow)await router.push('/shop/cart')}
 }
 watch(() => route.params.id, load, { immediate: true })
 
@@ -109,7 +110,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <div v-if="selectedSku" class="stock-note">現貨供應中・確認下單後保留庫存 30 分鐘，付款後安排出貨</div>
           <div v-else-if="product.skus.length" class="stock-note none">目前所有款式暫無現貨<template v-if="batches.length">，可參考下方預購批次</template></div>
 
-          <form class="add-form" @submit.prevent="add">
+          <form class="add-form" @submit.prevent="add()">
             <div class="qty-row">
               <label for="purchase-quantity">加入數量</label>
               <div class="stepper">
@@ -119,13 +120,13 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
               </div>
             </div>
             <div class="actions">
-              <button class="shop-button primary" :disabled="adding||uncertain||!selected">加入購物車</button>
-              <router-link class="shop-button ghost" to="/shop/cart">前往購物車</router-link>
+              <button class="shop-button ghost" :disabled="adding||uncertain||!selected">加入購物車</button>
+              <button type="button" class="shop-button primary" data-testid="buy-now" :disabled="adding||uncertain||!selected" @click="add(true)">直接購買</button>
             </div>
           </form>
           <p v-if="message" class="shop-success" role="status">{{ message }} <router-link to="/shop/cart">查看購物車 →</router-link></p>
           <p v-if="addError" class="shop-error" role="alert">{{ addError }} <router-link to="/shop/cart">核對購物車 →</router-link></p>
-          <p class="purchase-note">加入購物車不保留庫存，價格與可用狀態會在下單時重新核對。付款與配送目前為模擬演練。</p>
+          <p class="purchase-note">加入購物車不保留庫存，價格與可用狀態會在下單時重新核對。付款為綠界測試環境或模擬、配送為模擬演練，不會實際收款或出貨。</p>
           </template>
         </section>
 
