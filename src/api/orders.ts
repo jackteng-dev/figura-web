@@ -5,6 +5,9 @@ export interface OrderLine { skuId:string;productId:string;title:string;label:st
 export interface FulfillmentProgress { status:'UNFULFILLED'|'SHIPPED'|'DELIVERED';provider:'MOCK';trackingId:string|null;shippedAt:string|null;deliveredAt:string|null }
 export interface OrderView { id:string;status:'PENDING_PAYMENT'|'CANCELLED'|'EXPIRED'|'PAID'|'REFUNDED';version:number;subtotalTwd:number;shippingTwd:number;totalTwd:number;shipping:{recipientName:string;phone:string;postalCode:string;city:string;district:string;street:string};items:OrderLine[];createdAt:string;expiresAt:string;closedAt:string|null;paidAt:string|null;fulfillment:FulfillmentProgress;refund:{status:'REFUNDED';provider:'MOCK';amountTwd:number;refundedAt:string}|null;returnProgress:ReturnProgress|null }
 export interface PlaceOrder { requestId:string;cartVersion:number;addressId:string;addressVersion:number;expectedSubtotalTwd:number }
+export interface DirectOrder { requestId:string;productId:string;skuId:string;quantity:number;addressId:string;addressVersion:number;expectedSubtotalTwd:number }
+/** 直接購買：只下單這一款，不經過也不清空購物車。 */
+export const placeDirectOrder=(body:DirectOrder)=>customerRequest<{order:OrderView;replayed:boolean}>('/orders/direct','POST',body)
 export const placeOrder=(body:PlaceOrder)=>customerRequest<{order:OrderView;replayed:boolean}>('/orders','POST',body)
 export const getOrders=(page=1)=>customerRequest<Page<OrderView>>(`/orders?page=${page}&pageSize=10`)
 export const cancelOrder=(id:string,expectedVersion:number)=>customerRequest<OrderView>(`/orders/${encodeURIComponent(id)}/cancel`,'POST',{expectedVersion})

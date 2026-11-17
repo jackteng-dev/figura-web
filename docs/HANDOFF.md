@@ -1,5 +1,14 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-18：直接購買改為「只買這一款」
+
+分支 `feat/buy-now`（疊在 `feat/contact-only-login` 上，需搭配後端同名分支的 `POST /customer/orders/direct`）。
+
+- 商品頁「直接購買」不再放進購物車，改導向 `/shop/buy-now?product=&sku=&qty=`（需登入；未登入由路由守衛導向登入，登入後回到這頁）。
+- `BuyNow.vue`：顯示該款式、數量、金額與收件地址，「確認下單並前往付款」建立訂單後到 `/shop/orders?pay=<訂單ID>`，自動捲到該筆訂單的付款區（綠界／模擬）。未確認回應保留同一 requestId 重試。
+- 訂單頁的捲動改用 `behavior:'instant'`（全站 CSS 是 smooth，預覽窗格不繪製時 smooth 不會執行）。
+- 驗證：build 通過；瀏覽器實測未登入 → 登入頁 → 登入後回到直接購買頁（2 件、NT$1,040）→ 下單 → 訂單頁付款區在畫面內、伺服器購物車未變；已登入直接進確認頁。
+
 ## 2026-11-17：移除暱稱與帳號名稱顯示
 
 分支 `feat/contact-only-login`，需與後端同名分支一起上線（後端關閉帳號名稱登入與暱稱 API）。

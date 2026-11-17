@@ -24,10 +24,14 @@ async function checkReturn(attempt=0){
  returnTimer=window.setTimeout(async()=>{if(left)return;await load();await checkReturn(attempt+1)},3000)
 }
 onMounted(async()=>{
- const id=typeof route.query.ecpay==='string'&&/^[0-9a-f-]{36}$/.test(route.query.ecpay)?route.query.ecpay:''
- if(id)await router.replace({path:route.path,query:{}})
- await load();if(!id)return
- returned.value=id;await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start'});await checkReturn()
+ const pick=(v:unknown)=>typeof v==='string'&&/^[0-9a-f-]{36}$/.test(v)?v:''
+ const id=pick(route.query.ecpay),pay=pick(route.query.pay)
+ if(id||pay)await router.replace({path:route.path,query:{}})
+ await load()
+ // 直接購買下單後：捲到該筆訂單的付款區
+ if(pay){await nextTick();document.querySelector(`[data-testid="payment-panel-${pay}"]`)?.scrollIntoView({block:'center',behavior:'instant'});returnNotice.value='訂單已建立，請在 30 分鐘內完成付款。';return}
+ if(!id)return
+ returned.value=id;await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start',behavior:'instant'});await checkReturn()
 })
 onBeforeUnmount(()=>{left=true;window.clearTimeout(returnTimer)})
 </script>

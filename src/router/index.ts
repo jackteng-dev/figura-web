@@ -31,6 +31,7 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'verify-email', component: () => import('@/views/shop/CustomerVerifyEmail.vue'), meta: { public: true } },
     { path: 'account', component: () => import('@/views/shop/CustomerAccount.vue') },
     { path: 'orders', component: () => import('@/views/shop/CustomerOrders.vue') },
+    { path: 'buy-now', component: () => import('@/views/shop/BuyNow.vue') },
     { path: 'cart', component: () => import('@/views/shop/CustomerCart.vue'), meta: { public: true } },
     { path: 'addresses', component: () => import('@/views/shop/CustomerAddresses.vue') },
     { path: ':pathMatch(.*)*', component: NotFound, meta: { public: true } }
