@@ -8,8 +8,8 @@ import { CustomerApiError } from '@/api/customer'
  * 登入後合併進本人伺服器購物車（同款數量相加，上限 99），每一步都帶整車版本，
  * 回應未確認時不自動重送，停下並保留尚未合併的款式。
  */
-// pending：已送出合併寫入但尚未確認結果（見 mergeGuestCart）
-export interface GuestLine { skuId: string; productId: string; quantity: number; pending?: boolean }
+// pending：已送出合併寫入但尚未確認結果（見 mergeGuestCart）；pendingFor：當時合併到哪位會員
+export interface GuestLine { skuId: string; productId: string; quantity: number; pending?: boolean; pendingFor?: string }
 const KEY = 'figura.guestCart.v1'
 export const MAX_QTY = 99
 export const MAX_LINES = 30
@@ -19,7 +19,7 @@ function read(): GuestLine[] {
     const raw = JSON.parse(localStorage.getItem(KEY) || '[]')
     if (!Array.isArray(raw)) return []
     return raw.filter((l: any) => typeof l?.skuId === 'string' && typeof l?.productId === 'string' && Number.isInteger(l?.quantity) && l.quantity >= 1)
-      .map((l: any) => ({ skuId: l.skuId, productId: l.productId, quantity: Math.min(MAX_QTY, l.quantity), ...(l.pending === true ? { pending: true } : {}) }))
+      .map((l: any) => ({ skuId: l.skuId, productId: l.productId, quantity: Math.min(MAX_QTY, l.quantity), ...(l.pending === true ? { pending: true, ...(typeof l.pendingFor === 'string' ? { pendingFor: l.pendingFor } : {}) } : {}) }))
       .slice(0, MAX_LINES)
   } catch { return [] }
 }
@@ -65,8 +65,9 @@ export interface MergeResult { merged: number; skipped: MergeIssue[]; uncertain:
  */
 export interface ReviewItem extends MergeIssue { kind: 'uncertain' | 'skipped'; at: number }
 const REVIEW_PREFIX = 'figura.guestCart.review.v2.'
-const REVIEW_LIMIT = 200
 let reviewOwner = ''
+// 寫入 localStorage 失敗（空間不足、停用儲存）時只存在記憶體的紀錄，之後寫入時一併保留，不會被下一筆蓋掉
+const unsaved = new Map<string, ReviewItem[]>()
 const reviewKey = (customerId: string) => REVIEW_PREFIX + customerId
 function readReview(customerId: string): ReviewItem[] {
   try {
@@ -78,18 +79,22 @@ export const reviewItems = ref<ReviewItem[]>([])
 /** 切換到目前登入的會員；之後顯示與清除都只針對這位會員。 */
 export function loadReview(customerId: string) {
   reviewOwner = customerId
-  reviewItems.value = customerId ? readReview(customerId) : []
+  reviewItems.value = customerId ? (unsaved.get(customerId) || readReview(customerId)) : []
   try { localStorage.removeItem('figura.guestCart.review.v1') } catch { /* 舊版共用清單，不再使用 */ }
 }
 function addReview(customerId: string, item: ReviewItem) {
-  const current = readReview(customerId).filter(r => !(r.kind === item.kind && r.skuId === item.skuId))
-  const next = [...current, item].slice(-REVIEW_LIMIT)
-  try { localStorage.setItem(reviewKey(customerId), JSON.stringify(next)) } catch { /* 僅留在記憶體 */ }
+  const same = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && a.skuId === b.skuId
+  const pendingMem = unsaved.get(customerId) || []
+  const base = [...readReview(customerId), ...pendingMem.filter(m => !readReview(customerId).some(r => same(r, m)))]
+  const next = [...base.filter(r => !same(r, item)), item]
+  try { localStorage.setItem(reviewKey(customerId), JSON.stringify(next)); unsaved.delete(customerId) }
+  catch { unsaved.set(customerId, next) }
   if (reviewOwner === customerId) reviewItems.value = next
 }
 export function clearReview() {
   if (!reviewOwner) return
   try { localStorage.removeItem(reviewKey(reviewOwner)) } catch { /* ignore */ }
+  unsaved.delete(reviewOwner)
   reviewItems.value = []
 }
 if (typeof window !== 'undefined') window.addEventListener('storage', e => {
@@ -103,8 +108,8 @@ const READ_FAILED = '暫時無法讀取你的購物車，訪客購物車已保�
 const UNCERTAIN = '有款式的合併結果未確認，請核對下方購物車數量；其餘尚未合併的款式仍保留在這台裝置。'
 const BUSY = '購物車剛被其他地方更新，尚未合併的款式仍保留在這台裝置，稍後開啟購物車會再合併。'
 
-function setPending(skuId: string, pending: boolean) {
-  write(guestLines.value.map(l => l.skuId === skuId ? { ...l, pending } : l))
+function setPending(skuId: string, pending: boolean, customerId?: string) {
+  write(guestLines.value.map(l => l.skuId === skuId ? (pending ? { ...l, pending: true, pendingFor: customerId } : { skuId: l.skuId, productId: l.productId, quantity: l.quantity }) : l))
 }
 const issue = (l: GuestLine, reason: string): MergeIssue => ({ skuId: l.skuId, productId: l.productId, quantity: l.quantity, reason })
 
@@ -137,7 +142,10 @@ async function doMerge(customerId: string): Promise<MergeResult> {
   guestLines.value = read()
   for (const l of guestLines.value.filter(l => l.pending)) {
     const it = issue(l, '上次合併被中斷，請核對購物車數量')
-    result.uncertain.push(it); addReview(customerId, { ...it, kind: 'uncertain', at: Date.now() })
+    // 記在當時合併的那位會員名下（可能不是現在登入的會員）
+    const owner = l.pendingFor || customerId
+    if (owner === customerId) result.uncertain.push(it)
+    addReview(owner, { ...it, kind: 'uncertain', at: Date.now() })
     removeGuest(l.skuId)
   }
   for (const line of guestLines.value.filter(l => !l.pending)) {
@@ -149,7 +157,7 @@ async function doMerge(customerId: string): Promise<MergeResult> {
       const current = cart.items.find(i => i.skuId === line.skuId)?.quantity || 0
       const target = Math.min(MAX_QTY, current + line.quantity)
       if (target === current) { removeGuest(line.skuId); result.merged++; break }
-      setPending(line.skuId, true)
+      setPending(line.skuId, true, customerId)
       try {
         serverCount.value = countOf(await setCartItem(line.skuId, target, cart.version))
         removeGuest(line.skuId); result.merged++; break
