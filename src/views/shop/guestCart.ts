@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
 import { getCart, setCartItem, type CartView } from '@/api/shopping'
-import { CustomerApiError } from '@/api/customer'
+import { CustomerApiError, getCustomer } from '@/api/customer'
 
 /*
  * 訪客購物車：未登入時先把款式放在這台瀏覽器（localStorage），結帳時才要求登入。
@@ -23,16 +23,19 @@ function read(): GuestLine[] {
       .slice(0, MAX_LINES)
   } catch { return [] }
 }
+// 曾經寫入失敗（無痕、空間不足、停用儲存）時，記憶體內容較新，之後不再用磁碟內容覆蓋它
+let storageFailed = false
 function write(lines: GuestLine[]) {
   guestLines.value = lines
-  try { lines.length ? localStorage.setItem(KEY, JSON.stringify(lines)) : localStorage.removeItem(KEY) } catch { /* 無痕或停用儲存時只留在記憶體 */ }
+  try { lines.length ? localStorage.setItem(KEY, JSON.stringify(lines)) : localStorage.removeItem(KEY); storageFailed = false }
+  catch { storageFailed = true }
 }
 
 export const guestLines = ref<GuestLine[]>(read())
 /** 重新讀取 localStorage（登入前呼叫，取得其他分頁或上次中斷留下的最新內容）。 */
-export function reloadGuest() { guestLines.value = read() }
+export function reloadGuest() { if (!storageFailed) guestLines.value = read() }
 export const guestCount = computed(() => guestLines.value.reduce((n, l) => n + l.quantity, 0))
-if (typeof window !== 'undefined') window.addEventListener('storage', e => { if (e.key === KEY) guestLines.value = read() })
+if (typeof window !== 'undefined') window.addEventListener('storage', e => { if (e.key === KEY && !storageFailed) guestLines.value = read() })
 
 /** 加入訪客購物車；回傳加入後該款數量。超過上限丟出錯誤訊息。 */
 export function addGuest(productId: string, skuId: string, quantity: number) {
@@ -50,6 +53,18 @@ export function setGuest(skuId: string, quantity: number) {
   write(guestLines.value.map(l => l.skuId === skuId ? { ...l, quantity } : l))
 }
 export function removeGuest(skuId: string) { write(guestLines.value.filter(l => l.skuId !== skuId)) }
+/**
+ * 合併處理完一款後，只扣掉這次處理的件數（重讀最新內容）。若合併期間其他訪客分頁把同款改多，
+ * 多出來的件數會留下、下次再合併，而不是整筆刪除。
+ */
+function settleGuest(skuId: string, handled: number) {
+  reloadGuest()
+  write(guestLines.value.flatMap(l => {
+    if (l.skuId !== skuId) return [l]
+    const left = l.quantity - handled
+    return left > 0 ? [{ skuId: l.skuId, productId: l.productId, quantity: left }] : []
+  }))
+}
 
 /** 伺服器購物車件數（登入時），供頁首顯示；由購物車相關頁面更新。 */
 export const serverCount = ref<number | null>(null)
@@ -66,8 +81,6 @@ export interface MergeResult { merged: number; skipped: MergeIssue[]; uncertain:
 export interface ReviewItem extends MergeIssue { kind: 'uncertain' | 'skipped'; at: number }
 const REVIEW_PREFIX = 'figura.guestCart.review.v2.'
 let reviewOwner = ''
-// 寫入 localStorage 失敗（空間不足、停用儲存）時只存在記憶體的紀錄，之後寫入時一併保留，不會被下一筆蓋掉
-const unsaved = new Map<string, ReviewItem[]>()
 const reviewKey = (customerId: string) => REVIEW_PREFIX + customerId
 function readReview(customerId: string): ReviewItem[] {
   try {
@@ -77,13 +90,8 @@ function readReview(customerId: string): ReviewItem[] {
 }
 export const reviewItems = ref<ReviewItem[]>([])
 const sameReview = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && a.skuId === b.skuId
-/** 目前應顯示的清單＝磁碟紀錄＋從未寫入磁碟的紀錄；已出現在磁碟上的記憶體紀錄同時從 unsaved 移除，避免重複。 */
-function combined(customerId: string): ReviewItem[] {
-  const disk = readReview(customerId)
-  const mem = (unsaved.get(customerId) || []).filter(m => !disk.some(d => sameReview(d, m)))
-  if (mem.length) unsaved.set(customerId, mem); else unsaved.delete(customerId)
-  return [...disk, ...mem]
-}
+/** 待核對清單以 localStorage 為準。儲存無法使用時只保留在記憶體（重新整理後消失，已知限制）。 */
+function combined(customerId: string): ReviewItem[] { return readReview(customerId) }
 /** 切換到目前登入的會員；之後顯示與清除都只針對這位會員。 */
 export function loadReview(customerId: string) {
   reviewOwner = customerId
@@ -91,20 +99,14 @@ export function loadReview(customerId: string) {
   try { localStorage.removeItem('figura.guestCart.review.v1') } catch { /* 舊版共用清單，不再使用 */ }
 }
 function addReview(customerId: string, item: ReviewItem) {
-  const same = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && a.skuId === b.skuId
-  const disk = readReview(customerId)
-  // unsaved 只放「從未成功寫入磁碟」的紀錄，不放磁碟上已有的；
-  // 否則另一分頁按「我已了解」清掉的紀錄，會被這份備援補回來
-  const mem = (unsaved.get(customerId) || []).filter(m => !disk.some(d => same(d, m)) && !same(m, item))
-  const next = [...disk.filter(r => !same(r, item)), ...mem, item]
-  try { localStorage.setItem(reviewKey(customerId), JSON.stringify(next)); unsaved.delete(customerId) }
-  catch { unsaved.set(customerId, [...mem, item]) }
-  if (reviewOwner === customerId) reviewItems.value = next
+  const next = [...readReview(customerId).filter(r => !sameReview(r, item)), item]
+  let saved = true
+  try { localStorage.setItem(reviewKey(customerId), JSON.stringify(next)) } catch { saved = false }
+  if (reviewOwner === customerId) reviewItems.value = saved ? next : [...reviewItems.value.filter(r => !sameReview(r, item)), item]
 }
 export function clearReview() {
   if (!reviewOwner) return
   try { localStorage.removeItem(reviewKey(reviewOwner)) } catch { /* ignore */ }
-  unsaved.delete(reviewOwner)
   reviewItems.value = []
 }
 if (typeof window !== 'undefined') window.addEventListener('storage', e => {
@@ -118,6 +120,7 @@ let merging: Promise<MergeResult> | null = null
 const LOGIN_LOST = '登入狀態已失效，訪客購物車保留在這台裝置，請重新登入。'
 const READ_FAILED = '暫時無法讀取你的購物車，訪客購物車已保留，下次開啟購物車會再合併。'
 const UNCERTAIN = '有款式的合併結果未確認，請核對下方購物車數量；其餘尚未合併的款式仍保留在這台裝置。'
+const ACCOUNT_CHANGED = '登入的帳號已變更，已停止合併；訪客購物車保留在這台裝置。'
 const BUSY = '購物車剛被其他地方更新，尚未合併的款式仍保留在這台裝置，稍後開啟購物車會再合併。'
 
 function setPending(skuId: string, pending: boolean, customerId?: string) {
@@ -158,26 +161,29 @@ async function doMerge(customerId: string): Promise<MergeResult> {
     const owner = l.pendingFor || customerId
     if (owner === customerId) result.uncertain.push(it)
     addReview(owner, { ...it, kind: 'uncertain', at: Date.now() })
-    removeGuest(l.skuId)
+    settleGuest(l.skuId, l.quantity)
   }
   for (const line of guestLines.value.filter(l => !l.pending)) {
     let retried = false
     for (;;) {
+      // 合併期間若有其他分頁換了登入帳號，共享的 Cookie 會指向另一位會員：確認身分仍相同才寫入
+      try { if ((await getCustomer()).id !== customerId) { result.error = ACCOUNT_CHANGED; return finish() } }
+      catch (e) { result.error = e instanceof CustomerApiError && e.status === 401 ? LOGIN_LOST : READ_FAILED; return finish() }
       let cart: CartView
       try { cart = await getCart() }
       catch (e) { result.error = e instanceof CustomerApiError && e.status === 401 ? LOGIN_LOST : READ_FAILED; return finish() }
       const current = cart.items.find(i => i.skuId === line.skuId)?.quantity || 0
       const target = Math.min(MAX_QTY, current + line.quantity)
-      if (target === current) { removeGuest(line.skuId); result.merged++; break }
+      if (target === current) { settleGuest(line.skuId, line.quantity); result.merged++; break }
       setPending(line.skuId, true, customerId)
       try {
         serverCount.value = countOf(await setCartItem(line.skuId, target, cart.version))
-        removeGuest(line.skuId); result.merged++; break
+        settleGuest(line.skuId, line.quantity); result.merged++; break
       } catch (e) {
         if (!(e instanceof CustomerApiError) || e.status >= 500) {
           const it = issue(line, '合併結果未確認，請核對購物車數量')
           result.uncertain.push(it); addReview(customerId, { ...it, kind: 'uncertain', at: Date.now() })
-          removeGuest(line.skuId)
+          settleGuest(line.skuId, line.quantity)
           result.error = UNCERTAIN
           return finish()
         }
@@ -191,7 +197,7 @@ async function doMerge(customerId: string): Promise<MergeResult> {
           if (now.version !== cart.version) { retried = true; continue }
           // 版本相同：是這款本身的問題（下架、庫存不足、款式數上限），列出原因並繼續其他款式
         }
-        removeGuest(line.skuId)
+        settleGuest(line.skuId, line.quantity)
         const skipped = issue(line, e.message || '無法加入購物車')
         result.skipped.push(skipped); addReview(customerId, { ...skipped, kind: 'skipped', at: Date.now() })
         break
