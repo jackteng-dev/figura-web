@@ -3,7 +3,7 @@ import { computed,onBeforeUnmount,onMounted,ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { CustomerApiError, getCustomer } from '@/api/customer'
 import { useCustomerStore } from '@/stores/customer'
-import { reloadGuest, guestLines, setGuest, removeGuest, mergeGuestCart, lastMerge, rememberReturn, serverCount, countOf, MAX_QTY } from './guestCart'
+import { reviewItems, clearReview, reloadGuest, guestLines, setGuest, removeGuest, mergeGuestCart, lastMerge, rememberReturn, serverCount, countOf, MAX_QTY } from './guestCart'
 import { getCart,setCartItem,removeCartItem,issueText,type CartView } from '@/api/shopping'
 import { getAddresses,type AddressView } from '@/api/shopping'
 import { placeOrder,type PlaceOrder } from '@/api/orders'
@@ -48,7 +48,7 @@ async function start(){
 onMounted(start)
 onBeforeUnmount(()=>{lastMerge.value=null})
 // 合併結果：成功件數、未加入的款式與原因、需要核對的款式（結果未確認）與錯誤，全部顯示給顧客
-const titleOf=(productId:string)=>catalog.products.value.find(p=>p.id===productId)?.title||'已下架商品'
+const titleOf=(productId:string,skuId?:string)=>{const p=catalog.products.value.find(x=>x.id===productId);if(!p)return '已下架商品';const s=p.skus.find(x=>x.id===skuId);return s?`${p.title}・${s.label}`:p.title}
 const mergeMerged=computed(()=>mergeNote.value?.merged?`已把登入前加入的 ${mergeNote.value.merged} 種款式合併進你的購物車（同款數量相加）。`:'')
 const guestQty=ref<Record<string,number>>({})
 const guestView=computed(()=>{
@@ -76,11 +76,13 @@ function goLogin(path:'/shop/login'|'/shop/register'){rememberReturn('/shop/cart
   <p v-if="error" role="alert" class="shop-error">{{ error }}</p><p v-if="success" role="status" class="shop-success">{{ success }}</p>
   <div v-if="mode==='member'&&mergeNote" class="merge-note" data-testid="merge-result">
    <p v-if="mergeMerged" class="shop-success" role="status">{{ mergeMerged }}</p>
-   <div v-if="mergeNote.uncertain.length||mergeNote.error" class="shop-error" role="alert">
-    <p v-if="mergeNote.error">{{ mergeNote.error }}</p>
-    <ul v-if="mergeNote.uncertain.length"><li v-for="m in mergeNote.uncertain" :key="'u'+m.skuId">{{ titleOf(m.productId) }}（登入前加入 {{ m.quantity }} 件）：{{ m.reason }}</li></ul>
-   </div>
-   <div v-if="mergeNote.skipped.length" class="merge-skipped" role="status"><p>以下款式沒有加入購物車：</p><ul><li v-for="m in mergeNote.skipped" :key="'s'+m.skuId">{{ titleOf(m.productId) }}（{{ m.quantity }} 件）：{{ m.reason }}</li></ul></div>
+   <p v-if="mergeNote.error" class="shop-error" role="alert">{{ mergeNote.error }}</p>
+   <div v-if="mergeNote.skipped.length" class="merge-skipped" role="status"><p>以下款式沒有加入購物車：</p><ul><li v-for="m in mergeNote.skipped" :key="'s'+m.skuId">{{ titleOf(m.productId,m.skuId) }}（{{ m.quantity }} 件）：{{ m.reason }}</li></ul></div>
+  </div>
+  <div v-if="mode==='member'&&reviewItems.length" class="shop-error review-box" role="alert" data-testid="merge-review">
+   <p>以下款式在登入前加入購物車，但合併結果未確認，可能已經加入。請核對下方購物車數量，需要時自行調整：</p>
+   <ul><li v-for="m in reviewItems" :key="'r'+m.skuId">{{ titleOf(m.productId,m.skuId) }}（登入前加入 {{ m.quantity }} 件）：{{ m.reason }}</li></ul>
+   <button type="button" class="shop-button ghost" @click="clearReview">我已核對</button>
   </div>
   <p v-if="mode==='loading'&&!error" role="status">正在載入…</p>
   <button v-if="mode==='loading'&&error" class="shop-button" @click="start">重新載入</button>
@@ -157,7 +159,7 @@ function goLogin(path:'/shop/login'|'/shop/register'){rememberReturn('/shop/cart
 .line-end{display:flex;flex-direction:column;align-items:flex-end;gap:8px;min-width:96px}.line-total{font-size:17px;font-weight:900}
 .remove-button{border:0;background:transparent;color:#4b5060;font:inherit;font-size:14px;text-decoration:underline;padding:8px 4px;cursor:pointer;min-height:40px}.remove-button:disabled{opacity:.5;cursor:not-allowed}
 .issue-note{margin:0;font-size:14px}
-.merge-note{margin:0 0 12px;display:flex;flex-direction:column;gap:8px}.merge-note p{margin:0}.merge-note ul{margin:6px 0 0;padding-left:20px}.merge-skipped{background:#fff7f1;border:1px solid #fed7bd;border-radius:12px;padding:12px 14px;font-size:14px;color:#7c2d12}.guest-register{text-align:center;font-size:14px}
+.merge-note{margin:0 0 12px;display:flex;flex-direction:column;gap:8px}.merge-note p{margin:0}.merge-note ul{margin:6px 0 0;padding-left:20px}.review-box{margin:0 0 12px}.review-box ul{margin:6px 0;padding-left:20px}.merge-skipped{background:#fff7f1;border:1px solid #fed7bd;border-radius:12px;padding:12px 14px;font-size:14px;color:#7c2d12}.guest-register{text-align:center;font-size:14px}
 .pre-hint{background:#fff7f1;border:1px solid #fed7bd;border-radius:12px;padding:14px 16px;font-size:14px;color:#7c2d12}.shop-shell .pre-hint a{color:#9a3412;font-weight:700}
 .checkout-panel{flex:1 1 340px;min-width:0;background:#fff;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px;position:sticky;top:140px}
 .checkout-panel h2{font-size:20px;margin:0 0 4px}
