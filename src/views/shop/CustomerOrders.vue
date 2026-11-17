@@ -12,12 +12,16 @@ async function failure(e:unknown){error.value=e instanceof Error?e.message:'操�
 async function load(next=page.value){if(busy.value)return;busy.value=true;error.value='';try{orders.value=await getOrders(next);page.value=next}catch(e){await failure(e)}finally{busy.value=false}}
 async function cancel(order:OrderView){if(busy.value||!window.confirm('取消這筆訂單並釋放保留庫存？'))return;busy.value=true;error.value='';try{const result=await cancelOrder(order.id,order.version);if(orders.value)orders.value.items=orders.value.items.map(o=>o.id===result.id?result:o)}catch(e){await failure(e);if(!(e instanceof CustomerApiError))error.value='取消結果未確認，請重新核對訂單。再次取消同一筆不會重複釋放庫存。'}finally{busy.value=false}}
 function updateOrder(order:OrderView){if(orders.value)orders.value.items=orders.value.items.map(o=>o.id===order.id?order:o)}
+// 要落點的訂單：讀取成功才清掉網址參數；失敗時「重新核對訂單」會再試一次
+const payTarget=ref('')
 async function landOnPayment(id:string){
  let order=orders.value?.items.find(o=>o.id===id)
- if(!order){try{order=await getOrder(id);if(orders.value)orders.value.items=[order,...orders.value.items]}catch(e){await failure(e);return}}
+ if(!order){try{order=await getOrder(id);if(orders.value)orders.value.items=[order,...orders.value.items.filter(o=>o.id!==id)]}catch(e){await failure(e);return}}
+ payTarget.value='';if(route.query.pay)await router.replace({path:route.path,query:{}})
  await nextTick();document.querySelector(`[data-testid="payment-panel-${id}"]`)?.scrollIntoView({block:'center',behavior:'instant'})
  returnNotice.value=order.status==='PENDING_PAYMENT'?`訂單已建立，請在 ${time(order.expiresAt)}（台北時間）前完成付款。`:`這筆訂單目前狀態：${orderStatus(order.status)}。`
 }
+async function reload(){await load();if(payTarget.value)await landOnPayment(payTarget.value)}
 let returnTimer:number|undefined,left=false
 /** 從綠界返回只代表瀏覽器回來了；付款結果以綠界伺服器通知為準，這裡只重新讀取狀態。 */
 async function checkReturn(attempt=0){
@@ -32,10 +36,10 @@ async function checkReturn(attempt=0){
 onMounted(async()=>{
  const pick=(v:unknown)=>typeof v==='string'&&/^[0-9a-f-]{36}$/.test(v)?v:''
  const id=pick(route.query.ecpay),pay=pick(route.query.pay)
- if(id||pay)await router.replace({path:route.path,query:{}})
+ if(id)await router.replace({path:route.path,query:{}})
  await load()
  // 直接購買下單後：捲到該筆訂單的付款區；不在目前這頁時，單獨讀取這筆本人訂單放在最上面
- if(pay){await landOnPayment(pay);return}
+ if(pay){payTarget.value=pay;await landOnPayment(pay);return}
  if(!id)return
  returned.value=id;await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start',behavior:'instant'});await checkReturn()
 })
@@ -43,7 +47,7 @@ onBeforeUnmount(()=>{left=true;window.clearTimeout(returnTimer)})
 </script>
 <template><section><h1>我的訂單</h1><p>價格、商品與收件資料保存下單時的快照。待付款保留 30 分鐘，到期後系統釋放庫存；付款可使用綠界測試環境或付款模擬，都不會實際收款。</p>
 <p v-if="returnNotice" role="status" class="shop-success" data-testid="ecpay-return">{{ returnNotice }}</p>
-<p v-if="error" role="alert" class="shop-error">{{ error }}</p><button class="shop-button" :disabled="busy" @click="load()">重新核對訂單</button>
+<p v-if="error" role="alert" class="shop-error">{{ error }}</p><button class="shop-button" :disabled="busy" @click="reload">重新核對訂單</button>
 <p v-if="orders&&!orders.items.length" data-testid="orders-empty">目前沒有訂單。</p>
 <article v-for="order in orders?.items" :key="order.id" class="order-card" :data-testid="'order-'+order.id"><h2>{{ orderStatus(order.status) }}</h2><p class="order-number">訂單編號：{{ order.id }}</p><p>建立：{{ time(order.createdAt) }}<br>保留期限：{{ time(order.expiresAt) }}（台北時間）</p>
 <p v-if="order.paidAt">付款時間：{{ time(order.paidAt) }}（台北時間）</p><ul><li v-for="line in order.items" :key="line.skuId">{{ line.title }} · {{ line.label }} × {{ line.quantity }} · {{ money(line.unitPriceTwd) }}／件 · {{ money(line.lineTotalTwd) }}</li></ul>

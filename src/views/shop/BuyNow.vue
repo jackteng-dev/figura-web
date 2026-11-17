@@ -28,10 +28,13 @@ const subtotal = computed(() => unknown.value && attempt.value ? attempt.value.e
 const selectedAddress = computed(() => addresses.value.find(a => a.id === addressId.value))
 const validQty = computed(() => Number.isInteger(quantity.value) && quantity.value >= 1 && quantity.value <= 99)
 
-function savePending(customerId: string, body: DirectOrder) { try { sessionStorage.setItem(PENDING_KEY, JSON.stringify({ customerId, body })) } catch { /* 無法保存時只保留在記憶體 */ } }
-function clearPending() { try { sessionStorage.removeItem(PENDING_KEY) } catch { /* ignore */ } }
+// 依顧客分開保存，同分頁切換帳號不會互相覆蓋
+const keyOf = (customerId: string) => PENDING_KEY + '.' + customerId
+let owner = ''
+function savePending(customerId: string, body: DirectOrder) { owner = customerId; try { sessionStorage.setItem(keyOf(customerId), JSON.stringify({ customerId, body })) } catch { /* 無法保存時只保留在記憶體 */ } }
+function clearPending() { if (!owner) return; try { sessionStorage.removeItem(keyOf(owner)) } catch { /* ignore */ } }
 function readPending(customerId: string): DirectOrder | undefined {
-  try { const v = JSON.parse(sessionStorage.getItem(PENDING_KEY) || 'null'); return v && v.customerId === customerId && v.body && UUID.test(v.body.requestId) ? v.body : undefined } catch { return undefined }
+  try { const v = JSON.parse(sessionStorage.getItem(keyOf(customerId)) || 'null'); return v && v.customerId === customerId && v.body && UUID.test(v.body.requestId) ? v.body : undefined } catch { return undefined }
 }
 async function toLogin() { rememberReturn(route.fullPath); await router.replace('/shop/login') }
 
@@ -39,13 +42,13 @@ async function load() {
   if (busy.value) return
   busy.value = true; error.value = ''
   try {
-    const me = await getCustomer(); store.profile = me
+    const me = await getCustomer(); store.profile = me; owner = me.id
     // 先前未確認的直接購買：恢復原操作，只允許同一操作重試
     const pending = readPending(me.id)
     if (pending) { attempt.value = pending; unknown.value = true; quantity.value = pending.quantity }
     const pid = pending?.productId || productId, sid = pending?.skuId || skuId
     if (!pid || !sid) { error.value = '找不到要購買的商品，請回商品頁重新選擇。'; return }
-    const [p, list] = await Promise.all([publicProduct(pid), getAddresses()])
+    const [p, list] = await Promise.all([publicProduct(pid).catch(e => { if (pending) return undefined; throw e }), getAddresses()])
     product.value = p; addresses.value = list
     if (pending) addressId.value = pending.addressId
     else if (!list.some(a => a.id === addressId.value)) addressId.value = list[0]?.id || ''
@@ -106,6 +109,10 @@ onMounted(load)
    <ol class="steps" aria-label="結帳步驟"><li aria-current="step">1 確認訂單</li><li>2 付款</li></ol>
   </div>
   <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" class="link" @click="load">重新核對</button><router-link v-if="unknown" to="/shop/orders">到我的訂單核對 →</router-link> <button v-if="unknown" class="link" @click="abandon">已核對，放棄這次下單</button></p>
+  <div v-if="unknown && attempt && !product" class="pending-box" data-testid="buy-now-pending">
+   <p>上一次直接購買：數量 {{ attempt.quantity }}，金額 {{ money(attempt.expectedSubtotalTwd) }}。商品資料目前無法讀取，仍可用同一操作重試或到我的訂單核對。</p>
+   <button class="shop-button primary" data-testid="buy-now-submit" :disabled="busy" @click="submit">用同一操作重試</button>
+  </div>
   <div v-if="product && (sku || unknown)" class="layout">
    <article class="item" data-testid="buy-now-item">
     <router-link class="thumb" :to="'/shop/products/' + product.id" :aria-label="'查看商品 ' + product.title"><ProductCover :image="product.image" :category="product.category" /></router-link>
@@ -156,6 +163,7 @@ onMounted(load)
 .panel label{font-size:14px;font-weight:700;margin-top:8px}.panel select{padding:10px;border:1px solid #d5d8e0;border-radius:8px;font:inherit}
 .ship-to{font-size:13px;color:#4b5060;margin:0}.addr-link{font-size:13px}
 .submit{margin-top:8px;padding:14px;font-size:16px}.fine{font-size:12px;color:#4b5060;margin:0}
+.pending-box{background:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .link{border:0;background:transparent;color:#1d4ed8;text-decoration:underline;cursor:pointer;font:inherit}
 @media(max-width:600px){.item{grid-template-columns:72px minmax(0,1fr);}.thumb{width:72px}.qty,.line-total{grid-column:2}}
 </style>
