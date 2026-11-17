@@ -3,7 +3,7 @@ import { computed,onBeforeUnmount,onMounted,ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { CustomerApiError, getCustomer } from '@/api/customer'
 import { useCustomerStore } from '@/stores/customer'
-import { guestLines, setGuest, removeGuest, mergeGuestCart, lastMerge, rememberReturn, serverCount, countOf, MAX_QTY } from './guestCart'
+import { reloadGuest, guestLines, setGuest, removeGuest, mergeGuestCart, lastMerge, rememberReturn, serverCount, countOf, MAX_QTY } from './guestCart'
 import { getCart,setCartItem,removeCartItem,issueText,type CartView } from '@/api/shopping'
 import { getAddresses,type AddressView } from '@/api/shopping'
 import { placeOrder,type PlaceOrder } from '@/api/orders'
@@ -41,6 +41,7 @@ async function start(){
  try{customerStore.profile=await getCustomer()}
  catch(e){if(e instanceof CustomerApiError&&e.status===401){customerStore.clear();mode.value='guest';return}error.value=e instanceof Error?e.message:'讀取登入狀態失敗，請重試。';return}
  mode.value='member'
+ reloadGuest()
  if(guestLines.value.length){busy.value=true;try{mergeNote.value=await mergeGuestCart()}finally{busy.value=false}}
  await load()
 }
