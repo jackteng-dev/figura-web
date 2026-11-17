@@ -8,19 +8,20 @@ import MockPaymentPanel from '@/views/shop/MockPaymentPanel.vue'
 import { money,type Page } from '@/api/catalog'
 const route=useRoute(),router=useRouter(),returned=ref(''),returnNotice=ref(''),orders=ref<Page<OrderView>>(),page=ref(1),busy=ref(false),error=ref('')
 const time=(value:string)=>new Intl.DateTimeFormat('zh-TW',{dateStyle:'short',timeStyle:'medium',timeZone:'Asia/Taipei'}).format(new Date(value+'+08:00'))
-async function failure(e:unknown){error.value=e instanceof Error?e.message:'操作失敗';if(e instanceof CustomerApiError&&e.status===401)await router.replace('/shop/login')}
+async function failure(e:unknown){error.value=e instanceof Error?e.message:'操作失敗';if(!left&&e instanceof CustomerApiError&&e.status===401)await router.replace('/shop/login')}
 async function load(next=page.value){if(busy.value)return;busy.value=true;error.value='';try{orders.value=await getOrders(next);page.value=next}catch(e){await failure(e)}finally{busy.value=false}}
 async function cancel(order:OrderView){if(busy.value||!window.confirm('取消這筆訂單並釋放保留庫存？'))return;busy.value=true;error.value='';try{const result=await cancelOrder(order.id,order.version);if(orders.value)orders.value.items=orders.value.items.map(o=>o.id===result.id?result:o)}catch(e){await failure(e);if(!(e instanceof CustomerApiError))error.value='取消結果未確認，請重新核對訂單。再次取消同一筆不會重複釋放庫存。'}finally{busy.value=false}}
 function updateOrder(order:OrderView){if(orders.value)orders.value.items=orders.value.items.map(o=>o.id===order.id?order:o)}
-let returnTimer:number|undefined
+let returnTimer:number|undefined,left=false
 /** 從綠界返回只代表瀏覽器回來了；付款結果以綠界伺服器通知為準，這裡只重新讀取狀態。 */
 async function checkReturn(attempt=0){
+ if(left)return
  const order=orders.value?.items.find(o=>o.id===returned.value)
  if(!order){returnNotice.value='已從綠界返回，請在下方核對訂單付款狀態。';return}
  if(order.status!=='PENDING_PAYMENT'){returnNotice.value=order.status==='PAID'?'綠界付款已確認，訂單已付款。':'訂單狀態已更新，請核對下方內容。';return}
  if(attempt>=6){returnNotice.value='尚未收到綠界付款通知。若已付款請稍後按「重新核對訂單」；未完成可再次前往綠界付款。';return}
  returnNotice.value='已從綠界返回，正在等待綠界付款通知…'
- returnTimer=window.setTimeout(async()=>{await load();await checkReturn(attempt+1)},3000)
+ returnTimer=window.setTimeout(async()=>{if(left)return;await load();await checkReturn(attempt+1)},3000)
 }
 onMounted(async()=>{
  const id=typeof route.query.ecpay==='string'&&/^[0-9a-f-]{36}$/.test(route.query.ecpay)?route.query.ecpay:''
@@ -28,7 +29,7 @@ onMounted(async()=>{
  await load();if(!id)return
  returned.value=id;await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start'});await checkReturn()
 })
-onBeforeUnmount(()=>window.clearTimeout(returnTimer))
+onBeforeUnmount(()=>{left=true;window.clearTimeout(returnTimer)})
 </script>
 <template><section><h1>我的訂單</h1><p>價格、商品與收件資料保存下單時的快照。待付款保留 30 分鐘，到期後系統釋放庫存；付款可使用綠界測試環境或付款模擬，都不會實際收款。</p>
 <p v-if="returnNotice" role="status" class="shop-success" data-testid="ecpay-return">{{ returnNotice }}</p>
