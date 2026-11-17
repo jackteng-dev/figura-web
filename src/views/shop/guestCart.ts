@@ -79,16 +79,18 @@ export const reviewItems = ref<ReviewItem[]>([])
 /** 切換到目前登入的會員；之後顯示與清除都只針對這位會員。 */
 export function loadReview(customerId: string) {
   reviewOwner = customerId
-  reviewItems.value = customerId ? (unsaved.get(customerId) || readReview(customerId)) : []
+  reviewItems.value = customerId ? [...readReview(customerId), ...(unsaved.get(customerId) || [])] : []
   try { localStorage.removeItem('figura.guestCart.review.v1') } catch { /* 舊版共用清單，不再使用 */ }
 }
 function addReview(customerId: string, item: ReviewItem) {
   const same = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && a.skuId === b.skuId
-  const pendingMem = unsaved.get(customerId) || []
-  const base = [...readReview(customerId), ...pendingMem.filter(m => !readReview(customerId).some(r => same(r, m)))]
-  const next = [...base.filter(r => !same(r, item)), item]
+  const disk = readReview(customerId)
+  // unsaved 只放「從未成功寫入磁碟」的紀錄，不放磁碟上已有的；
+  // 否則另一分頁按「我已了解」清掉的紀錄，會被這份備援補回來
+  const mem = (unsaved.get(customerId) || []).filter(m => !disk.some(d => same(d, m)) && !same(m, item))
+  const next = [...disk.filter(r => !same(r, item)), ...mem, item]
   try { localStorage.setItem(reviewKey(customerId), JSON.stringify(next)); unsaved.delete(customerId) }
-  catch { unsaved.set(customerId, next) }
+  catch { unsaved.set(customerId, [...mem, item]) }
   if (reviewOwner === customerId) reviewItems.value = next
 }
 export function clearReview() {
