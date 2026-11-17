@@ -1,5 +1,20 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-17：手機＋Email＋密碼註冊、Email 驗證、忘記密碼、FB／LINE 按鈕
+
+分支 `feat/customer-email-phone`（接在 `feat/guest-cart` 之後）。**依賴後端 figura-api 同名分支的 V19 API；後端 PR 有 schema 變更，需作者受控切換後才能部署，兩個 PR 要一起上線。** 未動 `package-lock.json`、`src/assets/`。
+
+- **註冊** `CustomerRegister.vue`：手機（TW +886）、Email、密碼，不需暱稱；重複 Email／手機顯示後端 409 訊息。註冊後導向登入並提示「驗證信已寄到你的 Email」。
+- **登入** `CustomerLogin.vue`：「手機或 Email」＋密碼（舊帳號名稱仍可登入）、「忘記密碼？」連結。
+- **新頁面**（公開路由）：`/shop/forgot-password`（不論 Email 是否註冊都顯示相同結果）、`/shop/reset-password`（token 讀出後立即從網址移除；新密碼兩次確認；成功後所有裝置登出）、`/shop/verify-email`（token 同樣立即移除）。這三頁不列入「登入後回原頁」。
+- **會員中心**：帳號顯示 Email（舊帳號顯示帳號名稱）、Email 驗證狀態（已驗證／未驗證）與「重寄驗證信」、手機。
+- **FB／LINE**：`SocialLogin.vue` 在註冊與登入頁顯示兩個圓形按鈕，**目前按下沒有任何動作**，待作者申請 Meta／LINE 金鑰後再接 OAuth。
+- **員工後台**：通知頁下方新增「模擬信件」（`MockEmailPanel.vue`，需 `notifications.detail`），列出模擬寄出的驗證／重設信與一次性連結。
+- **smoke**：`smoke_customer_browser.cjs` 註冊改填「手機號碼」「Email」，帳號以 Email 比對。
+- **驗證**：`npm run build` 成功；本機（後端 V19、`MOCK_EMAIL_ENABLED=true`）瀏覽器端到端：註冊（Email 大寫、手機含空白皆正規化）、重複 Email／手機／錯誤手機格式訊息、FB 按鈕無動作、手機登入、會員中心未驗證→模擬信連結驗證→已驗證、同連結重用失敗、忘記密碼、重設後舊登入 401／舊密碼 401／新密碼 200。員工「模擬信件」以 API 驗證，後台畫面未目視確認。Playwright smoke 未跑。
+
+---
+
 ## 2026-11-17：訪客購物車（結帳時才登入）
 
 分支 `feat/guest-cart`。只改前端 `src/views/shop/`、`src/router/index.ts` 與兩支 smoke 腳本；後端、API 合約、`package-lock.json`、`src/assets/` 未動。

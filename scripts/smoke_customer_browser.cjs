@@ -3,7 +3,7 @@ const fs = require('node:fs'), crypto = require('node:crypto');
 const base = process.env.SHOP_FRONTEND_URL || 'http://127.0.0.1:15176';
 if (!['127.0.0.1','localhost'].includes(new URL(base).hostname)) throw Error('只允許 loopback 演練');
 if (!process.env.DEMO_ADMIN_PASSWORD) throw Error('需私有展示店長密碼');
-const username='web_'+crypto.randomUUID().replaceAll('-','').slice(0,18),password=crypto.randomBytes(18).toString('base64url');
+const username='web_'+crypto.randomUUID().replaceAll('-','').slice(0,18)+'@example.com',phone='09'+String(crypto.randomInt(0,1e8)).padStart(8,'0'),password=crypto.randomBytes(18).toString('base64url');
 const checks=[],errors=[];function check(name,ok){if(!ok)throw Error(name);checks.push(name)}
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_PATH||undefined,headless:true});
@@ -13,7 +13,7 @@ const checks=[],errors=[];function check(name,ok){if(!ok)throw Error(name);check
   await page.goto(base+'/shop');await page.getByRole('heading',{name:/讓喜歡的角色/}).waitFor();check('公開商店入口可讀且不導向員工登入',page.url().endsWith('/shop'));
   await page.goto(base+'/shop/not-a-page');await page.getByRole('heading',{name:'找不到這個頁面 😢'}).waitFor();check('顧客未知路由留商店並顯示找不到頁面',page.url().endsWith('/shop/not-a-page'));await page.getByRole('link',{name:'返回首頁',exact:true}).click();await page.waitForURL('**/shop');
   await page.goto(base+'/shop/account');await page.waitForURL('**/shop/login');check('匿名會員中心導向顧客登入',true);
-  await page.goto(base+'/shop/register');await page.getByLabel('顧客帳號',{exact:true}).fill(username);await page.getByLabel('暱稱',{exact:true}).fill('網頁會員');await page.getByLabel('密碼',{exact:true}).fill(password);await page.getByRole('button',{name:'建立帳號',exact:true}).click();await page.waitForURL('**/shop/login?**');await page.getByRole('status').filter({hasText:'帳號已建立'}).waitFor();check('顧客註冊真實 API 成功',true);
+  await page.goto(base+'/shop/register');await page.getByLabel('手機號碼',{exact:true}).fill(phone);await page.getByLabel('Email',{exact:true}).fill(username);await page.getByLabel('密碼',{exact:true}).fill(password);await page.getByRole('button',{name:'建立帳號',exact:true}).click();await page.waitForURL('**/shop/login?**');await page.getByRole('status').filter({hasText:'帳號已建立'}).waitFor();check('顧客註冊真實 API 成功',true);
   check('註冊後不保留密碼欄位',await page.getByLabel('密碼',{exact:true}).inputValue()==='');
   await page.getByLabel('密碼',{exact:true}).fill('wrong-password-2026');await page.getByRole('button',{name:'登入會員',exact:true}).click();await page.getByRole('alert').waitFor();check('錯誤密碼保留顧客頁並顯示錯誤',new URL(page.url()).pathname==='/shop/login');
   await page.getByLabel('密碼',{exact:true}).fill(password);await page.getByRole('button',{name:'登入會員',exact:true}).click();await page.waitForURL('**/shop/account');await page.getByTestId('member-username').waitFor();check('顧客登入會員中心回本人',await page.getByTestId('member-username').innerText()===username);
