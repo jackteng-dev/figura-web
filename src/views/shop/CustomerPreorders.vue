@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { onBeforeRouteLeave } from 'vue-router'
-import { preorderOrders, cancelPreorder, preorderStatus, type PreorderOrder, type PreorderCancel } from '@/api/preorderOrders'
+import { nextTick, onMounted, ref } from 'vue'
+import { onBeforeRouteLeave, useRoute } from 'vue-router'
+import { preorderOrders, preorderOrder, cancelPreorder, preorderStatus, type PreorderOrder, type PreorderCancel } from '@/api/preorderOrders'
 import { CustomerApiError } from '@/api/customer'
 import { taipeiTime } from '@/api/preorders'
 import { money } from '@/api/catalog'
@@ -28,10 +28,22 @@ async function cancel(order?: PreorderOrder) {
   } finally { busy.value = false }
 }
 onBeforeRouteLeave(() => !pending.value || window.confirm('取消結果尚未確認。離開會失去原操作，確定離開？'))
-onMounted(load)
+/** 從統一訂單中心點「查看詳情」：捲到該筆預購；不在目前這頁就單獨讀取放在最上面。 */
+const route = useRoute()
+async function focusOrder(id: string) {
+  if (!rows.value.some(o => o.id === id)) {
+    try { const found = await preorderOrder(id); rows.value = [found, ...rows.value] } catch (e: any) { error.value = e.message || '讀取這筆預購失敗。'; return }
+  }
+  await nextTick(); document.querySelector(`[data-order-id="${id}"]`)?.scrollIntoView({ block: 'start', behavior: 'instant' })
+}
+onMounted(async () => {
+  await load()
+  const focus = typeof route.query.focus === 'string' && /^[0-9a-f-]{36}$/.test(route.query.focus) ? route.query.focus : ''
+  if (focus) await focusOrder(focus)
+})
 </script>
 <template>
-  <section class="my-preorders"><h1>我的預購</h1><p>預購付款與退款為模擬，不會實際收款或轉帳。未付款的保留逾時會釋放配額；批次截單不會直接取消既有訂單。</p>
+  <section class="my-preorders"><p class="back"><router-link to="/shop/my-orders?kind=PREORDER">← 全部訂單</router-link></p><h1>預購訂單詳情</h1><p>預購付款與退款為模擬，不會實際收款或轉帳。未付款的保留逾時會釋放配額；批次截單不會直接取消既有訂單。</p>
     <p v-if="error" role="alert" class="shop-error">{{ error }}</p><p v-if="success" role="status" class="shop-success">{{ success }}</p><p v-if="busy" role="status">處理中…</p>
     <button class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0" @click="load">重新載入</button><button v-if="pending" class="shop-button" :disabled="busy" @click="cancel()">重試原取消操作</button>
     <article v-for="o in rows" :key="o.id" :data-order-id="o.id"><h2>{{ o.batchName }}</h2><p>{{ preorderStatus[o.status] }} · 訂單 {{ o.id }}</p><p>{{ o.productTitle }} · {{ o.skuLabel }} × {{ o.quantity }}</p><p>單價 {{ money(o.unitPriceTwd) }} · 展示運費 {{ money(o.shippingTwd) }} · 總額 {{ money(o.totalTwd) }}</p><p>保留期限（台北）：{{ taipeiTime(o.expiresAt) }}</p><p>預計到貨：{{ o.arrivalFrom }} ～ {{ o.arrivalTo }}（預估）</p><p>收件人：{{ o.shipping.recipientName }} · {{ o.shipping.phone }}</p><p>{{ o.shipping.postalCode }} {{ o.shipping.city }}{{ o.shipping.district }}{{ o.shipping.street }}</p><button v-if="o.status === 'PENDING'" class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0 || !ready" @click="cancel(o)">取消預購</button><p v-if="o.fulfillment.allocatedQuantity">已分配到貨：{{ o.fulfillment.allocatedQuantity }} 件 · {{ { UNFULFILLED: '等待出貨', SHIPPED: '已模擬出貨', DELIVERED: '已模擬送達' }[o.fulfillmentStatus] || o.fulfillmentStatus }}</p><p v-if="o.fulfillment.trackingNumber">模擬貨件：{{ o.fulfillment.trackingNumber }}；沒有實際物流寄送。</p><p v-if="o.fulfillment.shippedAt">模擬出貨：{{ taipeiTime(o.fulfillment.shippedAt) }}</p><p v-if="o.fulfillment.deliveredAt">模擬送達：{{ taipeiTime(o.fulfillment.deliveredAt) }}</p>

@@ -24,6 +24,11 @@ async function landOnPayment(id:string){
  payTarget.value='';if(route.query.pay)await router.replace({path:route.path,query:{}})
  returnNotice.value=order.status==='PENDING_PAYMENT'?`訂單已建立，請在 ${time(order.expiresAt)}（台北時間）前完成付款。`:`這筆訂單目前狀態：${orderStatus(order.status)}。`
 }
+/** 從統一訂單中心點「查看詳情」：捲到該筆訂單；不在目前這頁就單獨讀取這筆本人訂單放在最上面。 */
+async function focusOrder(id:string){
+ if(!orders.value?.items.some(o=>o.id===id)){try{const found=await getOrder(id);orders.value=orders.value?{...orders.value,items:[found,...orders.value.items]}:{items:[found],page:1,pageSize:10,total:1}}catch(e){await failure(e);return}}
+ await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start',behavior:'instant'})
+}
 async function reload(){await load();if(payTarget.value)await landOnPayment(payTarget.value)}
 let returnTimer:number|undefined,left=false
 /** 從綠界返回只代表瀏覽器回來了；付款結果以綠界伺服器通知為準，這裡只重新讀取狀態。 */
@@ -38,17 +43,18 @@ async function checkReturn(attempt=0){
 }
 onMounted(async()=>{
  const pick=(v:unknown)=>typeof v==='string'&&/^[0-9a-f-]{36}$/.test(v)?v:''
- const id=pick(route.query.ecpay),pay=pick(route.query.pay)
+ const id=pick(route.query.ecpay),pay=pick(route.query.pay),focus=pick(route.query.focus)
  if(id)await router.replace({path:route.path,query:{}})
  await load()
  // 直接購買下單後：捲到該筆訂單的付款區；不在目前這頁時，單獨讀取這筆本人訂單放在最上面
  if(pay){payTarget.value=pay;await landOnPayment(pay);return}
+ if(focus){await focusOrder(focus);return}
  if(!id)return
  returned.value=id;await nextTick();document.querySelector(`[data-testid="order-${id}"]`)?.scrollIntoView({block:'start',behavior:'instant'});await checkReturn()
 })
 onBeforeUnmount(()=>{left=true;window.clearTimeout(returnTimer)})
 </script>
-<template><section><h1>我的訂單</h1><p>價格、商品與收件資料保存下單時的快照。待付款保留 30 分鐘，到期後系統釋放庫存；付款可使用綠界測試環境或付款模擬，都不會實際收款。</p>
+<template><section><p class="back"><router-link to="/shop/my-orders">← 全部訂單</router-link></p><h1>現貨訂單詳情</h1><p>價格、商品與收件資料保存下單時的快照。待付款保留 30 分鐘，到期後系統釋放庫存；付款可使用綠界測試環境或付款模擬，都不會實際收款。</p>
 <p v-if="returnNotice" role="status" class="shop-success" data-testid="ecpay-return">{{ returnNotice }}</p>
 <p v-if="error" role="alert" class="shop-error">{{ error }}</p><button class="shop-button" :disabled="busy" @click="reload">重新核對訂單</button>
 <p v-if="orders&&!orders.items.length" data-testid="orders-empty">目前沒有訂單。</p>

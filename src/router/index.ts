@@ -30,6 +30,7 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'reset-password', component: () => import('@/views/shop/CustomerResetPassword.vue'), meta: { public: true } },
     { path: 'verify-email', component: () => import('@/views/shop/CustomerVerifyEmail.vue'), meta: { public: true } },
     { path: 'account', component: () => import('@/views/shop/CustomerAccount.vue') },
+    { path: 'my-orders', component: () => import('@/views/shop/OrderCenter.vue') },
     { path: 'orders', component: () => import('@/views/shop/CustomerOrders.vue') },
     { path: 'checkout', component: () => import('@/views/shop/CustomerCheckout.vue') },
     // 舊的直接購買網址：轉到結帳頁（帶同樣的 product／sku／qty）
