@@ -31,7 +31,9 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'verify-email', component: () => import('@/views/shop/CustomerVerifyEmail.vue'), meta: { public: true } },
     { path: 'account', component: () => import('@/views/shop/CustomerAccount.vue') },
     { path: 'orders', component: () => import('@/views/shop/CustomerOrders.vue') },
-    { path: 'buy-now', component: () => import('@/views/shop/BuyNow.vue') },
+    { path: 'checkout', component: () => import('@/views/shop/CustomerCheckout.vue') },
+    // 舊的直接購買網址：轉到結帳頁（帶同樣的 product／sku／qty）
+    { path: 'buy-now', redirect: to => ({ path: '/shop/checkout', query: to.query }) },
     { path: 'cart', component: () => import('@/views/shop/CustomerCart.vue'), meta: { public: true } },
     { path: 'addresses', component: () => import('@/views/shop/CustomerAddresses.vue') },
     { path: ':pathMatch(.*)*', component: NotFound, meta: { public: true } }

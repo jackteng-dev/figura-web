@@ -32,12 +32,12 @@ async function add(){
     serverCount.value=countOf(await setCartItem(skuId,total,cart.version));message.value='已加入購物車。'
   }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||e instanceof SyntaxError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
 }
-/** 直接購買：只買這一款、不放進購物車。未登入時路由會先導向登入，登入後回到確認頁。 */
+/** 直接購買：只買這一款、不放進購物車，進入結帳頁。未登入時路由會先導向登入，登入後回到結帳頁。 */
 async function buyNow(){
   if(adding.value||uncertain.value||!selected.value)return
   const amount=quantity.value
   if(!Number.isInteger(amount)||amount<1||amount>99){addError.value='數量需為 1–99 的整數。';return}
-  await router.push({path:'/shop/buy-now',query:{product:product.value!.id,sku:selected.value,qty:String(amount)}})
+  await router.push({path:'/shop/checkout',query:{product:product.value!.id,sku:selected.value,qty:String(amount)}})
 }
 watch(() => route.params.id, load, { immediate: true })
 
