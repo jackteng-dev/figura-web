@@ -1,5 +1,14 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-18：Phase 2 統一訂單中心
+
+分支 `feat/order-center`（疊在 `feat/checkout-page` 上），需要後端 `feat/order-center`。未動 `package-lock.json`、`src/assets/`。
+
+- 新頁 `/shop/my-orders`（`OrderCenter.vue`、`src/api/orderCenter.ts`）：現貨＋預購同一列表，類型切換、階段分頁籤（含筆數）、排序、伺服器分頁；**篩選以網址為唯一來源**（重新整理、上一頁／下一頁、同頁連結都一致）。卡片顯示類型、階段、標題（多款顯示「等 N 款」）、件數、金額、付款期限、預計到貨。
+- 「查看詳情／前往付款」帶到原本頁面 `/shop/orders?focus=` 或 `/shop/preorder-orders?focus=`：該筆每次重新讀取都保留（不在第一頁也會單獨讀取），取得鍵盤焦點並避開固定頁首。付款、取消、退款、退貨流程不變。
+- 頁首、頁尾、手機底部導覽改指向 `/shop/my-orders`；舊網址仍可用。
+- 驗證：`npm run build` 通過；瀏覽器實測列表、篩選、同頁網址切換、返回、詳情落點與焦點、重新核對後仍保留。
+
 ## 2026-11-18：購物體驗改版 Phase 1 — 獨立結帳頁（整合直接購買）
 
 分支 `feat/checkout-page`（疊在 `feat/cart-stepper` → `feat/buy-now` → `feat/contact-only-login` 上，依序合併）。**無後端變更、無 schema**，沿用 `GET /customer/cart`、`GET/PUT /customer/addresses`、`POST /customer/orders`、`POST /customer/orders/direct`（後端 `feat/buy-now`）。未動 `package-lock.json`、`src/assets/`。規格：作者提供的《Figura_購物體驗改版_PRD.md》Phase 1。
