@@ -12,7 +12,12 @@ function freeze(id: string, value: boolean) { if (value) paymentFrozen.value.add
 function blockPayment(id: string) { return busy.value || !!pending.value || [...paymentFrozen.value].some(v => v !== id) }
 function changed(order: PreorderOrder) { const index = rows.value.findIndex(o => o.id === order.id); if (index >= 0) rows.value[index] = order }
 const pending = ref<{ id: string; body: PreorderCancel }>()
-async function read() { ready.value = false; const result = await preorderOrders(page.value); rows.value = result.items; total.value = result.total; ready.value = true }
+async function read() {
+  ready.value = false; const result = await preorderOrders(page.value); rows.value = result.items; total.value = result.total
+  // 從訂單中心帶來的那筆：每次重新讀取都保留並更新（不在這一頁就單獨讀取放在最上面）
+  if (focusId.value) { const found = await preorderOrder(focusId.value); rows.value = [found, ...rows.value.filter(o => o.id !== found.id)] }
+  ready.value = true
+}
 async function load() { if (busy.value || pending.value || paymentFrozen.value.size) return; busy.value = true; error.value = ''; try { await read() } catch (e: any) { error.value = e.message || '讀取失敗，請重新載入。' } finally { busy.value = false } }
 async function cancel(order?: PreorderOrder) {
   if (busy.value || paymentFrozen.value.size) return
@@ -30,28 +35,24 @@ async function cancel(order?: PreorderOrder) {
 onBeforeRouteLeave(() => !pending.value || window.confirm('取消結果尚未確認。離開會失去原操作，確定離開？'))
 /** 從統一訂單中心點「查看詳情」：捲到該筆預購；不在目前這頁就單獨讀取放在最上面。 */
 const route = useRoute()
-async function focusOrder(id: string) {
-  if (!rows.value.some(o => o.id === id)) {
-    try { const found = await preorderOrder(id); rows.value = [found, ...rows.value] } catch (e: any) { error.value = e.message || '讀取這筆預購失敗。'; return }
-  }
-  await nextTick(); document.querySelector(`[data-order-id="${id}"]`)?.scrollIntoView({ block: 'start', behavior: 'instant' })
-}
+const focusId = ref(typeof route.query.focus === 'string' && /^[0-9a-f-]{36}$/.test(route.query.focus) ? route.query.focus : '')
 onMounted(async () => {
   await load()
-  const focus = typeof route.query.focus === 'string' && /^[0-9a-f-]{36}$/.test(route.query.focus) ? route.query.focus : ''
-  if (focus) await focusOrder(focus)
+  if (!focusId.value) return
+  await nextTick(); const el = document.querySelector<HTMLElement>(`[data-order-id="${focusId.value}"]`)
+  el?.scrollIntoView({ block: 'start', behavior: 'instant' }); el?.focus({ preventScroll: true })
 })
 </script>
 <template>
   <section class="my-preorders"><p class="back"><router-link to="/shop/my-orders?kind=PREORDER">← 全部訂單</router-link></p><h1>預購訂單詳情</h1><p>預購付款與退款為模擬，不會實際收款或轉帳。未付款的保留逾時會釋放配額；批次截單不會直接取消既有訂單。</p>
     <p v-if="error" role="alert" class="shop-error">{{ error }}</p><p v-if="success" role="status" class="shop-success">{{ success }}</p><p v-if="busy" role="status">處理中…</p>
     <button class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0" @click="load">重新載入</button><button v-if="pending" class="shop-button" :disabled="busy" @click="cancel()">重試原取消操作</button>
-    <article v-for="o in rows" :key="o.id" :data-order-id="o.id"><h2>{{ o.batchName }}</h2><p>{{ preorderStatus[o.status] }} · 訂單 {{ o.id }}</p><p>{{ o.productTitle }} · {{ o.skuLabel }} × {{ o.quantity }}</p><p>單價 {{ money(o.unitPriceTwd) }} · 展示運費 {{ money(o.shippingTwd) }} · 總額 {{ money(o.totalTwd) }}</p><p>保留期限（台北）：{{ taipeiTime(o.expiresAt) }}</p><p>預計到貨：{{ o.arrivalFrom }} ～ {{ o.arrivalTo }}（預估）</p><p>收件人：{{ o.shipping.recipientName }} · {{ o.shipping.phone }}</p><p>{{ o.shipping.postalCode }} {{ o.shipping.city }}{{ o.shipping.district }}{{ o.shipping.street }}</p><button v-if="o.status === 'PENDING'" class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0 || !ready" @click="cancel(o)">取消預購</button><p v-if="o.fulfillment.allocatedQuantity">已分配到貨：{{ o.fulfillment.allocatedQuantity }} 件 · {{ { UNFULFILLED: '等待出貨', SHIPPED: '已模擬出貨', DELIVERED: '已模擬送達' }[o.fulfillmentStatus] || o.fulfillmentStatus }}</p><p v-if="o.fulfillment.trackingNumber">模擬貨件：{{ o.fulfillment.trackingNumber }}；沒有實際物流寄送。</p><p v-if="o.fulfillment.shippedAt">模擬出貨：{{ taipeiTime(o.fulfillment.shippedAt) }}</p><p v-if="o.fulfillment.deliveredAt">模擬送達：{{ taipeiTime(o.fulfillment.deliveredAt) }}</p>
+    <article v-for="o in rows" :key="o.id" :data-order-id="o.id" :tabindex="o.id === focusId ? -1 : undefined" :aria-current="o.id === focusId ? 'true' : undefined"><h2>{{ o.batchName }}</h2><p>{{ preorderStatus[o.status] }} · 訂單 {{ o.id }}</p><p>{{ o.productTitle }} · {{ o.skuLabel }} × {{ o.quantity }}</p><p>單價 {{ money(o.unitPriceTwd) }} · 展示運費 {{ money(o.shippingTwd) }} · 總額 {{ money(o.totalTwd) }}</p><p>保留期限（台北）：{{ taipeiTime(o.expiresAt) }}</p><p>預計到貨：{{ o.arrivalFrom }} ～ {{ o.arrivalTo }}（預估）</p><p>收件人：{{ o.shipping.recipientName }} · {{ o.shipping.phone }}</p><p>{{ o.shipping.postalCode }} {{ o.shipping.city }}{{ o.shipping.district }}{{ o.shipping.street }}</p><button v-if="o.status === 'PENDING'" class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0 || !ready" @click="cancel(o)">取消預購</button><p v-if="o.fulfillment.allocatedQuantity">已分配到貨：{{ o.fulfillment.allocatedQuantity }} 件 · {{ { UNFULFILLED: '等待出貨', SHIPPED: '已模擬出貨', DELIVERED: '已模擬送達' }[o.fulfillmentStatus] || o.fulfillmentStatus }}</p><p v-if="o.fulfillment.trackingNumber">模擬貨件：{{ o.fulfillment.trackingNumber }}；沒有實際物流寄送。</p><p v-if="o.fulfillment.shippedAt">模擬出貨：{{ taipeiTime(o.fulfillment.shippedAt) }}</p><p v-if="o.fulfillment.deliveredAt">模擬送達：{{ taipeiTime(o.fulfillment.deliveredAt) }}</p>
         <PreorderPaymentPanel :order="o" :disabled="blockPayment(o.id)" @changed="changed" @frozen="freeze(o.id, $event)" /></article>
     <p v-if="ready && !rows.length">目前沒有預購訂單。<router-link to="/shop/preorders">查看預購批次</router-link></p>
     <div class="pagination"><button class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0 || !ready || page === 1" @click="page--; load()">上一頁</button><span>第 {{ page }} 頁</span><button class="shop-button" :disabled="busy || !!pending || paymentFrozen.size > 0 || !ready || page * 10 >= total" @click="page++; load()">下一頁</button></div>
   </section>
 </template>
 <style scoped>
-.my-preorders{min-width:0;overflow-wrap:anywhere}article{padding:24px;margin:24px 0;background:#ffffff;border:1px solid #e3e5ec;border-radius:12px}h2{font-size:22px}button{max-width:100%;white-space:normal}.pagination{display:flex;align-items:center;gap:12px}
+.my-preorders{min-width:0;overflow-wrap:anywhere}article{scroll-margin-top:150px;padding:24px;margin:24px 0;background:#ffffff;border:1px solid #e3e5ec;border-radius:12px}h2{font-size:22px}button{max-width:100%;white-space:normal}.pagination{display:flex;align-items:center;gap:12px}
 </style>

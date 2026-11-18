@@ -13,10 +13,15 @@ const route = useRoute(), router = useRouter(), catalog = useCatalog()
 const STAGES: OrderStage[] = ['ALL', 'PENDING_PAYMENT', 'WAITING_ARRIVAL', 'TO_SHIP', 'SHIPPED', 'COMPLETED', 'RETURNING', 'CANCELLED', 'REFUNDED', 'REVIEW']
 const KINDS: OrderKind[] = ['ALL', 'STOCK', 'PREORDER'], SORTS: OrderSort[] = ['NEWEST', 'OLDEST', 'AMOUNT_DESC', 'AMOUNT_ASC']
 const pick = <T extends string>(v: unknown, list: T[], d: T): T => (typeof v === 'string' && (list as string[]).includes(v) ? (v as T) : d)
-const kind = ref<OrderKind>(pick(route.query.kind, KINDS, 'ALL'))
-const stage = ref<OrderStage>(pick(route.query.stage, STAGES, 'ALL'))
-const sort = ref<OrderSort>(pick(route.query.sort, SORTS, 'NEWEST'))
-const page = ref(Math.max(1, Number(route.query.page) || 1))
+// 網址是唯一的篩選來源：重新整理、上一頁／下一頁、同頁連結都會得到同一個畫面
+const kind = computed<OrderKind>(() => pick(route.query.kind, KINDS, 'ALL'))
+const stage = computed<OrderStage>(() => pick(route.query.stage, STAGES, 'ALL'))
+const sort = computed<OrderSort>(() => pick(route.query.sort, SORTS, 'NEWEST'))
+const page = computed(() => { const n = Number(route.query.page); return Number.isInteger(n) && n >= 1 && n <= 10000 ? n : 1 })
+function go(next: { kind?: OrderKind; stage?: OrderStage; sort?: OrderSort; page?: number }) {
+  const k = next.kind ?? kind.value, st = next.stage ?? stage.value, so = next.sort ?? sort.value, pg = next.page ?? page.value
+  void router.push({ query: { ...(k !== 'ALL' ? { kind: k } : {}), ...(st !== 'ALL' ? { stage: st } : {}), ...(so !== 'NEWEST' ? { sort: so } : {}), ...(pg > 1 ? { page: String(pg) } : {}) } })
+}
 const data = ref<OrderCenterPage>(), busy = ref(false), error = ref('')
 const pages = computed(() => (data.value ? Math.max(1, Math.ceil(data.value.total / data.value.pageSize)) : 1))
 const visibleStages = computed(() => STAGES.filter(s => s === 'ALL' || s === stage.value || (data.value?.counts[s] ?? 0) > 0))
@@ -33,7 +38,7 @@ async function load() {
     const result = await getOrderCenter({ kind: kind.value, stage: stage.value, sort: sort.value, page: page.value })
     if (mine !== seq) return // 較晚的請求已經送出，捨棄過期結果
     // 篩選後頁數變少（例如訂單狀態剛改變）：回到最後一頁
-    if (!result.items.length && result.total > 0 && page.value > 1) { page.value = Math.ceil(result.total / result.pageSize); return }
+    if (!result.items.length && result.total > 0 && page.value > 1) { void router.replace({ query: { ...route.query, page: String(Math.ceil(result.total / result.pageSize)) } }); return }
     data.value = result
   } catch (e) {
     if (mine !== seq) return
@@ -41,13 +46,10 @@ async function load() {
     error.value = e instanceof Error ? e.message : '讀取訂單失敗，請重試。'
   } finally { if (mine === seq) busy.value = false }
 }
-// 篩選條件寫進網址：重新整理、上一頁都保持同一畫面
-watch([kind, stage, sort, page], () => {
-  void router.replace({ query: { ...(kind.value !== 'ALL' ? { kind: kind.value } : {}), ...(stage.value !== 'ALL' ? { stage: stage.value } : {}), ...(sort.value !== 'NEWEST' ? { sort: sort.value } : {}), ...(page.value > 1 ? { page: String(page.value) } : {}) } })
-  void load()
-})
-function setStage(s: OrderStage) { stage.value = s; page.value = 1 }
-function setKind(k: OrderKind) { kind.value = k; page.value = 1 }
+watch(() => [kind.value, stage.value, sort.value, page.value].join('|'), () => { void load() })
+function setStage(s: OrderStage) { go({ stage: s, page: 1 }) }
+function setKind(k: OrderKind) { go({ kind: k, page: 1 }) }
+function setSort(e: Event) { go({ sort: (e.target as HTMLSelectElement).value as OrderSort, page: 1 }) }
 onMounted(() => { void catalog.load(); void load() })
 </script>
 
@@ -60,7 +62,7 @@ onMounted(() => { void catalog.load(); void load() })
    <div class="kinds" role="group" aria-label="訂單類型">
     <button v-for="k in KINDS" :key="k" type="button" :aria-pressed="kind === k" :class="{ on: kind === k }" @click="setKind(k)">{{ kindLabel[k] }}</button>
    </div>
-   <label class="sort">排序<select v-model="sort" @change="page = 1"><option v-for="s in SORTS" :key="s" :value="s">{{ sortLabel[s] }}</option></select></label>
+   <label class="sort">排序<select :value="sort" @change="setSort"><option v-for="s in SORTS" :key="s" :value="s">{{ sortLabel[s] }}</option></select></label>
   </div>
   <nav class="stages" aria-label="訂單狀態">
    <button v-for="s in visibleStages" :key="s" type="button" :aria-pressed="stage === s" :class="{ on: stage === s }" :data-testid="'stage-' + s" @click="setStage(s)">
@@ -94,9 +96,9 @@ onMounted(() => { void catalog.load(); void load() })
   </ul>
 
   <nav v-if="data && data.total > data.pageSize" class="pager" aria-label="分頁">
-   <button class="shop-button ghost" :disabled="busy || page <= 1" @click="page--">上一頁</button>
+   <button class="shop-button ghost" :disabled="busy || page <= 1" @click="go({ page: page - 1 })">上一頁</button>
    <span>第 {{ page }} / {{ pages }} 頁，共 {{ data.total }} 筆</span>
-   <button class="shop-button ghost" :disabled="busy || page >= pages" @click="page++">下一頁</button>
+   <button class="shop-button ghost" :disabled="busy || page >= pages" @click="go({ page: page + 1 })">下一頁</button>
   </nav>
  </section>
 </template>
