@@ -1,6 +1,7 @@
 import { customerRequest } from './customer'
 import type { Page } from './catalog'
 import type { OrderView } from './orders'
+import type { PaymentMode, ScheduleNotice } from './preorders'
 export interface PreorderOrder {
   fulfillment: { allocatedQuantity: number; allocatedAt: string | null; provider: string; trackingNumber: string | null; shippedAt: string | null; deliveredAt: string | null }
   id: string; batchId: string; batchName: string; productTitle: string; skuLabel: string
@@ -8,7 +9,11 @@ export interface PreorderOrder {
   shipping: OrderView['shipping']; deadlineAt: string; arrivalFrom: string; arrivalTo: string
   status: 'PENDING' | 'PAID' | 'REFUNDED' | 'CANCELLED' | 'EXPIRED'; version: number
   createdAt: string; expiresAt: string; closedAt: string | null; paidAt: string | null; arrivalStatus: string; fulfillmentStatus: string; paymentReviewRequired: boolean; refund: { provider: string; amountTwd: number; refundedAt: string } | null
+  /** 訂金訂單：status=PAID 代表訂金已付、名額已確保；尾款看 balanceStatus。payNowTwd 是下一筆應付金額（0＝目前不需付款）。 */
+  paymentMode: PaymentMode; depositTwd: number; balanceTwd: number; balanceStatus: 'NONE' | 'NOT_DUE' | 'DUE' | 'PAID'
+  balanceDueAt: string | null; balancePaidAt: string | null; payNowTwd: number; schedule: ScheduleNotice[]
 }
+export const balanceText = (o: PreorderOrder) => o.balanceStatus === 'NOT_DUE' && o.status !== 'PAID' ? '到貨後通知支付' : ({ NONE: '', NOT_DUE: '訂金已付，到貨後通知尾款', DUE: '待付尾款', PAID: '尾款已付清' }[o.balanceStatus] || '')
 export interface PreorderPlace {
   requestId: string; batchId: string; quantity: number; addressId: string; addressVersion: number; expectedSubtotalTwd: number
 }

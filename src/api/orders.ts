@@ -10,7 +10,7 @@ export interface DirectOrder { requestId:string;productId:string;skuId:string;qu
 export const placeDirectOrder=(body:DirectOrder)=>customerRequest<{order:OrderView;replayed:boolean}>('/orders/direct','POST',body)
 /** 統一結帳：分組報價（不保留庫存）與一次建立所有子訂單。 */
 export interface QuoteLine { productId:string;skuId:string;batchId:string|null;title:string;label:string;quantity:number;unitPriceTwd:number;lineTotalTwd:number;issue:string|null }
-export interface QuoteGroup { key:string;kind:'STOCK'|'PREORDER';title:string;batchId:string|null;arrivalFrom:string|null;arrivalTo:string|null;arrivalMonth:string|null;deadlineAt:string|null;lines:QuoteLine[];subtotalTwd:number;shippingTwd:number;totalTwd:number;payNowTwd:number;payLaterTwd:number;ready:boolean }
+export interface QuoteGroup { key:string;kind:'STOCK'|'PREORDER';title:string;batchId:string|null;arrivalFrom:string|null;arrivalTo:string|null;arrivalMonth:string|null;deadlineAt:string|null;lines:QuoteLine[];subtotalTwd:number;shippingTwd:number;totalTwd:number;payNowTwd:number;payLaterTwd:number;ready:boolean;paymentMode:'FULL'|'DEPOSIT' }
 export interface Quote { cartVersion:number;groups:QuoteGroup[];subtotalTwd:number;shippingTwd:number;totalTwd:number;payNowTwd:number;payLaterTwd:number;ready:boolean }
 export interface CheckoutPlace { requestId:string;cartVersion:number;addressId:string;addressVersion:number;expectedTotalTwd:number }
 export interface PlacedOrder { kind:'STOCK'|'PREORDER';id:string;status:string;totalTwd:number;expiresAt:string|null;title:string }

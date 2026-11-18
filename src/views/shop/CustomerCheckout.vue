@@ -372,6 +372,7 @@ onMounted(() => { catalog.load(); void load() })
     <h2 id="co-summary">訂單金額</h2>
     <div v-if="kind === 'cart' && quote && quote.groups.length > 1" class="sum-row"><span>訂單數</span><span>{{ quote.groups.length }} 張</span></div>
     <div class="sum-row"><span>商品小計</span><span>{{ money(subtotal) }}</span></div>
+    <template v-if="kind === 'cart' && quote && quote.payLaterTwd > 0 && !unknown"><div class="sum-row" data-testid="pay-now"><span>下單後先付（含訂金）</span><span>{{ money(quote.payNowTwd) }}</span></div><div class="sum-row"><span>預購尾款（到貨通知後付）</span><span>{{ money(quote.payLaterTwd) }}</span></div></template>
     <div class="sum-row"><span>運費（展示）</span><span>NT$ 0</span></div>
     <div class="sum-row total"><span>應付金額</span><strong data-testid="order-total">{{ money(subtotal) }}</strong></div>
     <div v-if="selectedAddress" class="mini-ship">寄送給 {{ selectedAddress.recipientName }}・{{ selectedAddress.city }}{{ selectedAddress.district }}</div>

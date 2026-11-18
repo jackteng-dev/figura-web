@@ -8,7 +8,10 @@ export interface PreorderPayment {
   id: string; orderId: string; status: 'INITIATED' | 'SUCCEEDED' | 'FAILED' | 'REVIEW_REQUIRED'
   amountTwd: number; currency: 'TWD'; provider: 'MOCK'; createdAt: string; settledAt: string | null
   refund: { provider: 'MOCK'; amountTwd: number; refundedAt: string } | null
+  /** FULL 全額／DEPOSIT 訂金／BALANCE 尾款 */
+  stage: 'FULL' | 'DEPOSIT' | 'BALANCE'
 }
+export const stageText = { FULL: '全額', DEPOSIT: '訂金', BALANCE: '尾款' } as const
 export interface Options { enabled: boolean; canStart: boolean; items: PreorderPayment[] }
 export interface Receipt { eventId: string; disposition: string; replayed: boolean; payment: PreorderPayment; order: PreorderOrder }
 export interface RefundBody { requestId: string; expectedOrderVersion: number; note: string }
@@ -18,7 +21,7 @@ export interface Detail {
   reviews: { paymentId: string; amountTwd: number; refunded: boolean; evidence: { eventId: string; outcome: string; disposition: string; createdAt: string }[] }[]
   refunds: RefundEvent[]
 }
-export type Summary = Pick<PreorderOrder, 'id' | 'batchId' | 'batchName' | 'productTitle' | 'skuLabel' | 'quantity' | 'totalTwd' | 'status' | 'version' | 'createdAt' | 'paidAt' | 'paymentReviewRequired'>
+export type Summary = Pick<PreorderOrder, 'id' | 'batchId' | 'batchName' | 'productTitle' | 'skuLabel' | 'quantity' | 'totalTwd' | 'status' | 'version' | 'createdAt' | 'paidAt' | 'paymentReviewRequired' | 'paymentMode' | 'balanceStatus'>
 export const getPreorderPayments = (id: string) => customerRequest<Options>(`/preorders/${encodeURIComponent(id)}/mock-payments`)
 export const startPreorderPayment = (id: string, body: PaymentStart) => customerRequest<{ payment: PreorderPayment; replayed: boolean }>(`/preorders/${encodeURIComponent(id)}/mock-payments`, 'POST', body)
 export const simulatePreorderPayment = (id: string, body: PaymentSimulation) => customerRequest<Receipt>(`/preorder-payments/${encodeURIComponent(id)}/simulate`, 'POST', body)
