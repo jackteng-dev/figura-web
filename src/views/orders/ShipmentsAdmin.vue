@@ -75,6 +75,7 @@ onMounted(load)
    <ul><li v-for="o in selected.shipment.orders" :key="o.id">{{ o.kind === 'PREORDER' ? '預購' : '現貨' }} · {{ o.title }} · {{ o.status }} / {{ o.fulfillmentStatus }} <small>{{ o.id }}</small></li></ul>
    <p v-if="selected.shipment.trackingNumber">測試貨件號：{{ selected.shipment.trackingNumber }}</p>
    <p v-if="!selected.mockEnabled">此環境未啟用模擬配送。</p>
+   <p v-if="selected.shipment.status === 'SHIPPED' && !selected.canDeliver && selected.mockEnabled">此出貨單目前不能整張送達（可能有付款待核對／退貨中，或預購是用單筆出貨，請到「預購訂單」用原入口標記送達）。</p>
    <form v-if="(selected.canShip && has('shipments.ship.mock')) || (selected.canDeliver && has('shipments.deliver.mock')) || pending" @submit.prevent>
     <label>操作原因<textarea v-model="note" required maxlength="480" :disabled="sending || !!pending || stale" /></label>
     <label v-if="selected.shipment.waitingFor === 'FEE'" class="waive"><input v-model="waive" type="checkbox" :disabled="sending || !!pending" data-testid="waive-fee"> 承擔運費的訂單已取消或退款、運費未收。確認免收運費並出貨其餘訂單（會寫入稽核）</label>
