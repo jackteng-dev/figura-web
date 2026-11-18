@@ -115,7 +115,11 @@ async function load(): Promise<boolean> {
     reloadGuest(); guestUnmerged.value = guestLines.value.length > 0 || !!lastMerge.value?.error
     // 換了會員（例如另一分頁登入別人）：丟掉畫面上前一位會員的操作狀態（其保存紀錄仍留在他自己的 key）
     if (attemptOwner && attemptOwner !== me.id) { attempt.value = undefined; unknown.value = false; attemptOwner = ''; kind.value = directProductId && directSkuId ? 'direct' : 'cart'; quantity.value = queryQty; product.value = undefined; cart.value = undefined }
-    if (pending) { attempt.value = pending; attemptOwner = me.id; unknown.value = true; kind.value = pending.kind === 'direct' ? 'direct' : 'cart'; if (pending.kind === 'direct') quantity.value = pending.body.quantity }
+    if (pending) {
+      attempt.value = pending; attemptOwner = me.id; unknown.value = true; kind.value = pending.kind === 'direct' ? 'direct' : 'cart'; if (pending.kind === 'direct') quantity.value = pending.body.quantity
+      // 畫面顯示原操作的配送選擇（重試送出的就是這份內容）
+      if (pending.kind === 'cart') { shipMethod.value = pending.body.shippingMethod || 'HOME'; shipStrategy.value = pending.body.deliveryStrategy || 'SPLIT'; storeId.value = pending.body.pickupStoreId || '' }
+    }
     if (kind.value === 'direct' && !pending && (!directProductId || !directSkuId)) { error.value = '找不到要購買的商品，請回商品頁重新選擇。'; return false }
     const [, list] = await Promise.all([readItems(), getAddresses()])
     pickAddress(list, pending?.body.addressId)
@@ -395,9 +399,9 @@ onMounted(() => { catalog.load(); void load() })
    <aside class="panel" aria-labelledby="co-summary">
     <h2 id="co-summary">訂單金額</h2>
     <div v-if="kind === 'cart' && quote && quote.groups.length > 1" class="sum-row"><span>訂單數</span><span>{{ quote.groups.length }} 張</span></div>
-    <div class="sum-row"><span>商品小計</span><span>{{ money(kind === 'cart' && quote && !unknown ? quote.subtotalTwd : subtotal) }}</span></div>
+    <div v-if="!(unknown && kind === 'cart')" class="sum-row"><span>商品小計</span><span>{{ money(kind === 'cart' && quote ? quote.subtotalTwd : subtotal) }}</span></div>
     <template v-if="kind === 'cart' && quote && quote.payLaterTwd > 0 && !unknown"><div class="sum-row" data-testid="pay-now"><span>下單後先付（含訂金）</span><span>{{ money(quote.payNowTwd) }}</span></div><div class="sum-row"><span>預購尾款（到貨通知後付）</span><span>{{ money(quote.payLaterTwd) }}</span></div></template>
-    <div class="sum-row"><span>運費</span><span data-testid="shipping-fee">{{ money(kind === 'cart' && quote && !unknown ? quote.shippingTwd : 0) }}</span></div>
+    <div class="sum-row"><span>運費</span><span data-testid="shipping-fee">{{ unknown && kind === 'cart' ? '依原操作（已含在應付金額）' : money(kind === 'cart' && quote ? quote.shippingTwd : 0) }}</span></div>
     <div class="sum-row total"><span>應付金額</span><strong data-testid="order-total">{{ money(subtotal) }}</strong></div>
     <div v-if="selectedAddress" class="mini-ship">寄送給 {{ selectedAddress.recipientName }}・{{ selectedAddress.city }}{{ selectedAddress.district }}</div>
     <button class="shop-button primary submit" data-testid="checkout-submit" :disabled="!canSubmit" @click="submit">{{ busy ? '處理中…' : unknown ? '用同一操作重試' : '確認下單' }}</button>
