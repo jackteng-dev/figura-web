@@ -14,7 +14,7 @@ VITE_API_PROXY_TARGET=http://127.0.0.1:19092/figura npm run preview -- --host 12
 
 重跑瀏覽器：`scripts/smoke_customer_browser.cjs`（新顧客會員）與 `scripts/smoke_browser.cjs`（員工回歸）；需要 Playwright／Chromium、DEMO_ADMIN_PASSWORD／DEMO_STAFF_PASSWORD 私有環境。可在 work/browser-tools 安裝免費 Playwright，透過絕對 PLAYWRIGHT_MODULE_PATH 與可選 PLAYWRIGHT_CHROMIUM_PATH 執行；完整命令見後端文件。腳本限定 loopback、阻擋外部請求，結果在忽略 work/verification（員工）／work/customer-20261007（顧客）。
 
-顧客入口 `/shop`：註冊、登入、本人暱稱、登出。顧客與員工 Cookie／資料表分開，登出互不影響。顧客 smoke 會建立隨機合成帳號，僅用隔離 demo。
+顧客入口 `/shop`：手機＋Email 註冊、手機或 Email 登入、本人資料（Email／手機／驗證狀態）、登出。顧客與員工 Cookie／資料表分開，登出互不影響。顧客 smoke 會建立隨機合成帳號，僅用隔離 demo。
 
 員工登入首頁是里程碑說明，帳號／角色／權限頁仍是占位，不是可操作的完整管理器。商品管理 `/admin/products` 已可操作草稿／SKU／上架；顧客 `/shop/products` 與詳情可匿名瀏覽。店長上架、員工編輯草稿；SKU庫存與異動已可操作，訂單另階段。
 
