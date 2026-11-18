@@ -13,7 +13,7 @@ export interface PreorderOrder {
   paymentMode: PaymentMode; depositTwd: number; balanceTwd: number; balanceStatus: 'NONE' | 'NOT_DUE' | 'DUE' | 'PAID'
   balanceDueAt: string | null; balancePaidAt: string | null; payNowTwd: number; schedule: ScheduleNotice[]
 }
-export const balanceText = (o: PreorderOrder) => o.status === 'REFUNDED' ? '已退款' : o.balanceStatus === 'NOT_DUE' && o.status !== 'PAID' ? '到貨後通知支付' : ({ NONE: '', NOT_DUE: '訂金已付，到貨後通知尾款', DUE: '待付尾款', PAID: '尾款已付清' }[o.balanceStatus] || '')
+export const balanceText = (o: PreorderOrder) => o.status === 'REFUNDED' ? '已退款' : o.status === 'CANCELLED' || o.status === 'EXPIRED' ? '訂單已結束，不需付款' : o.balanceStatus === 'NOT_DUE' && o.status !== 'PAID' ? '到貨後通知支付' : ({ NONE: '', NOT_DUE: '訂金已付，到貨後通知尾款', DUE: '待付尾款', PAID: '尾款已付清' }[o.balanceStatus] || '')
 export interface PreorderPlace {
   requestId: string; batchId: string; quantity: number; addressId: string; addressVersion: number; expectedSubtotalTwd: number
 }
