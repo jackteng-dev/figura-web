@@ -272,7 +272,7 @@ onMounted(() => { catalog.load(); void load() })
     <li aria-current="step">{{ kind === 'cart' ? '2' : '1' }} 確認訂單</li><li>{{ kind === 'cart' ? '3' : '2' }} 付款</li>
    </ol>
   </div>
-  <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" type="button" class="link" :disabled="busy" @click="load">重新讀取</button><router-link v-if="unknown" to="/shop/orders">到我的訂單核對 →</router-link> <button v-if="unknown" type="button" class="link" @click="abandon">已核對，放棄這次下單</button></p>
+  <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" type="button" class="link" :disabled="busy" @click="load">重新讀取</button><router-link v-if="unknown" to="/shop/my-orders">到我的訂單核對 →</router-link> <button v-if="unknown" type="button" class="link" @click="abandon">已核對，放棄這次下單</button></p>
   <p v-if="notice" role="status" class="shop-success">{{ notice }}</p>
   <div v-if="placedId" class="placed" role="status" data-testid="checkout-placed">
    <template v-if="placedOrders.length > 1">

@@ -93,7 +93,7 @@ const reviewKey = (customerId: string) => REVIEW_PREFIX + customerId
 function readReview(customerId: string): ReviewItem[] {
   try {
     const r = JSON.parse(localStorage.getItem(reviewKey(customerId)) || '[]')
-    return Array.isArray(r) ? r.filter((x: any) => typeof x?.skuId === 'string' && (x.kind === 'uncertain' || x.kind === 'skipped')) : []
+    return Array.isArray(r) ? r.filter((x: any) => typeof x?.skuId === 'string' && (x.kind === 'uncertain' || x.kind === 'skipped')).map((x: any) => { const { batchId, ...rest } = x; return typeof batchId === 'string' ? { ...rest, batchId } : rest }) : []
   } catch { return [] }
 }
 export const reviewItems = ref<ReviewItem[]>([])
