@@ -112,7 +112,8 @@ const guestIssueText=(item:{pre:boolean;issue:string|null})=>item.pre?preorderIs
 const guestSubtotal=computed(()=>guestView.value.reduce((s,l)=>s+(l.lineTotal||0),0))
 const guestReady=computed(()=>guestView.value.some(l=>!l.issue))
 // 合併異常紀錄的批次名稱：先用購物車／已讀取的公開批次，讀不到再向公開 API 取（失敗只顯示編號）
-const batchNameOf=(id:string)=>guestBatches.value[id]?.name||cart.value?.preorders?.find(p=>p.batchId===id)?.batchName||`編號 ${id.slice(0,8)}`
+// 預購以批次本身的商品與款式顯示，不依賴本機保存的 SKU
+const batchTitleOf=(id:string,productId:string)=>{const b=guestBatches.value[id];if(b)return `${b.productTitle}・${b.skuLabel}（批次：${b.name}）`;const p=cart.value?.preorders?.find(x=>x.batchId===id);if(p)return `${p.title}・${p.label}（批次：${p.batchName}）`;return `${titleOf(productId)}（批次編號 ${id.slice(0,8)}）`}
 watch(reviewItems,async items=>{for(const m of items){if(m.batchId&&!(m.batchId in guestBatches.value)){const id=m.batchId;try{guestBatches.value={...guestBatches.value,[id]:await publicBatch(id)}}catch{guestBatches.value={...guestBatches.value,[id]:null}}}}},{immediate:true})
 function syncGuestQty(){guestQty.value=Object.fromEntries(guestLines.value.map(l=>[guestKey(l),l.quantity]))}
 syncGuestQty()
@@ -137,10 +138,10 @@ function goLogin(path:'/shop/login'|'/shop/register'){rememberReturn('/shop/chec
   <div v-if="mode==='member'&&reviewItems.length" class="review-box" data-testid="merge-review">
    <div v-if="reviewItems.some(r=>r.kind==='uncertain')" class="shop-error" role="alert">
     <p>以下款式在登入前加入購物車，但合併結果未確認，可能已經加入。請核對下方購物車數量，需要時自行調整：</p>
-    <ul><li v-for="m in reviewItems.filter(r=>r.kind==='uncertain')" :key="'u'+guestKey(m)">{{ m.batchId?'預購・':'現貨・' }}{{ titleOf(m.productId,m.skuId) }}<template v-if="m.batchId">（批次：{{ batchNameOf(m.batchId) }}）</template>（登入前加入 {{ m.quantity }} 件）：{{ m.reason }}</li></ul>
+    <ul><li v-for="m in reviewItems.filter(r=>r.kind==='uncertain')" :key="'u'+guestKey(m)"><template v-if="m.batchId">預購・{{ batchTitleOf(m.batchId,m.productId) }}</template><template v-else>現貨・{{ titleOf(m.productId,m.skuId) }}</template>（登入前加入 {{ m.quantity }} 件）：{{ m.reason }}</li></ul>
    </div>
    <div v-if="reviewItems.some(r=>r.kind==='skipped')" class="merge-skipped" role="status"><p>以下款式沒有加入購物車：</p>
-    <ul><li v-for="m in reviewItems.filter(r=>r.kind==='skipped')" :key="'s'+guestKey(m)">{{ m.batchId?'預購・':'現貨・' }}{{ titleOf(m.productId,m.skuId) }}<template v-if="m.batchId">（批次：{{ batchNameOf(m.batchId) }}）</template>（{{ m.quantity }} 件）：{{ m.reason }}</li></ul>
+    <ul><li v-for="m in reviewItems.filter(r=>r.kind==='skipped')" :key="'s'+guestKey(m)"><template v-if="m.batchId">預購・{{ batchTitleOf(m.batchId,m.productId) }}</template><template v-else>現貨・{{ titleOf(m.productId,m.skuId) }}</template>（{{ m.quantity }} 件）：{{ m.reason }}</li></ul>
    </div>
    <button type="button" class="shop-button ghost" @click="clearReview">我已了解</button>
   </div>

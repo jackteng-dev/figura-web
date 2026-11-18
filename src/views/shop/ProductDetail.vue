@@ -37,10 +37,10 @@ async function add(){
  * 結果未確認時不自動重送，請先到購物車核對。
  */
 const preBusy=ref(''),preMessage=ref<Record<string,string>>({}),preError=ref<Record<string,string>>({}),preUncertain=ref(false)
-async function addPreorder(b:{id:string;availableQuota:number}){
+async function addPreorder(b:{id:string;skuLabel:string;availableQuota:number}){
   if(preBusy.value||preUncertain.value)return;preBusy.value=b.id;preMessage.value={};preError.value={}
   try{
-    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,product.value!.skus[0]?.id||'',1,b.id);preMessage.value={[b.id]:'已加入購物車。'};return}throw e}
+    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,product.value!.skus.find(s=>s.label===b.skuLabel)?.id||'',1,b.id);preMessage.value={[b.id]:'已加入購物車。'};return}throw e}
     const cart=await getCart();const old=(cart.preorders||[]).find(p=>p.batchId===b.id);const total=(old?.quantity||0)+1
     if(total>MAX_PRE_QTY)throw new Error(`同一批次最多 ${MAX_PRE_QTY} 件，請核對購物車數量。`)
     serverCount.value=countOf(await setCartPreorder(b.id,total,cart.version));preMessage.value={[b.id]:'已加入購物車。'}

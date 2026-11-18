@@ -1,5 +1,15 @@
 # ELPSY Shop Vue 網站交接
 
+
+## 2026-11-18：Phase 3 統一購物車與結帳
+
+分支 `feat/unified-cart`（疊在 `feat/order-center` 上；未改 `package-lock.json`、`src/assets/`）。需要後端 `feat/unified-cart`（V21）。
+
+- 商品頁預購批次可「加入購物車」（`pre-add-<batchId>`），也保留「直接預購下單」。訪客購物車也能放預購（品項鍵：現貨 `S:<skuId>`、預購 `B:<batchId>`；同 SKU 的現貨與不同批次是不同品項），登入後合併（預購走 `setCartPreorder`，上限 100），合併異常列表顯示現貨／預購與批次名稱。
+- 購物車：現貨與「預購（每個批次各成一張訂單）」兩區，＋／− 自動儲存沿用版本核對佇列；側欄顯示現貨小計、預購小計與合計，以 `checkoutReady` 決定能否結帳。
+- 結帳頁（購物車模式）：讀 `/checkout/quote` 顯示分組（現貨訂單；每個預購批次含預計到貨），提示會拆成幾張；下單呼叫 `POST /customer/checkout`。只有一張時直接到付款（現貨 `/shop/orders?pay=`、預購 `/shop/preorder-orders?focus=`），多張時列出每張的「前往付款」與「到我的訂單查看全部」。舊版留下的未確認購物車下單（`expectedSubtotalTwd`）仍用原 API 原內容重試。未知結果的核對連結改到統一訂單中心。直接購買（Buy Now）不變。
+- 驗證：`npm run build` 通過；本機瀏覽器（本機測試帳號，資料在 api `work/`）實測：混合購物車（現貨＋兩批次，含同商品）→ 分組 3 張 → 下單 → 購物車清空、訂單中心待付款 3、預購付款連結正確；訪客加入預購 → 登入合併 → 純預購結帳直接到預購付款；直接購買到付款頁。
+
 ## 2026-11-18：Phase 2 統一訂單中心
 
 分支 `feat/order-center`（疊在 `feat/checkout-page` 上），需要後端 `feat/order-center`。未動 `package-lock.json`、`src/assets/`。
