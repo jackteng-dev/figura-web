@@ -8,7 +8,7 @@ import { shipments, shipmentDetail, shipmentCommand, shipmentStatus, waitingText
 
 const user = useUserInfoStore()
 const has = (code: string) => user.permissions.some(p => p.code === code)
-const rows = ref<Shipment[]>([]), total = ref(0), page = ref(1), selected = ref<ShipmentDetail>(), note = ref('')
+const rows = ref<Shipment[]>([]), total = ref(0), page = ref(1), selected = ref<ShipmentDetail>(), note = ref(''), waive = ref(false)
 const loading = ref(false), sending = ref(false), error = ref(''), message = ref(''), stale = ref(false)
 // 結果未確認時凍結並以同一 requestId／內容重試
 const pending = ref<{ id: string; action: 'ship' | 'deliver'; body: ShipmentCommand }>()
@@ -31,14 +31,14 @@ async function act(action: 'ship' | 'deliver') {
   const d = selected.value
   if (!pending.value) {
     if (!d || stale.value || !note.value.trim() || !has(action === 'ship' ? 'shipments.ship.mock' : 'shipments.deliver.mock')) return
-    pending.value = { id: d.shipment.id, action, body: { requestId: crypto.randomUUID(), expectedVersion: d.shipment.version, note: note.value.trim() } }
+    pending.value = { id: d.shipment.id, action, body: { requestId: crypto.randomUUID(), expectedVersion: d.shipment.version, note: note.value.trim(), ...(action === 'ship' && waive.value ? { waiveUnpaidFee: true } : {}) } }
   }
   sending.value = true; error.value = ''
   let done = false
   try {
     const p = pending.value!
     const r = await shipmentCommand(p.id, p.action, p.body)
-    pending.value = undefined; done = true; selected.value = r.current; note.value = ''
+    pending.value = undefined; done = true; selected.value = r.current; note.value = ''; waive.value = false
     message.value = r.replayed ? '操作已核對，沒有重複出貨。' : p.action === 'ship' ? `已整張出貨，測試貨件號 ${r.event.trackingNumber}（測試物流）。` : '已標記整張送達（測試物流）。'
   } catch (e: any) {
     const status = e.response?.status
@@ -76,8 +76,9 @@ onMounted(load)
    <p v-if="selected.shipment.trackingNumber">測試貨件號：{{ selected.shipment.trackingNumber }}</p>
    <p v-if="!selected.mockEnabled">此環境未啟用模擬配送。</p>
    <form v-if="(selected.canShip && has('shipments.ship.mock')) || (selected.canDeliver && has('shipments.deliver.mock')) || pending" @submit.prevent>
-    <label>操作原因<textarea v-model="note" required maxlength="500" :disabled="sending || !!pending || stale" /></label>
-    <button v-if="selected.canShip && has('shipments.ship.mock') && !pending" type="button" :disabled="sending || stale || !note.trim()" data-testid="shipment-ship" @click="act('ship')">整張出貨（測試物流）</button>
+    <label>操作原因<textarea v-model="note" required maxlength="480" :disabled="sending || !!pending || stale" /></label>
+    <label v-if="selected.shipment.waitingFor === 'FEE'" class="waive"><input v-model="waive" type="checkbox" :disabled="sending || !!pending" data-testid="waive-fee"> 承擔運費的訂單已取消或退款、運費未收。確認免收運費並出貨其餘訂單（會寫入稽核）</label>
+    <button v-if="selected.canShip && has('shipments.ship.mock') && !pending" type="button" :disabled="sending || stale || !note.trim() || (selected.shipment.waitingFor === 'FEE' && !waive)" data-testid="shipment-ship" @click="act('ship')">整張出貨（測試物流）</button>
     <button v-if="selected.canDeliver && has('shipments.deliver.mock') && !pending" type="button" :disabled="sending || stale || !note.trim()" @click="act('deliver')">整張標記送達</button>
     <button v-if="pending" type="button" :disabled="sending" @click="act(pending.action)">重試同一操作</button>
    </form>
