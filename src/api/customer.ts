@@ -2,6 +2,14 @@ import { clearCsrfToken, getCsrfToken } from '@/api/csrf'
 // email／phone／emailVerified 為 V19 新增；舊帳號（只有帳號名稱）可能為 null／false
 /** 本人資料：會員 ID、Email、手機與驗證狀態（沒有帳號名稱或暱稱）。 */
 export interface CustomerView { id: string; createdAt: string; email: string | null; phone: string | null; emailVerified: boolean }
+/** 台灣手機正規化為 09xxxxxxxx，規則與後端 CustomerPayloads.normalizePhone、App identity.dart 相同；不合法回傳 null。 */
+export function normalizePhone(raw: string): string | null {
+  let d = raw.replace(/[\s\-()]/g, '')
+  if (d.startsWith('+886')) d = d.slice(4)
+  else if (d.startsWith('886') && d.length === 12) d = d.slice(3)
+  if (/^9\d{8}$/.test(d)) d = '0' + d
+  return /^09\d{8}$/.test(d) ? d : null
+}
 export class CustomerApiError extends Error { constructor(public status: number, message: string) { super(message) } }
 let refreshing: Promise<boolean> | undefined
 async function send(path: string, method: string, body?: unknown, csrfRetry = true): Promise<Response> {
