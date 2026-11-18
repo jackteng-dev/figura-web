@@ -15,7 +15,7 @@ async function submit() {
  try {
   const created=await registerCustomer({phone:phone.value.trim(),email:email.value.trim(),password:password.value})
   password.value=''
-  await router.replace({path:'/shop/login',query:{registered:'1',username:created.email||email.value.trim()}})
+  await router.replace({path:'/shop/login',query:{registered:'1',login:created.email||email.value.trim()}})
  }
  catch(e){error.value=e instanceof Error?e.message:'建立帳號失敗，請稍後再試'}
  finally{pending.value=false}
