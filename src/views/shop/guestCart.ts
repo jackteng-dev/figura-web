@@ -1,5 +1,5 @@
 import { computed, ref } from 'vue'
-import { getCart, setCartItem, type CartView } from '@/api/shopping'
+import { getCart, setCartItem, setCartPreorder, type CartView } from '@/api/shopping'
 import { CustomerApiError, getCustomer } from '@/api/customer'
 
 /*
@@ -9,7 +9,12 @@ import { CustomerApiError, getCustomer } from '@/api/customer'
  * 回應未確認時不自動重送，停下並保留尚未合併的款式。
  */
 // pending：已送出合併寫入但尚未確認結果（見 mergeGuestCart）；pendingFor：當時合併到哪位會員
-export interface GuestLine { skuId: string; productId: string; quantity: number; pending?: boolean; pendingFor?: string }
+// batchId：預購項目（以批次為鍵；同 SKU 不同批次、或同 SKU 的現貨與預購都是不同品項）
+export interface GuestLine { skuId: string; productId: string; quantity: number; batchId?: string; pending?: boolean; pendingFor?: string }
+/** 品項鍵：現貨 S:<skuId>、預購 B:<batchId>。 */
+export const guestKey = (l: { skuId: string; batchId?: string }) => (l.batchId ? 'B:' + l.batchId : 'S:' + l.skuId)
+export const MAX_PRE_QTY = 100
+const cap = (l: { batchId?: string }) => (l.batchId ? MAX_PRE_QTY : MAX_QTY)
 const KEY = 'figura.guestCart.v1'
 export const MAX_QTY = 99
 export const MAX_LINES = 30
@@ -19,7 +24,7 @@ function read(): GuestLine[] {
     const raw = JSON.parse(localStorage.getItem(KEY) || '[]')
     if (!Array.isArray(raw)) return []
     return raw.filter((l: any) => typeof l?.skuId === 'string' && typeof l?.productId === 'string' && Number.isInteger(l?.quantity) && l.quantity >= 1)
-      .map((l: any) => ({ skuId: l.skuId, productId: l.productId, quantity: Math.min(MAX_QTY, l.quantity), ...(l.pending === true ? { pending: true, ...(typeof l.pendingFor === 'string' ? { pendingFor: l.pendingFor } : {}) } : {}) }))
+      .map((l: any) => ({ skuId: l.skuId, productId: l.productId, quantity: Math.min(typeof l.batchId === 'string' ? MAX_PRE_QTY : MAX_QTY, l.quantity), ...(typeof l.batchId === 'string' ? { batchId: l.batchId } : {}), ...(l.pending === true ? { pending: true, ...(typeof l.pendingFor === 'string' ? { pendingFor: l.pendingFor } : {}) } : {}) }))
       .slice(0, MAX_LINES)
   } catch { return [] }
 }
@@ -38,39 +43,42 @@ export const guestCount = computed(() => guestLines.value.reduce((n, l) => n + l
 if (typeof window !== 'undefined') window.addEventListener('storage', e => { if (e.key === KEY && !storageFailed) guestLines.value = read() })
 
 /** 加入訪客購物車；回傳加入後該款數量。超過上限丟出錯誤訊息。 */
-export function addGuest(productId: string, skuId: string, quantity: number) {
+export function addGuest(productId: string, skuId: string, quantity: number, batchId?: string) {
   const lines = [...guestLines.value]
-  const found = lines.find(l => l.skuId === skuId)
-  const total = (found?.quantity || 0) + quantity
-  if (!Number.isInteger(quantity) || quantity < 1 || total > MAX_QTY) throw new Error(`同款式最多 ${MAX_QTY} 件，請核對購物車數量。`)
-  if (!found && lines.length >= MAX_LINES) throw new Error(`購物車最多 ${MAX_LINES} 種款式，請先結帳或移除部分款式。`)
-  if (found) found.quantity = total; else lines.push({ skuId, productId, quantity })
+  const key = guestKey({ skuId, batchId })
+  const found = lines.find(l => guestKey(l) === key)
+  const total = (found?.quantity || 0) + quantity, max = batchId ? MAX_PRE_QTY : MAX_QTY
+  if (!Number.isInteger(quantity) || quantity < 1 || total > max) throw new Error(`同一品項最多 ${max} 件，請核對購物車數量。`)
+  if (!found && lines.length >= MAX_LINES) throw new Error(`購物車最多 ${MAX_LINES} 種品項，請先結帳或移除部分品項。`)
+  if (found) found.quantity = total; else lines.push({ skuId, productId, quantity, ...(batchId ? { batchId } : {}) })
   write(lines.map(l => ({ ...l })))
   return total
 }
-export function setGuest(skuId: string, quantity: number) {
-  if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_QTY) throw new Error(`數量需為 1–${MAX_QTY} 件。`)
-  write(guestLines.value.map(l => l.skuId === skuId ? { ...l, quantity } : l))
+/** key 為 guestKey()；舊呼叫傳入 skuId 時視為現貨。 */
+export function setGuest(key: string, quantity: number) {
+  const k = key.includes(':') ? key : 'S:' + key, max = k.startsWith('B:') ? MAX_PRE_QTY : MAX_QTY
+  if (!Number.isInteger(quantity) || quantity < 1 || quantity > max) throw new Error(`數量需為 1–${max} 件。`)
+  write(guestLines.value.map(l => guestKey(l) === k ? { ...l, quantity } : l))
 }
-export function removeGuest(skuId: string) { write(guestLines.value.filter(l => l.skuId !== skuId)) }
+export function removeGuest(key: string) { const k = key.includes(':') ? key : 'S:' + key; write(guestLines.value.filter(l => guestKey(l) !== k)) }
 /**
  * 合併處理完一款後，只扣掉這次處理的件數（重讀最新內容）。若合併期間其他訪客分頁把同款改多，
  * 多出來的件數會留下、下次再合併，而不是整筆刪除。
  */
-function settleGuest(skuId: string, handled: number) {
+function settleGuest(key: string, handled: number) {
   reloadGuest()
   write(guestLines.value.flatMap(l => {
-    if (l.skuId !== skuId) return [l]
+    if (guestKey(l) !== key) return [l]
     const left = l.quantity - handled
-    return left > 0 ? [{ skuId: l.skuId, productId: l.productId, quantity: left }] : []
+    return left > 0 ? [{ skuId: l.skuId, productId: l.productId, quantity: left, ...(l.batchId ? { batchId: l.batchId } : {}) }] : []
   }))
 }
 
 /** 伺服器購物車件數（登入時），供頁首顯示；由購物車相關頁面更新。 */
 export const serverCount = ref<number | null>(null)
-export const countOf = (cart: CartView) => cart.items.reduce((n, i) => n + i.quantity, 0)
+export const countOf = (cart: CartView) => cart.items.reduce((n, i) => n + i.quantity, 0) + (cart.preorders || []).reduce((n, p) => n + p.quantity, 0)
 
-export interface MergeIssue { skuId: string; productId: string; quantity: number; reason: string }
+export interface MergeIssue { skuId: string; productId: string; quantity: number; reason: string; batchId?: string }
 export interface MergeResult { merged: number; skipped: MergeIssue[]; uncertain: MergeIssue[]; error?: string }
 /*
  * 合併紀錄（每位會員分開保存在 localStorage，直到該會員在購物車頁按「我已了解」）：
@@ -89,7 +97,7 @@ function readReview(customerId: string): ReviewItem[] {
   } catch { return [] }
 }
 export const reviewItems = ref<ReviewItem[]>([])
-const sameReview = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && a.skuId === b.skuId
+const sameReview = (a: ReviewItem, b: ReviewItem) => a.kind === b.kind && guestKey(a) === guestKey(b)
 /** 待核對清單以 localStorage 為準。儲存無法使用時只保留在記憶體（重新整理後消失，已知限制）。 */
 function combined(customerId: string): ReviewItem[] { return readReview(customerId) }
 /** 切換到目前登入的會員；之後顯示與清除都只針對這位會員。 */
@@ -123,10 +131,10 @@ const UNCERTAIN = '有款式的合併結果未確認，請核對下方購物車�
 const ACCOUNT_CHANGED = '登入的帳號已變更，已停止合併；訪客購物車保留在這台裝置。'
 const BUSY = '購物車剛被其他地方更新，尚未合併的款式仍保留在這台裝置，稍後開啟購物車會再合併。'
 
-function setPending(skuId: string, pending: boolean, customerId?: string) {
-  write(guestLines.value.map(l => l.skuId === skuId ? (pending ? { ...l, pending: true, pendingFor: customerId } : { skuId: l.skuId, productId: l.productId, quantity: l.quantity }) : l))
+function setPending(key: string, pending: boolean, customerId?: string) {
+  write(guestLines.value.map(l => guestKey(l) === key ? (pending ? { ...l, pending: true, pendingFor: customerId } : { skuId: l.skuId, productId: l.productId, quantity: l.quantity, ...(l.batchId ? { batchId: l.batchId } : {}) }) : l))
 }
-const issue = (l: GuestLine, reason: string): MergeIssue => ({ skuId: l.skuId, productId: l.productId, quantity: l.quantity, reason })
+const issue = (l: GuestLine, reason: string): MergeIssue => ({ skuId: l.skuId, productId: l.productId, quantity: l.quantity, reason, ...(l.batchId ? { batchId: l.batchId } : {}) })
 
 /**
  * 把訪客購物車合併進已登入顧客的伺服器購物車（同款數量相加，上限 99）。
@@ -161,9 +169,10 @@ async function doMerge(customerId: string): Promise<MergeResult> {
     const owner = l.pendingFor || customerId
     if (owner === customerId) result.uncertain.push(it)
     addReview(owner, { ...it, kind: 'uncertain', at: Date.now() })
-    settleGuest(l.skuId, l.quantity)
+    settleGuest(guestKey(l), l.quantity)
   }
   for (const line of guestLines.value.filter(l => !l.pending)) {
+    const key = guestKey(line)
     let retried = false
     for (;;) {
       // 合併期間若有其他分頁換了登入帳號，共享的 Cookie 會指向另一位會員：確認身分仍相同才寫入
@@ -172,22 +181,22 @@ async function doMerge(customerId: string): Promise<MergeResult> {
       let cart: CartView
       try { cart = await getCart() }
       catch (e) { result.error = e instanceof CustomerApiError && e.status === 401 ? LOGIN_LOST : READ_FAILED; return finish() }
-      const current = cart.items.find(i => i.skuId === line.skuId)?.quantity || 0
-      const target = Math.min(MAX_QTY, current + line.quantity)
-      if (target === current) { settleGuest(line.skuId, line.quantity); result.merged++; break }
-      setPending(line.skuId, true, customerId)
+      const current = (line.batchId ? (cart.preorders || []).find(p => p.batchId === line.batchId)?.quantity : cart.items.find(i => i.skuId === line.skuId)?.quantity) || 0
+      const target = Math.min(cap(line), current + line.quantity)
+      if (target === current) { settleGuest(key, line.quantity); result.merged++; break }
+      setPending(key, true, customerId)
       try {
-        serverCount.value = countOf(await setCartItem(line.skuId, target, cart.version))
-        settleGuest(line.skuId, line.quantity); result.merged++; break
+        serverCount.value = countOf(line.batchId ? await setCartPreorder(line.batchId, target, cart.version) : await setCartItem(line.skuId, target, cart.version))
+        settleGuest(key, line.quantity); result.merged++; break
       } catch (e) {
         if (!(e instanceof CustomerApiError) || e.status >= 500) {
           const it = issue(line, '合併結果未確認，請核對購物車數量')
           result.uncertain.push(it); addReview(customerId, { ...it, kind: 'uncertain', at: Date.now() })
-          settleGuest(line.skuId, line.quantity)
+          settleGuest(key, line.quantity)
           result.error = UNCERTAIN
           return finish()
         }
-        setPending(line.skuId, false)
+        setPending(key, false)
         if (e.status === 401) { result.error = LOGIN_LOST; return finish() }
         if (e.status === 409) {
           // 409 時寫入未生效。無法確認原因（讀取失敗）或重試後仍衝突時，保留這款，下次再合併
@@ -197,7 +206,7 @@ async function doMerge(customerId: string): Promise<MergeResult> {
           if (now.version !== cart.version) { retried = true; continue }
           // 版本相同：是這款本身的問題（下架、庫存不足、款式數上限），列出原因並繼續其他款式
         }
-        settleGuest(line.skuId, line.quantity)
+        settleGuest(key, line.quantity)
         const skipped = issue(line, e.message || '無法加入購物車')
         result.skipped.push(skipped); addReview(customerId, { ...skipped, kind: 'skipped', at: Date.now() })
         break
