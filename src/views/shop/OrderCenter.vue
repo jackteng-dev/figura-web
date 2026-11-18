@@ -84,7 +84,7 @@ onMounted(() => { void catalog.load(); void load() })
      <p class="tags"><span class="tag" :class="o.kind === 'PREORDER' ? 'pre' : 'stock'">{{ o.kind === 'PREORDER' ? '預購' : '現貨' }}</span><span class="stage" :class="'st-' + o.stage">{{ stageLabel[o.stage] }}</span></p>
      <h2>{{ o.title || '訂單' }}<span v-if="o.lineCount > 1" class="more">等 {{ o.lineCount }} 款</span></h2>
      <p class="meta">共 {{ o.quantity }} 件 · {{ time(o.createdAt) }} 下單 · 編號 {{ o.id.slice(0, 8) }}</p>
-     <p v-if="o.balanceStatus === 'DUE'" class="due" data-testid="balance-due">訂金已付，待付尾款<template v-if="o.balanceDueAt">：請在 {{ time(o.balanceDueAt) }} 前支付</template></p>
+     <p v-if="o.balanceStatus === 'DUE' && o.status === 'PAID'" class="due" data-testid="balance-due">訂金已付，待付尾款<template v-if="o.balanceDueAt">：請在 {{ time(o.balanceDueAt) }} 前支付</template></p>
      <p v-else-if="o.stage === 'PENDING_PAYMENT' && o.expiresAt" class="due">請在 {{ time(o.expiresAt) }} 前完成付款</p>
      <p v-if="o.kind === 'PREORDER' && o.arrivalFrom" class="meta">預計到貨 {{ o.arrivalFrom }} ～ {{ o.arrivalTo }}</p>
      <p v-if="o.paymentReviewRequired" class="warn">付款通知待人工核對</p>
