@@ -5,6 +5,7 @@ import { CustomerApiError } from '@/api/customer'
 import { getOrders,getOrder,cancelOrder,orderStatus,fulfillmentStatus,type OrderView } from '@/api/orders'
 import CustomerReturnPanel from '@/views/shop/CustomerReturnPanel.vue'
 import MockPaymentPanel from '@/views/shop/MockPaymentPanel.vue'
+import ShipmentInfo from '@/views/shop/ShipmentInfo.vue'
 import { money,type Page } from '@/api/catalog'
 const route=useRoute(),router=useRouter(),returned=ref(''),returnNotice=ref(''),orders=ref<Page<OrderView>>(),page=ref(1),busy=ref(false),error=ref('')
 const time=(value:string)=>new Intl.DateTimeFormat('zh-TW',{dateStyle:'short',timeStyle:'medium',timeZone:'Asia/Taipei'}).format(new Date(value+'+08:00'))
@@ -71,7 +72,7 @@ onBeforeUnmount(()=>{left=true;window.clearTimeout(returnTimer)})
 <p>商品小計 {{ money(order.subtotalTwd) }} ＋ 配送費 {{ money(order.shippingTwd) }}<br><strong>總額 {{ money(order.totalTwd) }}</strong></p>
 <section v-if="(order.status==='PAID'||order.status==='REFUNDED')" class="fulfillment-progress" :data-testid="'fulfillment-'+order.id"><h3>配送進度</h3><p>{{ fulfillmentStatus(order.fulfillment.status) }}</p><p v-if="order.fulfillment.trackingId">模擬貨件編號 {{ order.fulfillment.trackingId }}</p><p v-if="order.fulfillment.shippedAt">模擬出貨時間：{{ time(order.fulfillment.shippedAt) }}</p><p v-if="order.fulfillment.deliveredAt">模擬送達時間：{{ time(order.fulfillment.deliveredAt) }}</p><p>此為配送演練，不會建立真實物流託運。按「重新核對訂單」更新進度。</p></section>
 <section v-if="order.refund" :data-testid="'refund-'+order.id"><h3>模擬退款已完成</h3><p>退款金額 {{ money(order.refund.amountTwd) }} · {{ time(order.refund.refundedAt) }}（台北時間）</p><p>這是退款演練，不會實際轉帳。</p></section>
-<button v-if="order.status==='PENDING_PAYMENT'" class="shop-button" :disabled="busy" @click="cancel(order)">取消訂單</button><CustomerReturnPanel v-if="order.fulfillment.status!=='UNFULFILLED'" :order="order" @changed="updateOrder" /><MockPaymentPanel :order="order" @changed="updateOrder" /></article>
+<ShipmentInfo :shipment="order.shipment" :order-id="order.id" /><button v-if="order.status==='PENDING_PAYMENT'" class="shop-button" :disabled="busy" @click="cancel(order)">取消訂單</button><CustomerReturnPanel v-if="order.fulfillment.status!=='UNFULFILLED'" :order="order" @changed="updateOrder" /><MockPaymentPanel :order="order" @changed="updateOrder" /></article>
 <nav v-if="orders&&orders.total>10" aria-label="訂單分頁"><button :disabled="busy||page===1" @click="load(page-1)">上一頁</button><span>第 {{ page }} 頁</span><button :disabled="busy||page*10>=orders.total" @click="load(page+1)">下一頁</button></nav>
 <p><router-link to="/shop/cart">回到購物車 →</router-link></p></section></template>
 <style scoped>.order-card{scroll-margin-top:150px;margin-top:24px;padding:24px;background:#ffffff;border:1px solid #e3e5ec;border-radius:10px;overflow-wrap:anywhere}.fulfillment-progress{margin-top:24px;border-top:1px solid #e3e5ec;padding-top:20px}.fulfillment-progress h3{font-size:19px}.order-card h2{font-size:22px}.order-card li{margin:12px 0;color:#15161a}.order-number{font-size:13px}nav{display:flex;gap:16px;margin-top:20px}@media(max-width:600px){.order-card{padding:18px}}</style>
