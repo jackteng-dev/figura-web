@@ -1,5 +1,17 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-19：擬真公仔 AI 圖片規範與兩款一致性樣本
+
+分支 `codex/figure-render-spec`，基於遠端 main `73fc22e`。本輪僅試作，不重做商品資料庫。未修改後端、`package-lock.json` 或 `src/assets/`，無資料契約切換。
+
+- 新增 `docs/AI_FIGURE_IMAGE_STANDARD.md`：PVC／ABS／樹脂的實體模型質感、完整底座與棚拍光、電影感 Banner、角色定稿與 reference-based 多角度流程、不可變左右／配件、prompt 模板、效能預算、AI 標示及驗收閘門。對真正 `.glb` 做條件／資產成本／按需載入評估；未開發 viewer。
+- 以 built-in ImageGen 做「月梨信差」「冷熔鍋爐姊」兩款主／側／背，加一張收藏場景 Banner。共 7 張評估圖、49 個衍生檔（WebP／AVIF／JPEG，約 1.09 MiB），原始圖及兩張構圖退回稿留在忽略的 `work/figure-render-samples/`。主圖實際 960²、Banner 1536×864，未把裁切／放大誤稱原生高解析。
+- `docs/figure-render-samples.html` 為獨立本機評估頁（1440／390px 已看圖），含 AI 提示、角度狀態與格式 fallback；素材在 `src/brand/figure-render-samples/`，`manifest.json` 保存完整實際 prompts、參考／輸出 hash、裁切、bytes。`scripts/prepare-figure-samples.py` 只轉檔，需本機忽略的 session／原圖及 FFmpeg／FFprobe；不連 API／DB。
+- `ShopHome.vue` 修正 AI 提示：混入非 AI 或目錄截斷時不再把提示整段隱藏，改用「包含 AI 生成的虛構展示商品」；全目錄經確認皆 AI 才稱全部。補充圖片非實物攝影／非可操作 3D 模型，價格庫存仍為展示。
+- 驗證：`npm run build` 通過（含型別檢查，Vite 6.51s）；Chrome headless 八項通過（全 AI／混合／截斷／無 AI／空目錄、手機提示、桌面與手機圖組 7 張 AVIF 解碼／不溢出），結果在 `docs/verification/figure-images-2026-11-19.json`；FFprobe 檢查 49 個尺寸並保存 hash。公開 API 回應在瀏覽器內模擬，沒有帳號或 DB 寫入。未跑 Maven、未測正式站／LCP／手機實機。既有 legacy script／import／chunk build 提示仍在。
+- 已知限制：兩張主圖通過風格評估；側面有花枝／包向／頭部／衣褶漂移，背面是未定稿設計提案，**沒有一整組被判為幾何一致**。Banner 手機專用構圖尚未製作。多角度與衍生格式未接後端單主圖 API，也未替換正式首頁。詳細見 `docs/AI_FIGURE_SAMPLE_REVIEW.md`。
+- 下一步：先定稿兩款完整 character sheet、修正不合格角度，再決定是否做下一批 5–10 款；若要精確任意角度，才選 1 款投入完整模型及 GLB 試點。這輪不批次改全庫。
+
 
 ## 2026-11-18：Phase 5 配送（運費、宅配／超商、合併／分開寄、出貨單）
 

@@ -9,6 +9,9 @@ const { products, openBatches, batchesByProduct, works, loading, error, truncate
 const tab = ref<'all' | 'pre' | 'stock'>('all')
 
 const productById = computed(() => new Map(products.value.map(p => [p.id, p])))
+const hasGeneratedProducts = computed(() =>
+  products.value.some(product => product.description.startsWith('AI 生成概念圖｜展示商品'))
+)
 const isGeneratedCatalog = computed(() =>
   !loading.value && !error.value && !truncated.value && products.value.length > 0 &&
   products.value.every(product => product.description.startsWith('AI 生成概念圖｜展示商品'))
@@ -56,9 +59,10 @@ onMounted(() => load())
   <div class="home">
     <header class="home-intro">
       <h1 class="home-title">讓喜歡的角色，走進你的日常<span>PVC・GK・可動模型與景品，現貨與預購一次看齊</span></h1>
-      <p v-if="isGeneratedCatalog" class="catalog-notice">
+      <p v-if="hasGeneratedProducts" class="catalog-notice">
         <strong>AI 生成商品</strong>
-        <span>本站商品名稱、系列與圖片皆由 AI 生成。價格與庫存僅供商店功能展示。</span>
+        <span v-if="isGeneratedCatalog">本站商品名稱、系列與圖片皆由 AI 生成。圖片採公仔渲染風格，非實物攝影或可操作的 3D 模型。價格與庫存僅供商店功能展示。</span>
+        <span v-else>本站包含 AI 生成的虛構展示商品；相關商品名稱、系列與圖片以商品說明標示為準。AI 圖片非實物攝影或可操作的 3D 模型，相關價格與庫存僅供功能展示。</span>
       </p>
     </header>
     <div v-if="error" class="shop-error" role="alert">{{ error }} <button class="shop-button" @click="load(true)">重新載入</button></div>
