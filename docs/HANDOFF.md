@@ -1,6 +1,15 @@
 # ELPSY Shop Vue 網站交接
 
 
+## 2026-11-18：Phase 5 配送（運費、宅配／超商、合併／分開寄、出貨單）
+
+分支 `feat/shipping`。需要後端 V23。
+
+- 結帳頁（購物車）：配送方式（宅配到府／超商取貨，顯示運費與免運門檻、停用的方式不可選）、超商測試門市選單（標示「測試門市」）、多組時可選「分開寄」或「一起寄」；切換時向伺服器重新報價，金額欄顯示商品小計、運費、應付金額；送出帶 `shippingMethod`／`deliveryStrategy`／`pickupStoreId`。直接購買維持宅配免運。
+- 訂單詳情（現貨、預購）新增「配送」區塊（`ShipmentInfo.vue`）：方式、狀態與等待原因、門市或地址、包裹運費、合併寄送的其他訂單、測試貨件號。
+- 後台：新增「出貨單」（`/admin/shipments`：清單、詳情、整張出貨／送達、未確認同操作重試）與「配送方式與運費」（`/admin/shipping-methods`：修改運費、免運門檻、開放，需原因）。路由依權限 `shipments.read`、`shipping.methods.read` 動態加入。
+- 驗證：`npm run build` 通過；本機瀏覽器走完超商合併寄送到整張出貨。後台頁面未在瀏覽器實際操作。
+
 ## 2026-11-18：Phase 4 預購訂金／尾款、延期與通知
 
 分支 `feat/preorder-deposit`（疊在 `feat/unified-cart` 上）。需要後端 V22。
