@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { registerCustomer } from '@/api/customer'
+import { registerCustomer, normalizePhone } from '@/api/customer'
 import PasswordField from '@/components/PasswordField.vue'
 import SocialLogin from './SocialLogin.vue'
 const router=useRouter(),phone=ref(''),email=ref(''),password=ref(''),pending=ref(false),error=ref('')
-// 台灣手機：允許空白或連字號，送出時由後端正規化為 09xxxxxxxx
-const phoneOk=(v:string)=>/^(?:\+?886|0)?9\d{8}$/.test(v.replace(/[\s-]/g,''))
+// 台灣手機：與後端／App 相同的正規化規則（允許空白、連字號、括號、+886／886）
+const phoneOk=(v:string)=>normalizePhone(v)!==null
 async function submit() {
  if(pending.value)return
  if(!phoneOk(phone.value)){error.value='手機號碼格式不正確，請輸入 09 開頭的 10 碼手機';return}
@@ -15,7 +15,7 @@ async function submit() {
  try {
   const created=await registerCustomer({phone:phone.value.trim(),email:email.value.trim(),password:password.value})
   password.value=''
-  await router.replace({path:'/shop/login',query:{registered:'1',username:created.email||email.value.trim()}})
+  await router.replace({path:'/shop/login',query:{registered:'1',login:created.email||email.value.trim()}})
  }
  catch(e){error.value=e instanceof Error?e.message:'建立帳號失敗，請稍後再試'}
  finally{pending.value=false}

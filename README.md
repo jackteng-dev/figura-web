@@ -9,13 +9,13 @@ Figura 是面向公仔／收藏品單店的電商作品，提供顧客購物網�
 ## 展示
 
 - [線上沙盒 figura.jackteng.dev](https://figura.jackteng.dev)：可實際瀏覽商品、加入購物車、下單並模擬付款，也能用示範帳號進入員工後台（`/admin/login`）處理出貨與退貨。資料皆為虛構，每天 04:00（台北時間）自動重置。
-  - 顧客：`demo_customer` / `figura-demo-customer`（也可自行註冊）
+  - 顧客：Email `demo-customer@example.com` 或手機 `0900000000`，密碼 `figura-demo-customer`（也可用手機＋Email 自行註冊）
   - 店長：`shop_admin` / `figura-demo-admin`；員工：`shop_staff` / `figura-demo-staff`
 - 沙盒與正式部署使用相同版本；為了讓每位訪客都能使用，停用員工／角色異動與商品圖片上傳。
 
 ## 主要功能
 
-- 顧客註冊、登入、暱稱編輯、購物車與本人收件地址管理。
+- 顧客以手機＋Email 註冊、手機或 Email 登入、會員資料查閱（Email 驗證狀態）、購物車與本人收件地址管理。
 - 商品列表與詳情、多 SKU、品牌／作品／分類；後台草稿編輯、上架／下架、封存與商品主圖管理。
 - SKU 庫存調整、實體／保留／可售數量查閱，以及附原因與操作者的異動紀錄。
 - 現貨結帳、本人訂單、取消與逾時保留釋放；模擬付款、配送、全額退款、整筆退貨及異常付款核對。

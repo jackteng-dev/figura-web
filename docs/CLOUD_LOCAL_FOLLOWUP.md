@@ -4,7 +4,7 @@
 
 ## 本輪雲端範圍
 
-A 版啟動／正式 build／員工與顧客 Cookie 身分、本人暱稱隔離與真實 MySQL／Redis 聯測，商品／SKU 權限與公開瀏覽，SKU庫存與異動稽核，顧客購物車／本人地址，demo Flyway V1／V2／V3／V4／V5；詳細證據見 HANDOFF。使用免費工具和合成帳號，未連原 DB、物件儲存、真實金流、郵件或 LINE。
+A 版啟動／正式 build／員工與顧客 Cookie 身分、本人資料隔離與真實 MySQL／Redis 聯測，商品／SKU 權限與公開瀏覽，SKU庫存與異動稽核，顧客購物車／本人地址，demo Flyway V1／V2／V3／V4／V5；詳細證據見 HANDOFF。使用免費工具和合成帳號，未連原 DB、物件儲存、真實金流、郵件或 LINE。
 
 ## 到可用本地環境再補
 
@@ -24,7 +24,7 @@ A 版啟動／正式 build／員工與顧客 Cookie 身分、本人暱稱隔離�
 
 ## 本輪新增本地待補
 
-原 DB／既有無 Flyway history 的 M0 demo 不自動接管；需備份／隔離還原後規劃 migration 或明確 baseline。顧客舊資料遷移、信箱驗證、密碼重設、登入／註冊限流、隱私資料與稽核需後續驗收；本輪只使用合成會員與暱稱。正式部署前另排依賴維護：Flyway 9.22 對 MySQL 8.4 有支援版本提示，本輪實測 migration 通過但未升級整個工具鏈。
+原 DB／既有無 Flyway history 的 M0 demo 不自動接管；需備份／隔離還原後規劃 migration 或明確 baseline。顧客舊資料遷移、信箱驗證、密碼重設、登入／註冊限流、隱私資料與稽核需後續驗收；本輪只使用合成會員（手機＋Email）。正式部署前另排依賴維護：Flyway 9.22 對 MySQL 8.4 有支援版本提示，本輪實測 migration 通過但未升級整個工具鏈。
 
 ## 商品階段本地待補
 

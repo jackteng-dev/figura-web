@@ -18,8 +18,8 @@ function check(name, ok) { if (!ok) throw Error('Check failed: ' + name); checks
     }
     async function login(ctx, manager = true) { const r = await api(ctx, '/admin/login', 'POST', { username: manager ? 'shop_admin' : 'shop_staff', password: process.env[manager ? 'DEMO_ADMIN_PASSWORD' : 'DEMO_STAFF_PASSWORD'], deviceId: crypto.randomUUID() }, true); if (r.status !== 200) throw Error('Dedicated staff login failed'); }
     await login(staff);
-    const username = 'pre_' + crypto.randomUUID().replaceAll('-', '').slice(0, 20), password = crypto.randomBytes(24).toString('base64url');
-    await api(customer, '/customer/auth/register', 'POST', { username, password, displayName: '預購付款UI測試' }); await api(customer, '/customer/auth/login', 'POST', { username, password, deviceId: crypto.randomUUID(), rememberMe: false });
+    const username = 'pre_' + crypto.randomUUID().replaceAll('-', '').slice(0, 20) + '@example.test', password = crypto.randomBytes(24).toString('base64url');
+    await api(customer, '/customer/auth/register', 'POST', { email: username, phone: '09'+String(crypto.randomInt(100000000)).padStart(8,'0'), password }); await api(customer, '/customer/auth/login', 'POST', { username, password, deviceId: crypto.randomUUID(), rememberMe: false });
     const aid = crypto.randomUUID(); await api(customer, '/customer/addresses/' + aid, 'PUT', { expectedVersion: 0, recipientName: '合成收件人', phone: '0912345678', postalCode: '100', city: '測試市', district: '測試區', street: '合成路 1 號' });
     async function fixture(qty = 1) {
       let p = (await api(staff, '/admin/products', 'POST', { title: 'Browser preorder money ' + crypto.randomUUID(), brand: 'ELPSY', category: '公仔', description: 'Synthetic', expectedVersion: 0, skus: [{ code: 'PM-' + crypto.randomUUID(), label: '限定款', priceTwd: 1280, enabled: true }] })).data; products.push(p.id);

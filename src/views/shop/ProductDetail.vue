@@ -2,16 +2,16 @@
 import { computed, nextTick, ref, watch } from 'vue'
 import ProductCover from './ProductCover.vue'
 import ProductCard from './ProductCard.vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
-import { getCart,setCartItem } from '@/api/shopping'
+import { getCart,setCartItem,setCartPreorder } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
-import { taipeiTime } from '@/api/preorders'
+import { taipeiTime, termsText } from '@/api/preorders'
 import { useCatalog, daysLeft, shortDate } from './useCatalog'
-import { addGuest, serverCount, countOf } from './guestCart'
+import { addGuest, serverCount, countOf, MAX_PRE_QTY } from './guestCart'
 const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
-const catalog = useCatalog()
+const catalog = useCatalog(), router = useRouter()
 let request = 0
 async function load() {
   const generation = ++request; loading.value = true; error.value = ''; product.value = undefined
@@ -23,13 +23,38 @@ async function load() {
 async function add(){
   if(adding.value||uncertain.value||!selected.value)return;adding.value=true;message.value='';addError.value=''
   const skuId=selected.value,amount=quantity.value
+  if(!Number.isInteger(amount)||amount<1||amount>99){addError.value='數量需為 1–99 的整數。';adding.value=false;return}
   try{
     // 未登入：放進這台裝置的訪客購物車，結帳時再登入
     try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,skuId,amount);message.value='已加入購物車。';return}throw e}
     const cart=await getCart();const old=cart.items.find(i=>i.skuId===skuId);const total=(old?.quantity||0)+amount
     if(!Number.isInteger(total)||total<1||total>99)throw new Error('同款式最多 99 件，請核對購物車數量。')
     serverCount.value=countOf(await setCartItem(skuId,total,cart.version));message.value='已加入購物車。'
-  }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
+  }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||e instanceof SyntaxError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
+}
+/**
+ * 預購加入購物車（每個批次一個品項；和現貨一起結帳時，系統自動拆成各批次的預購訂單）。購物車不保留配額。
+ * 結果未確認時不自動重送，請先到購物車核對。
+ */
+const preBusy=ref(''),preMessage=ref<Record<string,string>>({}),preError=ref<Record<string,string>>({}),preUncertain=ref(false)
+async function addPreorder(b:{id:string;skuLabel:string;availableQuota:number}){
+  if(preBusy.value||preUncertain.value)return;preBusy.value=b.id;preMessage.value={};preError.value={}
+  try{
+    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,product.value!.skus.find(s=>s.label===b.skuLabel)?.id||'',1,b.id);preMessage.value={[b.id]:'已加入購物車。'};return}throw e}
+    const cart=await getCart();const old=(cart.preorders||[]).find(p=>p.batchId===b.id);const total=(old?.quantity||0)+1
+    if(total>MAX_PRE_QTY)throw new Error(`同一批次最多 ${MAX_PRE_QTY} 件，請核對購物車數量。`)
+    serverCount.value=countOf(await setCartPreorder(b.id,total,cart.version));preMessage.value={[b.id]:'已加入購物車。'}
+  }catch(e){
+    if(e instanceof TypeError||e instanceof SyntaxError||(e instanceof CustomerApiError&&e.status>=500)){preUncertain.value=true;preError.value={[b.id]:'回應未確認，請先到購物車核對，再決定是否加入。'}}
+    else preError.value={[b.id]:e instanceof Error?e.message:'無法加入購物車'}
+  }finally{preBusy.value=''}
+}
+/** 直接購買：只買這一款、不放進購物車，進入結帳頁。未登入時路由會先導向登入，登入後回到結帳頁。 */
+async function buyNow(){
+  if(adding.value||uncertain.value||!selected.value)return
+  const amount=quantity.value
+  if(!Number.isInteger(amount)||amount<1||amount>99){addError.value='數量需為 1–99 的整數。';return}
+  await router.push({path:'/shop/checkout',query:{product:product.value!.id,sku:selected.value,qty:String(amount)}})
 }
 watch(() => route.params.id, load, { immediate: true })
 
@@ -109,7 +134,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <div v-if="selectedSku" class="stock-note">現貨供應中・確認下單後保留庫存 30 分鐘，付款後安排出貨</div>
           <div v-else-if="product.skus.length" class="stock-note none">目前所有款式暫無現貨<template v-if="batches.length">，可參考下方預購批次</template></div>
 
-          <form class="add-form" @submit.prevent="add">
+          <form class="add-form" @submit.prevent="add()">
             <div class="qty-row">
               <label for="purchase-quantity">加入數量</label>
               <div class="stepper">
@@ -119,13 +144,13 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
               </div>
             </div>
             <div class="actions">
-              <button class="shop-button primary" :disabled="adding||uncertain||!selected">加入購物車</button>
-              <router-link class="shop-button ghost" to="/shop/cart">前往購物車</router-link>
+              <button class="shop-button ghost" :disabled="adding||uncertain||!selected">加入購物車</button>
+              <button type="button" class="shop-button primary" data-testid="buy-now" :disabled="adding||uncertain||!selected" @click="buyNow">直接購買</button>
             </div>
           </form>
           <p v-if="message" class="shop-success" role="status">{{ message }} <router-link to="/shop/cart">查看購物車 →</router-link></p>
           <p v-if="addError" class="shop-error" role="alert">{{ addError }} <router-link to="/shop/cart">核對購物車 →</router-link></p>
-          <p class="purchase-note">加入購物車不保留庫存，價格與可用狀態會在下單時重新核對。付款與配送目前為模擬演練。</p>
+          <p class="purchase-note">加入購物車不保留庫存，價格與可用狀態會在下單時重新核對。付款為綠界測試環境或模擬、配送為模擬演練，不會實際收款或出貨。</p>
           </template>
         </section>
 
@@ -135,12 +160,16 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <dl class="pre-grid">
             <div><dt>截單（台北）</dt><dd>{{ taipeiTime(b.deadlineAt) }}</dd></div>
             <div><dt>預計到貨</dt><dd>{{ b.arrivalFrom }} ～ {{ b.arrivalTo }}</dd></div>
+            <div><dt>付款方式</dt><dd :data-testid="'pre-terms-' + b.id">{{ termsText(b) }}</dd></div>
             <div><dt>剩餘配額</dt><dd>{{ b.availableQuota }} 件</dd></div>
           </dl>
-          <p class="pre-note">預購不放入購物車，直接建立預購訂單；下單保留配額，請於時限內付款，到貨前可整筆退款。</p>
+          <p class="pre-note">可以加入購物車和現貨一起結帳（系統自動拆成這個批次的預購訂單），也可以直接預購下單。下單才保留配額，請於時限內付款，到貨前可整筆退款。</p>
           <div class="actions">
-            <router-link class="shop-button primary" :to="'/shop/preorders/' + b.id + '/checkout'">預購下單・保留配額</router-link>
+            <button type="button" class="shop-button ghost" :data-testid="'pre-add-' + b.id" :disabled="!!preBusy || preUncertain || b.availableQuota < 1" @click="addPreorder(b)">{{ preBusy === b.id ? '加入中…' : '加入購物車' }}</button>
+            <router-link class="shop-button primary" :to="'/shop/preorders/' + b.id + '/checkout'">直接預購下單</router-link>
           </div>
+          <p v-if="preMessage[b.id]" role="status" class="shop-success">{{ preMessage[b.id] }} <router-link to="/shop/cart">查看購物車 →</router-link></p>
+          <p v-if="preError[b.id]" role="alert" class="shop-error">{{ preError[b.id] }}</p>
         </section>
       </div>
     </article>
