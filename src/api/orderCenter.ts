@@ -8,6 +8,8 @@ export interface OrderCenterItem {
   kind: 'STOCK' | 'PREORDER'; id: string; stage: Exclude<OrderStage, 'ALL'>; status: string; createdAt: string; totalTwd: number
   title: string | null; lineCount: number; quantity: number; productId: string | null; expiresAt: string | null
   arrivalFrom: string | null; arrivalTo: string | null; arrivalStatus: string | null; fulfillmentStatus: string | null; paymentReviewRequired: boolean
+  /** 預購訂金：DUE＝訂金已付、待付尾款（stage 為 PENDING_PAYMENT） */
+  balanceStatus: 'NONE' | 'NOT_DUE' | 'DUE' | 'PAID' | null; balanceDueAt: string | null
 }
 export interface OrderCenterPage { items: OrderCenterItem[]; page: number; pageSize: number; total: number; counts: Record<OrderStage, number> }
 export const getOrderCenter = (q: { kind: OrderKind; stage: OrderStage; sort: OrderSort; page: number; pageSize?: number }) =>

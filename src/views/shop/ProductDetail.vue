@@ -6,7 +6,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
 import { getCart,setCartItem,setCartPreorder } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
-import { taipeiTime } from '@/api/preorders'
+import { taipeiTime, termsText } from '@/api/preorders'
 import { useCatalog, daysLeft, shortDate } from './useCatalog'
 import { addGuest, serverCount, countOf, MAX_PRE_QTY } from './guestCart'
 const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
@@ -160,6 +160,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <dl class="pre-grid">
             <div><dt>截單（台北）</dt><dd>{{ taipeiTime(b.deadlineAt) }}</dd></div>
             <div><dt>預計到貨</dt><dd>{{ b.arrivalFrom }} ～ {{ b.arrivalTo }}</dd></div>
+            <div><dt>付款方式</dt><dd :data-testid="'pre-terms-' + b.id">{{ termsText(b) }}</dd></div>
             <div><dt>剩餘配額</dt><dd>{{ b.availableQuota }} 件</dd></div>
           </dl>
           <p class="pre-note">可以加入購物車和現貨一起結帳（系統自動拆成這個批次的預購訂單），也可以直接預購下單。下單才保留配額，請於時限內付款，到貨前可整筆退款。</p>
