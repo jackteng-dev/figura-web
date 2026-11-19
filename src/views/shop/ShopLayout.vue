@@ -50,8 +50,7 @@ onMounted(() => {
         <nav class="shop-member" aria-label="會員">
           <router-link v-if="memberName" to="/shop/account" class="member-link">{{ memberName }}</router-link>
           <router-link v-else to="/shop/login" class="member-link" @click="loginFromHere">登入 / 註冊</router-link>
-          <router-link to="/shop/orders" class="member-link hide-sm">我的訂單</router-link>
-          <router-link to="/shop/preorder-orders" class="member-link hide-sm">我的預購</router-link>
+          <router-link to="/shop/my-orders" class="member-link hide-sm">我的訂單</router-link>
           <router-link to="/shop/cart" class="cart-link">購物車<span v-if="cartCount" class="cart-count"><span class="visually-hidden">，</span>{{ cartCount > 99 ? '99+' : cartCount }}<span class="visually-hidden"> 件</span></span></router-link>
         </nav>
       </div>
@@ -78,7 +77,7 @@ onMounted(() => {
       <div class="shop-footer-grid">
         <div><div class="foot-logo">Figura<span>.</span></div>公仔・PVC・GK 收藏專門店</div>
         <div><div class="foot-title">購物</div><router-link to="/shop/products">所有商品</router-link><br><router-link to="/shop/preorders">預購情報</router-link><br><router-link to="/shop/cart">購物車</router-link></div>
-        <div><div class="foot-title">會員</div><router-link to="/shop/orders">我的訂單</router-link><br><router-link to="/shop/preorder-orders">我的預購</router-link><br><router-link to="/shop/addresses">收件地址</router-link></div>
+        <div><div class="foot-title">會員</div><router-link to="/shop/my-orders">我的訂單（現貨＋預購）</router-link><br><router-link to="/shop/addresses">收件地址</router-link></div>
         <div><div class="foot-title">其他</div><router-link to="/shop/account">會員中心</router-link></div>
       </div>
       <p class="foot-note">付款、配送、退貨與退款皆為模擬演練，不會實際收款或轉帳。</p>
@@ -87,7 +86,7 @@ onMounted(() => {
     <nav class="shop-tabbar" aria-label="快速導覽">
       <router-link to="/shop" :class="{ on: route.path === '/shop' }"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z" /></svg>首頁</router-link>
       <router-link to="/shop/products" :class="{ on: route.path.startsWith('/shop/products') }"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" /><rect x="13" y="4" width="7" height="7" /><rect x="4" y="13" width="7" height="7" /><rect x="13" y="13" width="7" height="7" /></svg>商品</router-link>
-      <router-link to="/shop/preorder-orders" :class="{ on: route.path.startsWith('/shop/preorder-orders') }"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg>我的預購</router-link>
+      <router-link to="/shop/my-orders" :class="{ on: ['/shop/my-orders','/shop/orders','/shop/preorder-orders'].some(p => route.path.startsWith(p)) }"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg>我的訂單</router-link>
       <router-link to="/shop/account" :class="{ on: route.path.startsWith('/shop/account') }"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" /></svg>會員</router-link>
     </nav>
   </div>

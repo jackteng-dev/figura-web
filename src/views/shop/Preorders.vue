@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { publicBatches, publicBatch, taipeiTime, type PublicBatch } from '@/api/preorders'
+import { publicBatches, publicBatch, taipeiTime, termsText, type PublicBatch } from '@/api/preorders'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
 import ProductCover from './ProductCover.vue'
 import { daysLeft } from './useCatalog'
@@ -68,6 +68,7 @@ onMounted(load)
           <dl class="facts">
             <div><dt>截止時間（台北）</dt><dd>{{ taipeiTime(batch.deadlineAt) }}</dd></div>
             <div><dt>預計到貨</dt><dd>{{ batch.arrivalFrom }} ～ {{ batch.arrivalTo }}</dd></div>
+            <div><dt>付款方式</dt><dd>{{ termsText(batch) }}</dd></div>
             <div><dt>批次剩餘配額</dt><dd>{{ batch.availableQuota }} 件</dd></div>
           </dl>
 
