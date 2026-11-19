@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // 結帳頁：購物車結帳與「直接購買」共用同一頁。
-// - 購物車結帳：/shop/checkout，讀本人伺服器購物車，下單呼叫 POST /customer/orders（帶整車版本）。
+// - 購物車結帳：/shop/checkout，讀本人購物車（現貨＋預購）與伺服器分組報價，下單呼叫 POST /customer/checkout（帶整車版本與總額），
+//   伺服器在同一個交易拆成一張現貨訂單＋每個預購批次一張訂單，任何一張失敗全部回滾。
 // - 直接購買：/shop/checkout?product=&sku=&qty=，只買這一款，不讀也不清購物車，下單呼叫 POST /customer/orders/direct。
 // 進入本頁、選地址、新增／編輯地址都不保留庫存；只有按「確認下單」才建立訂單並保留 30 分鐘。
 // 送出前先向伺服器重讀金額／版本／地址，與畫面不同就停下讓顧客確認；伺服器仍會再核對一次。
@@ -11,13 +12,17 @@ import ProductCover from './ProductCover.vue'
 import AddressForm from './AddressForm.vue'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
 import { getCart, getAddresses, saveAddress, issueText, type AddressView, type AddressWrite, type CartView } from '@/api/shopping'
-import { placeOrder, placeDirectOrder, type PlaceOrder, type DirectOrder } from '@/api/orders'
+import { placeOrder, placeDirectOrder, getQuote, placeCheckout, type PlaceOrder, type DirectOrder, type Quote, type CheckoutPlace, type PlacedOrder } from '@/api/orders'
+import { detailLink } from '@/api/orderCenter'
+import { pickupStores, feeRule, type PickupStore } from '@/api/shipping'
 import { CustomerApiError, getCustomer } from '@/api/customer'
 import { useCustomerStore } from '@/stores/customer'
 import { rememberReturn, reviewItems, loadReview, serverCount, countOf, reloadGuest, guestLines, lastMerge } from './guestCart'
 import { useCatalog } from './useCatalog'
 
-type Pending = { kind: 'cart'; body: PlaceOrder } | { kind: 'direct'; body: DirectOrder }
+// legacyCart：舊版（只結帳現貨）留下的未確認操作，仍用原 API 原內容重試
+type Pending = { kind: 'cart'; body: CheckoutPlace } | { kind: 'legacyCart'; body: PlaceOrder } | { kind: 'direct'; body: DirectOrder }
+const amountOf = (p: Pending) => (p.kind === 'cart' ? p.body.expectedTotalTwd : p.body.expectedSubtotalTwd)
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const PENDING_KEY = 'figura.checkout.pending.v1'
 const LEGACY_BUY_NOW_KEY = 'figura.buyNow.pending.v1' // 舊「直接購買」頁保存的未確認操作，仍要能接手
@@ -30,13 +35,15 @@ const quantity = ref(queryQty)
 const kind = ref<'cart' | 'direct'>(directProductId && directSkuId ? 'direct' : 'cart')
 
 const loading = ref(true), busy = ref(false), error = ref(''), notice = ref(''), needsReload = ref(false)
-const cart = ref<CartView>(), product = ref<PublicProduct>(), addresses = ref<AddressView[]>([]), addressId = ref('')
+const cart = ref<CartView>(), quote = ref<Quote>(), product = ref<PublicProduct>(), addresses = ref<AddressView[]>([]), addressId = ref('')
 const attempt = ref<Pending>(), unknown = ref(false)
 let attemptOwner = '' // 這次操作屬於哪位會員；換人登入時不得沿用
 let viewOwner = '' // 畫面上的購物車／地址／未確認操作是哪位會員的
 // placedId：已確認建立的訂單；之後只導向付款，不再送任何下單請求
 // storageBroken：無法讀寫這個分頁的保存空間，無法保證未知結果時重試同一操作，停止下單
-const placedId = ref(''), storageBroken = ref(false)
+// 配送（Phase 5，只用於購物車結帳）：方式、合併／分開寄、超商測試門市
+const shipMethod = ref<'HOME' | 'CVS'>('HOME'), shipStrategy = ref<'SPLIT' | 'COMBINED'>('SPLIT'), storeId = ref(''), stores = ref<PickupStore[]>([])
+const placedId = ref(''), placedOrders = ref<PlacedOrder[]>([]), storageBroken = ref(false)
 const editingAddress = ref(''), addressBusy = ref(false), addressError = ref(''), addressNeedsReload = ref(false)
 // 登入時訪客購物車沒有合併完成（仍有訪客商品或合併失敗）：購物車結帳要先回購物車完成核對
 const guestUnmerged = ref(false)
@@ -47,12 +54,12 @@ const validQty = computed(() => Number.isInteger(quantity.value) && quantity.val
 const imageOf = (productId: string) => catalog.products.value.find(p => p.id === productId)?.image
 /** 畫面顯示的商品行：購物車取伺服器購物車；直接購買取公開商品資料。 */
 const lines = computed(() => {
-  if (kind.value === 'cart') return (cart.value?.items || []).map(i => ({ key: i.skuId, productId: i.productId, title: i.title, label: i.label, quantity: i.quantity, unit: i.unitPriceTwd, total: i.lineTotalTwd, issue: i.issue ? issueText(i.issue) : '', image: imageOf(i.productId) }))
+  if (kind.value === 'cart') return (quote.value?.groups || []).flatMap(g => g.lines.map(l => ({ key: (l.batchId || l.skuId), productId: l.productId, title: l.title, label: l.label, quantity: l.quantity, unit: l.unitPriceTwd as number | null, total: l.lineTotalTwd as number | null, issue: l.issue ? (l.batchId ? '此預購目前無法下單' : issueText(l.issue as any)) : '', image: imageOf(l.productId) })))
   if (!product.value || !sku.value) return []
   return [{ key: sku.value.id, productId: product.value.id, title: product.value.title, label: sku.value.label, quantity: quantity.value, unit: sku.value.priceTwd, total: sku.value.priceTwd * quantity.value, issue: sku.value.available ? '' : '暫無庫存', image: product.value.image }]
 })
-const subtotal = computed(() => unknown.value && attempt.value ? attempt.value.body.expectedSubtotalTwd : kind.value === 'cart' ? cart.value?.subtotalTwd || 0 : lines.value[0]?.total || 0)
-const itemsReady = computed(() => kind.value === 'cart' ? !!cart.value?.items.length && !!cart.value.ready : !!sku.value?.available && validQty.value)
+const subtotal = computed(() => unknown.value && attempt.value ? amountOf(attempt.value) : kind.value === 'cart' ? quote.value?.totalTwd || 0 : lines.value[0]?.total || 0)
+const itemsReady = computed(() => kind.value === 'cart' ? !!quote.value?.groups.length && !!quote.value.ready : !!sku.value?.available && validQty.value)
 // 已保存的未確認操作（unknown）只送原本的 requestId＋內容，不依賴畫面上重讀的資料，所以讀取失敗也仍可重試
 const canSubmit = computed(() => !busy.value && !loading.value && !placedId.value && !storageBroken.value
   && (unknown.value || (!needsReload.value && !editingAddress.value && !addressNeedsReload.value && itemsReady.value && !!selectedAddress.value && !(kind.value === 'cart' && guestUnmerged.value))))
@@ -68,7 +75,11 @@ function readPending(customerId: string): Pending | undefined {
   try { raw = sessionStorage.getItem(keyOf(customerId)); rawOld = sessionStorage.getItem(LEGACY_BUY_NOW_KEY + '.' + customerId) } catch { throw new StorageUnavailable() }
   try {
     const v = JSON.parse(raw || 'null')
-    if (v && v.customerId === customerId && (v.kind === 'cart' || v.kind === 'direct') && v.body && UUID.test(v.body.requestId)) return { kind: v.kind, body: v.body }
+    if (v && v.customerId === customerId && (v.kind === 'cart' || v.kind === 'legacyCart' || v.kind === 'direct') && v.body && UUID.test(v.body.requestId)) {
+      // 舊版購物車結帳（只有現貨、帶 expectedSubtotalTwd）的未確認操作
+      if (v.kind === 'cart' && typeof v.body.expectedTotalTwd !== 'number') return { kind: 'legacyCart', body: v.body }
+      return { kind: v.kind, body: v.body }
+    }
     const old = JSON.parse(rawOld || 'null')
     if (old && old.customerId === customerId && old.body && UUID.test(old.body.requestId)) return { kind: 'direct', body: old.body }
   } catch { /* 內容損毀：不是本頁格式，當作沒有 */ }
@@ -81,7 +92,7 @@ const message = (e: unknown, fallback: string) => e instanceof Error && e.messag
 
 // ---- 載入 ----
 async function readItems() {
-  if (kind.value === 'cart') { cart.value = await getCart(); serverCount.value = countOf(cart.value); return }
+  if (kind.value === 'cart') { const [c, qt] = await Promise.all([getCart(), getQuote(shipMethod.value, shipStrategy.value)]); cart.value = c; quote.value = qt; serverCount.value = countOf(c); if (shipMethod.value === 'CVS' && !stores.value.length) stores.value = await pickupStores(); return }
   const p = attempt.value?.kind === 'direct' ? attempt.value.body : undefined
   product.value = await publicProduct(p?.productId || directProductId).catch(e => { if (p) return undefined; throw e })
 }
@@ -104,7 +115,11 @@ async function load(): Promise<boolean> {
     reloadGuest(); guestUnmerged.value = guestLines.value.length > 0 || !!lastMerge.value?.error
     // 換了會員（例如另一分頁登入別人）：丟掉畫面上前一位會員的操作狀態（其保存紀錄仍留在他自己的 key）
     if (attemptOwner && attemptOwner !== me.id) { attempt.value = undefined; unknown.value = false; attemptOwner = ''; kind.value = directProductId && directSkuId ? 'direct' : 'cart'; quantity.value = queryQty; product.value = undefined; cart.value = undefined }
-    if (pending) { attempt.value = pending; attemptOwner = me.id; unknown.value = true; kind.value = pending.kind; if (pending.kind === 'direct') quantity.value = pending.body.quantity }
+    if (pending) {
+      attempt.value = pending; attemptOwner = me.id; unknown.value = true; kind.value = pending.kind === 'direct' ? 'direct' : 'cart'; if (pending.kind === 'direct') quantity.value = pending.body.quantity
+      // 畫面顯示原操作的配送選擇（重試送出的就是這份內容）
+      if (pending.kind === 'cart') { shipMethod.value = pending.body.shippingMethod || 'HOME'; shipStrategy.value = pending.body.deliveryStrategy || 'SPLIT'; storeId.value = pending.body.pickupStoreId || '' }
+    }
     if (kind.value === 'direct' && !pending && (!directProductId || !directSkuId)) { error.value = '找不到要購買的商品，請回商品頁重新選擇。'; return false }
     const [, list] = await Promise.all([readItems(), getAddresses()])
     pickAddress(list, pending?.body.addressId)
@@ -164,16 +179,25 @@ async function reloadAddresses(prefer?: string, why?: string) {
 
 // ---- 送出 ----
 /** 送出前最後一次向伺服器核對：內容、金額或地址和畫面不同就停下，請顧客確認新內容。 */
+/** 換配送方式或寄送方式：重新向伺服器報價（運費依伺服器規則）。 */
+async function changeShipping() {
+  if (busy.value || unknown.value) return
+  busy.value = true; error.value = ''
+  try { await readItems() } catch (e) { error.value = message(e, '運費報價讀取失敗，請重試') } finally { busy.value = false }
+}
 async function recheck(): Promise<Pending | undefined> {
-  const shown = { subtotal: subtotal.value, version: cart.value?.version, address: selectedAddress.value }
+  const shown = { subtotal: subtotal.value, version: quote.value?.cartVersion, address: selectedAddress.value, method: shipMethod.value, strategy: shipStrategy.value, store: storeId.value }
   const [, list] = await Promise.all([readItems(), getAddresses()])
   pickAddress(list, shown.address?.id)
   const address = list.find(a => a.id === shown.address?.id)
   if (!address || address.version !== shown.address?.version) { error.value = '收件地址已變更或刪除，請重新確認收件資訊後再下單。'; return }
   if (!itemsReady.value) { error.value = kind.value === 'cart' ? '購物車有商品無法購買，請回購物車調整。' : '這個款式目前無法購買。'; return }
-  if (subtotal.value !== shown.subtotal || (kind.value === 'cart' && cart.value!.version !== shown.version)) { error.value = '商品內容或金額已更新，請確認新的金額後再按一次「確認下單」。'; return }
+  if (subtotal.value !== shown.subtotal || (kind.value === 'cart' && quote.value!.cartVersion !== shown.version)) { error.value = '商品內容或金額已更新，請確認新的金額後再按一次「確認下單」。'; return }
   const requestId = crypto.randomUUID()
-  if (kind.value === 'cart') return { kind: 'cart', body: { requestId, cartVersion: cart.value!.version, addressId: address.id, addressVersion: address.version, expectedSubtotalTwd: cart.value!.subtotalTwd } }
+  if (kind.value === 'cart') {
+    if (shown.method === 'CVS' && !shown.store) { error.value = '請選擇超商取貨門市。'; return }
+    return { kind: 'cart', body: { requestId, cartVersion: quote.value!.cartVersion, addressId: address.id, addressVersion: address.version, expectedTotalTwd: quote.value!.totalTwd, shippingMethod: shown.method, deliveryStrategy: shown.strategy, ...(shown.method === 'CVS' ? { pickupStoreId: shown.store } : {}) } }
+  }
   return { kind: 'direct', body: { requestId, productId: product.value!.id, skuId: sku.value!.id, quantity: quantity.value, addressId: address.id, addressVersion: address.version, expectedSubtotalTwd: subtotal.value } }
 }
 async function submit() {
@@ -199,13 +223,22 @@ async function submit() {
       attempt.value = fresh; attemptOwner = store.profile.id
     }
     const p = attempt.value!
-    const result = p.kind === 'cart' ? await placeOrder(p.body) : await placeDirectOrder(p.body)
-    const id = result?.order?.id
-    if (typeof id !== 'string' || !UUID.test(id)) throw new TypeError('無法判讀下單回應') // 視為結果未確認，保留原操作
+    let created: PlacedOrder[]
+    if (p.kind === 'cart') {
+      const result = await placeCheckout(p.body)
+      if (!result || !Array.isArray(result.orders) || !result.orders.length || result.orders.some(o => typeof o?.id !== 'string' || !UUID.test(o.id))) throw new TypeError('無法判讀下單回應')
+      created = result.orders
+    } else {
+      const result = p.kind === 'legacyCart' ? await placeOrder(p.body) : await placeDirectOrder(p.body)
+      const id = result?.order?.id
+      if (typeof id !== 'string' || !UUID.test(id)) throw new TypeError('無法判讀下單回應') // 視為結果未確認，保留原操作
+      created = [{ kind: 'STOCK', id, status: result.order.status, totalTwd: result.order.totalTwd, expiresAt: result.order.expiresAt, title: '' }]
+    }
     // 訂單已建立：之後只導向付款，不再送任何下單請求
-    placedId.value = id; clearPending(); unknown.value = false; attempt.value = undefined
-    if (p.kind === 'cart') serverCount.value = 0
-    await goPay()
+    placedOrders.value = created; placedId.value = created[0].id; clearPending(); unknown.value = false; attempt.value = undefined
+    if (p.kind !== 'direct') serverCount.value = (cart.value?.preorders.length && p.kind === 'legacyCart') ? null : 0
+    // 只有一張訂單就直接到它的付款區；拆成多張時留在本頁列出每一張
+    if (created.length === 1) await goPay()
   } catch (e) {
     if (e instanceof CustomerApiError && e.status === 401) {
       // 未授權不能證明先前沒有成功：有已送出的操作就保留，重新登入後回到這頁用同一操作重試
@@ -224,8 +257,9 @@ async function submit() {
     } else { unknown.value = true; error.value = '下單結果未確認，請按「用同一操作重試」，或到我的訂單核對；不要重新建立另一筆。' }
   } finally { busy.value = false }
 }
-async function goPay() {
-  try { await router.replace({ path: '/shop/orders', query: { pay: placedId.value } }) }
+async function goPay(order: PlacedOrder | undefined = placedOrders.value[0]) {
+  if (!order) return
+  try { await router.replace(order.kind === 'STOCK' ? { path: '/shop/orders', query: { pay: order.id } } : detailLink(order)) }
   catch { /* 導頁失敗：畫面保留「前往付款」按鈕 */ }
 }
 /** 核對後放棄：只有顧客確認已在我的訂單核對過才清除保存的操作。 */
@@ -237,7 +271,7 @@ function abandon() {
 function bump(delta: number) { const next = quantity.value + delta; if (next >= 1 && next <= 99) quantity.value = next }
 onBeforeRouteLeave(to => {
   // 本頁自己的去向（成功後到付款、登入失效到登入頁）一律放行
-  if (to.path === '/shop/orders' || to.path === '/shop/login') return true
+  if (['/shop/orders', '/shop/preorder-orders', '/shop/my-orders', '/shop/login'].includes(to.path)) return true
   if (busy.value) return false
   if (unknown.value) return window.confirm('下單結果尚未確認。離開後回到此頁仍會保留同一操作，確定離開？')
   return true
@@ -254,19 +288,28 @@ onMounted(() => { catalog.load(); void load() })
     <li aria-current="step">{{ kind === 'cart' ? '2' : '1' }} 確認訂單</li><li>{{ kind === 'cart' ? '3' : '2' }} 付款</li>
    </ol>
   </div>
-  <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" type="button" class="link" :disabled="busy" @click="load">重新讀取</button><router-link v-if="unknown" to="/shop/orders">到我的訂單核對 →</router-link> <button v-if="unknown" type="button" class="link" @click="abandon">已核對，放棄這次下單</button></p>
+  <p v-if="error" role="alert" class="shop-error">{{ error }} <button v-if="needsReload" type="button" class="link" :disabled="busy" @click="load">重新讀取</button><router-link v-if="unknown" to="/shop/my-orders">到我的訂單核對 →</router-link> <button v-if="unknown" type="button" class="link" @click="abandon">已核對，放棄這次下單</button></p>
   <p v-if="notice" role="status" class="shop-success">{{ notice }}</p>
-  <div v-if="placedId" class="placed" role="status" data-testid="checkout-placed"><p>訂單已建立（編號 {{ placedId.slice(0, 8) }}），請前往付款。</p><button class="shop-button primary" @click="goPay">前往付款</button></div>
+  <div v-if="placedId" class="placed" role="status" data-testid="checkout-placed">
+   <template v-if="placedOrders.length > 1">
+    <p>已依商品類型拆成 {{ placedOrders.length }} 張訂單，每張各自付款、各自保留期限：</p>
+    <ul class="placed-list">
+     <li v-for="o in placedOrders" :key="o.id"><span class="tag" :class="o.kind === 'PREORDER' ? 'pre' : 'stock'">{{ o.kind === 'PREORDER' ? '預購' : '現貨' }}</span> {{ o.title }} · {{ money(o.totalTwd) }} <router-link class="shop-button primary" :to="o.kind === 'STOCK' ? { path: '/shop/orders', query: { pay: o.id } } : detailLink(o)">前往付款</router-link></li>
+    </ul>
+    <router-link to="/shop/my-orders?stage=PENDING_PAYMENT">到我的訂單查看全部 →</router-link>
+   </template>
+   <template v-else><p>訂單已建立（編號 {{ placedId.slice(0, 8) }}），請前往付款。</p><button class="shop-button primary" @click="goPay()">前往付款</button></template>
+  </div>
   <p v-if="loading" role="status">正在讀取結帳資料…</p>
   <div v-if="!loading && kind === 'cart' && guestUnmerged && !unknown" class="merge-warn top" role="alert" data-testid="checkout-guest-unmerged">登入前加入的商品還沒有合併進購物車。請先<router-link to="/shop/cart">回購物車</router-link>完成合併與核對，再結帳。</div>
 
   <!-- 未確認、但商品資料讀不到時仍能重試或核對 -->
   <div v-if="!loading && unknown && attempt && !lines.length" class="pending-box" data-testid="checkout-pending">
-   <p>上一次下單：金額 {{ money(attempt.body.expectedSubtotalTwd) }}。商品資料目前無法讀取，仍可用同一操作重試或到我的訂單核對。</p>
+   <p>上一次下單：金額 {{ money(amountOf(attempt)) }}。商品資料目前無法讀取，仍可用同一操作重試或到我的訂單核對。</p>
    <button class="shop-button primary" :disabled="busy" @click="submit">用同一操作重試</button>
   </div>
 
-  <div v-else-if="!loading && kind === 'cart' && cart && !cart.items.length" class="empty" data-testid="checkout-empty">
+  <div v-else-if="!loading && kind === 'cart' && quote && !quote.groups.length" class="empty" data-testid="checkout-empty">
    <p>購物車目前是空的，沒有可結帳的商品。</p><router-link class="shop-button primary" to="/shop/products">探索收藏商品</router-link>
   </div>
 
@@ -277,7 +320,23 @@ onMounted(() => { catalog.load(); void load() })
     <!-- ① 商品 -->
     <section class="card" aria-labelledby="co-items">
      <div class="card-head"><h2 id="co-items">商品明細</h2><router-link v-if="kind === 'cart' && !unknown" to="/shop/cart" class="edit-link">修改購物車</router-link></div>
-     <ul class="lines">
+     <p v-if="kind === 'cart' && quote && quote.groups.length > 1" class="split-note" data-testid="checkout-split-note">這次結帳會拆成 {{ quote.groups.length }} 張訂單：現貨一張、每個預購批次各一張，各自付款與出貨。</p>
+     <template v-if="kind === 'cart' && quote">
+      <div v-for="g in quote.groups" :key="g.key" class="group" :data-testid="'checkout-group-' + g.key">
+       <p class="group-head"><span class="tag" :class="g.kind === 'PREORDER' ? 'pre' : 'stock'">{{ g.kind === 'PREORDER' ? '預購' : '現貨' }}</span> <strong>{{ g.kind === 'PREORDER' ? g.title : '現貨訂單' }}</strong>
+        <span v-if="g.arrivalFrom" class="arrival">預計 {{ g.arrivalFrom }} ～ {{ g.arrivalTo }} 到貨</span><span v-else class="arrival">付款後出貨</span></p>
+       <ul class="lines">
+        <li v-for="l in g.lines" :key="l.batchId || l.skuId" class="line" :class="{ issue: l.issue }" :data-testid="'checkout-line-' + (l.batchId || l.skuId)">
+         <router-link class="thumb" :to="'/shop/products/' + l.productId" :aria-label="'查看商品 ' + l.title"><ProductCover :image="imageOf(l.productId)" /></router-link>
+         <div class="line-info"><h3>{{ l.title }}</h3><p>款式：{{ l.label }}</p><p>{{ money(l.unitPriceTwd) }}／件</p><p v-if="l.issue" class="shop-error">{{ l.batchId ? '此預購目前無法下單' : issueText(l.issue as any) }}</p></div>
+         <span class="qty-text">× {{ l.quantity }}</span>
+         <strong class="line-total">{{ money(l.lineTotalTwd) }}</strong>
+        </li>
+       </ul>
+       <p class="group-total">這張訂單 {{ money(g.totalTwd) }}<template v-if="g.payLaterTwd"> · 現在付 {{ money(g.payNowTwd) }}，之後付 {{ money(g.payLaterTwd) }}</template></p>
+      </div>
+     </template>
+     <ul v-if="kind !== 'cart'" class="lines">
       <li v-for="l in lines" :key="l.key" class="line" :class="{ issue: l.issue }" :data-testid="'checkout-line-' + l.key">
        <router-link class="thumb" :to="'/shop/products/' + l.productId" :aria-label="'查看商品 ' + l.title"><ProductCover :image="l.image" /></router-link>
        <div class="line-info"><h3>{{ l.title }}</h3><p>款式：{{ l.label }}</p><p>{{ l.unit === null ? '下架款式暫不計價' : money(l.unit) + '／件' }}</p><p v-if="l.issue" class="shop-error">{{ l.issue }}</p></div>
@@ -290,7 +349,7 @@ onMounted(() => { catalog.load(); void load() })
      </ul>
      <p v-if="kind === 'direct'" class="fine">只購買這一款，不會改動購物車。</p>
      <p v-if="kind === 'direct' && !validQty" class="shop-error">數量需為 1–99 的整數。</p>
-     <p v-if="kind === 'cart' && cart && !cart.ready" class="shop-error">有商品無法購買，請<router-link to="/shop/cart">回購物車</router-link>調整後再結帳。</p>
+     <p v-if="kind === 'cart' && quote && !quote.ready" class="shop-error">有商品無法購買，請<router-link to="/shop/cart">回購物車</router-link>調整後再結帳。</p>
     </section>
 
     <!-- ② 收件資訊 -->
@@ -315,8 +374,20 @@ onMounted(() => { catalog.load(); void load() })
     <!-- ③ 配送 ④ 付款：只說明目前真的有的能力 -->
     <section class="card" aria-labelledby="co-delivery">
      <h2 id="co-delivery">配送方式</h2>
-     <p class="option">宅配到府 <span class="tag">目前唯一方式</span></p>
-     <p class="fine">目前為測試營運：出貨與配送進度為模擬，運費以 NT$0 展示，正式運費尚未開放。</p>
+     <template v-if="kind === 'cart' && quote">
+      <fieldset class="choices" :disabled="busy || unknown"><legend class="sr-only">配送方式</legend>
+       <label v-for="m in quote.methods" :key="m.code" class="choice" :class="{ off: !m.enabled }"><input type="radio" name="ship-method" :value="m.code" v-model="shipMethod" :disabled="!m.enabled" @change="changeShipping" :data-testid="'ship-' + m.code"> <strong>{{ m.name }}</strong><small>{{ m.enabled ? feeRule(m) : '暫停使用' }}</small></label>
+      </fieldset>
+      <label v-if="shipMethod === 'CVS'" class="store">取貨門市 <span class="tag">測試門市</span>
+       <select v-model="storeId" data-testid="pickup-store" :disabled="busy || unknown"><option value="">請選擇門市</option><option v-for="s in stores" :key="s.storeId" :value="s.storeId">{{ s.brandName }} {{ s.storeName }}（{{ s.address }}）</option></select>
+       <small>收件人與電話使用下方收件資料；測試門市僅供開發驗收，不是實際超商。</small></label>
+      <fieldset v-if="quote.groups.length > 1" class="choices" :disabled="busy || unknown"><legend>寄送方式</legend>
+       <label class="choice"><input type="radio" name="ship-strategy" value="SPLIT" v-model="shipStrategy" @change="changeShipping" data-testid="strategy-SPLIT"> <strong>分開寄</strong><small>現貨付款後先寄，預購到貨後再各自寄出（每個包裹各自計運費）</small></label>
+       <label class="choice"><input type="radio" name="ship-strategy" value="COMBINED" v-model="shipStrategy" @change="changeShipping" data-testid="strategy-COMBINED"> <strong>一起寄</strong><small>全部到齊後一次寄出（只算一次運費）；現貨會等最晚到貨的預購</small></label>
+      </fieldset>
+      <p class="fine" data-testid="shipment-plan">共 {{ quote.shipments.length }} 個包裹，運費 {{ money(quote.shippingTwd) }}。出貨與配送進度為測試物流，不會實際寄送。</p>
+     </template>
+     <template v-else><p class="option">宅配到府 <span class="tag">直接購買免運</span></p><p class="fine">出貨與配送進度為測試物流，不會實際寄送。</p></template>
     </section>
     <section class="card" aria-labelledby="co-pay">
      <h2 id="co-pay">付款方式</h2>
@@ -327,13 +398,15 @@ onMounted(() => { catalog.load(); void load() })
    <!-- ⑤ 金額 ⑥ 送出 -->
    <aside class="panel" aria-labelledby="co-summary">
     <h2 id="co-summary">訂單金額</h2>
-    <div class="sum-row"><span>商品小計</span><span>{{ money(subtotal) }}</span></div>
-    <div class="sum-row"><span>運費（展示）</span><span>NT$ 0</span></div>
+    <div v-if="kind === 'cart' && quote && quote.groups.length > 1" class="sum-row"><span>訂單數</span><span>{{ quote.groups.length }} 張</span></div>
+    <div v-if="!(unknown && kind === 'cart')" class="sum-row"><span>商品小計</span><span>{{ money(kind === 'cart' && quote ? quote.subtotalTwd : subtotal) }}</span></div>
+    <template v-if="kind === 'cart' && quote && quote.payLaterTwd > 0 && !unknown"><div class="sum-row" data-testid="pay-now"><span>下單後先付（含訂金）</span><span>{{ money(quote.payNowTwd) }}</span></div><div class="sum-row"><span>預購尾款（到貨通知後付）</span><span>{{ money(quote.payLaterTwd) }}</span></div></template>
+    <div class="sum-row"><span>運費</span><span data-testid="shipping-fee">{{ unknown && kind === 'cart' ? '依原操作（已含在應付金額）' : money(kind === 'cart' && quote ? quote.shippingTwd : 0) }}</span></div>
     <div class="sum-row total"><span>應付金額</span><strong data-testid="order-total">{{ money(subtotal) }}</strong></div>
     <div v-if="selectedAddress" class="mini-ship">寄送給 {{ selectedAddress.recipientName }}・{{ selectedAddress.city }}{{ selectedAddress.district }}</div>
     <button class="shop-button primary submit" data-testid="checkout-submit" :disabled="!canSubmit" @click="submit">{{ busy ? '處理中…' : unknown ? '用同一操作重試' : '確認下單' }}</button>
     <p v-if="!unknown && !selectedAddress" class="fine warn">請先選擇或新增收件地址。</p>
-    <p class="fine">按下「確認下單」才會建立訂單並保留庫存 30 分鐘，請在時限內完成付款，逾時自動取消。</p>
+    <p class="fine">按下「確認下單」才會建立訂單並保留庫存／預購配額 30 分鐘（預購不超過截單時間），請在時限內完成付款，逾時自動取消。多張訂單會一起建立，任一張無法建立就全部不建立。</p>
    </aside>
   </div>
  </section>
@@ -367,6 +440,10 @@ onMounted(() => { catalog.load(); void load() })
 .submit{margin-top:6px;padding:16px;font-size:17px}.fine{font-size:12px;color:#4b5060;margin:0}.warn{color:#b42318}
 .pending-box,.empty{background:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .placed{background:#fff;border-radius:14px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px}.shop-shell .placed p{margin:0}
+.split-note{margin:0;font-size:14px;background:#fff7ed;color:#9a3412;border-radius:10px;padding:8px 12px}
+.group{border:1px solid #eef0f4;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}.shop-shell .group-head{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}.arrival{font-size:13px;color:#4b5060}.shop-shell .group-total{margin:0;text-align:right;font-size:14px;font-weight:700}
+.tag.stock{background:#eef2ff;color:#3730a3}.tag.pre{background:#fff7ed;color:#9a3412}.placed-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;width:100%}.placed-list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.choices{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}.choices legend{font-weight:700;margin-bottom:4px}.choice{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;border:1px solid #e3e5ec;border-radius:10px;padding:10px 12px;cursor:pointer}.choice small{flex-basis:100%;color:#4b5060}.choice.off{opacity:.55}.store{display:flex;flex-direction:column;gap:6px}.store select{padding:8px;border-radius:8px;border:1px solid #d5d8e1;max-width:100%}.store small{color:#4b5060}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .merge-warn.top{margin-bottom:16px}
 .merge-warn{background:#fff7f1;border:1px solid #fed7bd;border-radius:12px;padding:12px 14px;font-size:14px;color:#7c2d12}
 .link{border:0;background:transparent;color:#1d4ed8;text-decoration:underline;cursor:pointer;font:inherit;padding:0}

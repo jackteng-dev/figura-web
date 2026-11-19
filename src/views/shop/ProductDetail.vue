@@ -4,11 +4,11 @@ import ProductCover from './ProductCover.vue'
 import ProductCard from './ProductCard.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
-import { getCart,setCartItem } from '@/api/shopping'
+import { getCart,setCartItem,setCartPreorder } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
-import { taipeiTime } from '@/api/preorders'
+import { taipeiTime, termsText } from '@/api/preorders'
 import { useCatalog, daysLeft, shortDate } from './useCatalog'
-import { addGuest, serverCount, countOf } from './guestCart'
+import { addGuest, serverCount, countOf, MAX_PRE_QTY } from './guestCart'
 const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
 const catalog = useCatalog(), router = useRouter()
@@ -31,6 +31,23 @@ async function add(){
     if(!Number.isInteger(total)||total<1||total>99)throw new Error('同款式最多 99 件，請核對購物車數量。')
     serverCount.value=countOf(await setCartItem(skuId,total,cart.version));message.value='已加入購物車。'
   }catch(e){if(e instanceof CustomerApiError&&e.status===401){addError.value='登入狀態已失效，請重新加入或先登入。'}else if(e instanceof TypeError||e instanceof SyntaxError||(e instanceof CustomerApiError&&e.status>=500)){uncertain.value=true;addError.value='回應未確認，請先到購物車核對，再決定是否加入。'}else addError.value=e instanceof Error?e.message:'操作失敗，請核對購物車。'}finally{adding.value=false}
+}
+/**
+ * 預購加入購物車（每個批次一個品項；和現貨一起結帳時，系統自動拆成各批次的預購訂單）。購物車不保留配額。
+ * 結果未確認時不自動重送，請先到購物車核對。
+ */
+const preBusy=ref(''),preMessage=ref<Record<string,string>>({}),preError=ref<Record<string,string>>({}),preUncertain=ref(false)
+async function addPreorder(b:{id:string;skuLabel:string;availableQuota:number}){
+  if(preBusy.value||preUncertain.value)return;preBusy.value=b.id;preMessage.value={};preError.value={}
+  try{
+    try{await getCustomer()}catch(e){if(e instanceof CustomerApiError&&e.status===401){addGuest(product.value!.id,product.value!.skus.find(s=>s.label===b.skuLabel)?.id||'',1,b.id);preMessage.value={[b.id]:'已加入購物車。'};return}throw e}
+    const cart=await getCart();const old=(cart.preorders||[]).find(p=>p.batchId===b.id);const total=(old?.quantity||0)+1
+    if(total>MAX_PRE_QTY)throw new Error(`同一批次最多 ${MAX_PRE_QTY} 件，請核對購物車數量。`)
+    serverCount.value=countOf(await setCartPreorder(b.id,total,cart.version));preMessage.value={[b.id]:'已加入購物車。'}
+  }catch(e){
+    if(e instanceof TypeError||e instanceof SyntaxError||(e instanceof CustomerApiError&&e.status>=500)){preUncertain.value=true;preError.value={[b.id]:'回應未確認，請先到購物車核對，再決定是否加入。'}}
+    else preError.value={[b.id]:e instanceof Error?e.message:'無法加入購物車'}
+  }finally{preBusy.value=''}
 }
 /** 直接購買：只買這一款、不放進購物車，進入結帳頁。未登入時路由會先導向登入，登入後回到結帳頁。 */
 async function buyNow(){
@@ -143,12 +160,16 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
           <dl class="pre-grid">
             <div><dt>截單（台北）</dt><dd>{{ taipeiTime(b.deadlineAt) }}</dd></div>
             <div><dt>預計到貨</dt><dd>{{ b.arrivalFrom }} ～ {{ b.arrivalTo }}</dd></div>
+            <div><dt>付款方式</dt><dd :data-testid="'pre-terms-' + b.id">{{ termsText(b) }}</dd></div>
             <div><dt>剩餘配額</dt><dd>{{ b.availableQuota }} 件</dd></div>
           </dl>
-          <p class="pre-note">預購不放入購物車，直接建立預購訂單；下單保留配額，請於時限內付款，到貨前可整筆退款。</p>
+          <p class="pre-note">可以加入購物車和現貨一起結帳（系統自動拆成這個批次的預購訂單），也可以直接預購下單。下單才保留配額，請於時限內付款，到貨前可整筆退款。</p>
           <div class="actions">
-            <router-link class="shop-button primary" :to="'/shop/preorders/' + b.id + '/checkout'">預購下單・保留配額</router-link>
+            <button type="button" class="shop-button ghost" :data-testid="'pre-add-' + b.id" :disabled="!!preBusy || preUncertain || b.availableQuota < 1" @click="addPreorder(b)">{{ preBusy === b.id ? '加入中…' : '加入購物車' }}</button>
+            <router-link class="shop-button primary" :to="'/shop/preorders/' + b.id + '/checkout'">直接預購下單</router-link>
           </div>
+          <p v-if="preMessage[b.id]" role="status" class="shop-success">{{ preMessage[b.id] }} <router-link to="/shop/cart">查看購物車 →</router-link></p>
+          <p v-if="preError[b.id]" role="alert" class="shop-error">{{ preError[b.id] }}</p>
         </section>
       </div>
     </article>
