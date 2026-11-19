@@ -2,15 +2,17 @@
 import { computed, onMounted, reactive, ref } from 'vue'
 import { useUserInfoStore } from '@/stores/userInfo'
 import { adminProducts, type AdminProduct } from '@/api/catalog'
-import { batchList, batchDetail, batchSave, batchCommand, taipeiTime, type Batch, type BatchEvent, type BatchWrite, type BatchCommand } from '@/api/preorders'
+import { batchList, batchDetail, batchSave, batchCommand, batchSchedule, batchBalanceCall, taipeiTime, termsText, type Batch, type BatchEvent, type BatchWrite, type BatchCommand, type ScheduleEvent, type ScheduleWrite, type BalanceCallWrite, type PaymentMode } from '@/api/preorders'
 
 const user = useUserInfoStore()
 const has = (code: string) => user.permissions.some(p => p.code === code)
-const rows = ref<Batch[]>([]), products = ref<AdminProduct[]>([]), events = ref<BatchEvent[]>([]), selected = ref<Batch>()
+const rows = ref<Batch[]>([]), products = ref<AdminProduct[]>([]), events = ref<BatchEvent[]>([]), schedules = ref<ScheduleEvent[]>([]), selected = ref<Batch>()
+const scheduleForm = reactive({ arrivalFrom: '', arrivalTo: '', publicReason: '', note: '' }), balanceForm = reactive({ publicReason: '商品已到貨，請於期限內支付尾款', note: '' })
+const scheduleActions = { DELAY: '延期', ADJUST: '調整到貨', BALANCE_CALL: '通知尾款' }
 const page = ref(1), total = ref(0), loading = ref(false), sending = ref(false), ready = ref(false), stale = ref(false)
 const editing = ref(false), editId = ref<string>(), error = ref(''), message = ref(''), commandNote = ref('')
-const form = reactive({ productId: '', skuId: '', name: '', description: '', priceTwd: 1280, capacity: 100, deadlineAt: '', arrivalFrom: '', arrivalTo: '', expectedVersion: 0, note: '' })
-const pending = ref<{ action: 'SAVE'; id?: string; body: BatchWrite } | { action: 'OPEN' | 'CLOSE'; id: string; body: BatchCommand }>()
+const form = reactive({ productId: '', skuId: '', name: '', description: '', priceTwd: 1280, capacity: 100, deadlineAt: '', arrivalFrom: '', arrivalTo: '', expectedVersion: 0, note: '', paymentMode: 'FULL' as PaymentMode, depositTwd: 0, balanceDays: 7 })
+const pending = ref<{ action: 'SAVE'; id?: string; body: BatchWrite } | { action: 'OPEN' | 'CLOSE'; id: string; body: BatchCommand } | { action: 'SCHEDULE'; id: string; body: ScheduleWrite } | { action: 'BALANCE'; id: string; body: BalanceCallWrite }>()
 const locked = computed(() => sending.value || !!pending.value)
 const selectedProduct = computed(() => products.value.find(p => p.id === form.productId))
 const states = { DRAFT: '草稿', OPEN: '已開放', CLOSED: '已截單' }
@@ -30,7 +32,7 @@ async function load() {
     const list = await batchList(page.value); rows.value = list.items; total.value = list.total
     if (has('catalog.read.list') && (has('preorders.create') || has('preorders.update'))) await loadProducts()
     else products.value = []
-    if (selected.value) { const detail = await batchDetail(selected.value.id); selected.value = detail.batch; events.value = detail.events }
+    if (selected.value) { const detail = await batchDetail(selected.value.id); selected.value = detail.batch; events.value = detail.events; schedules.value = detail.schedules || [] }
     ready.value = true
   } catch (e) { error.value = failure(e) }
   finally { loading.value = false }
@@ -38,7 +40,7 @@ async function load() {
 async function inspect(row: Batch) {
   if (!ready.value || locked.value) return
   loading.value = true; error.value = ''; editing.value = false; stale.value = false; commandNote.value = ''
-  try { const detail = await batchDetail(row.id); selected.value = detail.batch; events.value = detail.events }
+  try { const detail = await batchDetail(row.id); selected.value = detail.batch; events.value = detail.events; schedules.value = detail.schedules || []; Object.assign(scheduleForm, { arrivalFrom: detail.batch.arrivalFrom, arrivalTo: detail.batch.arrivalTo, publicReason: '', note: '' }) }
   catch (e) { error.value = failure(e); ready.value = false }
   finally { loading.value = false }
 }
@@ -48,13 +50,17 @@ function begin(row?: Batch) {
   Object.assign(form, row ? {
     productId: row.productId, skuId: row.skuId, name: row.name, description: row.description,
     priceTwd: row.priceTwd, capacity: row.capacity, deadlineAt: row.deadlineAt.slice(0, 19),
-    arrivalFrom: row.arrivalFrom, arrivalTo: row.arrivalTo, expectedVersion: row.version, note: ''
-  } : { productId: '', skuId: '', name: '', description: '', priceTwd: 1280, capacity: 100, deadlineAt: '', arrivalFrom: '', arrivalTo: '', expectedVersion: 0, note: '' })
+    arrivalFrom: row.arrivalFrom, arrivalTo: row.arrivalTo, expectedVersion: row.version, note: '',
+    paymentMode: row.paymentMode || 'FULL', depositTwd: row.depositTwd || 0, balanceDays: row.balanceDays || 7
+  } : { productId: '', skuId: '', name: '', description: '', priceTwd: 1280, capacity: 100, deadlineAt: '', arrivalFrom: '', arrivalTo: '', expectedVersion: 0, note: '', paymentMode: 'FULL' as PaymentMode, depositTwd: 0, balanceDays: 7 })
 }
 async function save() {
   if (!pending.value) {
     if (!ready.value || stale.value || !(editId.value ? has('preorders.update') : has('preorders.create'))) return
-    pending.value = { action: 'SAVE', id: editId.value, body: { ...form, name: form.name.trim(), description: form.description.trim(), note: form.note.trim(), deadlineAt: form.deadlineAt + (form.deadlineAt.length === 16 ? ':00' : '') + '+08:00', requestId: crypto.randomUUID() } }
+    // 全額批次不送訂金欄位（伺服器拒絕全額＋訂金的組合）
+    const { paymentMode, depositTwd, balanceDays, ...base } = form
+    const terms = paymentMode === 'DEPOSIT' ? { paymentMode, depositTwd, balanceDays } : { paymentMode }
+    pending.value = { action: 'SAVE', id: editId.value, body: { ...base, ...terms, name: form.name.trim(), description: form.description.trim(), note: form.note.trim(), deadlineAt: form.deadlineAt + (form.deadlineAt.length === 16 ? ':00' : '') + '+08:00', requestId: crypto.randomUUID() } }
   }
   await send()
 }
@@ -63,15 +69,30 @@ async function command(action: 'OPEN' | 'CLOSE') {
   pending.value = { action, id: selected.value.id, body: { expectedVersion: selected.value.version, requestId: crypto.randomUUID(), note: commandNote.value.trim() } }
   await send()
 }
+async function schedule() {
+  const b = selected.value
+  if (!b || !ready.value || stale.value || locked.value || !has('preorders.schedule')) return
+  pending.value = { action: 'SCHEDULE', id: b.id, body: { expectedVersion: b.version, requestId: crypto.randomUUID(), arrivalFrom: scheduleForm.arrivalFrom, arrivalTo: scheduleForm.arrivalTo, publicReason: scheduleForm.publicReason.trim(), note: scheduleForm.note.trim() } }
+  await send()
+}
+async function balanceCall() {
+  const b = selected.value
+  if (!b || !ready.value || stale.value || locked.value || !has('preorders.balance.call')) return
+  pending.value = { action: 'BALANCE', id: b.id, body: { expectedVersion: b.version, requestId: crypto.randomUUID(), publicReason: balanceForm.publicReason.trim(), note: balanceForm.note.trim() } }
+  await send()
+}
 async function send() {
   if (!pending.value || sending.value) return
   sending.value = true; error.value = ''
   let acknowledged = false
   try {
     const p = pending.value
-    const result = p.action === 'SAVE' ? await batchSave(p.id, p.body) : await batchCommand(p.id, p.action, p.body)
+    const result = p.action === 'SAVE' ? await batchSave(p.id, p.body) : p.action === 'SCHEDULE' ? await batchSchedule(p.id, p.body) : p.action === 'BALANCE' ? await batchBalanceCall(p.id, p.body) : await batchCommand(p.id, p.action, p.body)
     pending.value = undefined; acknowledged = true; editing.value = false; selected.value = result.current
-    message.value = result.replayed ? '操作已核對，沒有重複保存。' : '預購批次已保存並記錄稽核。'
+    const affected = 'affectedOrders' in result.event ? `，影響 ${result.event.affectedOrders} 張訂單並已排入通知` : ''
+    message.value = result.replayed ? '操作已核對，沒有重複保存。' : `預購批次已保存並記錄稽核${affected}。`
+    if (p.action === 'SCHEDULE') Object.assign(scheduleForm, { publicReason: '', note: '' })
+    if (p.action === 'BALANCE') balanceForm.note = ''
     commandNote.value = ''
   } catch (e: any) {
     const status = e.response?.status
@@ -102,21 +123,37 @@ onMounted(load)
         <label>批次名稱<input v-model="form.name" required maxlength="120"></label>
         <label>批次說明<textarea v-model="form.description" maxlength="2000" /></label>
         <div class="columns"><label>預購單價（TWD）<input v-model.number="form.priceTwd" type="number" min="1" max="99999999" step="1" required></label><label>供應配額<input v-model.number="form.capacity" type="number" min="1" max="100000" step="1" required></label></div>
+        <label>付款條件<select aria-label="付款條件" v-model="form.paymentMode"><option value="FULL">下單付清全額</option><option value="DEPOSIT">先付訂金，到貨後付尾款</option></select></label>
+        <div v-if="form.paymentMode === 'DEPOSIT'" class="columns"><label>每件訂金（TWD，需小於單價）<input v-model.number="form.depositTwd" type="number" min="1" :max="form.priceTwd - 1" step="1" required></label><label>到貨通知後尾款期限（天）<input v-model.number="form.balanceDays" type="number" min="1" max="60" step="1" required></label></div>
         <label>截止時間（台北時間）<input v-model="form.deadlineAt" type="datetime-local" step="1" required></label>
         <div class="columns"><label>預計到貨起日<input v-model="form.arrivalFrom" type="date" required></label><label>預計到貨迄日<input v-model="form.arrivalTo" type="date" required></label></div>
         <label>異動原因<textarea v-model="form.note" required maxlength="500" /></label>
       </fieldset>
       <button type="submit" :disabled="locked || stale || !ready">保存批次草稿</button><button type="button" :disabled="locked" @click="editing = false">關閉編輯</button>
     </form>
-    <div class="batch-list"><article v-for="b in rows" :key="b.id"><h2>{{ b.name }}</h2><p>{{ b.productTitle }} · {{ b.skuLabel }}</p><p>{{ states[b.status] }} · NT$ {{ b.priceTwd.toLocaleString() }} · 配額 {{ b.capacity }} · 版本 {{ b.version }}</p><p>截止：{{ taipeiTime(b.deadlineAt) }}（台北）</p><button v-if="has('preorders.detail')" :disabled="!ready || locked || loading" @click="inspect(b)">查看 {{ b.name }}</button></article><p v-if="ready && !rows.length">尚無預購批次。</p></div>
+    <div class="batch-list"><article v-for="b in rows" :key="b.id"><h2>{{ b.name }}</h2><p>{{ b.productTitle }} · {{ b.skuLabel }}</p><p>{{ states[b.status] }} · NT$ {{ b.priceTwd.toLocaleString() }} · 配額 {{ b.capacity }} · 版本 {{ b.version }}</p><p>{{ termsText(b) }}</p><p>截止：{{ taipeiTime(b.deadlineAt) }}（台北）</p><button v-if="has('preorders.detail')" :disabled="!ready || locked || loading" @click="inspect(b)">查看 {{ b.name }}</button></article><p v-if="ready && !rows.length">尚無預購批次。</p></div>
     <div class="actions"><button :disabled="page === 1 || loading || locked" @click="page--; load()">上一頁</button><span>第 {{ page }} 頁 · 共 {{ total }} 筆</span><button :disabled="page * 20 >= total || loading || locked" @click="page++; load()">下一頁</button></div>
-    <section v-if="selected" class="batch-detail"><h2>批次詳情：{{ selected.name }}</h2><p>{{ selected.description }}</p><p>配額 {{ selected.capacity }} · 保留 {{ selected.heldQuantity }} · 已付款 {{ selected.paidQuantity }}（獨立預購配額）</p><p>預計到貨：{{ selected.arrivalFrom }} ～ {{ selected.arrivalTo }}</p>
+    <section v-if="selected" class="batch-detail"><h2>批次詳情：{{ selected.name }}</h2><p>{{ selected.description }}</p><p>配額 {{ selected.capacity }} · 保留 {{ selected.heldQuantity }} · 已付款 {{ selected.paidQuantity }}（獨立預購配額）</p><p>預計到貨：{{ selected.arrivalFrom }} ～ {{ selected.arrivalTo }}</p><p>付款條件：{{ termsText(selected) }}<template v-if="selected.balanceCalledAt"> · 已於 {{ taipeiTime(selected.balanceCalledAt) }} 通知尾款</template> · 已登記到貨 {{ selected.receivedQuantity }}</p>
       <div class="actions"><button v-if="selected.status === 'DRAFT' && has('preorders.update')" :disabled="!ready || locked || stale" @click="begin(selected)">編輯批次草稿</button><router-link v-if="selected.openedAt" :to="'/shop/preorders/' + selected.id">查看顧客頁</router-link></div>
       <form v-if="!editing && selected.status !== 'CLOSED' && (has('preorders.open') || has('preorders.close'))" @submit.prevent>
         <label>操作原因<textarea v-model="commandNote" required maxlength="500" :disabled="locked || stale" /></label>
         <button v-if="selected.status === 'DRAFT' && has('preorders.open')" :disabled="!ready || locked || stale || !commandNote.trim()" @click="command('OPEN')">開放批次</button>
         <button v-if="has('preorders.close')" :disabled="!ready || locked || stale || !commandNote.trim()" @click="command('CLOSE')">{{ selected.status === 'DRAFT' ? '取消草稿批次' : '批次截單' }}</button>
       </form>
+      <form v-if="!editing && selected.status !== 'DRAFT' && has('preorders.schedule')" data-testid="schedule-form" @submit.prevent="schedule">
+        <h3>延期／調整預估到貨</h3>
+        <p>會更新尚未到貨、未結束的訂單並通知顧客；「顧客說明」會顯示給顧客，「內部原因」只留在稽核。</p>
+        <fieldset :disabled="locked || stale"><div class="columns"><label>新預計到貨起日<input v-model="scheduleForm.arrivalFrom" type="date" required></label><label>新預計到貨迄日<input v-model="scheduleForm.arrivalTo" type="date" required></label></div>
+        <label>顧客說明<input v-model="scheduleForm.publicReason" required maxlength="200"></label><label>內部原因<textarea v-model="scheduleForm.note" required maxlength="500" /></label></fieldset>
+        <button type="submit" :disabled="!ready || locked || stale || !scheduleForm.publicReason.trim() || !scheduleForm.note.trim()">更新到貨時程並通知</button>
+      </form>
+      <form v-if="!editing && selected.paymentMode === 'DEPOSIT' && has('preorders.balance.call')" data-testid="balance-form" @submit.prevent="balanceCall">
+        <h3>通知尾款</h3>
+        <p>登記到貨後才可通知；已付訂金、尚未通知的訂單會改為待付尾款（{{ selected.balanceDays }} 天內），之後才付訂金的訂單會自動跟進。模擬環境不會實際寄送或收款。</p>
+        <fieldset :disabled="locked || stale"><label>顧客說明<input v-model="balanceForm.publicReason" required maxlength="200"></label><label>內部原因<textarea v-model="balanceForm.note" required maxlength="500" /></label></fieldset>
+        <button type="submit" :disabled="!ready || locked || stale || selected.receivedQuantity < 1 || !balanceForm.publicReason.trim() || !balanceForm.note.trim()">通知已付訂金的訂單付尾款</button>
+      </form>
+      <h2 v-if="schedules.length">時程與尾款紀錄</h2><details v-for="e in schedules" :key="e.requestId"><summary>{{ taipeiTime(e.createdAt) }} · {{ scheduleActions[e.action] }} · {{ e.actorUsername }} · 影響 {{ e.affectedOrders }} 張</summary><p>操作 ID：{{ e.requestId }}</p><p>顧客說明：{{ e.publicReason }}</p><p>內部原因：{{ e.note }}</p><p v-if="e.action !== 'BALANCE_CALL'">到貨：{{ e.arrivalFromBefore }} ～ {{ e.arrivalToBefore }} → {{ e.arrivalFromAfter }} ～ {{ e.arrivalToAfter }}</p><p v-else>尾款期限：{{ e.balanceDueAt ? taipeiTime(e.balanceDueAt) : '—' }}</p></details>
       <h2>批次稽核</h2><details v-for="e in events" :key="e.requestId"><summary>{{ taipeiTime(e.createdAt) }} · {{ e.action }} · {{ e.actorUsername }}</summary><p>操作 ID：{{ e.requestId }}</p><p>原因：{{ e.note }}</p><h3>修改前</h3><pre>{{ pretty(e.beforeState) }}</pre><h3>修改後</h3><pre>{{ pretty(e.afterState) }}</pre></details>
     </section>
   </div></section>
