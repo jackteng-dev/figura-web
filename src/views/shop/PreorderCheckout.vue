@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { onBeforeRouteLeave, useRoute } from 'vue-router'
-import { publicBatch, taipeiTime, type PublicBatch } from '@/api/preorders'
+import { publicBatch, taipeiTime, termsText, type PublicBatch } from '@/api/preorders'
 import { getAddresses, type AddressView } from '@/api/shopping'
 import { placePreorder, preorderStatus, type PreorderPlace, type PreorderOrder } from '@/api/preorderOrders'
 import { CustomerApiError } from '@/api/customer'
@@ -42,7 +42,7 @@ onMounted(load)
         <fieldset :disabled="busy || !!pending || !ready"><label for="preorder-quantity">預購數量</label><input id="preorder-quantity" v-model.number="quantity" type="number" min="1" :max="Math.min(100, batch.availableQuota)" required>
           <label for="preorder-address">收件地址</label><select id="preorder-address" v-model="addressId" aria-label="收件地址" required><option value="" disabled>請選擇地址</option><option v-for="a in addresses" :key="a.id" :value="a.id">{{ a.recipientName }} · {{ a.city }}{{ a.district }}{{ a.street }}</option></select>
         </fieldset><p v-if="ready && !addresses.length">請先<router-link to="/shop/addresses">新增收件地址</router-link>，再回來重新載入。</p>
-        <p v-if="ready && !batch.orderingEnabled">此批次目前無法下單，可能已截單、到期或配額已滿。</p><p>小計 {{ money(total) }} · 展示運費 {{ money(0) }} · 總額 {{ money(total) }}</p>
+        <p v-if="ready && !batch.orderingEnabled">此批次目前無法下單，可能已截單、到期或配額已滿。</p><p>小計 {{ money(total) }} · 展示運費 {{ money(0) }} · 總額 {{ money(total) }}</p><p v-if="batch.paymentMode === 'DEPOSIT' && batch.depositTwd" data-testid="deposit-now">付款方式：{{ termsText(batch) }}。現在付訂金 {{ money(batch.depositTwd * quantity) }}，尾款 {{ money(total - batch.depositTwd * quantity) }} 到貨後支付。</p>
         <button class="shop-button" :disabled="busy || (!pending && !valid)" type="submit">{{ pending ? '重試原下單操作' : '確認預購並保留配額' }}</button>
       </form>
     </template>

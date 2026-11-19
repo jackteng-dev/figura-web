@@ -30,8 +30,11 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'reset-password', component: () => import('@/views/shop/CustomerResetPassword.vue'), meta: { public: true } },
     { path: 'verify-email', component: () => import('@/views/shop/CustomerVerifyEmail.vue'), meta: { public: true } },
     { path: 'account', component: () => import('@/views/shop/CustomerAccount.vue') },
+    { path: 'my-orders', component: () => import('@/views/shop/OrderCenter.vue') },
     { path: 'orders', component: () => import('@/views/shop/CustomerOrders.vue') },
-    { path: 'buy-now', component: () => import('@/views/shop/BuyNow.vue') },
+    { path: 'checkout', component: () => import('@/views/shop/CustomerCheckout.vue') },
+    // 舊的直接購買網址：轉到結帳頁（帶同樣的 product／sku／qty）
+    { path: 'buy-now', redirect: to => ({ path: '/shop/checkout', query: to.query }) },
     { path: 'cart', component: () => import('@/views/shop/CustomerCart.vue'), meta: { public: true } },
     { path: 'addresses', component: () => import('@/views/shop/CustomerAddresses.vue') },
     { path: ':pathMatch(.*)*', component: NotFound, meta: { public: true } }
@@ -45,7 +48,7 @@ const router = createRouter({ history: createWebHistory(), routes: [
   ] },
   { path: '/:pathMatch(.*)*', component: NotFound }
 ] })
-const components = new Map<string, any>([['preorders.arrivals.read', () => import('@/views/preorders/PreorderArrivalsAdmin.vue')], ['preorder-orders.read', () => import('@/views/preorders/PreorderOrdersAdmin.vue')], ['preorders.read', () => import('@/views/preorders/PreorderAdmin.vue')], ['notifications.read', () => import('@/views/notifications/NotificationAdmin.vue')], ['masters.read', () => import('@/views/catalog/MastersAdmin.vue')], ['access.staff.read', UserAccountVue], ['access.roles.read', RoleListVue], ['access.permissions.read', PermissionListVue], ['access.audit.read', () => import('@/views/role/AccessAudit.vue')], ['catalog.read.list', () => import('@/views/catalog/ProductAdmin.vue')], ['orders.read.list', () => import('@/views/orders/StaffOrders.vue')]])
+const components = new Map<string, any>([['preorders.arrivals.read', () => import('@/views/preorders/PreorderArrivalsAdmin.vue')], ['preorder-orders.read', () => import('@/views/preorders/PreorderOrdersAdmin.vue')], ['preorders.read', () => import('@/views/preorders/PreorderAdmin.vue')], ['notifications.read', () => import('@/views/notifications/NotificationAdmin.vue')], ['masters.read', () => import('@/views/catalog/MastersAdmin.vue')], ['access.staff.read', UserAccountVue], ['access.roles.read', RoleListVue], ['access.permissions.read', PermissionListVue], ['access.audit.read', () => import('@/views/role/AccessAudit.vue')], ['catalog.read.list', () => import('@/views/catalog/ProductAdmin.vue')], ['orders.read.list', () => import('@/views/orders/StaffOrders.vue')], ['shipments.read', () => import('@/views/orders/ShipmentsAdmin.vue')], ['shipping.methods.read', () => import('@/views/orders/ShippingMethodsAdmin.vue')]])
 let signature = ''
 let removeRoutes: (() => void)[] = []
 export function addDynamicRoutes(permissions: Permission[]) {
