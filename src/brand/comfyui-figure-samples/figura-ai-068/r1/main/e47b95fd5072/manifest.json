@@ -1,0 +1,94 @@
+{
+  "productKey": "FIGURA-AI-068",
+  "designRevision": "r1",
+  "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+  "runId": "e47b95fd5072daae882ff7b1d4ec1f244667f3d622239bca37b0abf36e35f629",
+  "shot": "main",
+  "mode": "crop",
+  "createdAt": "2026-11-19T15:18:06Z",
+  "review": {
+    "decision": "pass",
+    "reviewer": "Codex visual QA (human approval pending)",
+    "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+  },
+  "humanApproval": null,
+  "status": "complete",
+  "promptId": "0cfd4b97-ba29-48f8-bb19-3b81fb05108d",
+  "outputSha256": "a9c94e2f067bb13887fdba612c9000970474d548421713fd4439368aeda496ee",
+  "derivatives": [
+    {
+      "file": "320.jpg",
+      "format": "jpg",
+      "width": 320,
+      "height": 320,
+      "bytes": 14211,
+      "sha256": "bcbd9c82144b144e6e6d8168f314b0721d3d5e397ef1065e251f35710055b92f"
+    },
+    {
+      "file": "320.webp",
+      "format": "webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 7904,
+      "sha256": "62a610251af9b658a07275df3f8386ad23b01605eac464a8a4bd142c86bb67ff"
+    },
+    {
+      "file": "320.avif",
+      "format": "avif",
+      "width": 320,
+      "height": 320,
+      "bytes": 4856,
+      "sha256": "5f2823741393cdd52c245d2af81003b5d5f78088c3356fbd1f8a320db68618f3"
+    },
+    {
+      "file": "640.jpg",
+      "format": "jpg",
+      "width": 640,
+      "height": 640,
+      "bytes": 44972,
+      "sha256": "6a0de6378ea2ae6b9265a399d0db978b94ae535174efda044e2f9668abe2920f"
+    },
+    {
+      "file": "640.webp",
+      "format": "webp",
+      "width": 640,
+      "height": 640,
+      "bytes": 24326,
+      "sha256": "d77245fe27068d29dbc555a8120a976eb509c98ccdfeb8965222a61f26a96532"
+    },
+    {
+      "file": "640.avif",
+      "format": "avif",
+      "width": 640,
+      "height": 640,
+      "bytes": 13689,
+      "sha256": "6ebb9028ca2593f49f801056a811a1d2a1055d60598155aec686fe3788ec45c7"
+    },
+    {
+      "file": "960.jpg",
+      "format": "jpg",
+      "width": 960,
+      "height": 960,
+      "bytes": 85523,
+      "sha256": "a5afa0851e48eb34c5a4aa26734ff0f554364900c49c398d84876e6f294f3edc"
+    },
+    {
+      "file": "960.webp",
+      "format": "webp",
+      "width": 960,
+      "height": 960,
+      "bytes": 44672,
+      "sha256": "e8ee8491c3d97ebac5bc91e035ee2a15a1ee3d19b08d23d7a2e1bcc375e37959"
+    },
+    {
+      "file": "960.avif",
+      "format": "avif",
+      "width": 960,
+      "height": 960,
+      "bytes": 23152,
+      "sha256": "561b46c5a78a207bb47478a6096db9447b777eabbc4b7814cec2ab45ea2d44f5"
+    }
+  ],
+  "modelHashes": {},
+  "workflowSha256": "ea607a8e7eec5a071aa8d6c037578171e3e7343341d9e3a7ae4db28514f2891d"
+}

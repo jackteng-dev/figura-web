@@ -1,0 +1,70 @@
+{
+  "productKey": "FIGURA-AI-001",
+  "designRevision": "r1",
+  "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+  "runId": "2d62b19e7f06e5ea54e5fc500f401850ab458622863743f7c2c1a0134ee38b3c",
+  "shot": "face",
+  "mode": "crop",
+  "createdAt": "2026-11-19T15:17:08Z",
+  "review": {
+    "decision": "pass",
+    "reviewer": "Codex visual QA (human approval pending)",
+    "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+  },
+  "humanApproval": null,
+  "status": "complete",
+  "promptId": "014d6e10-f424-4b12-914c-c01fd3309a20",
+  "outputSha256": "9cbe7b8bd767fdf95956945b47ef62537bef5ba10263f4dc53d8cfce71faa9e9",
+  "derivatives": [
+    {
+      "file": "320.jpg",
+      "format": "jpg",
+      "width": 320,
+      "height": 320,
+      "bytes": 18855,
+      "sha256": "c5e0039047b2b4d909fe929cb9edce660ef6620dea1d66b5f965f6ca9cc41ac3"
+    },
+    {
+      "file": "320.webp",
+      "format": "webp",
+      "width": 320,
+      "height": 320,
+      "bytes": 10186,
+      "sha256": "8ef79a0a0ba309483bf79f4e7e97e2190a9b14ea68a5065eca377cea416d8912"
+    },
+    {
+      "file": "320.avif",
+      "format": "avif",
+      "width": 320,
+      "height": 320,
+      "bytes": 5001,
+      "sha256": "a1c834553f0de90b64b5329e31d4926b701509108e6e69cb4c9c58af312ba1b9"
+    },
+    {
+      "file": "430.jpg",
+      "format": "jpg",
+      "width": 430,
+      "height": 430,
+      "bytes": 28061,
+      "sha256": "b055be58db10690a4bf5e7de276e380956b6b1115ff9880b351cd0449d9a3380"
+    },
+    {
+      "file": "430.webp",
+      "format": "webp",
+      "width": 430,
+      "height": 430,
+      "bytes": 14436,
+      "sha256": "765b613031b790e66cdc13aabb32ceeb5ea257492a670c36a1c4b0d3eea0724c"
+    },
+    {
+      "file": "430.avif",
+      "format": "avif",
+      "width": 430,
+      "height": 430,
+      "bytes": 6688,
+      "sha256": "ee64824ccc740a0aff325348ab2b295b414dc2e99958b0c5d19342520bedb215"
+    }
+  ],
+  "modelHashes": {},
+  "workflowSha256": "ed2577b238dac45dbbbda96b31c94a181daebaa4bef6342c64a58c3dc2c666a4"
+}

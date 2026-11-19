@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue'
-import ProductCover from './ProductCover.vue'
+import ProductGallery from './ProductGallery.vue'
+import {publicGallery,type GalleryImage} from '@/api/gallery'
 import ProductCard from './ProductCard.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { publicProduct, money, type PublicProduct } from '@/api/catalog'
@@ -10,12 +11,13 @@ import { taipeiTime, termsText } from '@/api/preorders'
 import { useCatalog, daysLeft, shortDate } from './useCatalog'
 import { addGuest, serverCount, countOf, MAX_PRE_QTY } from './guestCart'
 const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
+const galleryImages=ref<GalleryImage[]>([]),galleryError=ref('')
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
 const catalog = useCatalog(), router = useRouter()
 let request = 0
 async function load() {
-  const generation = ++request; loading.value = true; error.value = ''; product.value = undefined
-  try { const result = await publicProduct(String(route.params.id)); if (generation === request) { product.value = result; selected.value = result.skus.find(s => s.available)?.id || '' } }
+  const generation = ++request; loading.value = true; error.value = ''; product.value = undefined; galleryImages.value=[];galleryError.value=''
+  try { const id=String(route.params.id);const [result,images]=await Promise.all([publicProduct(id),publicGallery(id).then(items=>({items,error:''})).catch(e=>({items:[] as GalleryImage[],error:(e as Error).message}))]); if (generation === request) { galleryImages.value=images.items;galleryError.value=images.error;product.value = result; selected.value = result.skus.find(s => s.available)?.id || '' } }
   catch (e: any) { if (generation === request) error.value = e.message }
   finally { if (generation === request) loading.value = false }
   catalog.load()
@@ -102,7 +104,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
   <div v-else-if="error" class="shop-error" role="alert">{{ error }} <button class="shop-button" @click="load">重新載入</button> <router-link to="/shop/products">← 返回商品列表</router-link></div>
   <template v-else-if="product">
     <article class="product-detail">
-      <div class="gallery"><ProductCover :image="product.image" :category="product.category" /></div>
+      <div class="gallery"><ProductGallery :product-id="product.id" :image="product.image" :category="product.category" :images="galleryImages" :error="galleryError" /></div>
 
       <div class="buy">
         <section class="shop-card info">

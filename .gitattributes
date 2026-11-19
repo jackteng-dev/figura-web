@@ -1,0 +1,3 @@
+# Keep hashed workflow artifacts byte-stable across Windows and Linux clones.
+/workflows/figura/*.json text eol=lf
+/src/brand/comfyui-figure-samples/**/workflow.api.json text eol=lf

@@ -86,7 +86,7 @@ Banner 另指定「same approved miniature sculpt, collector display stage, cine
 - 命名：`figura-ai-001-r1-main-1024.webp`、`...-side-640.avif`。變更設計必須換 revision，禁止把不同版混成同一商品圖組。
 - 原始生成結果留在忽略的 `work/figure-render-samples/originals/`；新可追蹤樣本放 `src/brand/figure-render-samples/`，不改 `src/assets/`。
 
-**目前介面限制：** 商品 API 只允許一張目前主圖，接受 PNG／JPEG，上傳後重新編碼；公開圖讀取為 `no-store`。現行 `ProductCover.vue` 不支援多格式 `srcset`。因此本輪的多角度、WebP／AVIF 是獨立評估素材，**尚未接上商品圖片 API、正式首頁或 CDN 快取**。後續需先設計多圖／派生格式安全契約及稽核，再實作，不能把 WebP 直接送進目前上傳端點，或繞過既有 S3 與版本控制。
+**介面進度：** PR #21 時只支援一張 PNG／JPEG 主圖，沒有多圖或 srcset。本輪已在功能分支新增多圖 API／後台與前台，保留舊單圖投影；詳 [ComfyUI 流程與限制](COMFYUI_FIGURA_WORKFLOW.md)。API 仍只接受並安全重編碼 PNG／JPEG，提供較小尺寸；WebP／AVIF 仍是本機衍生與獨立比較素材，未接到線上 API。配對 API PR 包含受保護的 V24 schema，尚未合併或部署，不把功能分支成果宣稱為正式站狀態。
 
 `<picture>` 的格式選擇與 fallback 行為依據 [MDN 官方文件](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture)。
 

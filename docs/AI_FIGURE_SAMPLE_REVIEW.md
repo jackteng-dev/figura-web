@@ -1,5 +1,7 @@
 # Figura 擬真公仔圖片樣本驗收
 
+> 後續 ComfyUI 本機流程與新圖組驗收見 [COMFYUI_FIGURA_WORKFLOW.md](COMFYUI_FIGURA_WORKFLOW.md)。以下保留 PR #21 的歷史結果，不把當時未通過的角度改標為可用。
+
 2026-11-19。本輪使用 **OpenAI built-in ImageGen**，以既有 Figura 原創 AI 概念圖為參考；沒有使用外站商品照片。兩款商品、七張評估圖，另保留兩張構圖退回稿的 prompt／hash。未更新商品資料庫，未把樣本替換到正式首頁或商品圖。
 
 - [開啟獨立樣本頁](figure-render-samples.html)：主圖／側面／背面並排，附驗收標籤，含一張電影感 Banner。
