@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-19",
+  "environment": "local production build, Chrome headless, mocked public API only; no database writes",
+  "checks": [
+    "notice: all",
+    "notice: mixed",
+    "mixed notice mobile 390px",
+    "notice: truncated",
+    "notice: none",
+    "notice: empty",
+    "gallery 1440px: 7 decoded AVIF, no overflow, AI disclosure",
+    "gallery 390px: 7 decoded AVIF, no overflow, AI disclosure"
+  ],
+  "passed": 8,
+  "assets": {
+    "samples": 7,
+    "derivatives": 49,
+    "totalBytes": 1142723
+  },
+  "limitations": [
+    "No production or device performance measurement",
+    "Side views not approved for exact sculpt consistency",
+    "Rear views are proposed designs",
+    "No GLB model or viewer"
+  ]
+}

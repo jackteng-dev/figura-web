@@ -1,0 +1,702 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-19 14:35:50 UTC",
+  "tool": "OpenAI built-in ImageGen",
+  "modelVersion": null,
+  "seed": null,
+  "purpose": "Figura fictional collectible image consistency study; raster images, not 3D models",
+  "encoder": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "encodingSettings": {
+    "webp": "libwebp quality=84 compression_level=6",
+    "avif": "libaom-av1 crf=30 cpu-used=6 yuv420p, BT.709 matrix/primaries, sRGB transfer, limited range",
+    "jpg": "mjpeg q=2 yuvj420p"
+  },
+  "attempts": [
+    {
+      "key": "001-main-first",
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "view": "main",
+      "prompt": "Use case: identity-preserve, product-mockup. Create a square 1:1 premium e-commerce product photograph-like AI concept render, 1536x1536 if possible. Use the attached existing Figura fictional collectible as the exact identity reference. Show this SAME pear-shaped ivory courier robot sculpt, not a redesign. Preserve exact body proportions, plum curved face screen with two pale oval eyes and tiny smile, blossom-and-buds sprig on head, two green leaves, mint crossbody satchel with gold buckle and crescent-and-blossom decoration on its flap, purple mitt hands, fruit held in its anatomical left hand (viewer right), small clay-brown boots, pale apricot circular plinth. Keep arm pose and all accessories identical to the reference. High-end physical painted PVC figure, ABS satchel clasp, fine satin paint with tight edge masks, subtle molded seam lines only where plausible, slightly glossy plum visor; leaves and blossoms are sculpted solid plastic, boots and bag are sculpted and painted PVC rather than real fabric. Studio product photography of a 16cm collectible: 85mm lens, minimal perspective, front three-quarter angle equivalent to the reference. Entire figure and complete base in frame, centered, sculpture plus base occupying ~82% image height, at least 8% clearance above sprig and below base. Warm off-white seamless background #f3f1ed, large softbox upper left, soft right fill, subtle grounded contact shadow. Clean sharp catalog focus throughout, realistic material micro-highlights and convincing physical miniature scale. No illustration shading, anime artwork, drawing strokes, real fruit, living plant, packaging, extra props, extra figures, lettering, logos, watermark or text. This is a raster AI concept image resembling a physical collectible, not a real 3D model.",
+      "referenceKeys": [
+        "001-legacy"
+      ],
+      "crop": null,
+      "label": "月梨信差 · 主圖",
+      "alt": "月梨信差，AI 生成虛構公仔概念圖，前方四分之三視角，含完整底座",
+      "reviewStatus": "退回：安全留白不足",
+      "reviewNote": "初稿構圖過滿；保留 prompt 與 hash，未發布衍生檔。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/001-main-first.png",
+        "sha256": "27bade0972666d8ca68c708b3ec884783bb3a3a2186a04881553367b143a1b86",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "001-legacy",
+          "sha256": "f90b44ae5dd6a0cc4a3de8a55f29811d08a1f8e8a8afee8ae56ef1fc6b65c368"
+        }
+      ]
+    },
+    {
+      "key": "068-main-first",
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "view": "main",
+      "prompt": "Use case: identity-preserve, product-mockup. Create a square 1:1 premium collectible statue studio product image, 1536x1536 if possible. Use the attached original Figura fictional adult mechanic statue as the EXACT sculpt identity and pose reference, not a new character. Keep adult woman with dark brown wavy hair in the same loosely pinned bun, same face, head turned toward her anatomical left/viewer right, charcoal rolled-sleeve coverall with two flap chest pockets, bronze snaps, black belt with rectangular aged-brass buckle, burnt-orange gloves, matching worn brown lace-up boots, circular dark steel diamond-plate base with riveted edge. Anatomical right hand rests on her hip (viewer left), anatomical left arm cradles cream weathered welding mask at her left hip (viewer right), mask has rectangular plum lens. Preserve every clothing seam, pocket, accessory, proportions and stance of reference. Make material unmistakably a HIGH-END HAND-PAINTED RESIN COLLECTIBLE, approximately 28cm tall, photographed as a solid sculpt: visible sculpted hair clumps, finely painted smooth resin skin with subtle satin varnish and controlled miniature brush/weathering, sculpted folds in the one-piece resin suit rather than actual cloth, tiny hand-painted bronze highlights, no photographic living-person skin pores or real hair strands. Studio 85mm product lens at statue waist height, reference front three-quarter view, entire statue AND complete circular base visible, centered occupying 82% image height, 8% minimum margins above hair and below base. Warm off-white seamless #f3f1ed, softbox upper left, soft right fill, grounded contact shadow, sharp focus throughout. A physically tangible premium resin statue render with scale-model material response. No general illustration, anime art, painterly brushwork, live human model, doll joints, scene props, labels, lettering, logo, watermark, packaging, extra objects or figures. Raster AI concept image, not a real 3D asset.",
+      "referenceKeys": [
+        "068-legacy"
+      ],
+      "crop": null,
+      "label": "冷熔鍋爐姊 · 主圖",
+      "alt": "冷熔鍋爐姊，AI 生成虛構公仔概念圖，前方四分之三視角，含完整底座",
+      "reviewStatus": "退回：安全留白不足",
+      "reviewNote": "初稿構圖過滿；保留 prompt 與 hash，未發布衍生檔。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/068-main-first.png",
+        "sha256": "75800b5f2a27f88b3d8ab5adddf516925e6b5d9d01aa3b8de7d87e06da40e9e5",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "068-legacy",
+          "sha256": "a1f166e470392614cdd503a2147b298d28a92c94cd4f8e5290f2edfa00fc3d10"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "key": "001-main",
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "view": "main",
+      "prompt": "Use case: identity-preserve. Reframe this EXACT collectible photograph without redesigning the sculpt. Square 1:1 image. ZOOM THE CAMERA OUT substantially. Figure INCLUDING its round plinth must occupy only 74 percent of image HEIGHT, with at least 13 percent empty seamless studio backdrop ABOVE highest point and BELOW bottom of plinth. More negative space is essential; avoid the tightly filled original framing. Keep exact same face, silhouette, hair or blossom sprig, sculpt, clothing, pose, anatomical left/right accessories, paint palette, material surface and base. No changes to identity or details. Same softbox upper-left/right-fill studio light, warm off-white seamless backdrop, grounded shadow, realistic miniature PVC/resin collectible material. Show entire figure and base at smaller scale, precisely centered. No added props, no text or border. Not a living subject, no illustration. This is a raster AI concept collectible image, not a real 3D model.",
+      "referenceKeys": [
+        "001-main-first"
+      ],
+      "crop": [
+        147,
+        120,
+        960,
+        960
+      ],
+      "label": "月梨信差 · 主圖",
+      "alt": "月梨信差，AI 生成虛構公仔概念圖，前方四分之三視角，含完整底座",
+      "reviewStatus": "主圖可用於風格評估",
+      "reviewNote": "棚拍材質、主要配件、完整底座通過；由較寬鬆的生成圖裁切為 960²，未放大。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/001-main.png",
+        "sha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "001-main-first",
+          "sha256": "27bade0972666d8ca68c708b3ec884783bb3a3a2186a04881553367b143a1b86"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-001-r1-main-320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 6568,
+          "sha256": "1cc99e081814a89f2b59baa426f177e39c0e8086041e47f34a59c005cc77469c"
+        },
+        {
+          "file": "figura-ai-001-r1-main-320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 320,
+          "bytes": 3790,
+          "sha256": "922d9432a8ffd45a8244cba0134af11d17ae8bc4567b0cb611c0235b4e96dc34"
+        },
+        {
+          "file": "figura-ai-001-r1-main-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 16650,
+          "sha256": "5cc3b5ea27271fd2a9204dc2a84d730aaf3fd78ad5934f38b89823e52200deac"
+        },
+        {
+          "file": "figura-ai-001-r1-main-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 8174,
+          "sha256": "066ad5c56d94dc28434d595302c48131bac9dbc3962d5c58f0458375878f1c22"
+        },
+        {
+          "file": "figura-ai-001-r1-main-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 28406,
+          "sha256": "2859352e92f6372805495028ff7297807d54d3e6354918c54e2bf6f260580e95"
+        },
+        {
+          "file": "figura-ai-001-r1-main-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 12192,
+          "sha256": "108c378e19514c553b8b724d46e9c151e92b544e260f4a2b568f01092f13cba1"
+        },
+        {
+          "file": "figura-ai-001-r1-main-960.jpg",
+          "format": "jpg",
+          "width": 960,
+          "height": 960,
+          "bytes": 60398,
+          "sha256": "afc8cd45387695511047e77652b9b9d1b9e5a5332f38ae3193099aa13e1586a6"
+        }
+      ]
+    },
+    {
+      "key": "001-side",
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "view": "side",
+      "prompt": "Use case: identity-preserve. Single square product-mockup image. Show a true approximately 90-degree anatomical RIGHT-SIDE PROFILE view of the exact SAME physical collectible as the attached approved front master. Move the viewing camera around the stationary figure; DO NOT re-pose the figure, turn its head to face camera, or mirror the reference. EXACT same ivory pear robot, plum crescent visor and pale eyes/tiny smile, one five-petal cream blossom with yellow stamens and TWO pale round buds on brown head sprig and TWO green leaves; mint satchel at ANATOMICAL RIGHT HIP with gold crescent, tiny white flower, gold snap, gold buckle on mint strap crossing its chest from anatomical left shoulder, yellow fruit in ANATOMICAL LEFT hand, purple mitt hands, brown ankle boots, apricot low cylindrical base. Do not swap sides, add limbs, redesign sprig, change base thickness or move the feet. The nose/visor should point toward screen right; show the figure's RIGHT flank in profile, and naturally occlude opposite-side objects as necessary. Preserve all sculpt details and accessory attachments. Do not move occluded props into view. Realistic miniature painted satin PVC/ABS with glossy visor, never a living subject or illustration. Same softbox upper left and right fill, warm off-white seamless, same shadow, sharp full sculpture focus. Entire figure and complete base visible, figure INCLUDING base only 65 percent of canvas HEIGHT, generously centered with empty backdrop above and below, match the attached master's framing precisely. No text, labels, watermark, scene props or extra figures. Raster AI concept, not actual 3D.",
+      "referenceKeys": [
+        "001-main"
+      ],
+      "crop": [
+        147,
+        120,
+        960,
+        960
+      ],
+      "label": "月梨信差 · 側面試作",
+      "alt": "月梨信差，AI 生成虛構公仔概念圖，右側視角試作，含完整底座",
+      "reviewStatus": "待修／未通過角度一致性",
+      "reviewNote": "身份與配色相近，但不是嚴格 90°；花枝方向與包面朝向仍有漂移，不作正式多角度圖。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/001-side.png",
+        "sha256": "da4b0574f0ba2d5a638dd39727a875b0afd655d3698e91af513ac4052cf083db",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "001-main",
+          "sha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-001-r1-side-320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 5136,
+          "sha256": "a9c416201c1a5d6b0293b8b1c476040a938136559b755df9f28c88f96d7ffb67"
+        },
+        {
+          "file": "figura-ai-001-r1-side-320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 320,
+          "bytes": 2960,
+          "sha256": "bdb99711e0a000cb7f71b0f288f183eabbacc26b7cf6c52ca1a924ac59c36fd1"
+        },
+        {
+          "file": "figura-ai-001-r1-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 13522,
+          "sha256": "7cf064ea485e7c57b982a61aa17228e63ae5723dd3cf81649099b5d66b83c5d9"
+        },
+        {
+          "file": "figura-ai-001-r1-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 6395,
+          "sha256": "caeca42d13da4d67668fae3474b11e29be06cc72cc9474097a48068164a5c9cc"
+        },
+        {
+          "file": "figura-ai-001-r1-side-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 23538,
+          "sha256": "06a0b33dbaf4903c23135bb555d79d577916e14f2253780ecabde9504a3dbe52"
+        },
+        {
+          "file": "figura-ai-001-r1-side-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 9637,
+          "sha256": "8a2a67c5bf2bcbda5b8da844115a50f30fbe933d95b531b3aaf4a43e4fb1f9ba"
+        },
+        {
+          "file": "figura-ai-001-r1-side-960.jpg",
+          "format": "jpg",
+          "width": 960,
+          "height": 960,
+          "bytes": 50383,
+          "sha256": "1f15f36e8e604116d4652988c5b278c827a87678e2a3b6b30cfc6ef8b9e5b674"
+        }
+      ]
+    },
+    {
+      "key": "001-rear",
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "view": "rear",
+      "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same ivory pear robot, plum crescent visor and pale eyes/tiny smile, one five-petal cream blossom with yellow stamens and TWO pale round buds on brown head sprig and TWO green leaves; mint satchel at ANATOMICAL RIGHT HIP with gold crescent, tiny white flower, gold snap, gold buckle on mint strap crossing its chest from anatomical left shoulder, yellow fruit in ANATOMICAL LEFT hand, purple mitt hands, brown ankle boots, apricot low cylindrical base. Do not swap sides, add limbs, redesign sprig, change base thickness or move the feet. From a straight rear view, satchel remains at the figure's anatomical RIGHT HIP, which is VIEWER RIGHT in this rear image; fruit stays in anatomical LEFT hand, VIEWER LEFT. Green strap crosses the back from anatomical LEFT shoulder to RIGHT hip. Rear ivory shell is a simple smooth rounded panel with one vertical molded seam, no new symbols or mechanical parts. Sprig turns with the head/body; do not rotate its blossom to face the camera. Do not invent a second bag. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted PVC/ABS collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+      "referenceKeys": [
+        "001-main"
+      ],
+      "crop": [
+        147,
+        120,
+        960,
+        960
+      ],
+      "label": "月梨信差 · 背面提案",
+      "alt": "月梨信差，AI 生成虛構公仔概念圖，背面設計提案，含完整底座",
+      "reviewStatus": "提案／未完成造型定稿",
+      "reviewNote": "左右持物未互換；後殼接縫與背帶路徑是背面設計提案，尚未完成全角度造型定稿。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/001-rear.png",
+        "sha256": "a31b1c83b473912a8fd442c984029d747f89e626a3cfe2c63218af9829270437",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "001-main",
+          "sha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-001-r1-rear-320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 5358,
+          "sha256": "74d3030e3bc7304a31b6bf6d7bc15eaa08d436d71fe5ac74ce17b10abca50355"
+        },
+        {
+          "file": "figura-ai-001-r1-rear-320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 320,
+          "bytes": 2944,
+          "sha256": "0a988a3be11a014a0bb510022a5849171849bbaee522627df7971791cb5c1fff"
+        },
+        {
+          "file": "figura-ai-001-r1-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 13782,
+          "sha256": "ea431ded9af7bab3f6fbc2e94f851aa4d89ed161fa731fb9c17947b33e790b71"
+        },
+        {
+          "file": "figura-ai-001-r1-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 6089,
+          "sha256": "83564217989820cf2b6bc6587bdd1853697282ecfb6593403d0846d96ea58614"
+        },
+        {
+          "file": "figura-ai-001-r1-rear-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 24364,
+          "sha256": "2e3bfc088aa2e7d76a54d2bf839208d561e6cdad998da2f88bcda149615c5419"
+        },
+        {
+          "file": "figura-ai-001-r1-rear-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 9254,
+          "sha256": "ef6d26c9f7cab548edd1286cf445067103854114ee10a02160a404606222e4a4"
+        },
+        {
+          "file": "figura-ai-001-r1-rear-960.jpg",
+          "format": "jpg",
+          "width": 960,
+          "height": 960,
+          "bytes": 52019,
+          "sha256": "9b489e33b1fd9b80c76d23d070047d7b79bde1af08ccd22e7296fd4785eeb296"
+        }
+      ]
+    },
+    {
+      "key": "068-main",
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "view": "main",
+      "prompt": "Use case: identity-preserve. Reframe this EXACT collectible photograph without redesigning the sculpt. Square 1:1 image. ZOOM THE CAMERA OUT substantially. Figure INCLUDING its round plinth must occupy only 74 percent of image HEIGHT, with at least 13 percent empty seamless studio backdrop ABOVE highest point and BELOW bottom of plinth. More negative space is essential; avoid the tightly filled original framing. Keep exact same face, silhouette, hair or blossom sprig, sculpt, clothing, pose, anatomical left/right accessories, paint palette, material surface and base. No changes to identity or details. Same softbox upper-left/right-fill studio light, warm off-white seamless backdrop, grounded shadow, realistic miniature PVC/resin collectible material. Show entire figure and base at smaller scale, precisely centered. No added props, no text or border. Not a living subject, no illustration. This is a raster AI concept collectible image, not a real 3D model.",
+      "referenceKeys": [
+        "068-main-first"
+      ],
+      "crop": [
+        147,
+        120,
+        960,
+        960
+      ],
+      "label": "冷熔鍋爐姊 · 主圖",
+      "alt": "冷熔鍋爐姊，AI 生成虛構公仔概念圖，前方四分之三視角，含完整底座",
+      "reviewStatus": "主圖可用於風格評估",
+      "reviewNote": "可辨識樹脂髮束、塗裝衣褶、手套與底座；由較寬鬆的生成圖裁切為 960²，未放大。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/068-main.png",
+        "sha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "068-main-first",
+          "sha256": "75800b5f2a27f88b3d8ab5adddf516925e6b5d9d01aa3b8de7d87e06da40e9e5"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-068-r1-main-320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 7904,
+          "sha256": "62a610251af9b658a07275df3f8386ad23b01605eac464a8a4bd142c86bb67ff"
+        },
+        {
+          "file": "figura-ai-068-r1-main-320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 320,
+          "bytes": 4856,
+          "sha256": "5f2823741393cdd52c245d2af81003b5d5f78088c3356fbd1f8a320db68618f3"
+        },
+        {
+          "file": "figura-ai-068-r1-main-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 24326,
+          "sha256": "d77245fe27068d29dbc555a8120a976eb509c98ccdfeb8965222a61f26a96532"
+        },
+        {
+          "file": "figura-ai-068-r1-main-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 13689,
+          "sha256": "6ebb9028ca2593f49f801056a811a1d2a1055d60598155aec686fe3788ec45c7"
+        },
+        {
+          "file": "figura-ai-068-r1-main-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 44672,
+          "sha256": "e8ee8491c3d97ebac5bc91e035ee2a15a1ee3d19b08d23d7a2e1bcc375e37959"
+        },
+        {
+          "file": "figura-ai-068-r1-main-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 23152,
+          "sha256": "561b46c5a78a207bb47478a6096db9447b777eabbc4b7814cec2ab45ea2d44f5"
+        },
+        {
+          "file": "figura-ai-068-r1-main-960.jpg",
+          "format": "jpg",
+          "width": 960,
+          "height": 960,
+          "bytes": 85523,
+          "sha256": "a5afa0851e48eb34c5a4aa26734ff0f554364900c49c398d84876e6f294f3edc"
+        }
+      ]
+    },
+    {
+      "key": "068-side",
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "view": "side",
+      "prompt": "Use case: identity-preserve. Single square product-mockup image. Show a true approximately 90-degree anatomical RIGHT-SIDE PROFILE view of the exact SAME physical collectible as the attached approved front master. Move the viewing camera around the stationary figure; DO NOT re-pose the figure, turn its head to face camera, or mirror the reference. EXACT same adult female resin mechanic: face, dark brown wavy pinned bun and tendrils, head turned to anatomical LEFT, charcoal one-piece rolled sleeve coverall, two chest flap pockets, thigh cargo pockets, knee pads, brass snaps, belt with rectangular brass buckle, burnt orange gloves, brown lace-up work boots. Anatomical RIGHT hand remains ON HIP, anatomical LEFT arm keeps the same cream worn welding helmet with rectangular plum lens cradled at LEFT HIP. Same dark diamond-plate round base with riveted edge and identical stance. No side swaps or moved feet. The nose/visor should point toward screen right; show the figure's RIGHT flank in profile, and naturally occlude opposite-side objects as necessary. Preserve all sculpt details and accessory attachments. Do not move occluded props into view. Realistic miniature hand-painted resin with sculpted hair, skin and sculpted fabric folds, never a living subject or illustration. Same softbox upper left and right fill, warm off-white seamless, same shadow, sharp full sculpture focus. Entire figure and complete base visible, figure INCLUDING base only 65 percent of canvas HEIGHT, generously centered with empty backdrop above and below, match the attached master's framing precisely. No text, labels, watermark, scene props or extra figures. Raster AI concept, not actual 3D.",
+      "referenceKeys": [
+        "068-main"
+      ],
+      "crop": [
+        147,
+        120,
+        960,
+        960
+      ],
+      "label": "冷熔鍋爐姊 · 側面試作",
+      "alt": "冷熔鍋爐姊，AI 生成虛構公仔概念圖，右側視角試作，含完整底座",
+      "reviewStatus": "待修／未通過角度一致性",
+      "reviewNote": "材質與配色一致；頭的轉向、手指位置與衣褶有漂移，需固定造型後再修，不視為同一雕塑的精確側面。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/068-side.png",
+        "sha256": "98fd0ab5b68c46097f1550fe81a6c7ed07aa825800a1f35539e751214d4c8caa",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "068-main",
+          "sha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-068-r1-side-320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 6018,
+          "sha256": "a4c2e76e80893202d8bb816b014f6ffa856d425e9f3cc1f18bce30c3cd11403c"
+        },
+        {
+          "file": "figura-ai-068-r1-side-320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 320,
+          "bytes": 3641,
+          "sha256": "9358c5815ce424989aa6526f1e2ab9aa6a8ea728771704d2983989adf0168c1f"
+        },
+        {
+          "file": "figura-ai-068-r1-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 19114,
+          "sha256": "0567de67f4c726da84e0209ab14bae3472c6f222aa9ac825ded453954ed6cd28"
+        },
+        {
+          "file": "figura-ai-068-r1-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 10397,
+          "sha256": "a29ed935e4f75b455aa73485837cb4e31278462b802903ffed87b483c82690d2"
+        },
+        {
+          "file": "figura-ai-068-r1-side-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 35410,
+          "sha256": "a70e675e0bced15b38bb855f02a5a989d905b488eed97d418c7e0647a224c68c"
+        },
+        {
+          "file": "figura-ai-068-r1-side-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 17701,
+          "sha256": "82a2f2e61c81482fae8708e85ef53d5cb184132188a59c267678d676674a00c9"
+        },
+        {
+          "file": "figura-ai-068-r1-side-960.jpg",
+          "format": "jpg",
+          "width": 960,
+          "height": 960,
+          "bytes": 68084,
+          "sha256": "eb919017b81f3f4886722315734f83710e2de718b221c51b8143983ced49ccd9"
+        }
+      ]
+    },
+    {
+      "key": "068-rear",
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "view": "rear",
+      "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same adult female resin mechanic: face, dark brown wavy pinned bun and tendrils, head turned to anatomical LEFT, charcoal one-piece rolled sleeve coverall, two chest flap pockets, thigh cargo pockets, knee pads, brass snaps, belt with rectangular brass buckle, burnt orange gloves, brown lace-up work boots. Anatomical RIGHT hand remains ON HIP, anatomical LEFT arm keeps the same cream worn welding helmet with rectangular plum lens cradled at LEFT HIP. Same dark diamond-plate round base with riveted edge and identical stance. No side swaps or moved feet. Straight rear view: anatomical RIGHT hand still on hip, which is VIEWER RIGHT in a rear view. Anatomical LEFT hand still cradles helmet at left hip, VIEWER LEFT. Head still turns toward anatomical LEFT; the face is mostly hidden, only a small left profile may be visible. Same bun silhouette. Proposed rear garment design is a center-back seam, waist belt, two modest rectangular rear patch pockets. No extra tools, pouches, backpack, logos, hair length changes, or new seams beyond this fixed rear design. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted resin collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+      "referenceKeys": [
+        "068-main"
+      ],
+      "crop": [
+        147,
+        120,
+        960,
+        960
+      ],
+      "label": "冷熔鍋爐姊 · 背面提案",
+      "alt": "冷熔鍋爐姊，AI 生成虛構公仔概念圖，背面設計提案，含完整底座",
+      "reviewStatus": "提案／未完成造型定稿",
+      "reviewNote": "持物與叉腰左右保留；新增的背袋、後縫線屬背面提案，未驗證同一幾何模型。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/068-rear.png",
+        "sha256": "43eede9674bbb71253b3e75b7bcf389d23f436dad1a91ceb6d6cfcfa3bf8739b",
+        "width": 1254,
+        "height": 1254
+      },
+      "references": [
+        {
+          "key": "068-main",
+          "sha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-068-r1-rear-320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 320,
+          "bytes": 7414,
+          "sha256": "05e47a181377a1191ff6f8a172a39f8246639a5c222c31c4bd560e3cf0c5b285"
+        },
+        {
+          "file": "figura-ai-068-r1-rear-320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 320,
+          "bytes": 4573,
+          "sha256": "3620ee614856563fe57773c362d23dd25235b7f543dbd2357e6677bd25f8acb4"
+        },
+        {
+          "file": "figura-ai-068-r1-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 23860,
+          "sha256": "29aa4d6818082c114d01db3a11d84a4225d22971b8265f80e190eea2ae153373"
+        },
+        {
+          "file": "figura-ai-068-r1-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 640,
+          "bytes": 13228,
+          "sha256": "a23d571f86e8430985726f958e5b3871c440b6d6e8c460a2d12a95d722a19280"
+        },
+        {
+          "file": "figura-ai-068-r1-rear-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 44864,
+          "sha256": "a839f59be8c7f67d3895c6f89b181cb8b9f04ed36050e6e2e6282c35bf83aeba"
+        },
+        {
+          "file": "figura-ai-068-r1-rear-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 960,
+          "bytes": 22963,
+          "sha256": "7434858df41d47876d3bfc42069a46e8c071f5da6a5065fe7884693260b690dd"
+        },
+        {
+          "file": "figura-ai-068-r1-rear-960.jpg",
+          "format": "jpg",
+          "width": 960,
+          "height": 960,
+          "bytes": 86081,
+          "sha256": "21affab5f200a556189bbae8f3e1fdd1c483beeb08e07d14415dfe644619c5d9"
+        }
+      ]
+    },
+    {
+      "key": "001-banner",
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "view": "banner",
+      "prompt": "Use case: identity-preserve, product-mockup. Create a cinematic wide homepage hero background image for Figura original fictional collectible showcase. Wide landscape composition, ideally 16:9. Preserve exact reference miniature identity: EXACT same ivory pear robot, plum crescent visor and pale eyes/tiny smile, one five-petal cream blossom with yellow stamens and TWO pale round buds on brown head sprig and TWO green leaves; mint satchel at ANATOMICAL RIGHT HIP with gold crescent, tiny white flower, gold snap, gold buckle on mint strap crossing its chest from anatomical left shoulder, yellow fruit in ANATOMICAL LEFT hand, purple mitt hands, brown ankle boots, apricot low cylindrical base. Do not swap sides, add limbs, redesign sprig, change base thickness or move the feet. The figure is a physical painted PVC collectible about 16cm tall on its attached apricot base, not a living character; glossy plum visor, satin ivory painted shell, crisp molded satchel and sprig. Stage EXACTLY ONE of this figure on a dark walnut collectors display shelf on the RIGHT around 73 percent frame width. Full figure AND its own full base must fit inside the central 62 percent of total IMAGE HEIGHT, leaving generous empty room above and below for a later 16:9 safe crop. Figure scale makes it a desktop collectible, not a human-sized creature. Cinematic warm amber soft key from upper left, restrained cool teal rim from right, credible contact shadow, blurred dark walnut cabinet dividers in background, subtle distant bokeh, rich material highlights, elegant quiet collector room. LEFT 42 percent should be calm dark blue-charcoal wall with smooth low-detail gradient and absolutely NO objects, ready for later HTML text. Subject sharp, background softly defocused, tasteful filmic contrast, no haze obscuring details. No extra characters/figures, no scattered fruit or flowers, no packaging, no label, no generated typography, no lettering/logo/watermark. Raster AI concept image, not a 3D asset.",
+      "referenceKeys": [
+        "001-main"
+      ],
+      "crop": [
+        4,
+        2,
+        1664,
+        936
+      ],
+      "label": "月梨信差 · 電影感 Banner",
+      "alt": "月梨信差，AI 生成虛構公仔概念圖，收藏展示場景，含完整底座",
+      "reviewStatus": "場景方向可用／手機構圖待做",
+      "reviewNote": "暖色主光、冷色輪廓光與左側留白通過氣氛評估；細節仍需依最終角色定稿核對，未做手機專用構圖。",
+      "source": {
+        "localArchive": "work/figure-render-samples/originals/001-banner.png",
+        "sha256": "393975fe34f0930442ad7b69bf291b3fa9febaa6e0b2831385bd095e786e47a0",
+        "width": 1672,
+        "height": 941
+      },
+      "references": [
+        {
+          "key": "001-main",
+          "sha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3"
+        }
+      ],
+      "derivatives": [
+        {
+          "file": "figura-ai-001-r1-banner-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 14060,
+          "sha256": "06433cd6a33000543f02ed86688dd7e3f58d82817ec2b1c33880497382bdbd1f"
+        },
+        {
+          "file": "figura-ai-001-r1-banner-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 6253,
+          "sha256": "3130293558625b0b289e26b500b2daa83c59546b3dffc5ac94de5a18cb73ee4e"
+        },
+        {
+          "file": "figura-ai-001-r1-banner-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 24436,
+          "sha256": "980a692b0ea37ed05735f6b10f1f18762882cd1ce729d992f8ee8b2968e030cb"
+        },
+        {
+          "file": "figura-ai-001-r1-banner-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 10125,
+          "sha256": "9f7e5ea2d04bcf1f679334221f0c1634154588e286abbd07008989a25f78f133"
+        },
+        {
+          "file": "figura-ai-001-r1-banner-1536.webp",
+          "format": "webp",
+          "width": 1536,
+          "height": 864,
+          "bytes": 45972,
+          "sha256": "257d39621ab715effd092f7f70209e4ef697f3b359970252dc37bb2ffe5a008d"
+        },
+        {
+          "file": "figura-ai-001-r1-banner-1536.avif",
+          "format": "avif",
+          "width": 1536,
+          "height": 864,
+          "bytes": 17059,
+          "sha256": "3b46d0525cdedf04c2b0a34903c8cc4b0a3b71fc34c1d5c83924bcc9863f33ca"
+        },
+        {
+          "file": "figura-ai-001-r1-banner-1536.jpg",
+          "format": "jpg",
+          "width": 1536,
+          "height": 864,
+          "bytes": 95789,
+          "sha256": "4bd7b75b59243b95600734046a463aa9513dcd66c70b4aca1eb31403a985b7d1"
+        }
+      ]
+    }
+  ]
+}
