@@ -11,7 +11,7 @@
 - 最終驗證：95 件 × 1440／390px 共 190 組真實瀏覽器檢查通過；380 張目前供應圖片及全部 master／來源 SHA 核對通過，原 MAIN 不變、無退回圖混入。Python 原 runner 5 checks＋圖庫 gate／恢復 5 checks 通過，5 個保護遮罩重新計算 SHA 通過；最終 Web production build 通過。配對 API 本輪 Maven package 324 tests：46 pass／278 opt-in skip，0 failure/error；不能把 skip 當 pass。
 - 已處理的問題：Windows 原子檔案鎖重試、005 上傳前保存失敗後過早復刊造成 UUID 版本過期（核對 audit 後修復，未重複上傳）、裁切解碼色差誤報、快速切圖停留舊 responsive image、裁切過緊與遮罩漏掉底座。未知 ACK 現維持同一草稿版本續跑。Chrome 受限帳戶 sandbox GPU 子程序被拒，唯讀檢查使用專用 headless profile；未修改產品安全設定。
 - 文件：[逐件結果／模型／問題與牆鐘時間](verification/catalog-gallery-report-2026-11-20.md)、[六圖位比較頁](catalog-gallery-comparison.html)、[manifest](verification/catalog-gallery-manifest.json)、[環境紀錄](verification/comfyui-environment-2026-11-20.json)、[續跑說明](CATALOG_GALLERY_RUNBOOK.md)。比較頁引用本機 work 圖片，clone 不含原圖。使用額度中斷等待包含在牆鐘時間內，不冒稱純 GPU 運算時間。
-- 遠端交付：前次 Git push 缺少可用憑證，GitHub 寫入工具被 `approval policy: never` 阻擋；既有 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 為 base main 的 draft。最後再次推送的實際結果記在 manifest `remoteDelivery`；未成功前不可宣稱遠端已包含本輪提交。PR 說明準備於 `docs/verification/catalog-gallery-pr-2026-11-20.md`。不 merge main、不 force push。
+- 遠端交付仍受阻：最終驗證 commit `769260c` 已保存；最後 Git push 以 exit 128 失敗，原因為 wincredman 無法保存憑證、無法取得密碼。改用 GitHub 連接器更新 PR 說明亦被「requires approval, but approval policy is never」拒絕。既有 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 為 base main 的 draft，遠端 head 仍 `38b4899`，尚未包含本輪後續提交或新說明。詳細結果記在 manifest `remoteDelivery`；準備好的 PR 說明為 `docs/verification/catalog-gallery-pr-2026-11-20.md`。未 merge main、未 force push，後續需可用 Git 憑證／寫入政策才能推送及更新。
 
 下一步為作者在本機逐件人工簽核；側／背仍需有效一致性方法，是否增加 3D 由作者另行評估。本輪沒有自動代作者簽核或正式上架。
 

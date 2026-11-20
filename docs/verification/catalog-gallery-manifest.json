@@ -28819,9 +28819,25 @@
     "User reported usage-quota interruption; resumed from saved batch 7. Pause duration was not measured; wall time includes waiting."
   ],
   "remoteDelivery": {
-    "status": "pending_retry",
+    "status": "blocked",
+    "lastAttemptAt": 1795155184.8520696,
+    "localValidationCommit": "769260c",
+    "remoteHead": "38b4899a53aa3bf0f29f42b5dfc6e1967c14fbf2",
     "prUrl": "https://github.com/jackteng-dev/figura-web/pull/22",
-    "priorBlock": "Git credentials unavailable; connector write rejected by approval policy never"
+    "base": "main",
+    "draft": true,
+    "prMetadataUpdated": false,
+    "push": {
+      "exitCode": 128,
+      "error": "Unable to persist credentials with the wincredman credential store; unable to get password from user"
+    },
+    "connector": {
+      "action": "update_pull_request",
+      "error": "MCP tool call requires approval, but approval policy is never"
+    },
+    "preparedDescription": "docs/verification/catalog-gallery-pr-2026-11-20.md",
+    "merged": false,
+    "forcePush": false
   },
   "finalValidation": {
     "browser": "docs/verification/catalog-gallery-browser-2026-11-20.json",
