@@ -1,0 +1,57 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+    }
+  },
+  "2": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "x": 147,
+      "y": 120,
+      "width": 960,
+      "height": 960
+    }
+  },
+  "3": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "x": 310,
+      "y": 60,
+      "width": 350,
+      "height": 350
+    }
+  },
+  "4": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "3",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 350,
+      "height": 350,
+      "crop": "disabled"
+    }
+  },
+  "20": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ],
+      "filename_prefix": "figura/6b340f84fa73abab81703f1e3bd024bd68b06f17ff261bc24dad43498106344c"
+    }
+  }
+}

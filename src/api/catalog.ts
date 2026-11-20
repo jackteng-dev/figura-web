@@ -1,6 +1,6 @@
 import api from '@/api/api'
 
-export interface ProductImage { id:string;url:string;alt:string;width:number;height:number }
+export interface ProductImage { id:string;url:string;alt:string;width:number;height:number;variants?:{url:string;width:number;height:number;contentType:string}[] }
 export interface Sku { id?: string; code: string; label: string; priceTwd: number; enabled: boolean }
 export interface ProductWrite { title: string; brand: string; category: string; description: string; expectedVersion: number; skus: Sku[]; brandId?:string; categoryId?:string; workId?:string|null }
 export interface AdminProduct extends Omit<ProductWrite, 'expectedVersion'> { id: string; status: 'DRAFT' | 'PUBLISHED' | 'ARCHIVED'; version: number; image:ProductImage|null; brandId:string; categoryId:string; workId:string|null; work:string|null }

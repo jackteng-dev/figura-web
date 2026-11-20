@@ -1,0 +1,101 @@
+{
+  "FIGURA-AI-001": {
+    "designRevision": "catalog-base-pilot-r1",
+    "master": "work/catalog-gallery/FIGURA-AI-001/master.png",
+    "masterSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
+    "masterCrop": [
+      0,
+      0,
+      960,
+      960
+    ],
+    "characterSheet": {
+      "sourceBrief": "Use case: product-mockup. Asset type: square e-commerce cover photo for one fictional collectible figure. Create an original designer-art toy called a moon orchard courier: a small friendly pear-shaped ivory ceramic robot with a plum-colored crescent visor, a short mint satchel, tiny clay boots and a pale apricot round plinth, standing in a three-quarter pose. Show exactly one complete physical vinyl-and-ceramic collectible. Calm muted lilac seamless studio backdrop, soft diffuse catalog lighting, finely painted matte surfaces, crisp contact shadow, professional 70 mm product photography. Center the standing figure with 15 percent margin at every edge and its full base visible. No lettering, logos, packaging, overlays, watermarks or recognizable franchise imagery. Square image.",
+      "material": "matte designer vinyl with ceramic finish",
+      "visibleInvariants": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth.",
+      "rearDesign": "Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms.",
+      "rearDesignStatus": "fixed AI proposal; author pending"
+    },
+    "invariants": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark.",
+    "shots": {
+      "side": {
+        "mode": "flux-base-reference",
+        "seed": 2026113001,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-base-reference",
+        "seed": 2026113001,
+        "size": 768,
+        "prompt": "Back view at 180 degrees of the same fixed miniature. Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign."
+      }
+    }
+  },
+  "FIGURA-AI-002": {
+    "designRevision": "catalog-base-pilot-r1",
+    "master": "work/catalog-gallery/FIGURA-AI-002/master.png",
+    "masterSha256": "4d6b53d92d97a4d317a17b65cb821e1a3b88e76a23e8b8a0bbe22976995fd4e7",
+    "masterCrop": [
+      0,
+      0,
+      960,
+      960
+    ],
+    "characterSheet": {
+      "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a clear teal-rainglass snail robot carrying three tiny translucent droplets in a rounded copper canister, small footpad base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted lilac or apricot studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+      "material": "smooth painted PVC collector figure",
+      "visibleInvariants": "Teal translucent snail robot with ivory face panel; two long translucent eye-stalks with copper collars; two oval eyes, smile and cheek dots. Four ivory articulated feet, teal footpads and copper joints. Teal spiral shell; copper harness. One copper canister with domed glass cover contains three tiny teal droplet characters. Cream and copper low polygonal base with teal panels, not a round disk.",
+      "rearDesign": "Continue the same spiral shell and copper harness around its back. One dome canister only, exactly three droplets inside. No second canister. Keep four feet and the same polygonal base and panel pattern.",
+      "rearDesignStatus": "fixed AI proposal; author pending"
+    },
+    "invariants": "Teal translucent snail robot with ivory face panel; two long translucent eye-stalks with copper collars; two oval eyes, smile and cheek dots. Four ivory articulated feet, teal footpads and copper joints. Teal spiral shell; copper harness. One copper canister with domed glass cover contains three tiny teal droplet characters. Cream and copper low polygonal base with teal panels, not a round disk. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark.",
+    "shots": {
+      "side": {
+        "mode": "flux-base-reference",
+        "seed": 2026113002,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-base-reference",
+        "seed": 2026113002,
+        "size": 768,
+        "prompt": "Back view at 180 degrees of the same fixed miniature. Continue the same spiral shell and copper harness around its back. One dome canister only, exactly three droplets inside. No second canister. Keep four feet and the same polygonal base and panel pattern. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign."
+      }
+    }
+  },
+  "FIGURA-AI-068": {
+    "designRevision": "catalog-base-pilot-r1",
+    "master": "work/catalog-gallery/FIGURA-AI-068/master.png",
+    "masterSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
+    "masterCrop": [
+      0,
+      0,
+      960,
+      960
+    ],
+    "characterSheet": {
+      "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure dressed in thick charcoal workwear and burnt orange safety gloves with a small ceramic welding mask held on waist, resin base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+      "material": "hand-painted sculpted resin with small craft detail",
+      "visibleInvariants": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets.",
+      "rearDesign": "Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets.",
+      "rearDesignStatus": "fixed AI proposal; author pending"
+    },
+    "invariants": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark.",
+    "shots": {
+      "side": {
+        "mode": "flux-base-reference",
+        "seed": 2026113068,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-base-reference",
+        "seed": 2026113068,
+        "size": 768,
+        "prompt": "Back view at 180 degrees of the same fixed miniature. Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign."
+      }
+    }
+  }
+}

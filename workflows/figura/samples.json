@@ -1,0 +1,134 @@
+{
+  "FIGURA-AI-001": {
+    "designRevision": "r1",
+    "master": "work/figure-render-samples/originals/001-main.png",
+    "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+    "masterCrop": [
+      147,
+      120,
+      960,
+      960
+    ],
+    "invariants": "The reference is a painted PVC/ABS pear-shaped ivory courier robot on an apricot circular base. Plum visor with two eyes and smile, one blossom sprig with two leaves and two buds, mint green satchel on its anatomical right hip, gold buckle and crescent, anatomical left hand holding one yellow pear, purple gloves, brown boots. This is an AI concept image of a fictional miniature, not a living subject. ",
+    "shots": {
+      "main": {
+        "mode": "crop",
+        "crop": [
+          0,
+          0,
+          960,
+          960
+        ],
+        "size": 960
+      },
+      "face": {
+        "mode": "crop",
+        "crop": [
+          270,
+          100,
+          430,
+          430
+        ],
+        "size": 430
+      },
+      "accessory": {
+        "mode": "crop",
+        "crop": [
+          220,
+          350,
+          500,
+          500
+        ],
+        "size": 500
+      },
+      "base": {
+        "mode": "crop",
+        "crop": [
+          230,
+          480,
+          480,
+          480
+        ],
+        "size": 480
+      },
+      "side": {
+        "mode": "flux-reference",
+        "seed": 2026111901,
+        "size": 768,
+        "prompt": "Rotate only the camera to view the same fixed physical sculpt from its right side at 90 degrees. Do not change the pose, sculpt, face, accessories, colors or base. Complete figure and full base, warm white studio, no text. Single square product photo, crisp painted miniature surface."
+      },
+      "scene": {
+        "mode": "flux-reference",
+        "seed": 2026111901,
+        "size": 768,
+        "prompt": "Keep exactly this physical collectible sculpt and fixed pose. Place it on a walnut collector display shelf with warm softbox and subtle cool rim light. One complete miniature and its complete original base only, no other objects or figures. Preserve all shapes, left/right accessories and paint. Square product photo, no text."
+      }
+    }
+  },
+  "FIGURA-AI-068": {
+    "designRevision": "r1",
+    "master": "work/figure-render-samples/originals/068-main.png",
+    "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+    "masterCrop": [
+      147,
+      120,
+      960,
+      960
+    ],
+    "invariants": "The reference is a painted resin collectible of an adult woman mechanic, sculpted brown pinned curly hair, head turned to her anatomical left, charcoal coveralls with two chest pockets and copper hardware, orange gloves, brown work boots, anatomical right hand on hip, anatomical left arm cradling one cream welding mask with a purple rectangular window, dark weathered circular diamondplate base with rivets. This is an AI concept image of a fictional miniature, not a living subject. ",
+    "shots": {
+      "main": {
+        "mode": "crop",
+        "crop": [
+          0,
+          0,
+          960,
+          960
+        ],
+        "size": 960
+      },
+      "face": {
+        "mode": "crop",
+        "crop": [
+          310,
+          60,
+          350,
+          350
+        ],
+        "size": 350
+      },
+      "accessory": {
+        "mode": "crop",
+        "crop": [
+          300,
+          210,
+          380,
+          380
+        ],
+        "size": 380
+      },
+      "base": {
+        "mode": "crop",
+        "crop": [
+          260,
+          560,
+          400,
+          400
+        ],
+        "size": 400
+      },
+      "side": {
+        "mode": "flux-reference",
+        "seed": 2026111968,
+        "size": 768,
+        "prompt": "Rotate only the camera to view the same fixed physical sculpt from its right side at 90 degrees. Do not change the pose, sculpt, face, accessories, colors or base. Complete figure and full base, warm white studio, no text. Single square product photo, crisp painted miniature surface."
+      },
+      "scene": {
+        "mode": "flux-reference",
+        "seed": 2026111968,
+        "size": 768,
+        "prompt": "Keep exactly this physical collectible sculpt and fixed pose. Place it on a walnut collector display shelf with warm softbox and subtle cool rim light. One complete miniature and its complete original base only, no other objects or figures. Preserve all shapes, left/right accessories and paint. Square product photo, no text."
+      }
+    }
+  }
+}
