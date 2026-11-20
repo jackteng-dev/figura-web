@@ -51,6 +51,22 @@
         }
       ],
       "freeDiskBytes": 216071979008
+    },
+    {
+      "at": 1795155018.233158,
+      "ramFreeBytes": 10187616256,
+      "gpu": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 12884377600,
+          "vram_free": 11076306038,
+          "torch_vram_total": 100663296,
+          "torch_vram_free": 87229558
+        }
+      ],
+      "freeDiskBytes": 211524091904
     }
   ],
   "runtimeArgv": [
@@ -592,5 +608,36 @@
     "oomReported": false,
     "productionSetting": "restored CLIPLoader cpu",
     "note": "Queued product job was confirmed never running before restart; exact workflow resubmitted with old/new prompt IDs retained"
-  }
+  },
+  "finalModelChecks": [
+    {
+      "name": "BiRefNet",
+      "bytes": 444473596,
+      "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+      "verifiedAt": 1795155014.7940736
+    },
+    {
+      "name": "FLUX.2 Klein Base 4B FP8",
+      "bytes": 4089498488,
+      "sha256": "44bab3a86fe98b85d21dd2a4729ebdc3ae51fb8a39f76e457e18c724219e6840",
+      "verifiedAt": 1795155018.1918352
+    }
+  ],
+  "finalListenerEvidence": [
+    {
+      "address": "127.0.0.1",
+      "port": 15181,
+      "pid": 28128
+    },
+    {
+      "address": "127.0.0.1",
+      "port": 18188,
+      "pid": 25128
+    },
+    {
+      "address": "127.0.0.1",
+      "port": 19092,
+      "pid": 53204
+    }
+  ]
 }

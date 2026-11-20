@@ -28812,5 +28812,33 @@
       "FIGURA-AI-095"
     ],
     "scope": "local 2D only; unsupported new-angle slots remain empty; no false failure claims"
+  },
+  "processedAt": 1795155014.4223838,
+  "processingStatus": "finished_with_policy_empty_angles",
+  "interruptionNotes": [
+    "User reported usage-quota interruption; resumed from saved batch 7. Pause duration was not measured; wall time includes waiting."
+  ],
+  "remoteDelivery": {
+    "status": "pending_retry",
+    "prUrl": "https://github.com/jackteng-dev/figura-web/pull/22",
+    "priorBlock": "Git credentials unavailable; connector write rejected by approval policy never"
+  },
+  "finalValidation": {
+    "browser": "docs/verification/catalog-gallery-browser-2026-11-20.json",
+    "browserChecks": 190,
+    "integrity": "docs/verification/catalog-gallery-integrity-2026-11-20.json",
+    "servedImages": 380,
+    "newLocalUploads": 285,
+    "pythonChecks": 10,
+    "protectionMasksRecomputed": 5,
+    "webProductionBuild": "passed",
+    "apiPackage": {
+      "total": 324,
+      "passed": 46,
+      "skipped": 278,
+      "failures": 0,
+      "errors": 0
+    },
+    "authorApproval": "pending"
   }
 }

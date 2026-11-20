@@ -26,13 +26,18 @@ def main():
         assert all(p['publicationSession']['state'] == 'restored' for p in products)
     browser_path = folder / 'catalog-gallery-browser-2026-11-20.json'
     browser = json.loads(browser_path.read_text('utf-8')) if browser_path.exists() else None
+    integrity_path = folder / 'catalog-gallery-integrity-2026-11-20.json'
+    integrity = json.loads(integrity_path.read_text('utf-8')) if integrity_path.exists() else None
     if args.final:
         assert browser and browser['products'] == 95 and len(browser['checks']) == 190
+        assert integrity and integrity['products'] == 95 and len(integrity['checks']) == 95
     finished = manifest.get('processedAt', time.time())
     tz = timezone(timedelta(hours=8))
     stamp = lambda value: datetime.fromtimestamp(value, tz).isoformat(timespec='seconds')
     elapsed = finished - manifest['startedAt']
     new_uploads = sum(s.get('upload', {}).get('status') == 'acknowledged' for p in products for s in p['slots'].values())
+    recrops = '／'.join(p['productKey'].removeprefix('FIGURA-AI-') for p in products if p.get('attempts', {}).get('FACE'))
+    scene_repairs = '／'.join(p['productKey'].removeprefix('FIGURA-AI-') for p in products if any(s.get('status') == 'reject' for s in p.get('attempts', {}).get('SCENE', [])))
     labels = {'complete': '完成', 'reject': '退回／留空', 'blank': '留空（未產候選）', 'pending': '待處理', 'review_pending': '待檢查', 'pass': '待上傳'}
     lines = ['# Figura 本機全目錄 2D 圖組處理結果', '',
              'AI 生成示意圖；非實物攝影，非可操作 3D。作者人工簽核 **pending**；未合併、未正式部署。', '',
@@ -66,14 +71,20 @@ def main():
               '- JDK21 重打包本機圖庫 API：Maven 324 tests，46 pass／278 opt-in skip，0 failure/error；未把 skip 當通過。初次外連 Maven 下載等待過久，改用既有依賴的本機可寫離線快取完成。',
               '- Python 原 runner 5 checks、新圖庫 gate／恢復 5 checks 通過；Web production build 通過。',
               '- Windows 暫時檔案鎖增加原子替換重試。005 上傳前保存失敗後過早復刊導致 UUID 版本過期；核對無提交 audit 後保存舊請求並重建正確版本，未重複新增。未知 ACK 現在維持同一草稿版本，續跑同 UUID。',
-              '- JPEG 的 Pillow／PyAV 解碼色差曾造成特寫驗證誤報；改用與 ComfyUI 相同的 PyAV RGB 解碼，驗證直接裁切且無放大。002／013／040 臉部重裁；005／027／047 情境遮罩退回修復，失敗嘗試均保存。',
+              f'- JPEG 的 Pillow／PyAV 解碼色差曾造成特寫驗證誤報；改用與 ComfyUI 相同的 PyAV RGB 解碼，驗證直接裁切且無放大。{recrops} 臉部重裁；{scene_repairs} 情境候選退回後調整流程或修復遮罩，失敗嘗試均保存。',
               '- 瀏覽器快速切圖曾停留於舊 responsive image，已用 image.id key 修復並驗證 currentSrc／解碼成功。受限 Windows 帳戶的 Chrome sandbox GPU 子程序啟動被拒，唯讀驗證改用專用 headless profile；沒有改產品安全設定。',
               '- GPU 文字編碼效能試驗在約 11,153 MiB 顯存使用量下停滯，中止未返回，已受控重啟此 ComfyUI 一次並恢復原 CPU 編碼；佇列中確認未執行的商品工作保存舊／新 prompt ID 後恢復。未終止其他 GPU 程式。沒有推論 OOM 回報；此數字是觀測樣本，不是連續監測峰值。',
               '- RTX 3080 Ti 12GB：正式候選採 Klein 4B FP8／768²／4 steps／batch1，Qwen CPU；額外 Base 試驗採20 steps／CFG5，非錯用 distilled 設定。情境與特寫均為 2D 原像素操作。', '',
               f"記錄起點 {stamp(manifest['startedAt'])}，本輪處理記錄終點 {stamp(finished)}，牆鐘經過 {elapsed / 3600:.2f} 小時（包含使用額度中斷等待、產圖、檢查、修復與保存；不是純 GPU 運算時間，起點前 API 準備時間亦不在此計時內）。", '']
     if browser:
         lines += [f"[本機桌面／手機瀏覽器證據](catalog-gallery-browser-2026-11-20.json)：{browser['products']} 件、{len(browser['checks'])} 組檢查；原主圖、實際圖庫數量、所有圖切換／解碼、AI 標示、放大焦點和無水平溢出。", '']
-    lines += ['## Git 保存限制', '', '每批約十件已本機 commit，分支為 `codex/comfyui-product-gallery`，未合併 main、未 force push。Git HTTPS 缺少可用憑證；GitHub 寫入工具回覆「requires approval, but approval policy is never」，因此 push／PR 更新未完成。既有 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 尚未包含這些本機後續提交。', '']
+    if integrity:
+        lines += ['[本機完整性證據](catalog-gallery-integrity-2026-11-20.json)：95 件、380 張供應圖片 SHA-256 與已保存內容相同，原 MAIN 不變，無側／背候選混入圖庫，原始輸出及審查紀錄吻合。', '']
+    lines += ['## Git 保存狀態', '']
+    if manifest.get('remoteDelivery', {}).get('status') == 'pushed':
+        lines += ['每批約十件已本機 commit，功能分支已推送，base 為 main 的 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 已更新；未合併、未 force push。作者簽核 pending。', '']
+    else:
+        lines += ['每批約十件已本機 commit，分支為 `codex/comfyui-product-gallery`，未合併 main、未 force push。Git HTTPS 缺少可用憑證；GitHub 寫入工具回覆「requires approval, but approval policy is never」，因此 push／PR 更新未完成。既有 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 尚未包含這些本機後續提交。', '']
     target = folder / 'catalog-gallery-report-2026-11-20.md'
     target.write_text('\n'.join(lines), encoding='utf-8')
     print(target)
