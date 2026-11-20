@@ -20281,9 +20281,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tiny articulated squat cobalt gearhead robot wearing a duvet-like white chest guard, holding a chunky terracotta wrench, round plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "painted ABS with simple clean articulated joints",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Stocky blue/ivory mechanic robot with large black visor and two yellow oval eyes, gear-shaped gray helmet crest and blue/gold side gears. Ivory quilted padded vest with gold buckles, blue jointed limbs and broad blue boots. Anatomical LEFT hand holds one large copper wrench upright; anatomical RIGHT gripper lowered. Dark gray round metal plinth with gold rivet dots.",
+        "rearDesign": "Continue plain quilted ivory vest back and blue mechanical panels, same helmet gear crest and side fittings. Wrench stays in left hand, right gripper stays down; no added tool belt or pack. Same dark gray/gold-riveted round base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -20304,17 +20304,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "8156cb93ed5c9cec4b4048a3c1d64a926405e84184074a41d03b5dcc2c35f3d2",
+          "sha256": "821583b30d0ce473493ee70da8e7184a9b4b80bd9214285eb33b10b3c6a79c62",
+          "sourceSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c",
+          "path": "work/comfyui-figura/runs/8156cb93ed5c9cec4b4048a3c1d64a926405e84184074a41d03b5dcc2c35f3d2/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "e74dc717-940d-403a-a4fb-1bd2328445bc",
+            "createdAt": "2026-11-20T02:56:52Z",
+            "masterSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c",
+            "modelHashes": {},
+            "workflowSha256": "f31da031e55d9231aa7c85034f4eaed7fa7839d5b008938517ab0f1d3a0f962d",
+            "outputSha256": "821583b30d0ce473493ee70da8e7184a9b4b80bd9214285eb33b10b3c6a79c62",
+            "outputBytes": 303319,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 240,
+              "y": 0,
+              "width": 500,
+              "height": 500
+            },
+            "size": 500
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 500,
+            "height": 500,
+            "sourceSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c"
+          },
+          "reviewedAt": 1795154243.4911578,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "0dd4a0a2-3832-4d59-822d-aa856cc6e506",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "霜邊小扳手，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "821583b30d0ce473493ee70da8e7184a9b4b80bd9214285eb33b10b3c6a79c62",
+            "imageId": "f3e14ebe-3003-45ce-b189-ea6d807f73dc",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/20fe5a48-3f9e-4aaf-9d2e-d54836eb7e55/image/f3e14ebe-3003-45ce-b189-ea6d807f73dc",
+            "servedSha256": "3228fbc309e6e0a60469526e642ce115cad3c98401656e9c672ec8f8875bada7",
+            "verifiedAt": 1795154273.7135684
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "5f58e002d004c2eb1b74577abd16434af7ed87e3e1ba05ed8d61db787b688260",
+          "sha256": "c272be863665dc05af07e956496cbc84d7be33640160b5a3b8f6e3c6917ab506",
+          "sourceSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c",
+          "path": "work/comfyui-figura/runs/5f58e002d004c2eb1b74577abd16434af7ed87e3e1ba05ed8d61db787b688260/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "cd834648-0dd8-43d2-bfbd-36471bbfd809",
+            "createdAt": "2026-11-20T02:56:54Z",
+            "masterSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c",
+            "modelHashes": {},
+            "workflowSha256": "531de1613c309d8347d78486bf0d0620303b785837f56d6f169ed16ef63b1642",
+            "outputSha256": "c272be863665dc05af07e956496cbc84d7be33640160b5a3b8f6e3c6917ab506",
+            "outputBytes": 337603,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c"
+          },
+          "reviewedAt": 1795154243.5443318,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "44923dc9-04ed-44d3-806a-d3298fcb1d33",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "霜邊小扳手，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "c272be863665dc05af07e956496cbc84d7be33640160b5a3b8f6e3c6917ab506",
+            "imageId": "79bd5247-96d3-421e-b107-c828e876afcb",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/20fe5a48-3f9e-4aaf-9d2e-d54836eb7e55/image/79bd5247-96d3-421e-b107-c828e876afcb",
+            "servedSha256": "4bd5ea1fb82fcc4dd4feb42f83483097a2346f54af664e177a71d8ad16cd4c16",
+            "verifiedAt": 1795154273.727056
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "f327cbe413b053de79666860c30da6a5b29220c08cb7308c1091097d40de5a9c",
+          "sha256": "77d75df0f128d80d426e6a8ab5b3d1b547122b1b7443098d47553f24852ce8cd",
+          "sourceSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c",
+          "path": "work/comfyui-figura/runs/f327cbe413b053de79666860c30da6a5b29220c08cb7308c1091097d40de5a9c/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "448233b6-cf89-47a3-b9c2-bbd062ae6f7f",
+            "createdAt": "2026-11-20T02:56:56Z",
+            "masterSha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "c0f8393d037246cc7a3b5eb023e7373683ef19fe9ca0c632cca7bb7b9c4da53e",
+            "outputSha256": "77d75df0f128d80d426e6a8ab5b3d1b547122b1b7443098d47553f24852ce8cd",
+            "outputBytes": 1056099,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154243.5840306,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "2aac9ef6-bdce-4126-8542-701fba0a3e75",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "霜邊小扳手，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "77d75df0f128d80d426e6a8ab5b3d1b547122b1b7443098d47553f24852ce8cd",
+            "imageId": "87814021-fad0-491c-a834-873efe7c2540",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/20fe5a48-3f9e-4aaf-9d2e-d54836eb7e55/image/87814021-fad0-491c-a834-873efe7c2540",
+            "servedSha256": "04764118fb34022b269e0090cfa006b006b654f0ddf788a5eeeb25f8b7607039",
+            "verifiedAt": 1795154273.7553024
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -20335,9 +20517,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a plum ceramic bird compactly perched with circular brush tail and mustard wool neckerchief on a cream speckled base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "hand-painted sculpted resin with small craft detail",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Small maroon/plum bird with cream chest, glossy dark eye, yellow beak, gold patterned scarf, layered wings with pale gold seed spots and huge curled plum tail forming a loop behind. Two small brown feet. Cream cylindrical base painted with red/gold leafy vine.",
+        "rearDesign": "Continue layered maroon wing/back feathers and pale gold spots, same one looped tail and scarf wrap. No second tail or new feather crest, same two feet. Original cream/red botanical cylinder base unchanged.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -20358,17 +20540,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "fcdca0590daed7ef31e21578058ae8d3b717e5e32b2d48a8ab30b1f595542cf1",
+          "sha256": "626a3e617bc97b65218568ef38fbbaa3f32c8b7d06410e895bcc6ca105460d63",
+          "sourceSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95",
+          "path": "work/comfyui-figura/runs/fcdca0590daed7ef31e21578058ae8d3b717e5e32b2d48a8ab30b1f595542cf1/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "81c4a3dc-bef6-424a-97ec-5dfb59ce9c52",
+            "createdAt": "2026-11-20T02:56:58Z",
+            "masterSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95",
+            "modelHashes": {},
+            "workflowSha256": "e0a5a058b5e308f57da0b0b9640b747a7967fcf84d905d030b9396afd7775a42",
+            "outputSha256": "626a3e617bc97b65218568ef38fbbaa3f32c8b7d06410e895bcc6ca105460d63",
+            "outputBytes": 269939,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 340,
+              "y": 30,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95"
+          },
+          "reviewedAt": 1795154243.637963,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "40456aed-1a80-4aa0-83a9-354081369976",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "煙囪掃雪鳥，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "626a3e617bc97b65218568ef38fbbaa3f32c8b7d06410e895bcc6ca105460d63",
+            "imageId": "1e4b221f-49c0-4a68-ba43-a8ad959da311",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/1e4b221f-49c0-4a68-ba43-a8ad959da311",
+            "servedSha256": "e4e7a17709060b40995e7a2b242d51740a6a583120aefea6412c917a0b73bbb4",
+            "verifiedAt": 1795154274.9564264
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "8460a037a6f395cf2a2f661b0ac7a99552c5ac1acb98eae1f028bea642eee34f",
+          "sha256": "838c20bbd290b740a3bd3e7615a6fcfb68c0ea09d757b6c5f3af417f9d66b41c",
+          "sourceSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95",
+          "path": "work/comfyui-figura/runs/8460a037a6f395cf2a2f661b0ac7a99552c5ac1acb98eae1f028bea642eee34f/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "425cce30-3a1f-48a5-b1af-dbf1a101e5bb",
+            "createdAt": "2026-11-20T02:57:00Z",
+            "masterSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95",
+            "modelHashes": {},
+            "workflowSha256": "bf0848de6dce03dfb3f85bbd748dba509511361473b2ceb285027af0d4749342",
+            "outputSha256": "838c20bbd290b740a3bd3e7615a6fcfb68c0ea09d757b6c5f3af417f9d66b41c",
+            "outputBytes": 366474,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95"
+          },
+          "reviewedAt": 1795154243.688112,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "3c075392-0c1e-48e8-bc42-0b04db149ad3",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "煙囪掃雪鳥，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "838c20bbd290b740a3bd3e7615a6fcfb68c0ea09d757b6c5f3af417f9d66b41c",
+            "imageId": "d8180736-077d-4f25-909c-f2f6a77c7bf1",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/d8180736-077d-4f25-909c-f2f6a77c7bf1",
+            "servedSha256": "7b94da524173f45aac3015cb11cd76171f7b6c42a864d8e1d50d0ea95171fc59",
+            "verifiedAt": 1795154274.9725864
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "eff8d4c7d6e12e9b25b6bbbc2e66d8c6350f36d79f549e6c87fc1200013c8a6c",
+          "sha256": "2d449dd7a2d2bfeac8c214b5258f435aacee885689de5db2d3426cc36458e979",
+          "sourceSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95",
+          "path": "work/comfyui-figura/runs/eff8d4c7d6e12e9b25b6bbbc2e66d8c6350f36d79f549e6c87fc1200013c8a6c/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "3edf8503-f484-4c45-acff-db7ab3f52fe2",
+            "createdAt": "2026-11-20T02:57:03Z",
+            "masterSha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "8171bccad4026e5f5ee3246f2fd9d131d165c2145941ed15c86403a839593748",
+            "outputSha256": "2d449dd7a2d2bfeac8c214b5258f435aacee885689de5db2d3426cc36458e979",
+            "outputBytes": 1099396,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154243.7250693,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "4f4deee7-bd18-446d-bea9-81b5c54a25dd",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "煙囪掃雪鳥，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "2d449dd7a2d2bfeac8c214b5258f435aacee885689de5db2d3426cc36458e979",
+            "imageId": "cda1de4a-af08-4f35-b927-968aeadfd595",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/cda1de4a-af08-4f35-b927-968aeadfd595",
+            "servedSha256": "e12dd4a9158fdf3f844435885e7492a68e62fa9eb3eff473e3a38084d7b03a84",
+            "verifiedAt": 1795154275.006639
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -20389,9 +20753,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tawny plush-looking bison vinyl figure with patchwork pale mint leg socks and a single hollow copper pipe between horns. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "smooth painted PVC collector figure",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Shaggy rust-orange bison with round dark eyes, broad brown muzzle, paired ivory upcurled horns and a copper handle/tube spanning above head between horn fittings. Four dark hooves with pale green/ivory lower-leg wraps. Low dark brown round plinth with thin gold rings.",
+        "rearDesign": "Continue thick orange fleece and same short furry tail, paired horns and single copper cross-handle. Preserve all four wrapped lower legs and original stance. No saddle, new hose or additional horns; same brown/gold round base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -20412,17 +20776,248 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "重裁後鼻端、雙角與橫管完整，清楚保留原臉部；無放大／重畫，PyAV RGB 逐像素核對裁切。作者 pending。",
+          "runId": "718664abe5142ccb4d45bb40c07e4e6791aa286d886baf376685565d3784bb51",
+          "sha256": "38c31d4cae727e3f87531f6a1e6cd7fe858edc781a3b33021f86e7fc892e3c23",
+          "sourceSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+          "path": "work/comfyui-figura/runs/718664abe5142ccb4d45bb40c07e4e6791aa286d886baf376685565d3784bb51/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "ec1e2487-6d1d-436b-801c-5738e8f5c8cd",
+            "createdAt": "2026-11-20T05:57:26Z",
+            "masterSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+            "modelHashes": {},
+            "workflowSha256": "f7a83b7cc7166b598b21cfd2e5bb5201c5caef636510d23e6bdff0c3fe4c80e3",
+            "outputSha256": "38c31d4cae727e3f87531f6a1e6cd7fe858edc781a3b33021f86e7fc892e3c23",
+            "outputBytes": 275998,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 380,
+              "y": 40,
+              "width": 500,
+              "height": 500
+            },
+            "size": 500
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 500,
+            "height": 500,
+            "sourceSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334"
+          },
+          "reviewedAt": 1795154271.9787881,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "6f91ebcb-81ab-4b4e-9be8-37a52beb8f05",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "毛襪換熱獸，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "38c31d4cae727e3f87531f6a1e6cd7fe858edc781a3b33021f86e7fc892e3c23",
+            "imageId": "fb7670b9-e076-4a08-a1ee-b6f51f066efc",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/f8ea2331-f583-48e5-844c-30352b27bda9/image/fb7670b9-e076-4a08-a1ee-b6f51f066efc",
+            "servedSha256": "67dfeabb83de3b9537344c9de251e644d9cd8e302d657d398775b46c7ff811c4",
+            "verifiedAt": 1795154276.137996
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "f04a4fcc69666e98876e38cbf76a47866311680f65457ed2005818b9f61e0fe9",
+          "sha256": "37caf469ad477e773833e254408085d8caa941669f45015026db2ee42ccee618",
+          "sourceSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+          "path": "work/comfyui-figura/runs/f04a4fcc69666e98876e38cbf76a47866311680f65457ed2005818b9f61e0fe9/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "7da50699-22c7-4212-9b7d-1c2148f7fdcf",
+            "createdAt": "2026-11-20T02:57:07Z",
+            "masterSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+            "modelHashes": {},
+            "workflowSha256": "35353f50ffa478867f2b0c2611ae0de6f39b9691ebe4819ce9f992f61707008c",
+            "outputSha256": "37caf469ad477e773833e254408085d8caa941669f45015026db2ee42ccee618",
+            "outputBytes": 319231,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334"
+          },
+          "reviewedAt": 1795154243.8233469,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "4e3d868d-577d-4195-a9e2-e7ff71860268",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "毛襪換熱獸，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "37caf469ad477e773833e254408085d8caa941669f45015026db2ee42ccee618",
+            "imageId": "caed7e0d-1bdb-443b-a2ea-2a392af5dc9e",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/f8ea2331-f583-48e5-844c-30352b27bda9/image/caed7e0d-1bdb-443b-a2ea-2a392af5dc9e",
+            "servedSha256": "0e35e3ae8140abbce89b3ee4e6bd3e9dc9b6ee6a9cedde086f2346f3def4644e",
+            "verifiedAt": 1795154276.1543767
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "598cabb23e024ef64cf9d4355b6670706bf5c524fdfb25ad1e16471d91bb0976",
+          "sha256": "f996a26d347ebd08381d153cd66b93ce658c7359ff6c94a7839839a42d1a7aa0",
+          "sourceSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+          "path": "work/comfyui-figura/runs/598cabb23e024ef64cf9d4355b6670706bf5c524fdfb25ad1e16471d91bb0976/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "fb24da7c-d8cf-4378-8295-c2aa5c46e733",
+            "createdAt": "2026-11-20T02:57:09Z",
+            "masterSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "cd8155fcb66ff65a40ec186d68721e94a2bdd68a7a0a3c7eaf5968b3b5e6811d",
+            "outputSha256": "f996a26d347ebd08381d153cd66b93ce658c7359ff6c94a7839839a42d1a7aa0",
+            "outputBytes": 1017123,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154243.8680654,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "3b32775a-2e34-4c69-95b7-fb7851769269",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "毛襪換熱獸，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "f996a26d347ebd08381d153cd66b93ce658c7359ff6c94a7839839a42d1a7aa0",
+            "imageId": "a3a661c2-5342-4480-9c08-6f339ecdbc4c",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/f8ea2331-f583-48e5-844c-30352b27bda9/image/a3a661c2-5342-4480-9c08-6f339ecdbc4c",
+            "servedSha256": "0c0329b9512d3a48b6b7e592a7781af5ab8ccf292a7dfe752cf1172b624f0ab9",
+            "verifiedAt": 1795154276.1854672
+          }
         }
+      },
+      "attempts": {
+        "FACE": [
+          {
+            "status": "reject",
+            "reason": "野牛臉部特寫裁斷右側角與鼻端，退回置中重裁。",
+            "runId": "5ac771d43f24d2a6db9d37d109d19befb1b2a1aaf6290ef02947dff7076a4ed4",
+            "sha256": "868591632ebe692256d6221cc66494ee4755eaab5935a263037da455fdeac72c",
+            "sourceSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+            "path": "work/comfyui-figura/runs/5ac771d43f24d2a6db9d37d109d19befb1b2a1aaf6290ef02947dff7076a4ed4/output.png",
+            "generation": {
+              "mode": "crop",
+              "tool": "local ComfyUI",
+              "promptId": "887a4785-3ae0-4255-8ecd-a0a4e836560f",
+              "createdAt": "2026-11-20T02:57:05Z",
+              "masterSha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334",
+              "modelHashes": {},
+              "workflowSha256": "5dac0d722799810e075a501706ad12d17476433a51b48d7d69486dcd98149eed",
+              "outputSha256": "868591632ebe692256d6221cc66494ee4755eaab5935a263037da455fdeac72c",
+              "outputBytes": 254671,
+              "authorApproval": "pending",
+              "prompt": null,
+              "seed": null,
+              "operation": "deterministic crop/scale, no new sculpt generation",
+              "masterCrop": {
+                "image": [
+                  "1",
+                  0
+                ],
+                "x": 0,
+                "y": 0,
+                "width": 960,
+                "height": 960
+              },
+              "crop": {
+                "image": [
+                  "2",
+                  0
+                ],
+                "x": 240,
+                "y": 0,
+                "width": 500,
+                "height": 500
+              },
+              "size": 500
+            },
+            "reviewedAt": 1795154243.763651
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -20443,9 +21038,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a toy greyhound with glossy brick-red mechanical panels, cream hip joints and roll of material tethered to its back, square ice slab. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "painted ABS with simple clean articulated joints",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Slender red/ivory mechanical greyhound with long segmented neck, narrow red muzzle, black nose and circular bronze shoulder/hip joints. Four long red legs ending in pale paws, one thin red tail. Brown strapped saddle pack and one rolled ivory blanket on back. Thick rectangular translucent icy blue plinth.",
+        "rearDesign": "Continue red/ivory segmented back under the same one saddle pack and rolled blanket, exactly four legs and one thin tail. No additional tank, wheel or blanket. Same rectangular ice-blue base and foot positions.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -20466,17 +21061,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "80a533c3f32e3beb927e5973e3bd4e648f6b75e75cab7aff897e8a53e939a41f",
+          "sha256": "7ce45216ff7b51b8304b7130656a5dc1e9cfa10cdfc696ee9ed3e83372c9b174",
+          "sourceSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee",
+          "path": "work/comfyui-figura/runs/80a533c3f32e3beb927e5973e3bd4e648f6b75e75cab7aff897e8a53e939a41f/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "7192ab99-2a8a-4e34-ad36-6110ac8dc4da",
+            "createdAt": "2026-11-20T02:57:11Z",
+            "masterSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee",
+            "modelHashes": {},
+            "workflowSha256": "0c14075ed2a500d67f0a62025e2080ac174eceee79bfd9a90f917b395a8d9a2f",
+            "outputSha256": "7ce45216ff7b51b8304b7130656a5dc1e9cfa10cdfc696ee9ed3e83372c9b174",
+            "outputBytes": 242921,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 160,
+              "y": 0,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee"
+          },
+          "reviewedAt": 1795154243.9412048,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "3dd00df2-c54c-4ecf-a2fb-3b729290f3e4",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "紅磚配件犬，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "7ce45216ff7b51b8304b7130656a5dc1e9cfa10cdfc696ee9ed3e83372c9b174",
+            "imageId": "5d5e00b3-c0cb-4e4e-860c-0830fa94b191",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/d3b5afbb-1ed6-443f-b046-20e350a9d680/image/5d5e00b3-c0cb-4e4e-860c-0830fa94b191",
+            "servedSha256": "9e19da4418ac341885d6c05843994eb10b307ca7f99c4dc887f5393f26311899",
+            "verifiedAt": 1795154277.252063
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "4b8a5b1abec547aadc6f4267a69b93628bb08bb682c276ec86b4f79a83d39ea4",
+          "sha256": "979f68e3aea0f7cdd4eb5747a52da18c0ef2fde23b3c00981df3d2273e27441c",
+          "sourceSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee",
+          "path": "work/comfyui-figura/runs/4b8a5b1abec547aadc6f4267a69b93628bb08bb682c276ec86b4f79a83d39ea4/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "62367543-6f4f-4d51-9ea6-eded21e5f0dd",
+            "createdAt": "2026-11-20T02:57:13Z",
+            "masterSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee",
+            "modelHashes": {},
+            "workflowSha256": "aeda5965aa4338bc0a13039686c0f3641a27ede4efb117bd3c271544a15cdcb1",
+            "outputSha256": "979f68e3aea0f7cdd4eb5747a52da18c0ef2fde23b3c00981df3d2273e27441c",
+            "outputBytes": 282192,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee"
+          },
+          "reviewedAt": 1795154244.0139804,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "499dd430-08f4-40c8-86ae-a80e42814446",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "紅磚配件犬，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "979f68e3aea0f7cdd4eb5747a52da18c0ef2fde23b3c00981df3d2273e27441c",
+            "imageId": "43b65239-152d-41b1-a0cb-8a49032e6b7f",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/d3b5afbb-1ed6-443f-b046-20e350a9d680/image/43b65239-152d-41b1-a0cb-8a49032e6b7f",
+            "servedSha256": "4f6379823e6e8f371fb15a3d46225413c3d17eec98b3c9fbeba0657586607f59",
+            "verifiedAt": 1795154277.262787
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "8d7157453d2760ccf4cb509788e7b4160c5088c0a4120be13312274fdc948873",
+          "sha256": "d1ef6bb5b23c1366e4feb3d245e73236d33586721f328746fc320e353f4859fb",
+          "sourceSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee",
+          "path": "work/comfyui-figura/runs/8d7157453d2760ccf4cb509788e7b4160c5088c0a4120be13312274fdc948873/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "f82292fb-a3b3-44d6-a58d-56a61a1f1476",
+            "createdAt": "2026-11-20T02:57:15Z",
+            "masterSha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "ca1d3907cb5c36cfce8528a22f41a797fbd4490cd36edd941a5e67ec717b8b0e",
+            "outputSha256": "d1ef6bb5b23c1366e4feb3d245e73236d33586721f328746fc320e353f4859fb",
+            "outputBytes": 1005766,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154244.0723135,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "5aaed8ed-0bda-445e-98d7-6f25b0cc7500",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "紅磚配件犬，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "d1ef6bb5b23c1366e4feb3d245e73236d33586721f328746fc320e353f4859fb",
+            "imageId": "e53075de-ef77-47e0-84d0-4b9a02ba2e38",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/d3b5afbb-1ed6-443f-b046-20e350a9d680/image/e53075de-ef77-47e0-84d0-4b9a02ba2e38",
+            "servedSha256": "26efd9ef0d5b7ff1bbd244134e977f12654aa7f2e593a56ed488dedeaff5f99f",
+            "verifiedAt": 1795154277.2917256
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -20497,9 +21274,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a toffee tabby statuette with a folded sage shop apron holding a small blank copper tin, on a fluted pale stool. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "smooth painted PVC collector figure",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Seated ginger tabby cat with cream muzzle/chest, green eyes, brown stripes and green apron with cream shoulder straps and gold buttons. Both forepaws hold one small plain copper pot at front. Green waist bow behind hip and tail curled around planted hindfeet. Cream low fluted ramekin-like circular plinth.",
+        "rearDesign": "Continue orange/brown tabby stripes and plain green apron back with same cream straps and waist bow. Copper pot stays in front, no new handle, lid or second pot. Same seated tail and cream fluted round base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -20520,17 +21297,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "e28d5708b2f251fff7221e05f93bc508eeabfdf07dd0980a8796dc83155259ff",
+          "sha256": "a4de284462be25e5f3025d4a3a4d9b916ffd9d69e2691f9f5663a690fa52885e",
+          "sourceSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2",
+          "path": "work/comfyui-figura/runs/e28d5708b2f251fff7221e05f93bc508eeabfdf07dd0980a8796dc83155259ff/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "e1dd5bac-1556-412c-b080-7ac51229a5ad",
+            "createdAt": "2026-11-20T02:57:17Z",
+            "masterSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2",
+            "modelHashes": {},
+            "workflowSha256": "78208c2cb6014c8b3f9b8ac7df98abf0c593d1a8ce5fa45f015bd9a4a443b11b",
+            "outputSha256": "a4de284462be25e5f3025d4a3a4d9b916ffd9d69e2691f9f5663a690fa52885e",
+            "outputBytes": 208734,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 260,
+              "y": 0,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2"
+          },
+          "reviewedAt": 1795154244.1582882,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "854ec48b-e997-414a-a43d-cf9c3b8c8917",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "焦糖工坊貓，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "a4de284462be25e5f3025d4a3a4d9b916ffd9d69e2691f9f5663a690fa52885e",
+            "imageId": "3d8af404-2c9f-46ab-beb6-a437fe3b6895",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/3d8af404-2c9f-46ab-beb6-a437fe3b6895",
+            "servedSha256": "45f30014f8981b46c858e7ead7d7cd3dc5cf897c85ddded59b5bbae2847b33db",
+            "verifiedAt": 1795154278.2814298
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "b193f2ca492953b4347e2025d5f6a6e082335d8fb6338c9868634b3bdf916c12",
+          "sha256": "876af239965dbe173cee9762ac6074df92b965ca474a95a74af33f7242537ebe",
+          "sourceSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2",
+          "path": "work/comfyui-figura/runs/b193f2ca492953b4347e2025d5f6a6e082335d8fb6338c9868634b3bdf916c12/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "2143b0b3-9dec-4cb7-8652-c171aac05c94",
+            "createdAt": "2026-11-20T02:57:19Z",
+            "masterSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2",
+            "modelHashes": {},
+            "workflowSha256": "cbc7d5ddbb7b226bafec7a64f8dcf7be356d5a4764d9642f9dbfdd3dd891c0ca",
+            "outputSha256": "876af239965dbe173cee9762ac6074df92b965ca474a95a74af33f7242537ebe",
+            "outputBytes": 247699,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2"
+          },
+          "reviewedAt": 1795154244.2352085,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "9d7640dc-63d1-4d7f-be0a-f60b880e8a63",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "焦糖工坊貓，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "876af239965dbe173cee9762ac6074df92b965ca474a95a74af33f7242537ebe",
+            "imageId": "82cc6559-da41-4dce-90d6-80f0e0620863",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/82cc6559-da41-4dce-90d6-80f0e0620863",
+            "servedSha256": "514d74f356e993d378d3d7cad6c310770bc544e9cda4508371a6897d70eab824",
+            "verifiedAt": 1795154278.2925582
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "8721331858d9beee4d8d32dec01dab0e26a0e02e040ba439add0d4ad47e5acf8",
+          "sha256": "76ee9b93222a9d94e2a690216e889a6da57769d2ef202ef86e67801bd839fbc6",
+          "sourceSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2",
+          "path": "work/comfyui-figura/runs/8721331858d9beee4d8d32dec01dab0e26a0e02e040ba439add0d4ad47e5acf8/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "b7eb3c78-facd-48c0-a217-5f83bcad077c",
+            "createdAt": "2026-11-20T02:57:22Z",
+            "masterSha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "f910076f26bb366611128decbe1a6edc01370e5309507104d075144465f4e226",
+            "outputSha256": "76ee9b93222a9d94e2a690216e889a6da57769d2ef202ef86e67801bd839fbc6",
+            "outputBytes": 925283,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154244.2906287,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "a39eadc0-b062-40c9-a63b-541028b57ade",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "焦糖工坊貓，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "76ee9b93222a9d94e2a690216e889a6da57769d2ef202ef86e67801bd839fbc6",
+            "imageId": "010d6b2b-15a0-4695-84ae-4f050afecd9a",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/010d6b2b-15a0-4695-84ae-4f050afecd9a",
+            "servedSha256": "3ead4c46c1cb8691edbf3594d00f8653f007e3d8234bcce68a512c64639c427f",
+            "verifiedAt": 1795154278.3180025
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -20978,9 +21937,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Create a square shop cover photo of one unmistakably original wintry toy fox automaton, a low elongated indigo body of blued steel, broad flat ice-glass panels along its back, four piston-powered navy paws and a single huge asymmetrical hollow turbine tail made from frosted chunky gear teeth. Wedge-shape dark head with two very short triangular smoked metal ears, no fur, no ribbon features or forehead ornament. Add pale silver edge wear and small aqua bolts. Perched on a simple charcoal resin disk, full figure centered with padding against a soft warm gray studio backdrop. No writing, logos, loose accessories, overlays, or recognizable franchise designs.",
         "material": "painted ABS with simple clean articulated joints",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Low dark navy mechanical fox with sharp pointed muzzle/ears, glowing teal eye, exposed gray/bronze limb joints and four clawed feet. Long faceted pale icy-blue glass plate on back. Huge vertical curled tail shaped as a translucent ice gear wheel with dark inner spokes. Plain dark circular cylinder base.",
+        "rearDesign": "Continue dark navy angular rear panels and original icy spine plate, same single curled ice-gear tail/spokes. No additional tail, wing or head fittings. Keep four low-set feet and original dark round base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -21001,17 +21960,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "a56941ff1fa46957ed0f547cebef71dc0ce34a9849adb0964e5e90ecd926013b",
+          "sha256": "af3616f6620e3394ee6d65a334a3645c4282b0aa2fa4d324e73f2b8ae311fc72",
+          "sourceSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad",
+          "path": "work/comfyui-figura/runs/a56941ff1fa46957ed0f547cebef71dc0ce34a9849adb0964e5e90ecd926013b/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "009a1dc1-d057-4767-9d8b-2dbe9ac055f6",
+            "createdAt": "2026-11-20T02:57:24Z",
+            "masterSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad",
+            "modelHashes": {},
+            "workflowSha256": "d0283e016245f1021ead7ee6b226b21d53deb6c667bc46e3cf81dbe9d4793b9f",
+            "outputSha256": "af3616f6620e3394ee6d65a334a3645c4282b0aa2fa4d324e73f2b8ae311fc72",
+            "outputBytes": 208760,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 20,
+              "y": 300,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad"
+          },
+          "reviewedAt": 1795154244.3808548,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "3d084805-4a26-4ed9-81f6-4bf05cda9956",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "冰珠齒排狐，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "af3616f6620e3394ee6d65a334a3645c4282b0aa2fa4d324e73f2b8ae311fc72",
+            "imageId": "bf03fafc-8b2e-4c09-932f-29cab3a61709",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/bf03fafc-8b2e-4c09-932f-29cab3a61709",
+            "servedSha256": "77cd224587916e8f416b06eaae0fae17150c6f87a72ac5adbac8313ea53db02c",
+            "verifiedAt": 1795154279.5337777
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "e15b033a984b5da36879508b5f1ca0dff1caa79b384195545af4c195ade86fe3",
+          "sha256": "87ad5cdb3e97fa9bede8d834826e4d72f839e59cf53c02d0bc1e8dfdd535c68e",
+          "sourceSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad",
+          "path": "work/comfyui-figura/runs/e15b033a984b5da36879508b5f1ca0dff1caa79b384195545af4c195ade86fe3/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "4dc39fda-c537-4eef-b050-001d1937f683",
+            "createdAt": "2026-11-20T02:57:26Z",
+            "masterSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad",
+            "modelHashes": {},
+            "workflowSha256": "18b9afd1296733440b14a38fc5a521110887c9a11bfc2d1c4d599fb67d2fce9b",
+            "outputSha256": "87ad5cdb3e97fa9bede8d834826e4d72f839e59cf53c02d0bc1e8dfdd535c68e",
+            "outputBytes": 315727,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad"
+          },
+          "reviewedAt": 1795154244.4627757,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "c68ee0ef-548b-4e6e-b36a-275f7ff11cb5",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "冰珠齒排狐，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "87ad5cdb3e97fa9bede8d834826e4d72f839e59cf53c02d0bc1e8dfdd535c68e",
+            "imageId": "10237cef-bf47-4d39-98f4-cde660247b38",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/10237cef-bf47-4d39-98f4-cde660247b38",
+            "servedSha256": "f4512d4404202117de2d61c9c09abda8e2b26349a331b79aba6f0a2d53708082",
+            "verifiedAt": 1795154279.5476985
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "efcb061cc563cdc4645d5f66ba9804d67c409dff16e1681d1a967aea15d7ffe3",
+          "sha256": "5252d0e8abfb9e3fe4837f5117ff5526c9dcce3183f869e74b58863df20f19e7",
+          "sourceSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad",
+          "path": "work/comfyui-figura/runs/efcb061cc563cdc4645d5f66ba9804d67c409dff16e1681d1a967aea15d7ffe3/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "b632be8c-24f4-4ccd-ab4b-8cd65b043dee",
+            "createdAt": "2026-11-20T02:57:28Z",
+            "masterSha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "1c6c7ecd6a7a866e62442e7ffae256060cc14dbf66b9a0c634c9c2a47c3da5b1",
+            "outputSha256": "5252d0e8abfb9e3fe4837f5117ff5526c9dcce3183f869e74b58863df20f19e7",
+            "outputBytes": 974942,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154244.5237653,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "3731e319-4870-4725-ba17-ea68b4162cfc",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "冰珠齒排狐，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "5252d0e8abfb9e3fe4837f5117ff5526c9dcce3183f869e74b58863df20f19e7",
+            "imageId": "8cbfd125-63a0-46b2-b219-438928d78769",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/8cbfd125-63a0-46b2-b219-438928d78769",
+            "servedSha256": "a194f355283081d824bc7fd5d25761d11614ee013c0c3f84ca9e0d29753c4c9f",
+            "verifiedAt": 1795154279.5726385
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -21032,9 +22173,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a small single mechanical helper with a deep green crate torso and two simple brass wheels carrying an orange ceramic kettle, chalk plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "smooth painted PVC collector figure",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Ivory/forest-green robot with green cap, black visor and two pale yellow eyes, round gold ear fittings and cream hands. Both hands grasp one brass pushcart handle. Forest-green wooden cart holds one orange teapot with white/gold floral paint, lid and curved spout; brass spoked wheels. Low ivory stone round plinth.",
+        "rearDesign": "Continue green cap and plain ivory/green robot back panels. Preserve two hands on the one handle, same cart panels/wheels and one teapot/lid/spout. No added parcel, cup or second kettle. Same ivory round base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -21055,17 +22196,237 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "7654127c5976388e2f4f7055a7f0bff2c0dd902c1e10b310940fb779f5ee4364",
+          "sha256": "14e8ac11d63eb445f953a929b6c126792f1050be2afbdaaec183f915cd8bf164",
+          "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+          "path": "work/comfyui-figura/runs/7654127c5976388e2f4f7055a7f0bff2c0dd902c1e10b310940fb779f5ee4364/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "3b0988d5-e412-4f54-a871-482a77e2ecce",
+            "createdAt": "2026-11-20T02:57:30Z",
+            "masterSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+            "modelHashes": {},
+            "workflowSha256": "a80091ecace6fce33c2b1be852ee710b7332e1840387d24543b07302819409de",
+            "outputSha256": "14e8ac11d63eb445f953a929b6c126792f1050be2afbdaaec183f915cd8bf164",
+            "outputBytes": 214665,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 240,
+              "y": 0,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838"
+          },
+          "reviewedAt": 1795154244.6034195,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "3b3e2b19-a373-424c-89dd-851cb49ecc5a",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "晚爐零件推車，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "14e8ac11d63eb445f953a929b6c126792f1050be2afbdaaec183f915cd8bf164",
+            "imageId": "3bdc83a2-3e3a-423d-b144-118b001caffe",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/d6363dab-6172-4a08-a931-45ff0dbc0f33/image/3bdc83a2-3e3a-423d-b144-118b001caffe",
+            "servedSha256": "b59717543f504ed526ed37539faca6224985e252e3c674263d57f5cfce22c6c7",
+            "verifiedAt": 1795154280.7131572
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "376f42923748b55fe3f1931c45a65a414506e3324e9bfe7ad04446023b717f51",
+          "sha256": "97e1e4bfce25b9d3617c68cf397fba97f8d5ccc7ee731caf118c89ecd2fd3182",
+          "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+          "path": "work/comfyui-figura/runs/376f42923748b55fe3f1931c45a65a414506e3324e9bfe7ad04446023b717f51/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "4cb1d5a7-2ff8-48ce-a244-2239f66659ca",
+            "createdAt": "2026-11-20T02:57:32Z",
+            "masterSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+            "modelHashes": {},
+            "workflowSha256": "20dc16605f907b385789b442037a48b7abb1eb60dc41d5373f0d6953d4ada99b",
+            "outputSha256": "97e1e4bfce25b9d3617c68cf397fba97f8d5ccc7ee731caf118c89ecd2fd3182",
+            "outputBytes": 329244,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838"
+          },
+          "reviewedAt": 1795154244.6825235,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "010c06fd-891f-4bfe-b509-82f0fb7fbedb",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "晚爐零件推車，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "97e1e4bfce25b9d3617c68cf397fba97f8d5ccc7ee731caf118c89ecd2fd3182",
+            "imageId": "21398957-6446-462a-9b2c-34d5d73e24fb",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/d6363dab-6172-4a08-a931-45ff0dbc0f33/image/21398957-6446-462a-9b2c-34d5d73e24fb",
+            "servedSha256": "0fc347566ce74bcf2f0c585c09e5e039fb7a3a7c4fd1d4d420aa58c104e87219",
+            "verifiedAt": 1795154280.725618
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "以原主圖底座輪廓保護遮罩恢復整塊石盤，前緣／厚度和輪子接觸位置與 master 相同；機器人、茶壺與推車未重畫，原像素合成木展示台。作者 pending。",
+          "runId": "421d25e2fdd9e95657a1f06c04f99c1d010eca7a3f723036c6739baf9eb76170",
+          "sha256": "b6e98f4d8733f76be95333a26e0bf5063e0af2e1adee9bc3ec30c500d83369db",
+          "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+          "path": "work/comfyui-figura/runs/421d25e2fdd9e95657a1f06c04f99c1d010eca7a3f723036c6739baf9eb76170/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "f5e3a074-dd9c-45d8-9abe-77fa7cf0265a",
+            "createdAt": "2026-11-20T05:57:28Z",
+            "masterSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "474a20c6af2e367d6d1c3dafd1672529125bd8d17629646a557648b31547900d",
+            "outputSha256": "b6e98f4d8733f76be95333a26e0bf5063e0af2e1adee9bc3ec30c500d83369db",
+            "outputBytes": 979122,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ],
+            "protectionMaskSha256": "218b8a1d18e363fffa897548ad8258ae6a4dc42c1dadb325f2f37270533638a5"
+          },
+          "reviewedAt": 1795154272.1127388,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "c50cc62b-4e16-44f8-a1b6-33d4a6444301",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "晚爐零件推車，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "b6e98f4d8733f76be95333a26e0bf5063e0af2e1adee9bc3ec30c500d83369db",
+            "imageId": "d8d9429f-ec57-4f50-a380-978a5f3b0083",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/d6363dab-6172-4a08-a931-45ff0dbc0f33/image/d8d9429f-ec57-4f50-a380-978a5f3b0083",
+            "servedSha256": "d3925ab014e9a7eebc909f16c628daa2b28d6911f471d77b425691488c007585",
+            "verifiedAt": 1795154280.7562087
+          }
         }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "reject",
+            "reason": "推車情境圖去背移除大半石質底座，退回原像素遮罩修復。",
+            "runId": "5ef78c7470d530eea037596fb08b9a60d7f033a71993959cd21edce7fdb51191",
+            "sha256": "50d72dddbde49e78d6e9c5d85da7c1eeb338b702503a57aeae55c2df3a92adde",
+            "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+            "path": "work/comfyui-figura/runs/5ef78c7470d530eea037596fb08b9a60d7f033a71993959cd21edce7fdb51191/output.png",
+            "generation": {
+              "mode": "scene-composite",
+              "tool": "local ComfyUI",
+              "promptId": "af836b6b-d989-49c2-987d-32598459c17f",
+              "createdAt": "2026-11-20T02:57:34Z",
+              "masterSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+              "modelHashes": {
+                "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+              },
+              "workflowSha256": "ef394fd560dc2d68c4e5894d5837e594fa4bab9006142b8b764ed7f675d1484a",
+              "outputSha256": "50d72dddbde49e78d6e9c5d85da7c1eeb338b702503a57aeae55c2df3a92adde",
+              "outputBytes": 952724,
+              "authorApproval": "pending",
+              "prompt": null,
+              "seed": null,
+              "operation": "binary foreground mask plus original master pixels, 2D composite",
+              "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+              "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+              "threshold": 0.1,
+              "outputSize": [
+                960,
+                960
+              ]
+            },
+            "reviewedAt": 1795154244.746237
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -21086,9 +22447,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chunky taupe mole figurine with deep amber translucent thermos, midnight blue goggles and carved sandstone base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "hand-painted sculpted resin with small craft detail",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Brown mole traveler with pink nose/paws, short whiskers and navy/brass round goggles on forehead. Charcoal/navy scarf, ivory knitted sweater, brown belt and leather pouch at anatomical RIGHT hip, brown backpack straps. Both hands hold one amber glass thermos with brass cap. Tan round stone base carved with leaves/mountains.",
+        "rearDesign": "Continue brown sculpted fur and plain ivory sweater back under the same brown backpack and scarf. Thermos remains single and held at front, right-hip pouch unchanged; no new flask or equipment. Same carved tan circular base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -21109,17 +22470,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "389cbdc272977953f4f459d3ecfc74b7a41d4f26154aa515327594a1cd88ab67",
+          "sha256": "9e503e9eb467d3eb77f66f3ab463a3ef66aa8b93b570f9ffb365e6fb99f6eda6",
+          "sourceSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e",
+          "path": "work/comfyui-figura/runs/389cbdc272977953f4f459d3ecfc74b7a41d4f26154aa515327594a1cd88ab67/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "8bb04751-0c55-4d35-87cc-733976909e73",
+            "createdAt": "2026-11-20T02:57:36Z",
+            "masterSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e",
+            "modelHashes": {},
+            "workflowSha256": "0658361a3f405f869a474d52c2476ecebb86020ff12d1315caf05d62e743ea37",
+            "outputSha256": "9e503e9eb467d3eb77f66f3ab463a3ef66aa8b93b570f9ffb365e6fb99f6eda6",
+            "outputBytes": 299182,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 260,
+              "y": 0,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e"
+          },
+          "reviewedAt": 1795154244.840219,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "e7bc3757-d958-4a5c-aba8-fa36b7b79a6c",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "琥珀暖瓶鼴，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "9e503e9eb467d3eb77f66f3ab463a3ef66aa8b93b570f9ffb365e6fb99f6eda6",
+            "imageId": "325161c1-1249-4386-8016-966c96928378",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/6a383d4d-f141-42c5-ab95-9695faa85866/image/325161c1-1249-4386-8016-966c96928378",
+            "servedSha256": "ef1364745806cc41286b51ad2a0d3578eb3ebd87b7b20a253ab2ec1df0513966",
+            "verifiedAt": 1795154281.9361308
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "64e444b47a8361a4dc78304cb72dffd60844b71b12bdf62522038eaf2863ac4a",
+          "sha256": "c40b80fe5c59243bd64a94454563d83065aea98b9003309f3b212d0d1bd5027f",
+          "sourceSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e",
+          "path": "work/comfyui-figura/runs/64e444b47a8361a4dc78304cb72dffd60844b71b12bdf62522038eaf2863ac4a/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "7d6ae5c5-8000-474b-aca5-d38b6d5ff3c5",
+            "createdAt": "2026-11-20T02:57:38Z",
+            "masterSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e",
+            "modelHashes": {},
+            "workflowSha256": "f5e6fa95102d717977cbd89a36202e3b757174a9e35574ae69dbf0f3630fcc21",
+            "outputSha256": "c40b80fe5c59243bd64a94454563d83065aea98b9003309f3b212d0d1bd5027f",
+            "outputBytes": 425578,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e"
+          },
+          "reviewedAt": 1795154244.926551,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "a37147b2-8544-4389-b0f5-6e6ae7ae247d",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "琥珀暖瓶鼴，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "c40b80fe5c59243bd64a94454563d83065aea98b9003309f3b212d0d1bd5027f",
+            "imageId": "08b58eed-4736-401b-a03f-e07e940b7940",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/6a383d4d-f141-42c5-ab95-9695faa85866/image/08b58eed-4736-401b-a03f-e07e940b7940",
+            "servedSha256": "1c32ab9053e60216d9df6eb17fa56479d7e34307eb6405226c69966bd23037ab",
+            "verifiedAt": 1795154281.9495382
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "ac4eedc543cd29f8f4787e1f05c54cc6de144f998acd97e7490cbda3ee632e0b",
+          "sha256": "b2a5359bbc58846ed04866ceed5c4813bea703686409d0f32acc97226dec36e3",
+          "sourceSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e",
+          "path": "work/comfyui-figura/runs/ac4eedc543cd29f8f4787e1f05c54cc6de144f998acd97e7490cbda3ee632e0b/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "0b111dbd-42db-4a38-8865-03b8794e1bdd",
+            "createdAt": "2026-11-20T02:57:40Z",
+            "masterSha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "8f0acec0aee42535a332269a0a224519f1e0adab4c91f5f0c1737e819c1eeae1",
+            "outputSha256": "b2a5359bbc58846ed04866ceed5c4813bea703686409d0f32acc97226dec36e3",
+            "outputBytes": 1160470,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154244.9939554,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f4dd9ac2-e791-408d-bf78-a51520d90ec9",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "琥珀暖瓶鼴，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "b2a5359bbc58846ed04866ceed5c4813bea703686409d0f32acc97226dec36e3",
+            "imageId": "64f5a33e-7029-4645-aa70-4f6b69223f33",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/6a383d4d-f141-42c5-ab95-9695faa85866/image/64f5a33e-7029-4645-aa70-4f6b69223f33",
+            "servedSha256": "c507098351c8a9bc73956b47fc7bfa8aa73abae96f4088c035832151a3fbb665",
+            "verifiedAt": 1795154281.9856842
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -21140,9 +22683,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult character statue in ochre work overalls with navy round earmuffs, handling a tiny pale slate steam iron on a speckled plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "smooth painted PVC collector figure",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Adult female ironing worker with dark brown curly bun and blue headphones, ivory rolled-sleeve blouse, mustard overalls and brown lace boots. Bends forward, anatomical RIGHT hand presses one blue/metal iron on ivory cloth with navy border stripes; anatomical LEFT hand steadies cloth edge. Cloth lies over a curved ivory stone ironing pedestal, all on one pale speckled circular base.",
+        "rearDesign": "Continue mustard overall back with two plain vertical shoulder straps and waist join over ivory blouse. Keep bent pose, same headphone band, right iron and left cloth grip. Original cloth pattern, curved ironing pedestal and shared circular base must all remain; no added furniture.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -21163,17 +22706,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "6902fb13a26f547b4e515cba5a328ff828ab7d488b50cdce85e378d8c4bcbdd1",
+          "sha256": "f2d0fd462789d60aa2c7486c9abad4732f511d6d1a455c968c2237b8d2749b74",
+          "sourceSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d",
+          "path": "work/comfyui-figura/runs/6902fb13a26f547b4e515cba5a328ff828ab7d488b50cdce85e378d8c4bcbdd1/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "27d58768-b8b5-4c47-a57a-219fc4d7eb04",
+            "createdAt": "2026-11-20T02:57:43Z",
+            "masterSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d",
+            "modelHashes": {},
+            "workflowSha256": "5d7e4c29b18a13c2c79465648e10b5f304b0bad06760e8cc51b4270fa453675d",
+            "outputSha256": "f2d0fd462789d60aa2c7486c9abad4732f511d6d1a455c968c2237b8d2749b74",
+            "outputBytes": 202991,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 270,
+              "y": 0,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d"
+          },
+          "reviewedAt": 1795154245.0854373,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "c673515d-53f4-4a3e-8ad3-454a0082f1e5",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "銅絲燙衣匠，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "f2d0fd462789d60aa2c7486c9abad4732f511d6d1a455c968c2237b8d2749b74",
+            "imageId": "88e79b4b-d67a-4d07-877a-7497f496f4d1",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/88e79b4b-d67a-4d07-877a-7497f496f4d1",
+            "servedSha256": "6337c3d5bba641d8cdc4122888b0769e4caca5313b2326cf81bd71f86f5dfd2e",
+            "verifiedAt": 1795154283.0400207
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "b93f75b8b7392c78e5d0143c78dd0b46c31cd5b42fea599129f4caf6173df500",
+          "sha256": "f65928adb627741fcb75ed04fe103b949fba8e76bc91381f7ee3d5e0b5b46fd3",
+          "sourceSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d",
+          "path": "work/comfyui-figura/runs/b93f75b8b7392c78e5d0143c78dd0b46c31cd5b42fea599129f4caf6173df500/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "2a35eb06-adf5-4713-bc69-39e0f4d70123",
+            "createdAt": "2026-11-20T02:57:45Z",
+            "masterSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d",
+            "modelHashes": {},
+            "workflowSha256": "72bd06cd2e9c27b6a5e1fcc09d4b61e4894eaa6276d3a31b1cc22743b0d346f8",
+            "outputSha256": "f65928adb627741fcb75ed04fe103b949fba8e76bc91381f7ee3d5e0b5b46fd3",
+            "outputBytes": 352601,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d"
+          },
+          "reviewedAt": 1795154245.1728585,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "1634b8e2-53d3-46bf-b95e-7fbcb3f161db",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "銅絲燙衣匠，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "f65928adb627741fcb75ed04fe103b949fba8e76bc91381f7ee3d5e0b5b46fd3",
+            "imageId": "cfc891ad-a53a-41f1-adff-1f77570503da",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/cfc891ad-a53a-41f1-adff-1f77570503da",
+            "servedSha256": "7e6008b73bfdc0a6617bce13587689d5919f341e5ec09b6df5b1dc3c80bc775d",
+            "verifiedAt": 1795154283.0574784
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "2f989f5648904db6343366b63ac6f69228552adf0eda4eae85e1a20215b0532c",
+          "sha256": "9f2de317a76be35f9db0fa34d0e4756f26ea344a42f6e17134477e775fb72fa5",
+          "sourceSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d",
+          "path": "work/comfyui-figura/runs/2f989f5648904db6343366b63ac6f69228552adf0eda4eae85e1a20215b0532c/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "57360bdf-8b1c-4c1b-8a7b-d3b85dd2d726",
+            "createdAt": "2026-11-20T02:57:47Z",
+            "masterSha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "20cc17caceca50bb0e2bdb03d9078fe13af6df97fbb0b31cf62429418bec275c",
+            "outputSha256": "9f2de317a76be35f9db0fa34d0e4756f26ea344a42f6e17134477e775fb72fa5",
+            "outputBytes": 1016676,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154245.2326136,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "b3dcc804-4a14-47ad-bbe2-dd7b49acadb9",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "銅絲燙衣匠，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "9f2de317a76be35f9db0fa34d0e4756f26ea344a42f6e17134477e775fb72fa5",
+            "imageId": "edbc7db7-5132-4897-91da-53d5e033973c",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/edbc7db7-5132-4897-91da-53d5e033973c",
+            "servedSha256": "f7861957c0e285574b502ae2a8b0811ecac135fd9af640816ff1a2b0e3067196",
+            "verifiedAt": 1795154283.088827
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -21194,9 +22919,9 @@
       "characterSheet": {
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an old brass articulated robot holding an umbrella mechanism of segmented sage panels, boots on slate disk. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "matte designer vinyl with ceramic finish",
-        "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-        "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-        "rearDesignStatus": "fixed AI proposal; author pending"
+        "visibleInvariants": "Weathered ivory/brass rain robot with round riveted helmet and two circular teal eyes, burgundy scarf, gold chest fasteners, thin segmented limbs and brown boots. Anatomical LEFT hand holds one dark green umbrella above head with brass ribs/finial and curved handle; anatomical RIGHT arm relaxed. Low dark gray rocky circular base.",
+        "rearDesign": "Continue ivory/brass rear plates with plain rivet seams and original burgundy scarf ends. Umbrella remains in left hand with same brass rib count and canopy shape; no second umbrella, bag or extra hand. Same boots and gray rock round base.",
+        "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
       },
       "authorApproval": "pending",
       "slots": {
@@ -21217,17 +22942,199 @@
           "authorApproval": "pending"
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "a8894b5c8c7ff5c7a2b2e861d900e7492ecfba48c33357ae71fa4b4899bafde1",
+          "sha256": "09acf0325b44eb1fb95082a36ae55ccc4f40ab167723f9d438a8b2f95a200de3",
+          "sourceSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c",
+          "path": "work/comfyui-figura/runs/a8894b5c8c7ff5c7a2b2e861d900e7492ecfba48c33357ae71fa4b4899bafde1/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "dbbc9ca3-08fe-4133-8749-77d43015d442",
+            "createdAt": "2026-11-20T02:57:49Z",
+            "masterSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c",
+            "modelHashes": {},
+            "workflowSha256": "c3bd8ba5ba8fab4590ae04165128726fadf41fadc6f276ff8873015a5da658d6",
+            "outputSha256": "09acf0325b44eb1fb95082a36ae55ccc4f40ab167723f9d438a8b2f95a200de3",
+            "outputBytes": 234275,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 160,
+              "y": 60,
+              "width": 480,
+              "height": 480
+            },
+            "size": 480
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c"
+          },
+          "reviewedAt": 1795154245.314551,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "6ee58260-fe98-44af-aad1-860acf8a5232",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "傘輪敲鐘手，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "09acf0325b44eb1fb95082a36ae55ccc4f40ab167723f9d438a8b2f95a200de3",
+            "imageId": "6b768d7e-4823-49be-9dfb-681e904481cc",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/403a6750-a2f2-472e-b725-b32cef394adc/image/6b768d7e-4823-49be-9dfb-681e904481cc",
+            "servedSha256": "c048ea656dcf053e047272003e8995f54bf860bbe149a2c1f61b6364407fbce8",
+            "verifiedAt": 1795154284.303616
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件檢查臉部／上半身或配件底座特寫，無放大與重畫，另以 PyAV RGB 核對裁切像素；作者 pending。",
+          "runId": "aa8be69a6006a6e2174a5114a258559de550552499ec46d8232d0dcb4105d7c3",
+          "sha256": "164ae0110d75547f177027a3f8a304a14aa1ac0ed93a234d26dac519f3096420",
+          "sourceSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c",
+          "path": "work/comfyui-figura/runs/aa8be69a6006a6e2174a5114a258559de550552499ec46d8232d0dcb4105d7c3/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "44189f2b-bf35-434b-966e-96170424f3ff",
+            "createdAt": "2026-11-20T02:57:51Z",
+            "masterSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c",
+            "modelHashes": {},
+            "workflowSha256": "705c4370d8eac488beb4fb190d522d71db154903509daae8fc60a5163231d973",
+            "outputSha256": "164ae0110d75547f177027a3f8a304a14aa1ac0ed93a234d26dac519f3096420",
+            "outputBytes": 249807,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 960
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 192,
+              "y": 384,
+              "width": 538,
+              "height": 538
+            },
+            "size": 538
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c"
+          },
+          "reviewedAt": 1795154245.380158,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "ed769496-a2c3-4286-ae5a-497dbc9aa488",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "傘輪敲鐘手，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "164ae0110d75547f177027a3f8a304a14aa1ac0ed93a234d26dac519f3096420",
+            "imageId": "db595e98-14d0-4cd8-bd49-584b305be279",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/403a6750-a2f2-472e-b725-b32cef394adc/image/db595e98-14d0-4cd8-bd49-584b305be279",
+            "servedSha256": "7e87fa30d82c5069dee93d1b5b473fb4af7fe1cfb0fb4a8dbae8ed53032060f2",
+            "verifiedAt": 1795154284.3131394
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "對照 master 逐件核對左右持物、細鬚、尾部、玻璃／冰塊、配件及整個底座；原像素合成木展示台，無造型更動；作者 pending。",
+          "runId": "5859427591019384b8dc6d00369417645a540e8ffeefba95fb19d4284b0bb925",
+          "sha256": "8daff43459e2def6d62df530d9c7c42b8bf4593a9a69e90ff2612163aff1e6b3",
+          "sourceSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c",
+          "path": "work/comfyui-figura/runs/5859427591019384b8dc6d00369417645a540e8ffeefba95fb19d4284b0bb925/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "b29a1267-4f9a-4946-8a12-5d4cabac29ac",
+            "createdAt": "2026-11-20T02:57:53Z",
+            "masterSha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "b0d6d5d75239ab404476846e76a8b6e9e336a078302e421ffb936d4ec3f19095",
+            "outputSha256": "8daff43459e2def6d62df530d9c7c42b8bf4593a9a69e90ff2612163aff1e6b3",
+            "outputBytes": 973191,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              960,
+              960
+            ]
+          },
+          "reviewedAt": 1795154245.4420707,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f4542d93-8e5e-4927-882b-70c58e10a0ae",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "傘輪敲鐘手，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "8daff43459e2def6d62df530d9c7c42b8bf4593a9a69e90ff2612163aff1e6b3",
+            "imageId": "b9f70aeb-56eb-44fb-9547-0183b240b088",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/403a6750-a2f2-472e-b725-b32cef394adc/image/b9f70aeb-56eb-44fb-9547-0183b240b088",
+            "servedSha256": "2f1e34bbd7e03445184a76aebbf25a4ec57501e9db8a3e17c169b081f5493334",
+            "verifiedAt": 1795154284.330547
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -22557,9 +24464,26 @@
       ],
       "completedAt": 1795143411.7999277,
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
+    },
+    {
+      "name": "batch-07",
+      "keys": [
+        "FIGURA-AI-063",
+        "FIGURA-AI-064",
+        "FIGURA-AI-065",
+        "FIGURA-AI-066",
+        "FIGURA-AI-067",
+        "FIGURA-AI-069",
+        "FIGURA-AI-070",
+        "FIGURA-AI-071",
+        "FIGURA-AI-072",
+        "FIGURA-AI-073"
+      ],
+      "completedAt": 1795154310.6455483,
+      "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": 1795143411.7999287,
+  "updatedAt": 1795154310.6455495,
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",

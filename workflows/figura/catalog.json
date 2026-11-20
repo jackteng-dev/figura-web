@@ -372,17 +372,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an old brass articulated robot holding an umbrella mechanism of segmented sage panels, boots on slate disk. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "matte designer vinyl with ceramic finish",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Weathered ivory/brass rain robot with round riveted helmet and two circular teal eyes, burgundy scarf, gold chest fasteners, thin segmented limbs and brown boots. Anatomical LEFT hand holds one dark green umbrella above head with brass ribs/finial and curved handle; anatomical RIGHT arm relaxed. Low dark gray rocky circular base.",
+      "rearDesign": "Continue ivory/brass rear plates with plain rivet seams and original burgundy scarf ends. Umbrella remains in left hand with same brass rib count and canopy shape; no second umbrella, bag or extra hand. Same boots and gray rock round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an old brass articulated robot holding an umbrella mechanism of segmented sage panels, boots on slate disk. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Weathered ivory/brass rain robot with round riveted helmet and two circular teal eyes, burgundy scarf, gold chest fasteners, thin segmented limbs and brown boots. Anatomical LEFT hand holds one dark green umbrella above head with brass ribs/finial and curved handle; anatomical RIGHT arm relaxed. Low dark gray rocky circular base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          160,
+          60,
           480,
           480
         ],
@@ -408,7 +408,7 @@
         "mode": "flux-reference",
         "seed": 2026112073,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory/brass rear plates with plain rivet seams and original burgundy scarf ends. Umbrella remains in left hand with same brass rib count and canopy shape; no second umbrella, bag or extra hand. Same boots and gray rock round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1384,21 +1384,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tiny articulated squat cobalt gearhead robot wearing a duvet-like white chest guard, holding a chunky terracotta wrench, round plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Stocky blue/ivory mechanic robot with large black visor and two yellow oval eyes, gear-shaped gray helmet crest and blue/gold side gears. Ivory quilted padded vest with gold buckles, blue jointed limbs and broad blue boots. Anatomical LEFT hand holds one large copper wrench upright; anatomical RIGHT gripper lowered. Dark gray round metal plinth with gold rivet dots.",
+      "rearDesign": "Continue plain quilted ivory vest back and blue mechanical panels, same helmet gear crest and side fittings. Wrench stays in left hand, right gripper stays down; no added tool belt or pack. Same dark gray/gold-riveted round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tiny articulated squat cobalt gearhead robot wearing a duvet-like white chest guard, holding a chunky terracotta wrench, round plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Stocky blue/ivory mechanic robot with large black visor and two yellow oval eyes, gear-shaped gray helmet crest and blue/gold side gears. Ivory quilted padded vest with gold buckles, blue jointed limbs and broad blue boots. Anatomical LEFT hand holds one large copper wrench upright; anatomical RIGHT gripper lowered. Dark gray round metal plinth with gold rivet dots. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
-          480,
-          480
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -1420,7 +1420,7 @@
         "mode": "flux-reference",
         "seed": 2026112063,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain quilted ivory vest back and blue mechanical panels, same helmet gear crest and side fittings. Wrench stays in left hand, right gripper stays down; no added tool belt or pack. Same dark gray/gold-riveted round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1864,17 +1864,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a plum ceramic bird compactly perched with circular brush tail and mustard wool neckerchief on a cream speckled base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Small maroon/plum bird with cream chest, glossy dark eye, yellow beak, gold patterned scarf, layered wings with pale gold seed spots and huge curled plum tail forming a loop behind. Two small brown feet. Cream cylindrical base painted with red/gold leafy vine.",
+      "rearDesign": "Continue layered maroon wing/back feathers and pale gold spots, same one looped tail and scarf wrap. No second tail or new feather crest, same two feet. Original cream/red botanical cylinder base unchanged.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a plum ceramic bird compactly perched with circular brush tail and mustard wool neckerchief on a cream speckled base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Small maroon/plum bird with cream chest, glossy dark eye, yellow beak, gold patterned scarf, layered wings with pale gold seed spots and huge curled plum tail forming a loop behind. Two small brown feet. Cream cylindrical base painted with red/gold leafy vine. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          340,
+          30,
           480,
           480
         ],
@@ -1900,7 +1900,7 @@
         "mode": "flux-reference",
         "seed": 2026112064,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered maroon wing/back feathers and pale gold spots, same one looped tail and scarf wrap. No second tail or new feather crest, same two feet. Original cream/red botanical cylinder base unchanged. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2344,21 +2344,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tawny plush-looking bison vinyl figure with patchwork pale mint leg socks and a single hollow copper pipe between horns. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Shaggy rust-orange bison with round dark eyes, broad brown muzzle, paired ivory upcurled horns and a copper handle/tube spanning above head between horn fittings. Four dark hooves with pale green/ivory lower-leg wraps. Low dark brown round plinth with thin gold rings.",
+      "rearDesign": "Continue thick orange fleece and same short furry tail, paired horns and single copper cross-handle. Preserve all four wrapped lower legs and original stance. No saddle, new hose or additional horns; same brown/gold round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tawny plush-looking bison vinyl figure with patchwork pale mint leg socks and a single hollow copper pipe between horns. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Shaggy rust-orange bison with round dark eyes, broad brown muzzle, paired ivory upcurled horns and a copper handle/tube spanning above head between horn fittings. Four dark hooves with pale green/ivory lower-leg wraps. Low dark brown round plinth with thin gold rings. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          380,
+          40,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -2380,7 +2380,7 @@
         "mode": "flux-reference",
         "seed": 2026112065,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue thick orange fleece and same short furry tail, paired horns and single copper cross-handle. Preserve all four wrapped lower legs and original stance. No saddle, new hose or additional horns; same brown/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2824,17 +2824,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a toy greyhound with glossy brick-red mechanical panels, cream hip joints and roll of material tethered to its back, square ice slab. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Slender red/ivory mechanical greyhound with long segmented neck, narrow red muzzle, black nose and circular bronze shoulder/hip joints. Four long red legs ending in pale paws, one thin red tail. Brown strapped saddle pack and one rolled ivory blanket on back. Thick rectangular translucent icy blue plinth.",
+      "rearDesign": "Continue red/ivory segmented back under the same one saddle pack and rolled blanket, exactly four legs and one thin tail. No additional tank, wheel or blanket. Same rectangular ice-blue base and foot positions.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a toy greyhound with glossy brick-red mechanical panels, cream hip joints and roll of material tethered to its back, square ice slab. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Slender red/ivory mechanical greyhound with long segmented neck, narrow red muzzle, black nose and circular bronze shoulder/hip joints. Four long red legs ending in pale paws, one thin red tail. Brown strapped saddle pack and one rolled ivory blanket on back. Thick rectangular translucent icy blue plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          160,
+          0,
           480,
           480
         ],
@@ -2860,7 +2860,7 @@
         "mode": "flux-reference",
         "seed": 2026112066,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue red/ivory segmented back under the same one saddle pack and rolled blanket, exactly four legs and one thin tail. No additional tank, wheel or blanket. Same rectangular ice-blue base and foot positions. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3304,17 +3304,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a toffee tabby statuette with a folded sage shop apron holding a small blank copper tin, on a fluted pale stool. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Seated ginger tabby cat with cream muzzle/chest, green eyes, brown stripes and green apron with cream shoulder straps and gold buttons. Both forepaws hold one small plain copper pot at front. Green waist bow behind hip and tail curled around planted hindfeet. Cream low fluted ramekin-like circular plinth.",
+      "rearDesign": "Continue orange/brown tabby stripes and plain green apron back with same cream straps and waist bow. Copper pot stays in front, no new handle, lid or second pot. Same seated tail and cream fluted round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a toffee tabby statuette with a folded sage shop apron holding a small blank copper tin, on a fluted pale stool. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Seated ginger tabby cat with cream muzzle/chest, green eyes, brown stripes and green apron with cream shoulder straps and gold buttons. Both forepaws hold one small plain copper pot at front. Green waist bow behind hip and tail curled around planted hindfeet. Cream low fluted ramekin-like circular plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          260,
+          0,
           480,
           480
         ],
@@ -3340,7 +3340,7 @@
         "mode": "flux-reference",
         "seed": 2026112067,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange/brown tabby stripes and plain green apron back with same cream straps and waist bow. Copper pot stays in front, no new handle, lid or second pot. Same seated tail and cream fluted round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4264,17 +4264,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Create a square shop cover photo of one unmistakably original wintry toy fox automaton, a low elongated indigo body of blued steel, broad flat ice-glass panels along its back, four piston-powered navy paws and a single huge asymmetrical hollow turbine tail made from frosted chunky gear teeth. Wedge-shape dark head with two very short triangular smoked metal ears, no fur, no ribbon features or forehead ornament. Add pale silver edge wear and small aqua bolts. Perched on a simple charcoal resin disk, full figure centered with padding against a soft warm gray studio backdrop. No writing, logos, loose accessories, overlays, or recognizable franchise designs.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Low dark navy mechanical fox with sharp pointed muzzle/ears, glowing teal eye, exposed gray/bronze limb joints and four clawed feet. Long faceted pale icy-blue glass plate on back. Huge vertical curled tail shaped as a translucent ice gear wheel with dark inner spokes. Plain dark circular cylinder base.",
+      "rearDesign": "Continue dark navy angular rear panels and original icy spine plate, same single curled ice-gear tail/spokes. No additional tail, wing or head fittings. Keep four low-set feet and original dark round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Create a square shop cover photo of one unmistakably original wintry toy fox automaton, a low elongated indigo body of blued steel, broad flat ice-glass panels along its back, four piston-powered navy paws and a single huge asymmetrical hollow turbine tail made from frosted chunky gear teeth. Wedge-shape dark head with two very short triangular smoked metal ears, no fur, no ribbon features or forehead ornament. Add pale silver edge wear and small aqua bolts. Perched on a simple charcoal resin disk, full figure centered with padding against a soft warm gray studio backdrop. No writing, logos, loose accessories, overlays, or recognizable franchise designs.",
+    "invariants": "Low dark navy mechanical fox with sharp pointed muzzle/ears, glowing teal eye, exposed gray/bronze limb joints and four clawed feet. Long faceted pale icy-blue glass plate on back. Huge vertical curled tail shaped as a translucent ice gear wheel with dark inner spokes. Plain dark circular cylinder base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          20,
+          300,
           480,
           480
         ],
@@ -4300,7 +4300,7 @@
         "mode": "flux-reference",
         "seed": 2026112069,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue dark navy angular rear panels and original icy spine plate, same single curled ice-gear tail/spokes. No additional tail, wing or head fittings. Keep four low-set feet and original dark round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4744,17 +4744,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a small single mechanical helper with a deep green crate torso and two simple brass wheels carrying an orange ceramic kettle, chalk plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Ivory/forest-green robot with green cap, black visor and two pale yellow eyes, round gold ear fittings and cream hands. Both hands grasp one brass pushcart handle. Forest-green wooden cart holds one orange teapot with white/gold floral paint, lid and curved spout; brass spoked wheels. Low ivory stone round plinth.",
+      "rearDesign": "Continue green cap and plain ivory/green robot back panels. Preserve two hands on the one handle, same cart panels/wheels and one teapot/lid/spout. No added parcel, cup or second kettle. Same ivory round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a small single mechanical helper with a deep green crate torso and two simple brass wheels carrying an orange ceramic kettle, chalk plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Ivory/forest-green robot with green cap, black visor and two pale yellow eyes, round gold ear fittings and cream hands. Both hands grasp one brass pushcart handle. Forest-green wooden cart holds one orange teapot with white/gold floral paint, lid and curved spout; brass spoked wheels. Low ivory stone round plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
+          0,
           480,
           480
         ],
@@ -4780,14 +4780,117 @@
         "mode": "flux-reference",
         "seed": 2026112070,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue green cap and plain ivory/green robot back panels. Preserve two hands on the one handle, same cart panels/wheels and one teapot/lid/spout. No added parcel, cup or second kettle. Same ivory round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
         "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
         "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
         "uploadedBackground": "BACKGROUND.png",
-        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+        "protectionMaskSpec": {
+          "method": "polygon",
+          "sourceSha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838",
+          "polygons": [
+            [
+              [
+                180,
+                802
+              ],
+              [
+                188,
+                788
+              ],
+              [
+                222,
+                772
+              ],
+              [
+                272,
+                760
+              ],
+              [
+                352,
+                750
+              ],
+              [
+                470,
+                745
+              ],
+              [
+                598,
+                747
+              ],
+              [
+                688,
+                755
+              ],
+              [
+                738,
+                769
+              ],
+              [
+                761,
+                789
+              ],
+              [
+                767,
+                818
+              ],
+              [
+                776,
+                861
+              ],
+              [
+                770,
+                876
+              ],
+              [
+                748,
+                892
+              ],
+              [
+                698,
+                906
+              ],
+              [
+                608,
+                920
+              ],
+              [
+                500,
+                927
+              ],
+              [
+                371,
+                925
+              ],
+              [
+                272,
+                913
+              ],
+              [
+                210,
+                896
+              ],
+              [
+                177,
+                877
+              ],
+              [
+                173,
+                863
+              ],
+              [
+                177,
+                827
+              ]
+            ]
+          ],
+          "purpose": "Visually traced original sculpt support; retain original master pixels, no repainting"
+        },
+        "protectionMask": "work/catalog-gallery/FIGURA-AI-070/protection-218b8a1d18e3.png",
+        "protectionMaskSha256": "218b8a1d18e363fffa897548ad8258ae6a4dc42c1dadb325f2f37270533638a5"
       }
     }
   },
@@ -5336,17 +5439,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chunky taupe mole figurine with deep amber translucent thermos, midnight blue goggles and carved sandstone base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Brown mole traveler with pink nose/paws, short whiskers and navy/brass round goggles on forehead. Charcoal/navy scarf, ivory knitted sweater, brown belt and leather pouch at anatomical RIGHT hip, brown backpack straps. Both hands hold one amber glass thermos with brass cap. Tan round stone base carved with leaves/mountains.",
+      "rearDesign": "Continue brown sculpted fur and plain ivory sweater back under the same brown backpack and scarf. Thermos remains single and held at front, right-hip pouch unchanged; no new flask or equipment. Same carved tan circular base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chunky taupe mole figurine with deep amber translucent thermos, midnight blue goggles and carved sandstone base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Brown mole traveler with pink nose/paws, short whiskers and navy/brass round goggles on forehead. Charcoal/navy scarf, ivory knitted sweater, brown belt and leather pouch at anatomical RIGHT hip, brown backpack straps. Both hands hold one amber glass thermos with brass cap. Tan round stone base carved with leaves/mountains. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          260,
+          0,
           480,
           480
         ],
@@ -5372,7 +5475,7 @@
         "mode": "flux-reference",
         "seed": 2026112071,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue brown sculpted fur and plain ivory sweater back under the same brown backpack and scarf. Thermos remains single and held at front, right-hip pouch unchanged; no new flask or equipment. Same carved tan circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5816,17 +5919,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult character statue in ochre work overalls with navy round earmuffs, handling a tiny pale slate steam iron on a speckled plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult female ironing worker with dark brown curly bun and blue headphones, ivory rolled-sleeve blouse, mustard overalls and brown lace boots. Bends forward, anatomical RIGHT hand presses one blue/metal iron on ivory cloth with navy border stripes; anatomical LEFT hand steadies cloth edge. Cloth lies over a curved ivory stone ironing pedestal, all on one pale speckled circular base.",
+      "rearDesign": "Continue mustard overall back with two plain vertical shoulder straps and waist join over ivory blouse. Keep bent pose, same headphone band, right iron and left cloth grip. Original cloth pattern, curved ironing pedestal and shared circular base must all remain; no added furniture.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult character statue in ochre work overalls with navy round earmuffs, handling a tiny pale slate steam iron on a speckled plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult female ironing worker with dark brown curly bun and blue headphones, ivory rolled-sleeve blouse, mustard overalls and brown lace boots. Bends forward, anatomical RIGHT hand presses one blue/metal iron on ivory cloth with navy border stripes; anatomical LEFT hand steadies cloth edge. Cloth lies over a curved ivory stone ironing pedestal, all on one pale speckled circular base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          270,
+          0,
           480,
           480
         ],
@@ -5852,7 +5955,7 @@
         "mode": "flux-reference",
         "seed": 2026112072,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue mustard overall back with two plain vertical shoulder straps and waist join over ivory blouse. Keep bent pose, same headphone band, right iron and left cloth grip. Original cloth pattern, curved ironing pedestal and shared circular base must all remain; no added furniture. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
