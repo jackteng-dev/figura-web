@@ -9,7 +9,7 @@ watch(() => props.image?.url, () => failed.value = false)
 </script>
 <template>
   <div class="cover">
-    <img v-if="image && !failed" :src="image.url" :srcset="srcset" :sizes="sizes || '(max-width: 600px) 45vw, 300px'" :width="image.width" :height="image.height" :alt="alt" :loading="eager ? 'eager' : 'lazy'" :fetchpriority="priority ? 'high' : 'auto'" decoding="async" @error="failed = true">
+    <img v-if="image && !failed" :key="image.id" :src="image.url" :srcset="srcset" :sizes="sizes || '(max-width: 600px) 45vw, 300px'" :width="image.width" :height="image.height" :alt="alt" :loading="eager ? 'eager' : 'lazy'" :fetchpriority="priority ? 'high' : 'auto'" decoding="async" @error="failed = true">
     <div v-else class="cover-empty" aria-hidden="false">
       <span class="mark" aria-hidden="true">F</span>
       <small>{{ failed ? '商品圖片暫時無法載入' : (category ? category + '・圖片準備中' : '圖片準備中') }}</small>

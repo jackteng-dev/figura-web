@@ -44,7 +44,8 @@ try{
    assert(gallery.data.every(i=>accepted.has(i.type)),p.productKey+' rejected image leaked')
    for(let i=0;i<expected;i++){
     if(expected>1)await evaluate(`document.querySelectorAll('.thumbnails button')[${i}].click()`)
-    await until(`document.querySelector('.expand img')?.complete&&document.querySelector('.expand img')?.naturalWidth>0`)
+    const imageId=gallery.data[i].id
+    await until(`document.querySelector('.expand img')?.src.includes(${JSON.stringify(imageId)})&&document.querySelector('.expand img')?.currentSrc.includes(${JSON.stringify(imageId)})&&document.querySelector('.expand img')?.complete&&document.querySelector('.expand img')?.naturalWidth>0`)
    }
    await evaluate(`document.querySelector('.expand').click()`)
    assert(await evaluate(`document.querySelector('dialog').open`),p.productKey+' zoom')

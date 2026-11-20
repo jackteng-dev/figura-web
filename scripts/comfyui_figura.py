@@ -158,6 +158,8 @@ def run(client, product, shot_name, timeout, config=CONFIG):
         if len(models) != len(expected_models):
             raise ValueError('Inventory does not contain all required local model files')
     identity = {'productKey': product, 'designRevision': spec['designRevision'], 'masterSha256': sha(source), 'graph': graph}
+    if shot['mode'] == 'scene-composite':
+        identity['sceneBackgroundSha256'] = shot['backgroundSha256']
     run_id = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
     folder = WORK / 'runs' / run_id
     folder.parent.mkdir(parents=True, exist_ok=True)

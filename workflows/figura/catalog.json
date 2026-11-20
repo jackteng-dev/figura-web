@@ -72,17 +72,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a sculpted teal seal figurine carrying a thick brass nautical compass on a rock plinth with tiny sea-lettuce details. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "matte designer vinyl with ceramic finish",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Seated teal seal with ivory muzzle/chest, black eyes, pale spots and white whiskers. Brown leather shoulder harness, gold buckles and one large brass compass pendant at chest. Two broad foreflippers and rear flippers. Irregular gray rocky base with green seaweed patches.",
+      "rearDesign": "Continue teal spotted back and rear flippers with plain ivory underside. Leather harness continues around shoulders; compass stays at front, no extra compass or bag. Same irregular rock and seaweed base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a sculpted teal seal figurine carrying a thick brass nautical compass on a rock plinth with tiny sea-lettuce details. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Seated teal seal with ivory muzzle/chest, black eyes, pale spots and white whiskers. Brown leather shoulder harness, gold buckles and one large brass compass pendant at chest. Two broad foreflippers and rear flippers. Irregular gray rocky base with green seaweed patches. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          300,
+          0,
           480,
           480
         ],
@@ -100,15 +100,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112013,
+        "seed": 2026212013,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112013,
+        "seed": 2026212013,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue teal spotted back and rear flippers with plain ivory underside. Leather harness continues around shoulders; compass stays at front, no extra compass or bag. Same irregular rock and seaweed base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -552,21 +552,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult maritime lookout with shell-white raincoat, wavy hair, coral gloves and a suspended small brass bell on a tidepool base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult short curly brown-haired sailor, cream long coat with two navy hem stripes, navy trousers, tall dark boots, orange gloves. Anatomical RIGHT hand shading forehead in salute; anatomical LEFT hand holds one small brass bell hanging downward. Brown shoulder strap and waist belt. One foot elevated on coastal rock; rocky oval base with green growth and orange starfish.",
+      "rearDesign": "Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult maritime lookout with shell-white raincoat, wavy hair, coral gloves and a suspended small brass bell on a tidepool base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult short curly brown-haired sailor, cream long coat with two navy hem stripes, navy trousers, tall dark boots, orange gloves. Anatomical RIGHT hand shading forehead in salute; anatomical LEFT hand holds one small brass bell hanging downward. Brown shoulder strap and waist belt. One foot elevated on coastal rock; rocky oval base with green growth and orange starfish. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          280,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -580,15 +580,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112014,
+        "seed": 2026212014,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112014,
+        "seed": 2026212014,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1032,21 +1032,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a compact marine diving robot with a rounded mustard cylindrical helmet, green glass viewport and a tethered red float on a sand base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Yellow/cream stocky diving robot with round brass helmet, green glass front window, top carry handle and side circular vents. Orange rectangular belly hatch, gray claw grippers and gray block boots. Red/cream buoy on rope rises at anatomical RIGHT rear. Sandy round brown base with seashell. Preserve the gray rope-spool housing already visible behind its anatomical RIGHT shoulder in the master; it is not a new backpack. No extra tank or spool.",
+      "rearDesign": "Continue plain brass/cream rear helmet panels and the existing gray rope-spool housing at anatomical right rear, same single buoy rope. No extra tank or new pack. Keep cream/yellow body, orange hatch, gray grippers/boots and same sandy round shell base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a compact marine diving robot with a rounded mustard cylindrical helmet, green glass viewport and a tethered red float on a sand base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Yellow/cream stocky diving robot with round brass helmet, green glass front window, top carry handle and side circular vents. Orange rectangular belly hatch, gray claw grippers and gray block boots. Red/cream buoy on rope rises at anatomical RIGHT rear. Sandy round brown base with seashell. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Preserve the gray rope-spool housing already visible behind its anatomical RIGHT shoulder in the master; it is not a new backpack. No extra tank or spool.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
-          480,
-          480
+          80,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -1060,15 +1060,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112015,
+        "seed": 2026212015,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112015,
+        "seed": 2026212015,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "Back view at 180 degrees, face hidden. Continue plain brass/cream rear helmet panels and the existing gray rope-spool housing at anatomical right rear, same single buoy rope. No extra tank or new pack. Keep cream/yellow body, orange hatch, gray grippers/boots and same sandy round shell base. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1512,21 +1512,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a miniature indigo whale figurine with a ceramic antenna and sweep of silver waves, resting on a small slate studio plinth. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Navy blue smiling whale with ivory pleated belly, gold star-like dots, uplifted bifurcated tail and broad pectoral fins. Curved ivory/blue lamp stalk over head ends in a round decorated globe. Silver/blue sculpted wave curls lift the whale over an irregular dark slate rock base.",
+      "rearDesign": "Continue blue back with sparse matching gold flecks; same tail and fin count and pleated belly underside. Preserve lamp stalk attachment and globe above head, exact silver wave curls and slate base. No additional lamps or waves.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a miniature indigo whale figurine with a ceramic antenna and sweep of silver waves, resting on a small slate studio plinth. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Navy blue smiling whale with ivory pleated belly, gold star-like dots, uplifted bifurcated tail and broad pectoral fins. Curved ivory/blue lamp stalk over head ends in a round decorated globe. Silver/blue sculpted wave curls lift the whale over an irregular dark slate rock base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          80,
+          200,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -1540,15 +1540,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112016,
+        "seed": 2026212016,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112016,
+        "seed": 2026212016,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue blue back with sparse matching gold flecks; same tail and fin count and pleated belly underside. Preserve lamp stalk attachment and globe above head, exact silver wave curls and slate base. No additional lamps or waves. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1992,21 +1992,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an articulated rounded coral-red crab with one large clear lens claw, cream rivets and a charcoal pebble base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Red mechanical crab with ivory segmented belly, two black stalked eyes, cream round rivets and pointed ivory foot tips. Anatomical LEFT claw raised as a large red/cream circular magnifying lens; anatomical RIGHT claw open at shoulder height. Dark round rocky pebble base.",
+      "rearDesign": "Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an articulated rounded coral-red crab with one large clear lens claw, cream rivets and a charcoal pebble base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Red mechanical crab with ivory segmented belly, two black stalked eyes, cream round rivets and pointed ivory foot tips. Anatomical LEFT claw raised as a large red/cream circular magnifying lens; anatomical RIGHT claw open at shoulder height. Dark round rocky pebble base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
-          480,
-          480
+          130,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -2020,15 +2020,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112017,
+        "seed": 2026212017,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112017,
+        "seed": 2026212017,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2472,21 +2472,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult medic in a petrol-blue deck jacket holding an amber floating medical buoy with plain tooling and a tiny wet-deck base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult female rescue worker, short dark curled hair, teal scarf and weathered dark teal jacket with pale reflective arm bands, belt, dark cargo trousers and black boots. Anatomical LEFT arm holds long orange rescue float with white/red cross stripe; anatomical RIGHT arm hangs with black glove. Low dark circular textured pavement base.",
+      "rearDesign": "Continue plain teal jacket with central seam and reflective bands, same belt and cargo trousers. Rescue float stays on anatomical left, right arm stays down. No added backpack or insignia; same dark round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult medic in a petrol-blue deck jacket holding an amber floating medical buoy with plain tooling and a tiny wet-deck base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult female rescue worker, short dark curled hair, teal scarf and weathered dark teal jacket with pale reflective arm bands, belt, dark cargo trousers and black boots. Anatomical LEFT arm holds long orange rescue float with white/red cross stripe; anatomical RIGHT arm hangs with black glove. Low dark circular textured pavement base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          260,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -2500,15 +2500,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112018,
+        "seed": 2026212018,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112018,
+        "seed": 2026212018,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain teal jacket with central seam and reflective bands, same belt and cargo trousers. Rescue float stays on anatomical left, right arm stays down. No added backpack or insignia; same dark round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2952,21 +2952,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a dusty plum otter holding a translucent pale blue eroded marble, sculpted blanket-like tail and a ceramic circular base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Seated plum-purple otter with ivory muzzle/chest/belly, tiny black eyes and nose, small round ears and short pale whiskers. Both forepaws hold one translucent pale blue round pearl sphere. Broad planted hindfeet and long curled purple tail wrap to front. Cream circular plinth with blue/gold wave scrolling rim.",
+      "rearDesign": "Continue plain plum-purple back fur and curled tail without new ornament. Both hands hold the same one pearl in front; tail and hindfeet positions fixed. Same cream/blue/gold wave base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a dusty plum otter holding a translucent pale blue eroded marble, sculpted blanket-like tail and a ceramic circular base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Seated plum-purple otter with ivory muzzle/chest/belly, tiny black eyes and nose, small round ears and short pale whiskers. Both forepaws hold one translucent pale blue round pearl sphere. Broad planted hindfeet and long curled purple tail wrap to front. Cream circular plinth with blue/gold wave scrolling rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          220,
+          30,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -2980,15 +2980,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112019,
+        "seed": 2026212019,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112019,
+        "seed": 2026212019,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain plum-purple back fur and curled tail without new ornament. Both hands hold the same one pearl in front; tail and hindfeet positions fixed. Same cream/blue/gold wave base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3432,21 +3432,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a silver and sage craftsperson statuette holding a rounded kelp mask in their hand, sculpted apron and square coral stone base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult older gray-haired mask sculptor, leafy hair sprigs, weathered sage green layered tunic and patterned apron, belt with pouches, wrapped calf leggings and brown shoes. Anatomical RIGHT hand on hip; anatomical LEFT hand raised holding one green carved theatrical mask with leaf crown. Rectangular coral-pink porous pedestal with pale branching coral relief.",
+      "rearDesign": "Continue sage tunic and apron with simple center seam, same belt/pouch positions and leafy gray hair. Mask remains in raised left hand, right hand remains hip. No additional mask or backpack; same rectangular coral pedestal.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a silver and sage craftsperson statuette holding a rounded kelp mask in their hand, sculpted apron and square coral stone base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult older gray-haired mask sculptor, leafy hair sprigs, weathered sage green layered tunic and patterned apron, belt with pouches, wrapped calf leggings and brown shoes. Anatomical RIGHT hand on hip; anatomical LEFT hand raised holding one green carved theatrical mask with leaf crown. Rectangular coral-pink porous pedestal with pale branching coral relief. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          270,
+          0,
+          440,
+          440
         ],
-        "size": 480
+        "size": 440
       },
       "detail": {
         "mode": "crop",
@@ -3460,15 +3460,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112020,
+        "seed": 2026212020,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112020,
+        "seed": 2026212020,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue sage tunic and apron with simple center seam, same belt/pouch positions and leafy gray hair. Mask remains in raised left hand, right hand remains hip. No additional mask or backpack; same rectangular coral pedestal. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3912,21 +3912,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a pale pink deep-sea fish figure with a row of thin iridescent stone fins creating a small crescent halo, stone base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Pink translucent mechanical anglerfish with large round lavender eye, open toothed jaw, one curved pink lure with translucent droplet. Series of translucent purple dorsal blade fins, pink side fins and broad forked tail; ivory circular joint details. Dark gray/purple rocky circular base with same support rock.",
+      "rearDesign": "Continue pink ribbed back/body around same dorsal fin line; same single lure, side fins and forked tail. No additional eyes, teeth rows, lure or propeller. Keep original rock support and gray/purple round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a pale pink deep-sea fish figure with a row of thin iridescent stone fins creating a small crescent halo, stone base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Pink translucent mechanical anglerfish with large round lavender eye, open toothed jaw, one curved pink lure with translucent droplet. Series of translucent purple dorsal blade fins, pink side fins and broad forked tail; ivory circular joint details. Dark gray/purple rocky circular base with same support rock. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          60,
+          230,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -3940,15 +3940,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112021,
+        "seed": 2026212021,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112021,
+        "seed": 2026212021,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue pink ribbed back/body around same dorsal fin line; same single lure, side fins and forked tail. No additional eyes, teeth rows, lure or propeller. Keep original rock support and gray/purple round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4392,21 +4392,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a striped teal and white conch sculpture whose spiral is an intricate bronze mechanical chime, single plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Turquoise/ivory spiral conch shell with flared scalloped rim; ornate brass internal rings/gears and small hanging brass bell chimes. Brass wave-shaped pedestal supports shell over a low turquoise/gold circular base with shell emblem.",
+      "rearDesign": "Continue turquoise and ivory shell bands across outer rear spiral with same scalloped rim. Brass rings and dangling bells remain inside original opening; no second opening or added chimes. Same brass support and turquoise/gold round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a striped teal and white conch sculpture whose spiral is an intricate bronze mechanical chime, single plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Turquoise/ivory spiral conch shell with flared scalloped rim; ornate brass internal rings/gears and small hanging brass bell chimes. Brass wave-shaped pedestal supports shell over a low turquoise/gold circular base with shell emblem. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          100,
+          220,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -4420,15 +4420,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112022,
+        "seed": 2026212022,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112022,
+        "seed": 2026212022,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue turquoise and ivory shell bands across outer rear spiral with same scalloped rim. Brass rings and dangling bells remain inside original opening; no second opening or added chimes. Same brass support and turquoise/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
       },
       "scene": {
         "mode": "scene-composite",

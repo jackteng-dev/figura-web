@@ -155,13 +155,46 @@ def generate(keys, types):
             comfy.run(client, p['productKey'], shot, 1800, CONFIG)
             spec = json.loads(CONFIG.read_text('utf-8'))[p['productKey']]
             identity = {'productKey': p['productKey'], 'designRevision': spec['designRevision'], 'masterSha256': spec['masterSha256'], 'graph': comfy.build(spec, spec['shots'][shot], 'REFERENCE.png')}
+            if spec['shots'][shot]['mode'] == 'scene-composite':
+                identity['sceneBackgroundSha256'] = spec['shots'][shot]['backgroundSha256']
             run_id = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
             run = json.loads((comfy.WORK / 'runs' / run_id / 'run.json').read_text('utf-8'))
             prior = p['slots'][t]
             if prior.get('runId') and prior['runId'] != run['runId']:
                 p.setdefault('attempts', {}).setdefault(t, []).append(copy.deepcopy(prior))
             p['slots'][t].update(status='review_pending', runId=run['runId'], sha256=run['outputSha256'], sourceSha256=p['master']['sha256'], path=f"work/comfyui-figura/runs/{run['runId']}/output.png")
+            p['slots'][t]['generation'] = provenance(run)
             save(m)
+
+
+def provenance(run):
+    graph = run['graph']
+    folder = comfy.WORK / 'runs' / run['runId']
+    result = {'mode': run['mode'], 'tool': 'local ComfyUI', 'promptId': run['promptId'], 'createdAt': run['createdAt'], 'masterSha256': run['masterSha256'], 'modelHashes': run['modelHashes'], 'workflowSha256': comfy.sha(folder / 'workflow.api.json'), 'outputSha256': run['outputSha256'], 'authorApproval': 'pending'}
+    if run['mode'] == 'flux-reference':
+        result.update(prompt=graph['7']['inputs']['text'], seed=graph['12']['inputs']['noise_seed'], width=graph['10']['inputs']['width'], height=graph['10']['inputs']['height'], steps=graph['13']['inputs']['steps'], sampler=graph['11']['inputs']['sampler_name'])
+    elif run['mode'] == 'crop':
+        result.update(prompt=None, seed=None, operation='deterministic crop/scale, no new sculpt generation', masterCrop=graph['2']['inputs'], crop=graph['3']['inputs'], size=graph['4']['inputs']['width'])
+    elif run['mode'] == 'scene-composite':
+        actual = json.loads((folder / 'workflow.api.json').read_text('utf-8'))
+        match = re.search(r'figura-([0-9a-f]{64})', actual['5']['inputs']['image'])
+        result.update(prompt=None, seed=None, operation='binary foreground mask plus original master pixels, 2D composite', backgroundSha256=match.group(1) if match else run.get('sceneBackgroundSha256'), maskModel=graph['3']['inputs']['bg_removal_name'], threshold=graph.get('11', {}).get('inputs', {}).get('value'), outputSize=[graph['2']['inputs']['width'], graph['2']['inputs']['height']])
+    return result
+
+
+def audit_provenance():
+    m = load()
+    for p in m['products']:
+        slots = list(p['slots'].values()) + [s for attempts in p.get('attempts', {}).values() for s in attempts]
+        for slot in slots:
+            if slot.get('runId'):
+                state = json.loads((comfy.WORK / 'runs' / slot['runId'] / 'run.json').read_text('utf-8'))
+                if slot.get('sha256') != state['outputSha256']:
+                    raise ValueError('Output provenance changed')
+                slot['generation'] = provenance(state)
+    background = json.loads((comfy.WORK / 'runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/run.json').read_text('utf-8'))
+    m['sharedSceneBackground'] = provenance(background)
+    save(m)
 
 
 def contact(keys, types):
@@ -232,14 +265,17 @@ def report():
     m = load()
     from html import escape as esc
     rows = []
+    labels = {'complete': '完成（本機）', 'pass': '檢查通過／待上傳', 'reject': '退回／圖庫留空', 'blank': '留空', 'pending': '待處理', 'review_pending': '待檢查'}
     for p in m['products']:
         cells = []
         for t in TYPES:
             s = p['slots'][t]
             path = p['master']['path'] if t == 'MAIN' else s.get('path')
             im = f'<img loading="lazy" src="../{esc(path)}" alt="{esc(p["title"])}，AI 生成示意圖，{t}">' if path else '<div class="empty">留空</div>'
-            cells.append(f'<figure>{im}<figcaption><b>{t} · {esc(s["status"])}</b><br>{esc(s.get("reason") or "待檢查")}</figcaption></figure>')
-        rows.append(f'<article><h2>{esc(p["productKey"])} {esc(p["title"])}</h2><div class="grid">{"".join(cells)}</div></article>')
+            if s['status'] in ('reject', 'blank'):
+                im = '<div class="empty">留空 · 候選退回</div>' + (f'<details><summary>退回候選，未入圖庫</summary>{im}</details>' if path else '')
+            cells.append(f'<figure>{im}<figcaption><b>{t} · {labels[s["status"]]}</b><br>{esc(s.get("reason") or "待檢查")}</figcaption></figure>')
+        rows.append(f'<article><h2><a href="http://127.0.0.1:15181/shop/products/{esc(p["id"])}">{esc(p["productKey"])} {esc(p["title"])}</a></h2><div class="grid">{"".join(cells)}</div></article>')
     html = '<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Figura 全目錄 2D 圖組比較</title><style>body{font:15px system-ui;margin:24px;background:#f3f1ed;color:#242424}.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}figure{margin:0;min-width:0}img,.empty{width:100%;aspect-ratio:1;object-fit:contain;background:#e5e1db}.empty{display:grid;place-items:center}figcaption{font-size:12px;overflow-wrap:anywhere}article{padding:20px 0;border-bottom:1px solid #ccc}@media(max-width:800px){.grid{min-width:1050px}article{overflow:auto}}</style><h1>Figura 全目錄 2D 圖組比較</h1><p>AI 生成示意圖。非實物攝影，非可操作的 3D 模型。作者人工簽核 pending。退回圖僅供檢查，不上傳圖庫。圖片保存在本機忽略的 work/；clone 不包含圖片。</p>' + ''.join(rows) + '</html>'
     (ROOT / 'docs/catalog-gallery-comparison.html').write_text(html, encoding='utf-8')
     print(json.dumps({t: {s: sum(p['slots'][t]['status'] == s for p in m['products']) for s in sorted({p['slots'][t]['status'] for p in m['products']})} for t in TYPES}, ensure_ascii=False))
@@ -287,6 +323,22 @@ def review_file(path):
         if slot['status'] in (expected, 'complete') and slot.get('reason') == entry['note']:
             continue
         review([entry['key']], [entry['type']], entry['decision'], entry['note'])
+
+
+def recrop(key, kind, crop):
+    m = load()
+    p = selected(m, [key])[0]
+    if kind not in ('FACE', 'DETAIL') or p['slots'][kind]['status'] != 'reject':
+        raise ValueError('Recrop requires a visually rejected FACE/DETAIL candidate')
+    config = json.loads(CONFIG.read_text('utf-8'))
+    shot = config[key]['shots'][SHOTS[kind]]
+    proposed = dict(shot, crop=crop, size=crop[2])
+    comfy.build(config[key], proposed, 'REFERENCE.png')  # bounds/no-upscale gate
+    p.setdefault('attempts', {}).setdefault(kind, []).append(copy.deepcopy(p['slots'][kind]))
+    p['slots'][kind] = {'status': 'pending', 'reason': '退回後調整原圖特寫構圖，不重畫主體'}
+    config[key]['shots'][SHOTS[kind]] = proposed
+    comfy.write(CONFIG, config)
+    save(m)
 
 
 def owned_versions(product, gallery):
@@ -379,12 +431,13 @@ def upload(keys):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['snapshot', 'generate', 'contact', 'review', 'review-file', 'retry', 'report', 'upload'])
+    parser.add_argument('command', choices=['snapshot', 'generate', 'contact', 'review', 'review-file', 'retry', 'recrop', 'report', 'upload', 'audit-provenance'])
     parser.add_argument('--keys', nargs='*', default=[])
     parser.add_argument('--types', nargs='+', choices=TYPES, default=TYPES)
     parser.add_argument('--decision', choices=['pass', 'reject'])
     parser.add_argument('--note')
     parser.add_argument('--file', type=Path)
+    parser.add_argument('--crop', type=int, nargs=4)
     a = parser.parse_args()
     if a.command == 'snapshot': snapshot()
     elif a.command == 'generate': generate(a.keys, a.types)
@@ -401,6 +454,10 @@ def main():
     elif a.command == 'review-file':
         if not a.file: parser.error('Explicit visual review file required')
         review_file(a.file)
+    elif a.command == 'recrop':
+        if len(a.keys) != 1 or len(a.types) != 1 or not a.crop: parser.error('Recrop requires one key, one type and x y width height')
+        recrop(a.keys[0], a.types[0], a.crop)
+    elif a.command == 'audit-provenance': audit_provenance()
     else: report()
 
 
