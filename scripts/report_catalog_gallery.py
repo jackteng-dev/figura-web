@@ -70,7 +70,7 @@ def main():
               '- 瀏覽器快速切圖曾停留於舊 responsive image，已用 image.id key 修復並驗證 currentSrc／解碼成功。受限 Windows 帳戶的 Chrome sandbox GPU 子程序啟動被拒，唯讀驗證改用專用 headless profile；沒有改產品安全設定。',
               '- GPU 文字編碼效能試驗在約 11,153 MiB 顯存使用量下停滯，中止未返回，已受控重啟此 ComfyUI 一次並恢復原 CPU 編碼；佇列中確認未執行的商品工作保存舊／新 prompt ID 後恢復。未終止其他 GPU 程式。沒有推論 OOM 回報；此數字是觀測樣本，不是連續監測峰值。',
               '- RTX 3080 Ti 12GB：正式候選採 Klein 4B FP8／768²／4 steps／batch1，Qwen CPU；額外 Base 試驗採20 steps／CFG5，非錯用 distilled 設定。情境與特寫均為 2D 原像素操作。', '',
-              f"記錄起點 {stamp(manifest['startedAt'])}，本輪處理記錄終點 {stamp(finished)}，經過 {elapsed / 3600:.2f} 小時（包含產圖、檢查、修復與保存；起點前 API 準備時間不在此計時內）。", '']
+              f"記錄起點 {stamp(manifest['startedAt'])}，本輪處理記錄終點 {stamp(finished)}，牆鐘經過 {elapsed / 3600:.2f} 小時（包含使用額度中斷等待、產圖、檢查、修復與保存；不是純 GPU 運算時間，起點前 API 準備時間亦不在此計時內）。", '']
     if browser:
         lines += [f"[本機桌面／手機瀏覽器證據](catalog-gallery-browser-2026-11-20.json)：{browser['products']} 件、{len(browser['checks'])} 組檢查；原主圖、實際圖庫數量、所有圖切換／解碼、AI 標示、放大焦點和無水平溢出。", '']
     lines += ['## Git 保存限制', '', '每批約十件已本機 commit，分支為 `codex/comfyui-product-gallery`，未合併 main、未 force push。Git HTTPS 缺少可用憑證；GitHub 寫入工具回覆「requires approval, but approval policy is never」，因此 push／PR 更新未完成。既有 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 尚未包含這些本機後續提交。', '']

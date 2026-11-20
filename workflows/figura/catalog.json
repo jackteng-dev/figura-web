@@ -852,17 +852,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a midnight pigeon ceramic figure with layered roof-green wing feathers and a red wax spool on its back, dark grey plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Dark navy pigeon with purple iridescent neck feathers, green layered wing panels, bronze shoulder joints, pale beak and red scaled feet. Brown leather courier harness with brass buckles and a burgundy cylindrical canister assembly on upper back. Low dark stepped circular plinth.",
+      "rearDesign": "Continue dark layered back feathers beneath the same burgundy canister assembly and leather straps. Preserve canister count, gold bands, tail and two red feet; no extra package or wing. Same dark stepped round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a midnight pigeon ceramic figure with layered roof-green wing feathers and a red wax spool on its back, dark grey plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Dark navy pigeon with purple iridescent neck feathers, green layered wing panels, bronze shoulder joints, pale beak and red scaled feet. Brown leather courier harness with brass buckles and a burgundy cylindrical canister assembly on upper back. Low dark stepped circular plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          160,
+          0,
           480,
           480
         ],
@@ -888,7 +888,7 @@
         "mode": "flux-reference",
         "seed": 2026112074,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue dark layered back feathers beneath the same burgundy canister assembly and leather straps. Preserve canister count, gold bands, tail and two red feet; no extra package or wing. Same dark stepped round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1444,17 +1444,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an obsidian hound statuette with white clock enamel patches and bronze winding tail, stone arch on integrated base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Black mechanical doberman with erect pointed ears, narrow muzzle, bronze/gold shoulder/leg joints and ornate gold neck/chest plates. One brass winding key rises at rear back. Four black/gold paws stand before a large weathered gray stone clock arch with gold inner clock rim and small ivy patches. Round stepped stone base with bronze gear relief along front edge.",
+      "rearDesign": "Continue black/gold mechanical rear plates and the same winding key, four paws and fixed head direction. Clock arch remains one original stone arch behind dog, back is plain matching weathered stone with no new clock face or lettering. Same stepped circular gear-rim base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an obsidian hound statuette with white clock enamel patches and bronze winding tail, stone arch on integrated base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Black mechanical doberman with erect pointed ears, narrow muzzle, bronze/gold shoulder/leg joints and ornate gold neck/chest plates. One brass winding key rises at rear back. Four black/gold paws stand before a large weathered gray stone clock arch with gold inner clock rim and small ivy patches. Round stepped stone base with bronze gear relief along front edge. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          80,
+          0,
           480,
           480
         ],
@@ -1480,7 +1480,7 @@
         "mode": "flux-reference",
         "seed": 2026112075,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue black/gold mechanical rear plates and the same winding key, four paws and fixed head direction. Clock arch remains one original stone arch behind dog, back is plain matching weathered stone with no new clock face or lettering. Same stepped circular gear-rim base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1924,21 +1924,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a jaunty adult figurine in peach waterproofing and copper knee-high boots with a round collection pouch on pale granite. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult short wavy brown-haired female explorer wearing salmon hooded belted coat, ivory/tan trousers and tall copper-brown boots. Both hands on hips. Small round brass compass pouch at anatomical RIGHT hip with shoulder strap. Low mottled ivory circular stone base.",
+      "rearDesign": "Continue salmon coat with simple center back seam and same hood/belt, right-hip compass pouch and original strap path. Both hands stay hips; no additional bag, symbols or rear pockets. Same tall boots and ivory stone round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a jaunty adult figurine in peach waterproofing and copper knee-high boots with a round collection pouch on pale granite. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult short wavy brown-haired female explorer wearing salmon hooded belted coat, ivory/tan trousers and tall copper-brown boots. Both hands on hips. Small round brass compass pouch at anatomical RIGHT hip with shoulder strap. Low mottled ivory circular stone base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          280,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -1960,14 +1960,121 @@
         "mode": "flux-reference",
         "seed": 2026112076,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue salmon coat with simple center back seam and same hood/belt, right-hip compass pouch and original strap path. Both hands stay hips; no additional bag, symbols or rear pockets. Same tall boots and ivory stone round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
         "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
         "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
         "uploadedBackground": "BACKGROUND.png",
-        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+        "protectionMaskSpec": {
+          "method": "polygon",
+          "sourceSha256": "09a8968bf565d349fa9f353092618a83c26e8f937cc390a9459392dbe6b5c8bf",
+          "polygons": [
+            [
+              [
+                234,
+                830
+              ],
+              [
+                240,
+                816
+              ],
+              [
+                263,
+                804
+              ],
+              [
+                305,
+                793
+              ],
+              [
+                361,
+                783
+              ],
+              [
+                421,
+                780
+              ],
+              [
+                479,
+                783
+              ],
+              [
+                537,
+                790
+              ],
+              [
+                585,
+                801
+              ],
+              [
+                619,
+                814
+              ],
+              [
+                638,
+                832
+              ],
+              [
+                641,
+                852
+              ],
+              [
+                641,
+                887
+              ],
+              [
+                633,
+                902
+              ],
+              [
+                605,
+                914
+              ],
+              [
+                560,
+                923
+              ],
+              [
+                502,
+                929
+              ],
+              [
+                435,
+                931
+              ],
+              [
+                366,
+                927
+              ],
+              [
+                302,
+                917
+              ],
+              [
+                260,
+                904
+              ],
+              [
+                236,
+                890
+              ],
+              [
+                231,
+                874
+              ],
+              [
+                231,
+                848
+              ]
+            ]
+          ],
+          "purpose": "Visually traced original sculpt support; retain original master pixels, no repainting"
+        },
+        "protectionMask": "work/catalog-gallery/FIGURA-AI-076/protection-ab89ed1c3057.png",
+        "protectionMaskSha256": "ab89ed1c30573a78771e1a0acf187148108d3b6b96644da42fe74600e2d8b365"
       }
     }
   },
@@ -2404,21 +2511,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an auburn toad statue with glowing dull cyan eyes and a sculpted inverted bell back, cool teal circular base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Stocky orange/brown warted toad with bright turquoise eyes, ivory underside and four broad planted feet. Huge burgundy bell-shaped hat with cream/gold leaf motifs, folded brim and small gold finial. Flat teal circular plinth with engraved leaf ridges.",
+      "rearDesign": "Continue orange/brown sculpted warts and plain ivory underside, same bell hat contour and restrained continuation of its gold/cream leaf paint. No added hat, flower or appendage; same four feet and teal engraved round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an auburn toad statue with glowing dull cyan eyes and a sculpted inverted bell back, cool teal circular base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Stocky orange/brown warted toad with bright turquoise eyes, ivory underside and four broad planted feet. Huge burgundy bell-shaped hat with cream/gold leaf motifs, folded brim and small gold finial. Flat teal circular plinth with engraved leaf ridges. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          100,
+          210,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -2440,7 +2547,7 @@
         "mode": "flux-reference",
         "seed": 2026112077,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange/brown sculpted warts and plain ivory underside, same bell hat contour and restrained continuation of its gold/cream leaf paint. No added hat, flower or appendage; same four feet and teal engraved round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2884,17 +2991,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a compact articulated matte claret doll robot with brass pegs and circular link-tool belt, graphite metal plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Slender burgundy/brass robot with rounded segmented helmet, two round gold eyes and circular gold side ear fittings. Burgundy torso/limbs with exposed dark joints, brass ring utility belt, broad maroon boots and relaxed clawed hands. Low dark gray round metal base with gold rivets.",
+      "rearDesign": "Continue burgundy segmented rear helmet/body plates and same exposed dark joints. Brass belt ring count and placement remain fixed, hands stay relaxed, no backpack or added fittings. Same maroon boots and riveted gray round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a compact articulated matte claret doll robot with brass pegs and circular link-tool belt, graphite metal plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Slender burgundy/brass robot with rounded segmented helmet, two round gold eyes and circular gold side ear fittings. Burgundy torso/limbs with exposed dark joints, brass ring utility belt, broad maroon boots and relaxed clawed hands. Low dark gray round metal base with gold rivets. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
+          0,
           480,
           480
         ],
@@ -2920,7 +3027,7 @@
         "mode": "flux-reference",
         "seed": 2026112078,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue burgundy segmented rear helmet/body plates and same exposed dark joints. Brass belt ring count and placement remain fixed, hands stay relaxed, no backpack or added fittings. Same maroon boots and riveted gray round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3364,21 +3471,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an ivory swallow figurine with golden split tail and blue ceramic notes in a small crescent carved pattern on the base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Ivory swallow with wings spread high, gold-edged sculpted feathers and blue floral linework, small dark eye, gold beak/feet and two long elegant forked gold/ivory tail points. Cream cylindrical plinth with blue botanical/crescent paint and thin gold rim.",
+      "rearDesign": "Continue ivory rear wing feathers with the same blue/gold ornamental style, preserve exact wing spread, feather contours and forked tail points. No new support or bird; same planted gold feet and cream/blue cylindrical base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an ivory swallow figurine with golden split tail and blue ceramic notes in a small crescent carved pattern on the base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Ivory swallow with wings spread high, gold-edged sculpted feathers and blue floral linework, small dark eye, gold beak/feet and two long elegant forked gold/ivory tail points. Cream cylindrical plinth with blue botanical/crescent paint and thin gold rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          0,
+          220,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -3400,7 +3507,7 @@
         "mode": "flux-reference",
         "seed": 2026112079,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory rear wing feathers with the same blue/gold ornamental style, preserve exact wing spread, feather contours and forked tail points. No new support or bird; same planted gold feet and cream/blue cylindrical base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3844,21 +3951,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult character statue in powdered purple coat and mechanic copper monocle, teal gloves, carrying a curved glass pane on secure pedestal. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult curly brown-haired scholar in ornate long purple coat with gold buttons/trim, ivory brocade vest, brown trousers and lace boots. Teal gloves hold one tall clear curved glass sheet in front of chest; one hand near its upper edge and one lower, same fixed upward gaze. Bronze/gray circular gear-relief base.",
+      "rearDesign": "Continue purple coat folds and restrained existing gold trim over plain ivory collar/back seam. Same teal gloves, single curved clear glass sheet and original grip; no additional panel, book or equipment. Same gear-relief round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult character statue in powdered purple coat and mechanic copper monocle, teal gloves, carrying a curved glass pane on secure pedestal. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult curly brown-haired scholar in ornate long purple coat with gold buttons/trim, ivory brocade vest, brown trousers and lace boots. Teal gloves hold one tall clear curved glass sheet in front of chest; one hand near its upper edge and one lower, same fixed upward gaze. Bronze/gray circular gear-relief base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          260,
+          0,
+          460,
+          460
         ],
-        "size": 480
+        "size": 460
       },
       "detail": {
         "mode": "crop",
@@ -3880,7 +3987,7 @@
         "mode": "flux-reference",
         "seed": 2026112080,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue purple coat folds and restrained existing gold trim over plain ivory collar/back seam. Same teal gloves, single curved clear glass sheet and original grip; no additional panel, book or equipment. Same gear-relief round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4324,21 +4431,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a short teal elephant with a brass pouring trunk and an embossed water reservoir seat, diorama with gray paving stone base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Teal mechanical baby elephant with large floppy ears painted ivory swirls, gold trim, tiny ivory tusks, gold curved spout trunk ending in one clear water droplet. Four stocky feet with ivory toenails/gold cuffs. Ornate teal/gold saddle seat over one blue-water glass reservoir on back. Gray circular stone-paver base.",
+      "rearDesign": "Continue teal rear body/ear plates with same ivory flourishes and gold bands. One saddle/reservoir only, same water level and raised seat back; spout/droplet stay at front. No extra tusk, tank or leg; same gray circular paver base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a short teal elephant with a brass pouring trunk and an embossed water reservoir seat, diorama with gray paving stone base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Teal mechanical baby elephant with large floppy ears painted ivory swirls, gold trim, tiny ivory tusks, gold curved spout trunk ending in one clear water droplet. Four stocky feet with ivory toenails/gold cuffs. Ornate teal/gold saddle seat over one blue-water glass reservoir on back. Gray circular stone-paver base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          80,
+          130,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -4360,7 +4467,7 @@
         "mode": "flux-reference",
         "seed": 2026112081,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue teal rear body/ear plates with same ivory flourishes and gold bands. One saddle/reservoir only, same water level and raised seat back; spout/droplet stay at front. No extra tusk, tank or leg; same gray circular paver base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4907,17 +5014,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a cream and orange ceramic bunny clutching a closed plum ledger embossed with simple waves, mint base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Ivory/orange rabbit with two upright pink-lined ears, amber eyes and orange cheek marks. Short teal cape with gold wave trim and orange cord clasp. Both paws hold one purple book with gold wave decoration at front. Teal round plinth with matching gold wave motif.",
+      "rearDesign": "Continue plain ivory/orange fur and teal cape with same gold wave border, clasp stays at front. Preserve two ears, one book and paw positions; no second book or backpack. Same teal/gold circular base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a cream and orange ceramic bunny clutching a closed plum ledger embossed with simple waves, mint base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Ivory/orange rabbit with two upright pink-lined ears, amber eyes and orange cheek marks. Short teal cape with gold wave trim and orange cord clasp. Both paws hold one purple book with gold wave decoration at front. Teal round plinth with matching gold wave motif. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
+          0,
           480,
           480
         ],
@@ -4943,7 +5050,7 @@
         "mode": "flux-reference",
         "seed": 2026112082,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain ivory/orange fur and teal cape with same gold wave border, clasp stays at front. Preserve two ears, one book and paw positions; no second book or backpack. Same teal/gold circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5499,17 +5606,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a dark slate articulated monkey figure with copper timepiece shoulders and small ivory construction cap, rooftop tile base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Gray clockwork monkey with sculpted fur, pale muzzle, brown eyes, beige explorer cap and brass clock-dial shoulder guards on brown leather harness. Long segmented tail curls upward behind. Leans forward with both hands and feet touching a red clay tiled roof pedestal, rectangular weathered green/bronze carved trim.",
+      "rearDesign": "Continue gray fur/mechanical joints and original brown harness with same shoulder clock guards. Preserve one curled segmented tail and all four roof contact points. No added clock, tool or tail. Same rectangular red tile roof and carved base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a dark slate articulated monkey figure with copper timepiece shoulders and small ivory construction cap, rooftop tile base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Gray clockwork monkey with sculpted fur, pale muzzle, brown eyes, beige explorer cap and brass clock-dial shoulder guards on brown leather harness. Long segmented tail curls upward behind. Leans forward with both hands and feet touching a red clay tiled roof pedestal, rectangular weathered green/bronze carved trim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          360,
+          0,
           480,
           480
         ],
@@ -5535,7 +5642,7 @@
         "mode": "flux-reference",
         "seed": 2026112083,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue gray fur/mechanical joints and original brown harness with same shoulder clock guards. Preserve one curled segmented tail and all four roof contact points. No added clock, tool or tail. Same rectangular red tile roof and carved base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
