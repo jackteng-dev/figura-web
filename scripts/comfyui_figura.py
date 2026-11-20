@@ -19,6 +19,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / 'work/comfyui-figura'
 CONFIG = ROOT / 'workflows/figura/samples.json'
+_MODEL_HASH_CACHE = {}
+
+
+def model_sha(path):
+    """Hash large weights once per process, invalidating on file identity/stat changes."""
+    path = Path(path).resolve()
+    stat = path.stat()
+    key = (str(path), stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns)
+    if key not in _MODEL_HASH_CACHE:
+        _MODEL_HASH_CACHE[key] = sha(path)
+    return _MODEL_HASH_CACHE[key]
 
 
 def sha(path):
@@ -97,6 +108,14 @@ def build(spec, shot, uploaded):
             raise ValueError('No upscaling or stretched detail crops')
         graph['3']['inputs'].update(x=x, y=y, width=w, height=h)
         graph['4']['inputs'].update(width=size, height=size)
+    elif mode == 'scene-composite':
+        background = ROOT / shot['background']
+        if sha(background) != shot['backgroundSha256']:
+            raise ValueError('Scene background changed')
+        graph['5']['inputs']['image'] = shot['uploadedBackground']
+        graph['6']['inputs'].update(width=w, height=round(h * 1.125))
+        graph['8']['inputs'].update(width=w, height=h)
+        graph['3']['inputs']['bg_removal_name'] = shot['maskModel']
     else:
         graph['7']['inputs']['text'] = spec['invariants'] + ' ' + shot['prompt']
         graph['12']['inputs']['noise_seed'] = shot['seed']
@@ -119,14 +138,15 @@ def run(client, product, shot_name, timeout, config=CONFIG):
     models = {}
     if shot['mode'] != 'crop':
         inventory = json.loads((WORK / 'inventory.json').read_text('utf-8'))
+        expected_models = {node['inputs'][key] for node in graph.values() for key in ['unet_name', 'clip_name', 'vae_name', 'bg_removal_name'] if key in node['inputs']}
         for item in inventory['models']:
-            if Path(item['file']).name in {node['inputs'].get(key) for node in graph.values() for key in ['unet_name', 'clip_name', 'vae_name']}:
-                actual = sha(Path(inventory['comfyRoot']) / item['file'])
+            if Path(item['file']).name in expected_models:
+                actual = model_sha(Path(inventory['comfyRoot']) / item['file'])
                 if actual != item['sha256']:
                     raise ValueError('Model changed since inventory; refresh inventory and use a new design revision')
                 models[item['file']] = actual
-        if len(models) != 3:
-            raise ValueError('Inventory does not contain all three required local model files')
+        if len(models) != len(expected_models):
+            raise ValueError('Inventory does not contain all required local model files')
     identity = {'productKey': product, 'designRevision': spec['designRevision'], 'masterSha256': sha(source), 'graph': graph}
     run_id = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
     folder = WORK / 'runs' / run_id
@@ -150,6 +170,8 @@ def run(client, product, shot_name, timeout, config=CONFIG):
         # Save full execution environment before enqueueing; failures are resumable.
         write(folder / 'system.json', client.request('/system_stats'))
         graph['1']['inputs']['image'] = client.upload(source)
+        if shot['mode'] == 'scene-composite':
+            graph['5']['inputs']['image'] = client.upload(ROOT / shot['background'])
         graph['20']['inputs']['filename_prefix'] = 'figura/' + run_id
         write(folder / 'workflow.api.json', graph)
         state['status'] = 'submission_unknown'

@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-20",
+  "newItems": [
+    {
+      "name": "BiRefNet",
+      "version": "e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4",
+      "source": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/model.safetensors",
+      "officialRepository": "https://huggingface.co/ZhengPeng7/BiRefNet",
+      "license": "MIT",
+      "licenseSource": "https://github.com/ZhengPeng7/BiRefNet/blob/main/LICENSE",
+      "licenseText": "MIT License\n\nCopyright (c) 2024 ZhengPeng\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "bytes": 444473596,
+      "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+      "path": "D:\\ComfyUI\\ComfyUI\\models\\background_removal\\figura-birefnet-e2bf8e4460fc.safetensors",
+      "purpose": "Core ComfyUI foreground mask; preserve original product pixels in cabinet scene composites"
+    }
+  ],
+  "newCustomNodes": [],
+  "restarted": false,
+  "priorEnvironment": "comfyui-environment-2026-11-19.json",
+  "userWorkflowsModified": false,
+  "existingModelsModified": false,
+  "freeDiskAfterDownloadBytes": 216312143872
+}
