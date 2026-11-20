@@ -30,7 +30,7 @@
     }
   ],
   "newCustomNodes": [],
-  "restarted": false,
+  "restarted": true,
   "priorEnvironment": "comfyui-environment-2026-11-19.json",
   "userWorkflowsModified": false,
   "existingModelsModified": false,
@@ -70,5 +70,527 @@
     "steps": 20,
     "cfg": 5,
     "negativeReferenceLatent": true
+  },
+  "controlledRestarts": [
+    {
+      "at": 1795142643.8946364,
+      "reason": "own GPU text-encoder experiment remained busy near VRAM limit despite /interrupt; restore original CPU setting",
+      "before": {
+        "pid": 15336,
+        "args": [
+          "D:\\ComfyUI\\python_embeded\\python.exe",
+          "-s",
+          "ComfyUI\\main.py",
+          "--windows-standalone-build",
+          "--listen",
+          "127.0.0.1",
+          "--port",
+          "18188",
+          "--disable-auto-launch"
+        ],
+        "queue": {
+          "queue_running": [
+            [
+              807,
+              "06f1ce47-eaa6-4cf0-9f7d-ca85c57e4927",
+              {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-b21119677195824dc73d2adeffe9b622ed3843cc137515772ff9bcbb85fbc0e0.png"
+                  }
+                },
+                "2": {
+                  "class_type": "ImageCrop",
+                  "inputs": {
+                    "image": [
+                      "1",
+                      0
+                    ],
+                    "x": 0,
+                    "y": 0,
+                    "width": 960,
+                    "height": 960
+                  }
+                },
+                "3": {
+                  "class_type": "UNETLoader",
+                  "inputs": {
+                    "unet_name": "flux-2-klein-4b-fp8.safetensors",
+                    "weight_dtype": "default"
+                  }
+                },
+                "4": {
+                  "class_type": "CLIPLoader",
+                  "inputs": {
+                    "clip_name": "qwen_3_4b.safetensors",
+                    "type": "flux2",
+                    "device": "default"
+                  }
+                },
+                "5": {
+                  "class_type": "VAELoader",
+                  "inputs": {
+                    "vae_name": "flux2-vae.safetensors"
+                  }
+                },
+                "6": {
+                  "class_type": "VAEEncode",
+                  "inputs": {
+                    "pixels": [
+                      "2",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "7": {
+                  "class_type": "CLIPTextEncode",
+                  "inputs": {
+                    "clip": [
+                      "4",
+                      0
+                    ],
+                    "text": "Small brown/ivory mechanical sparrow with glossy dark beak/eyes, brown feather-shaped wing panels, ivory belly, orange clawed feet and exposed circular bronze shoulder/leg joints. One teal whistle pendant at front of brown neck strap. Two rusted metal tail vanes. Low oval gray/brown stone base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+                  }
+                },
+                "8": {
+                  "class_type": "ReferenceLatent",
+                  "inputs": {
+                    "conditioning": [
+                      "7",
+                      0
+                    ],
+                    "latent": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "9": {
+                  "class_type": "BasicGuider",
+                  "inputs": {
+                    "model": [
+                      "3",
+                      0
+                    ],
+                    "conditioning": [
+                      "8",
+                      0
+                    ]
+                  }
+                },
+                "10": {
+                  "class_type": "EmptyFlux2LatentImage",
+                  "inputs": {
+                    "width": 768,
+                    "height": 768,
+                    "batch_size": 1
+                  }
+                },
+                "11": {
+                  "class_type": "KSamplerSelect",
+                  "inputs": {
+                    "sampler_name": "euler"
+                  }
+                },
+                "12": {
+                  "class_type": "RandomNoise",
+                  "inputs": {
+                    "noise_seed": 2026112033
+                  }
+                },
+                "13": {
+                  "class_type": "Flux2Scheduler",
+                  "inputs": {
+                    "steps": 4,
+                    "width": 768,
+                    "height": 768
+                  }
+                },
+                "14": {
+                  "class_type": "SamplerCustomAdvanced",
+                  "inputs": {
+                    "noise": [
+                      "12",
+                      0
+                    ],
+                    "guider": [
+                      "9",
+                      0
+                    ],
+                    "sampler": [
+                      "11",
+                      0
+                    ],
+                    "sigmas": [
+                      "13",
+                      0
+                    ],
+                    "latent_image": [
+                      "10",
+                      0
+                    ]
+                  }
+                },
+                "15": {
+                  "class_type": "VAEDecode",
+                  "inputs": {
+                    "samples": [
+                      "14",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "20": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "15",
+                      0
+                    ],
+                    "filename_prefix": "figura/8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561"
+                  }
+                }
+              },
+              {
+                "figuraRunId": "8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561",
+                "client_id": "8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561",
+                "create_time": 1795142259722
+              },
+              [
+                "20"
+              ]
+            ]
+          ],
+          "queue_pending": [
+            [
+              808,
+              "7819a03f-f2d3-4438-8a98-2dbedce4d1d5",
+              {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-7581c59260c6a55a76a5e553779c839e2fb5faa2edcfd491eee51d1f4a4fc8ac.png"
+                  }
+                },
+                "2": {
+                  "class_type": "ImageCrop",
+                  "inputs": {
+                    "image": [
+                      "1",
+                      0
+                    ],
+                    "x": 0,
+                    "y": 0,
+                    "width": 960,
+                    "height": 960
+                  }
+                },
+                "3": {
+                  "class_type": "UNETLoader",
+                  "inputs": {
+                    "unet_name": "flux-2-klein-4b-fp8.safetensors",
+                    "weight_dtype": "default"
+                  }
+                },
+                "4": {
+                  "class_type": "CLIPLoader",
+                  "inputs": {
+                    "clip_name": "qwen_3_4b.safetensors",
+                    "type": "flux2",
+                    "device": "cpu"
+                  }
+                },
+                "5": {
+                  "class_type": "VAELoader",
+                  "inputs": {
+                    "vae_name": "flux2-vae.safetensors"
+                  }
+                },
+                "6": {
+                  "class_type": "VAEEncode",
+                  "inputs": {
+                    "pixels": [
+                      "2",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "7": {
+                  "class_type": "CLIPTextEncode",
+                  "inputs": {
+                    "clip": [
+                      "4",
+                      0
+                    ],
+                    "text": "Stocky ivory shaggy ram with brown hooves, pale face and two large curled green/cream marbled horns. Copper patterned collar and one oval green gemstone pendant at chest. Stands on irregular dark gray/amber veined rock pedestal. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. View the same fixed miniature from its BACK at 180 degrees. Continue layered ivory fleece across back and haunches, same paired curled marbled horns. Collar back has plain matching copper pattern; pendant remains only at front. No added saddle, pack or ornaments; same irregular veined rock base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+                  }
+                },
+                "8": {
+                  "class_type": "ReferenceLatent",
+                  "inputs": {
+                    "conditioning": [
+                      "7",
+                      0
+                    ],
+                    "latent": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "9": {
+                  "class_type": "BasicGuider",
+                  "inputs": {
+                    "model": [
+                      "3",
+                      0
+                    ],
+                    "conditioning": [
+                      "8",
+                      0
+                    ]
+                  }
+                },
+                "10": {
+                  "class_type": "EmptyFlux2LatentImage",
+                  "inputs": {
+                    "width": 768,
+                    "height": 768,
+                    "batch_size": 1
+                  }
+                },
+                "11": {
+                  "class_type": "KSamplerSelect",
+                  "inputs": {
+                    "sampler_name": "euler"
+                  }
+                },
+                "12": {
+                  "class_type": "RandomNoise",
+                  "inputs": {
+                    "noise_seed": 2026112035
+                  }
+                },
+                "13": {
+                  "class_type": "Flux2Scheduler",
+                  "inputs": {
+                    "steps": 4,
+                    "width": 768,
+                    "height": 768
+                  }
+                },
+                "14": {
+                  "class_type": "SamplerCustomAdvanced",
+                  "inputs": {
+                    "noise": [
+                      "12",
+                      0
+                    ],
+                    "guider": [
+                      "9",
+                      0
+                    ],
+                    "sampler": [
+                      "11",
+                      0
+                    ],
+                    "sigmas": [
+                      "13",
+                      0
+                    ],
+                    "latent_image": [
+                      "10",
+                      0
+                    ]
+                  }
+                },
+                "15": {
+                  "class_type": "VAEDecode",
+                  "inputs": {
+                    "samples": [
+                      "14",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "20": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "15",
+                      0
+                    ],
+                    "filename_prefix": "figura/95344b7a214cae5b40a940ab915d5fc0819a2373b5c120558f53cb2507412dea"
+                  }
+                }
+              },
+              {
+                "figuraRunId": "95344b7a214cae5b40a940ab915d5fc0819a2373b5c120558f53cb2507412dea",
+                "client_id": "95344b7a214cae5b40a940ab915d5fc0819a2373b5c120558f53cb2507412dea",
+                "create_time": 1795142301957
+              },
+              [
+                "20"
+              ]
+            ]
+          ]
+        },
+        "system": {
+          "system": {
+            "os": "win32",
+            "ram_total": 34134056960,
+            "ram_free": 14216306688,
+            "comfyui_version": "0.27.0",
+            "required_frontend_version": "1.45.20",
+            "installed_templates_version": "0.11.1",
+            "required_templates_version": "0.11.1",
+            "comfy_package_versions": [
+              {
+                "name": "comfyui-frontend-package",
+                "installed": "1.45.20",
+                "required": "1.45.20"
+              },
+              {
+                "name": "comfyui-workflow-templates",
+                "installed": "0.11.1",
+                "required": "0.11.1"
+              },
+              {
+                "name": "comfyui-embedded-docs",
+                "installed": "0.5.6",
+                "required": "0.5.6"
+              },
+              {
+                "name": "comfy-kitchen",
+                "installed": "0.2.16",
+                "required": "0.2.16"
+              },
+              {
+                "name": "comfy-aimdo",
+                "installed": "0.4.10",
+                "required": "0.4.10"
+              }
+            ],
+            "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+            "pytorch_version": "2.12.0+cu130",
+            "embedded_python": true,
+            "deploy_environment": "local-portable",
+            "argv": [
+              "ComfyUI\\main.py",
+              "--windows-standalone-build",
+              "--listen",
+              "127.0.0.1",
+              "--port",
+              "18188",
+              "--disable-auto-launch"
+            ]
+          },
+          "devices": [
+            {
+              "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+              "type": "cuda",
+              "index": 0,
+              "vram_total": 12884377600,
+              "vram_free": 1185074664,
+              "torch_vram_total": 402653184,
+              "torch_vram_free": 356130280
+            }
+          ]
+        }
+      },
+      "after": {
+        "at": 1795142682.3233685,
+        "pid": 25128,
+        "system": {
+          "system": {
+            "os": "win32",
+            "ram_total": 34134056960,
+            "ram_free": 14049918976,
+            "comfyui_version": "0.27.0",
+            "required_frontend_version": "1.45.20",
+            "installed_templates_version": "0.11.1",
+            "required_templates_version": "0.11.1",
+            "comfy_package_versions": [
+              {
+                "name": "comfyui-frontend-package",
+                "installed": "1.45.20",
+                "required": "1.45.20"
+              },
+              {
+                "name": "comfyui-workflow-templates",
+                "installed": "0.11.1",
+                "required": "0.11.1"
+              },
+              {
+                "name": "comfyui-embedded-docs",
+                "installed": "0.5.6",
+                "required": "0.5.6"
+              },
+              {
+                "name": "comfy-kitchen",
+                "installed": "0.2.16",
+                "required": "0.2.16"
+              },
+              {
+                "name": "comfy-aimdo",
+                "installed": "0.4.10",
+                "required": "0.4.10"
+              }
+            ],
+            "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+            "pytorch_version": "2.12.0+cu130",
+            "embedded_python": true,
+            "deploy_environment": "local-portable",
+            "argv": [
+              "ComfyUI\\main.py",
+              "--windows-standalone-build",
+              "--listen",
+              "127.0.0.1",
+              "--port",
+              "18188",
+              "--disable-auto-launch"
+            ]
+          },
+          "devices": [
+            {
+              "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+              "type": "cuda",
+              "index": 0,
+              "vram_total": 12884377600,
+              "vram_free": 11639193600,
+              "torch_vram_total": 0,
+              "torch_vram_free": 0
+            }
+          ]
+        },
+        "resubmittedKnownUnexecutedPrompt": "b20a2bac-2ae7-48ee-b93c-f40e925152f8"
+      }
+    }
+  ],
+  "performanceExperiment": {
+    "runId": "8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561",
+    "change": "CLIPLoader device default instead of cpu, same models and reference",
+    "result": "stalled near VRAM limit, /interrupt did not return, controlled restart; no output adopted",
+    "observedGpuUsedMiB": 11153,
+    "oomReported": false,
+    "productionSetting": "restored CLIPLoader cpu",
+    "note": "Queued product job was confirmed never running before restart; exact workflow resubmitted with old/new prompt IDs retained"
   }
 }

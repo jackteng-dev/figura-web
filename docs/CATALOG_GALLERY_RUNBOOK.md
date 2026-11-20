@@ -36,13 +36,15 @@
 
 `generate` 會重用已知 run ID／已完成輸出，`complete／pass／reject` 不重產。只有明確 `retry` 才為退回角度改 seed／提示並保留舊嘗試。已知 prompt ID 可恢復 polling；提交結果未知且無 ID 時，仍沿用原 runner 的停止盲重送規則。不要重新 snapshot 或覆寫 master 來假裝續跑。
 
+本輪已在 33 款側／背各兩次及三款額外 Base 側視試驗中確認持續身份漂移，因此停止擴大無效的新角度生成。manifest 的 `angleProductionPolicy` 保存依據；後續尚未生成的 59 款 ANGLE／REAR 明確標記 `blank`、`attempted: false`，理由是目前流程一致性未達標，不冒稱這些商品已有失敗候選。已產生的候選仍逐張退回、重試並保存原因。這些空位需要後續有效方法，不代表每款六張已補滿。
+
 原始 master、輸出 PNG、完整工作流執行紀錄、日誌與比較 contact sheets 均在忽略的 `work/`。Git 只保存 manifest、設定、腳本、文件及 [六圖位比較頁](catalog-gallery-comparison.html)。比較頁需在此本機工作目錄開啟，clone 不包含原始圖片；不能把未提供的 work 檔案說成可從 Git 還原。
 
 本機商品頁預覽：`http://127.0.0.1:15181/shop`，對應指定 19092 demo API。`verify_catalog_gallery.mjs` 對既有商品做唯讀的桌面／手機圖庫檢查，不建立或發布測試商品。實際結果須以 `verification/` 的當輪報告為準。
 
 ## 新增模型
 
-[2026-11-20 環境紀錄](verification/comfyui-environment-2026-11-20.json)：新增作者官方 `ZhengPeng7/BiRefNet`（MIT，444,473,596 bytes）及 `black-forest-labs/FLUX.2-klein-base-4b-fp8`（Apache-2.0，4,089,498,488 bytes）。均先核對商用授權／空間，再以固定 revision 下載並核對官方 LFS SHA-256。只使用既有 core 節點，無新 custom node、無重啟、無覆寫使用者 workflow／模型。既有 distilled Klein 4B FP8、Qwen 3 4B、Flux2 VAE 延用前輪盤點。所有服務僅 loopback。
+[2026-11-20 環境紀錄](verification/comfyui-environment-2026-11-20.json)：新增作者官方 `ZhengPeng7/BiRefNet`（MIT，444,473,596 bytes）及 `black-forest-labs/FLUX.2-klein-base-4b-fp8`（Apache-2.0，4,089,498,488 bytes）。均先核對商用授權／空間，再以固定 revision 下載並核對官方 LFS SHA-256。只使用既有 core 節點，無新 custom node、無覆寫使用者 workflow／模型。新增模型不需重啟；其後一次 GPU 文字編碼效能試驗在約 11.1GB 顯存占用下停滯，中止未返回，已記錄受控重啟前後狀態並恢復 CPU 文字編碼；未終止其他 GPU 程式。既有 distilled Klein 4B FP8、Qwen 3 4B、Flux2 VAE 延用前輪盤點。所有服務僅 loopback。
 
 額外 Base 試驗沿用已安裝官方 `image_flux2_klein_image_edit_4b_base.json` 的 20 steps／CFG5，以及正／負 conditioning 均接同一 ReferenceLatent。三款各一張側視仍未達角色右 90 度，且有塗裝／配件或底座變化，全部退回；沒有把 4-step distilled 設定誤用於未蒸餾模型，也沒有把失敗試驗擴大為 Base 全庫重產。
 
