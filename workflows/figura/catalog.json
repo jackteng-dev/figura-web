@@ -5173,21 +5173,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a joyful beige ceramic creature with green round horns seated inside a corn-colored pod-shaped rocker on a pale plum disk. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Smiling ivory baby ram with closed eyes, pink cheeks/paw pads, paired curled green horns, green forehead leaves and leaf collar. Both forepaws raised, hindfeet forward. Sits inside a bright yellow corn-husk cradle with sculpted kernels and curling green leaf sides, all on one low lavender circular plinth.",
+      "rearDesign": "Continue ivory back, same paired green horns and leaf collar. Preserve both raised paws, original corn-kernel cradle and curled green husk sides; do not add a tail, leaf or second cradle. Same lavender round base and seated pose.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a joyful beige ceramic creature with green round horns seated inside a corn-colored pod-shaped rocker on a pale plum disk. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Smiling ivory baby ram with closed eyes, pink cheeks/paw pads, paired curled green horns, green forehead leaves and leaf collar. Both forepaws raised, hindfeet forward. Sits inside a bright yellow corn-husk cradle with sculpted kernels and curling green leaf sides, all on one low lavender circular plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
-          480,
-          480
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -5209,7 +5209,7 @@
         "mode": "flux-reference",
         "seed": 2026112094,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory back, same paired green horns and leaf collar. Preserve both raised paws, original corn-kernel cradle and curled green husk sides; do not add a tail, leaf or second cradle. Same lavender round base and seated pose. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5765,21 +5765,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an ochre otter vinyl toy holding a porcelain plate with mint check pattern and short gold front paws on a peach round base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Upright golden brown otter with small round ears, black eyes/nose, pale muzzle/whiskers, long brown tail curved behind and gold mitt-like paws/toenails. Both hands hold one round ivory plate with mint checkerboard face and gold botanical rim. Low apricot circular plinth with white/gold leafy rim.",
+      "rearDesign": "Continue golden brown sculpted fur and one curved tail behind. Plate remains one and held at front with the same two gold paws; no additional plate, clothing or ornaments. Same apricot botanical circular base and foot spacing.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an ochre otter vinyl toy holding a porcelain plate with mint check pattern and short gold front paws on a peach round base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Upright golden brown otter with small round ears, black eyes/nose, pale muzzle/whiskers, long brown tail curved behind and gold mitt-like paws/toenails. Both hands hold one round ivory plate with mint checkerboard face and gold botanical rim. Low apricot circular plinth with white/gold leafy rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
-          480,
-          480
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -5801,7 +5801,7 @@
         "mode": "flux-reference",
         "seed": 2026112095,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue golden brown sculpted fur and one curved tail behind. Plate remains one and held at front with the same two gold paws; no additional plate, clothing or ornaments. Same apricot botanical circular base and foot spacing. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
