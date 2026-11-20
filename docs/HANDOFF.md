@@ -1,5 +1,18 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-20：全目錄 2D 圖組批次處理（進行中）
+
+分支 `codex/comfyui-product-gallery`。本機 19092 API 原先沒有服務；以既有圖庫分支 `73c2606`、JDK 21、私有 `work/demo.env` 重新 package／啟動，只連 `13306/figura_shop_demo`、17379 Redis、18333 SeaweedFS；V24 已套用本機 demo。未連正式 DB、未改後端來源或正式部署。
+
+- 本機公開 API 共 99 筆，95 筆原創虛構商品納入；4 筆 App 串接合成資料排除。快照、每件六圖位狀態、master SHA、固定背面提案、退回原因、上傳 UUID／版本與公開讀回記錄在 `docs/verification/catalog-gallery-manifest.json`。
+- 已完成 3 件試點及首批 10 件：各保留原主圖，新增 FACE／DETAIL／SCENE，已寫入並讀回本機圖庫。側／背均嘗試兩次，仍有硬性漂移，退回不上傳。其餘 82 件尚待處理；不能把目前進度寫成全庫完成。作者簽核一律 pending。
+- 延用原 `comfyui_figura.py`／crop／Flux reference，新增 `catalog_gallery.py` 做續跑調度。特寫不放大並與 ComfyUI PyAV 解碼裁切逐像素核對；情境以二值前景遮罩保留原雕塑合成展示台。修正 005 底座半透明、Windows 暫時檔案鎖及上傳例外後過早復刊造成版本過期；已核對無對應 audit 的 409，保存舊 UUID 記錄後續跑，未重複新增圖片。
+- 僅新增官方 BiRefNet MIT 權重 444,473,596 bytes，來源、revision、SHA-256 與授權全文見 `docs/verification/comfyui-environment-2026-11-20.json`；無新 custom node、無 ComfyUI 重啟、無修改既有模型或使用者 workflow，無 3D／360。
+- `ProductCover`／`ProductGallery` 顯示 AI 生成示意圖 alt 與可讀說明。新原始圖片全在忽略的 work，未改 src/assets。比較頁 `docs/catalog-gallery-comparison.html`、續跑說明 `docs/CATALOG_GALLERY_RUNBOOK.md`。
+- 驗證：Maven package 324 tests，46 pass／278 opt-in skip，0 failure/error；Python 原 runner 5 checks、新圖庫安全 gate 3 checks 通過；Web production build 通過。Chrome 在此受限 Windows 帳戶需專用 profile／headless no-sandbox，001 的 1440／390px 四圖切換、AI 標示、放大／焦點及不溢出已通過；全庫瀏覽器驗收尚未執行。ComfyUI 推論未發生 OOM；Chrome 原 sandbox GPU 子程序啟動被拒不等於推論顯存不足。
+- 保存限制：試點本機 commit `91f7797`。Git push 缺少可用憑證，GitHub 寫入工具被 `approval policy: never` 阻擋；既有 Web PR #22 尚未更新本輪後續進度。不得宣稱 push 成功或另開 PR 成功，不 merge main。
+
+
 ## 2026-11-19：ComfyUI 本機流程與商品多圖（未合併／未部署）
 
 分支 `codex/comfyui-product-gallery`，起點 `ba2ceed`（PR #21 已合併）。配對 API 分支 `codex/product-gallery`／V24。交付為 PR，**本輪不 merge、不部署、不改正式 DB**。未改 `package-lock.json`、`src/assets/`，無 Web CD 受保護檔變更。

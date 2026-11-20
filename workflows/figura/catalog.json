@@ -1000,15 +1000,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112003,
+        "seed": 2026212003,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112003,
+        "seed": 2026212003,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1480,15 +1480,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112004,
+        "seed": 2026212004,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112004,
+        "seed": 2026212004,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Wing backs continue the same purple and gold floral triangular paint pattern, same wing count and contours. Plain layered golden tufts on back, no new pockets, objects or antennae. Preserve the original round base decorations. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Wing backs continue the same purple and gold floral triangular paint pattern, same wing count and contours. Plain layered golden tufts on back, no new pockets, objects or antennae. Preserve the original round base decorations. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1960,15 +1960,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112005,
+        "seed": 2026212005,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112005,
+        "seed": 2026212005,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Rear stays one cream circular turbine in the lime hull, same cork fins, no second cockpit. Preserve all three side portholes per the observed side, same support position and circular lilac plinth; hidden hull is plain lime speckle. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Rear stays one cream circular turbine in the lime hull, same cork fins, no second cockpit. Preserve all three side portholes per the observed side, same support position and circular lilac plinth; hidden hull is plain lime speckle. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2440,15 +2440,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112006,
+        "seed": 2026212006,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112006,
+        "seed": 2026212006,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Back continues plain red sculpted feathers and same short red tail; preserve megaphone on anatomical left and open right wing. No extra harness or ornaments. Same apricot floral base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Back continues plain red sculpted feathers and same short red tail; preserve megaphone on anatomical left and open right wing. No extra harness or ornaments. Same apricot floral base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2920,15 +2920,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112007,
+        "seed": 2026212007,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112007,
+        "seed": 2026212007,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue pink coat with central seam and plain back, no new pockets or belt. Satchel strap goes from left shoulder to right hip; terrarium remains held in front. Green cap and brown curls continue as observed; same planted circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue pink coat with central seam and plain back, no new pockets or belt. Satchel strap goes from left shoulder to right hip; terrarium remains held in front. Green cap and brown curls continue as observed; same planted circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3400,15 +3400,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112008,
+        "seed": 2026212008,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112008,
+        "seed": 2026212008,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Retain exactly the same parcel backpack, tan frame and green boxes, no new pack. Continue mechanical ivory joints and lime panels behind limbs, same beacon and block feet. Wooden round plinth unchanged. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Retain exactly the same parcel backpack, tan frame and green boxes, no new pack. Continue mechanical ivory joints and lime panels behind limbs, same beacon and block feet. Wooden round plinth unchanged. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3880,15 +3880,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112009,
+        "seed": 2026212009,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112009,
+        "seed": 2026212009,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Keep exactly three cargo domes in a row, same fruits and latches. Rear of chassis is plain purple with matching gold trim; no additional pods, wheels or legs. Six legs and elongated rail base unchanged. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Keep exactly three cargo domes in a row, same fruits and latches. Rear of chassis is plain purple with matching gold trim; no additional pods, wheels or legs. Six legs and elongated rail base unchanged. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4360,15 +4360,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112010,
+        "seed": 2026212010,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112010,
+        "seed": 2026212010,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered ivory/brown back feathers, no added wings or tail length. Crossbody strap continues from left shoulder to right bag; parcel stack remains at anatomical left. Same round base and gold rim. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered ivory/brown back feathers, no added wings or tail length. Crossbody strap continues from left shoulder to right bag; parcel stack remains at anatomical left. Same round base and gold rim. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4840,15 +4840,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112011,
+        "seed": 2026212011,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112011,
+        "seed": 2026212011,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue clusters of purple berry lobes around back; gray goggle strap around crown under same green leaf. Keep exact running pose, one planted teal sneaker, same arms and rough circular base. No backpack or new props. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue clusters of purple berry lobes around back; gray goggle strap around crown under same green leaf. Keep exact running pose, one planted teal sneaker, same arms and rough circular base. No backpack or new props. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5320,15 +5320,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112012,
+        "seed": 2026212012,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112012,
+        "seed": 2026212012,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
       },
       "scene": {
         "mode": "scene-composite",

@@ -370,25 +370,162 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍把燈架與尾巴分成兩條結構，後背飾件及尾部接點不同；兩次退回，側背圖庫留空。",
+          "runId": "17bba73e9417d2d12b4086a0ec2d9c0ebcdb6ae7e1ee7a68c1ebb24fc1631539",
+          "sha256": "29656b60737f4eb8f552696b9241cd9d5f820879daec70340584aa9b8694a543",
+          "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+          "path": "work/comfyui-figura/runs/17bba73e9417d2d12b4086a0ec2d9c0ebcdb6ae7e1ee7a68c1ebb24fc1631539/output.png",
+          "reviewedAt": 1795138757.2708714
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍把燈架與尾巴分成兩條結構，後背飾件及尾部接點不同；兩次退回，側背圖庫留空。",
+          "runId": "240b2c1983ccb863d6f5a47f53e04c62a02e3a2738b82de9f58fcf5f77194c6c",
+          "sha256": "53a6b1b8789969ce210327611d996e131758655dca94c49849896eb9a25752bc",
+          "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+          "path": "work/comfyui-figura/runs/240b2c1983ccb863d6f5a47f53e04c62a02e3a2738b82de9f58fcf5f77194c6c/output.png",
+          "reviewedAt": 1795138757.285014
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "51a5f3cf9a9ab7c244f3763ca850c7c2caee48a37004203109c2f2269b10132f",
+          "sha256": "e07dc954eedf5acec1fe1b47aa186225cf68cb2b9d7714bd0770cc6047ba2dcc",
+          "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+          "path": "work/comfyui-figura/runs/51a5f3cf9a9ab7c244f3763ca850c7c2caee48a37004203109c2f2269b10132f/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 500,
+            "height": 500,
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12"
+          },
+          "reviewedAt": 1795138162.7098765,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "94215fc2-b673-49e2-a93e-4b6e649578d4",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "杏燈巡夜貓，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "e07dc954eedf5acec1fe1b47aa186225cf68cb2b9d7714bd0770cc6047ba2dcc",
+            "imageId": "77dd8186-3709-4947-bcc3-d96a5a300d34",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/77dd8186-3709-4947-bcc3-d96a5a300d34",
+            "servedSha256": "e6e6befa95a3e290508bb627cbfa38d732bf64be99e6896338fbce878cc99700",
+            "verifiedAt": 1795138759.0904384
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "f9558a227b0ea2456b066b13fc8685d47e3ab874dc20941bf754ad53507339f2",
+          "sha256": "a4d738e1cbe5f1de4221e7b1d8d78312be2191c90548d9b01ce4674850bc5952",
+          "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+          "path": "work/comfyui-figura/runs/f9558a227b0ea2456b066b13fc8685d47e3ab874dc20941bf754ad53507339f2/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12"
+          },
+          "reviewedAt": 1795138162.7358148,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "5bc60cc5-83d2-4f78-8ad6-48590cdb4675",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "杏燈巡夜貓，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "a4d738e1cbe5f1de4221e7b1d8d78312be2191c90548d9b01ce4674850bc5952",
+            "imageId": "bd77c547-9e38-48a0-a2cb-ea1796cbdb89",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/bd77c547-9e38-48a0-a2cb-ea1796cbdb89",
+            "servedSha256": "eba2c60f17f5cd29da17af065640a709f0a578c30df6019b61d32155bafa07b7",
+            "verifiedAt": 1795138759.129398
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "ec0581372107a4b2ef7cbe92dcc2a4a9263a1c26da95f7e6bc951e06ac9f89e1",
+          "sha256": "bf600b70b35fa8296e1f8d4119c9c9b634bf41cb22b95ea32714e2ed3b53bbef",
+          "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+          "path": "work/comfyui-figura/runs/ec0581372107a4b2ef7cbe92dcc2a4a9263a1c26da95f7e6bc951e06ac9f89e1/output.png",
+          "reviewedAt": 1795138162.750139,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "103db342-7559-4437-891f-c6fcc9cbd591",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "杏燈巡夜貓，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "bf600b70b35fa8296e1f8d4119c9c9b634bf41cb22b95ea32714e2ed3b53bbef",
+            "imageId": "7d9b3574-0c7c-4d3c-bbf5-024d418f48cd",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/7d9b3574-0c7c-4d3c-bbf5-024d418f48cd",
+            "servedSha256": "46baa3abab0aba29e4d0493e7a72422e16343636c16ec157f0463299ce80a915",
+            "verifiedAt": 1795138759.1593564
+          }
         }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "2fa48ac128d9ba142f0fb2b7b993aecb3d0d17a7d7eed23871f70b7a7bd5ff6a",
+            "sha256": "bbbc3217b8f72c648a68dd6cf58ba02f249ae1d41db9be2161e9611ba32c10f0",
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+            "path": "work/comfyui-figura/runs/2fa48ac128d9ba142f0fb2b7b993aecb3d0d17a7d7eed23871f70b7a7bd5ff6a/output.png"
+          },
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "9bf57e44709ef4f220b5c4b9088a5fbd56faf615d88247745975819352e92798",
+            "sha256": "64f648b49413be34c3975d4686f5544694a054d0ed68fe8441b2f1627a8a6463",
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+            "path": "work/comfyui-figura/runs/9bf57e44709ef4f220b5c4b9088a5fbd56faf615d88247745975819352e92798/output.png"
+          }
+        ],
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面憑空出現兩條尾巴，後背肩飾消失、金色花紋改位；身份漂移，退回重產。",
+            "runId": "a7a8613bce09c1ef53f3879f8a13011b89866014e09f9a578c4c50ff23e8e2a4",
+            "sha256": "73639cac0e73041402cf9de02e4be5add22c150682b06c74551d7fc40224885a",
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+            "path": "work/comfyui-figura/runs/a7a8613bce09c1ef53f3879f8a13011b89866014e09f9a578c4c50ff23e8e2a4/output.png",
+            "reviewedAt": 1795138162.5389085
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面憑空出現兩條尾巴，後背肩飾消失、金色花紋改位；身份漂移，退回重產。",
+            "runId": "8e8137f7565da7e455ccb3d7bb15634fd2fc3bf9f77b09f6f49e167da99b3340",
+            "sha256": "2854bbf2011e1d5f925db3af2a9b2e1ed57e281c73e603b856b0dfaf15776921",
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+            "path": "work/comfyui-figura/runs/8e8137f7565da7e455ccb3d7bb15634fd2fc3bf9f77b09f6f49e167da99b3340/output.png",
+            "reviewedAt": 1795138162.5512607
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored"
       }
     },
     {
@@ -418,25 +555,162 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍重排紫金翼面花紋、毛簇與底座裝飾；無法證實同一雕塑／塗裝，兩次退回，側背留空。",
+          "runId": "fdfd873bad8d5ad816fa9e0101ac2e482370b4144cd3a25c6439ef38534ed3dc",
+          "sha256": "f83d90309638d7546f882594a513d084120d166bff88d8d8835e4f6d907dc3e3",
+          "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+          "path": "work/comfyui-figura/runs/fdfd873bad8d5ad816fa9e0101ac2e482370b4144cd3a25c6439ef38534ed3dc/output.png",
+          "reviewedAt": 1795138757.2990482
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍重排紫金翼面花紋、毛簇與底座裝飾；無法證實同一雕塑／塗裝，兩次退回，側背留空。",
+          "runId": "987f6ca9e2b085090b96601d2d4278b8032722e518bca54cf4c729b15a33c67e",
+          "sha256": "4bebc33a91664fe77152b704aa5c02283fb03980e820a6a486089fb4220d915d",
+          "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+          "path": "work/comfyui-figura/runs/987f6ca9e2b085090b96601d2d4278b8032722e518bca54cf4c729b15a33c67e/output.png",
+          "reviewedAt": 1795138757.3133922
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "c9b06be6346a49ee5d08341e9d71c52c9844614def9e73421b643fcfdc57a0e4",
+          "sha256": "9d142c41f6d5e646c96bedc5e242c21185b4b09c93d9e72a2ed966b13fed558f",
+          "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+          "path": "work/comfyui-figura/runs/c9b06be6346a49ee5d08341e9d71c52c9844614def9e73421b643fcfdc57a0e4/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51"
+          },
+          "reviewedAt": 1795138162.7975106,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "b95af4ba-b227-4c42-b596-f8a8b404234f",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "星蜜分揀手，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "9d142c41f6d5e646c96bedc5e242c21185b4b09c93d9e72a2ed966b13fed558f",
+            "imageId": "aaa00260-aa03-4254-9cb9-6c3c89a1c348",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/ef93150a-fc6d-452c-bf8b-3a533c1a0984/image/aaa00260-aa03-4254-9cb9-6c3c89a1c348",
+            "servedSha256": "15ec2640ca057815453aa9edb170f457125a4de82e302791464dadbc790b195a",
+            "verifiedAt": 1795138760.5319617
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "c6206fa99888d280458bacfa462abaec4d84f3ece7d310ce5b7e1bcd6766fb2f",
+          "sha256": "32552f982a19b1967e76f1f7f4bfdfb5f438f70c52e9b0d0bd72565b8fbf3087",
+          "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+          "path": "work/comfyui-figura/runs/c6206fa99888d280458bacfa462abaec4d84f3ece7d310ce5b7e1bcd6766fb2f/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51"
+          },
+          "reviewedAt": 1795138162.824878,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8a9900f8-69a1-4c58-85c6-a3330df15824",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "星蜜分揀手，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "32552f982a19b1967e76f1f7f4bfdfb5f438f70c52e9b0d0bd72565b8fbf3087",
+            "imageId": "1abd38cd-0499-430f-bff8-d96abf7cd090",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/ef93150a-fc6d-452c-bf8b-3a533c1a0984/image/1abd38cd-0499-430f-bff8-d96abf7cd090",
+            "servedSha256": "ecb7a9765057a41f5217a53759e9b72916f6449c5e9068835ae2cf8249fcc0b5",
+            "verifiedAt": 1795138760.551303
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "532be3023147b3f8dd02ada5f9b45374e08ba852b70945fe6d60b829a29250bd",
+          "sha256": "6d162f461b616ad8cd1dc74d95969dfd698c0db8a13075a5760221a5109f8788",
+          "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+          "path": "work/comfyui-figura/runs/532be3023147b3f8dd02ada5f9b45374e08ba852b70945fe6d60b829a29250bd/output.png",
+          "reviewedAt": 1795138162.8391507,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "965511bc-8599-4011-b6ff-7fa58801395d",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "星蜜分揀手，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "6d162f461b616ad8cd1dc74d95969dfd698c0db8a13075a5760221a5109f8788",
+            "imageId": "94c603b3-185f-483a-ac0a-31fb9bdffc0d",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/ef93150a-fc6d-452c-bf8b-3a533c1a0984/image/94c603b3-185f-483a-ac0a-31fb9bdffc0d",
+            "servedSha256": "3e3583b68af6bc20648d9ce64c438955dd3e106eedb68cbb8936f82bdbb61132",
+            "verifiedAt": 1795138760.5874875
+          }
         }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "c335ae3bea7f1fc2aa26b50a5bb09be004d93d63c6fd1ffa888795257cde5b48",
+            "sha256": "5470a4d307b4a18bf360c8eadb131554542dd3e60009e94126f1c5c425a37d0e",
+            "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+            "path": "work/comfyui-figura/runs/c335ae3bea7f1fc2aa26b50a5bb09be004d93d63c6fd1ffa888795257cde5b48/output.png"
+          },
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "9da41ebc77a07767a6f864378e1822c2a3580637d576fef7a345ce7319affb44",
+            "sha256": "9934c46ac21452db9f5014dd078f0a0a47b5a9ee179f54a7ccf63ab1f43a0a51",
+            "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+            "path": "work/comfyui-figura/runs/9da41ebc77a07767a6f864378e1822c2a3580637d576fef7a345ce7319affb44/output.png"
+          }
+        ],
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側背的翅膀花紋、毛簇分層與底座三角紋重新排列；不是同一塗裝雕塑，退回重產。",
+            "runId": "f8da641794f88006b4444270b336316d3bb0d2d682cf02c78a1121d08a90e438",
+            "sha256": "f37fbf0f1615dafa20ac38423f229585903e896e158659eb66edf8265b23d46e",
+            "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+            "path": "work/comfyui-figura/runs/f8da641794f88006b4444270b336316d3bb0d2d682cf02c78a1121d08a90e438/output.png",
+            "reviewedAt": 1795138162.7614295
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側背的翅膀花紋、毛簇分層與底座三角紋重新排列；不是同一塗裝雕塑，退回重產。",
+            "runId": "72c385dce3e493f60d42fa7263a50979f70a871d7ade6e5528a17b0c3195ebe4",
+            "sha256": "561343b2ec20a6e27a86d37313cf7816ac21955ada8da91a9d8f0c6a11240b54",
+            "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
+            "path": "work/comfyui-figura/runs/72c385dce3e493f60d42fa7263a50979f70a871d7ade6e5528a17b0c3195ebe4/output.png",
+            "reviewedAt": 1795138162.7736087
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored"
       }
     },
     {
@@ -466,26 +740,180 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試機身比例、尾部結構、舷窗配置及底座月牙點位仍改變；兩次退回，側背圖庫留空。",
+          "runId": "efa9d52b117c0e84e1c96666f5df172cd16090e8b7e4b700bfd0c9de5c7b1076",
+          "sha256": "6cd7780a61713bcb031519df7f7898d8e953ffe3500d2e2c77bc458f9cf62013",
+          "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+          "path": "work/comfyui-figura/runs/efa9d52b117c0e84e1c96666f5df172cd16090e8b7e4b700bfd0c9de5c7b1076/output.png",
+          "reviewedAt": 1795138757.3247998
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試機身比例、尾部結構、舷窗配置及底座月牙點位仍改變；兩次退回，側背圖庫留空。",
+          "runId": "0d86df134492fda6129a5e0e484b062ca66000e6482bb60cb8670f5b3c526a72",
+          "sha256": "b2a39b00ffc2958ad4532dcef051bbc72c92be494378c412f43bd5735e1e6ea6",
+          "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+          "path": "work/comfyui-figura/runs/0d86df134492fda6129a5e0e484b062ca66000e6482bb60cb8670f5b3c526a72/output.png",
+          "reviewedAt": 1795138757.3371472
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "7522ec3c47fffa2e515e7177e759acbf31c3d633ec769fb0aa6f60ca78534716",
+          "sha256": "7ee25f045c5e78dbe3c31b1df7aa9dd62357ab752dcdc7c944ea2692d78fcf86",
+          "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+          "path": "work/comfyui-figura/runs/7522ec3c47fffa2e515e7177e759acbf31c3d633ec769fb0aa6f60ca78534716/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 500,
+            "height": 500,
+            "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55"
+          },
+          "reviewedAt": 1795138162.8907866,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "c0bd2467-cab3-46e2-9462-460422ba2fa7",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "斑柚快遞艇，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "7ee25f045c5e78dbe3c31b1df7aa9dd62357ab752dcdc7c944ea2692d78fcf86",
+            "imageId": "ed8c52ee-36d6-493b-84f1-76bb6b260e79",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/b9a49b0c-0a41-4768-b22a-dab44c05c510/image/ed8c52ee-36d6-493b-84f1-76bb6b260e79",
+            "servedSha256": "3136e4375321fa8b2b9b93965ac4d3851bc6c660dfb0fd4f45fda99fbe1240c6",
+            "verifiedAt": 1795138867.596175
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "12c737a1d3db43f4cdaa929830021cf3712d50188f031fb21732fd16401c6f93",
+          "sha256": "7aef68aad1f076361958f4293ca93b434c9364cb9444877f4d81b10eda5216c3",
+          "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+          "path": "work/comfyui-figura/runs/12c737a1d3db43f4cdaa929830021cf3712d50188f031fb21732fd16401c6f93/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55"
+          },
+          "reviewedAt": 1795138162.9142416,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "4818b744-0615-490c-ad60-710c8966af36",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "斑柚快遞艇，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "7aef68aad1f076361958f4293ca93b434c9364cb9444877f4d81b10eda5216c3",
+            "imageId": "e6af3f5d-acfa-43c0-b5a7-e452e5bb4ca4",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/b9a49b0c-0a41-4768-b22a-dab44c05c510/image/e6af3f5d-acfa-43c0-b5a7-e452e5bb4ca4",
+            "servedSha256": "8ed2bf7463a50d5cd0b19b2a6a69ad3344969e8d147df4ce7a25700fcd8d4f24",
+            "verifiedAt": 1795138867.6132681
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "3a8586839b4968a008f8691ba34e333caef91706e9f48ae51ea09a87c60f1937",
+          "sha256": "29594507bfa8680f3c969ab77e9c0b30fce77b25b876c74d9acd365509ef0994",
+          "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+          "path": "work/comfyui-figura/runs/3a8586839b4968a008f8691ba34e333caef91706e9f48ae51ea09a87c60f1937/output.png",
+          "reviewedAt": 1795138162.928085,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "176aa71e-747e-4b11-ba65-0a0ce9eca9bb",
+              "expectedVersion": 9,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "斑柚快遞艇，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "29594507bfa8680f3c969ab77e9c0b30fce77b25b876c74d9acd365509ef0994",
+            "imageId": "abc4744c-4f32-4d8e-9632-339f03c82e94",
+            "version": 10,
+            "publicUrl": "/api/catalog/products/b9a49b0c-0a41-4768-b22a-dab44c05c510/image/abc4744c-4f32-4d8e-9632-339f03c82e94",
+            "servedSha256": "7c8f4242f63b095787c51874f4c83aa9584d880ed98d6a5c9b127db27548c40d",
+            "verifiedAt": 1795138867.6420333
+          }
         }
-      }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "d3a8bf0a9de3ba97d9a957a1ac9d6d3a45b2f9f9c37fbfb05cacd7b110c08c34",
+            "sha256": "9862ffc55d15e852b5c6419dfc2ed049a2e2eb2f388138064074feb2ca52fcc3",
+            "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+            "path": "work/comfyui-figura/runs/d3a8bf0a9de3ba97d9a957a1ac9d6d3a45b2f9f9c37fbfb05cacd7b110c08c34/output.png"
+          },
+          {
+            "status": "reject",
+            "reason": "去背遮罩令原本不透明的奶油色底座半透明，露出櫃內木紋；不採用，改用閾值遮罩保留主體實心像素重做。",
+            "runId": "8a3cc7da7968d9f515d5a3db1371a87d58cb8357a68904ae635662fda0f36999",
+            "sha256": "e177448d908088da2f7d7a8c4a905ccb40d39165b793dda2624f936d9f760f46",
+            "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+            "path": "work/comfyui-figura/runs/8a3cc7da7968d9f515d5a3db1371a87d58cb8357a68904ae635662fda0f36999/output.png",
+            "reviewedAt": 1795137835.762445
+          }
+        ],
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面仍是前方三分之四、機身拉長；背面重設尾部風扇與側窗數量／底座月牙配置，退回重產。",
+            "runId": "9a160d1d37bfccf2aeb7aca2724b22eea9c220c74fd399f223649eb67e1ea2b8",
+            "sha256": "0365d08aafca58eb6ccb6feacc372076f44e2b61aa9e4dd785bf5ab76d70bbbe",
+            "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+            "path": "work/comfyui-figura/runs/9a160d1d37bfccf2aeb7aca2724b22eea9c220c74fd399f223649eb67e1ea2b8/output.png",
+            "reviewedAt": 1795138162.853298
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面仍是前方三分之四、機身拉長；背面重設尾部風扇與側窗數量／底座月牙配置，退回重產。",
+            "runId": "a3c6bf65334087ca97b3357abc23d479bbeeba5663cd2032716d8996f906bde8",
+            "sha256": "1049a265c033770214fbb64bdfe58c7a1a18f272829b5673aedb6fad5a11990d",
+            "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
+            "path": "work/comfyui-figura/runs/a3c6bf65334087ca97b3357abc23d479bbeeba5663cd2032716d8996f906bde8/output.png",
+            "reviewedAt": 1795138162.8664887
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 8
+      },
+      "uploadAttempts": [
+        {
+          "status": "confirmed_not_committed",
+          "request": {
+            "requestId": "096668de-e998-4a31-a536-5ba2432f7ada",
+            "expectedVersion": 4,
+            "expectedActorId": 1,
+            "operation": "ADD",
+            "type": "DETAIL",
+            "alt": "斑柚快遞艇，AI 生成示意圖，DETAIL；非實物攝影"
+          },
+          "sourceSha256": "7aef68aad1f076361958f4293ca93b434c9364cb9444877f4d81b10eda5216c3",
+          "reason": "Received definitive 409 after our restoration changed the version; admin gallery audit confirms this UUID has no event and DETAIL is absent. Renew at the next draft version."
+        }
+      ]
     },
     {
       "productKey": "FIGURA-AI-006",
@@ -514,25 +942,163 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動翼姿、喇叭形狀及底座花紋／色帶，身份不一致；兩次退回，側背留空。",
+          "runId": "6c52a54a6e6a8b4569960f2e52dfbd4f5ddf1bdef76123b45b0960f42725d269",
+          "sha256": "90b82116d0250a945a388c6820d2d62aee3e1d6af6e80d64fba212325c70fee5",
+          "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+          "path": "work/comfyui-figura/runs/6c52a54a6e6a8b4569960f2e52dfbd4f5ddf1bdef76123b45b0960f42725d269/output.png",
+          "reviewedAt": 1795138757.3485837
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動翼姿、喇叭形狀及底座花紋／色帶，身份不一致；兩次退回，側背留空。",
+          "runId": "144bc506f21d1ca88764e2caba2dbe884eaf0cf008314f55879ece1911246434",
+          "sha256": "3c47062afdd1c5928aef64c1efcceb90bc4093bc019378ac586ac27253980658",
+          "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+          "path": "work/comfyui-figura/runs/144bc506f21d1ca88764e2caba2dbe884eaf0cf008314f55879ece1911246434/output.png",
+          "reviewedAt": 1795138757.3602593
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "823bd3e7a92b5adf4e58cd7df691cac975ff2ba62dafee7b386efe4c11d28f81",
+          "sha256": "0014fac0a491fa614a9ecaf4a3d4efab2fbfe2f7bc9bcc5169b5a28af8177db3",
+          "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+          "path": "work/comfyui-figura/runs/823bd3e7a92b5adf4e58cd7df691cac975ff2ba62dafee7b386efe4c11d28f81/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 500,
+            "height": 500,
+            "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f"
+          },
+          "reviewedAt": 1795138162.9850857,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "96711c63-4734-4ae3-9557-e5acfde4e950",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "莓園傳聲鳥，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "0014fac0a491fa614a9ecaf4a3d4efab2fbfe2f7bc9bcc5169b5a28af8177db3",
+            "imageId": "d72dcf74-9f54-4bbf-9eb7-878fe0fff6e3",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/22deab78-2285-4033-b30a-6397339ab199/image/d72dcf74-9f54-4bbf-9eb7-878fe0fff6e3",
+            "servedSha256": "75ace83c46d8f0d6dadf8c9a63dd166106e87a0108c5a96e32b3072ea081ce04",
+            "verifiedAt": 1795138868.6851888
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "1ba5b6ed564d5f58fa56d0398662f6e0200b92f5e4d141443dc570e0fed436d4",
+          "sha256": "ae2b9d59b5affe5dc9b8364184a549c1670b4c42948dd1b341cf8b5ffd63dd2d",
+          "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+          "path": "work/comfyui-figura/runs/1ba5b6ed564d5f58fa56d0398662f6e0200b92f5e4d141443dc570e0fed436d4/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f"
+          },
+          "reviewedAt": 1795138163.0109134,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "24ea34f5-9839-4f63-b5be-e70964fb1d1a",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "莓園傳聲鳥，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "ae2b9d59b5affe5dc9b8364184a549c1670b4c42948dd1b341cf8b5ffd63dd2d",
+            "imageId": "a8afb736-11fa-438c-aac8-9a0976f5d64e",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/22deab78-2285-4033-b30a-6397339ab199/image/a8afb736-11fa-438c-aac8-9a0976f5d64e",
+            "servedSha256": "781c831b2154c9463a6cd4ec9f21db1c30810a1e24b9922b41bbb5744ed538eb",
+            "verifiedAt": 1795138868.6988456
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "be0835b0c11a9d66c45809918dfba7d67004e81510490090d610318d9961701b",
+          "sha256": "9c79f7ca6d0e176c3972489059c771f6fb2358649e7d2e79b8a50a44c0202a8e",
+          "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+          "path": "work/comfyui-figura/runs/be0835b0c11a9d66c45809918dfba7d67004e81510490090d610318d9961701b/output.png",
+          "reviewedAt": 1795138163.0259385,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "ce906b5b-a881-4c25-b22f-19cfbd218efb",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "莓園傳聲鳥，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "9c79f7ca6d0e176c3972489059c771f6fb2358649e7d2e79b8a50a44c0202a8e",
+            "imageId": "9636faa8-7c41-4fe8-a057-5890fc1a7879",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/22deab78-2285-4033-b30a-6397339ab199/image/9636faa8-7c41-4fe8-a057-5890fc1a7879",
+            "servedSha256": "52e6f5c0f68cc9d73d32d587db79d8b8d53a154e83665fc150177514bc891c1b",
+            "verifiedAt": 1795138868.72647
+          }
         }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "efb44079fb910560cd4f41de02afe2b2d6abfbced39b3f1b0acd6d8902d26967",
+            "sha256": "4af88c873e12636d77aa3ae1b003189b923228f74228949a073c772dfd9fcb0c",
+            "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+            "path": "work/comfyui-figura/runs/efb44079fb910560cd4f41de02afe2b2d6abfbced39b3f1b0acd6d8902d26967/output.png"
+          },
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "ceee24ea205665420bad2c057480c3bb9c92a44fde5be72bc2c4724add6a1b31",
+            "sha256": "36858544020197ed4f5573ebc1432c0860df5b012bccff469e5619d03ce2c189",
+            "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+            "path": "work/comfyui-figura/runs/ceee24ea205665420bad2c057480c3bb9c92a44fde5be72bc2c4724add6a1b31/output.png"
+          }
+        ],
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面底座色帶和花紋、翼部角度改變；背面翼姿與尾羽輪廓不符固定站姿，退回重產。",
+            "runId": "ccef479f575f37c1d8bb635470e863f121ef4a4d8439e937ee584e43c8db4e1f",
+            "sha256": "c7462dc0d27add5291b2bc62872c8ad0c283972bfec8b0c0136d8c0d83364085",
+            "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+            "path": "work/comfyui-figura/runs/ccef479f575f37c1d8bb635470e863f121ef4a4d8439e937ee584e43c8db4e1f/output.png",
+            "reviewedAt": 1795138162.9421613
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面底座色帶和花紋、翼部角度改變；背面翼姿與尾羽輪廓不符固定站姿，退回重產。",
+            "runId": "7e353d33f93b1658e52e85e776b663c8bc4b31f09ac7c7b2ff8f10c4ba7d3602",
+            "sha256": "d56d86f0d582cbd2c9c04793985406356a2d8ac2f4f570abdc526feb489eb328",
+            "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
+            "path": "work/comfyui-figura/runs/7e353d33f93b1658e52e85e776b663c8bc4b31f09ac7c7b2ff8f10c4ba7d3602/output.png",
+            "reviewedAt": 1795138162.957317
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -562,25 +1128,155 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試背面將原本右髖側包換至左髖，髮束與盆栽結構仍不同；兩次退回，側背圖庫留空。",
+          "runId": "675eda44c65f59a44127dd764598620a68c5bc24620f47c1b51aaf69b6d51368",
+          "sha256": "897f3b600a552055b045e97483b4e6c94a544c51132c1aa8ed6368447b9a3206",
+          "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+          "path": "work/comfyui-figura/runs/675eda44c65f59a44127dd764598620a68c5bc24620f47c1b51aaf69b6d51368/output.png",
+          "reviewedAt": 1795138757.3715608
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試背面將原本右髖側包換至左髖，髮束與盆栽結構仍不同；兩次退回，側背圖庫留空。",
+          "runId": "4a96b5609c48dc44e625e72818898485f6788f7683febe60923305f9ba4672db",
+          "sha256": "7d985640c764da3b681d7b9a00712d73b6a221a4073c9f02587c0c51651afb0e",
+          "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+          "path": "work/comfyui-figura/runs/4a96b5609c48dc44e625e72818898485f6788f7683febe60923305f9ba4672db/output.png",
+          "reviewedAt": 1795138757.3858523
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "065ce16ac6a1b3ee821eb9c27571ed9a2e05e770a0b614d40026a086c2465c0e",
+          "sha256": "a75d92075f7f23260faf047999799b07bec079c7b8abdd7753f18420a44515dc",
+          "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+          "path": "work/comfyui-figura/runs/065ce16ac6a1b3ee821eb9c27571ed9a2e05e770a0b614d40026a086c2465c0e/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322"
+          },
+          "reviewedAt": 1795138163.076085,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "49b8de05-a102-4d1c-922a-cefaba803f24",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "桃霧溫室匠，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "a75d92075f7f23260faf047999799b07bec079c7b8abdd7753f18420a44515dc",
+            "imageId": "56751cf5-72e9-452e-8ba9-6b069b671c73",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/607d1422-2aaa-4a98-80ef-e4c28e080c5b/image/56751cf5-72e9-452e-8ba9-6b069b671c73",
+            "servedSha256": "449328c433244cbba837b8253257f24675ce69589aa171632c78f2aef7f68668",
+            "verifiedAt": 1795138869.8560827
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "895b71132684eb7151728660ff5b75ba33322ed87a144f317290c1ba61c6e23c",
+          "sha256": "3668b102442eb2a7f5e69acbc9ef67848df544bb0216816e7c5c96f317ea05a3",
+          "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+          "path": "work/comfyui-figura/runs/895b71132684eb7151728660ff5b75ba33322ed87a144f317290c1ba61c6e23c/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322"
+          },
+          "reviewedAt": 1795138163.0998313,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "2b489cad-3c47-46df-9c02-277184dfa3f6",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "桃霧溫室匠，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "3668b102442eb2a7f5e69acbc9ef67848df544bb0216816e7c5c96f317ea05a3",
+            "imageId": "a69d77c0-d690-448e-ae6e-36499f7a1170",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/607d1422-2aaa-4a98-80ef-e4c28e080c5b/image/a69d77c0-d690-448e-ae6e-36499f7a1170",
+            "servedSha256": "a7364aefdf0166a3513fc0781e2e9b9b2bf3267289888f965b6daa70d0545ae7",
+            "verifiedAt": 1795138869.8740673
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "451b17e998288c3a4b1c9fcbc3f04b4bd35ef3ec8e37888c9e4321ea9f728b21",
+          "sha256": "356004cdc4fbb879efa02bb83954d1b8c358289bf51ec942b3d15f72f50c6caa",
+          "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+          "path": "work/comfyui-figura/runs/451b17e998288c3a4b1c9fcbc3f04b4bd35ef3ec8e37888c9e4321ea9f728b21/output.png",
+          "reviewedAt": 1795138163.113383,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "2f4dbaed-cc38-4b4f-80c9-1859641a8bbc",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "桃霧溫室匠，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "356004cdc4fbb879efa02bb83954d1b8c358289bf51ec942b3d15f72f50c6caa",
+            "imageId": "51bc8b8c-f43c-40b2-a08b-49dbd7ecbe3f",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/607d1422-2aaa-4a98-80ef-e4c28e080c5b/image/51bc8b8c-f43c-40b2-a08b-49dbd7ecbe3f",
+            "servedSha256": "8964d54d39bef8e72fe7668adc4a957c20292b632c37c7b6983e51362c18ded0",
+            "verifiedAt": 1795138869.9174876
+          }
         }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "e67f4a0e046b32caafd948ea93253d2589e0ebcaa9c9acf05a7843a1ee43c505",
+            "sha256": "6a6d013dec2ebbf309d7b56b4da41dcd84e38915fbc1417ccfdc34522bda8ff8",
+            "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+            "path": "work/comfyui-figura/runs/e67f4a0e046b32caafd948ea93253d2589e0ebcaa9c9acf05a7843a1ee43c505/output.png"
+          }
+        ],
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面玻璃盆栽與髮束改變；背面增加提案未允許的外套腰帶，退回重產。",
+            "runId": "c4cc07baa3a9db8502e4ab4343b0ad84cc440edcd8d20c6012214111e9dcde50",
+            "sha256": "36650e017c70310d34d9ac14d7aea8b9793f5dec937f854f4a3f7a26f3bcbd03",
+            "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+            "path": "work/comfyui-figura/runs/c4cc07baa3a9db8502e4ab4343b0ad84cc440edcd8d20c6012214111e9dcde50/output.png",
+            "reviewedAt": 1795138163.038942
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面玻璃盆栽與髮束改變；背面增加提案未允許的外套腰帶，退回重產。",
+            "runId": "37fd363b10eeb6546a01697eb3d38b09c2d92c372165dabd4ba1e56e5bbca2c3",
+            "sha256": "27bdaec4f2a612435823171e61115df75c9a1b613842a354513743dd1aa868d6",
+            "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
+            "path": "work/comfyui-figura/runs/37fd363b10eeb6546a01697eb3d38b09c2d92c372165dabd4ba1e56e5bbca2c3/output.png",
+            "reviewedAt": 1795138163.052886
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -610,25 +1306,155 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試背箱分格、側面頭殼／手臂角度及木台紋理仍改造；兩次退回，側背圖庫留空。",
+          "runId": "9371f04bda9e2623b575bc76f38dbe398e139ca53c6f889c2d94899844687d36",
+          "sha256": "92ab3c60aac9a89979053aed07dd3209c985355945ea3a025a8a0ecf05404f88",
+          "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+          "path": "work/comfyui-figura/runs/9371f04bda9e2623b575bc76f38dbe398e139ca53c6f889c2d94899844687d36/output.png",
+          "reviewedAt": 1795138757.398748
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試背箱分格、側面頭殼／手臂角度及木台紋理仍改造；兩次退回，側背圖庫留空。",
+          "runId": "2d6cbfd061b875461905fd231787a5ab00649e55c66b55ef3bb5abb61442c47e",
+          "sha256": "40bd1cbe66172b1941dcda3919cc9643bf5a1b7020b4a641429567daa28136ac",
+          "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+          "path": "work/comfyui-figura/runs/2d6cbfd061b875461905fd231787a5ab00649e55c66b55ef3bb5abb61442c47e/output.png",
+          "reviewedAt": 1795138757.4113302
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "28d74bb561ce186636e94bcb71245efe6b4f05538c8606d39b0a1efa8e4c4d84",
+          "sha256": "b8f25f02234486a3d920c423d6db85872ee80555f0aae7ce7a5f8240b5c9ce02",
+          "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+          "path": "work/comfyui-figura/runs/28d74bb561ce186636e94bcb71245efe6b4f05538c8606d39b0a1efa8e4c4d84/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca"
+          },
+          "reviewedAt": 1795138163.164507,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "d93b97af-b50c-481e-ab7d-ba4a005facc3",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "檸核箱庫長，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "b8f25f02234486a3d920c423d6db85872ee80555f0aae7ce7a5f8240b5c9ce02",
+            "imageId": "bf254d6c-164e-4026-95dd-62773f781cc0",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/35cd77cf-a7d1-424b-896d-cabce97b9177/image/bf254d6c-164e-4026-95dd-62773f781cc0",
+            "servedSha256": "0b1aeb837d7ce1f71c5701e4ba18d803e2f1b932b97b6ea049299bb23c459611",
+            "verifiedAt": 1795138871.1827042
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "a45d5ea8f81db9db887ebed604d2367b2e95a629c43496a1b6c409dd7dc84989",
+          "sha256": "df4d2da251207cdb7e5d65f10c0293c0b853fcc8aff696b04aa83cb5be165219",
+          "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+          "path": "work/comfyui-figura/runs/a45d5ea8f81db9db887ebed604d2367b2e95a629c43496a1b6c409dd7dc84989/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca"
+          },
+          "reviewedAt": 1795138163.1893818,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "61d5b807-dd7e-4822-adf2-b033562e092f",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "檸核箱庫長，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "df4d2da251207cdb7e5d65f10c0293c0b853fcc8aff696b04aa83cb5be165219",
+            "imageId": "ce29eaae-d5c9-484d-a943-fb7056511d71",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/35cd77cf-a7d1-424b-896d-cabce97b9177/image/ce29eaae-d5c9-484d-a943-fb7056511d71",
+            "servedSha256": "738187297d19fbe2663ca2bdc2f7ad8515e13f49539c7aff52686a23c364bdfc",
+            "verifiedAt": 1795138871.2103786
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "c6bf48721123d4274b219b89ccb487d538207d61e3fb64093c858ae25869c17d",
+          "sha256": "cfb95ee8914735c61f9920f6ec46d891ff9beb8050565c4585592d44b57f0609",
+          "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+          "path": "work/comfyui-figura/runs/c6bf48721123d4274b219b89ccb487d538207d61e3fb64093c858ae25869c17d/output.png",
+          "reviewedAt": 1795138163.2027557,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f2640fa1-1bd6-4752-a20c-fe9d4bd5cb11",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "檸核箱庫長，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "cfb95ee8914735c61f9920f6ec46d891ff9beb8050565c4585592d44b57f0609",
+            "imageId": "e68d9190-d45f-4bef-aa86-25a3843075e7",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/35cd77cf-a7d1-424b-896d-cabce97b9177/image/e68d9190-d45f-4bef-aa86-25a3843075e7",
+            "servedSha256": "8d33e796a09ebf5452345cfa72fce9184da08ac96dc36d6443baf3a72f77f49e",
+            "verifiedAt": 1795138871.2509422
+          }
         }
+      },
+      "attempts": {
+        "SCENE": [
+          {
+            "status": "review_pending",
+            "reason": null,
+            "runId": "5334d18651cf337055d37a07065bc0dd41d58ace912d3bfde02caf8b898e9174",
+            "sha256": "693fc0d6bef8746b608c81094ffa90c5eddc6756f98263b71ae20f0ba51c6fe6",
+            "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+            "path": "work/comfyui-figura/runs/5334d18651cf337055d37a07065bc0dd41d58ace912d3bfde02caf8b898e9174/output.png"
+          }
+        ],
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面非約 90 度且手部姿勢、背箱格數改變；背面箱體框架／腳位／木台改造，退回重產。",
+            "runId": "0dc65aa5a15ba9e566cae0a455997dbebb5f3e2258d50e9d66f2445319f2f951",
+            "sha256": "2a34d2db4054217726c1595de729fe827276d6f14de56f7171df130b750deb60",
+            "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+            "path": "work/comfyui-figura/runs/0dc65aa5a15ba9e566cae0a455997dbebb5f3e2258d50e9d66f2445319f2f951/output.png",
+            "reviewedAt": 1795138163.1246982
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面非約 90 度且手部姿勢、背箱格數改變；背面箱體框架／腳位／木台改造，退回重產。",
+            "runId": "af1325506637cd12fbd1e125335fdb8799695aa04582fa93139bc76872b57ea8",
+            "sha256": "fdbf5407e7c747c3accd5497d1fc4e6044e036109be8fad4879284131537a614",
+            "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
+            "path": "work/comfyui-figura/runs/af1325506637cd12fbd1e125335fdb8799695aa04582fa93139bc76872b57ea8/output.png",
+            "reviewedAt": 1795138163.1361663
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -658,25 +1484,145 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動艙體／關節與軌道底座，背面非清楚 180 度且有額外頭部構造；兩次退回，側背留空。",
+          "runId": "e74e0a08d719154154b9c9eea9735c542c1ff7d58e653aaf097a07ea6d2378c1",
+          "sha256": "b62e06a113d7efda12e7d6418251531728c93093a74d46c8808d915f892a8591",
+          "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+          "path": "work/comfyui-figura/runs/e74e0a08d719154154b9c9eea9735c542c1ff7d58e653aaf097a07ea6d2378c1/output.png",
+          "reviewedAt": 1795138757.423005
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動艙體／關節與軌道底座，背面非清楚 180 度且有額外頭部構造；兩次退回，側背留空。",
+          "runId": "b543adb6ce1d934010fac539cbd9c33d71c1761d14139e59d09bc2d1164d9712",
+          "sha256": "f71663be53654fb3df1a902b1614b340625985c0a33b8cbfb6eff9de3fddef51",
+          "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+          "path": "work/comfyui-figura/runs/b543adb6ce1d934010fac539cbd9c33d71c1761d14139e59d09bc2d1164d9712/output.png",
+          "reviewedAt": 1795138757.4350526
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "81025bf4a671c333d5e875b386fc1261dfa6aebfb4f4ec99381e18c4fd5d3075",
+          "sha256": "4a0901e7e36812cd9790e78ad799d47b8e5467de6212712ccd6412a7a018b897",
+          "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+          "path": "work/comfyui-figura/runs/81025bf4a671c333d5e875b386fc1261dfa6aebfb4f4ec99381e18c4fd5d3075/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 500,
+            "height": 500,
+            "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a"
+          },
+          "reviewedAt": 1795138163.2477596,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "0971aded-57bb-4138-bf31-6eb9321229b2",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "葡萄軌道員，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "4a0901e7e36812cd9790e78ad799d47b8e5467de6212712ccd6412a7a018b897",
+            "imageId": "0af37c24-6b4d-4567-ac42-6a86ff52a84d",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/2a7f334f-b90d-463f-bfcb-2b8088e2bc53/image/0af37c24-6b4d-4567-ac42-6a86ff52a84d",
+            "servedSha256": "19380f2ce84305b4e38958d6b7654354944099751cd1d1c64a805cb5cbf5e202",
+            "verifiedAt": 1795138872.3557003
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "f5c717bc6008f267bba6bc6face31d6b362ab64cda2314962aad373566548742",
+          "sha256": "fbca2fa7c789946f5379f65d62cc89e668876e5598a35cf8c3a58f1c536d15e6",
+          "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+          "path": "work/comfyui-figura/runs/f5c717bc6008f267bba6bc6face31d6b362ab64cda2314962aad373566548742/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a"
+          },
+          "reviewedAt": 1795138163.2703104,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "bbf58c11-d668-4b61-99df-a317d6536eda",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "葡萄軌道員，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "fbca2fa7c789946f5379f65d62cc89e668876e5598a35cf8c3a58f1c536d15e6",
+            "imageId": "7f4c3676-4ea9-4a9a-9a02-03e9af69f2b8",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/2a7f334f-b90d-463f-bfcb-2b8088e2bc53/image/7f4c3676-4ea9-4a9a-9a02-03e9af69f2b8",
+            "servedSha256": "a76b02dea15f88615f15bce3c11712bbbac36b84a4c6961bc8a3c65d7f798100",
+            "verifiedAt": 1795138872.3847759
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "bb3b2d4553b33e7974fbeeecb7a0e0a1759f11adc8060eba87ed84d00802d634",
+          "sha256": "abfb126045a2151795c15fbf843b50454c0e8da133bbbee2ad717e11e4b9ed81",
+          "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+          "path": "work/comfyui-figura/runs/bb3b2d4553b33e7974fbeeecb7a0e0a1759f11adc8060eba87ed84d00802d634/output.png",
+          "reviewedAt": 1795138163.282194,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "1e5667e5-ef04-4c65-a0c0-0bec8b41d92b",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "葡萄軌道員，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "abfb126045a2151795c15fbf843b50454c0e8da133bbbee2ad717e11e4b9ed81",
+            "imageId": "85198fae-bf68-4537-b20a-e8c15f87b385",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/2a7f334f-b90d-463f-bfcb-2b8088e2bc53/image/85198fae-bf68-4537-b20a-e8c15f87b385",
+            "servedSha256": "a167115f1b70c5c39cd1d58aabac9349bd6bfb752ee9de0d40d46bb008f737f5",
+            "verifiedAt": 1795138872.4140277
+          }
         }
+      },
+      "attempts": {
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面頭殼／玻璃艙結構與腳姿不同，背面仍有前臉且底座端部形狀改變，退回重產。",
+            "runId": "03490ed8663d04712fde5076f36715281099b45059d4199f215dc0da669c1dae",
+            "sha256": "316531d3ac197fc6f917c468d51280879de0b82d0870487f51d7fdb088b15422",
+            "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+            "path": "work/comfyui-figura/runs/03490ed8663d04712fde5076f36715281099b45059d4199f215dc0da669c1dae/output.png",
+            "reviewedAt": 1795138163.2142594
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面頭殼／玻璃艙結構與腳姿不同，背面仍有前臉且底座端部形狀改變，退回重產。",
+            "runId": "880dc7983481a555c4bb6ca7ca3c94e43e62f66d000e4cf96e151bb9ff13cfa9",
+            "sha256": "86a06c96c80835c415e63a41ddbaf8068f36748dd2a84bda1657ca4ba5088e29",
+            "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
+            "path": "work/comfyui-figura/runs/880dc7983481a555c4bb6ca7ca3c94e43e62f66d000e4cf96e151bb9ff13cfa9/output.png",
+            "reviewedAt": 1795138163.2260554
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -706,25 +1652,145 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試背面增加第二條交叉背帶，包裹堆疊與羽毛形狀改變；兩次退回，側背圖庫留空。",
+          "runId": "5fa18edad04a7334e267f8e1131902e02124592cb7851f7b5b2ed6f0c0acb8ec",
+          "sha256": "33ef6ac2e32a1be20d63905a05b942658a73fdfd55f594c55ab458ec1e3919ae",
+          "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+          "path": "work/comfyui-figura/runs/5fa18edad04a7334e267f8e1131902e02124592cb7851f7b5b2ed6f0c0acb8ec/output.png",
+          "reviewedAt": 1795138757.4465928
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試背面增加第二條交叉背帶，包裹堆疊與羽毛形狀改變；兩次退回，側背圖庫留空。",
+          "runId": "1ed55b118c65a607c059fd9bbb542d3ed8f3714cd58aacb9693ffcc446ce2f97",
+          "sha256": "ac280ab4be5b89b73bc25fb9ee049eed6e5fb665dca35970c78b297788f1b31a",
+          "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+          "path": "work/comfyui-figura/runs/1ed55b118c65a607c059fd9bbb542d3ed8f3714cd58aacb9693ffcc446ce2f97/output.png",
+          "reviewedAt": 1795138757.4582539
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "9d679191bc1ea8fde42c6af7191a45a93c15abd0970374eed0003800da657efa",
+          "sha256": "d1451d240306a8571cef1be1ce8724c1213daa2651720619b94ce6d3f1f0090a",
+          "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+          "path": "work/comfyui-figura/runs/9d679191bc1ea8fde42c6af7191a45a93c15abd0970374eed0003800da657efa/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd"
+          },
+          "reviewedAt": 1795138163.329328,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8fac27e7-fe0c-47f2-8689-9263bb0bfe07",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "砂糖郵局長，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "d1451d240306a8571cef1be1ce8724c1213daa2651720619b94ce6d3f1f0090a",
+            "imageId": "e0a87aff-ec63-4c84-a1cd-9301e4e6c6cc",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/7e7a5af3-4990-499f-ab83-adbef39ab96e/image/e0a87aff-ec63-4c84-a1cd-9301e4e6c6cc",
+            "servedSha256": "6d52ee22be7811a464e6e05367ac0f90d40e6037d795bcedb2767a0119c16404",
+            "verifiedAt": 1795138873.6429284
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "6932694ee70ae2f69158c4fbb95572bd9c241ed5898941dd35cc02df41603a9b",
+          "sha256": "1f8cbc1e325ad496f7640b3297fa44ccec291ad66cd7a593f30ceb91754a5df2",
+          "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+          "path": "work/comfyui-figura/runs/6932694ee70ae2f69158c4fbb95572bd9c241ed5898941dd35cc02df41603a9b/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd"
+          },
+          "reviewedAt": 1795138163.3600638,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "85b4c772-50a5-4fec-9634-12297612322b",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "砂糖郵局長，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "1f8cbc1e325ad496f7640b3297fa44ccec291ad66cd7a593f30ceb91754a5df2",
+            "imageId": "a39ae68f-1938-48c7-9613-f995e5fbc40e",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/7e7a5af3-4990-499f-ab83-adbef39ab96e/image/a39ae68f-1938-48c7-9613-f995e5fbc40e",
+            "servedSha256": "a729f3910cce23167db8c9dedac03f3f3473bd4343b51673543237638be00925",
+            "verifiedAt": 1795138873.6695487
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "ee382fc0d2a5f020ce828d5ae4d1c1d0063d523a633166f01c3b14febd41071a",
+          "sha256": "47437e48fe3482b5caf6c31a99eb14289e4b81e0410dfc406ca140487fcb3e88",
+          "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+          "path": "work/comfyui-figura/runs/ee382fc0d2a5f020ce828d5ae4d1c1d0063d523a633166f01c3b14febd41071a/output.png",
+          "reviewedAt": 1795138163.3754525,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "945fca6b-3616-42ab-bfec-c1b338f52142",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "砂糖郵局長，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "47437e48fe3482b5caf6c31a99eb14289e4b81e0410dfc406ca140487fcb3e88",
+            "imageId": "bc8e5f23-d85f-48b9-bb22-cde3c3d2b4f0",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/7e7a5af3-4990-499f-ab83-adbef39ab96e/image/bc8e5f23-d85f-48b9-bb22-cde3c3d2b4f0",
+            "servedSha256": "a4eb50d33792c9536df0a50f1ce7ee0283336879a0391546d1d07f81cb0bccea",
+            "verifiedAt": 1795138873.702696
+          }
         }
+      },
+      "attempts": {
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面多出包裹並改變羽毛層次；背面包裹堆疊數量及尾羽／皮包位置無法匹配，退回重產。",
+            "runId": "e01ab431fb9d95cd54574cbaaf5b38d6120faedefb101d98da8a8a42534e75c6",
+            "sha256": "ffb7e13a6443d6d20bb9e0d0af4292c309e79f9a0668d4b5d51e5ea0d2a09fda",
+            "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+            "path": "work/comfyui-figura/runs/e01ab431fb9d95cd54574cbaaf5b38d6120faedefb101d98da8a8a42534e75c6/output.png",
+            "reviewedAt": 1795138163.2940278
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面多出包裹並改變羽毛層次；背面包裹堆疊數量及尾羽／皮包位置無法匹配，退回重產。",
+            "runId": "762812505480ef4e00f0d1fb7579dac5864c7ca1d51ea16a38b102cbb25cbf7f",
+            "sha256": "6a216ac3eb19ee541efea9362836ea87f4aed0bda1c578cf261afd0c0a2bf721",
+            "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
+            "path": "work/comfyui-figura/runs/762812505480ef4e00f0d1fb7579dac5864c7ca1d51ea16a38b102cbb25cbf7f/output.png",
+            "reviewedAt": 1795138163.3060527
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -754,25 +1820,145 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動護目鏡帶、莓果輪廓、鞋姿與底座裂紋／青色塗裝；兩次退回，側背圖庫留空。",
+          "runId": "b6f2b9e973154c36a8805505b1724111ed122daf343f1fe0704f3ac2a4ea582d",
+          "sha256": "f17ddd2f9d8ff2681ab16a901dbbfb21946cab02191098c1d40d8f97ec32424d",
+          "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+          "path": "work/comfyui-figura/runs/b6f2b9e973154c36a8805505b1724111ed122daf343f1fe0704f3ac2a4ea582d/output.png",
+          "reviewedAt": 1795138757.469906
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動護目鏡帶、莓果輪廓、鞋姿與底座裂紋／青色塗裝；兩次退回，側背圖庫留空。",
+          "runId": "1f238811aa742fae47a39b9abe9d1df8c080ba39a43b06f5f1de6fc2864c1895",
+          "sha256": "209625437258accbf8eb5da3bcccf22d9a35d36f254e8c36ad7288b78d69b25f",
+          "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+          "path": "work/comfyui-figura/runs/1f238811aa742fae47a39b9abe9d1df8c080ba39a43b06f5f1de6fc2864c1895/output.png",
+          "reviewedAt": 1795138757.4848223
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "7c5239ac87a239c082969debff01dc29ccaea89c8f061b8849b8a58fceb9ce78",
+          "sha256": "3c1409df698f68e83a6443d213b9ba3fd56de2773e3904084a51a4de688eebe9",
+          "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+          "path": "work/comfyui-figura/runs/7c5239ac87a239c082969debff01dc29ccaea89c8f061b8849b8a58fceb9ce78/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba"
+          },
+          "reviewedAt": 1795138163.4275367,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "6741e54b-38fc-4afd-aa18-9a292496e55c",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "藍莓短跑員，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "3c1409df698f68e83a6443d213b9ba3fd56de2773e3904084a51a4de688eebe9",
+            "imageId": "1d319d55-eb38-43bb-9b4f-23c55b8b0637",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/8b39d92a-c577-4609-8d90-6cc01f47f8a0/image/1d319d55-eb38-43bb-9b4f-23c55b8b0637",
+            "servedSha256": "c229b266e8b2fce34bd09927bc334f332521d9f786cdaa4fad76303f0553e805",
+            "verifiedAt": 1795138874.8817317
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "017f4bc75ad03c1b97c67272b9153dbc27604a76df9a81dd8f8ace05cf25476e",
+          "sha256": "bada9ba311044e6bbe47913d16541c41b17f47e6863388f8528f15b0267ef471",
+          "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+          "path": "work/comfyui-figura/runs/017f4bc75ad03c1b97c67272b9153dbc27604a76df9a81dd8f8ace05cf25476e/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba"
+          },
+          "reviewedAt": 1795138163.4546611,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "6ca50ccf-7e02-44db-ae08-94a13448c728",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "藍莓短跑員，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "bada9ba311044e6bbe47913d16541c41b17f47e6863388f8528f15b0267ef471",
+            "imageId": "2a2f186d-1c6b-4a9a-84d6-66e247ab474b",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/8b39d92a-c577-4609-8d90-6cc01f47f8a0/image/2a2f186d-1c6b-4a9a-84d6-66e247ab474b",
+            "servedSha256": "223b261b44067ae274916d77d993c5629fbd8b5c0ebdf4c18b34415fcc6082f1",
+            "verifiedAt": 1795138874.9138167
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "7c84b47c995fc3a1d0a9300974673d088df9c58e19732bf556d6ecea47fcccc8",
+          "sha256": "89ec8c010ede418d2216ec69b8a59179e80e5e5aa4230c6443d20295788067f5",
+          "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+          "path": "work/comfyui-figura/runs/7c84b47c995fc3a1d0a9300974673d088df9c58e19732bf556d6ecea47fcccc8/output.png",
+          "reviewedAt": 1795138163.4745214,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "a4891488-4d7c-4d12-b8c1-e748334aadcb",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "藍莓短跑員，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "89ec8c010ede418d2216ec69b8a59179e80e5e5aa4230c6443d20295788067f5",
+            "imageId": "0bdc5b61-0c1e-4951-b742-3432758be5db",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/8b39d92a-c577-4609-8d90-6cc01f47f8a0/image/0bdc5b61-0c1e-4951-b742-3432758be5db",
+            "servedSha256": "eb0805d15b5b76a49df2dfb024acfc1f26d2916def6cf43c8af3bdc0b550602a",
+            "verifiedAt": 1795138874.950447
+          }
         }
+      },
+      "attempts": {
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面與背面將一片葉變成兩片，護目鏡帶及莓果輪廓重設，退回重產。",
+            "runId": "2f499dfa7e0610d17289dca7f86afc8837ff996438b9386813ec4d550d9c1e39",
+            "sha256": "2fd2c071ed2ef08570cc59e5110d13daf9f82c45a3e4487fbddb5ac61d93e712",
+            "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+            "path": "work/comfyui-figura/runs/2f499dfa7e0610d17289dca7f86afc8837ff996438b9386813ec4d550d9c1e39/output.png",
+            "reviewedAt": 1795138163.389208
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面與背面將一片葉變成兩片，護目鏡帶及莓果輪廓重設，退回重產。",
+            "runId": "801d82d3e0383bc684118f029411379f1c31a0ab24f08cecfc9a8e24e95e4167",
+            "sha256": "e6f69708054165591e8787a57f8798c26b61202bcc199d7284cfd553365856e1",
+            "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
+            "path": "work/comfyui-figura/runs/801d82d3e0383bc684118f029411379f1c31a0ab24f08cecfc9a8e24e95e4167/output.png",
+            "reviewedAt": 1795138163.4021502
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -802,25 +1988,145 @@
           "reason": "沿用本機現有主圖，不重設角色"
         },
         "ANGLE": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動抬腳站姿、圍巾背面麥穗、羽毛及風箏桿／支架；兩次退回，側背圖庫留空。",
+          "runId": "8faa5262c2d8f8538abfbc7eb873701f844b1b9a978f2e78b5050c68384e027a",
+          "sha256": "5fdb9bd004adb51426e8bb71603007acc564e9fd36a2f295da083e509e5ec1f0",
+          "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+          "path": "work/comfyui-figura/runs/8faa5262c2d8f8538abfbc7eb873701f844b1b9a978f2e78b5050c68384e027a/output.png",
+          "reviewedAt": 1795138757.4964862
         },
         "REAR": {
-          "status": "pending",
-          "reason": null
+          "status": "reject",
+          "reason": "重試仍改動抬腳站姿、圍巾背面麥穗、羽毛及風箏桿／支架；兩次退回，側背圖庫留空。",
+          "runId": "7a07b11eee78651fa67eb9befe4c45911135684f9e1bf46420852c5b0345a4bb",
+          "sha256": "6246d16af25198ef1dd459ffa3d430dd902d6646a4ff4c409bd9f1e313b436b8",
+          "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+          "path": "work/comfyui-figura/runs/7a07b11eee78651fa67eb9befe4c45911135684f9e1bf46420852c5b0345a4bb/output.png",
+          "reviewedAt": 1795138757.5085347
         },
         "FACE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "dd6bd372e03273ba2bc80d82460562af6fb9ebbbd2cd90f8127813fee7f74a76",
+          "sha256": "2cbfd6e375dc24bbf7e963fd55c416a4a98dcd834e1950b117d49f32ec89c28a",
+          "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+          "path": "work/comfyui-figura/runs/dd6bd372e03273ba2bc80d82460562af6fb9ebbbd2cd90f8127813fee7f74a76/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 480,
+            "height": 480,
+            "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57"
+          },
+          "reviewedAt": 1795138163.527044,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "c8171bdc-51ca-4f0f-a2eb-8cdfb052216d",
+              "expectedVersion": 3,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "蜜棗風箏手，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "2cbfd6e375dc24bbf7e963fd55c416a4a98dcd834e1950b117d49f32ec89c28a",
+            "imageId": "da34739a-bac7-4d50-af15-ac80b1555b29",
+            "version": 4,
+            "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/da34739a-bac7-4d50-af15-ac80b1555b29",
+            "servedSha256": "e37e217a0d93bb0526d20db03d3132a5cb6f2dae0d0d670359a2dc8d47d99672",
+            "verifiedAt": 1795138876.0089383
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件與主圖並排檢查，臉／上半身或配件底座構圖可讀，無重畫造型、不放大；另逐像素核對 ComfyUI 的 PyAV 解碼裁切。AI 生成示意圖，作者 pending。",
+          "runId": "2f387cd2402bb4ce08fba86d9d45c383da7ba09c098446748aa6d5c21f973eea",
+          "sha256": "58a8be809a60ea30dcc612b1fe66beba08e920d76b6db2ac8b189e00e07e255f",
+          "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+          "path": "work/comfyui-figura/runs/2f387cd2402bb4ce08fba86d9d45c383da7ba09c098446748aa6d5c21f973eea/output.png",
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 538,
+            "height": 538,
+            "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57"
+          },
+          "reviewedAt": 1795138163.5513053,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "83de93cd-6a91-47c8-a808-b5f296c2691d",
+              "expectedVersion": 4,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "蜜棗風箏手，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "58a8be809a60ea30dcc612b1fe66beba08e920d76b6db2ac8b189e00e07e255f",
+            "imageId": "9501f7b6-38e9-49e2-9f0b-917af8e26d7c",
+            "version": 5,
+            "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/9501f7b6-38e9-49e2-9f0b-917af8e26d7c",
+            "servedSha256": "ff5b828caac050e7cb1501f24b154affa2b9500eff2d2a48c61dec6e98db097c",
+            "verifiedAt": 1795138876.0282788
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": null
+          "status": "complete",
+          "reason": "逐件對照主圖臉、配件左右、固定姿態、塗裝與原底座；使用二值遮罩保留主體像素合成木質展示台。005 已修正底座半透明問題，無新增配件；作者 pending。",
+          "runId": "db75ba6d076d9634ecf709363289c89a20e02eb90650dbc63137b3607e2c21ce",
+          "sha256": "dbc2bc743fac6139b1c8362c1469bf21fdcc1cd3ecb1242083491fa3b752bad5",
+          "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+          "path": "work/comfyui-figura/runs/db75ba6d076d9634ecf709363289c89a20e02eb90650dbc63137b3607e2c21ce/output.png",
+          "reviewedAt": 1795138163.5655954,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "db77e5fb-0a2e-4606-94c7-615ab015d1c9",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "蜜棗風箏手，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "dbc2bc743fac6139b1c8362c1469bf21fdcc1cd3ecb1242083491fa3b752bad5",
+            "imageId": "8af16e8b-1fb7-41d1-b707-751f4427d1c5",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/8af16e8b-1fb7-41d1-b707-751f4427d1c5",
+            "servedSha256": "6bb51052bdb5085927030d4f0cba80ba7c9850edabcb364ca1cd0f74bcda1c51",
+            "verifiedAt": 1795138876.0601227
+          }
         }
+      },
+      "attempts": {
+        "ANGLE": [
+          {
+            "status": "reject",
+            "reason": "側面圍巾麥穗與風箏桿形狀漂移；背面兩腳落地，改變原本抬腳站姿，退回重產。",
+            "runId": "732ae9c7ba5e6bc281a2a2045a8f05a22ac2fa2735513f8395ba7cf1ce2c9a47",
+            "sha256": "b157b4ded3b80d56bfe27162d6685e8720bf3de0f00aa721b95a9a9b47a850c6",
+            "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+            "path": "work/comfyui-figura/runs/732ae9c7ba5e6bc281a2a2045a8f05a22ac2fa2735513f8395ba7cf1ce2c9a47/output.png",
+            "reviewedAt": 1795138163.4891071
+          }
+        ],
+        "REAR": [
+          {
+            "status": "reject",
+            "reason": "側面圍巾麥穗與風箏桿形狀漂移；背面兩腳落地，改變原本抬腳站姿，退回重產。",
+            "runId": "60aba034e22a2d7b4e2596fd56cda35b67cf7b8784dc9a6d14a7eb4e8da99c76",
+            "sha256": "276d4b845effc9606ab2618e350966931d581d4711df6ea3f1915d11e181fcfe",
+            "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+            "path": "work/comfyui-figura/runs/60aba034e22a2d7b4e2596fd56cda35b67cf7b8784dc9a6d14a7eb4e8da99c76/output.png",
+            "reviewedAt": 1795138163.5035486
+          }
+        ]
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 2,
+        "state": "restored",
+        "lastUnpublishVersion": 3
       }
     },
     {
@@ -4960,7 +6266,24 @@
       ],
       "completedAt": 1795137431.3847935,
       "result": "original MAIN plus reviewed FACE DETAIL SCENE uploaded locally; ANGLE REAR rejected after two attempts; author pending"
+    },
+    {
+      "name": "batch-01",
+      "keys": [
+        "FIGURA-AI-003",
+        "FIGURA-AI-004",
+        "FIGURA-AI-005",
+        "FIGURA-AI-006",
+        "FIGURA-AI-007",
+        "FIGURA-AI-008",
+        "FIGURA-AI-009",
+        "FIGURA-AI-010",
+        "FIGURA-AI-011",
+        "FIGURA-AI-012"
+      ],
+      "completedAt": 1795138942.6421847,
+      "result": "4 adopted slots each, ANGLE/REAR rejected after two attempts; local API verified; author pending"
     }
   ],
-  "updatedAt": "2026-11-20T01:16:51Z"
+  "updatedAt": "2026-11-20T01:41:16Z"
 }

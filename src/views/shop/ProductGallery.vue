@@ -6,6 +6,7 @@ import ProductCover from './ProductCover.vue'
 const props=defineProps<{productId:string;image:ProductImage|null;category:string;images:GalleryImage[];error?:string}>()
 const images=computed(()=>props.images),index=ref(0),dialog=ref<HTMLDialogElement>(),opener=ref<HTMLButtonElement>()
 const current=computed(()=>images.value[index.value]||props.image)
+const includesAi=computed(()=>[...images.value,props.image].some(image=>/AI\s*生成/.test(image?.alt||'')))
 let startX=0,startY=0
 watch(()=>[props.productId,props.images] as const,()=>{const primary=props.images.findIndex(i=>i.primary);index.value=Math.max(0,primary);dialog.value?.close()},{immediate:true})
 function step(delta:number){if(images.value.length>1)index.value=(index.value+delta+images.value.length)%images.value.length}
@@ -17,6 +18,7 @@ function close(){dialog.value?.close();opener.value?.focus()}
  <section class="product-gallery" aria-label="商品展示圖片" @keydown.left.prevent="step(-1)" @keydown.right.prevent="step(1)">
   <button ref="opener" class="expand" :disabled="!current" aria-label="放大商品圖片" @click="dialog?.showModal()" @touchstart.passive="touchStart" @touchend.passive="touchEnd"><ProductCover :image="current" :category="category" eager priority sizes="(max-width: 800px) 94vw, 560px"/><span v-if="current">點擊放大</span></button>
   <p v-if="error" class="gallery-note" role="status">{{error}} 目前仍可查看主圖。</p>
+  <p v-if="includesAi" class="gallery-note">AI 生成示意圖，非實物攝影；此圖組不代表可操作的 3D 模型。</p>
   <div v-if="images.length>1" class="thumbnails" aria-label="選擇圖片">
    <button v-for="(image,i) in images" :key="image.id" :aria-label="`${imageTypeLabel[image.type]}，第 ${i+1} 張`" :aria-pressed="index===i" @click="index=i"><ProductCover :image="image" sizes="80px"/><small>{{imageTypeLabel[image.type]}}</small></button>
   </div>

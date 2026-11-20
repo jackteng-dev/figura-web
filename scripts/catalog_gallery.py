@@ -4,6 +4,7 @@ Generation never implies acceptance. Explicit visual review is required before u
 All image bytes, credentials and full run logs stay in ignored work/.
 """
 import argparse
+import copy
 import hashlib
 import importlib.util
 import http.cookiejar
@@ -82,6 +83,9 @@ def save(m):
 
 
 def selected(m, keys):
+    unknown = set(keys) - {p['productKey'] for p in m['products']}
+    if unknown:
+        raise ValueError('Keys absent from local catalog snapshot: ' + ','.join(sorted(unknown)))
     return [p for p in m['products'] if not keys or p['productKey'] in keys]
 
 
@@ -153,6 +157,9 @@ def generate(keys, types):
             identity = {'productKey': p['productKey'], 'designRevision': spec['designRevision'], 'masterSha256': spec['masterSha256'], 'graph': comfy.build(spec, spec['shots'][shot], 'REFERENCE.png')}
             run_id = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
             run = json.loads((comfy.WORK / 'runs' / run_id / 'run.json').read_text('utf-8'))
+            prior = p['slots'][t]
+            if prior.get('runId') and prior['runId'] != run['runId']:
+                p.setdefault('attempts', {}).setdefault(t, []).append(copy.deepcopy(prior))
             p['slots'][t].update(status='review_pending', runId=run['runId'], sha256=run['outputSha256'], sourceSha256=p['master']['sha256'], path=f"work/comfyui-figura/runs/{run['runId']}/output.png")
             save(m)
 
@@ -191,12 +198,34 @@ def review(keys, types, decision, note):
                 raise ValueError('Only explicitly inspected pending outputs may be reviewed')
             state_path = comfy.WORK / 'runs' / slot['runId'] / 'run.json'
             state = json.loads(state_path.read_text('utf-8'))
+            if state.get('review'):
+                raise ValueError('Saved visual decisions are immutable; create a new attempt')
             if comfy.sha(ROOT / slot['path']) != slot['sha256']:
                 raise ValueError('Output changed')
+            if decision == 'pass' and state['mode'] == 'crop':
+                slot['pixelVerification'] = verify_crop(state, ROOT / slot['path'])
             state['review'] = {'decision': decision, 'reviewer': 'Codex visual inspection', 'note': note}
             comfy.write(state_path, state)
             slot.update(status='pass' if decision == 'pass' else 'reject', reason=note, reviewedAt=time.time())
     save(m)
+
+
+def verify_crop(state, output):
+    # ComfyUI 0.27 LoadImage decodes JPEG through PyAV first. Pillow's chroma
+    # interpolation differs, so compare against the actual decoder, not another JPEG decode.
+    import av
+    import numpy as np
+    from PIL import Image
+    spec = json.loads(CONFIG.read_text('utf-8'))[state['productKey']]
+    source = next(av.open(str(ROOT / spec['master'])).decode(video=0)).to_ndarray(format='rgb24')
+    x, y, w, h = spec['masterCrop']
+    source = source[y:y+h, x:x+w]
+    x, y, w, h = state['graph']['3']['inputs']['x'], state['graph']['3']['inputs']['y'], state['graph']['3']['inputs']['width'], state['graph']['3']['inputs']['height']
+    source = source[y:y+h, x:x+w]
+    actual = np.asarray(Image.open(output).convert('RGB'))
+    if not np.array_equal(source, actual):
+        raise ValueError('Crop differs from the master decoded by ComfyUI; inspect instead of uploading')
+    return {'decoder': 'PyAV rgb24, same as ComfyUI 0.27 LoadImage', 'exact': True, 'width': w, 'height': h, 'sourceSha256': spec['masterSha256']}
 
 
 def report():
@@ -216,6 +245,56 @@ def report():
     print(json.dumps({t: {s: sum(p['slots'][t]['status'] == s for p in m['products']) for s in sorted({p['slots'][t]['status'] for p in m['products']})} for t in TYPES}, ensure_ascii=False))
 
 
+def reviewed_source(product, slot):
+    if slot['status'] != 'pass' or not re.fullmatch('[0-9a-f]{64}', slot['runId']):
+        raise ValueError('Only reviewed candidates may be uploaded')
+    state = json.loads((comfy.WORK / 'runs' / slot['runId'] / 'run.json').read_text('utf-8'))
+    source = ROOT / slot['path']
+    if (state.get('status') != 'complete' or state.get('review', {}).get('decision') != 'pass'
+            or state['productKey'] != product['productKey']
+            or state['masterSha256'] != product['master']['sha256']
+            or state['outputSha256'] != slot['sha256'] or comfy.sha(source) != slot['sha256']):
+        raise ValueError('Reviewed source/provenance mismatch')
+    return source
+
+
+def retry(keys, types, note):
+    m = load()
+    config = json.loads(CONFIG.read_text('utf-8'))
+    for p in selected(m, keys):
+        for t in types:
+            old = p['slots'][t]
+            if t not in ('ANGLE', 'REAR') or old['status'] != 'reject':
+                raise ValueError('Retry requires an explicitly rejected angle/rear candidate')
+            p.setdefault('attempts', {}).setdefault(t, []).append(copy.deepcopy(old))
+            shot = config[p['productKey']]['shots'][SHOTS[t]]
+            shot['seed'] += 100000
+            shot['prompt'] += ' Correction for this retry: ' + note
+            p['slots'][t] = {'status': 'pending', 'reason': '退回後針對身份／構圖修正提示重試'}
+    comfy.write(CONFIG, config)
+    save(m)
+
+
+def review_file(path):
+    # This file contains explicit decisions written after viewing the outputs.
+    # No similarity score or generation success can grant visual acceptance.
+    entries = json.loads(Path(path).read_text('utf-8'))
+    for entry in entries:
+        current = load()
+        p = next(p for p in selected(current, [entry['key']]))
+        slot = p['slots'][entry['type']]
+        expected = 'pass' if entry['decision'] == 'pass' else 'reject'
+        if slot['status'] in (expected, 'complete') and slot.get('reason') == entry['note']:
+            continue
+        review([entry['key']], [entry['type']], entry['decision'], entry['note'])
+
+
+def owned_versions(product, gallery):
+    session = product['publicationSession']
+    requests = {s['upload']['request']['requestId'] for s in product['slots'].values() if s.get('upload')}
+    return {session.get('lastUnpublishVersion', session['beforeVersion'] + 1)} | {e['afterVersion'] for e in gallery['events'] if e['requestId'] in requests}
+
+
 def upload(keys):
     """Original main stays bound; only passed outputs enter the loopback demo gallery."""
     m = load()
@@ -223,8 +302,9 @@ def upload(keys):
     api.login()
     for p in selected(m, keys):
         targets = [(t, s) for t, s in p['slots'].items() if s['status'] == 'pass']
-        if not targets:
+        if not targets and p.get('publicationSession', {}).get('state', 'restored') == 'restored':
             continue
+        sources = {t: reviewed_source(p, s) for t, s in targets}
         path = '/api/admin/products/' + p['id']
         current = api.request(path + '/image?gallery=true')
         allowed = {p['master']['imageId']} | {s['upload']['imageId'] for s in p['slots'].values() if s.get('upload', {}).get('imageId')}
@@ -238,20 +318,23 @@ def upload(keys):
                 raise RuntimeError('Product status changed outside this task')
             p['publicationSession'] = {'originalStatus': current['status'], 'beforeVersion': current['version'], 'state': 'unpublish_pending'}
             save(m)
-            api.request(path + '/publication', {'expectedVersion': current['version'], 'published': False}, 'PATCH')
+            changed = api.request(path + '/publication', {'expectedVersion': current['version'], 'published': False}, 'PATCH')
+            p['publicationSession']['lastUnpublishVersion'] = changed['version']
             p['publicationSession']['state'] = 'editing'
             save(m)
-        elif current['status'] == 'PUBLISHED':
+        elif current['status'] == 'PUBLISHED' and targets:
             # Resume after a completed earlier batch, allowing new accepted candidates.
-            api.request(path + '/publication', {'expectedVersion': current['version'], 'published': False}, 'PATCH')
+            changed = api.request(path + '/publication', {'expectedVersion': current['version'], 'published': False}, 'PATCH')
+            p['publicationSession']['lastUnpublishVersion'] = changed['version']
             p['publicationSession']['state'] = 'editing'
             save(m)
+        uploads_finished = False
         try:
             for t, slot in targets:
-                source = ROOT / slot['path']
-                if comfy.sha(source) != slot['sha256']:
-                    raise ValueError('Reviewed output hash mismatch')
+                source = sources[t]
                 current = api.request(path + '/image?gallery=true')
+                if current['version'] not in owned_versions(p, current):
+                    raise RuntimeError('Concurrent product version changed; preserve it for inspection')
                 if not slot.get('upload'):
                     if any(i['type'] == t for i in current['images']):
                         raise RuntimeError('Existing slot type belongs to another edit')
@@ -268,30 +351,40 @@ def upload(keys):
                 state.update(status='acknowledged', imageId=image_id, version=result['current']['version'])
                 slot['status'] = 'complete'
                 save(m)
+            uploads_finished = True
         finally:
-            current = api.request(path + '/image?gallery=true')
-            if current['status'] == 'DRAFT':
-                api.request(path + '/publication', {'expectedVersion': current['version'], 'published': True}, 'PATCH')
-            p['publicationSession']['state'] = 'restored'
-            public = api.request('/api/catalog/products/' + p['id'] + '/image')
-            if next(i['id'] for i in public if i['primary']) != p['master']['imageId']:
-                raise RuntimeError('Original main binding changed')
-            for t, s in p['slots'].items():
-                if s.get('upload', {}).get('status') == 'acknowledged':
-                    im = next(i for i in public if i['id'] == s['upload']['imageId'])
-                    content = api.request(im['url'], raw=True)
-                    s['upload'].update(publicUrl=im['url'], servedSha256=hashlib.sha256(content).hexdigest(), verifiedAt=time.time())
-            save(m)
+            if not uploads_finished:
+                # Keep the same draft version while an operation is uncertain;
+                # republishing here would make an unsent saved UUID stale.
+                p['publicationSession']['state'] = 'recovery_pending'
+                save(m)
+            else:
+                current = api.request(path + '/image?gallery=true')
+                if current['status'] == 'DRAFT':
+                    if current['version'] not in owned_versions(p, current):
+                        raise RuntimeError('Concurrent product edit detected; preserve draft for inspection')
+                    api.request(path + '/publication', {'expectedVersion': current['version'], 'published': True}, 'PATCH')
+                p['publicationSession']['state'] = 'restored'
+                public = api.request('/api/catalog/products/' + p['id'] + '/image')
+                if next(i['id'] for i in public if i['primary']) != p['master']['imageId']:
+                    raise RuntimeError('Original main binding changed')
+                for t, s in p['slots'].items():
+                    if s.get('upload', {}).get('status') == 'acknowledged':
+                        im = next(i for i in public if i['id'] == s['upload']['imageId'])
+                        content = api.request(im['url'], raw=True)
+                        s['upload'].update(publicUrl=im['url'], servedSha256=hashlib.sha256(content).hexdigest(), verifiedAt=time.time())
+                save(m)
         print(p['productKey'] + ': local gallery verified; original main retained', flush=True)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['snapshot', 'generate', 'contact', 'review', 'report', 'upload'])
+    parser.add_argument('command', choices=['snapshot', 'generate', 'contact', 'review', 'review-file', 'retry', 'report', 'upload'])
     parser.add_argument('--keys', nargs='*', default=[])
     parser.add_argument('--types', nargs='+', choices=TYPES, default=TYPES)
     parser.add_argument('--decision', choices=['pass', 'reject'])
     parser.add_argument('--note')
+    parser.add_argument('--file', type=Path)
     a = parser.parse_args()
     if a.command == 'snapshot': snapshot()
     elif a.command == 'generate': generate(a.keys, a.types)
@@ -302,11 +395,20 @@ def main():
     elif a.command == 'upload':
         if not a.keys: parser.error('Upload requires explicit reviewed product keys')
         upload(a.keys)
+    elif a.command == 'retry':
+        if not a.keys or not a.note: parser.error('Retry requires explicit keys and correction note')
+        retry(a.keys, a.types, a.note)
+    elif a.command == 'review-file':
+        if not a.file: parser.error('Explicit visual review file required')
+        review_file(a.file)
     else: report()
 
 
 if __name__ == '__main__':
     WORK.mkdir(parents=True, exist_ok=True)
+    if len(sys.argv) > 1 and sys.argv[1] == 'contact':
+        main()
+        sys.exit(0)
     # Hold an OS lock for the full command: generation and uploads must never
     # overwrite each other's manifest snapshot. Windows releases it after a crash.
     with (WORK / 'command.lock').open('a+b') as lock:

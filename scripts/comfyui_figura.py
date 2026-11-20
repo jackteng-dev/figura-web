@@ -41,7 +41,16 @@ def write(path, data):
     # Atomic state saves; output images themselves are never overwritten.
     temp = path.with_suffix('.tmp')
     temp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
-    temp.replace(path)
+    # Windows scanners/editors may briefly open the destination without delete
+    # sharing. Keep the complete temporary and retry atomic replacement only.
+    for attempt in range(20):
+        try:
+            temp.replace(path)
+            return
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(min(.1 * (attempt + 1), 1))
 
 
 def commit_output(target, data):
@@ -113,8 +122,9 @@ def build(spec, shot, uploaded):
         if sha(background) != shot['backgroundSha256']:
             raise ValueError('Scene background changed')
         graph['5']['inputs']['image'] = shot['uploadedBackground']
-        graph['6']['inputs'].update(width=w, height=round(h * 1.125))
-        graph['8']['inputs'].update(width=w, height=h)
+        graph['6']['inputs'].update(width=w, height=h)
+        graph['9']['inputs'].update(width=w, height=round(h*.25))
+        graph['10']['inputs']['y'] = round(h*.75)
         graph['3']['inputs']['bg_removal_name'] = shot['maskModel']
     else:
         graph['7']['inputs']['text'] = spec['invariants'] + ' ' + shot['prompt']

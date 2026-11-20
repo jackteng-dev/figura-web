@@ -4,8 +4,11 @@
   "3": {"class_type":"LoadBackgroundRemovalModel","inputs":{"bg_removal_name":"figura-birefnet-e2bf8e4460fc.safetensors"}},
   "4": {"class_type":"RemoveBackground","inputs":{"bg_removal_model":["3",0],"image":["2",0]}},
   "5": {"class_type":"LoadImage","inputs":{"image":"BACKGROUND.png"}},
-  "6": {"class_type":"ImageScale","inputs":{"image":["5",0],"upscale_method":"lanczos","width":960,"height":1080,"crop":"disabled"}},
-  "8": {"class_type":"ImageCrop","inputs":{"image":["6",0],"x":0,"y":0,"width":960,"height":960}},
-  "7": {"class_type":"ImageCompositeMasked","inputs":{"destination":["8",0],"source":["2",0],"mask":["4",0],"x":0,"y":0,"resize_source":false}},
+  "6": {"class_type":"ImageScale","inputs":{"image":["5",0],"upscale_method":"lanczos","width":960,"height":960,"crop":"disabled"}},
+  "8": {"class_type":"ImageCrop","inputs":{"image":["5",0],"x":0,"y":746,"width":960,"height":110}},
+  "9": {"class_type":"ImageScale","inputs":{"image":["8",0],"upscale_method":"lanczos","width":960,"height":240,"crop":"disabled"}},
+  "10": {"class_type":"ImageCompositeMasked","inputs":{"destination":["6",0],"source":["9",0],"x":0,"y":720,"resize_source":false}},
+  "11": {"class_type":"ThresholdMask","inputs":{"mask":["4",0],"value":0.1}},
+  "7": {"class_type":"ImageCompositeMasked","inputs":{"destination":["10",0],"source":["2",0],"mask":["11",0],"x":0,"y":0,"resize_source":false}},
   "20": {"class_type":"SaveImage","inputs":{"images":["7",0],"filename_prefix":"figura/scene-composite"}}
 }
