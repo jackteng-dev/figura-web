@@ -16,6 +16,18 @@ def build(spec):
     recipe = shot['protectionMaskSpec']
     source = ROOT / spec['master']
     assert hashlib.sha256(source.read_bytes()).hexdigest() == recipe['sourceSha256'] == spec['masterSha256']
+    if recipe.get('method') == 'polygon':
+        mask = Image.new('L', Image.open(source).size, 0)
+        draw = ImageDraw.Draw(mask)
+        for polygon in recipe['polygons']:
+            draw.polygon([tuple(point) for point in polygon], fill=255)
+        if 'minRedMinusGreen' in recipe:
+            rgb = np.asarray(Image.open(source).convert('RGB')).astype(np.float32)
+            mask = Image.fromarray(np.where(rgb[:, :, 0] - rgb[:, :, 1] >= recipe['minRedMinusGreen'], np.asarray(mask), 0).astype(np.uint8))
+        assert 0 < np.mean(np.asarray(mask) > 0) < .9
+        data = io.BytesIO()
+        mask.save(data, format='PNG')
+        return data.getvalue()
     a = np.asarray(Image.open(source).convert('RGB')).astype(np.float32)
     gray = a.mean(2)
     row = np.median(np.concatenate([gray[:, :12], gray[:, -12:]], axis=1), axis=1)
