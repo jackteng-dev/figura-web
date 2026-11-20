@@ -170,21 +170,29 @@ def generate(keys, types):
 def provenance(run):
     graph = run['graph']
     folder = comfy.WORK / 'runs' / run['runId']
-    result = {'mode': run['mode'], 'tool': 'local ComfyUI', 'promptId': run['promptId'], 'createdAt': run['createdAt'], 'masterSha256': run['masterSha256'], 'modelHashes': run['modelHashes'], 'workflowSha256': comfy.sha(folder / 'workflow.api.json'), 'outputSha256': run['outputSha256'], 'authorApproval': 'pending'}
-    if run['mode'] == 'flux-reference':
-        result.update(prompt=graph['7']['inputs']['text'], seed=graph['12']['inputs']['noise_seed'], width=graph['10']['inputs']['width'], height=graph['10']['inputs']['height'], steps=graph['13']['inputs']['steps'], sampler=graph['11']['inputs']['sampler_name'])
+    result = {'mode': run['mode'], 'tool': 'local ComfyUI', 'promptId': run['promptId'], 'createdAt': run['createdAt'], 'masterSha256': run['masterSha256'], 'modelHashes': run['modelHashes'], 'workflowSha256': comfy.sha(folder / 'workflow.api.json'), 'outputSha256': run['outputSha256'], 'outputBytes': (folder / 'output.png').stat().st_size, 'authorApproval': 'pending'}
+    if run['mode'] in ('flux-reference', 'flux-base-reference'):
+        result.update(prompt=graph['7']['inputs']['text'], seed=graph['12']['inputs']['noise_seed'], width=graph['10']['inputs']['width'], height=graph['10']['inputs']['height'], steps=graph['13']['inputs']['steps'], sampler=graph['11']['inputs']['sampler_name'], guidance={'node': graph['9']['class_type'], 'cfg': graph['9']['inputs'].get('cfg')})
     elif run['mode'] == 'crop':
         result.update(prompt=None, seed=None, operation='deterministic crop/scale, no new sculpt generation', masterCrop=graph['2']['inputs'], crop=graph['3']['inputs'], size=graph['4']['inputs']['width'])
     elif run['mode'] == 'scene-composite':
         actual = json.loads((folder / 'workflow.api.json').read_text('utf-8'))
         match = re.search(r'figura-([0-9a-f]{64})', actual['5']['inputs']['image'])
         result.update(prompt=None, seed=None, operation='binary foreground mask plus original master pixels, 2D composite', backgroundSha256=match.group(1) if match else run.get('sceneBackgroundSha256'), maskModel=graph['3']['inputs']['bg_removal_name'], threshold=graph.get('11', {}).get('inputs', {}).get('value'), outputSize=[graph['2']['inputs']['width'], graph['2']['inputs']['height']])
+        if '21' in actual:
+            protected = re.search(r'figura-([0-9a-f]{64})', actual['21']['inputs']['image'])
+            result['protectionMaskSha256'] = protected.group(1) if protected else None
     return result
 
 
 def audit_provenance():
     m = load()
+    from PIL import Image
     for p in m['products']:
+        master = ROOT / p['master']['path']
+        if comfy.sha(master) != p['master']['sha256']:
+            raise ValueError('Master changed')
+        p['master'].update(format=Image.open(master).format, bytes=master.stat().st_size)
         slots = list(p['slots'].values()) + [s for attempts in p.get('attempts', {}).values() for s in attempts]
         for slot in slots:
             if slot.get('runId'):
@@ -192,6 +200,8 @@ def audit_provenance():
                 if slot.get('sha256') != state['outputSha256']:
                     raise ValueError('Output provenance changed')
                 slot['generation'] = provenance(state)
+                if slot not in p['slots'].values() and slot['status'] == 'review_pending':
+                    slot.update(status='superseded', reason='未採用；後續構圖／遮罩／展示台修正候選已取代此稿')
     background = json.loads((comfy.WORK / 'runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/run.json').read_text('utf-8'))
     m['sharedSceneBackground'] = provenance(background)
     save(m)
@@ -341,6 +351,19 @@ def recrop(key, kind, crop):
     save(m)
 
 
+def remask(key, threshold):
+    m = load()
+    p = selected(m, [key])[0]
+    if p['slots']['SCENE']['status'] != 'reject' or not .001 <= threshold <= .99:
+        raise ValueError('Remask requires a rejected scene and a bounded threshold')
+    config = json.loads(CONFIG.read_text('utf-8'))
+    p.setdefault('attempts', {}).setdefault('SCENE', []).append(copy.deepcopy(p['slots']['SCENE']))
+    p['slots']['SCENE'] = {'status': 'pending', 'reason': '退回後調整前景遮罩，保留原底座／配件，不重畫主體'}
+    config[key]['shots']['scene']['maskThreshold'] = threshold
+    comfy.write(CONFIG, config)
+    save(m)
+
+
 def owned_versions(product, gallery):
     session = product['publicationSession']
     requests = {s['upload']['request']['requestId'] for s in product['slots'].values() if s.get('upload')}
@@ -431,13 +454,14 @@ def upload(keys):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['snapshot', 'generate', 'contact', 'review', 'review-file', 'retry', 'recrop', 'report', 'upload', 'audit-provenance'])
+    parser.add_argument('command', choices=['snapshot', 'generate', 'contact', 'review', 'review-file', 'retry', 'recrop', 'remask', 'report', 'upload', 'audit-provenance'])
     parser.add_argument('--keys', nargs='*', default=[])
     parser.add_argument('--types', nargs='+', choices=TYPES, default=TYPES)
     parser.add_argument('--decision', choices=['pass', 'reject'])
     parser.add_argument('--note')
     parser.add_argument('--file', type=Path)
     parser.add_argument('--crop', type=int, nargs=4)
+    parser.add_argument('--threshold', type=float)
     a = parser.parse_args()
     if a.command == 'snapshot': snapshot()
     elif a.command == 'generate': generate(a.keys, a.types)
@@ -458,6 +482,9 @@ def main():
         if len(a.keys) != 1 or len(a.types) != 1 or not a.crop: parser.error('Recrop requires one key, one type and x y width height')
         recrop(a.keys[0], a.types[0], a.crop)
     elif a.command == 'audit-provenance': audit_provenance()
+    elif a.command == 'remask':
+        if len(a.keys) != 1 or a.threshold is None: parser.error('Remask requires one key and explicit threshold')
+        remask(a.keys[0], a.threshold)
     else: report()
 
 

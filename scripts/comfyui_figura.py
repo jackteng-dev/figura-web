@@ -126,6 +126,14 @@ def build(spec, shot, uploaded):
         graph['9']['inputs'].update(width=w, height=round(h*.25))
         graph['10']['inputs']['y'] = round(h*.75)
         graph['3']['inputs']['bg_removal_name'] = shot['maskModel']
+        graph['11']['inputs']['value'] = shot.get('maskThreshold', .1)
+        if shot.get('protectionMask'):
+            mask = ROOT / shot['protectionMask']
+            if sha(mask) != shot['protectionMaskSha256']:
+                raise ValueError('Foreground protection mask changed')
+            graph['21'] = {'class_type': 'LoadImageMask', 'inputs': {'image': 'PROTECTION-' + shot['protectionMaskSha256'] + '.png', 'channel': 'red'}}
+            graph['22'] = {'class_type': 'MaskComposite', 'inputs': {'destination': ['11', 0], 'source': ['21', 0], 'x': 0, 'y': 0, 'operation': 'add'}}
+            graph['7']['inputs']['mask'] = ['22', 0]
     else:
         graph['7']['inputs']['text'] = spec['invariants'] + ' ' + shot['prompt']
         graph['12']['inputs']['noise_seed'] = shot['seed']
@@ -184,6 +192,8 @@ def run(client, product, shot_name, timeout, config=CONFIG):
         graph['1']['inputs']['image'] = client.upload(source)
         if shot['mode'] == 'scene-composite':
             graph['5']['inputs']['image'] = client.upload(ROOT / shot['background'])
+            if shot.get('protectionMask'):
+                graph['21']['inputs']['image'] = client.upload(ROOT / shot['protectionMask'])
         graph['20']['inputs']['filename_prefix'] = 'figura/' + run_id
         write(folder / 'workflow.api.json', graph)
         state['status'] = 'submission_unknown'

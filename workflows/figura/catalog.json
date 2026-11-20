@@ -132,21 +132,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult desert rail surveyor with orange padded jacket, teal utility belt and a tripod-free handheld surveying puck on terracotta base. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "matte designer vinyl with ceramic finish",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult brown-haired female explorer, goggles above forehead, ivory scarf, orange quilted cropped jacket, tan cargo pants and brown/orange boots. Anatomical RIGHT hand on hip; anatomical LEFT hand holds small teal/ivory cup at shoulder height. Teal utility belt with pouches. Terracotta circular rocky desert base.",
+      "rearDesign": "Continue orange quilted jacket panels, ivory scarf behind neck and same teal belt/pouch positions. Cup remains raised in left hand, right hand stays hip. No backpack or additional canteen; same terracotta rocky round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult desert rail surveyor with orange padded jacket, teal utility belt and a tripod-free handheld surveying puck on terracotta base. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult brown-haired female explorer, goggles above forehead, ivory scarf, orange quilted cropped jacket, tan cargo pants and brown/orange boots. Anatomical RIGHT hand on hip; anatomical LEFT hand holds small teal/ivory cup at shoulder height. Teal utility belt with pouches. Terracotta circular rocky desert base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          280,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -160,15 +160,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112025,
+        "seed": 2026212025,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112025,
+        "seed": 2026212025,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange quilted jacket panels, ivory scarf behind neck and same teal belt/pouch positions. Cup remains raised in left hand, right hand stays hip. No backpack or additional canteen; same terracotta rocky round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -612,17 +612,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi sand-colored camel with a turquoise hourglass embedded in a saddle case, rolled cream blanket, squat display base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Tan llama with cream layered neck fleece, teal halter and tassels, dark hooves. Teal/gold decorative saddle cloth with triangular cream fringe, brown strapped packs and one rolled cream blanket across back. One gold-framed teal hourglass fixed on its anatomical LEFT flank (the near flank in the master). Low tan round base with turquoise/gold arch-and-diamond rim.",
+      "rearDesign": "Continue cream fleece down back of neck and plain tan rear coat. Keep exactly one rolled blanket, original packs, same saddle fringe and one anatomical LEFT-flank hourglass at its existing attachment; do not duplicate it across both sides. Same arched round base. The opposite flank is an inferred plain saddle continuation.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi sand-colored camel with a turquoise hourglass embedded in a saddle case, rolled cream blanket, squat display base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Tan llama with cream layered neck fleece, teal halter and tassels, dark hooves. Teal/gold decorative saddle cloth with triangular cream fringe, brown strapped packs and one rolled cream blanket across back. One gold-framed teal hourglass fixed on its anatomical LEFT flank (the near flank in the master). Low tan round base with turquoise/gold arch-and-diamond rim. The current attached master is the sculpt authority. Keep exact pose, anatomical sides, paint, props and plinth. No mirrored anatomy or new objects.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          40,
+          0,
           480,
           480
         ],
@@ -640,15 +640,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112026,
+        "seed": 2026212026,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. The one hourglass is on anatomical LEFT flank, which must remain far/occluded from a RIGHT-side camera. Do not move or duplicate it. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112026,
+        "seed": 2026212026,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "Back view 180 degrees, face hidden. Continue cream fleece down back of neck and plain tan rear coat. Keep exactly one rolled blanket, original packs, same saddle fringe and one anatomical LEFT-flank hourglass at its existing attachment; do not duplicate it across both sides. Same arched round base. The opposite flank is an inferred plain saddle continuation. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1092,21 +1092,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a geometric orange-and-cream two-wheel mechanical desert rover with oversized terracotta balloon wheels on a round gravel plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Orange/cream robot riding on two large terracotta treaded wheels; rectangular dark face with two gold round eyes, cream/orange helmet and one black/orange aerial. Open gray claw hands on articulated cream/orange arms; orange belly panel and striped rear grab handle. Low oval gravel-textured taupe base.",
+      "rearDesign": "Continue cream/orange rear chassis with same single striped grab handle, one aerial and two wheels only. Preserve tread pattern and axle height, arms and gray grippers. No third wheel, pack or new face; same oval gravel base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a geometric orange-and-cream two-wheel mechanical desert rover with oversized terracotta balloon wheels on a round gravel plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Orange/cream robot riding on two large terracotta treaded wheels; rectangular dark face with two gold round eyes, cream/orange helmet and one black/orange aerial. Open gray claw hands on articulated cream/orange arms; orange belly panel and striped rear grab handle. Low oval gravel-textured taupe base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
-          480,
-          480
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -1120,22 +1120,134 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112027,
+        "seed": 2026212027,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112027,
+        "seed": 2026212027,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue cream/orange rear chassis with same single striped grab handle, one aerial and two wheels only. Preserve tread pattern and axle height, arms and gray grippers. No third wheel, pack or new face; same oval gravel base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
         "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
         "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
         "uploadedBackground": "BACKGROUND.png",
-        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+        "maskThreshold": 0.1,
+        "protectionMask": "work/catalog-gallery/FIGURA-AI-027/base-protection-r3.png",
+        "protectionMaskSha256": "5c9a9af7597d7b376b37bfeb4a49764def4430cc9ca8fc42bb406ceda17e8683",
+        "protectionMaskSpec": {
+          "sourceSha256": "43a42d6ac6907265760a2d499f30628bd8f67a74bea2a67bfb26ba2ff8519016",
+          "method": "Pillow row-background threshold, seeded connected foreground/hole fill intersected with visually traced plinth boundary; source pixels never repainted",
+          "roi": [
+            100,
+            700,
+            860,
+            920
+          ],
+          "seed": [
+            480,
+            860
+          ],
+          "brightnessDelta": 25,
+          "boundaryPolygon": [
+            [
+              120,
+              779
+            ],
+            [
+              135,
+              754
+            ],
+            [
+              180,
+              739
+            ],
+            [
+              260,
+              720
+            ],
+            [
+              350,
+              708
+            ],
+            [
+              440,
+              701
+            ],
+            [
+              530,
+              706
+            ],
+            [
+              620,
+              718
+            ],
+            [
+              710,
+              735
+            ],
+            [
+              800,
+              750
+            ],
+            [
+              831,
+              777
+            ],
+            [
+              848,
+              839
+            ],
+            [
+              841,
+              858
+            ],
+            [
+              814,
+              875
+            ],
+            [
+              761,
+              889
+            ],
+            [
+              682,
+              902
+            ],
+            [
+              590,
+              910
+            ],
+            [
+              480,
+              914
+            ],
+            [
+              370,
+              909
+            ],
+            [
+              264,
+              897
+            ],
+            [
+              181,
+              882
+            ],
+            [
+              129,
+              865
+            ],
+            [
+              111,
+              847
+            ]
+          ]
+        }
       }
     }
   },
@@ -1572,17 +1684,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an articulated copper-bronze station master robot with triangular teal shoulders, a circular hourglass chest and a miniature platform print-free base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Slender bronze clockwork conductor with round teal eyes, peaked burgundy cap, long burgundy coat with gold edging, angular teal shoulder guards and gold buttons. Glass hourglass in circular chest window. Anatomical LEFT hand extended palm up; anatomical RIGHT hand lowered holding one closed brown/brass book at right hip. Boots on round brass/teal tiled platform with rear railing and one small lantern fixture.",
+      "rearDesign": "Continue burgundy coat with gold trim and center rear split, same teal shoulder guards and cap. No extra clock or rear hourglass. Keep left palm up and right hand lowered holding the original closed brown/brass book; railing and small lantern stay attached to original circular tiled platform.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an articulated copper-bronze station master robot with triangular teal shoulders, a circular hourglass chest and a miniature platform print-free base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Slender bronze clockwork conductor with round teal eyes, peaked burgundy cap, long burgundy coat with gold edging, angular teal shoulder guards and gold buttons. Glass hourglass in circular chest window. Anatomical LEFT hand extended palm up; anatomical RIGHT hand lowered holding one closed brown/brass book at right hip. Boots on round brass/teal tiled platform with rear railing and one small lantern fixture. The current attached master is the sculpt authority. Keep exact pose, anatomical sides, paint, props and plinth. No mirrored anatomy or new objects.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          200,
+          0,
           480,
           480
         ],
@@ -1600,15 +1712,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112028,
+        "seed": 2026212028,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112028,
+        "seed": 2026212028,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "Back view 180 degrees, face hidden. Continue burgundy coat with gold trim and center rear split, same teal shoulder guards and cap. No extra clock or rear hourglass. Keep left palm up and right hand lowered holding the original closed brown/brass book; railing and small lantern stay attached to original circular tiled platform. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2052,21 +2164,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Create one original hand-carved sandstone fox figurine for a fictional collectibles catalog. Small quadruped with a long broad tapering single tail curled down against a square orange rock plinth, short folded ears, a deeply faceted mask and three discreet cobalt cylindrical surveying pins set in its pebble-textured back. Stylized archaic geometric stonework, rich rust, slate-blue line accents, cracks and irregular grain, clear one-tail silhouette. Full physical sculpture photographed in three-quarter view on a seamless peach studio backdrop with soft diffuse light. Centered square composition and foot/base breathing room. No text, logo, extra tails, flame-like hair, packaging or recognizable franchise designs.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Angular faceted rust-orange fox sculpture with gray-blue geometric stripe inlays, pointed ears, narrow eyes, seated four-legged stance and broad curled faceted tail. Three short dark indigo pipe stubs rise from the spine. Thick irregular rectangular terracotta stone plinth.",
+      "rearDesign": "Continue same gray-blue geometric inlays around the faceted rust back and tail, exactly three spine pipe stubs. No extra tails, legs or smooth fur. Keep original seated stance and rectangular rough orange plinth.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Create one original hand-carved sandstone fox figurine for a fictional collectibles catalog. Small quadruped with a long broad tapering single tail curled down against a square orange rock plinth, short folded ears, a deeply faceted mask and three discreet cobalt cylindrical surveying pins set in its pebble-textured back. Stylized archaic geometric stonework, rich rust, slate-blue line accents, cracks and irregular grain, clear one-tail silhouette. Full physical sculpture photographed in three-quarter view on a seamless peach studio backdrop with soft diffuse light. Centered square composition and foot/base breathing room. No text, logo, extra tails, flame-like hair, packaging or recognizable franchise designs.",
+    "invariants": "Angular faceted rust-orange fox sculpture with gray-blue geometric stripe inlays, pointed ears, narrow eyes, seated four-legged stance and broad curled faceted tail. Three short dark indigo pipe stubs rise from the spine. Thick irregular rectangular terracotta stone plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          40,
+          20,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -2080,15 +2192,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112029,
+        "seed": 2026212029,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112029,
+        "seed": 2026212029,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue same gray-blue geometric inlays around the faceted rust back and tail, exactly three spine pipe stubs. No extra tails, legs or smooth fur. Keep original seated stance and rectangular rough orange plinth. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2532,21 +2644,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi cobalt-and-terra robot holding plier-like unbranded ticket punches, carrying a small frame of brass gears and standing on a pale flat disk. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Small blue/ivory mechanic robot with round blue helmet, copper center band/rivets, ivory face panel and two oval amber eyes. Orange neck scarf, blue glove hands, tan tool belt and pouches, blue shin guards/boots. Anatomical RIGHT hand raises one silver pliers; anatomical LEFT arm cradles one square open brass gear box. Low plain ivory circular base.",
+      "rearDesign": "Continue blue helmet with copper center band and plain blue/ivory rear panels. Same scarf knot, belt and tool pouches, right pliers and left gear box. No backpack or additional tools; same ivory circular base and foot spacing.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi cobalt-and-terra robot holding plier-like unbranded ticket punches, carrying a small frame of brass gears and standing on a pale flat disk. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Small blue/ivory mechanic robot with round blue helmet, copper center band/rivets, ivory face panel and two oval amber eyes. Orange neck scarf, blue glove hands, tan tool belt and pouches, blue shin guards/boots. Anatomical RIGHT hand raises one silver pliers; anatomical LEFT arm cradles one square open brass gear box. Low plain ivory circular base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          220,
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -2560,15 +2672,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112030,
+        "seed": 2026212030,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112030,
+        "seed": 2026212030,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue blue helmet with copper center band and plain blue/ivory rear panels. Same scarf knot, belt and tool pouches, right pliers and left gear box. No backpack or additional tools; same ivory circular base and foot spacing. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3012,17 +3124,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a quadruped peach desert lizard with a sea-green canvas sail, miniature webbing and drifts sculpted into a compact base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Orange/cream crested lizard with textured scales, long striped tail curled to side and four planted feet. Brown saddle/harness with small packs and ivory net pouch. One large teal triangular fabric sail on brass frame rises from saddle. Sandy beige round base with gray rock patches.",
+      "rearDesign": "Continue orange scaled back under the same saddle, exactly one teal sail and brass frame. Preserve packs, net pouch, four feet and tail coil orientation. No additional sails, reins or horns; same sandy rock-patch circular base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a quadruped peach desert lizard with a sea-green canvas sail, miniature webbing and drifts sculpted into a compact base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Orange/cream crested lizard with textured scales, long striped tail curled to side and four planted feet. Brown saddle/harness with small packs and ivory net pouch. One large teal triangular fabric sail on brass frame rises from saddle. Sandy beige round base with gray rock patches. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          40,
+          180,
           480,
           480
         ],
@@ -3040,15 +3152,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112031,
+        "seed": 2026212031,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112031,
+        "seed": 2026212031,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange scaled back under the same saddle, exactly one teal sail and brass frame. Preserve packs, net pouch, four feet and tail coil orientation. No additional sails, reins or horns; same sandy rock-patch circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3492,21 +3604,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure with black curly hair, linen cream mechanic coat, rust orange workbag and an ochre rock base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult female field scientist with pinned dark curly hair, long weathered cream coat, olive shirt and cargo trousers, brown lace boots. Brown leather satchel at anatomical RIGHT hip with right hand holding its shoulder strap. Anatomical LEFT hand holds small brass round instrument at side. One foot on higher ochre rock, irregular yellow/orange rocky base.",
+      "rearDesign": "Continue cream coat with simple center seam/rear split and same olive garments. Satchel remains at right hip and instrument in left hand. Same curly pinned hair and raised-foot stance; no extra bag or rear tool; same ochre stepped rock base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure with black curly hair, linen cream mechanic coat, rust orange workbag and an ochre rock base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm stone or pale peach studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult female field scientist with pinned dark curly hair, long weathered cream coat, olive shirt and cargo trousers, brown lace boots. Brown leather satchel at anatomical RIGHT hip with right hand holding its shoulder strap. Anatomical LEFT hand holds small brass round instrument at side. One foot on higher ochre rock, irregular yellow/orange rocky base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          280,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -3520,15 +3632,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112032,
+        "seed": 2026212032,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112032,
+        "seed": 2026212032,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue cream coat with simple center seam/rear split and same olive garments. Satchel remains at right hip and instrument in left hand. Same curly pinned hair and raised-foot stance; no extra bag or rear tool; same ochre stepped rock base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4872,21 +4984,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a lanky oxidized-copper articulated robot with snorkel crown and lime contour panels on basalt terrain. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Tall slender weathered bronze/green robot with round turquoise optical lenses, three uneven open pipes rising from head, thin exposed mechanical neck/limbs and lime moss-like plates. One foot on higher stacked dark basalt step, arms relaxed and slightly apart. Circular low patinated base with angular basalt columns and moss.",
+      "rearDesign": "Continue narrow bronze/green spine and exposed mechanical joints with same lime plate placement. Exactly the same three head pipes and two eye lenses, no tank or backpack. Keep one raised foot and identical basalt step/base silhouette.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a lanky oxidized-copper articulated robot with snorkel crown and lime contour panels on basalt terrain. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Tall slender weathered bronze/green robot with round turquoise optical lenses, three uneven open pipes rising from head, thin exposed mechanical neck/limbs and lime moss-like plates. One foot on higher stacked dark basalt step, arms relaxed and slightly apart. Circular low patinated base with angular basalt columns and moss. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          290,
+          0,
+          400,
+          400
         ],
-        "size": 480
+        "size": 400
       },
       "detail": {
         "mode": "crop",
@@ -4900,15 +5012,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112023,
+        "seed": 2026212023,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112023,
+        "seed": 2026212023,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue narrow bronze/green spine and exposed mechanical joints with same lime plate placement. Exactly the same three head pipes and two eye lenses, no tank or backpack. Keep one raised foot and identical basalt step/base silhouette. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5352,17 +5464,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a little puffin with deep ink-blue plumage, an exaggerated yellow slicker and a round insulated aqua supply case. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Navy/white puffin with large orange/yellow beak, orange webbed feet, yellow hooded raincoat with two front flap pockets and drawstrings. Dark diagonal strap crosses chest to one teal cooler at anatomical LEFT hip, left wing on cooler lid; right wing hangs. Dark round coastal rock/wave base.",
+      "rearDesign": "Continue plain yellow raincoat back with center seam and same hood; strap goes from right shoulder to left cooler. No back pockets, hood symbol or second cooler. Feet remain in original stance, same dark rocky wave base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a little puffin with deep ink-blue plumage, an exaggerated yellow slicker and a round insulated aqua supply case. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a cool slate-blue seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Navy/white puffin with large orange/yellow beak, orange webbed feet, yellow hooded raincoat with two front flap pockets and drawstrings. Dark diagonal strap crosses chest to one teal cooler at anatomical LEFT hip, left wing on cooler lid; right wing hangs. Dark round coastal rock/wave base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
+          40,
           480,
           480
         ],
@@ -5380,15 +5492,15 @@
       },
       "side": {
         "mode": "flux-reference",
-        "seed": 2026112024,
+        "seed": 2026212024,
         "size": 768,
-        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112024,
+        "seed": 2026212024,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain yellow raincoat back with center seam and same hood; strap goes from right shoulder to left cooler. No back pockets, hood symbol or second cooler. Feet remain in original stance, same dark rocky wave base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Keep original anatomical left/right and fixed limb poses, the closed book, the one diagonal strap, and all tools and bags. Add no X harness, hood or second hourglass. Show anatomical RIGHT 90-degree profile, not a near-front or opposite side; back 180 hides the face. Preserve the exact plinth/rock contour, ornament and fixed supports."
       },
       "scene": {
         "mode": "scene-composite",

@@ -1,0 +1,20 @@
+{
+  "1":{"class_type":"LoadImage","inputs":{"image":"REFERENCE.png"}},
+  "2":{"class_type":"ImageCrop","inputs":{"image":["1",0],"x":0,"y":0,"width":960,"height":960}},
+  "3":{"class_type":"UNETLoader","inputs":{"unet_name":"figura-klein-base-4b-fp8-103db268c10d.safetensors","weight_dtype":"default"}},
+  "4":{"class_type":"CLIPLoader","inputs":{"clip_name":"qwen_3_4b.safetensors","type":"flux2","device":"cpu"}},
+  "5":{"class_type":"VAELoader","inputs":{"vae_name":"flux2-vae.safetensors"}},
+  "6":{"class_type":"VAEEncode","inputs":{"pixels":["2",0],"vae":["5",0]}},
+  "7":{"class_type":"CLIPTextEncode","inputs":{"clip":["4",0],"text":"Preserve the exact sculpt from the reference."}},
+  "8":{"class_type":"ReferenceLatent","inputs":{"conditioning":["7",0],"latent":["6",0]}},
+  "17":{"class_type":"CLIPTextEncode","inputs":{"clip":["4",0],"text":""}},
+  "18":{"class_type":"ReferenceLatent","inputs":{"conditioning":["17",0],"latent":["6",0]}},
+  "9":{"class_type":"CFGGuider","inputs":{"model":["3",0],"positive":["8",0],"negative":["18",0],"cfg":5}},
+  "10":{"class_type":"EmptyFlux2LatentImage","inputs":{"width":768,"height":768,"batch_size":1}},
+  "11":{"class_type":"KSamplerSelect","inputs":{"sampler_name":"euler"}},
+  "12":{"class_type":"RandomNoise","inputs":{"noise_seed":2026112001}},
+  "13":{"class_type":"Flux2Scheduler","inputs":{"steps":20,"width":768,"height":768}},
+  "14":{"class_type":"SamplerCustomAdvanced","inputs":{"noise":["12",0],"guider":["9",0],"sampler":["11",0],"sigmas":["13",0],"latent_image":["10",0]}},
+  "15":{"class_type":"VAEDecode","inputs":{"samples":["14",0],"vae":["5",0]}},
+  "20":{"class_type":"SaveImage","inputs":{"images":["15",0],"filename_prefix":"figura/base-reference-edit"}}
+}

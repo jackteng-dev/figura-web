@@ -9,6 +9,7 @@
 - `MAIN`：保留目前本機商品的主圖與 image ID。
 - `FACE／DETAIL`：ComfyUI 直接裁切，不放大、不重畫；通過構圖檢查後，另以 ComfyUI 0.27 的 PyAV RGB 解碼逐像素比對。Pillow 對 JPEG 色度上採樣的結果略有不同，不能拿另一個解碼器的像素差誤判為生成漂移。
 - `SCENE`：同一 master 經 BiRefNet 遮罩，二值化後以 ComfyUI 合成木質展示台；逐張確認髮絲、透明配件、底座與支架沒有被遮罩刪掉。這是 2D AI 合成示意，不能宣稱實物攝影或物理上精確的透明材質渲染。
+- 遮罩若漏掉原底座，可加入已核對原圖邊界的 `protectionMask`，以 core `LoadImageMask → MaskComposite(add)` 保護原像素；不重畫或推測新零件。027 的可重建配方在設定內，`prepare_gallery_protection.py FIGURA-AI-027 --verify` 會重算並核對 SHA，不覆寫既有檔案。
 - `ANGLE／REAR`：同一 master latent reference；背部固定提案先保存到 character sheet。身份漂移的候選退回並修正重試；仍無法一致時不上傳，保留原因及每次 run ID。
 - `complete` 代表沿用主圖或已寫入並讀回本機圖庫；`pass` 尚待上傳；`review_pending` 尚未判定；`reject` 代表退回、圖庫留空。這些狀態都不等於作者簽核。
 
@@ -41,6 +42,8 @@
 
 ## 新增模型
 
-[2026-11-20 環境紀錄](verification/comfyui-environment-2026-11-20.json)：僅新增作者官方 `ZhengPeng7/BiRefNet` 的 MIT 授權 safetensors，使用既有 ComfyUI core 節點，無新 custom node、無重啟、無覆寫使用者 workflow／模型。既有 Flux.2 Klein 4B FP8、Qwen 3 4B、Flux2 VAE 延用前輪盤點。所有服務僅 loopback。
+[2026-11-20 環境紀錄](verification/comfyui-environment-2026-11-20.json)：新增作者官方 `ZhengPeng7/BiRefNet`（MIT，444,473,596 bytes）及 `black-forest-labs/FLUX.2-klein-base-4b-fp8`（Apache-2.0，4,089,498,488 bytes）。均先核對商用授權／空間，再以固定 revision 下載並核對官方 LFS SHA-256。只使用既有 core 節點，無新 custom node、無重啟、無覆寫使用者 workflow／模型。既有 distilled Klein 4B FP8、Qwen 3 4B、Flux2 VAE 延用前輪盤點。所有服務僅 loopback。
+
+額外 Base 試驗沿用已安裝官方 `image_flux2_klein_image_edit_4b_base.json` 的 20 steps／CFG5，以及正／負 conditioning 均接同一 ReferenceLatent。三款各一張側視仍未達角色右 90 度，且有塗裝／配件或底座變化，全部退回；沒有把 4-step distilled 設定誤用於未蒸餾模型，也沒有把失敗試驗擴大為 Base 全庫重產。
 
 本輪 Maven package 成功：324 tests 中 46 通過、278 個整合測試因未啟用其 opt-in 隔離環境而 skip，0 failure/error；不能把它寫成 324 項全通過。真實 demo 上傳／讀回與瀏覽器檢查另行記錄。

@@ -62,5 +62,13 @@
     "18188",
     "--disable-auto-launch"
   ],
-  "loopbackOnly": true
+  "loopbackOnly": true,
+  "basePilotTemplate": {
+    "installedPackageVersion": "0.11.1",
+    "file": "image_flux2_klein_image_edit_4b_base.json",
+    "sha256": "a62c1ca772d9118d29e60318a586e4faee58a8972d9926bfe1f4042a3a46ae56",
+    "steps": 20,
+    "cfg": 5,
+    "negativeReferenceLatent": true
+  }
 }

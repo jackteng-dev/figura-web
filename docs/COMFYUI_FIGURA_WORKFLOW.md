@@ -2,6 +2,8 @@
 
 2026-11-19。延續已合併 PR #21；不重新設計角色、不替換正式商品、不操作正式 DB。這套流程產出點陣概念圖，不是可量測的 3D 模型。
 
+**2026-11-20 全目錄續作：** 沿用本 runner／workflows，以本機 catalog 現有主圖建立獨立 `catalog-r1`，不覆寫下方歷史 r1 樣本。批次進度、六圖位狀態、每次 prompt／seed／模型與輸出 SHA、退回原因及本機圖庫讀回見 [全目錄 manifest](verification/catalog-gallery-manifest.json)、[比較頁](catalog-gallery-comparison.html) 和 [續跑說明](CATALOG_GALLERY_RUNBOOK.md)。新增的 `scene-composite.api.json` 保留 master 前景像素；官方 Klein Base 4B FP8 的三款額外側視試驗均退回，沒有自動納入圖庫。作者簽核仍為 pending，原始圖片留在忽略的 work/。
+
 ## 本輪結論
 
 - 主圖沿用 PR #21 的 r1 Master Reference，保留原本 PVC／ABS／樹脂風格；**沒有把新的生成圖誤稱為更好的定稿主圖**。
