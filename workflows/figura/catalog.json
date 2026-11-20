@@ -432,21 +432,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi lilac raccoon figure with a mint hexagonal confectionery tin and orange apron on a speckle-cream disk. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "matte designer vinyl with ceramic finish",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Lavender/cream raccoon with broad purple eye mask, big glossy eyes, pink mouth, orange apron with ivory lace/floral paint and orange back waist bow. Both paws hold one mint hexagonal gift box with cream floral motifs/orange round top decoration. Lavender striped tail curls behind. Low pale cream circular plinth.",
+      "rearDesign": "Continue lavender/cream back and the same striped curled tail, apron waist bow and ivory straps. One mint hexagonal box stays in front; no extra package or ornaments. Same cream round base and planted purple feet.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi lilac raccoon figure with a mint hexagonal confectionery tin and orange apron on a speckle-cream disk. Render it as a single complete physical collectible made of matte designer vinyl with ceramic finish; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Lavender/cream raccoon with broad purple eye mask, big glossy eyes, pink mouth, orange apron with ivory lace/floral paint and orange back waist bow. Both paws hold one mint hexagonal gift box with cream floral motifs/orange round top decoration. Lavender striped tail curls behind. Low pale cream circular plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          180,
+          0,
+          560,
+          560
         ],
-        "size": 480
+        "size": 560
       },
       "detail": {
         "mode": "crop",
@@ -468,7 +468,7 @@
         "mode": "flux-reference",
         "seed": 2026112085,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue lavender/cream back and the same striped curled tail, apron waist bow and ivory straps. One mint hexagonal box stays in front; no extra package or ornaments. Same cream round base and planted purple feet. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -912,21 +912,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult statue with earthy green wool garment and garnet scarf, holding a ceramic teapot with an abstract citrus finial on bronze stand. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult dark curly-haired woman with gold leaf hairpins, olive floral long dress with cream underskirt, brown lace boots and burgundy patterned shawl wrapped around shoulders/neck. Both hands cradle one ivory floral teapot with curved spout, handle and gold trim, one small gold/orange butterfly on its lid. Low bronze circular plinth with engraved pale floral top.",
+      "rearDesign": "Continue olive dress with same botanical trim and burgundy shawl folds/fringe around back. Same updo, one teapot and one butterfly; no added bag, cup or shawl emblem. Preserve original foot pose and bronze floral round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult statue with earthy green wool garment and garnet scarf, holding a ceramic teapot with an abstract citrus finial on bronze stand. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult dark curly-haired woman with gold leaf hairpins, olive floral long dress with cream underskirt, brown lace boots and burgundy patterned shawl wrapped around shoulders/neck. Both hands cradle one ivory floral teapot with curved spout, handle and gold trim, one small gold/orange butterfly on its lid. Low bronze circular plinth with engraved pale floral top. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          280,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -948,7 +948,7 @@
         "mode": "flux-reference",
         "seed": 2026112086,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue olive dress with same botanical trim and burgundy shawl folds/fringe around back. Same updo, one teapot and one butterfly; no added bag, cup or shawl emblem. Preserve original foot pose and bronze floral round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1504,17 +1504,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a compact ivory mouse kitchen robot carrying a violet metal whisk and small orange canister on lavender display base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Ivory mechanical mouse chef with large pink ears, black bead eyes, pink nose, tall white chef hat with purple band/gold button and gold side ear fittings. Purple/ivory scalloped apron, pink segmented tail, white/purple boots. Anatomical RIGHT hand holds one purple whisk raised; anatomical LEFT hand carries small copper bucket. Low plain purple circular base.",
+      "rearDesign": "Continue ivory rear mechanical plates and plain purple apron tie/hat band, same pink tail and original bent-leg pose. Right whisk and left bucket unchanged, no added utensils or pockets. Same purple round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a compact ivory mouse kitchen robot carrying a violet metal whisk and small orange canister on lavender display base. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Ivory mechanical mouse chef with large pink ears, black bead eyes, pink nose, tall white chef hat with purple band/gold button and gold side ear fittings. Purple/ivory scalloped apron, pink segmented tail, white/purple boots. Anatomical RIGHT hand holds one purple whisk raised; anatomical LEFT hand carries small copper bucket. Low plain purple circular base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
+          0,
           480,
           480
         ],
@@ -1540,7 +1540,7 @@
         "mode": "flux-reference",
         "seed": 2026112087,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory rear mechanical plates and plain purple apron tie/hat band, same pink tail and original bent-leg pose. Right whisk and left bucket unchanged, no added utensils or pockets. Same purple round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2091,17 +2091,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tall mint cream goose with cut glass decorative pouch and a coral orange neck bow on a slate blue disk. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Ivory/pale green goose with long neck, orange bill/feet, layered pale green wing feathers and large orange floral bow scarf at front. One small round clear floral pouch hangs at the original reference-visible flank. Low navy round plinth painted with white/gold flowers and gold rim.",
+      "rearDesign": "Continue ivory/green layered rear feathers and same short tail. Bow remains at front, the single clear floral pouch keeps its original attachment; no second pouch or ribbon. Same two orange feet and navy floral circular base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a tall mint cream goose with cut glass decorative pouch and a coral orange neck bow on a slate blue disk. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Ivory/pale green goose with long neck, orange bill/feet, layered pale green wing feathers and large orange floral bow scarf at front. One small round clear floral pouch hangs at the original reference-visible flank. Low navy round plinth painted with white/gold flowers and gold rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          380,
+          0,
           480,
           480
         ],
@@ -2127,7 +2127,7 @@
         "mode": "flux-reference",
         "seed": 2026112088,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory/green layered rear feathers and same short tail. Bow remains at front, the single clear floral pouch keeps its original attachment; no second pouch or ribbon. Same two orange feet and navy floral circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2571,17 +2571,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a ginger cat with pale pink terrazzo crown-like tabletop clover plate and smoky grey scarf, periwinkle base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Seated ginger tabby with cream muzzle/chest, green eyes and brown stripes. Thick gray knitted scarf with long ends hanging at anatomical RIGHT side. Small cluster of pink paw-print biscuit tiles on top of head, same count/arrangement as master. Tail wraps front feet. Low lavender-blue circular cylinder plinth.",
+      "rearDesign": "Continue orange/brown tabby fur, same gray scarf wrap and ends at right side, original pink paw-tile arrangement above head. No added biscuits, bag or second tail. Same seated paws and lavender-blue round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a ginger cat with pale pink terrazzo crown-like tabletop clover plate and smoky grey scarf, periwinkle base. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Seated ginger tabby with cream muzzle/chest, green eyes and brown stripes. Thick gray knitted scarf with long ends hanging at anatomical RIGHT side. Small cluster of pink paw-print biscuit tiles on top of head, same count/arrangement as master. Tail wraps front feet. Low lavender-blue circular cylinder plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          220,
+          0,
           480,
           480
         ],
@@ -2607,7 +2607,7 @@
         "mode": "flux-reference",
         "seed": 2026112089,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange/brown tabby fur, same gray scarf wrap and ends at right side, original pink paw-tile arrangement above head. No added biscuits, bag or second tail. Same seated paws and lavender-blue round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3051,17 +3051,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a rosy wren with terracotta courier cap and navy leg casings, holding a pale yellow packet on a resin plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Red/brown clockwork robin with red cap and brass side button, black eye, gray beak, ivory breast, layered red/brown wings/tail and black articulated legs with brass rivets. Brown leather satchel at anatomical RIGHT hip, strap from left shoulder. Both wings hold one cream letter parcel tied with gold ribbon/red wax seal. Cream round base with green/red botanical rim.",
+      "rearDesign": "Continue red/brown back feathers and original mechanical leg joints. Strap continues left shoulder to right bag; letter stays single at front, no additional mail or cap ornament. Same cream botanical round base and feet.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a rosy wren with terracotta courier cap and navy leg casings, holding a pale yellow packet on a resin plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Red/brown clockwork robin with red cap and brass side button, black eye, gray beak, ivory breast, layered red/brown wings/tail and black articulated legs with brass rivets. Brown leather satchel at anatomical RIGHT hip, strap from left shoulder. Both wings hold one cream letter parcel tied with gold ribbon/red wax seal. Cream round base with green/red botanical rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
+          250,
+          20,
           480,
           480
         ],
@@ -3087,7 +3087,7 @@
         "mode": "flux-reference",
         "seed": 2026112090,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue red/brown back feathers and original mechanical leg joints. Strap continues left shoulder to right bag; letter stays single at front, no additional mail or cap ornament. Same cream botanical round base and feet. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3531,21 +3531,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure in muted ochre apron with small ivory ceramic measuring beaker on a handmade two-tone pedestal. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Adult brown-haired worker with ivory headband/updo, rolled-sleeve ivory blouse, mustard long apron with pockets, olive cropped trousers and brown lace boots. Anatomical RIGHT hand on hip; anatomical LEFT hand raises small ivory cup. Plain pale circular plinth with terracotta lower rim.",
+      "rearDesign": "Continue plain mustard apron back ties over ivory blouse and olive trousers, same headband/updo. Keep right hip hand and left cup, no headphones, rear tools or extra pockets. Same cream/terracotta round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure in muted ochre apron with small ivory ceramic measuring beaker on a handmade two-tone pedestal. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Adult brown-haired worker with ivory headband/updo, rolled-sleeve ivory blouse, mustard long apron with pockets, olive cropped trousers and brown lace boots. Anatomical RIGHT hand on hip; anatomical LEFT hand raises small ivory cup. Plain pale circular plinth with terracotta lower rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          280,
+          0,
+          420,
+          420
         ],
-        "size": 480
+        "size": 420
       },
       "detail": {
         "mode": "crop",
@@ -3567,14 +3567,113 @@
         "mode": "flux-reference",
         "seed": 2026112091,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain mustard apron back ties over ivory blouse and olive trousers, same headband/updo. Keep right hip hand and left cup, no headphones, rear tools or extra pockets. Same cream/terracotta round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
         "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
         "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
         "uploadedBackground": "BACKGROUND.png",
-        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+        "protectionMaskSpec": {
+          "method": "polygon",
+          "sourceSha256": "bdaa0ca8ec5e8330103d301e8c79edf2bcbd9e48f94ff76ef593bba685f08a24",
+          "polygons": [
+            [
+              [
+                273,
+                814
+              ],
+              [
+                285,
+                804
+              ],
+              [
+                327,
+                794
+              ],
+              [
+                386,
+                787
+              ],
+              [
+                449,
+                787
+              ],
+              [
+                510,
+                792
+              ],
+              [
+                563,
+                802
+              ],
+              [
+                590,
+                813
+              ],
+              [
+                598,
+                832
+              ],
+              [
+                607,
+                870
+              ],
+              [
+                611,
+                895
+              ],
+              [
+                606,
+                905
+              ],
+              [
+                590,
+                914
+              ],
+              [
+                550,
+                923
+              ],
+              [
+                490,
+                930
+              ],
+              [
+                420,
+                932
+              ],
+              [
+                351,
+                925
+              ],
+              [
+                297,
+                914
+              ],
+              [
+                269,
+                905
+              ],
+              [
+                262,
+                897
+              ],
+              [
+                262,
+                878
+              ],
+              [
+                269,
+                837
+              ]
+            ]
+          ],
+          "purpose": "Visually traced original sculpt support; retain original master pixels, no repainting"
+        },
+        "protectionMask": "work/catalog-gallery/FIGURA-AI-091/protection-5956650374b1.png",
+        "protectionMaskSha256": "5956650374b1e13fbee536f578fae0b6b841ce6545a8c70915b4a014b571de68"
       }
     }
   },
@@ -4011,21 +4110,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi terrier with caramel textured fur, mint little rolling pin and striped navy apron on pastel yellow base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Upright golden Yorkshire-terrier toy with sculpted shaggy fur, floppy ears, dark eyes/nose and pink tongue. Navy/ivory vertically striped apron with front pocket and navy back waist bow. Both paws hold one pale green rolling pin horizontally. Four short golden feet/paws in original stance. Plain yellow circular plinth.",
+      "rearDesign": "Continue sculpted golden back fur and same striped apron with navy waist bow. Rolling pin stays single at front, no extra tools or tongue changes. Same short planted feet and yellow round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a chibi terrier with caramel textured fur, mint little rolling pin and striped navy apron on pastel yellow base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Upright golden Yorkshire-terrier toy with sculpted shaggy fur, floppy ears, dark eyes/nose and pink tongue. Navy/ivory vertically striped apron with front pocket and navy back waist bow. Both paws hold one pale green rolling pin horizontally. Four short golden feet/paws in original stance. Plain yellow circular plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          220,
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -4047,7 +4146,7 @@
         "mode": "flux-reference",
         "seed": 2026112092,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue sculpted golden back fur and same striped apron with navy waist bow. Rolling pin stays single at front, no extra tools or tongue changes. Same short planted feet and yellow round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4491,17 +4590,17 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a cocoa-brown hollow vinyl bear with walnut spoon, silver and lilac enamel scarf on a tiered pale wood plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "painted ABS with simple clean articulated joints",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Brown wooden-style bear toy with round ears, tiny black eyes, ivory muzzle/belly, pink cheeks and visible round limb-joint details. Lavender scarf with ivory leaf paint and gold edge. Anatomical LEFT hand holds one large wooden spoon raised at shoulder; anatomical RIGHT arm relaxed. Two-step tan wooden circular base.",
+      "rearDesign": "Continue plain brown wood-like back and the same lavender scarf wrap/leaf trim, preserve scarf-end count and positions. Spoon remains left, right arm stays lowered; no new spoon or carving. Same two-step wooden round base.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a cocoa-brown hollow vinyl bear with walnut spoon, silver and lilac enamel scarf on a tiered pale wood plinth. Render it as a single complete physical collectible made of painted ABS with simple clean articulated joints; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a soft oat, coral or pistachio studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Brown wooden-style bear toy with round ears, tiny black eyes, ivory muzzle/belly, pink cheeks and visible round limb-joint details. Lavender scarf with ivory leaf paint and gold edge. Anatomical LEFT hand holds one large wooden spoon raised at shoulder; anatomical RIGHT arm relaxed. Two-step tan wooden circular base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
           240,
-          38,
+          0,
           480,
           480
         ],
@@ -4527,7 +4626,7 @@
         "mode": "flux-reference",
         "seed": 2026112093,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain brown wood-like back and the same lavender scarf wrap/leaf trim, preserve scarf-end count and positions. Spoon remains left, right arm stays lowered; no new spoon or carving. Same two-step wooden round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
@@ -6086,21 +6185,21 @@
     "characterSheet": {
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a light brass sculpted deer with jade disk antlers and moss-green patina legs on an oblong street-plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "smooth painted PVC collector figure",
-      "visibleInvariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image.",
-      "rearDesign": "Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry.",
-      "rearDesignStatus": "fixed AI proposal; author pending"
+      "visibleInvariants": "Slender brass/green deer with ornate gold scroll inlays, cream sculpted neck/chest tufts, four gold hooves and tall branching gold antlers bearing the same pierced mint-green circular spirit disks as master. Long elegant muzzle, green/gold body and short tail. Low oblong oval stone base with gold leafy scroll rim.",
+      "rearDesign": "Continue green/gold scrollwork around back and cream neck tufts with no new emblem. Preserve original antler branches and exact mint-disk count/positions, four hooves and tail. Same oblong stone/gold-vine base, no added vegetation or disks.",
+      "rearDesignStatus": "fixed AI proposal recorded before generation; author pending"
     },
-    "invariants": "Preserve every visible contour, face, paint boundary, clothing fold, ornament, joint, accessory, fixed pose and the exact base in the attached current catalog master. Anatomical left/right belong to the character, never mirror the image. Original design brief (master takes precedence): Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: a light brass sculpted deer with jade disk antlers and moss-green patina legs on an oblong street-plinth. Render it as a single complete physical collectible made of smooth painted PVC collector figure; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a muted teal or charcoal gallery backdrop with soft diffuse lighting, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+    "invariants": "Slender brass/green deer with ornate gold scroll inlays, cream sculpted neck/chest tufts, four gold hooves and tall branching gold antlers bearing the same pierced mint-green circular spirit disks as master. Long elegant muzzle, green/gold body and short tail. Low oblong oval stone base with gold leafy scroll rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark.",
     "shots": {
       "face": {
         "mode": "crop",
         "crop": [
-          240,
-          38,
-          480,
-          480
+          40,
+          0,
+          500,
+          500
         ],
-        "size": 480
+        "size": 500
       },
       "detail": {
         "mode": "crop",
@@ -6122,7 +6221,7 @@
         "mode": "flux-reference",
         "seed": 2026112084,
         "size": 768,
-        "prompt": "Change only the camera: exact back view at approximately 180 degrees of the same fixed collectible, face turned away. Proposal fixed for this revision: continue visible surfaces, colors and seams around the back; keep visible hair, tail, straps and attachments at their original anatomical positions. Hidden surfaces use the same plain material; add no new pockets, ornaments, props or base features. This is inferred, not observed rear geometry. Same complete base, pose and scale, 8 percent margins, warm off-white studio, crisp painted miniature. No text, logos or watermark."
+        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue green/gold scrollwork around back and cream neck tufts with no new emblem. Preserve original antler branches and exact mint-disk count/positions, four hooves and tail. Same oblong stone/gold-vine base, no added vegetation or disks. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
       },
       "scene": {
         "mode": "scene-composite",
