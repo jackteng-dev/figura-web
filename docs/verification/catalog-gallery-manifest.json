@@ -7078,7 +7078,7 @@
           }
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "明確鯨魚頭背／背部、尾鰭與灰岩台背側，深藍金星、單燈與波浪支座保持；小波紋和岩塊差異可接受。作者 pending。",
           "runId": "541bdb6a0f8a9de23d5605818fd3ff0f28c7475f1746ed0eee8c70a68df8786a",
           "sha256": "322ec6bb2c24f997e0504d79b8ca60508d2e4a3200f4d72969ad8a5b621bec79",
@@ -7110,7 +7110,24 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795365856.1771173
+          "reviewedAt": 1795365856.1771173,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "44c0cef2-0e41-450a-a7e6-845a02392276",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "鹽霧收音鯨，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "322ec6bb2c24f997e0504d79b8ca60508d2e4a3200f4d72969ad8a5b621bec79",
+            "imageId": "c52a2e30-2fe1-40b7-b8a8-8bdb22b011ed",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/d1a6d420-bf87-4099-95e2-9673bc28d9aa/image/c52a2e30-2fe1-40b7-b8a8-8bdb22b011ed",
+            "servedSha256": "e6f36382de9228c10cda72dd8d2fb69cd65fdcbc103d5e0014f244b9544b30a5",
+            "verifiedAt": 1795365864.8301
+          }
         },
         "FACE": {
           "status": "complete",
@@ -7142,7 +7159,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/d1a6d420-bf87-4099-95e2-9673bc28d9aa/image/0cb5bb75-3d41-447b-b619-613ac3af5bd0",
             "servedSha256": "3e2e6ba5b621d9c802a98111beeee7b4671ac0332754000abd79a14db8c2a597",
-            "verifiedAt": 1795140134.579679
+            "verifiedAt": 1795365864.8528364
           },
           "generation": {
             "mode": "crop",
@@ -7211,7 +7228,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/d1a6d420-bf87-4099-95e2-9673bc28d9aa/image/401253af-5eea-4f02-8c4f-da8abcbc5baf",
             "servedSha256": "6398e1674a7848580182f3222911de03d7734ae21fc2ccfae8da963053be947d",
-            "verifiedAt": 1795140134.6094248
+            "verifiedAt": 1795365864.8691375
           },
           "generation": {
             "mode": "crop",
@@ -7273,7 +7290,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/d1a6d420-bf87-4099-95e2-9673bc28d9aa/image/207e0089-7e35-48d4-b6b0-254128c69e39",
             "servedSha256": "d76e58eb6b4c40c2420fc4af6e26e7bb8d7791b196e6e8cd9de43ff459a3ca81",
-            "verifiedAt": 1795140134.651453
+            "verifiedAt": 1795365864.9111843
           },
           "generation": {
             "mode": "scene-composite",
@@ -7416,7 +7433,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -10294,7 +10311,7 @@
           "reviewedAt": 1795142044.713719
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：黃色兜帽背面與雨衣、黑羽橘腳保持，保冷桶在角色左側且左翅倚蓋，深色海浪圓台主形色一致；背部接縫及小浪紋差異可接受。作者 pending。",
           "runId": "47a45b1218dbbc4cce1e79177b550bcbc75f124072676b8e6c121ff183471454",
           "sha256": "ac7f06473d99b84bab3bad8a780552ac5c64a2fb64ac7812dfbf70ed78ca206b",
@@ -10336,6 +10353,23 @@
             "at": 1795365856.3764374,
             "note": "新標準複核：黃色兜帽背面與雨衣、黑羽橘腳保持，保冷桶在角色左側且左翅倚蓋，深色海浪圓台主形色一致；背部接縫及小浪紋差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8be9f121-157f-4358-9c1c-894bd1d63b66",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "低雲渡輪手，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "ac7f06473d99b84bab3bad8a780552ac5c64a2fb64ac7812dfbf70ed78ca206b",
+            "imageId": "3848c2ba-e22c-4d0c-897a-949356b6d9bf",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/a825f6cc-6b7c-4676-91b8-10da80791921/image/3848c2ba-e22c-4d0c-897a-949356b6d9bf",
+            "servedSha256": "2cdfb358b4d579865dc5e08a0ab1d8c93768e80c12a9313a1117efba4e6374aa",
+            "verifiedAt": 1795365865.6233773
           }
         },
         "FACE": {
@@ -10404,7 +10438,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/a825f6cc-6b7c-4676-91b8-10da80791921/image/0dfdd33b-50d6-4ee6-b368-14f8d5361c10",
             "servedSha256": "c88cd2dde707b5616671e69739d0573769e3febcbcf33422c05df47e1382ba8e",
-            "verifiedAt": 1795142047.584479
+            "verifiedAt": 1795365865.6428783
           }
         },
         "DETAIL": {
@@ -10473,7 +10507,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/a825f6cc-6b7c-4676-91b8-10da80791921/image/53b4b416-5d81-4f97-ac9a-18e0414b3f8c",
             "servedSha256": "50f335030158a22e9032abc0c3fe761b6de157c536a5917a63bcd2cef3db4652",
-            "verifiedAt": 1795142047.6127253
+            "verifiedAt": 1795365865.6593041
           }
         },
         "SCENE": {
@@ -10523,7 +10557,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/a825f6cc-6b7c-4676-91b8-10da80791921/image/fa87b9c2-a7a5-463c-beff-90e4fb1e6b0a",
             "servedSha256": "c96d2bd56a650f45accac520d56ef10827ffcb007f2edba7c466d5c03868a3c9",
-            "verifiedAt": 1795142047.642431
+            "verifiedAt": 1795365865.8277047
           }
         }
       },
@@ -10642,7 +10676,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -11079,7 +11113,7 @@
           "reviewedAt": 1795142044.801579
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：駱駝後腦／背部、焦糖體色、鞍包與奶油捲毯及青金圓台保持；相反側沙漏被遮擋，毛束與鞍毯背側細節差異可接受。作者 pending。",
           "runId": "20dfce29dfa504821ecb2bbde8210c06f8d9a7f0cf368694c07bbe429fff73ec",
           "sha256": "618fc0fdc92074f525ea03e76140a780a186913d07ed7a90337d7ff6d9676515",
@@ -11121,6 +11155,23 @@
             "at": 1795365856.3814814,
             "note": "新標準複核：駱駝後腦／背部、焦糖體色、鞍包與奶油捲毯及青金圓台保持；相反側沙漏被遮擋，毛束與鞍毯背側細節差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "d2380f57-1d83-4e5a-afec-bec728cda354",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "砂鐘小駝，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "618fc0fdc92074f525ea03e76140a780a186913d07ed7a90337d7ff6d9676515",
+            "imageId": "6127c021-5ede-4751-b6b6-dc67299fd21b",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/3a86bfe8-6828-4026-8d0d-90c9b52698aa/image/6127c021-5ede-4751-b6b6-dc67299fd21b",
+            "servedSha256": "3fc8b9f4c480f85d4095ef3e0507c64cf74e3e854fdb3f5c59156d98beeb2b5a",
+            "verifiedAt": 1795365866.3766022
           }
         },
         "FACE": {
@@ -11189,7 +11240,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/3a86bfe8-6828-4026-8d0d-90c9b52698aa/image/72e886ce-75c6-45b8-b348-f2aa47b9ed11",
             "servedSha256": "d39f8d313e11f40cba9702987652cb0a8b6f5633882e2c96ac742ff58b9499ec",
-            "verifiedAt": 1795142049.9726868
+            "verifiedAt": 1795365866.3912723
           }
         },
         "DETAIL": {
@@ -11258,7 +11309,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/3a86bfe8-6828-4026-8d0d-90c9b52698aa/image/17901c91-ea32-468c-bc7b-67d16bda7f5d",
             "servedSha256": "30a410179e800e8b92c03c6bd4943f6ae7b55d6c4e010010c29868adacba30af",
-            "verifiedAt": 1795142049.988146
+            "verifiedAt": 1795365866.4093823
           }
         },
         "SCENE": {
@@ -11308,7 +11359,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/3a86bfe8-6828-4026-8d0d-90c9b52698aa/image/0bee45ed-9f1f-4c97-9886-6dc389c84bf2",
             "servedSha256": "a6360c8aa631909c231a093f2aa382267fe825435f4b9349c07df1bdbeae8f55",
-            "verifiedAt": 1795142050.0138795
+            "verifiedAt": 1795365866.4364798
           }
         }
       },
@@ -11436,7 +11487,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -11503,7 +11554,7 @@
           "reviewedAt": 1795142044.844127
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：雙輪機器人後腦和背板明確，橘白主色、褐紅雙輪、天線與碎石橢圓台保留；手臂視角、輪轂和碎石小差異可接受。作者 pending。",
           "runId": "1da4cb14154bb377d6b41dc075b02408a1d0c1efa3e23e6605dd8e860c35b683",
           "sha256": "6fc5f46e26899818025682f35731d127c4bd65cf1d9be7ef63b97b2c7f9eefa7",
@@ -11545,6 +11596,23 @@
             "at": 1795365856.3871326,
             "note": "新標準複核：雙輪機器人後腦和背板明確，橘白主色、褐紅雙輪、天線與碎石橢圓台保留；手臂視角、輪轂和碎石小差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "ecb17a8f-2288-4d4e-b736-64f89233475c",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "瑪瑙雙輪車，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "6fc5f46e26899818025682f35731d127c4bd65cf1d9be7ef63b97b2c7f9eefa7",
+            "imageId": "03158e81-4328-4e36-9b7c-297b379fb856",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/4157b83d-61ea-4e53-b130-be1e65521523/image/03158e81-4328-4e36-9b7c-297b379fb856",
+            "servedSha256": "50c438de5dc58323b9f9a653bc286e2d29b968e16c98a8a100ab17036ac16b3b",
+            "verifiedAt": 1795365867.1145117
           }
         },
         "FACE": {
@@ -11613,7 +11681,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/4157b83d-61ea-4e53-b130-be1e65521523/image/7fb7579a-511e-4ecd-a510-7bc6ac87427a",
             "servedSha256": "c69ca14370d0b3f16e813e1caaa586d85f4e8729ab85442349ef9158b8c054f0",
-            "verifiedAt": 1795142051.2835913
+            "verifiedAt": 1795365867.129625
           }
         },
         "DETAIL": {
@@ -11682,7 +11750,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/4157b83d-61ea-4e53-b130-be1e65521523/image/01323c01-c540-4d93-8e4c-47ee84afa38b",
             "servedSha256": "595d0dce52513ad91a16ea7b5d11d99bb3b63503c5922622f2e929ef79ca5b22",
-            "verifiedAt": 1795142051.3080068
+            "verifiedAt": 1795365867.1444523
           }
         },
         "SCENE": {
@@ -11733,7 +11801,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/4157b83d-61ea-4e53-b130-be1e65521523/image/b51a0f20-0517-4e47-b2f6-2ec74d182485",
             "servedSha256": "024a381323de64c71b9b18bd6f60ac2ce8685e8d8b027ca006254e0147f1dd12",
-            "verifiedAt": 1795142051.3293004
+            "verifiedAt": 1795365867.170194
           }
         }
       },
@@ -11988,7 +12056,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -12434,7 +12502,7 @@
           "reviewedAt": 1795142044.9332316
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：赤陶狐後腦、背部和大尾巴明確，灰色幾何線、藍色背柱與橘岩台主形色一致；背側遮擋、刻紋細節差異可接受。作者 pending。",
           "runId": "883dae8d0aae1405566264e065845c2d2c0517eb2deb4b69dd5607943d2e216d",
           "sha256": "0982f31669353bfa850dd4af296627b0ae8ce419aa5dac2007b9c0ba39ab9bbd",
@@ -12476,6 +12544,23 @@
             "at": 1795365856.3928955,
             "note": "新標準複核：赤陶狐後腦、背部和大尾巴明確，灰色幾何線、藍色背柱與橘岩台主形色一致；背側遮擋、刻紋細節差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8dcb8218-9a9f-444b-b634-6d8bf6c974bf",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "石紋測地狐，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "0982f31669353bfa850dd4af296627b0ae8ce419aa5dac2007b9c0ba39ab9bbd",
+            "imageId": "2d8afc88-f76a-45d9-a662-cd1dd4cb794d",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/23af8223-6f47-46a4-8974-249bd2c2293c/image/2d8afc88-f76a-45d9-a662-cd1dd4cb794d",
+            "servedSha256": "71eb57582b3b6e2c93267597cd5b0bdf60570eb0727e49f220ad47aa1a5d0728",
+            "verifiedAt": 1795365867.7650867
           }
         },
         "FACE": {
@@ -12544,7 +12629,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/23af8223-6f47-46a4-8974-249bd2c2293c/image/fd2af2f7-69ea-4039-a281-4e70b6156b2c",
             "servedSha256": "2c7ad246293f45caed490f02b17c216dd2fa0f9543765e9b5146cc9ed7cf3195",
-            "verifiedAt": 1795142053.8751733
+            "verifiedAt": 1795365867.7901096
           }
         },
         "DETAIL": {
@@ -12613,7 +12698,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/23af8223-6f47-46a4-8974-249bd2c2293c/image/493d701c-c3db-4292-9384-3c01786fbc9f",
             "servedSha256": "4b2c645721a77c8627a836d65dc7acbe3e46bb785da45bcc331691a5487d77e6",
-            "verifiedAt": 1795142053.8913665
+            "verifiedAt": 1795365867.806883
           }
         },
         "SCENE": {
@@ -12663,7 +12748,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/23af8223-6f47-46a4-8974-249bd2c2293c/image/e857039e-b542-431a-9ac6-b7ff199490ff",
             "servedSha256": "0c8ac9d0d673289f96f3f63191039354b217efd5072cf026bbfe66f71df5a860",
-            "verifiedAt": 1795142053.9234009
+            "verifiedAt": 1795365867.8374057
           }
         }
       },
@@ -12782,7 +12867,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -13219,7 +13304,7 @@
           "reviewedAt": 1795142045.0174592
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：蜥蜴後腦、背部與尾巴明確，橘色體表、青綠帆、棕鞍袋／網和砂岩橢圓台保持；帆縫／岩紋小差異可接受。作者 pending。",
           "runId": "9a1f7947ecce6908e44a5ea7a33cb237adc1220b2dc9361883e5ac4696f94391",
           "sha256": "0a017b9502526c0c97a1359943d222e4d76f36ed394fea16b31768f34a81d5d6",
@@ -13261,6 +13346,23 @@
             "at": 1795365856.4009993,
             "note": "新標準複核：蜥蜴後腦、背部與尾巴明確，橘色體表、青綠帆、棕鞍袋／網和砂岩橢圓台保持；帆縫／岩紋小差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "b514e54d-a273-4307-b470-ae61caf0b80d",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "沙帆行囊獸，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "0a017b9502526c0c97a1359943d222e4d76f36ed394fea16b31768f34a81d5d6",
+            "imageId": "5335df46-2012-4657-a161-0642d4d50b76",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/117ce5b3-d927-439d-86e1-3c203592ffc2/image/5335df46-2012-4657-a161-0642d4d50b76",
+            "servedSha256": "b50bb42fa12f61cddc94df8d2a1d7397bf6c28ee51018d1ff6c985be9f6cde7c",
+            "verifiedAt": 1795365868.4255385
           }
         },
         "FACE": {
@@ -13329,7 +13431,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/117ce5b3-d927-439d-86e1-3c203592ffc2/image/eca39fd6-efbb-436d-972e-a7c6eecd4af2",
             "servedSha256": "0f9d9ad879ca31dba30976816bc12158f7a8007e7787fb133b6679bd68da9a5b",
-            "verifiedAt": 1795142056.373618
+            "verifiedAt": 1795365868.4403245
           }
         },
         "DETAIL": {
@@ -13398,7 +13500,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/117ce5b3-d927-439d-86e1-3c203592ffc2/image/a265c3fe-e7c9-44ca-88e6-cf878de24ec0",
             "servedSha256": "fa66314a1548279324db2a2c0355ccd9860aa60f4a5e2f1a7cee2839bd3eb233",
-            "verifiedAt": 1795142056.400424
+            "verifiedAt": 1795365868.4570026
           }
         },
         "SCENE": {
@@ -13448,7 +13550,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/117ce5b3-d927-439d-86e1-3c203592ffc2/image/15cd434b-0884-4fa1-b762-21b1d0e26a91",
             "servedSha256": "6c4514faa04d32e91ee9f578f2a349af5919a12f5b4fa78dde2d8ef4fe5933d3",
-            "verifiedAt": 1795142056.4332917
+            "verifiedAt": 1795365868.4863112
           }
         }
       },
@@ -13567,7 +13669,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -13634,7 +13736,7 @@
           "reviewedAt": 1795142045.061605
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：成人後腦捲髮與米白長外套、棕靴、黃岩台保持；肩包仍在角色右側、手持物仍在左側，褶紋和小分格差異可接受。作者 pending。",
           "runId": "7c4c68aaca60e363c734c846567e8b13d8cf726195959d60b1f9544295e34740",
           "sha256": "18229388939409d680f9958f256b0c151be6575ff6f2ce2878eb617ee3d0275e",
@@ -13676,6 +13778,23 @@
             "at": 1795365856.407417,
             "note": "新標準複核：成人後腦捲髮與米白長外套、棕靴、黃岩台保持；肩包仍在角色右側、手持物仍在左側，褶紋和小分格差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "e28edf4f-b2c4-4ee4-be0f-cac8170ceab4",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "赭岩補給師，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "18229388939409d680f9958f256b0c151be6575ff6f2ce2878eb617ee3d0275e",
+            "imageId": "1e43bb40-b394-4334-be89-7a6836ddb446",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/11bfdbc7-eff4-40d7-a971-3fc462314fb3/image/1e43bb40-b394-4334-be89-7a6836ddb446",
+            "servedSha256": "b8d563a18a29ea190aa60ea13261d38ef4029c0f159c9eb13a582b2979163674",
+            "verifiedAt": 1795365869.074622
           }
         },
         "FACE": {
@@ -13744,7 +13863,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/11bfdbc7-eff4-40d7-a971-3fc462314fb3/image/736f5dc1-704f-44ba-97bb-3ee5f14c21ce",
             "servedSha256": "b78691e8173b803505b421d06c4510424a87f5f50b14c830be3b055f4b503a25",
-            "verifiedAt": 1795142057.5431538
+            "verifiedAt": 1795365869.088117
           }
         },
         "DETAIL": {
@@ -13813,7 +13932,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/11bfdbc7-eff4-40d7-a971-3fc462314fb3/image/9d1294b5-1349-4f4f-9e19-dd6cd6adab11",
             "servedSha256": "4d5e5635295232f572addad92702d2524a3d4d6291301904dc6aaed6363df165",
-            "verifiedAt": 1795142057.5563817
+            "verifiedAt": 1795365869.1126893
           }
         },
         "SCENE": {
@@ -13863,7 +13982,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/11bfdbc7-eff4-40d7-a971-3fc462314fb3/image/67258293-0268-49fd-bc1f-8d1ca3e5b261",
             "servedSha256": "196c9f9e7037a2dbb2b0a823f8ac3b732f6a9cd11eb20dc079943fb7d7e94945",
-            "verifiedAt": 1795142057.5870917
+            "verifiedAt": 1795365869.1352513
           }
         }
       },
@@ -13982,7 +14101,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -14049,7 +14168,7 @@
           "reviewedAt": 1795143008.3904498
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：麻雀後腦、羽背和雙金屬尾片清楚，棕奶油主色、橘腳與灰色卵石台一致；羽片塗紋小差異可接受。作者 pending。",
           "runId": "78d7a3c37651c733a8b6b6ad2bbe9c6cc93529dbafd862b4ed35aa5a6f3cd83e",
           "sha256": "ac1b7bb652f5d7a09417da94e9ce93140631f85b43330c1c3f14d32c1e6b4115",
@@ -14091,6 +14210,23 @@
             "at": 1795365856.4131126,
             "note": "新標準複核：麻雀後腦、羽背和雙金屬尾片清楚，棕奶油主色、橘腳與灰色卵石台一致；羽片塗紋小差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "9f7999d8-6883-439c-8286-da92f1f4907f",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "微風報站雀，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "ac1b7bb652f5d7a09417da94e9ce93140631f85b43330c1c3f14d32c1e6b4115",
+            "imageId": "902789d4-c079-45f5-8959-9a6234e4e287",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/dc036159-c90d-483f-90d6-2dffa4f2de18/image/902789d4-c079-45f5-8959-9a6234e4e287",
+            "servedSha256": "8c6f98372c2786996d6e44f26680ec6c1a7f2345b88cceedf4082d2af64d7487",
+            "verifiedAt": 1795365869.6725783
           }
         },
         "FACE": {
@@ -14159,7 +14295,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/dc036159-c90d-483f-90d6-2dffa4f2de18/image/27c5196c-8d67-4949-8f66-6ceff4414b69",
             "servedSha256": "ea5ede4c8d8a841e5d234c2a1814f32afb6f64093bb8f946a6b87ac9d5447153",
-            "verifiedAt": 1795143010.808686
+            "verifiedAt": 1795365869.6857762
           }
         },
         "DETAIL": {
@@ -14228,7 +14364,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/dc036159-c90d-483f-90d6-2dffa4f2de18/image/1eab8c8e-42dc-400e-ad51-d4d51f1bee0e",
             "servedSha256": "8a5ceefdb6336fb68a2d4dbf10c375279168873077dc7893e0194f0094d5542a",
-            "verifiedAt": 1795143010.8291533
+            "verifiedAt": 1795365869.700084
           }
         },
         "SCENE": {
@@ -14278,7 +14414,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/dc036159-c90d-483f-90d6-2dffa4f2de18/image/7d4ce9d1-8df3-4fb1-b89e-67ec5f4ff793",
             "servedSha256": "3b5f7340c98a12be2b393608a4b5b5433b4897325097f4b0719a12f71ebdd32c",
-            "verifiedAt": 1795143010.8826509
+            "verifiedAt": 1795365869.723857
           }
         }
       },
@@ -14397,7 +14533,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -14464,7 +14600,7 @@
           "reviewedAt": 1795143008.4411266
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：機械犬後腦和背面明確，黑紫配色、單台電台／三葉天線、上翹尾與橘色裂紋圓台保留；面板及小裂紋差異可接受。作者 pending。",
           "runId": "fe350f49af5e2d2f6aa05976241066615e7044d54df8b165c9e77eacddf8f455",
           "sha256": "d9683c5a75f688ed3351207415b03d6bc36dc2663cfbdc61078db2fa0cbd0a8f",
@@ -14506,6 +14642,23 @@
             "at": 1795365856.4183831,
             "note": "新標準複核：機械犬後腦和背面明確，黑紫配色、單台電台／三葉天線、上翹尾與橘色裂紋圓台保留；面板及小裂紋差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "090ebea2-b184-4a1d-85bc-c9152a8c82e8",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "鐵篩風車犬，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "d9683c5a75f688ed3351207415b03d6bc36dc2663cfbdc61078db2fa0cbd0a8f",
+            "imageId": "3e3912c8-0f9e-40e2-bc36-a1b6fece8ef7",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/fd4ff8f5-4435-4406-8466-31e68f75cffa/image/3e3912c8-0f9e-40e2-bc36-a1b6fece8ef7",
+            "servedSha256": "50d54e3d441822ae7f0d9da9706056785385fd0ef3603ae93a77768770f2ccf2",
+            "verifiedAt": 1795365870.3161447
           }
         },
         "FACE": {
@@ -14574,7 +14727,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/fd4ff8f5-4435-4406-8466-31e68f75cffa/image/a19e17c7-3893-4226-9018-2a475d042891",
             "servedSha256": "9d3b4af9cfda22f9c50334e60fa7fe0d0e1513df9bffddfa44e1c0b2fcb65d13",
-            "verifiedAt": 1795143011.9901507
+            "verifiedAt": 1795365870.34194
           }
         },
         "DETAIL": {
@@ -14643,7 +14796,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/fd4ff8f5-4435-4406-8466-31e68f75cffa/image/569c5d08-2129-4796-a37a-f688d2b24c89",
             "servedSha256": "6c6a69d0bae0548685e1583a46cdda5b8379a5c5d2990d346c411e3227f883c7",
-            "verifiedAt": 1795143012.0088832
+            "verifiedAt": 1795365870.3670785
           }
         },
         "SCENE": {
@@ -14693,7 +14846,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/fd4ff8f5-4435-4406-8466-31e68f75cffa/image/327a8eb6-5b91-4881-8ed1-25c47ebdb2e9",
             "servedSha256": "39e91b202b6f211537306e55ef6babd07720ebe7aae3214f5e3c776eb8b39d86",
-            "verifiedAt": 1795143012.041172
+            "verifiedAt": 1795365870.4058523
           }
         }
       },
@@ -14812,7 +14965,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -14879,7 +15032,7 @@
           "reviewedAt": 1795143008.489939
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "新標準複核：公羊後腦／背毛、雙綠角、奶油毛身與銅項圈保持，灰琥珀紋低岩台主形色一致；毛束與礦紋小差異可接受。作者 pending。",
           "runId": "a5349d487c0652ecf984525e5be5cd9e0bb9aa9f6e06ac58245e3fe00c043e5c",
           "sha256": "4840cd3f05b175545f5008c316e9ac4c29e6d176eaf913f42342043882fdbb39",
@@ -14921,6 +15074,23 @@
             "at": 1795365856.423631,
             "note": "新標準複核：公羊後腦／背毛、雙綠角、奶油毛身與銅項圈保持，灰琥珀紋低岩台主形色一致；毛束與礦紋小差異可接受。作者 pending。",
             "priorReviewPreserved": true
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "e7e6f5a3-8221-4aa8-87a6-be25e8c1608a",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "光井礦角羊，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "4840cd3f05b175545f5008c316e9ac4c29e6d176eaf913f42342043882fdbb39",
+            "imageId": "f0a6cb98-9373-48d2-aa9a-ad29c9c142f5",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/6c2a9d15-6fa7-45ca-9db7-1968f0f1d609/image/f0a6cb98-9373-48d2-aa9a-ad29c9c142f5",
+            "servedSha256": "6af08f73d75ebfe6e4eca660de47972d0d6548aadb9cf1d0ead37f43aae3b39a",
+            "verifiedAt": 1795365870.96189
           }
         },
         "FACE": {
@@ -14989,7 +15159,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/6c2a9d15-6fa7-45ca-9db7-1968f0f1d609/image/565b11ff-d2d8-40eb-92e7-6f66f1c73024",
             "servedSha256": "2056fce00024d540f23ba45336161f1d3c241fe0237b0fbe2ec713fe92a63c72",
-            "verifiedAt": 1795143013.2586741
+            "verifiedAt": 1795365870.9830332
           }
         },
         "DETAIL": {
@@ -15058,7 +15228,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/6c2a9d15-6fa7-45ca-9db7-1968f0f1d609/image/faf22c86-c683-4fee-b531-4630fa6dcdd9",
             "servedSha256": "c70cba1aa20512386747e926cc2523be11333a06251e7511048717df98aee16a",
-            "verifiedAt": 1795143013.2726657
+            "verifiedAt": 1795365871.0029583
           }
         },
         "SCENE": {
@@ -15108,7 +15278,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/6c2a9d15-6fa7-45ca-9db7-1968f0f1d609/image/dc24a1ca-44c0-41e3-8473-a40b51e6b167",
             "servedSha256": "64ed465dc9caf383775cdb75f4cd8197c1b64894f5549ae9ee7502e8a09673f2",
-            "verifiedAt": 1795143013.3057194
+            "verifiedAt": 1795365871.0458393
           }
         }
       },
@@ -15227,7 +15397,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -32056,7 +32226,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T16:44:23Z",
+  "updatedAt": "2026-11-22T16:44:31Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -32393,6 +32563,23 @@
           "FIGURA-AI-023"
         ],
         "at": 1795365863.822983,
+        "authorApproval": "pending"
+      },
+      {
+        "name": "rear-b02",
+        "keys": [
+          "FIGURA-AI-016",
+          "FIGURA-AI-024",
+          "FIGURA-AI-026",
+          "FIGURA-AI-027",
+          "FIGURA-AI-029",
+          "FIGURA-AI-031",
+          "FIGURA-AI-032",
+          "FIGURA-AI-033",
+          "FIGURA-AI-034",
+          "FIGURA-AI-035"
+        ],
+        "at": 1795365871.1921334,
         "authorApproval": "pending"
       }
     ],
