@@ -15,7 +15,7 @@ POLICY = 'rear-2026-11-23'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['reassess', 'adopt-built-in', 'regenerate', 'checkpoint'])
+    parser.add_argument('command', choices=['reassess', 'adopt-built-in', 'regenerate', 'checkpoint', 'checkpoint-reviewed'])
     parser.add_argument('--file', type=Path)
     parser.add_argument('--keys', nargs='+', default=[])
     parser.add_argument('--note')
@@ -71,8 +71,16 @@ def main():
     else:
         assert a.keys and a.name
         for p in g.selected(m, a.keys):
-            assert p['slots']['REAR']['status'] == 'complete' and p['publicationSession']['state'] == 'restored'
-        batches = m['rearCompletion20261123']['batches']
+            slot = p['slots']['REAR']
+            assert p['publicationSession']['state'] == 'restored'
+            if a.command == 'checkpoint-reviewed':
+                assert slot['status'] in ('complete', 'pass')
+                candidate = copy.deepcopy(p)
+                candidate['slots']['REAR']['status'] = 'pass'
+                g.reviewed_source(candidate, candidate['slots']['REAR'])
+            else:
+                assert slot['status'] == 'complete'
+        batches = m['rearCompletion20261123'].setdefault('reviewedBatches', []) if a.command == 'checkpoint-reviewed' else m['rearCompletion20261123']['batches']
         assert not any(b['name'] == a.name for b in batches)
         batches.append(dict(name=a.name, keys=a.keys, at=time.time(), authorApproval='pending'))
     g.save(m)
