@@ -1,5 +1,7 @@
 # Figura 本機 ComfyUI 商品圖流程
 
+**2026-11-23 必要背面續作：** 沿用本 runner／workflow，REAR 改以明確背後 135°–180° 與關鍵身份判斷；ANGLE 選擇性。先固定每款背部設計，001／003／068 三件試點後擴展全目錄。99 件均已有通過的 REAR 來源，78 件已入庫、21 件因本機 S3 寫入 500／圖庫 503 待續傳。四件原無圖 ELPSY 共用原創設計，五圖位均已入庫。本輪沒有新增套件、節點或模型；ComfyUI 維持 127.0.0.1:18188，內建產圖另保留實際提示及參考／輸出 SHA。詳 [本輪逐件報告](verification/catalog-gallery-rear-report-2026-11-23.md)、[環境紀錄](verification/comfyui-environment-2026-11-23.json)、[續跑說明](CATALOG_GALLERY_RUNBOOK.md)。以下兩款樣本結論是 2026-11-19 歷史，不能套用為目前 REAR 全空；作者簽核仍 pending。
+
 2026-11-19。延續已合併 PR #21；不重新設計角色、不替換正式商品、不操作正式 DB。這套流程產出點陣概念圖，不是可量測的 3D 模型。
 
 **2026-11-20 全目錄續作：** 沿用本 runner／workflows，以本機 catalog 現有主圖建立獨立 `catalog-r1`，不覆寫下方歷史 r1 樣本。批次進度、六圖位狀態、每次 prompt／seed／模型與輸出 SHA、退回原因及本機圖庫讀回見 [全目錄 manifest](verification/catalog-gallery-manifest.json)、[比較頁](catalog-gallery-comparison.html) 和 [續跑說明](CATALOG_GALLERY_RUNBOOK.md)。新增的 `scene-composite.api.json` 保留 master 前景像素；官方 Klein Base 4B FP8 的三款額外側視試驗均退回，沒有自動納入圖庫。作者簽核仍為 pending，原始圖片留在忽略的 work/。

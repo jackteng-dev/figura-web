@@ -4,11 +4,13 @@ import {spawn} from 'node:child_process'
 import {readFile,writeFile,mkdir} from 'node:fs/promises'
 import {resolve} from 'node:path'
 import {createWriteStream} from 'node:fs'
+import {pathToFileURL} from 'node:url'
 import {setTimeout as delay} from 'node:timers/promises'
-const root='http://127.0.0.1:15181'
+const root='http://127.0.0.1:15176'
 const manifest=JSON.parse(await readFile('docs/verification/catalog-gallery-manifest.json','utf8'))
-const wanted=new Set(process.argv.slice(2))
-const products=manifest.products.filter(p=>!wanted.size||wanted.has(p.productKey))
+const comparisonOnly=process.argv.includes('--comparison-only')
+const wanted=new Set(process.argv.slice(2).filter(a=>a!=='--comparison-only'))
+const products=comparisonOnly?[]:manifest.products.filter(p=>!wanted.size||wanted.has(p.productKey))
 const out=resolve('work/catalog-gallery/browser');await mkdir(out,{recursive:true})
 const profile=resolve(out,'chrome-'+Date.now())
 const chrome=spawn('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--no-sandbox','--disable-gpu-sandbox','--disable-gpu','--disable-extensions','--disable-sync','--no-first-run','--remote-debugging-address=127.0.0.1','--remote-debugging-port=0',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:['ignore','ignore','pipe']})
@@ -56,8 +58,21 @@ try{
    console.log(p.productKey+' '+width+'px: verified '+expected+' local images')
   }
  }
- const report={date:new Date().toISOString(),url:root,scope:'real existing loopback demo, read-only, no API mocks',authorApproval:'pending',products:products.length,checks}
- const destination=wanted.size?resolve(out,'pilot-verification.json'):resolve('docs/verification/catalog-gallery-browser-2026-11-20.json')
+ const comparison=[]
+ if(!wanted.size){
+  await cdp('Page.navigate',{url:pathToFileURL(resolve('docs/catalog-gallery-comparison.html')).href})
+  await until(`document.querySelectorAll('article').length===${manifest.products.length}`)
+  assert(await evaluate(`[...document.querySelectorAll('article')].every(a=>a.querySelectorAll('.grid>figure').length===6)`),'comparison six positions per product')
+  assert(await evaluate(`[...document.images].every(i=>i.alt.includes('AI 生成示意圖'))`),'comparison AI alt')
+  for(const key of ['FIGURA-AI-001','FIGURA-AI-052','ELPSY-001']){
+   const index=manifest.products.findIndex(p=>p.productKey===key)
+   await evaluate(`document.querySelectorAll('article')[${index}].scrollIntoView()`)
+   await until(`[...document.querySelectorAll('article')[${index}].querySelectorAll('figure>img')].every(i=>i.complete&&i.naturalWidth>0)`)
+   comparison.push({key,acceptedSourcesDecoded:true})
+  }
+ }
+ const report={date:new Date().toISOString(),url:root,scope:'real existing loopback demo, read-only, no API mocks',authorApproval:'pending',products:products.length,checks,comparison:{rows:wanted.size?null:manifest.products.length,positionsPerRow:6,checks:comparison}}
+ const destination=comparisonOnly?resolve('docs/verification/catalog-gallery-comparison-2026-11-23.json'):wanted.size?resolve(out,'pilot-verification.json'):resolve('docs/verification/catalog-gallery-browser-2026-11-23.json')
  await writeFile(destination,JSON.stringify(report,null,2)+'\n')
 }catch(error){
  try{await writeFile(resolve(out,'failure.json'),JSON.stringify(await evaluate(`({url:location.href,text:document.body.innerText.slice(0,5000),images:[...document.images].map(i=>({src:i.src,currentSrc:i.currentSrc,srcset:i.srcset,complete:i.complete,width:i.naturalWidth}))})`),null,2));await writeFile(resolve(out,'network.json'),JSON.stringify(network,null,2));const shot=await cdp('Page.captureScreenshot',{format:'png'});await writeFile(resolve(out,'failure.png'),Buffer.from(shot.data,'base64'))}catch{}

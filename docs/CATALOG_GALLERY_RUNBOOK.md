@@ -1,6 +1,16 @@
 # 全目錄 2D 商品圖組：本機續跑
 
-此輪以 `127.0.0.1:19092/figura/api/catalog/products` 為唯一目錄來源：99 筆公開商品中，95 筆為原創虛構目錄，4 筆為 App 串接合成資料而排除。完整名單與理由在 `verification/catalog-gallery-manifest.json`。不連正式 DB，不建立 3D／360，不改 `src/assets/`。作者人工簽核維持 pending。
+**2026-11-23 目前範圍：99 筆全部納入。** 作者要求四筆原先排除的 ELPSY 也補圖；比對資料相同後，共用原創「苔石量測員」設計，各自五種必要圖位已入庫。舊排除原因保存在 `priorExcluded`，目前 `excluded=[]`。唯一目錄來源仍為 `127.0.0.1:19092/figura/api/catalog/products`。不連正式 DB，不建立 3D／360，不改 `src/assets/`；作者簽核 pending。
+
+REAR 必要，以 135°–180° 明確背後視角、關鍵輪廓／配色／頭部／角色自己的配件左右／底座核對，小細節可有差異。逐款先固定 character sheet 背部設計。ANGLE 選擇性，舊拒收與留空維持。先完成 001／003／068 試點後續做全部商品；目前 99 個 REAR 來源均已通過，78 個入庫，21 個待上傳。
+
+**目前續跑阻礙：本機 SeaweedFS 寫入 500，圖庫 POST 503。** 讀取與 HEAD bucket 可用，但極小測試 PUT 也失敗。Docker CLI 管線拒絕存取，開啟 Docker Desktop 又遭自動核准審查拒絕；沒有變更容器或安全設定。需有 Docker 權限的環境先診斷儲存端，不能刪除 volume 或重建資料。052 的失敗操作已核對無 event、原版本未變，再恢復公開；99 商品均公開。詳見 [本輪逐件報告](verification/catalog-gallery-rear-report-2026-11-23.md)。
+
+儲存恢復後執行 `catalog_gallery.py upload`，只上傳 `pass`，不重新生成或重傳 `complete`。再執行 `verify_catalog_gallery_integrity.py`、`node scripts/verify_catalog_gallery.mjs`、`report_rear_gallery.py`、`catalog_gallery.py report`，更新 HANDOFF 並 commit。預覽為 `http://127.0.0.1:15176`。build 與瀏覽器檢查應依序執行，避免 preview 讀到正在重建的 dist。
+
+`rear_gallery_round.py checkpoint-reviewed` 只保存已檢查來源的批次；`checkpoint` 才要求已完成上傳，兩者不可混稱。內建產圖使用同一 master，實際 prompt、reference/output SHA 及本機路徑保存在各槽；seed／model version 未由工具提供，記 null。`reviewed_source` 要求該 REAR 的明確政策與 hash 證據，不能以生成成功自動採用。
+
+以下保留原始 2026-11-20 操作流程；當時 95 納入／4 排除、側背留空的結果已由上述作者新指示取代。這一輪只 commit，作者處理 push／PR。
 
 沿用 [圖片規範](AI_FIGURE_IMAGE_STANDARD.md)、[ComfyUI 流程](COMFYUI_FIGURA_WORKFLOW.md)、`scripts/comfyui_figura.py` 及既有 crop／Flux reference workflows；`catalog_gallery.py` 僅負責目錄快照、分批調度、明確的視覺決定與本機圖庫寫入。沒有以生成成功或相似度分數自動核准候選。
 

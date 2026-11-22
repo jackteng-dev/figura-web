@@ -34,7 +34,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "第二次仍有硬性漂移：側面抬動原手臂與袋面飾件；背面憑空增加第二個側袋與交叉背帶。兩次均退回，圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "f58fc0437748d6719ed743fc3d48f33126e0a2591958b3464dcc260a0840fc3a",
           "sha256": "00bf9022aefdbe29849e317732760905ab449e2aaa8b29932603b9b35a6f0caf",
           "sourceSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
@@ -65,7 +65,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "第二次仍有硬性漂移：側面抬動原手臂與袋面飾件；背面憑空增加第二個側袋與交叉背帶。兩次均退回，圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -695,7 +696,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "第二次側面把眼睛改閉眼、腳姿與底座邊緣不同；背面仍露正面臉，非 180 度。兩次退回，圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "2264ef6c37c224d2b9f6afa6fbe52d95ec87a103b77a58af0e9e3778c7f4d351",
           "sha256": "9cd1a161aca8ce9bf180b22e3ed478b0c5c4768d738727b12f4f1803746b0d6d",
           "sourceSha256": "4d6b53d92d97a4d317a17b65cb821e1a3b88e76a23e8b8a0bbe22976995fd4e7",
@@ -726,7 +727,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "第二次側面把眼睛改閉眼、腳姿與底座邊緣不同；背面仍露正面臉，非 180 度。兩次退回，圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -1213,7 +1215,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍把燈架與尾巴分成兩條結構，後背飾件及尾部接點不同；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "17bba73e9417d2d12b4086a0ec2d9c0ebcdb6ae7e1ee7a68c1ebb24fc1631539",
           "sha256": "29656b60737f4eb8f552696b9241cd9d5f820879daec70340584aa9b8694a543",
           "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
@@ -1244,7 +1246,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試仍把燈架與尾巴分成兩條結構，後背飾件及尾部接點不同；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -1701,7 +1704,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍重排紫金翼面花紋、毛簇與底座裝飾；無法證實同一雕塑／塗裝，兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "fdfd873bad8d5ad816fa9e0101ac2e482370b4144cd3a25c6439ef38534ed3dc",
           "sha256": "f83d90309638d7546f882594a513d084120d166bff88d8d8835e4f6d907dc3e3",
           "sourceSha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51",
@@ -1732,7 +1735,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試仍重排紫金翼面花紋、毛簇與底座裝飾；無法證實同一雕塑／塗裝，兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -2199,7 +2203,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試機身比例、尾部結構、舷窗配置及底座月牙點位仍改變；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "efa9d52b117c0e84e1c96666f5df172cd16090e8b7e4b700bfd0c9de5c7b1076",
           "sha256": "6cd7780a61713bcb031519df7f7898d8e953ffe3500d2e2c77bc458f9cf62013",
           "sourceSha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55",
@@ -2230,7 +2234,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試機身比例、尾部結構、舷窗配置及底座月牙點位仍改變；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -2730,7 +2735,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍改動翼姿、喇叭形狀及底座花紋／色帶，身份不一致；兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "6c52a54a6e6a8b4569960f2e52dfbd4f5ddf1bdef76123b45b0960f42725d269",
           "sha256": "90b82116d0250a945a388c6820d2d62aee3e1d6af6e80d64fba212325c70fee5",
           "sourceSha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f",
@@ -2761,7 +2766,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試仍改動翼姿、喇叭形狀及底座花紋／色帶，身份不一致；兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -3228,7 +3234,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試背面將原本右髖側包換至左髖，髮束與盆栽結構仍不同；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "675eda44c65f59a44127dd764598620a68c5bc24620f47c1b51aaf69b6d51368",
           "sha256": "897f3b600a552055b045e97483b4e6c94a544c51132c1aa8ed6368447b9a3206",
           "sourceSha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322",
@@ -3259,7 +3265,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試背面將原本右髖側包換至左髖，髮束與盆栽結構仍不同；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -3711,7 +3718,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試背箱分格、側面頭殼／手臂角度及木台紋理仍改造；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "9371f04bda9e2623b575bc76f38dbe398e139ca53c6f889c2d94899844687d36",
           "sha256": "92ab3c60aac9a89979053aed07dd3209c985355945ea3a025a8a0ecf05404f88",
           "sourceSha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca",
@@ -3742,7 +3749,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試背箱分格、側面頭殼／手臂角度及木台紋理仍改造；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -4177,7 +4185,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍改動艙體／關節與軌道底座，背面非清楚 180 度且有額外頭部構造；兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "e74e0a08d719154154b9c9eea9735c542c1ff7d58e653aaf097a07ea6d2378c1",
           "sha256": "b62e06a113d7efda12e7d6418251531728c93093a74d46c8808d915f892a8591",
           "sourceSha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a",
@@ -4208,7 +4216,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試仍改動艙體／關節與軌道底座，背面非清楚 180 度且有額外頭部構造；兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -4609,7 +4618,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試背面增加第二條交叉背帶，包裹堆疊與羽毛形狀改變；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "5fa18edad04a7334e267f8e1131902e02124592cb7851f7b5b2ed6f0c0acb8ec",
           "sha256": "33ef6ac2e32a1be20d63905a05b942658a73fdfd55f594c55ab458ec1e3919ae",
           "sourceSha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd",
@@ -4640,7 +4649,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試背面增加第二條交叉背帶，包裹堆疊與羽毛形狀改變；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -5058,7 +5068,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍改動護目鏡帶、莓果輪廓、鞋姿與底座裂紋／青色塗裝；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "b6f2b9e973154c36a8805505b1724111ed122daf343f1fe0704f3ac2a4ea582d",
           "sha256": "f17ddd2f9d8ff2681ab16a901dbbfb21946cab02191098c1d40d8f97ec32424d",
           "sourceSha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba",
@@ -5089,7 +5099,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試仍改動護目鏡帶、莓果輪廓、鞋姿與底座裂紋／青色塗裝；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -5490,7 +5501,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍改動抬腳站姿、圍巾背面麥穗、羽毛及風箏桿／支架；兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "8faa5262c2d8f8538abfbc7eb873701f844b1b9a978f2e78b5050c68384e027a",
           "sha256": "5fdb9bd004adb51426e8bb71603007acc564e9fd36a2f295da083e509e5ec1f0",
           "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
@@ -5521,7 +5532,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試仍改動抬腳站姿、圍巾背面麥穗、羽毛及風箏桿／支架；兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -5940,7 +5952,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面鼻端生出小球，斑點／岩台海藻與皮帶仍不同；背面體形和底座細節不能匹配。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "41100000626881aeb42f71bf4e8d7c6c22b0a7895cbf8ee9b77d6bac267bd4dc",
           "sha256": "09289c06d8a6b6b8a2d8a1bc435a1e4a5f4775c1dd7eff2f78f35f1c9fea682c",
           "sourceSha256": "7a450a83da77d0475e0c9b4ec382d7f0e8f4746f55b911bc0177cb85b2233e52",
@@ -5971,7 +5983,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試側面鼻端生出小球，斑點／岩台海藻與皮帶仍不同；背面體形和底座細節不能匹配。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -6419,7 +6432,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面仍非正確右 90 度且外套摺痕／岩台改變；背面斜背帶路徑換邊，海星位置與原基座不符。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "374ecc67f35b44feda285a42c2f8a9636ffde232afd4d1465917a2c7a71b0558",
           "sha256": "a0c76323923415c78c8ebf48970ec916c764c9a721d66503755a73e04472a37c",
           "sourceSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
@@ -6450,7 +6463,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試側面仍非正確右 90 度且外套摺痕／岩台改變；背面斜背帶路徑換邊，海星位置與原基座不符。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -6869,7 +6883,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "補記既有繩輪座後，重試仍改變頭盔與腿甲舊化、後背線管、手腳形狀和貝殼底座。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "b24a04e51947e7b8c46e2d60935c33834b17b310d4b92205a23fcb88e71844e2",
           "sha256": "8bd0a521ff98d8da60c35e20ba8ab912a726dc667de35044fcd5a3976f108d21",
           "sourceSha256": "d9d66cedef8336d077fddef82a5e61ae0e661e75ceebfe92bbfe0d9620f53deb",
@@ -6900,7 +6914,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "補記既有繩輪座後，重試仍改變頭盔與腿甲舊化、後背線管、手腳形狀和貝殼底座。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -7310,7 +7325,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面仍產生第二支尾端燈，後視仍露正面／重設波浪支架與岩台。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "6f077e90408982553926b1e371975000c7d50e5ac451c8c8e169773dd227c336",
           "sha256": "af2233a189b9b18b459fda84a1ca984d717afb445c60edbabc56abb5cedf6aad",
           "sourceSha256": "da52ca60af91bc3249ed409fb50dfa434470fbb3cb70c888b4fc48c4d34f6cab",
@@ -7341,7 +7356,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試側面仍產生第二支尾端燈，後視仍露正面／重設波浪支架與岩台。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -7732,7 +7748,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面手腳及螯部遮擋不符原姿態，背面仍是正面腹甲，底座石塊改造。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "565760f87f9acf752714505a58dcc50b93afc82298212072896e5f8f295d7481",
           "sha256": "131fff41a5006188a827d8ef78e51b11c52601f48ef57a749a4580b7fc09e736",
           "sourceSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
@@ -7763,7 +7779,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試側面手腳及螯部遮擋不符原姿態，背面仍是正面腹甲，底座石塊改造。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -8182,7 +8199,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試右側持板／手臂遮擋關係、髮束與外套衣褶不符，底座鋪面亦重設。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "3e817842f2c1334d95059204e2f375af58c3d4d7bd74b479ebe89bf25cff6b2c",
           "sha256": "9526382ba537780f1afc2d5f4ff5dcaa2a3717b0680d533ef42111c5a64a07ea",
           "sourceSha256": "17446362fdb8ba4f2263d03e6875798e8f2b2a3b05ce1b5ecc4d6fc67f6d3f5a",
@@ -8213,7 +8230,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試右側持板／手臂遮擋關係、髮束與外套衣褶不符，底座鋪面亦重設。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -8614,7 +8632,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試背面仍憑空出現兩顆珍珠，尾巴／毛束與台座波紋改變。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "1d1da98a719102a8e1e9d23ebb4ea6568402aede69a8ba5ea27693be6148e6f1",
           "sha256": "6fc0df7d86ed1c7281df12c7dae2e320debe4ed598a9e2691d76ca61fc50ca0f",
           "sourceSha256": "3b45b524978d2ff452a95927611f6270a8523d58735b4cbfe10c2f25ed079f58",
@@ -8645,7 +8663,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試背面仍憑空出現兩顆珍珠，尾巴／毛束與台座波紋改變。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -9027,7 +9046,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試背面持面具與叉腰左右換邊，面具／長袍／褲褶及珊瑚台座改造。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "8d7ccf31adda8700e8de51b6b74ebb3aea096c14e45d607a94f8da8f8e22797e",
           "sha256": "60c10429c5ea4e4b1945170c96c6f9959040d227913cafa1c91f1d7ac74d7ef8",
           "sourceSha256": "bbdfd35445bd2a5a5d8d33bd67f283deb1d26dd55e30552df23dd572563dde54",
@@ -9058,7 +9077,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試背面持面具與叉腰左右換邊，面具／長袍／褲褶及珊瑚台座改造。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -9442,7 +9462,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試透明背鰭變成不同形狀／數量與實色，身體結構和岩台仍變動。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "314602e8f2ae5b90ed39b959b1ff8486324f1c6459b3b1423609859e3082bd7e",
           "sha256": "a00df941475aa6d339854403e96588ed2086208549e235babb9d8695ccef3440",
           "sourceSha256": "15100423e868e37b21484ae3f5b0e2d9cf35a077a0f1bec274680e63ce563835",
@@ -9473,7 +9493,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試透明背鰭變成不同形狀／數量與實色，身體結構和岩台仍變動。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -9857,7 +9878,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面仍像原正面角度，殼體條紋、鐘管數量／外觀及台座塗裝變更，無法當成同一模型。兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "9266d31dca15856d2b1396d057969bf3db88b49f03d5626b5ecf5deb92670bf7",
           "sha256": "31d068b49ae29bdb39312c9c31fb70d58d6f7f6908794933cc1aceee7034b636",
           "sourceSha256": "b668bec025c476b679cfc66ab00706491ffb11e162dc57d0850f8802819d33cd",
@@ -9888,7 +9909,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "重試側面仍像原正面角度，殼體條紋、鐘管數量／外觀及台座塗裝變更，無法當成同一模型。兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -10289,7 +10311,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍改變關節比例、護甲和玄武岩台階；右側視角與固定姿勢不能匹配。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "408939f4ad524d79f0b1d5cab6fbe908a596b23bcbb30fe52517790a9d6c1a9d",
           "sha256": "710b488abe599c4d77c19bfbbd544234966127572b9b2a3cde01cbc49bf05b5e",
           "sourceSha256": "3a5bafd2de429f1799e4d6a34517b1d7b18da13edc11abf7b112e43ebd7aa47a",
@@ -10320,7 +10342,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.6690798
+          "reviewedAt": 1795142044.6690798,
+          "priorPolicyReason": "重試仍改變關節比例、護甲和玄武岩台階；右側視角與固定姿勢不能匹配。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -10721,7 +10744,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試翅膀不再倚蓋、背帶及海浪台座改變；無法當作同一雕塑。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "c54750e7dc917304809852953a309d348264880959e89eabbcf01eba2acf9b2f",
           "sha256": "af73f2029b65c07cbbecc9aeafbed56bdb41d6a390b82a34f5941e36037e20ca",
           "sourceSha256": "cd7631a51875b0dafc9b6628eecf3ab232f3bcf2fc6389a084bac2aef9639c4a",
@@ -10752,7 +10775,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.713719
+          "reviewedAt": 1795142044.713719,
+          "priorPolicyReason": "重試翅膀不再倚蓋、背帶及海浪台座改變；無法當作同一雕塑。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -11153,7 +11177,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試背面杯子仍換至右手，髮型／圍巾與岩台不同。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "1b98dc399bbbf3e1fb507339979c94e8c8c35385651707f8213fdfd44c7eb200",
           "sha256": "8ef4a59f4bea5b95f6978fd715faec965adc4429f706054cd396715ba56e5b4e",
           "sourceSha256": "f5f9ecb8cef8d928c8800214d89ab2526fd8df3344edd71b42413a4a0ff9bcf6",
@@ -11184,7 +11208,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.7577271
+          "reviewedAt": 1795142044.7577271,
+          "priorPolicyReason": "重試背面杯子仍換至右手，髮型／圍巾與岩台不同。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -11568,7 +11593,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試沙漏可見側仍不符角色左側設定，額外白色頸披／鞍布和台座色紋改造。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "d332c8067d2ebafec64968cd3fea418b348cb03dc0af676e74bf55be3ba6d941",
           "sha256": "96c6f2f342c317ad0bb082d1647e4c7adf78da86f08ab13de205ed63c6c580e0",
           "sourceSha256": "aafa1696edbf2c8c09cad6ac8a37fe1e6f53909769e8af03a92059bb78191a02",
@@ -11599,7 +11624,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.801579
+          "reviewedAt": 1795142044.801579,
+          "priorPolicyReason": "重試沙漏可見側仍不符角色左側設定，額外白色頸披／鞍布和台座色紋改造。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -12009,7 +12035,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試雙臂張開改姿勢，頭殼、輪轂及台座輪廓重新塑造。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "3246e21a8e8c6c93405f26a8d57763b686552b67cf6dd9328e79940a35112450",
           "sha256": "12ec60b03032d635f1f0ddcee33dd0610cf3426821c8aa1fd3dffed8f5a2dad7",
           "sourceSha256": "43a42d6ac6907265760a2d499f30628bd8f67a74bea2a67bfb26ba2ff8519016",
@@ -12040,7 +12066,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.844127
+          "reviewedAt": 1795142044.844127,
+          "priorPolicyReason": "重試雙臂張開改姿勢，頭殼、輪轂及台座輪廓重新塑造。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -12578,7 +12605,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍缺右手閉合書本，衣扣、鋪面和欄杆結構改變。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "03b616c76f4efced4f80c90bc0ca0a2c556b1332c4d4a40d750a20ea69503021",
           "sha256": "94780d8bcf874aa59b129b10bed28b6e9fc477cd00c280e449d0bc1377048cbd",
           "sourceSha256": "6a9b65259a73648ae7c0332cf49b79b5197a3d5dc1b25ef68fd76ffd0c608196",
@@ -12609,7 +12636,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.8892295
+          "reviewedAt": 1795142044.8892295,
+          "priorPolicyReason": "重試仍缺右手閉合書本，衣扣、鋪面和欄杆結構改變。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -13002,7 +13030,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面仍接近正面，坐姿、尾巴、背部插柱及石台花紋不同。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "d07aa918d303da7f6c40e165158e381fd94e5e8b3a3e9e70845b0076f3b49d9e",
           "sha256": "09393488d5d55eac1bebc80e071f969bccfb446b8811eeac89a8975719f13528",
           "sourceSha256": "ede237ec31300e589315068213dcc47c614ac6dd854e39a8ebdf28bb045c78ea",
@@ -13033,7 +13061,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.9332316
+          "reviewedAt": 1795142044.9332316,
+          "priorPolicyReason": "重試側面仍接近正面，坐姿、尾巴、背部插柱及石台花紋不同。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -13434,7 +13463,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試仍是正面三分之四角，鉗口和關節／護甲變形，背面腿部姿勢不同。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "7c7a2169ab50cfd80aec18f4a37fe3203588ae56aa70f28752e19ab68f2548c6",
           "sha256": "6c0f5e55c7f503f2edc64a757f125761ae863ee6fa8b932383d5ad1d62f1541d",
           "sourceSha256": "391b418dc102a6bdc55c1f75652e04ade3031f596e890fb8ddca4c263ec1d1d0",
@@ -13465,7 +13494,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142044.9747436
+          "reviewedAt": 1795142044.9747436,
+          "priorPolicyReason": "重試仍是正面三分之四角，鉗口和關節／護甲變形，背面腿部姿勢不同。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -13849,7 +13879,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試改變帆杆、袋／網與尾巴姿態，岩石台座重設。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "9364cc76015884890562905c9d818bcf6be6a384fa7ce71a5b1fb572b57992d8",
           "sha256": "565d54dc40455b81bf4d014d1b2d776b6492a55792320f060331e8959d20f2ad",
           "sourceSha256": "90ff214c595259022928b7d42acc52aae625e276be2956171778a28d7132280a",
@@ -13880,7 +13910,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142045.0174592
+          "reviewedAt": 1795142045.0174592,
+          "priorPolicyReason": "重試改變帆杆、袋／網與尾巴姿態，岩石台座重設。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -14281,7 +14312,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試髮髻／肩包、褲管和黃岩基座改造，背面手部持物變化。 兩次退回，側背留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "eba8a3d0b3b60a8e9859a94eb75f8a789b7cc8537d9ed9d36d1544c92ff11e9d",
           "sha256": "d5b0ca26964d04385c7140e7cf68c30897183b4986f765d69ee3dd0c0aa7c9e3",
           "sourceSha256": "1960f7a6a3ec1368bbe53458a36f79a48b8d76e5dcda7e8c1b4231a1f7ac678c",
@@ -14312,7 +14343,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795142045.061605
+          "reviewedAt": 1795142045.061605,
+          "priorPolicyReason": "重試髮髻／肩包、褲管和黃岩基座改造，背面手部持物變化。 兩次退回，側背留空。"
         },
         "REAR": {
           "status": "complete",
@@ -14713,7 +14745,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試羽片／雙尾形狀、腿部及石座花紋仍改變；所謂背面仍露側臉，非 180 度。 兩次退回，圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "b93bd40b2698080f56c813362ac6d69743c3cec60da13ac293436499f11c530e",
           "sha256": "763b8a41b692c942d10be6c07dc689899684a41b723cd5c4c5ed3b025140358f",
           "sourceSha256": "b21119677195824dc73d2adeffe9b622ed3843cc137515772ff9bcbb85fbc0e0",
@@ -14744,7 +14776,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795143008.3904498
+          "reviewedAt": 1795143008.3904498,
+          "priorPolicyReason": "重試羽片／雙尾形狀、腿部及石座花紋仍改變；所謂背面仍露側臉，非 180 度。 兩次退回，圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -15145,7 +15178,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試側面反而偏背側，無正確 90 度；尾巴、四腳姿勢、電台與裂紋台座改變。 兩次退回，圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "286c3f126ce2448df96260cdf38e93b2780cfa5172ac3fb4bc74a98ee89a5fd4",
           "sha256": "c66569bcdec62a6a7241799819a61d489dd523305e7196c641ea514d08de6d52",
           "sourceSha256": "2b0ddca1fa9e6d4a72520b682db81bd51600e74a505b2260bdda87defc6339ad",
@@ -15176,7 +15209,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795143008.4411266
+          "reviewedAt": 1795143008.4411266,
+          "priorPolicyReason": "重試側面反而偏背側，無正確 90 度；尾巴、四腳姿勢、電台與裂紋台座改變。 兩次退回，圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -15577,7 +15611,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "重試羊角色紋、毛束、體形及腳位改造，岩台紋路也不同。 兩次退回，圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "0adf867a5f2dd18671c41f2036805e0dd63eb5ff895e066c864511f7853bfe24",
           "sha256": "7e9f69e92b4a47b4d56c806a07240bc0fef1327cdcb2b714455b518862d1346d",
           "sourceSha256": "7581c59260c6a55a76a5e553779c839e2fb5faa2edcfd491eee51d1f4a4fc8ac",
@@ -15608,7 +15642,8 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795143008.489939
+          "reviewedAt": 1795143008.489939,
+          "priorPolicyReason": "重試羊角色紋、毛束、體形及腳位改造，岩台紋路也不同。 兩次退回，圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -16009,9 +16044,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -16301,9 +16337,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -16621,9 +16658,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -16941,9 +16979,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -17233,9 +17272,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -17572,9 +17612,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -17864,9 +17905,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -18184,9 +18226,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -18476,9 +18519,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -18768,9 +18812,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -19088,9 +19133,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -19408,9 +19454,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -19798,9 +19845,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -20090,9 +20138,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -20410,9 +20459,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -20730,9 +20780,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -21050,9 +21101,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -21404,9 +21456,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -21696,9 +21749,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -21988,9 +22042,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -22280,9 +22335,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -22572,9 +22628,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -22922,9 +22979,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -23225,9 +23283,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -23564,9 +23623,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -23867,9 +23927,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -24159,9 +24220,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -24462,9 +24524,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -24754,9 +24817,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -25057,9 +25121,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -25396,9 +25461,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -25688,9 +25754,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -25991,7 +26058,7 @@
         },
         "ANGLE": {
           "status": "reject",
-          "reason": "第二次雖保留持物左右，髮束／髮髻、焊罩塗裝及褲褶仍重設，不能證實同一雕塑。兩次退回，側背圖庫留空。",
+          "reason": "ANGLE 本輪為選擇性；舊側視候選身份漂移而退回，圖庫留空。",
           "runId": "ea27e4f02de0a335ffb8d695ce6f48da903757a3019370d358ebd76b181f6310",
           "sha256": "25d241c5e85125066a3373ca2285df321b9ec5246c10ebb42adeec24b6823747",
           "sourceSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
@@ -26022,7 +26089,8 @@
               "node": "BasicGuider",
               "cfg": null
             }
-          }
+          },
+          "priorPolicyReason": "第二次雖保留持物左右，髮束／髮髻、焊罩塗裝及褲褶仍重設，不能證實同一雕塑。兩次退回，側背圖庫留空。"
         },
         "REAR": {
           "status": "complete",
@@ -26652,9 +26720,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -26955,9 +27024,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -27283,9 +27353,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -27575,9 +27646,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -27878,9 +27950,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -28170,9 +28243,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -28462,9 +28536,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -28754,9 +28829,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -29093,9 +29169,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -29385,9 +29462,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -29677,9 +29755,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -29980,9 +30059,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -30272,9 +30352,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -30564,9 +30645,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -30856,9 +30938,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -31148,9 +31231,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -31451,9 +31535,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -31790,9 +31875,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "complete",
@@ -32095,9 +32181,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -32398,9 +32485,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -32714,9 +32802,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -32989,9 +33078,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -33264,9 +33354,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -33603,9 +33694,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -33878,9 +33970,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -34153,9 +34246,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -34428,9 +34522,10 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
           "attempted": false,
-          "authorApproval": "pending"
+          "authorApproval": "pending",
+          "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
           "status": "pass",
@@ -34990,7 +35085,8 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪選擇性，優先完成必要 REAR"
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
+          "priorPolicyReason": "本輪選擇性，優先完成必要 REAR"
         },
         "REAR": {
           "status": "complete",
@@ -35531,7 +35627,8 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪選擇性，優先完成必要 REAR"
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
+          "priorPolicyReason": "本輪選擇性，優先完成必要 REAR"
         },
         "REAR": {
           "status": "complete",
@@ -36072,7 +36169,8 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪選擇性，優先完成必要 REAR"
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
+          "priorPolicyReason": "本輪選擇性，優先完成必要 REAR"
         },
         "REAR": {
           "status": "complete",
@@ -36613,7 +36711,8 @@
         },
         "ANGLE": {
           "status": "blank",
-          "reason": "本輪選擇性，優先完成必要 REAR"
+          "reason": "ANGLE 本輪為選擇性，未新增側視候選；沿用留空，不聲稱本款已實測失敗。",
+          "priorPolicyReason": "本輪選擇性，優先完成必要 REAR"
         },
         "REAR": {
           "status": "complete",
@@ -37040,7 +37139,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T17:43:24Z",
+  "updatedAt": "2026-11-22T17:50:51Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -37189,48 +37288,32 @@
     ],
     "rearSupersededBy": "rear-2026-11-23"
   },
-  "processedAt": 1795155014.4223838,
-  "processingStatus": "rear-completion-in-progress",
+  "processedAt": 1795369851.507883,
+  "processingStatus": "awaiting-local-storage-recovery",
   "interruptionNotes": [
     "User reported usage-quota interruption; resumed from saved batch 7. Pause duration was not measured; wall time includes waiting."
   ],
   "remoteDelivery": {
-    "status": "blocked",
-    "lastAttemptAt": 1795155184.8520696,
-    "localValidationCommit": "769260c",
-    "remoteHead": "38b4899a53aa3bf0f29f42b5dfc6e1967c14fbf2",
-    "prUrl": "https://github.com/jackteng-dev/figura-web/pull/22",
-    "base": "main",
-    "draft": true,
-    "prMetadataUpdated": false,
-    "push": {
-      "exitCode": 128,
-      "error": "Unable to persist credentials with the wincredman credential store; unable to get password from user"
-    },
-    "connector": {
-      "action": "update_pull_request",
-      "error": "MCP tool call requires approval, but approval policy is never"
-    },
-    "preparedDescription": "docs/verification/catalog-gallery-pr-2026-11-20.md",
+    "status": "not-requested",
+    "reason": "2026-11-23 user requests local commits only; author handles push and PR",
+    "pushed": false,
+    "prModified": false,
     "merged": false,
     "forcePush": false
   },
   "finalValidation": {
-    "browser": "docs/verification/catalog-gallery-browser-2026-11-20.json",
-    "browserChecks": 190,
-    "integrity": "docs/verification/catalog-gallery-integrity-2026-11-20.json",
-    "servedImages": 380,
-    "newLocalUploads": 285,
-    "pythonChecks": 10,
-    "protectionMasksRecomputed": 5,
+    "date": "2026-11-23",
+    "status": "verified-current-state-upload-incomplete",
+    "integrity": "docs/verification/catalog-gallery-integrity-2026-11-23.json",
+    "servedImages": 474,
+    "reviewedRequiredSources": 495,
+    "browser": "docs/verification/catalog-gallery-browser-2026-11-23.json",
+    "browserChecks": 198,
+    "comparison": "docs/verification/catalog-gallery-comparison-2026-11-23.json",
+    "pythonChecks": 11,
     "webProductionBuild": "passed",
-    "apiPackage": {
-      "total": 324,
-      "passed": 46,
-      "skipped": 278,
-      "failures": 0,
-      "errors": 0
-    },
+    "buildExitCode": 0,
+    "missingMainOrEmptyGallery": [],
     "authorApproval": "pending"
   },
   "policyHistory": [
@@ -37555,7 +37638,74 @@
         "at": 1795369404.5180383,
         "authorApproval": "pending"
       }
-    ]
+    ],
+    "visualReviewStatus": "all-99-required-rear-sources-accepted",
+    "uploadStatus": "blocked-local-storage",
+    "counts": {
+      "MAIN": {
+        "complete": 99
+      },
+      "ANGLE": {
+        "reject": 36,
+        "blank": 63
+      },
+      "REAR": {
+        "complete": 78,
+        "pass": 21
+      },
+      "FACE": {
+        "complete": 99
+      },
+      "DETAIL": {
+        "complete": 99
+      },
+      "SCENE": {
+        "complete": 99
+      }
+    },
+    "remainingUploads": [
+      "FIGURA-AI-052",
+      "FIGURA-AI-057",
+      "FIGURA-AI-058",
+      "FIGURA-AI-060",
+      "FIGURA-AI-062",
+      "FIGURA-AI-064",
+      "FIGURA-AI-067",
+      "FIGURA-AI-069",
+      "FIGURA-AI-072",
+      "FIGURA-AI-076",
+      "FIGURA-AI-079",
+      "FIGURA-AI-084",
+      "FIGURA-AI-087",
+      "FIGURA-AI-088",
+      "FIGURA-AI-089",
+      "FIGURA-AI-090",
+      "FIGURA-AI-091",
+      "FIGURA-AI-092",
+      "FIGURA-AI-093",
+      "FIGURA-AI-094",
+      "FIGURA-AI-095"
+    ],
+    "elapsedWallSeconds": 4517.915082931519,
+    "storageIncident": {
+      "status": "unresolved",
+      "failedProduct": "FIGURA-AI-052",
+      "apiError": "HTTP503: 圖片儲存暫時無法使用，請重試同一操作",
+      "directProbe": {
+        "endpoint": "http://127.0.0.1:18333",
+        "headBucket": 200,
+        "putSmallObject": 500,
+        "error": "InternalError",
+        "deleteProbe": 204
+      },
+      "capacityHypothesis": "Existing demo compose has -volume.max=12 and -master.volumeSizeLimitMB=128; suspected volume allocation limit, not confirmed without server logs.",
+      "dockerCli": "permission denied connecting to docker_engine named pipe",
+      "dockerDesktop": "Automatic approval review rejected launch: Computer Use was not approved to use Docker Desktop",
+      "recovery": "052 failed POST returned synchronously; unchanged draft version and absent request event verified before publication restored. Old failed UUID preserved; future upload obtains new UUID for new draft version.",
+      "apiRestarted": false,
+      "containersChanged": false,
+      "pendingSourcesRetained": true
+    }
   },
   "priorExcluded": [
     {
@@ -37583,5 +37733,51 @@
       "evidence": "App 串接驗證用合成收藏品"
     }
   ],
-  "excluded": []
+  "excluded": [],
+  "validationHistory": [
+    {
+      "date": "2026-11-20",
+      "validation": {
+        "browser": "docs/verification/catalog-gallery-browser-2026-11-20.json",
+        "browserChecks": 190,
+        "integrity": "docs/verification/catalog-gallery-integrity-2026-11-20.json",
+        "servedImages": 380,
+        "newLocalUploads": 285,
+        "pythonChecks": 10,
+        "protectionMasksRecomputed": 5,
+        "webProductionBuild": "passed",
+        "apiPackage": {
+          "total": 324,
+          "passed": 46,
+          "skipped": 278,
+          "failures": 0,
+          "errors": 0
+        },
+        "authorApproval": "pending"
+      }
+    }
+  ],
+  "remoteDeliveryHistory": [
+    {
+      "status": "blocked",
+      "lastAttemptAt": 1795155184.8520696,
+      "localValidationCommit": "769260c",
+      "remoteHead": "38b4899a53aa3bf0f29f42b5dfc6e1967c14fbf2",
+      "prUrl": "https://github.com/jackteng-dev/figura-web/pull/22",
+      "base": "main",
+      "draft": true,
+      "prMetadataUpdated": false,
+      "push": {
+        "exitCode": 128,
+        "error": "Unable to persist credentials with the wincredman credential store; unable to get password from user"
+      },
+      "connector": {
+        "action": "update_pull_request",
+        "error": "MCP tool call requires approval, but approval policy is never"
+      },
+      "preparedDescription": "docs/verification/catalog-gallery-pr-2026-11-20.md",
+      "merged": false,
+      "forcePush": false
+    }
+  ]
 }

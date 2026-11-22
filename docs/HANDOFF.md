@@ -1,14 +1,18 @@
 # ELPSY Shop Vue 網站交接
 
-## 2026-11-23：必要背面與無圖商品補齊（進行中）
+## 2026-11-23：必要背面來源全部通過，21 件因本機儲存故障待入庫
 
 依作者新要求，REAR 改以明確 135°–180° 背後方向及關鍵身份判斷，小紋理差異可接受；ANGLE 選擇性。保留 2026-11-20 舊拒收紀錄與政策歷史，新採用另記 `rear-2026-11-23`，不改寫舊 run review。先完成 001／003／068 三件試點並本機上傳後繼續全目錄。
 
-- 目前本機目錄 99 件，背面已完成 64 件，其餘 35 件產圖／重試中；進度以 `catalog-gallery-manifest.json` 的 `rearCompletion20261123` 與各槽為準。
+- 99 件 REAR 來源均已通過，78 件已入本機圖庫、21 件 `pass` 待上傳；沒有待產圖／待審查來源。MAIN／FACE／DETAIL／SCENE 各 99 件完成，目前共 474 張本機供圖。ANGLE 選擇性，36 件舊候選退回、63 件未新增候選留空。這不是全部必要圖位入庫完成。
 - 四件 ELPSY 無圖商品的標題／品牌／分類／說明／款式與 TWD1280 價格皆同，只有 product／SKU UUID 不同，因此共用原創「苔石量測員」設計。四件 MAIN／FACE／DETAIL／SCENE／REAR 已上傳並讀回；舊排除紀錄保留在 priorExcluded。
 - ComfyUI 原先未執行，已以原 portable 啟動，僅聽 127.0.0.1:18188；保留既有模型、節點與使用者 workflow。API 沿用作者已啟動的 19092 demo，未重啟。新背面混用本機 Klein 參考圖流程與內建 ImageGen；沒有新增模型／套件。種子或內建模型版本未提供者記 null。
-- 原圖與完整 prompts 在忽略 work，manifest 保存實際來源／輸出 SHA、背面提案、重新審查及上傳 UUID。`rear_gallery_round.py` 提供明確複核／內建候選採用與 checkpoint；圖庫 gate 僅允許 hash 綁定的 REAR 放寬，6 項離線 guard 通過。
-- 本輪依作者要求只 commit，不 push、不修改 PR。作者簽核仍 pending，無 3D／360。最終比較頁、完整報告與瀏覽器／全目錄驗證待收尾，不能把此進度段當全數完成。
+- 原圖與完整 prompts 在忽略 work，manifest 保存實際來源／輸出 SHA、背面提案、重新審查及上傳 UUID。`rear_gallery_round.py` 提供明確複核／內建候選採用與 checkpoint；圖庫 gate 僅允許 hash 綁定的 REAR 放寬。原 run review 未改寫，外部來源必須綁定正確 master，MAIN 例外只允許原無圖 ELPSY。
+- **阻礙：本機 SeaweedFS 可讀／HEAD 200，但極小 PUT 500 InternalError，圖庫 POST 503。** demo 配置 12 × 128 MiB volume，容量限制為待確認假說。Docker CLI 管線拒絕存取；自動核准審查拒絕 Docker Desktop（Computer Use was not approved to use Docker Desktop），無法取得容器日誌或修復。未重啟 API、未變更容器、ACL 或安全設定。
+- 052 失敗 POST 已核對同步 503、無 audit event 且草稿版本未變，再恢復公開，失敗 UUID／版本證據完整保留。**99 件商品全部公開，沒有缺主圖或空白圖庫。** 修復本機儲存後執行 `catalog_gallery.py upload`，只續傳 21 個 pass，已完成的不重傳、不需重產。後續驗證／checkpoint 指令在 [續跑說明](CATALOG_GALLERY_RUNBOOK.md) 與報告。
+- 驗證：6 項圖庫 guard＋5 項 runner guard 通過，Web production build exit 0；99 件 × 1440／390px 共 198 筆真本機瀏覽器檢查通過，474 張供圖與 495 個必要來源 SHA 核對通過。比較頁 99 列各六圖位，抽樣含待上傳 REAR 與 ELPSY 可解碼。ComfyUI 本輪無 OOM，文生圖.json／ae.safetensors.corrupt SHA 不變。
+- [逐件 REAR／ANGLE 與問題報告](verification/catalog-gallery-rear-report-2026-11-23.md)、[六圖位比較頁](catalog-gallery-comparison.html)、[manifest](verification/catalog-gallery-manifest.json)、[環境紀錄](verification/comfyui-environment-2026-11-23.json)、[供圖驗證](verification/catalog-gallery-integrity-2026-11-23.json)、[瀏覽器驗證](verification/catalog-gallery-browser-2026-11-23.json)。比較頁含已通過但未入庫來源，狀態明確分開；原圖留本機 work，Git 不含圖片。
+- 本輪依作者要求只 commit，未 push／修改 PR／merge／force push；作者簽核仍 pending。下一步僅待本機儲存寫入恢復，完成 21 件續傳後更新報告與 HANDOFF，不能把本次來源檢查當全部正式上架完成。下方 2026-11-20 的遠端阻礙與側背全空是歷史紀錄。
 
 ## 2026-11-20：全目錄 2D 圖組已處理（側／背留空、作者 pending）
 

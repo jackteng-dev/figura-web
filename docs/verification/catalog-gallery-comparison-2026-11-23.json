@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-22T17:48:42.779Z",
+  "url": "http://127.0.0.1:15176",
+  "scope": "real existing loopback demo, read-only, no API mocks",
+  "authorApproval": "pending",
+  "products": 0,
+  "checks": [],
+  "comparison": {
+    "rows": 99,
+    "positionsPerRow": 6,
+    "checks": [
+      {
+        "key": "FIGURA-AI-001",
+        "acceptedSourcesDecoded": true
+      },
+      {
+        "key": "FIGURA-AI-052",
+        "acceptedSourcesDecoded": true
+      },
+      {
+        "key": "ELPSY-001",
+        "acceptedSourcesDecoded": true
+      }
+    ]
+  }
+}

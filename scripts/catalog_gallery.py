@@ -285,8 +285,11 @@ def report():
             if s['status'] in ('reject', 'blank'):
                 im = '<div class="empty">留空 · 候選退回</div>' + (f'<details><summary>退回候選，未入圖庫</summary>{im}</details>' if path else '')
             cells.append(f'<figure>{im}<figcaption><b>{t} · {labels[s["status"]]}</b><br>{esc(s.get("reason") or "待檢查")}</figcaption></figure>')
-        rows.append(f'<article><h2><a href="http://127.0.0.1:15181/shop/products/{esc(p["id"])}">{esc(p["productKey"])} {esc(p["title"])}</a></h2><div class="grid">{"".join(cells)}</div></article>')
+        rows.append(f'<article><h2><a href="http://127.0.0.1:15176/shop/products/{esc(p["id"])}">{esc(p["productKey"])} {esc(p["title"])}</a></h2><div class="grid">{"".join(cells)}</div></article>')
     html = '<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Figura 全目錄 2D 圖組比較</title><style>body{font:15px system-ui;margin:24px;background:#f3f1ed;color:#242424}.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}figure{margin:0;min-width:0}img,.empty{width:100%;aspect-ratio:1;object-fit:contain;background:#e5e1db}.empty{display:grid;place-items:center}figcaption{font-size:12px;overflow-wrap:anywhere}article{padding:20px 0;border-bottom:1px solid #ccc}@media(max-width:800px){.grid{min-width:1050px}article{overflow:auto}}</style><h1>Figura 全目錄 2D 圖組比較</h1><p>AI 生成示意圖。非實物攝影，非可操作的 3D 模型。作者人工簽核 pending。退回圖僅供檢查，不上傳圖庫。圖片保存在本機忽略的 work/；clone 不包含圖片。</p>' + ''.join(rows) + '</html>'
+    rear_counts = {state: sum(p['slots']['REAR']['status'] == state for p in m['products']) for state in ('complete', 'pass')}
+    notice = f'<p>2026-11-23：共 {len(m["products"])} 件；必要背面已入本機圖庫 {rear_counts["complete"]} 件，已檢查待上傳 {rear_counts["pass"]} 件。ANGLE 為選擇性，舊退回稿不入圖庫。每款背部設計已記於 character sheet。</p>'
+    html = html.replace('</h1>', '</h1>' + notice, 1)
     (ROOT / 'docs/catalog-gallery-comparison.html').write_text(html, encoding='utf-8')
     print(json.dumps({t: {s: sum(p['slots'][t]['status'] == s for p in m['products']) for s in sorted({p['slots'][t]['status'] for p in m['products']})} for t in TYPES}, ensure_ascii=False))
 
