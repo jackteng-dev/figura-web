@@ -30210,7 +30210,7 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "逐件新標準核對：後腦／頭部後側、背部與基座背側明確；主要輪廓比例、配色、頭部、配件及底座形色保持。相機遮擋、羽片、背面板、紋理或衣褶小差異可接受。作者 pending。",
           "runId": "58d3a4cbea27619a678a867f4532738772bb36f85572381ab8f02860741b9d59",
           "sha256": "1cd9e5a63ab262528a42cde07029395c0de6c34bbe29113e2d9e77dab2b2580a",
@@ -30242,7 +30242,24 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795368079.552433
+          "reviewedAt": 1795368079.552433,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "0b967f35-e305-4874-b9e1-690b8fc7f5c6",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "玻雨帳冊兔，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "1cd9e5a63ab262528a42cde07029395c0de6c34bbe29113e2d9e77dab2b2580a",
+            "imageId": "c29442da-0b91-4f00-8a24-e26505082bb7",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/92d304c5-3c45-4885-b115-95dbc2faf515/image/c29442da-0b91-4f00-8a24-e26505082bb7",
+            "servedSha256": "7496bc3c8a52d5db532a91f277e7d90f2a1e2fe194de6073bdf76745bfcdee3d",
+            "verifiedAt": 1795368091.5953293
+          }
         },
         "FACE": {
           "status": "complete",
@@ -30310,7 +30327,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/92d304c5-3c45-4885-b115-95dbc2faf515/image/fdd942d1-d9a1-4e50-9eb3-9fff53355936",
             "servedSha256": "bf051fe6522fce95fd2798e7960277454c1fed38fc6e30832b26ad699f49124c",
-            "verifiedAt": 1795154428.7485492
+            "verifiedAt": 1795368091.6159196
           }
         },
         "DETAIL": {
@@ -30379,7 +30396,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/92d304c5-3c45-4885-b115-95dbc2faf515/image/51b59adf-19c2-4305-be49-8bfa7f361c8a",
             "servedSha256": "a117d3ed95f258dd42fe1dbb3804cac0c67019a161d501452788e1b42c3f240a",
-            "verifiedAt": 1795154428.7634134
+            "verifiedAt": 1795368091.6360645
           }
         },
         "SCENE": {
@@ -30429,7 +30446,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/92d304c5-3c45-4885-b115-95dbc2faf515/image/6f2ceb1d-aa4d-4f8e-8292-368f65d75e95",
             "servedSha256": "99c93be4363707c3cb3360a0596e86a7a661cf22665b37183af8945960718d39",
-            "verifiedAt": 1795154428.7882278
+            "verifiedAt": 1795368091.6741185
           }
         }
       },
@@ -30437,7 +30454,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -30485,7 +30502,7 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "逐件新標準核對：後腦／頭部後側、背部與基座背側明確；主要輪廓比例、配色、頭部、配件及底座形色保持。相機遮擋、羽片、背面板、紋理或衣褶小差異可接受。作者 pending。",
           "runId": "b4738abdb680278a9015f59bdd25cb3ac459344f27c9f3994890b87ae8e291f7",
           "sha256": "c972b5ce699572167952c0195e4f3b4712c00764de58174390767ea6f3232027",
@@ -30517,7 +30534,24 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795368079.553324
+          "reviewedAt": 1795368079.553324,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "2fb62f26-8c51-4271-b980-f7e93aa82c5c",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "慢針屋脊猿，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "c972b5ce699572167952c0195e4f3b4712c00764de58174390767ea6f3232027",
+            "imageId": "6d42058f-ab68-4331-a6d5-7b8da3c4f856",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/0064425d-29ab-4017-9fc5-60025ce85d66/image/6d42058f-ab68-4331-a6d5-7b8da3c4f856",
+            "servedSha256": "6f158decb724da1c2258d426bc563ccb82de80e3012e46a58381de6dbf64cba7",
+            "verifiedAt": 1795368092.258484
+          }
         },
         "FACE": {
           "status": "complete",
@@ -30585,7 +30619,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/0064425d-29ab-4017-9fc5-60025ce85d66/image/3ffa1846-21dc-4049-923f-dddc97693c71",
             "servedSha256": "6916de88e5ece3eb0550415ee3023e6565374d1fe1a7e572ce10c5b0f9c33ef3",
-            "verifiedAt": 1795154429.8267555
+            "verifiedAt": 1795368092.280156
           }
         },
         "DETAIL": {
@@ -30654,7 +30688,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/0064425d-29ab-4017-9fc5-60025ce85d66/image/2c150321-bfef-4538-94ab-667746c79a51",
             "servedSha256": "b8086005226cae1669923e5f1da81837776a8da13e2bab505f0214191ccb5b40",
-            "verifiedAt": 1795154429.840103
+            "verifiedAt": 1795368092.2958171
           }
         },
         "SCENE": {
@@ -30704,7 +30738,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/0064425d-29ab-4017-9fc5-60025ce85d66/image/70d000d7-cd66-471c-b4f6-71b13735ea7b",
             "servedSha256": "b5ef0e8a5c475b4590133ee6e6a5e6986adfd3201e746da15be162d895917848",
-            "verifiedAt": 1795154429.870667
+            "verifiedAt": 1795368092.323641
           }
         }
       },
@@ -30712,7 +30746,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -31035,7 +31069,7 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "逐件新標準核對：後腦／頭部後側、背部與基座背側明確；主要輪廓比例、配色、頭部、配件及底座形色保持。相機遮擋、羽片、背面板、紋理或衣褶小差異可接受。作者 pending。",
           "runId": "483d48872fa7d815a59318854d8d539b65d2eb652f0c648f39744e7b3e5ab2d8",
           "sha256": "69eded159faa13a6950307fb206270dd8e1631c282cb721695dda388976be79a",
@@ -31067,7 +31101,24 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795368079.5542645
+          "reviewedAt": 1795368079.5542645,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "2663adcc-fe53-4fec-b9e0-2000e2766fed",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "紫蘇糖盒狸，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "69eded159faa13a6950307fb206270dd8e1631c282cb721695dda388976be79a",
+            "imageId": "5808c840-4364-4dcc-94aa-34e9ea7f22c7",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/fc6b12e5-8cd7-4a80-9918-7683c6f97880/image/5808c840-4364-4dcc-94aa-34e9ea7f22c7",
+            "servedSha256": "8170f19b63de32e9713f40961a20b3099653cb692ab776fe3c2d39831c83176e",
+            "verifiedAt": 1795368092.8599908
+          }
         },
         "FACE": {
           "status": "complete",
@@ -31135,7 +31186,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/fc6b12e5-8cd7-4a80-9918-7683c6f97880/image/aa0df300-c47c-4b91-a7b5-291c5fb40139",
             "servedSha256": "4fa5f68c487665de76a1beea079caedec6a0bab7b1bf4be24d015046fbb13fb8",
-            "verifiedAt": 1795154613.9138973
+            "verifiedAt": 1795368092.8727748
           }
         },
         "DETAIL": {
@@ -31204,7 +31255,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/fc6b12e5-8cd7-4a80-9918-7683c6f97880/image/6c269c31-a259-4cf5-b7cc-375d5623180c",
             "servedSha256": "f3773fdce8665d29a99139bf03e84b1c2e6e17f4eaebc61dc30a08bcb693ee50",
-            "verifiedAt": 1795154613.9361997
+            "verifiedAt": 1795368092.8859878
           }
         },
         "SCENE": {
@@ -31254,7 +31305,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/fc6b12e5-8cd7-4a80-9918-7683c6f97880/image/f805324a-f799-4cd4-b42b-d05f17962d95",
             "servedSha256": "2e709c02b3be2d384c7a23af22afac30f6ced8b7e291f5bde379a78af1dd9fec",
-            "verifiedAt": 1795154613.9734638
+            "verifiedAt": 1795368092.9106953
           }
         }
       },
@@ -31319,7 +31370,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -31357,7 +31408,7 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "reason": "逐件新標準核對：後腦／頭部後側、背部與基座背側明確；主要輪廓比例、配色、頭部、配件及底座形色保持。相機遮擋、羽片、背面板、紋理或衣褶小差異可接受。作者 pending。",
           "runId": "7c5248072ef62d9744547632b324212279231628dcfd9ea0ff9fafe822561958",
           "sha256": "7c8e89d21dd38b4e81842114cadadf364af6be506157e728cc0b1418f02cc2cb",
@@ -31389,7 +31440,24 @@
               "cfg": null
             }
           },
-          "reviewedAt": 1795368079.555164
+          "reviewedAt": 1795368079.555164,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "b0c42c23-fc37-4bc2-9e79-1d103571ac06",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "蜜茶苦橙僧，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "7c8e89d21dd38b4e81842114cadadf364af6be506157e728cc0b1418f02cc2cb",
+            "imageId": "890751ff-caa5-4e96-81c2-1f2fd169870b",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/50799f7f-ae3a-4f23-b193-1cf910ff18c1/image/890751ff-caa5-4e96-81c2-1f2fd169870b",
+            "servedSha256": "7951c400311c2c6da3f3c03c46c589720415e1990f7fced615a199805766b8a8",
+            "verifiedAt": 1795368093.3443189
+          }
         },
         "FACE": {
           "status": "complete",
@@ -31457,7 +31525,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/50799f7f-ae3a-4f23-b193-1cf910ff18c1/image/d4a569f1-3eaf-4e4f-9993-3e1bee202631",
             "servedSha256": "ba9757cec3904acaa57ffd1688a43477741632b84a8a22cdfba7046c6610ca23",
-            "verifiedAt": 1795154614.9934258
+            "verifiedAt": 1795368093.3541589
           }
         },
         "DETAIL": {
@@ -31526,7 +31594,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/50799f7f-ae3a-4f23-b193-1cf910ff18c1/image/2acccd61-84bf-4b85-869d-0e8a1072a7b6",
             "servedSha256": "92bfb38600a26748e04a67517168378268a7047a9073111d74e8237b66fc1a1b",
-            "verifiedAt": 1795154615.0077014
+            "verifiedAt": 1795368093.3638146
           }
         },
         "SCENE": {
@@ -31576,7 +31644,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/50799f7f-ae3a-4f23-b193-1cf910ff18c1/image/dc1f1957-78ee-4689-bd41-71ce63a1403f",
             "servedSha256": "20f3a20045a79bf76e2b7294275e24a95e1a9c0a7a5c060505fc9745390595c0",
-            "verifiedAt": 1795154615.0474167
+            "verifiedAt": 1795368093.3874583
           }
         }
       },
@@ -31597,7 +31665,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -36181,7 +36249,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T17:21:30Z",
+  "updatedAt": "2026-11-22T17:21:33Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -36621,6 +36689,17 @@
           "FIGURA-AI-081"
         ],
         "at": 1795368090.524556,
+        "authorApproval": "pending"
+      },
+      {
+        "name": "rear-b07b",
+        "keys": [
+          "FIGURA-AI-082",
+          "FIGURA-AI-083",
+          "FIGURA-AI-085",
+          "FIGURA-AI-086"
+        ],
+        "at": 1795368093.5199924,
         "authorApproval": "pending"
       }
     ],
