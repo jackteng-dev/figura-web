@@ -5524,39 +5524,49 @@
           }
         },
         "REAR": {
-          "status": "reject",
-          "reason": "新標準仍有關鍵錯誤：005 多出背鰭，007 多出第二肩包，010 背帶變雙交叉，012 抬腿換邊，014 敬禮／持鈴手換邊，017 仍像正面；改用同 master 內建參考圖重產。",
-          "runId": "27c35ea2acbc07f3644b03737a75092112be81313bde851ae20fd816438cd889",
-          "sha256": "09bf65a8c1d8494a9e2f026e3ccb506bd732e506afff1065cd782b72cbdeac7d",
+          "status": "complete",
+          "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-012-builtin.png",
+          "sha256": "3456af93e35b19d2e8ee2fada9d99384e50f34f854c77b2ebfc8c1cc3da5440e",
+          "reason": "後腦與背羽明確，風箏及抬腿均在角色左側，右腳支撐原草地圓台；黃羽橘圍巾與薄荷風箏保持。 小細節差異可接受，作者 pending。",
           "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
-          "path": "work/comfyui-figura/runs/27c35ea2acbc07f3644b03737a75092112be81313bde851ae20fd816438cd889/output.png",
           "generation": {
-            "mode": "flux-reference",
-            "tool": "local ComfyUI",
-            "promptId": "42f1df98-269f-4477-90e0-67a166934102",
-            "createdAt": "2026-11-22T16:39:00Z",
-            "masterSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
-            "modelHashes": {
-              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
-              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
-              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
-            },
-            "workflowSha256": "817bca7823d508151b818830d28913c0d59d41c99004bc26a72c865d302f1a00",
-            "outputSha256": "09bf65a8c1d8494a9e2f026e3ccb506bd732e506afff1065cd782b72cbdeac7d",
-            "outputBytes": 514762,
-            "authorApproval": "pending",
-            "prompt": "Golden chick toy with layered wing/tail feathers, bright amber eyes and small open beak; orange scarf with cream wheat print. Anatomical LEFT wing holds curved rod with mint diamond kite overhead, pale wood frame and green ribbon. One brown foot planted, other lifted. Grass/flower round base with gold rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark.",
-            "seed": 2026412012,
-            "width": 768,
-            "height": 768,
-            "steps": 4,
-            "sampler": "euler",
-            "guidance": {
-              "node": "BasicGuider",
-              "cfg": null
-            }
+            "key": "FIGURA-AI-012",
+            "prompt": "Use case: identity-preserve, product-mockup. Attached image is the ONLY current MASTER of one original painted collectible. Change ONLY the camera to clearly behind, rear 150-180 degrees: visible BACK of head, torso and original base; face points AWAY, no front eyes/chest looking at viewer. Keep recognizable SAME sculpt silhouette, proportions, main palette, hairstyle/head, anatomical accessory sides and base shape/color. Minor sculpt/paint details may vary, not the key identity. Invariants: Golden chick toy with layered wing/tail feathers, bright amber eyes and small open beak; orange scarf with cream wheat print. Anatomical LEFT wing holds curved rod with mint diamond kite overhead, pale wood frame and green ribbon. One brown foot planted, other lifted. Grass/flower round base with gold rim. Fixed hidden rear design already recorded: Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. CRITICAL: Kite held by anatomical LEFT wing and anatomical LEFT leg is raised. From BACK both are image LEFT. RIGHT foot supports base at image RIGHT. Never swap legs or kite side. Whole figure and complete base at about 80% of square image height with safe margins. Warm off-white studio, crisp satin-painted miniature/materials, no living animal/person or illustration redesign, text, watermark, logo, packaging or extra props. Flat AI concept image, not an actual 3D asset.",
+            "reference": "work/catalog-gallery/FIGURA-AI-012/master.png",
+            "referenceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+            "tool": "built-in imagegen",
+            "seed": null,
+            "modelVersion": null,
+            "authorApproval": "pending"
           },
-          "reviewedAt": 1795365856.0469522
+          "externalSource": {
+            "kind": "new-reference-rear",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "actualReferenceMasterSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+            "reviewedAgainstMasterSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+            "outputSha256": "3456af93e35b19d2e8ee2fada9d99384e50f34f854c77b2ebfc8c1cc3da5440e",
+            "at": 1795366583.392181,
+            "note": "後腦與背羽明確，風箏及抬腿均在角色左側，右腳支撐原草地圓台；黃羽橘圍巾與薄荷風箏保持。 小細節差異可接受，作者 pending。",
+            "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "bbc2e569-39b6-4dc2-a531-3b2f35887a02",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "蜜棗風箏手，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "3456af93e35b19d2e8ee2fada9d99384e50f34f854c77b2ebfc8c1cc3da5440e",
+            "imageId": "026e3801-9997-4c86-acc3-651f7851db37",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/026e3801-9997-4c86-acc3-651f7851db37",
+            "servedSha256": "9d840c636e0b4b61766d96bd9cc1d6d0bfffae7fcf4d578b7aa1bc4c4579c4a9",
+            "verifiedAt": 1795366585.21771
+          }
         },
         "FACE": {
           "status": "complete",
@@ -5588,7 +5598,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/da34739a-bac7-4d50-af15-ac80b1555b29",
             "servedSha256": "e37e217a0d93bb0526d20db03d3132a5cb6f2dae0d0d670359a2dc8d47d99672",
-            "verifiedAt": 1795138876.0089383
+            "verifiedAt": 1795366585.2312489
           },
           "generation": {
             "mode": "crop",
@@ -5657,7 +5667,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/9501f7b6-38e9-49e2-9f0b-917af8e26d7c",
             "servedSha256": "ff5b828caac050e7cb1501f24b154affa2b9500eff2d2a48c61dec6e98db097c",
-            "verifiedAt": 1795138876.0282788
+            "verifiedAt": 1795366585.2448301
           },
           "generation": {
             "mode": "crop",
@@ -5719,7 +5729,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/3a1dd8b1-ed88-4571-b887-f261a2b44957/image/8af16e8b-1fb7-41d1-b707-751f4427d1c5",
             "servedSha256": "6bb51052bdb5085927030d4f0cba80ba7c9850edabcb364ca1cd0f74bcda1c51",
-            "verifiedAt": 1795138876.0601227
+            "verifiedAt": 1795366585.2679524
           },
           "generation": {
             "mode": "scene-composite",
@@ -5855,6 +5865,41 @@
                 "cfg": null
               }
             }
+          },
+          {
+            "status": "reject",
+            "reason": "新標準仍有關鍵錯誤：005 多出背鰭，007 多出第二肩包，010 背帶變雙交叉，012 抬腿換邊，014 敬禮／持鈴手換邊，017 仍像正面；改用同 master 內建參考圖重產。",
+            "runId": "27c35ea2acbc07f3644b03737a75092112be81313bde851ae20fd816438cd889",
+            "sha256": "09bf65a8c1d8494a9e2f026e3ccb506bd732e506afff1065cd782b72cbdeac7d",
+            "sourceSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+            "path": "work/comfyui-figura/runs/27c35ea2acbc07f3644b03737a75092112be81313bde851ae20fd816438cd889/output.png",
+            "generation": {
+              "mode": "flux-reference",
+              "tool": "local ComfyUI",
+              "promptId": "42f1df98-269f-4477-90e0-67a166934102",
+              "createdAt": "2026-11-22T16:39:00Z",
+              "masterSha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57",
+              "modelHashes": {
+                "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+                "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+                "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+              },
+              "workflowSha256": "817bca7823d508151b818830d28913c0d59d41c99004bc26a72c865d302f1a00",
+              "outputSha256": "09bf65a8c1d8494a9e2f026e3ccb506bd732e506afff1065cd782b72cbdeac7d",
+              "outputBytes": 514762,
+              "authorApproval": "pending",
+              "prompt": "Golden chick toy with layered wing/tail feathers, bright amber eyes and small open beak; orange scarf with cream wheat print. Anatomical LEFT wing holds curved rod with mint diamond kite overhead, pale wood frame and green ribbon. One brown foot planted, other lifted. Grass/flower round base with gold rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark.",
+              "seed": 2026412012,
+              "width": 768,
+              "height": 768,
+              "steps": 4,
+              "sampler": "euler",
+              "guidance": {
+                "node": "BasicGuider",
+                "cfg": null
+              }
+            },
+            "reviewedAt": 1795365856.0469522
           }
         ]
       },
@@ -5862,7 +5907,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -6408,39 +6453,49 @@
           }
         },
         "REAR": {
-          "status": "reject",
-          "reason": "新標準仍有關鍵錯誤：005 多出背鰭，007 多出第二肩包，010 背帶變雙交叉，012 抬腿換邊，014 敬禮／持鈴手換邊，017 仍像正面；改用同 master 內建參考圖重產。",
-          "runId": "b726b11401404e8292df18af90c55d4f0507c04bb3d63d563085603b58d51de2",
-          "sha256": "4f0a87ebff159bb88a23213c5a7fb92cff0db7c6de876dbc5df739db37533474",
+          "status": "complete",
+          "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-014-builtin.png",
+          "sha256": "89cbe1e5a18f0abcebf787b322a3d92c1f1f06be2be9a57fd4aa6e1e8ec47575",
+          "reason": "後腦和風衣背面明確，右手敬禮／左手持鈴及左腳踏高岩正確，米白藍條風衣、橘手套、深靴與海岸岩台保持。 小細節差異可接受，作者 pending。",
           "sourceSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
-          "path": "work/comfyui-figura/runs/b726b11401404e8292df18af90c55d4f0507c04bb3d63d563085603b58d51de2/output.png",
           "generation": {
-            "mode": "flux-reference",
-            "tool": "local ComfyUI",
-            "promptId": "96edec01-01a8-4070-a4c9-fdb893eab285",
-            "createdAt": "2026-11-22T16:39:22Z",
-            "masterSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
-            "modelHashes": {
-              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
-              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
-              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
-            },
-            "workflowSha256": "fcd04f647b4e383e32fe4c438de7c774b80ccd2a785fe056bc7f193f0bac0e26",
-            "outputSha256": "4f0a87ebff159bb88a23213c5a7fb92cff0db7c6de876dbc5df739db37533474",
-            "outputBytes": 624456,
-            "authorApproval": "pending",
-            "prompt": "Adult short curly brown-haired sailor, cream long coat with two navy hem stripes, navy trousers, tall dark boots, orange gloves. Anatomical RIGHT hand shading forehead in salute; anatomical LEFT hand holds one small brass bell hanging downward. Brown shoulder strap and waist belt. One foot elevated on coastal rock; rocky oval base with green growth and orange starfish. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark.",
-            "seed": 2026412014,
-            "width": 768,
-            "height": 768,
-            "steps": 4,
-            "sampler": "euler",
-            "guidance": {
-              "node": "BasicGuider",
-              "cfg": null
-            }
+            "key": "FIGURA-AI-014",
+            "prompt": "Use case: identity-preserve, product-mockup. Attached image is the ONLY current MASTER of one original painted collectible. Change ONLY the camera to clearly behind, rear 150-180 degrees: visible BACK of head, torso and original base; face points AWAY, no front eyes/chest looking at viewer. Keep recognizable SAME sculpt silhouette, proportions, main palette, hairstyle/head, anatomical accessory sides and base shape/color. Minor sculpt/paint details may vary, not the key identity. Invariants: Adult short curly brown-haired sailor, cream long coat with two navy hem stripes, navy trousers, tall dark boots, orange gloves. Anatomical RIGHT hand shading forehead in salute; anatomical LEFT hand holds one small brass bell hanging downward. Brown shoulder strap and waist belt. One foot elevated on coastal rock; rocky oval base with green growth and orange starfish. Fixed hidden rear design already recorded: Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base. CRITICAL: Anatomical RIGHT hand salutes (rear image RIGHT), LEFT holds bell (rear image LEFT). LEFT boot is raised on the higher rock (rear image LEFT). No mirrored pose. Whole figure and complete base at about 80% of square image height with safe margins. Warm off-white studio, crisp satin-painted miniature/materials, no living animal/person or illustration redesign, text, watermark, logo, packaging or extra props. Flat AI concept image, not an actual 3D asset.",
+            "reference": "work/catalog-gallery/FIGURA-AI-014/master.png",
+            "referenceSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
+            "tool": "built-in imagegen",
+            "seed": null,
+            "modelVersion": null,
+            "authorApproval": "pending"
           },
-          "reviewedAt": 1795365856.0478644
+          "externalSource": {
+            "kind": "new-reference-rear",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "actualReferenceMasterSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
+            "reviewedAgainstMasterSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
+            "outputSha256": "89cbe1e5a18f0abcebf787b322a3d92c1f1f06be2be9a57fd4aa6e1e8ec47575",
+            "at": 1795366583.3938847,
+            "note": "後腦和風衣背面明確，右手敬禮／左手持鈴及左腳踏高岩正確，米白藍條風衣、橘手套、深靴與海岸岩台保持。 小細節差異可接受，作者 pending。",
+            "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "41c0f802-db7d-4cec-b384-426606a4e033",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "貝塔守鐘人，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "89cbe1e5a18f0abcebf787b322a3d92c1f1f06be2be9a57fd4aa6e1e8ec47575",
+            "imageId": "5510fad0-baef-4bd0-88e9-03d7d604d19d",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/654c6145-ad82-4e07-a9e8-bf967411f7dc/image/5510fad0-baef-4bd0-88e9-03d7d604d19d",
+            "servedSha256": "4d72ea16cd400c7c38f6f3446f77f9902075f2a99396a0a580dec172d47881a6",
+            "verifiedAt": 1795366586.5052426
+          }
         },
         "FACE": {
           "status": "complete",
@@ -6472,7 +6527,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/654c6145-ad82-4e07-a9e8-bf967411f7dc/image/a4ea26bd-b87b-4016-96e7-58e7b5b1ce90",
             "servedSha256": "2e8eda570a90068853b226c38938f1b7fcf0238cc8bbad2cb689e554b623d9eb",
-            "verifiedAt": 1795140131.9875507
+            "verifiedAt": 1795366586.517485
           },
           "generation": {
             "mode": "crop",
@@ -6541,7 +6596,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/654c6145-ad82-4e07-a9e8-bf967411f7dc/image/8821985c-840f-49e2-a894-8c730966526c",
             "servedSha256": "4788c0d987a4f81066a0bd98b30b45706d2f003761d2fdbc6330da1a440c6fdd",
-            "verifiedAt": 1795140132.0003378
+            "verifiedAt": 1795366586.5314808
           },
           "generation": {
             "mode": "crop",
@@ -6603,7 +6658,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/654c6145-ad82-4e07-a9e8-bf967411f7dc/image/7d07a22d-eb6f-4edc-9574-066f301ac084",
             "servedSha256": "c77d7475a67321fb27328555b118eb0e62c2f9c4509a095e3d89858dd67bd771",
-            "verifiedAt": 1795140132.0247946
+            "verifiedAt": 1795366586.555654
           },
           "generation": {
             "mode": "scene-composite",
@@ -6739,6 +6794,41 @@
                 "cfg": null
               }
             }
+          },
+          {
+            "status": "reject",
+            "reason": "新標準仍有關鍵錯誤：005 多出背鰭，007 多出第二肩包，010 背帶變雙交叉，012 抬腿換邊，014 敬禮／持鈴手換邊，017 仍像正面；改用同 master 內建參考圖重產。",
+            "runId": "b726b11401404e8292df18af90c55d4f0507c04bb3d63d563085603b58d51de2",
+            "sha256": "4f0a87ebff159bb88a23213c5a7fb92cff0db7c6de876dbc5df739db37533474",
+            "sourceSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
+            "path": "work/comfyui-figura/runs/b726b11401404e8292df18af90c55d4f0507c04bb3d63d563085603b58d51de2/output.png",
+            "generation": {
+              "mode": "flux-reference",
+              "tool": "local ComfyUI",
+              "promptId": "96edec01-01a8-4070-a4c9-fdb893eab285",
+              "createdAt": "2026-11-22T16:39:22Z",
+              "masterSha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab",
+              "modelHashes": {
+                "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+                "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+                "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+              },
+              "workflowSha256": "fcd04f647b4e383e32fe4c438de7c774b80ccd2a785fe056bc7f193f0bac0e26",
+              "outputSha256": "4f0a87ebff159bb88a23213c5a7fb92cff0db7c6de876dbc5df739db37533474",
+              "outputBytes": 624456,
+              "authorApproval": "pending",
+              "prompt": "Adult short curly brown-haired sailor, cream long coat with two navy hem stripes, navy trousers, tall dark boots, orange gloves. Anatomical RIGHT hand shading forehead in salute; anatomical LEFT hand holds one small brass bell hanging downward. Brown shoulder strap and waist belt. One foot elevated on coastal rock; rocky oval base with green growth and orange starfish. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark.",
+              "seed": 2026412014,
+              "width": 768,
+              "height": 768,
+              "steps": 4,
+              "sampler": "euler",
+              "guidance": {
+                "node": "BasicGuider",
+                "cfg": null
+              }
+            },
+            "reviewedAt": 1795365856.0478644
           }
         ]
       },
@@ -6746,7 +6836,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -7676,39 +7766,49 @@
           }
         },
         "REAR": {
-          "status": "reject",
-          "reason": "新標準仍有關鍵錯誤：005 多出背鰭，007 多出第二肩包，010 背帶變雙交叉，012 抬腿換邊，014 敬禮／持鈴手換邊，017 仍像正面；改用同 master 內建參考圖重產。",
-          "runId": "cbec597862bfc2cff24de09b4ebc639133a1104fa0f2c09bfe16abc2a683027c",
-          "sha256": "31c4daf18a218230aa938dafee4adb5d92d88bc3c2ca86a91e13c6a6e3c1072e",
+          "status": "complete",
+          "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-017-builtin.png",
+          "sha256": "15cf284f1d25b816869e772d4a40fa3ca5ed2fdcffcd9549a635adb6997a084b",
+          "reason": "後側紅色眼柄沒有正面瞳孔，背甲後縫明確，鏡在角色左螯、另一螯在右，腿及黑岩圓台主形色一致。 小細節差異可接受，作者 pending。",
           "sourceSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
-          "path": "work/comfyui-figura/runs/cbec597862bfc2cff24de09b4ebc639133a1104fa0f2c09bfe16abc2a683027c/output.png",
           "generation": {
-            "mode": "flux-reference",
-            "tool": "local ComfyUI",
-            "promptId": "238e6f2c-4798-4639-94ac-44961270f839",
-            "createdAt": "2026-11-22T16:40:07Z",
-            "masterSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
-            "modelHashes": {
-              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
-              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
-              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
-            },
-            "workflowSha256": "4affed8f02ebe9b06b446548d1f6cb9a63bcd2c6703f7e8bf7aa61404ec0462a",
-            "outputSha256": "31c4daf18a218230aa938dafee4adb5d92d88bc3c2ca86a91e13c6a6e3c1072e",
-            "outputBytes": 745902,
-            "authorApproval": "pending",
-            "prompt": "Red mechanical crab with ivory segmented belly, two black stalked eyes, cream round rivets and pointed ivory foot tips. Anatomical LEFT claw raised as a large red/cream circular magnifying lens; anatomical RIGHT claw open at shoulder height. Dark round rocky pebble base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark.",
-            "seed": 2026412017,
-            "width": 768,
-            "height": 768,
-            "steps": 4,
-            "sampler": "euler",
-            "guidance": {
-              "node": "BasicGuider",
-              "cfg": null
-            }
+            "key": "FIGURA-AI-017",
+            "prompt": "Use case: identity-preserve, product-mockup. Attached image is the ONLY current MASTER of one original painted collectible. Change ONLY the camera to clearly behind, rear 150-180 degrees: visible BACK of head, torso and original base; face points AWAY, no front eyes/chest looking at viewer. Keep recognizable SAME sculpt silhouette, proportions, main palette, hairstyle/head, anatomical accessory sides and base shape/color. Minor sculpt/paint details may vary, not the key identity. Invariants: Red mechanical crab with ivory segmented belly, two black stalked eyes, cream round rivets and pointed ivory foot tips. Anatomical LEFT claw raised as a large red/cream circular magnifying lens; anatomical RIGHT claw open at shoulder height. Dark round rocky pebble base. Fixed hidden rear design already recorded: Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base. CRITICAL: Show rear RED DOMED DORSAL CARAPACE, never white ventral belly. Eyes face FRONT away, show RED posterior backs of two stalks, NO black pupils facing camera. Mirror is held anatomical LEFT/image LEFT from rear; free open claw RIGHT/image RIGHT. Same legs/rock base. Whole figure and complete base at about 80% of square image height with safe margins. Warm off-white studio, crisp satin-painted miniature/materials, no living animal/person or illustration redesign, text, watermark, logo, packaging or extra props. Flat AI concept image, not an actual 3D asset.",
+            "reference": "work/catalog-gallery/FIGURA-AI-017/master.png",
+            "referenceSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
+            "tool": "built-in imagegen",
+            "seed": null,
+            "modelVersion": null,
+            "authorApproval": "pending"
           },
-          "reviewedAt": 1795365856.0488262
+          "externalSource": {
+            "kind": "new-reference-rear",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "actualReferenceMasterSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
+            "reviewedAgainstMasterSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
+            "outputSha256": "15cf284f1d25b816869e772d4a40fa3ca5ed2fdcffcd9549a635adb6997a084b",
+            "at": 1795366583.39595,
+            "note": "後側紅色眼柄沒有正面瞳孔，背甲後縫明確，鏡在角色左螯、另一螯在右，腿及黑岩圓台主形色一致。 小細節差異可接受，作者 pending。",
+            "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "d254b8c9-bd76-49a2-82ab-d0be15377b48",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "澄礁拾光蟹，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "15cf284f1d25b816869e772d4a40fa3ca5ed2fdcffcd9549a635adb6997a084b",
+            "imageId": "3d0c3077-79cf-4598-87dd-74f030b17554",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/ef2c4b4f-710b-4629-8c79-628598496fdd/image/3d0c3077-79cf-4598-87dd-74f030b17554",
+            "servedSha256": "8613943e3364f007ec642e068f9da6ded6d921016d50be11ec9e1e23c89eca7c",
+            "verifiedAt": 1795366587.7490857
+          }
         },
         "FACE": {
           "status": "complete",
@@ -7740,7 +7840,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/ef2c4b4f-710b-4629-8c79-628598496fdd/image/d2d78ff6-d08b-487d-a455-f4717d38a38f",
             "servedSha256": "3cd0873b92acc6a84681cda43f765461bdc9abbdcd2d15d93496e195f1083b69",
-            "verifiedAt": 1795140135.86678
+            "verifiedAt": 1795366587.7647974
           },
           "generation": {
             "mode": "crop",
@@ -7809,7 +7909,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/ef2c4b4f-710b-4629-8c79-628598496fdd/image/2e9a1663-d570-4869-9c9f-e16521835b16",
             "servedSha256": "7d1d5aaf0e0bb2f36905db29c68cce4d57a6f107ecb887205434583a8a0c0502",
-            "verifiedAt": 1795140135.8982606
+            "verifiedAt": 1795366587.7791736
           },
           "generation": {
             "mode": "crop",
@@ -7871,7 +7971,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/ef2c4b4f-710b-4629-8c79-628598496fdd/image/a6699694-0f57-42ce-b40b-e69f920e2498",
             "servedSha256": "b0d81500c441717e32337d1604255bc296b4ff460420a31d9eb2835534a227dc",
-            "verifiedAt": 1795140135.9361444
+            "verifiedAt": 1795366587.803782
           },
           "generation": {
             "mode": "scene-composite",
@@ -8007,6 +8107,41 @@
                 "cfg": null
               }
             }
+          },
+          {
+            "status": "reject",
+            "reason": "新標準仍有關鍵錯誤：005 多出背鰭，007 多出第二肩包，010 背帶變雙交叉，012 抬腿換邊，014 敬禮／持鈴手換邊，017 仍像正面；改用同 master 內建參考圖重產。",
+            "runId": "cbec597862bfc2cff24de09b4ebc639133a1104fa0f2c09bfe16abc2a683027c",
+            "sha256": "31c4daf18a218230aa938dafee4adb5d92d88bc3c2ca86a91e13c6a6e3c1072e",
+            "sourceSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
+            "path": "work/comfyui-figura/runs/cbec597862bfc2cff24de09b4ebc639133a1104fa0f2c09bfe16abc2a683027c/output.png",
+            "generation": {
+              "mode": "flux-reference",
+              "tool": "local ComfyUI",
+              "promptId": "238e6f2c-4798-4639-94ac-44961270f839",
+              "createdAt": "2026-11-22T16:40:07Z",
+              "masterSha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787",
+              "modelHashes": {
+                "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+                "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+                "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+              },
+              "workflowSha256": "4affed8f02ebe9b06b446548d1f6cb9a63bcd2c6703f7e8bf7aa61404ec0462a",
+              "outputSha256": "31c4daf18a218230aa938dafee4adb5d92d88bc3c2ca86a91e13c6a6e3c1072e",
+              "outputBytes": 745902,
+              "authorApproval": "pending",
+              "prompt": "Red mechanical crab with ivory segmented belly, two black stalked eyes, cream round rivets and pointed ivory foot tips. Anatomical LEFT claw raised as a large red/cream circular magnifying lens; anatomical RIGHT claw open at shoulder height. Dark round rocky pebble base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark.",
+              "seed": 2026412017,
+              "width": 768,
+              "height": 768,
+              "steps": 4,
+              "sampler": "euler",
+              "guidance": {
+                "node": "BasicGuider",
+                "cfg": null
+              }
+            },
+            "reviewedAt": 1795365856.0488262
           }
         ]
       },
@@ -8014,7 +8149,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -18553,8 +18688,39 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "reject",
+          "reason": "關鍵錯誤仍退回：046 多出尾巴、047 由攀附變坐姿、049 四足輪廓及尾巴改變、050 地圖換邊、051 仍露正臉腹部、052 尾環變成雙環。改用內建同 master 重產。",
+          "runId": "1ee2758eb6c247095025aec72ea0941e1b4a107dd047d7c1be6c93b4dc18c0f9",
+          "sha256": "33d54d518cccf178136f31d785cb9bdd16ba97a29ba075217464173b6b3ee149",
+          "sourceSha256": "17d9c945de1b5b09ac27f21248e2ff543c0e1ae20008bc0ce8a718c892e51f3d",
+          "path": "work/comfyui-figura/runs/1ee2758eb6c247095025aec72ea0941e1b4a107dd047d7c1be6c93b4dc18c0f9/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "44d3ee7f-04de-462a-b45c-a95c1c0c5e46",
+            "createdAt": "2026-11-22T16:51:03Z",
+            "masterSha256": "17d9c945de1b5b09ac27f21248e2ff543c0e1ae20008bc0ce8a718c892e51f3d",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "5ac05f51f35be4d4218290200748dd8b7a2096863c73f47b066cb79b1b267768",
+            "outputSha256": "33d54d518cccf178136f31d785cb9bdd16ba97a29ba075217464173b6b3ee149",
+            "outputBytes": 648328,
+            "authorApproval": "pending",
+            "prompt": "Round smiling lime/ivory frog with huge dark amber eyes, orange finger/toe tips and broad ivory headphone earcups/arch with green leaf print and gold trim. Both hands hold one small ivory/gold music player at belly. Green headphone cable coils on moss/flower grass circular base with ivory/gold botanical rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue green frog back and same headphone arch/leaf decals; music player stays in front, cable follows original coil path. No extra player, cup or sound symbols. Same planted feet and botanical circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123046,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.6607726
         },
         "FACE": {
           "status": "complete",
@@ -18797,8 +18963,39 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "reject",
+          "reason": "關鍵錯誤仍退回：046 多出尾巴、047 由攀附變坐姿、049 四足輪廓及尾巴改變、050 地圖換邊、051 仍露正臉腹部、052 尾環變成雙環。改用內建同 master 重產。",
+          "runId": "d221ba44689c7a626f66b284c3d1a0ad2a356675796194d37fda802ef4bdf22d",
+          "sha256": "c4564aa7830d71fd04e4b9023568c1cc6bc017b3d3e833d3cc0c8ac142f47900",
+          "sourceSha256": "550c6e186ae249c3f8899bdc20dc33d67f741eb7440a40c2bde378a81362d616",
+          "path": "work/comfyui-figura/runs/d221ba44689c7a626f66b284c3d1a0ad2a356675796194d37fda802ef4bdf22d/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "62407500-4219-473b-bd7d-aa1274005c63",
+            "createdAt": "2026-11-22T16:51:25Z",
+            "masterSha256": "550c6e186ae249c3f8899bdc20dc33d67f741eb7440a40c2bde378a81362d616",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "f279deab7549559efcc1cc0362f8118caec023806849c7fc0a508eb26f021908",
+            "outputSha256": "c4564aa7830d71fd04e4b9023568c1cc6bc017b3d3e833d3cc0c8ac142f47900",
+            "outputBytes": 652415,
+            "authorApproval": "pending",
+            "prompt": "Cream fluffy ferret with dark eyes/nose, pale pink round ears, darker brown paws and huge cream tail curling downward around one tall purple/pink sculpted flower-petal perch. Head raised toward side, all fur remains the same sculpted concept surface. Low gray/white marble circular base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue cream fur mass and the same single tail wrapping original purple petal. Keep original paw contact points, head direction and petal outline; no additional petals or tails. Same gray/white marble disk base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123047,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.6622381
         },
         "FACE": {
           "status": "complete",
@@ -19111,8 +19308,56 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "complete",
+          "reason": "逐件新標準檢查通過：明確後腦／背部、後側基座，主要比例、配色、頭部、配件與底座形色保留；斑點、管路或毛束等小細節差異可接受。作者 pending。",
+          "runId": "427a731e7367cb091f24f14395a0741cf984546128ee95592117e2a798fd08a1",
+          "sha256": "cc89e6e171cb2e292a65afdcc34f73beeb4cc0bf4b1781f761f9d5160da51fa2",
+          "sourceSha256": "73f9d665012e5c7f1bad670a4175f81c6b44ec51f8a17a0315130ab54b2b2205",
+          "path": "work/comfyui-figura/runs/427a731e7367cb091f24f14395a0741cf984546128ee95592117e2a798fd08a1/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "97442c9d-9dc0-4357-88ff-b1d4ab9b609b",
+            "createdAt": "2026-11-22T16:51:47Z",
+            "masterSha256": "73f9d665012e5c7f1bad670a4175f81c6b44ec51f8a17a0315130ab54b2b2205",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "0c6ce4d66a07a9923ffb80689f4b09c45d4a959118a2806fbb2ac9afc6bd2c13",
+            "outputSha256": "cc89e6e171cb2e292a65afdcc34f73beeb4cc0bf4b1781f761f9d5160da51fa2",
+            "outputBytes": 765370,
+            "authorApproval": "pending",
+            "prompt": "Golden yellow bookworm/caterpillar toy with brown spots, two curved antennae with brown bulb tips, small round brass spectacles and multiple short brown feet. Forearms push one brown/brass handcart with the same ordered stack of red, green, blue and cream books as master. Large curled green leaf-shaped base with sculpted veins. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue yellow segmented spotted body and same antennae/spectacle arms. Book stack count, color order, cart wheel/frame geometry and stance stay fixed; no extra books or limbs. Same curled green leaf base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123048,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.5261145,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f1bc846d-5f25-4766-9c83-f2a22498ff58",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "暮葉藏書蟲，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "cc89e6e171cb2e292a65afdcc34f73beeb4cc0bf4b1781f761f9d5160da51fa2",
+            "imageId": "70679643-eb9a-4a5a-9cca-a8dd0ee3240e",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/f6f5e3f5-85d0-4892-bb3a-fbf069a77090/image/70679643-eb9a-4a5a-9cca-a8dd0ee3240e",
+            "servedSha256": "d550488e2d4cc7e87d9a0a5aea3f100afd79d5564bbef0a57426069e6fc48ca0",
+            "verifiedAt": 1795366588.4957063
+          }
         },
         "FACE": {
           "status": "complete",
@@ -19180,7 +19425,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/f6f5e3f5-85d0-4892-bb3a-fbf069a77090/image/47d22343-c670-4b45-91b0-5c657282615b",
             "servedSha256": "3055688a5db7cf4384951e60dadd18a9e1a5931d52b6a417f4d8379f4daedf57",
-            "verifiedAt": 1795143207.565184
+            "verifiedAt": 1795366588.5175893
           }
         },
         "DETAIL": {
@@ -19249,7 +19494,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/f6f5e3f5-85d0-4892-bb3a-fbf069a77090/image/ed678359-5177-4f1a-92a7-eff562bd39bf",
             "servedSha256": "11fb5ba94d52ebd1c8432c288ead08bb9319a3898a2630b457ff74573992c108",
-            "verifiedAt": 1795143207.5827222
+            "verifiedAt": 1795366588.530077
           }
         },
         "SCENE": {
@@ -19299,7 +19544,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/f6f5e3f5-85d0-4892-bb3a-fbf069a77090/image/e7d661c9-91c0-4918-b336-1e3bfbc23f39",
             "servedSha256": "3a0f089d8b775c63e8153ce474ee09e305f4d2615a857eece8526d306210bab7",
-            "verifiedAt": 1795143207.6158102
+            "verifiedAt": 1795366588.575239
           }
         }
       },
@@ -19307,7 +19552,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -19355,8 +19600,39 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "reject",
+          "reason": "關鍵錯誤仍退回：046 多出尾巴、047 由攀附變坐姿、049 四足輪廓及尾巴改變、050 地圖換邊、051 仍露正臉腹部、052 尾環變成雙環。改用內建同 master 重產。",
+          "runId": "d383a0b989152571acb179128806e814bd69d690e0996746727e31c21393062a",
+          "sha256": "2f6abf819bb9b9531a029950619b1bc6b4db3fd59de5b2dd3ace081d5470c946",
+          "sourceSha256": "4ee60b6736896f21a6e88f10fd66a70848b87cc56144a51c1c329709a5d88829",
+          "path": "work/comfyui-figura/runs/d383a0b989152571acb179128806e814bd69d690e0996746727e31c21393062a/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "3b3f1f2a-c763-47fe-9d0e-4bc95a37e23e",
+            "createdAt": "2026-11-22T16:52:08Z",
+            "masterSha256": "4ee60b6736896f21a6e88f10fd66a70848b87cc56144a51c1c329709a5d88829",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "fc162ec80576dd96e506efd32bb6836ef404b363ec0cc9e64578f4a5e6dac060",
+            "outputSha256": "2f6abf819bb9b9531a029950619b1bc6b4db3fd59de5b2dd3ace081d5470c946",
+            "outputBytes": 498065,
+            "authorApproval": "pending",
+            "prompt": "Ivory/navy articulated puppy with orange floppy ears carrying gold stars, navy head cap/back panels with gold celestial paint, round star-pupil eyes and black nose. Navy collar with large gold crescent pendant. Four ivory paws and raised segmented ivory/navy tail. Low ivory circular plinth with gold star/orbit linework. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue navy/ivory back panels and exact gold star paint pattern, same orange ears and one segmented tail. Crescent remains at front, no rear pendant or device. Same four paws and ivory/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123049,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.663149
         },
         "FACE": {
           "status": "complete",
@@ -19599,8 +19875,39 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "reject",
+          "reason": "關鍵錯誤仍退回：046 多出尾巴、047 由攀附變坐姿、049 四足輪廓及尾巴改變、050 地圖換邊、051 仍露正臉腹部、052 尾環變成雙環。改用內建同 master 重產。",
+          "runId": "139750bc491323292c2571a790ec7f45bf74654ae84b01320245b47a5d4e1285",
+          "sha256": "68281e81e992795892bcb92884f4f8e52782644daed8210271aae6c0a0184ed4",
+          "sourceSha256": "7415d114bdedaf30953443b55368a929f48922ec8f1e19bc87d4eceb915297d4",
+          "path": "work/comfyui-figura/runs/139750bc491323292c2571a790ec7f45bf74654ae84b01320245b47a5d4e1285/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "4d7b3cee-03ee-41b6-bf13-4c122fcbfb55",
+            "createdAt": "2026-11-22T16:52:30Z",
+            "masterSha256": "7415d114bdedaf30953443b55368a929f48922ec8f1e19bc87d4eceb915297d4",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "6e408d163a4c95c1ea26ad584611366b575d25d694ecd24981318f606607f28b",
+            "outputSha256": "68281e81e992795892bcb92884f4f8e52782644daed8210271aae6c0a0184ed4",
+            "outputBytes": 565209,
+            "authorApproval": "pending",
+            "prompt": "Adult curly brown-haired explorer with blue goggles, ivory shirt, dark trousers and brown lace boots. Layered purple cloak/tunic with gold star charts and trim, gold sun chest clasp, belt ornaments. Anatomical LEFT hand holds one unfolded map; anatomical RIGHT arm hangs. One boot on higher jagged blue-gray rock; navy round base with gold star/orbit rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue layered purple cloak with restrained continuation of existing gold constellation lines, same sun clasp attachment and hem. No new insignia, text or rear equipment. Left map and raised-foot stance unchanged; same jagged rock and navy/gold base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123050,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.6640558
         },
         "FACE": {
           "status": "complete",
@@ -19843,8 +20150,39 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "reject",
+          "reason": "關鍵錯誤仍退回：046 多出尾巴、047 由攀附變坐姿、049 四足輪廓及尾巴改變、050 地圖換邊、051 仍露正臉腹部、052 尾環變成雙環。改用內建同 master 重產。",
+          "runId": "8d88eb7af8a0a63314a948c55150a66e434f50e04e4949dda6283409fd36e1d5",
+          "sha256": "713ebeabab3fca877e8c12dfea626fdb8bf4646580640174d3ab61345efbc68c",
+          "sourceSha256": "50370ab31b68af8e2fbbd0ce7810850564ecec584f7816ea2b060125d3c6c270",
+          "path": "work/comfyui-figura/runs/8d88eb7af8a0a63314a948c55150a66e434f50e04e4949dda6283409fd36e1d5/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "9f0bba56-5ac2-4a5b-bb1b-aa3f13598719",
+            "createdAt": "2026-11-22T16:52:52Z",
+            "masterSha256": "50370ab31b68af8e2fbbd0ce7810850564ecec584f7816ea2b060125d3c6c270",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "7048c0c95a75d6c2cef78cc543e82852d4b35872cdc56a4078e97aeee3ba30dd",
+            "outputSha256": "713ebeabab3fca877e8c12dfea626fdb8bf4646580640174d3ab61345efbc68c",
+            "outputBytes": 579518,
+            "authorApproval": "pending",
+            "prompt": "Navy/ivory mechanical whale with gold star/line motifs, ivory pleated belly and gold joints. Two tall cream/gold chimney-like lanterns and one smaller cream/gold rounded fixture on back. Large gold comet/star ornament curves above raised navy tail. Gold support stem on gray crater-topped navy round base with gold moon phases at rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue navy back with same gold motifs and exactly the original lantern/fixture arrangement, tail and comet ornament. No additional chimney, star or propeller. Preserve support stem and crater/moon-phase circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123051,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.6649437
         },
         "FACE": {
           "status": "complete",
@@ -20087,8 +20425,39 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "reject",
+          "reason": "關鍵錯誤仍退回：046 多出尾巴、047 由攀附變坐姿、049 四足輪廓及尾巴改變、050 地圖換邊、051 仍露正臉腹部、052 尾環變成雙環。改用內建同 master 重產。",
+          "runId": "d7b4ce9315683c044deb9bc4ac7d11d615044a74705f101aa87456af6ac1742b",
+          "sha256": "4c480f2a2509f07fbb919a804e714f8c90745c94398b09b092c880c3a45bee2a",
+          "sourceSha256": "7df7d30a933f19685d33b03ab8e2c2b2eb62f66bca2448e65c4cf5f3f92feb9f",
+          "path": "work/comfyui-figura/runs/d7b4ce9315683c044deb9bc4ac7d11d615044a74705f101aa87456af6ac1742b/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "ed47c974-f727-4576-b174-0a94e6a58e12",
+            "createdAt": "2026-11-22T16:53:14Z",
+            "masterSha256": "7df7d30a933f19685d33b03ab8e2c2b2eb62f66bca2448e65c4cf5f3f92feb9f",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "61a0a09b67c5f30bb8397f2920eeafe0a2b33ef217926d1a8d615bff7fbbd842",
+            "outputSha256": "4c480f2a2509f07fbb919a804e714f8c90745c94398b09b092c880c3a45bee2a",
+            "outputBytes": 674841,
+            "authorApproval": "pending",
+            "prompt": "Silver/brass clockwork fish with large round teal eye, riveted circular plates, translucent teal veined dorsal/side fins and a large curled translucent teal tail ring framed in brass. One thin transparent acrylic vertical support and clear circular disk base. All clear support parts must remain visible and unchanged. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue silver/brass segmented flank plates around back, same translucent fin count and curled tail-ring geometry. No new scales, gears, eyes or fins. Preserve the one clear acrylic rod and clear circular disk exactly; these must not disappear in compositing. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123052,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.665878
         },
         "FACE": {
           "status": "complete",
@@ -20331,8 +20700,56 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "complete",
+          "reason": "逐件新標準檢查通過：明確後腦／背部、後側基座，主要比例、配色、頭部、配件與底座形色保留；斑點、管路或毛束等小細節差異可接受。作者 pending。",
+          "runId": "4d57c04edfdd0fdf30dedb64744e03d7eadda5cc650508ced9fa862afdf8487a",
+          "sha256": "e02b39b96f150ed668468d3a3d0026e2c599613a23bc322fc9cefd15140a3d30",
+          "sourceSha256": "93673f82efc3f3baa4542e4763eab73c5f7f60919c26159f6d0b2c174f600ee9",
+          "path": "work/comfyui-figura/runs/4d57c04edfdd0fdf30dedb64744e03d7eadda5cc650508ced9fa862afdf8487a/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "eac0854d-b2a6-4dd6-9f21-e1d02a8a5571",
+            "createdAt": "2026-11-22T16:53:36Z",
+            "masterSha256": "93673f82efc3f3baa4542e4763eab73c5f7f60919c26159f6d0b2c174f600ee9",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "b5219a76a64ca38958a8e6a651e2511dbe188f2e0073e586fd02cf39b9121b72",
+            "outputSha256": "e02b39b96f150ed668468d3a3d0026e2c599613a23bc322fc9cefd15140a3d30",
+            "outputBytes": 467150,
+            "authorApproval": "pending",
+            "prompt": "Small orange-curled astronaut child with round rosy face inside clear bubble helmet, broad cream rim with gold stripes and round ear fittings. Olive flight suit with pockets, ivory gloves and chunky cream boots. Both hands hold one large brass star-bow key horizontally across chest. Sandy round stone base with dark bronze rim. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue olive suit with simple panel seams and same helmet rim/ear fittings. Key remains held across front by both hands; no oxygen tank, backpack or additional keys. Same boots, stance and sandy round bronze-rim base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123053,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.5270078,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "7a0aa91d-40b8-4519-ac1f-3e63f8a6df04",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "離心鐘鑰匠，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "e02b39b96f150ed668468d3a3d0026e2c599613a23bc322fc9cefd15140a3d30",
+            "imageId": "e5b5074e-2645-4acd-a3a8-88002d6e3abe",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/a381bb47-e71d-49b9-acc4-3503d78a96d0/image/e5b5074e-2645-4acd-a3a8-88002d6e3abe",
+            "servedSha256": "fa4ea20b62e07c326356a870e511636ceef0921fe2d6c66e78b14754ef47cea7",
+            "verifiedAt": 1795366589.2054248
+          }
         },
         "FACE": {
           "status": "complete",
@@ -20400,7 +20817,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/a381bb47-e71d-49b9-acc4-3503d78a96d0/image/7c77f157-9edb-4193-81c2-533a035c8ce7",
             "servedSha256": "a3d209cddd0f32f8e9fe150e873dbd4bbbcb8566f14d00e7af8efc958291494b",
-            "verifiedAt": 1795143386.224232
+            "verifiedAt": 1795366589.2288141
           }
         },
         "DETAIL": {
@@ -20469,7 +20886,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/a381bb47-e71d-49b9-acc4-3503d78a96d0/image/6e31c067-afa2-4670-925b-98a46da5ee5d",
             "servedSha256": "f9a702d7e23dba9f1bc51ffae617e8a993ad74fdaeed1df40671fdcfc6554133",
-            "verifiedAt": 1795143386.235442
+            "verifiedAt": 1795366589.2447574
           }
         },
         "SCENE": {
@@ -20519,7 +20936,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/a381bb47-e71d-49b9-acc4-3503d78a96d0/image/25d3e471-5d7f-43a6-8315-60644414275e",
             "servedSha256": "d691fb739fa60626443b29210d29d28140dc941fd378682b71790488441f4ab4",
-            "verifiedAt": 1795143386.2556393
+            "verifiedAt": 1795366589.268538
           }
         }
       },
@@ -20527,7 +20944,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -20575,8 +20992,56 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "complete",
+          "reason": "逐件新標準檢查通過：明確後腦／背部、後側基座，主要比例、配色、頭部、配件與底座形色保留；斑點、管路或毛束等小細節差異可接受。作者 pending。",
+          "runId": "e026ab85e5012b692231d7734629822f1660047a55e4fe77de8a12d9ce18a61d",
+          "sha256": "31df15eb1a577f74496b43ab60ab222034ac522dcb5d4c8b2f9013c80de411e4",
+          "sourceSha256": "8d495aff1a4caa5d3cf5bca4f42f2915f3c618149ebff7fcd3cca76504269497",
+          "path": "work/comfyui-figura/runs/e026ab85e5012b692231d7734629822f1660047a55e4fe77de8a12d9ce18a61d/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "596add3b-ebdf-4910-842d-2e824de23044",
+            "createdAt": "2026-11-22T16:53:58Z",
+            "masterSha256": "8d495aff1a4caa5d3cf5bca4f42f2915f3c618149ebff7fcd3cca76504269497",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "ac49eec4ee181e1999e9a309d355307cb4b8400e3229f102cd905186190030b4",
+            "outputSha256": "31df15eb1a577f74496b43ab60ab222034ac522dcb5d4c8b2f9013c80de411e4",
+            "outputBytes": 650946,
+            "authorApproval": "pending",
+            "prompt": "Transparent teal triangular robot body with visible cream internal tubes and large gold spiral chest emblem. Black rounded triangular visor with two pale yellow oval eyes, circular ivory/gold headphone ears and cream crown block. Cream articulated arms/legs and round boots with gold toe trim. Low ivory circular base with teal top and gold arcs. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue the same transparent triangular shell and internal tube paths around back with plain seams. Preserve gold spiral at front, two ears and existing limb joints; no additional visor, spiral or internal machinery. Same teal/ivory/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123054,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.5278935,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "47997391-9213-45e8-96bb-52036d97b126",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "三角極光匣，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "31df15eb1a577f74496b43ab60ab222034ac522dcb5d4c8b2f9013c80de411e4",
+            "imageId": "b66dddb7-4a35-4f42-b80f-09f2c6713704",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/6a4bc7fe-8f18-4de1-b3de-e9d65beaa118/image/b66dddb7-4a35-4f42-b80f-09f2c6713704",
+            "servedSha256": "cc126edeb2de24ca5a568a8edcf92a9485dd826235c79907e27e580545659d37",
+            "verifiedAt": 1795366589.9210372
+          }
         },
         "FACE": {
           "status": "complete",
@@ -20644,7 +21109,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/6a4bc7fe-8f18-4de1-b3de-e9d65beaa118/image/013fd305-74f4-436f-83e1-68f02cf275e8",
             "servedSha256": "9a2f57456d380b2bf2cbafc237ebff7b58190af3559b6a2a7d6fcc19a7cd9272",
-            "verifiedAt": 1795143387.2358313
+            "verifiedAt": 1795366589.9392183
           }
         },
         "DETAIL": {
@@ -20713,7 +21178,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/6a4bc7fe-8f18-4de1-b3de-e9d65beaa118/image/1603c3c4-c224-47a3-b8fe-cbb8587ba4e6",
             "servedSha256": "704846c52077bad2909c071f049a52520a1e0ed6cbe15b18e0055f9791daab10",
-            "verifiedAt": 1795143387.2519732
+            "verifiedAt": 1795366589.9554875
           }
         },
         "SCENE": {
@@ -20763,7 +21228,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/6a4bc7fe-8f18-4de1-b3de-e9d65beaa118/image/0a0f4091-3f39-4aae-87d4-ea6bde993e61",
             "servedSha256": "536ff4062bdaca00701f865e10832f8da0abb044a9af597852059a79ed18f848",
-            "verifiedAt": 1795143387.2935166
+            "verifiedAt": 1795366590.01705
           }
         }
       },
@@ -20771,7 +21236,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -20819,8 +21284,56 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "pending",
-          "reason": "New required rear-view policy; fixed character sheet before generation"
+          "status": "complete",
+          "reason": "逐件新標準檢查通過：明確後腦／背部、後側基座，主要比例、配色、頭部、配件與底座形色保留；斑點、管路或毛束等小細節差異可接受。作者 pending。",
+          "runId": "c68ce74ec97ffdb4ec240a313f192fd3c834e4fb2350fa1ba3ff9fcb35a18216",
+          "sha256": "4b154410047f81d8913104416f82475840c9f123883aea44f63908b148d4ad33",
+          "sourceSha256": "d85ad354e077b168251c06f9aac2ed04e9dc8cf5a555aabb262dd4578009a01c",
+          "path": "work/comfyui-figura/runs/c68ce74ec97ffdb4ec240a313f192fd3c834e4fb2350fa1ba3ff9fcb35a18216/output.png",
+          "generation": {
+            "mode": "flux-reference",
+            "tool": "local ComfyUI",
+            "promptId": "16abd095-b074-451d-84a9-c4325767bfee",
+            "createdAt": "2026-11-22T16:54:21Z",
+            "masterSha256": "d85ad354e077b168251c06f9aac2ed04e9dc8cf5a555aabb262dd4578009a01c",
+            "modelHashes": {
+              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+            },
+            "workflowSha256": "1d19fda26229445b82d8058b216d1ea9e42205fa77aeddaad37f44e30c075e6d",
+            "outputSha256": "4b154410047f81d8913104416f82475840c9f123883aea44f63908b148d4ad33",
+            "outputBytes": 454891,
+            "authorApproval": "pending",
+            "prompt": "Seated deep plum rabbit with two long upright ears, dark pink interiors, amber eye and sculpted fur tufts. Gold stars and constellation lines on body, one silver pocket-watch pendant at upper chest. Low matching purple round plinth with fine gold star/orbit motifs. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plum sculpted fur and sparse existing gold constellation style over back; watch stays at chest, no rear pendant or chain clasp ornament. Same long ears, seated paws/tail and purple/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123055,
+            "width": 768,
+            "height": 768,
+            "steps": 4,
+            "sampler": "euler",
+            "guidance": {
+              "node": "BasicGuider",
+              "cfg": null
+            }
+          },
+          "reviewedAt": 1795366583.5286853,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "d0097e33-90e3-4693-9963-9c6152a2f699",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "夜盤黑兔，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "4b154410047f81d8913104416f82475840c9f123883aea44f63908b148d4ad33",
+            "imageId": "5a4ad272-bd58-42d0-8e8f-ef7de7fa67a4",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/5b2d7b5f-dc03-4298-92b2-ed9df12cce7e/image/5a4ad272-bd58-42d0-8e8f-ef7de7fa67a4",
+            "servedSha256": "40bf16893ad75b089f7df490f088a6a13547523f74d2d4da0ed594ad2394f87e",
+            "verifiedAt": 1795366590.6271727
+          }
         },
         "FACE": {
           "status": "complete",
@@ -20888,7 +21401,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/5b2d7b5f-dc03-4298-92b2-ed9df12cce7e/image/3901ed63-e62d-4297-a2a7-76b6f89bd1db",
             "servedSha256": "ddc4c04d44d2f242628aa8f904069c263a503e2bf50ece110515df44388693db",
-            "verifiedAt": 1795143388.2765687
+            "verifiedAt": 1795366590.6383958
           }
         },
         "DETAIL": {
@@ -20957,7 +21470,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/5b2d7b5f-dc03-4298-92b2-ed9df12cce7e/image/9f5c63c3-2dbc-48da-a2c6-b57fe78ff46d",
             "servedSha256": "6e491f61a60995992a31eebabc1b0a9b898edd312636506ffa0c3394f295834a",
-            "verifiedAt": 1795143388.2864177
+            "verifiedAt": 1795366590.649247
           }
         },
         "SCENE": {
@@ -21007,7 +21520,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/5b2d7b5f-dc03-4298-92b2-ed9df12cce7e/image/ca2074d4-31de-4e9d-9384-284af8f46e66",
             "servedSha256": "2ce8fa5b93eb2eb75ce219ef8d4dddbf4a0792ada8b7236f3a0d4e80441a82b8",
-            "verifiedAt": 1795143388.3062541
+            "verifiedAt": 1795366590.6734886
           }
         }
       },
@@ -21015,7 +21528,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -32857,7 +33370,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T16:50:49Z",
+  "updatedAt": "2026-11-22T16:56:30Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -33229,6 +33742,20 @@
           "FIGURA-AI-044"
         ],
         "at": 1795366249.3136902,
+        "authorApproval": "pending"
+      },
+      {
+        "name": "rear-b04",
+        "keys": [
+          "FIGURA-AI-012",
+          "FIGURA-AI-014",
+          "FIGURA-AI-017",
+          "FIGURA-AI-048",
+          "FIGURA-AI-053",
+          "FIGURA-AI-054",
+          "FIGURA-AI-055"
+        ],
+        "at": 1795366590.8211558,
         "authorApproval": "pending"
       }
     ],

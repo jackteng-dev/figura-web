@@ -45,7 +45,9 @@ def main():
             source = (g.ROOT / entry['path']).resolve()
             assert source.is_relative_to((g.ROOT / 'work').resolve())
             generation = json.loads((g.ROOT / entry['generation']).read_text('utf-8'))
-            assert generation['key'] == p['productKey'] and generation['tool'] == 'built-in imagegen'
+            shared = (p.get('initiallyImageLess') is True and generation.get('sharedDesignKey') == p.get('sharedDesignKey')
+                      and generation['key'] == 'ELPSY-001' and p['productKey'].startswith('ELPSY-'))
+            assert (generation['key'] == p['productKey'] or shared) and generation['tool'] == 'built-in imagegen'
             assert g.comfy.sha(g.ROOT / generation['reference']) == p['master']['sha256']
             digest = g.comfy.sha(source)
             p.setdefault('attempts', {}).setdefault('REAR', []).append(copy.deepcopy(old))
@@ -53,7 +55,7 @@ def main():
                 reason=entry['note'], sourceSha256=p['master']['sha256'], generation=generation,
                 externalSource=dict(kind='new-reference-rear', decision='pass', reviewPolicy=POLICY,
                     actualReferenceMasterSha256=p['master']['sha256'], reviewedAgainstMasterSha256=p['master']['sha256'],
-                    outputSha256=digest, at=time.time(), note=entry['note']))
+                    outputSha256=digest, at=time.time(), note=entry['note'], sharedFromProductKey=generation['key'] if shared else None))
     elif a.command == 'regenerate':
         assert a.keys and a.note
         config = json.loads(g.CONFIG.read_text('utf-8'))
