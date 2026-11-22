@@ -586,9 +586,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212014,
+        "seed": 2026412014,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue cream coat with central rear split and same two navy hem stripes, brown diagonal shoulder strap and waist belt. No added backpack or coat symbols. Keep right salute, left bell, one elevated foot and original coastal base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1658,9 +1658,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212016,
+        "seed": 2026412016,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue blue back with sparse matching gold flecks; same tail and fin count and pleated belly underside. Preserve lamp stalk attachment and globe above head, exact silver wave curls and slate base. No additional lamps or waves. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue blue back with sparse matching gold flecks; same tail and fin count and pleated belly underside. Preserve lamp stalk attachment and globe above head, exact silver wave curls and slate base. No additional lamps or waves. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2185,9 +2185,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212005,
+        "seed": 2026412005,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Rear stays one cream circular turbine in the lime hull, same cork fins, no second cockpit. Preserve all three side portholes per the observed side, same support position and circular lilac plinth; hidden hull is plain lime speckle. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Rear stays one cream circular turbine in the lime hull, same cork fins, no second cockpit. Preserve all three side portholes per the observed side, same support position and circular lilac plinth; hidden hull is plain lime speckle. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2245,9 +2245,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212017,
+        "seed": 2026412017,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Use exactly the original part count: one pearl, one head lamp, original claw and fin count. Preserve the original anatomical hand/hip positions, hair sculpt, accessory paint and the exact plinth/rock contours and decorations. Add no rear pendant or extra lamp, do not mirror a front view. Right profile must be 90 degrees and rear must hide the front."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue plain curved red dorsal shell with the same cream rivet spacing, ivory underplates and walking leg attachments. Lens remains anatomical left, open claw remains right. No additional lens or claws; same dark pebble base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3145,9 +3145,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212007,
+        "seed": 2026412007,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue pink coat with central seam and plain back, no new pockets or belt. Satchel strap goes from left shoulder to right hip; terrarium remains held in front. Green cap and brown curls continue as observed; same planted circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue pink coat with central seam and plain back, no new pockets or belt. Satchel strap goes from left shoulder to right hip; terrarium remains held in front. Green cap and brown curls continue as observed; same planted circular base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4684,9 +4684,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212010,
+        "seed": 2026412010,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered ivory/brown back feathers, no added wings or tail length. Crossbody strap continues from left shoulder to right bag; parcel stack remains at anatomical left. Same round base and gold rim. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue layered ivory/brown back feathers, no added wings or tail length. Crossbody strap continues from left shoulder to right bag; parcel stack remains at anatomical left. Same round base and gold rim. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5859,9 +5859,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212012,
+        "seed": 2026412012,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
+        "prompt": "Camera behind the SAME miniature, 150–180 degree rear view. Show BACK of head/torso and rear of original base; no front eyes/chest, no mirroring. Keep silhouette, proportions, main palette, hair/head, anatomical accessory sides, base shape/color. Fixed hidden design: Continue golden feather layers and original tail, orange scarf ends stay at front. Kite rod remains in anatomical left wing, same mint kite/ribbon and lifted foot. No additional kite, scarf ornament or support; same flowered round base. Correction: Remove any new equipment. One original accessory only, never swap anatomical hands/hips. Match original raised limbs and stance; hide the front face, show posterior head and back. Complete figure/base with safe margins, warm off-white studio. No text or watermark."
       },
       "scene": {
         "mode": "scene-composite",

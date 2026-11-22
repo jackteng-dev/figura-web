@@ -15,7 +15,7 @@ POLICY = 'rear-2026-11-23'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['reassess', 'regenerate', 'checkpoint'])
+    parser.add_argument('command', choices=['reassess', 'adopt-built-in', 'regenerate', 'checkpoint'])
     parser.add_argument('--file', type=Path)
     parser.add_argument('--keys', nargs='+', default=[])
     parser.add_argument('--note')
@@ -36,6 +36,24 @@ def main():
             old.update(status='pass', reason=entry['note'], reassessment=dict(policy=POLICY, decision='pass',
                 runId=old['runId'], masterSha256=p['master']['sha256'], outputSha256=old['sha256'], at=time.time(),
                 note=entry['note'], priorReviewPreserved=True))
+    elif a.command == 'adopt-built-in':
+        assert a.file
+        for entry in json.loads(a.file.read_text('utf-8')):
+            p = g.selected(m, [entry['key']])[0]
+            old = p['slots']['REAR']
+            assert old['status'] in ('reject', 'blank', 'pending') and entry['note']
+            source = (g.ROOT / entry['path']).resolve()
+            assert source.is_relative_to((g.ROOT / 'work').resolve())
+            generation = json.loads((g.ROOT / entry['generation']).read_text('utf-8'))
+            assert generation['key'] == p['productKey'] and generation['tool'] == 'built-in imagegen'
+            assert g.comfy.sha(g.ROOT / generation['reference']) == p['master']['sha256']
+            digest = g.comfy.sha(source)
+            p.setdefault('attempts', {}).setdefault('REAR', []).append(copy.deepcopy(old))
+            p['slots']['REAR'] = dict(status='pass', path=source.relative_to(g.ROOT).as_posix(), sha256=digest,
+                reason=entry['note'], sourceSha256=p['master']['sha256'], generation=generation,
+                externalSource=dict(kind='new-reference-rear', decision='pass', reviewPolicy=POLICY,
+                    actualReferenceMasterSha256=p['master']['sha256'], reviewedAgainstMasterSha256=p['master']['sha256'],
+                    outputSha256=digest, at=time.time(), note=entry['note']))
     elif a.command == 'regenerate':
         assert a.keys and a.note
         config = json.loads(g.CONFIG.read_text('utf-8'))
