@@ -1,5 +1,15 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-23：必要背面與無圖商品補齊（進行中）
+
+依作者新要求，REAR 改以明確 135°–180° 背後方向及關鍵身份判斷，小紋理差異可接受；ANGLE 選擇性。保留 2026-11-20 舊拒收紀錄與政策歷史，新採用另記 `rear-2026-11-23`，不改寫舊 run review。先完成 001／003／068 三件試點並本機上傳後繼續全目錄。
+
+- 目前本機目錄 99 件，背面已完成 64 件，其餘 35 件產圖／重試中；進度以 `catalog-gallery-manifest.json` 的 `rearCompletion20261123` 與各槽為準。
+- 四件 ELPSY 無圖商品的標題／品牌／分類／說明／款式與 TWD1280 價格皆同，只有 product／SKU UUID 不同，因此共用原創「苔石量測員」設計。四件 MAIN／FACE／DETAIL／SCENE／REAR 已上傳並讀回；舊排除紀錄保留在 priorExcluded。
+- ComfyUI 原先未執行，已以原 portable 啟動，僅聽 127.0.0.1:18188；保留既有模型、節點與使用者 workflow。API 沿用作者已啟動的 19092 demo，未重啟。新背面混用本機 Klein 參考圖流程與內建 ImageGen；沒有新增模型／套件。種子或內建模型版本未提供者記 null。
+- 原圖與完整 prompts 在忽略 work，manifest 保存實際來源／輸出 SHA、背面提案、重新審查及上傳 UUID。`rear_gallery_round.py` 提供明確複核／內建候選採用與 checkpoint；圖庫 gate 僅允許 hash 綁定的 REAR 放寬，6 項離線 guard 通過。
+- 本輪依作者要求只 commit，不 push、不修改 PR。作者簽核仍 pending，無 3D／360。最終比較頁、完整報告與瀏覽器／全目錄驗證待收尾，不能把此進度段當全數完成。
+
 ## 2026-11-20：全目錄 2D 圖組已處理（側／背留空、作者 pending）
 
 分支 `codex/comfyui-product-gallery`。本機圖庫 API 以 `figura-api/codex/product-gallery` 的 `73c2606`、JDK21 重新 package，使用私有 `work/demo.env`，只連 `13306/figura_shop_demo`、17379 Redis、18333 SeaweedFS；V24 僅本機 demo。API `127.0.0.1:19092`、Web 預覽 `http://127.0.0.1:15181/shop`、ComfyUI `127.0.0.1:18188`；未連正式 DB、未修改後端來源、未正式部署。
