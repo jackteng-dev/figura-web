@@ -21107,7 +21107,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-052-builtin.png",
           "sha256": "f4de73592004cd0e0ee70c9ed298cae04bbb2402d2ea92b919989595d2ef6ba2",
           "reason": "後腦／魚身後側明確，只有一個原青綠透明尾環，銀銅主體、鰭、單透明支桿及透明圓盤保持。 細部差異可接受，作者 pending。",
@@ -21158,7 +21158,24 @@
               ],
               "requestIdAbsent": true
             }
-          ]
+          ],
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "b8996916-5875-4c28-972a-c2fd64cc0a23",
+              "expectedVersion": 10,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "銀幣軌道魚，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "f4de73592004cd0e0ee70c9ed298cae04bbb2402d2ea92b919989595d2ef6ba2",
+            "imageId": "f0b729e1-c96e-45c3-a778-b6e6332955cf",
+            "version": 11,
+            "publicUrl": "/api/catalog/products/539e19fe-2160-4811-be73-048908685137/image/f0b729e1-c96e-45c3-a778-b6e6332955cf",
+            "servedSha256": "b2dc01e265ed930e2b16bba5ddbc480facf7eeda99248aff9872f230ec0169c5",
+            "verifiedAt": 1795370035.990954
+          }
         },
         "FACE": {
           "status": "complete",
@@ -21226,7 +21243,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/539e19fe-2160-4811-be73-048908685137/image/cbc15b95-ec03-4631-bb1a-829326b3f729",
             "servedSha256": "2a7a345b73d16e10bd7daba15d2c5f62537157b365a09820fd09e7964c04a613",
-            "verifiedAt": 1795143212.3410785
+            "verifiedAt": 1795370036.0032692
           }
         },
         "DETAIL": {
@@ -21295,7 +21312,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/539e19fe-2160-4811-be73-048908685137/image/f6325723-305d-4618-9fc3-707112047057",
             "servedSha256": "c9c0ab7e616aa96a541332b8e0f6f72999b53189b46f608ac760197cee769c03",
-            "verifiedAt": 1795143212.3526106
+            "verifiedAt": 1795370036.0140128
           }
         },
         "SCENE": {
@@ -21345,7 +21362,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/539e19fe-2160-4811-be73-048908685137/image/7eda8f3f-d093-4c9e-908a-42995105b569",
             "servedSha256": "a8c6955135fa30accc2a2a2bf25536fb09546619b87e1b191f12cd17e05229e1",
-            "verifiedAt": 1795143212.38265
+            "verifiedAt": 1795370036.0373638
           }
         }
       },
@@ -21353,7 +21370,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 8,
+        "lastUnpublishVersion": 10,
         "storageFailureRecovery": {
           "at": 1795369380.1081712,
           "outcome": "three synchronous POST responses HTTP503 storage unavailable; no event and exact unchanged version confirmed",
@@ -22634,7 +22651,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-057-builtin.png",
           "sha256": "14dbbece8b4efecdcfc6c6a04ecb84306795afcd7df77796f8f9b60ae3de521f",
           "reason": "後腦和後機身明確，單片金色鏤空尾扇、單天線碟與四腳保持，紫白金塗裝與日紋圓台一致。 細部差異可接受，作者 pending。",
@@ -22659,6 +22676,23 @@
             "at": 1795368594.335053,
             "note": "後腦和後機身明確，單片金色鏤空尾扇、單天線碟與四腳保持，紫白金塗裝與日紋圓台一致。 細部差異可接受，作者 pending。",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "5120cf12-b31d-40b9-a6ba-459490f4834b",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "紫暈衛星鴨，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "14dbbece8b4efecdcfc6c6a04ecb84306795afcd7df77796f8f9b60ae3de521f",
+            "imageId": "836261a4-b66d-4ab2-a581-f49ccd10a10e",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/bd4c0bef-8762-41ab-8b77-7725b4dafd72/image/836261a4-b66d-4ab2-a581-f49ccd10a10e",
+            "servedSha256": "53a99e037d4818c604b808083c7e877bc770cb43e00fb8a6ecf76687f831d134",
+            "verifiedAt": 1795370037.175788
           }
         },
         "FACE": {
@@ -22727,7 +22761,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/bd4c0bef-8762-41ab-8b77-7725b4dafd72/image/ec6cc219-daec-42ec-a50f-32f7b9ecfaa2",
             "servedSha256": "b43e54763dd0637d7116f7a600c4f2fb87855478d7494471c8c820de33b2f888",
-            "verifiedAt": 1795143390.6470785
+            "verifiedAt": 1795370037.1887488
           }
         },
         "DETAIL": {
@@ -22796,7 +22830,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/bd4c0bef-8762-41ab-8b77-7725b4dafd72/image/62dc8e7f-14ca-4399-8530-c7111abc2eac",
             "servedSha256": "d0b3191d55957125ef03311d0b0b3d51684a1562fa7844d2259e7dd1933fad55",
-            "verifiedAt": 1795143390.660609
+            "verifiedAt": 1795370037.20149
           }
         },
         "SCENE": {
@@ -22846,7 +22880,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/bd4c0bef-8762-41ab-8b77-7725b4dafd72/image/5838ea7c-21e7-49a7-b612-8a8a618a0eab",
             "servedSha256": "13e0f8eda1a3ed3d8909f057f232df407115f65d82e43bd91164cbcc3deaa64a",
-            "verifiedAt": 1795143390.687329
+            "verifiedAt": 1795370037.2270582
           }
         }
       },
@@ -22946,7 +22980,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -22985,7 +23019,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-058-builtin.png",
           "sha256": "e2f819a704e97e260bcbebe390a6c36d0f08ab8cc6314e42063017575ee04692",
           "reason": "後腦捲髮與橘色連身服背面明確，星儀在角色左手、右手叉腰，棕靴及紫金圓台保持。 細部差異可接受，作者 pending。",
@@ -23010,6 +23044,23 @@
             "at": 1795368594.3366559,
             "note": "後腦捲髮與橘色連身服背面明確，星儀在角色左手、右手叉腰，棕靴及紫金圓台保持。 細部差異可接受，作者 pending。",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "327eafdd-8b12-4c5b-87b3-7a6892983ac4",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "曙色移星師，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "e2f819a704e97e260bcbebe390a6c36d0f08ab8cc6314e42063017575ee04692",
+            "imageId": "0f0ea029-6898-4ed7-a51b-da7c36da3b50",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/3f22673d-a78c-4b05-8d4a-fbd57434235d/image/0f0ea029-6898-4ed7-a51b-da7c36da3b50",
+            "servedSha256": "aebaaa1394bc38f87554c88370ea47d1da5cd7a50ebb2bf6078adb62ca1d2262",
+            "verifiedAt": 1795370038.3903246
           }
         },
         "FACE": {
@@ -23078,7 +23129,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/3f22673d-a78c-4b05-8d4a-fbd57434235d/image/51b8c474-735b-46d7-a018-f9136bb37423",
             "servedSha256": "dafc86569f3f91a675ce9a442f672ea690851ee68684f633b102cd81bb51ee49",
-            "verifiedAt": 1795143391.7707815
+            "verifiedAt": 1795370038.4025357
           }
         },
         "DETAIL": {
@@ -23147,7 +23198,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/3f22673d-a78c-4b05-8d4a-fbd57434235d/image/37896d90-4127-4d7a-aee1-92122afea0cb",
             "servedSha256": "2820e0d5069af199b322c7f12c51990e835943701c0b93b975e3cb2888cfc3ec",
-            "verifiedAt": 1795143391.7829564
+            "verifiedAt": 1795370038.4144158
           }
         },
         "SCENE": {
@@ -23197,7 +23248,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/3f22673d-a78c-4b05-8d4a-fbd57434235d/image/895b098e-99d0-41c3-af01-228d091b4ecf",
             "servedSha256": "b330e926126263c768f983eb1d63060a578f261d39c93f549b512ebe1ddd0391",
-            "verifiedAt": 1795143391.8218696
+            "verifiedAt": 1795370038.4374402
           }
         }
       },
@@ -23205,7 +23256,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -23629,7 +23680,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-060-builtin.png",
           "sha256": "6797fcd86208f69421f57128ab9fe9ec92fa04f43e852aa9d5c136fe0b7c9e18",
           "reason": "後腦及黑金羊背明確，雙象牙金角、單琥珀圓盤與晶簇保持，原抬蹄踏高岩姿態與金脈黑岩台保留。 細部差異可接受，作者 pending。",
@@ -23654,6 +23705,23 @@
             "at": 1795368594.3384242,
             "note": "後腦及黑金羊背明確，雙象牙金角、單琥珀圓盤與晶簇保持，原抬蹄踏高岩姿態與金脈黑岩台保留。 細部差異可接受，作者 pending。",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "838e5b88-4146-4cde-be2e-9a8b2d1148c9",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "光輪日蝕獸，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "6797fcd86208f69421f57128ab9fe9ec92fa04f43e852aa9d5c136fe0b7c9e18",
+            "imageId": "2eebb4c5-aa2a-4cb0-90f9-0003368c21c3",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/3d38be30-f374-4542-b4a5-0b17c0ce9c34/image/2eebb4c5-aa2a-4cb0-90f9-0003368c21c3",
+            "servedSha256": "a5fb83e0a60124e0814f4a7412f6d54000e8ab5c1f1ba6352467156bd842ca8a",
+            "verifiedAt": 1795370039.712856
           }
         },
         "FACE": {
@@ -23722,7 +23790,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/3d38be30-f374-4542-b4a5-0b17c0ce9c34/image/d2352cc0-9d9b-4aea-9d94-9689e7ac9feb",
             "servedSha256": "5623c4c193d50da35728dbf62936bddfd22bd8ba3f8f2b4860df4462b64100d1",
-            "verifiedAt": 1795143394.3582737
+            "verifiedAt": 1795370039.7324276
           }
         },
         "DETAIL": {
@@ -23791,7 +23859,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/3d38be30-f374-4542-b4a5-0b17c0ce9c34/image/87998f3f-84eb-4e97-ba46-c633d1b88f48",
             "servedSha256": "8a4fa4df323cc06c7fa15b77956b78a9466dfc2ce116069807b7ddf3e2cc8ea6",
-            "verifiedAt": 1795143394.3878024
+            "verifiedAt": 1795370039.74912
           }
         },
         "SCENE": {
@@ -23841,7 +23909,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/3d38be30-f374-4542-b4a5-0b17c0ce9c34/image/01e78321-f1c2-4f60-be1e-cb8d9694ef72",
             "servedSha256": "55fc5a9837811551337bad1bc34667d724b8135ab513d3410190efbb7a4a6c8a",
-            "verifiedAt": 1795143394.4244344
+            "verifiedAt": 1795370039.7750254
           }
         }
       },
@@ -23849,7 +23917,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -24226,7 +24294,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-062-builtin.png",
           "sha256": "b78ffcebb6ad3bf79898c0df7be5904eaeaf0150c60a7c79ba31bf79531f788b",
           "reason": "後腦貝雷帽與圍裙背帶明確，只有原噴嘴工具在前方雙手，沒有背掛長桿；綠衣棕皮與象牙圓台保持。 細部差異可接受，作者 pending。",
@@ -24251,6 +24319,23 @@
             "at": 1795368594.3400266,
             "note": "後腦貝雷帽與圍裙背帶明確，只有原噴嘴工具在前方雙手，沒有背掛長桿；綠衣棕皮與象牙圓台保持。 細部差異可接受，作者 pending。",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f6fb265a-3d37-4d9f-b39a-46606c203d8d",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "松針鉚釘工，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "b78ffcebb6ad3bf79898c0df7be5904eaeaf0150c60a7c79ba31bf79531f788b",
+            "imageId": "4ac577f5-0983-4e3a-9c98-3bca233f16cc",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/1b66b73d-4728-498a-b13b-be451ed55e2f/image/4ac577f5-0983-4e3a-9c98-3bca233f16cc",
+            "servedSha256": "69df23ee591e462ee09d6e5ad748ae3de9f992421ade955a9fc6de319856b659",
+            "verifiedAt": 1795370040.9469628
           }
         },
         "FACE": {
@@ -24319,7 +24404,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/1b66b73d-4728-498a-b13b-be451ed55e2f/image/f33ec42b-20fe-4455-af2e-15c3c7791b5e",
             "servedSha256": "da513dbf8c582ae22d3807158903a3f3135f40cb759180b7e257c38b1ad16ba6",
-            "verifiedAt": 1795143396.57756
+            "verifiedAt": 1795370040.9584079
           }
         },
         "DETAIL": {
@@ -24388,7 +24473,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/1b66b73d-4728-498a-b13b-be451ed55e2f/image/9916be53-d667-4094-bb85-587131177f99",
             "servedSha256": "a24db4467ee91aadacd0e5e75d5457fc9737736f80c34b5fd82cbbcf99493f8e",
-            "verifiedAt": 1795143396.588786
+            "verifiedAt": 1795370040.9708698
           }
         },
         "SCENE": {
@@ -24438,7 +24523,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/1b66b73d-4728-498a-b13b-be451ed55e2f/image/34f63b29-be4d-4f6d-a898-568471b37979",
             "servedSha256": "02d9acdd92c7684b3fcfebf9ee8a4585e7090af021bd2e4701764111da128471",
-            "verifiedAt": 1795143396.6059935
+            "verifiedAt": 1795370040.9917078
           }
         }
       },
@@ -24446,7 +24531,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -24823,7 +24908,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-064-builtin.png",
           "sha256": "cfb6e41ea5fd91ac6003f7130713a9de2fe493b28f74bda9a1e86baee0642937",
           "reason": "鳥後腦／背羽及單一捲環大尾明確，沒有雙心形尾；棕紫主色、黃圍巾及奶油花紋圓台保持。 細部差異可接受，作者 pending。",
@@ -24848,6 +24933,23 @@
             "at": 1795368594.3418584,
             "note": "鳥後腦／背羽及單一捲環大尾明確，沒有雙心形尾；棕紫主色、黃圍巾及奶油花紋圓台保持。 細部差異可接受，作者 pending。",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8cd9369f-a22b-4def-90fe-c3dc30ce04bd",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "煙囪掃雪鳥，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "cfb6e41ea5fd91ac6003f7130713a9de2fe493b28f74bda9a1e86baee0642937",
+            "imageId": "6272ade4-abe4-443a-a5ef-175c0dae2d8a",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/6272ade4-abe4-443a-a5ef-175c0dae2d8a",
+            "servedSha256": "1413bf9513518e8ee69a1379d363dc7aa0c75305364d4d2ceb58ef7f7ae0d733",
+            "verifiedAt": 1795370042.229297
           }
         },
         "FACE": {
@@ -24916,7 +25018,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/1e4b221f-49c0-4a68-ba43-a8ad959da311",
             "servedSha256": "e4e7a17709060b40995e7a2b242d51740a6a583120aefea6412c917a0b73bbb4",
-            "verifiedAt": 1795154274.9564264
+            "verifiedAt": 1795370042.2428374
           }
         },
         "DETAIL": {
@@ -24985,7 +25087,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/d8180736-077d-4f25-909c-f2f6a77c7bf1",
             "servedSha256": "7b94da524173f45aac3015cb11cd76171f7b6c42a864d8e1d50d0ea95171fc59",
-            "verifiedAt": 1795154274.9725864
+            "verifiedAt": 1795370042.2555983
           }
         },
         "SCENE": {
@@ -25035,7 +25137,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/f0456481-764d-47e4-92af-301dc658544c/image/cda1de4a-af08-4f35-b927-968aeadfd595",
             "servedSha256": "e12dd4a9158fdf3f844435885e7492a68e62fa9eb3eff473e3a38084d7b03a84",
-            "verifiedAt": 1795154275.006639
+            "verifiedAt": 1795370042.2801201
           }
         }
       },
@@ -25043,7 +25145,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -25760,7 +25862,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-067-builtin.png",
           "sha256": "cd849e74a9a8c282f5cb51c303f7eb66a5c3c567cdf94ac245906b1a329746e2",
           "reason": "???????????????????????????????????????????????????????",
@@ -25785,6 +25887,23 @@
             "at": 1795369238.7789595,
             "note": "???????????????????????????????????????????????????????",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "84075fc6-f4fd-42fc-8f98-45fd5bec5871",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "焦糖工坊貓，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "cd849e74a9a8c282f5cb51c303f7eb66a5c3c567cdf94ac245906b1a329746e2",
+            "imageId": "988edfa4-dfed-4a68-90bb-1070b243d2a9",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/988edfa4-dfed-4a68-90bb-1070b243d2a9",
+            "servedSha256": "e164e2e01c8e4fceb7bca1c996d360d917e53c93cc0d95eb2a5d9d3f5e2b959d",
+            "verifiedAt": 1795370043.5171392
           }
         },
         "FACE": {
@@ -25853,7 +25972,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/3d8af404-2c9f-46ab-beb6-a437fe3b6895",
             "servedSha256": "45f30014f8981b46c858e7ead7d7cd3dc5cf897c85ddded59b5bbae2847b33db",
-            "verifiedAt": 1795154278.2814298
+            "verifiedAt": 1795370043.5328805
           }
         },
         "DETAIL": {
@@ -25922,7 +26041,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/82cc6559-da41-4dce-90d6-80f0e0620863",
             "servedSha256": "514d74f356e993d378d3d7cad6c310770bc544e9cda4508371a6897d70eab824",
-            "verifiedAt": 1795154278.2925582
+            "verifiedAt": 1795370043.548686
           }
         },
         "SCENE": {
@@ -25972,7 +26091,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/d54fb180-83a0-406a-932f-db7184ed3cb7/image/010d6b2b-15a0-4695-84ae-4f050afecd9a",
             "servedSha256": "3ead4c46c1cb8691edbf3594d00f8653f007e3d8234bcce68a512c64639c427f",
-            "verifiedAt": 1795154278.3180025
+            "verifiedAt": 1795370043.581019
           }
         }
       },
@@ -25980,7 +26099,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -26726,7 +26845,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-069-builtin.png",
           "sha256": "2915b0a469e867b2c00db6f01180dab559b30bacbd80b382ca0182ef7bd814f0",
           "reason": "???????????????????????????????????????????????????",
@@ -26751,6 +26870,23 @@
             "at": 1795369238.7807627,
             "note": "???????????????????????????????????????????????????",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "e4eb054c-93b2-4a40-9b3a-cb3eb4850687",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "冰珠齒排狐，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "2915b0a469e867b2c00db6f01180dab559b30bacbd80b382ca0182ef7bd814f0",
+            "imageId": "9c23bda4-e429-4267-893a-03b0af1dd7fb",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/9c23bda4-e429-4267-893a-03b0af1dd7fb",
+            "servedSha256": "3e0e39896029c3cf6724c204ba3fad26bc0dab41531f6f78e3199d3b2cc0cede",
+            "verifiedAt": 1795370044.813369
           }
         },
         "FACE": {
@@ -26819,7 +26955,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/bf03fafc-8b2e-4c09-932f-29cab3a61709",
             "servedSha256": "77cd224587916e8f416b06eaae0fae17150c6f87a72ac5adbac8313ea53db02c",
-            "verifiedAt": 1795154279.5337777
+            "verifiedAt": 1795370044.8255672
           }
         },
         "DETAIL": {
@@ -26888,7 +27024,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/10237cef-bf47-4d39-98f4-cde660247b38",
             "servedSha256": "f4512d4404202117de2d61c9c09abda8e2b26349a331b79aba6f0a2d53708082",
-            "verifiedAt": 1795154279.5476985
+            "verifiedAt": 1795370044.838152
           }
         },
         "SCENE": {
@@ -26938,7 +27074,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/214a31a5-9a7b-4252-bc4f-9968a74aff14/image/8cbfd125-63a0-46b2-b219-438928d78769",
             "servedSha256": "a194f355283081d824bc7fd5d25761d11614ee013c0c3f84ca9e0d29753c4c9f",
-            "verifiedAt": 1795154279.5726385
+            "verifiedAt": 1795370044.860953
           }
         }
       },
@@ -26946,7 +27082,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -27652,7 +27788,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-072-builtin.png",
           "sha256": "7b992bc980740a4a8e25e9bea9e1eb443cbc9b8f0e918a8d1a763dd35536094c",
           "reason": "????????????????????????????????????????????????????",
@@ -27677,6 +27813,23 @@
             "at": 1795369238.7823615,
             "note": "????????????????????????????????????????????????????",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f436bd3e-dd31-4973-a607-0b3a59696abc",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "銅絲燙衣匠，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "7b992bc980740a4a8e25e9bea9e1eb443cbc9b8f0e918a8d1a763dd35536094c",
+            "imageId": "321fae5e-282f-4a33-a45e-6079125cddb5",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/321fae5e-282f-4a33-a45e-6079125cddb5",
+            "servedSha256": "0b16a4cd424f2cfdae0fbbf1ebe5b46d6eb3bfe853f6217206dfd99aaffa56b7",
+            "verifiedAt": 1795370046.0811315
           }
         },
         "FACE": {
@@ -27745,7 +27898,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/88e79b4b-d67a-4d07-877a-7497f496f4d1",
             "servedSha256": "6337c3d5bba641d8cdc4122888b0769e4caca5313b2326cf81bd71f86f5dfd2e",
-            "verifiedAt": 1795154283.0400207
+            "verifiedAt": 1795370046.0928307
           }
         },
         "DETAIL": {
@@ -27814,7 +27967,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/cfc891ad-a53a-41f1-adff-1f77570503da",
             "servedSha256": "7e6008b73bfdc0a6617bce13587689d5919f341e5ec09b6df5b1dc3c80bc775d",
-            "verifiedAt": 1795154283.0574784
+            "verifiedAt": 1795370046.1052754
           }
         },
         "SCENE": {
@@ -27864,7 +28017,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/5af7dbbb-87bc-423d-b634-9949370e9505/image/edbc7db7-5132-4897-91da-53d5e033973c",
             "servedSha256": "f7861957c0e285574b502ae2a8b0811ecac135fd9af640816ff1a2b0e3067196",
-            "verifiedAt": 1795154283.088827
+            "verifiedAt": 1795370046.126953
           }
         }
       },
@@ -27872,7 +28025,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       },
       "attempts": {
         "REAR": [
@@ -28835,7 +28988,7 @@
           "priorPolicyReason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。"
         },
         "REAR": {
-          "status": "pass",
+          "status": "complete",
           "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-076-builtin.png",
           "sha256": "2aed15875cae9e8402759ed7d259fb9eee8166e7d8a9218b58739d32144bfc52",
           "reason": "??????????????????????????????????????????????????????",
@@ -28860,6 +29013,23 @@
             "at": 1795369238.7838738,
             "note": "??????????????????????????????????????????????????????",
             "sharedFromProductKey": null
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8f50d64e-41dc-4bd0-a268-23a3303cc475",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "小雨街角稅吏，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "2aed15875cae9e8402759ed7d259fb9eee8166e7d8a9218b58739d32144bfc52",
+            "imageId": "e5590641-b609-4231-940e-70596ef17bf8",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/b65e383a-372e-4a68-8460-7453c011d19d/image/e5590641-b609-4231-940e-70596ef17bf8",
+            "servedSha256": "161238fd5015a48aa95a72e963203748b3745e39f803b05136129c5557fdab11",
+            "verifiedAt": 1795370047.2806115
           }
         },
         "FACE": {
@@ -28928,7 +29098,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/b65e383a-372e-4a68-8460-7453c011d19d/image/fff60ab7-cd7b-4ba4-a18a-7b1cf7ec5912",
             "servedSha256": "708723ec63c9a18a9934e6f6327c0b1fe76d7fa56a3725e52a5440cd446808e2",
-            "verifiedAt": 1795154421.8313932
+            "verifiedAt": 1795370047.2918453
           }
         },
         "DETAIL": {
@@ -28997,7 +29167,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/b65e383a-372e-4a68-8460-7453c011d19d/image/03ea0b45-6497-45e7-8972-94bc3debdf22",
             "servedSha256": "a123908117fe61140429529ea2a47ce06b34991c874621dab022ac20c24f0803",
-            "verifiedAt": 1795154421.8510132
+            "verifiedAt": 1795370047.3054245
           }
         },
         "SCENE": {
@@ -29048,7 +29218,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/b65e383a-372e-4a68-8460-7453c011d19d/image/68389e9a-d1af-4ece-9ed7-940832b74c6d",
             "servedSha256": "96e30e0328d1b7719d872b6ad2cdb5207e8afc6f8e28e1ef29889cfeb3ded889",
-            "verifiedAt": 1795154421.8692002
+            "verifiedAt": 1795370047.3457358
           }
         }
       },
@@ -29136,7 +29306,7 @@
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
         "state": "restored",
-        "lastUnpublishVersion": 3
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -37139,7 +37309,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T17:50:51Z",
+  "updatedAt": "2026-11-22T17:54:31Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -37574,6 +37744,23 @@
           "FIGURA-AI-086"
         ],
         "at": 1795368093.5199924,
+        "authorApproval": "pending"
+      },
+      {
+        "name": "rear-storage-resume-01",
+        "keys": [
+          "FIGURA-AI-052",
+          "FIGURA-AI-057",
+          "FIGURA-AI-058",
+          "FIGURA-AI-060",
+          "FIGURA-AI-062",
+          "FIGURA-AI-064",
+          "FIGURA-AI-067",
+          "FIGURA-AI-069",
+          "FIGURA-AI-072",
+          "FIGURA-AI-076"
+        ],
+        "at": 1795370071.9714441,
         "authorApproval": "pending"
       }
     ],
