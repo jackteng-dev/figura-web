@@ -32049,7 +32049,7 @@
       "master": {
         "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
         "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
-        "imageId": null,
+        "imageId": "dbfdaffd-5788-4d01-ab3d-02de843d7d13",
         "width": 1480,
         "height": 1480,
         "format": "PNG",
@@ -32064,7 +32064,7 @@
       },
       "slots": {
         "MAIN": {
-          "status": "pass",
+          "status": "complete",
           "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
           "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
           "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
@@ -32295,6 +32295,23 @@
             "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
             "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
             "authorApproval": "pending"
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "4e2010a0-1af0-4419-99ff-6a2563b1b847",
+              "expectedVersion": 2,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "MAIN",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，MAIN；非實物攝影"
+            },
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "imageId": "dbfdaffd-5788-4d01-ab3d-02de843d7d13",
+            "version": 3,
+            "publicUrl": "/api/catalog/products/b5f17969-8fbf-4e42-9493-aa2968e4f333/image/dbfdaffd-5788-4d01-ab3d-02de843d7d13",
+            "servedSha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c",
+            "verifiedAt": 1795366652.7302794
           }
         },
         "ANGLE": {
@@ -32306,17 +32323,199 @@
           "reason": "新增主圖後補圖"
         },
         "FACE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "ceca83558353ccfaf7938b6234f2f4b69180de5be71213bc1a52d448e7fbd43e",
+          "sha256": "2281116ca43b2d5bb758952d6e06030f3c2504c2e8e9a0157448dc4a77c33d09",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/ceca83558353ccfaf7938b6234f2f4b69180de5be71213bc1a52d448e7fbd43e/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "e8df1ab6-1773-4fed-b869-0f9bf7f36ccb",
+            "createdAt": "2026-11-22T16:56:36Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "31b651c5a9c8ef09fefdb25e01f38f8d12843eaf92fb30481a21a97c3849a4fb",
+            "outputSha256": "2281116ca43b2d5bb758952d6e06030f3c2504c2e8e9a0157448dc4a77c33d09",
+            "outputBytes": 772679,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 360,
+              "y": 100,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.5054529,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "118b9282-abaf-4078-b40e-98ca3ae06585",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "2281116ca43b2d5bb758952d6e06030f3c2504c2e8e9a0157448dc4a77c33d09",
+            "imageId": "7b944193-d869-4a55-aa17-dd89f21fed05",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/b5f17969-8fbf-4e42-9493-aa2968e4f333/image/7b944193-d869-4a55-aa17-dd89f21fed05",
+            "servedSha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c",
+            "verifiedAt": 1795366652.7464566
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "c724614bbd26740b2f23048b6fbde716d7091054c0814e92fd151258145cfcd8",
+          "sha256": "896aed24f55357084ef2fdb709b3113aaa963c2578605d4fad444209a9600f0c",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/c724614bbd26740b2f23048b6fbde716d7091054c0814e92fd151258145cfcd8/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "132fa321-2f42-4771-9b98-aaa5aeca3e73",
+            "createdAt": "2026-11-22T16:56:38Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "b35d670475c923a55fe2ed6a58770bdfd0ff23a99b4fe969d116d59076c9779c",
+            "outputSha256": "896aed24f55357084ef2fdb709b3113aaa963c2578605d4fad444209a9600f0c",
+            "outputBytes": 788609,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 400,
+              "y": 660,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.5716453,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "c93f774f-37f4-4d7d-8571-a4a3debd0c7f",
+              "expectedVersion": 6,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "896aed24f55357084ef2fdb709b3113aaa963c2578605d4fad444209a9600f0c",
+            "imageId": "6ac92dfa-885a-4ab4-9e06-214c59077ffa",
+            "version": 7,
+            "publicUrl": "/api/catalog/products/b5f17969-8fbf-4e42-9493-aa2968e4f333/image/6ac92dfa-885a-4ab4-9e06-214c59077ffa",
+            "servedSha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b",
+            "verifiedAt": 1795366652.7767787
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "四份共用設計情境 RGB 相同，逐項對照象牙頭、左髖單包、手部、棕靴及杏色圓角方台完整；原像素合成木展示台，無新造型。作者 pending。",
+          "runId": "b00641a47016e8ccc6060858e5f3ab7bac390cbb657ba77dc95aaf6251fc6e19",
+          "sha256": "ae76f29a1750bd6097b5760722d7da2a11c6b7d9fc3551d3831c022f077a1fc4",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/b00641a47016e8ccc6060858e5f3ab7bac390cbb657ba77dc95aaf6251fc6e19/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "bef4ded2-205c-47db-bec4-648712e1523c",
+            "createdAt": "2026-11-22T16:56:40Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "f56b51eee8a775823b3c8599c8b3236bba3f445dbe7837ae36c76fe3ea36771d",
+            "outputSha256": "ae76f29a1750bd6097b5760722d7da2a11c6b7d9fc3551d3831c022f077a1fc4",
+            "outputBytes": 2060024,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              1480,
+              1480
+            ]
+          },
+          "reviewedAt": 1795366650.0961323,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "28e8510d-6df0-4779-87d4-eb582d6cdbb4",
+              "expectedVersion": 7,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "ae76f29a1750bd6097b5760722d7da2a11c6b7d9fc3551d3831c022f077a1fc4",
+            "imageId": "a8eb634c-82b7-4166-b4b6-d79b91a45149",
+            "version": 8,
+            "publicUrl": "/api/catalog/products/b5f17969-8fbf-4e42-9493-aa2968e4f333/image/a8eb634c-82b7-4166-b4b6-d79b91a45149",
+            "servedSha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2",
+            "verifiedAt": 1795366652.8162673
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 1,
+        "state": "restored",
+        "lastUnpublishVersion": 5
       }
     },
     {
@@ -32341,7 +32540,7 @@
       "master": {
         "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
         "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
-        "imageId": null,
+        "imageId": "fca1a98b-6a0c-49bf-b78d-66c749e1b30a",
         "width": 1480,
         "height": 1480,
         "format": "PNG",
@@ -32356,7 +32555,7 @@
       },
       "slots": {
         "MAIN": {
-          "status": "pass",
+          "status": "complete",
           "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
           "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
           "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
@@ -32587,6 +32786,23 @@
             "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
             "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
             "authorApproval": "pending"
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "d4bb9c3b-8695-4fe8-83fa-d977f61625bb",
+              "expectedVersion": 2,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "MAIN",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，MAIN；非實物攝影"
+            },
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "imageId": "fca1a98b-6a0c-49bf-b78d-66c749e1b30a",
+            "version": 3,
+            "publicUrl": "/api/catalog/products/1adcd535-d094-4585-84e8-aa385f949653/image/fca1a98b-6a0c-49bf-b78d-66c749e1b30a",
+            "servedSha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c",
+            "verifiedAt": 1795366654.9248412
           }
         },
         "ANGLE": {
@@ -32598,17 +32814,199 @@
           "reason": "新增主圖後補圖"
         },
         "FACE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "6627e2d53b6d601b5a2f71ec2f1c5a278c7cc46a76e62bc604483bf202156fb5",
+          "sha256": "f9ef2b86f8cb2a89005f8c3ae2f768449c00331e706174831c6ec0f5a208c0f3",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/6627e2d53b6d601b5a2f71ec2f1c5a278c7cc46a76e62bc604483bf202156fb5/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "d9b613a2-3ac0-4106-a55d-ecbe93deceec",
+            "createdAt": "2026-11-22T16:56:42Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "2300d5d41c1bc24b3fd6693f0509efd21bec6b6cff603f75fe4401543f385c5e",
+            "outputSha256": "f9ef2b86f8cb2a89005f8c3ae2f768449c00331e706174831c6ec0f5a208c0f3",
+            "outputBytes": 772679,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 360,
+              "y": 100,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.6347094,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "d5b41901-ba75-4822-8b08-05cf5b9ffe22",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "f9ef2b86f8cb2a89005f8c3ae2f768449c00331e706174831c6ec0f5a208c0f3",
+            "imageId": "2c1199e5-e2e1-4d78-b268-ca9d41231f0e",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/1adcd535-d094-4585-84e8-aa385f949653/image/2c1199e5-e2e1-4d78-b268-ca9d41231f0e",
+            "servedSha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c",
+            "verifiedAt": 1795366654.9469116
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "cf25da06a5278e88d113f53e80f7b009d85be56593b285ffe75f0e485a67193e",
+          "sha256": "f351fb71b741f7314043a0e85d20600d49d32f5b96811f8b00e27d6740165c9b",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/cf25da06a5278e88d113f53e80f7b009d85be56593b285ffe75f0e485a67193e/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "efa882f4-6981-409b-a13e-45f4334dcc30",
+            "createdAt": "2026-11-22T16:56:44Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "8e0d9f02a4023f9b4a210e6422fb4c326460eaffd143519def615dc2515f976e",
+            "outputSha256": "f351fb71b741f7314043a0e85d20600d49d32f5b96811f8b00e27d6740165c9b",
+            "outputBytes": 788609,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 400,
+              "y": 660,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.6976523,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "994324f5-a482-42a7-a25d-552363dca1e4",
+              "expectedVersion": 6,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "f351fb71b741f7314043a0e85d20600d49d32f5b96811f8b00e27d6740165c9b",
+            "imageId": "c3422368-6870-45fd-8ed3-d742924496bb",
+            "version": 7,
+            "publicUrl": "/api/catalog/products/1adcd535-d094-4585-84e8-aa385f949653/image/c3422368-6870-45fd-8ed3-d742924496bb",
+            "servedSha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b",
+            "verifiedAt": 1795366654.9694045
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "四份共用設計情境 RGB 相同，逐項對照象牙頭、左髖單包、手部、棕靴及杏色圓角方台完整；原像素合成木展示台，無新造型。作者 pending。",
+          "runId": "16946beb915ca537b2d2a05ecbbe7f303dd25175786583ce34d94c1f0c0f7220",
+          "sha256": "7e1df730c8f35bebeb8ee15a1120ada6d0df1bbf4e872feff8d0888f07c44306",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/16946beb915ca537b2d2a05ecbbe7f303dd25175786583ce34d94c1f0c0f7220/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "61380caf-5b2c-4137-b53e-0ae2e849fadb",
+            "createdAt": "2026-11-22T16:56:47Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "81b5abb639280d1c3d2f82d8b78955eb3e3ee26d0ff031f5177f1a66fa187bd3",
+            "outputSha256": "7e1df730c8f35bebeb8ee15a1120ada6d0df1bbf4e872feff8d0888f07c44306",
+            "outputBytes": 2060024,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              1480,
+              1480
+            ]
+          },
+          "reviewedAt": 1795366650.0978498,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "6a89745c-1aba-403e-8acf-ec35fc5437a6",
+              "expectedVersion": 7,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "7e1df730c8f35bebeb8ee15a1120ada6d0df1bbf4e872feff8d0888f07c44306",
+            "imageId": "7df06a6f-e9df-468e-9713-8556e39eb4c9",
+            "version": 8,
+            "publicUrl": "/api/catalog/products/1adcd535-d094-4585-84e8-aa385f949653/image/7df06a6f-e9df-468e-9713-8556e39eb4c9",
+            "servedSha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2",
+            "verifiedAt": 1795366655.0146468
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 1,
+        "state": "restored",
+        "lastUnpublishVersion": 5
       }
     },
     {
@@ -32633,7 +33031,7 @@
       "master": {
         "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
         "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
-        "imageId": null,
+        "imageId": "21f7e80c-1279-421b-a955-0587c3c3c635",
         "width": 1480,
         "height": 1480,
         "format": "PNG",
@@ -32648,7 +33046,7 @@
       },
       "slots": {
         "MAIN": {
-          "status": "pass",
+          "status": "complete",
           "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
           "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
           "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
@@ -32879,6 +33277,23 @@
             "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
             "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
             "authorApproval": "pending"
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "a24aa7ae-e1c7-4fa9-87cb-e566a81e2bdf",
+              "expectedVersion": 2,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "MAIN",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，MAIN；非實物攝影"
+            },
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "imageId": "21f7e80c-1279-421b-a955-0587c3c3c635",
+            "version": 3,
+            "publicUrl": "/api/catalog/products/cd2aeb7f-d8b5-4848-89fe-82bb69683d9c/image/21f7e80c-1279-421b-a955-0587c3c3c635",
+            "servedSha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c",
+            "verifiedAt": 1795366657.2205558
           }
         },
         "ANGLE": {
@@ -32890,17 +33305,199 @@
           "reason": "新增主圖後補圖"
         },
         "FACE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "b45c65cf866454ba4576e4a11068fb6ea3381b8602a533c21244e2ef6a24318e",
+          "sha256": "c00eafe1805336b7296739d56e4651b49a8b8d1007676f3d607108f58768b3f8",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/b45c65cf866454ba4576e4a11068fb6ea3381b8602a533c21244e2ef6a24318e/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "50a5ce3f-d03c-4ffb-a4bb-920cfd82d0ec",
+            "createdAt": "2026-11-22T16:56:49Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "84d4697a24bae544caf9153082ce1f28bf54557ba15a3b63d1e0924fbbad76e6",
+            "outputSha256": "c00eafe1805336b7296739d56e4651b49a8b8d1007676f3d607108f58768b3f8",
+            "outputBytes": 772679,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 360,
+              "y": 100,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.76033,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "f5ed7267-f784-48f6-b55b-5c6f00353a84",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "c00eafe1805336b7296739d56e4651b49a8b8d1007676f3d607108f58768b3f8",
+            "imageId": "715a9240-9141-4eef-aeb9-5397e8bd5cd2",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/cd2aeb7f-d8b5-4848-89fe-82bb69683d9c/image/715a9240-9141-4eef-aeb9-5397e8bd5cd2",
+            "servedSha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c",
+            "verifiedAt": 1795366657.2411954
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "a33b68ff2cc20417ff119eec377506d18c208fbb714f9106790d62ed7a936eb5",
+          "sha256": "a5d319ca24cb9f4d7a2d2ff402ab601ee5332ee2cec24a3b4c3dfdd7060f5d8c",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/a33b68ff2cc20417ff119eec377506d18c208fbb714f9106790d62ed7a936eb5/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "2b51e80c-410f-4653-8991-9582e82dd9be",
+            "createdAt": "2026-11-22T16:56:51Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "46dc3ff081aa62c68f5dfd11e362c9e415581778dde2ef8d6452fb0601a49bc0",
+            "outputSha256": "a5d319ca24cb9f4d7a2d2ff402ab601ee5332ee2cec24a3b4c3dfdd7060f5d8c",
+            "outputBytes": 788609,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 400,
+              "y": 660,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.8255079,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "212d7007-1ad6-4596-8a68-eb38acc63cc0",
+              "expectedVersion": 6,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "a5d319ca24cb9f4d7a2d2ff402ab601ee5332ee2cec24a3b4c3dfdd7060f5d8c",
+            "imageId": "30a802df-a8b4-4417-8747-417a35fe8fc7",
+            "version": 7,
+            "publicUrl": "/api/catalog/products/cd2aeb7f-d8b5-4848-89fe-82bb69683d9c/image/30a802df-a8b4-4417-8747-417a35fe8fc7",
+            "servedSha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b",
+            "verifiedAt": 1795366657.2627661
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "四份共用設計情境 RGB 相同，逐項對照象牙頭、左髖單包、手部、棕靴及杏色圓角方台完整；原像素合成木展示台，無新造型。作者 pending。",
+          "runId": "f503f8e7ec88efbe103bf3ebd7d579d2cbe960b3eae42707001482ff9c8d593d",
+          "sha256": "546b3fa720b72c67280ffae9177e4a499b73bab232d14622e5ae466e21b10ac7",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/f503f8e7ec88efbe103bf3ebd7d579d2cbe960b3eae42707001482ff9c8d593d/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "c5bf37a2-d431-4bbd-b382-b155a24c284c",
+            "createdAt": "2026-11-22T16:56:53Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "7777019b79ec3c3810f8f1ae99de12338e76c7dff0781e54dc5b0c90e538a2b2",
+            "outputSha256": "546b3fa720b72c67280ffae9177e4a499b73bab232d14622e5ae466e21b10ac7",
+            "outputBytes": 2060024,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              1480,
+              1480
+            ]
+          },
+          "reviewedAt": 1795366650.0994718,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8f1180fa-c418-492c-85db-be2a5617a6f5",
+              "expectedVersion": 7,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "546b3fa720b72c67280ffae9177e4a499b73bab232d14622e5ae466e21b10ac7",
+            "imageId": "19a4f6bf-8537-42ed-8282-226d95338a7d",
+            "version": 8,
+            "publicUrl": "/api/catalog/products/cd2aeb7f-d8b5-4848-89fe-82bb69683d9c/image/19a4f6bf-8537-42ed-8282-226d95338a7d",
+            "servedSha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2",
+            "verifiedAt": 1795366657.3021026
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 1,
+        "state": "restored",
+        "lastUnpublishVersion": 5
       }
     },
     {
@@ -32925,7 +33522,7 @@
       "master": {
         "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
         "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
-        "imageId": null,
+        "imageId": "e2a83056-912b-4b9a-a840-a90994258435",
         "width": 1480,
         "height": 1480,
         "format": "PNG",
@@ -32940,7 +33537,7 @@
       },
       "slots": {
         "MAIN": {
-          "status": "pass",
+          "status": "complete",
           "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
           "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
           "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
@@ -33171,6 +33768,23 @@
             "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
             "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
             "authorApproval": "pending"
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "a6190ebc-b035-44e8-bab6-5941ed869728",
+              "expectedVersion": 2,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "MAIN",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，MAIN；非實物攝影"
+            },
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "imageId": "e2a83056-912b-4b9a-a840-a90994258435",
+            "version": 3,
+            "publicUrl": "/api/catalog/products/f81f1bbc-74e5-4669-a580-1c77b3911d8a/image/e2a83056-912b-4b9a-a840-a90994258435",
+            "servedSha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c",
+            "verifiedAt": 1795366659.5560806
           }
         },
         "ANGLE": {
@@ -33182,17 +33796,199 @@
           "reason": "新增主圖後補圖"
         },
         "FACE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "e1b2d0b42ed91667acd5d09b9f1881d5c5f9a0bc339d12c0f0a4a0f613577159",
+          "sha256": "3ef5775a700c81895e73b60293f083c74c28d490f6277eab7abc6e01b94c8f11",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/e1b2d0b42ed91667acd5d09b9f1881d5c5f9a0bc339d12c0f0a4a0f613577159/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "f70d89f5-3b76-4152-867a-06e7093ddc66",
+            "createdAt": "2026-11-22T16:56:55Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "b6ab2a814dacee85e0ccb231b578d0b1e394c155ee6f983a365e0fd9d1a769ec",
+            "outputSha256": "3ef5775a700c81895e73b60293f083c74c28d490f6277eab7abc6e01b94c8f11",
+            "outputBytes": 772679,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 360,
+              "y": 100,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.8879223,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "8278b273-af68-4211-a98a-bf69a0fb1fc8",
+              "expectedVersion": 5,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "FACE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，FACE；非實物攝影"
+            },
+            "sourceSha256": "3ef5775a700c81895e73b60293f083c74c28d490f6277eab7abc6e01b94c8f11",
+            "imageId": "ded9873d-0076-4d4e-b935-215dbbf00671",
+            "version": 6,
+            "publicUrl": "/api/catalog/products/f81f1bbc-74e5-4669-a580-1c77b3911d8a/image/ded9873d-0076-4d4e-b935-215dbbf00671",
+            "servedSha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c",
+            "verifiedAt": 1795366659.580274
+          }
         },
         "DETAIL": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "共用設計四份 RGB 輸出核對完全相同；已看過完整頭部／上半身、肩包與靴及底座細節構圖，原 master 裁切不放大並另作 PyAV RGB 逐像素核對。作者 pending。",
+          "runId": "cf11f70e756a68bb471087320e51845690deaaeb44d0e904fa8f0e7761b5c957",
+          "sha256": "9ee5e8206649adc1bbff939d2d4e397c4e730f8dd42f44cfdf103e777e2378ef",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/cf11f70e756a68bb471087320e51845690deaaeb44d0e904fa8f0e7761b5c957/output.png",
+          "generation": {
+            "mode": "crop",
+            "tool": "local ComfyUI",
+            "promptId": "f5936769-c144-4ff5-8fad-01584fc8a74d",
+            "createdAt": "2026-11-22T16:56:57Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {},
+            "workflowSha256": "21555c8d4a20f6b9046689cda1c2dd2018e6b74ff6a720995615a68c2d4c69a4",
+            "outputSha256": "9ee5e8206649adc1bbff939d2d4e397c4e730f8dd42f44cfdf103e777e2378ef",
+            "outputBytes": 788609,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "deterministic crop/scale, no new sculpt generation",
+            "masterCrop": {
+              "image": [
+                "1",
+                0
+              ],
+              "x": 0,
+              "y": 0,
+              "width": 1480,
+              "height": 1480
+            },
+            "crop": {
+              "image": [
+                "2",
+                0
+              ],
+              "x": 400,
+              "y": 660,
+              "width": 760,
+              "height": 760
+            },
+            "size": 760
+          },
+          "pixelVerification": {
+            "decoder": "PyAV rgb24, same as ComfyUI 0.27 LoadImage",
+            "exact": true,
+            "width": 760,
+            "height": 760,
+            "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04"
+          },
+          "reviewedAt": 1795366649.9503787,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "92657903-9f49-4aa6-87e6-dc146aa8a20c",
+              "expectedVersion": 6,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "DETAIL",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，DETAIL；非實物攝影"
+            },
+            "sourceSha256": "9ee5e8206649adc1bbff939d2d4e397c4e730f8dd42f44cfdf103e777e2378ef",
+            "imageId": "58658790-a366-415f-8530-bde8a4b68b8f",
+            "version": 7,
+            "publicUrl": "/api/catalog/products/f81f1bbc-74e5-4669-a580-1c77b3911d8a/image/58658790-a366-415f-8530-bde8a4b68b8f",
+            "servedSha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b",
+            "verifiedAt": 1795366659.6012337
+          }
         },
         "SCENE": {
-          "status": "pending",
-          "reason": "新增主圖後補圖"
+          "status": "complete",
+          "reason": "四份共用設計情境 RGB 相同，逐項對照象牙頭、左髖單包、手部、棕靴及杏色圓角方台完整；原像素合成木展示台，無新造型。作者 pending。",
+          "runId": "c3b2bfdc7baa54e735531a7449f9f5c0c2ee77ebc85c1d300403007cd6106fe7",
+          "sha256": "b3b48dbbbef30f06f2aacf76442a3678f9a3917fa4203148e155f4b39296bcd7",
+          "sourceSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "path": "work/comfyui-figura/runs/c3b2bfdc7baa54e735531a7449f9f5c0c2ee77ebc85c1d300403007cd6106fe7/output.png",
+          "generation": {
+            "mode": "scene-composite",
+            "tool": "local ComfyUI",
+            "promptId": "fb99d9d8-813b-4f22-867f-2830c8ad5619",
+            "createdAt": "2026-11-22T16:56:59Z",
+            "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "modelHashes": {
+              "models/background_removal/figura-birefnet-e2bf8e4460fc.safetensors": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154"
+            },
+            "workflowSha256": "924e9ff070b5f7dbf330f06b30d0aa2e104af41dfca2161b37a80bb48bacd18b",
+            "outputSha256": "b3b48dbbbef30f06f2aacf76442a3678f9a3917fa4203148e155f4b39296bcd7",
+            "outputBytes": 2060024,
+            "authorApproval": "pending",
+            "prompt": null,
+            "seed": null,
+            "operation": "binary foreground mask plus original master pixels, 2D composite",
+            "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+            "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors",
+            "threshold": 0.1,
+            "outputSize": [
+              1480,
+              1480
+            ]
+          },
+          "reviewedAt": 1795366650.101083,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "e6ec95c6-22db-4f5b-90a5-4b86867ed405",
+              "expectedVersion": 7,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "SCENE",
+              "alt": "ELPSY 限定收藏模型，AI 生成示意圖，SCENE；非實物攝影"
+            },
+            "sourceSha256": "b3b48dbbbef30f06f2aacf76442a3678f9a3917fa4203148e155f4b39296bcd7",
+            "imageId": "092049f3-e255-4229-950f-8b4cc469588d",
+            "version": 8,
+            "publicUrl": "/api/catalog/products/f81f1bbc-74e5-4669-a580-1c77b3911d8a/image/092049f3-e255-4229-950f-8b4cc469588d",
+            "servedSha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2",
+            "verifiedAt": 1795366659.6431954
+          }
         }
+      },
+      "publicationSession": {
+        "originalStatus": "PUBLISHED",
+        "beforeVersion": 1,
+        "state": "restored",
+        "lastUnpublishVersion": 5
       }
     }
   ],
@@ -33370,7 +34166,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T16:56:30Z",
+  "updatedAt": "2026-11-22T16:57:39Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
