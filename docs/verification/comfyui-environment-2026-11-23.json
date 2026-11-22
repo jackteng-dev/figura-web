@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-23",
+  "newItems": [],
+  "newCustomNodes": [],
+  "priorEnvironment": "comfyui-environment-2026-11-20.json",
+  "before": {
+    "port18188Listening": false,
+    "protectedFiles": [
+      {
+        "path": "D:\\ComfyUI\\ComfyUI\\user\\default\\workflows\\文生圖.json",
+        "bytes": 7918,
+        "sha256": "cd4e51f75d586025fd72d8700f0d48405441cbf724f8c01b755bd554b3ef4052"
+      },
+      {
+        "path": "D:\\ComfyUI\\ComfyUI\\models\\vae\\ae.safetensors.corrupt",
+        "bytes": 424213896,
+        "sha256": "32d511d48256976eafeac27caf5d9eaceba80f4206ec14101f47dbf4bbe0f343"
+      }
+    ]
+  },
+  "startup": {
+    "pid": 19760,
+    "argv": [
+      "D:/ComfyUI/python_embeded/python.exe",
+      "-s",
+      "ComfyUI/main.py",
+      "--windows-standalone-build",
+      "--listen",
+      "127.0.0.1",
+      "--port",
+      "18188",
+      "--disable-auto-launch"
+    ],
+    "at": 1795364991.4419103
+  },
+  "loopbackOnly": true,
+  "after": {
+    "at": 1795365030.491225,
+    "system": {
+      "system": {
+        "os": "win32",
+        "ram_total": 34134056960,
+        "ram_free": 3327283200,
+        "comfyui_version": "0.27.0",
+        "required_frontend_version": "1.45.20",
+        "installed_templates_version": "0.11.1",
+        "required_templates_version": "0.11.1",
+        "comfy_package_versions": [
+          {
+            "name": "comfyui-frontend-package",
+            "installed": "1.45.20",
+            "required": "1.45.20"
+          },
+          {
+            "name": "comfyui-workflow-templates",
+            "installed": "0.11.1",
+            "required": "0.11.1"
+          },
+          {
+            "name": "comfyui-embedded-docs",
+            "installed": "0.5.6",
+            "required": "0.5.6"
+          },
+          {
+            "name": "comfy-kitchen",
+            "installed": "0.2.16",
+            "required": "0.2.16"
+          },
+          {
+            "name": "comfy-aimdo",
+            "installed": "0.4.10",
+            "required": "0.4.10"
+          }
+        ],
+        "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+        "pytorch_version": "2.12.0+cu130",
+        "embedded_python": true,
+        "deploy_environment": "local-portable",
+        "argv": [
+          "ComfyUI/main.py",
+          "--windows-standalone-build",
+          "--listen",
+          "127.0.0.1",
+          "--port",
+          "18188",
+          "--disable-auto-launch"
+        ]
+      },
+      "devices": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 12884377600,
+          "vram_free": 11639193600,
+          "torch_vram_total": 0,
+          "torch_vram_free": 0
+        }
+      ]
+    }
+  }
+}

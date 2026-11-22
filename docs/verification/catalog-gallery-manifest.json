@@ -23,7 +23,7 @@
         "sourceBrief": "Use case: product-mockup. Asset type: square e-commerce cover photo for one fictional collectible figure. Create an original designer-art toy called a moon orchard courier: a small friendly pear-shaped ivory ceramic robot with a plum-colored crescent visor, a short mint satchel, tiny clay boots and a pale apricot round plinth, standing in a three-quarter pose. Show exactly one complete physical vinyl-and-ceramic collectible. Calm muted lilac seamless studio backdrop, soft diffuse catalog lighting, finely painted matte surfaces, crisp contact shadow, professional 70 mm product photography. Center the standing figure with 15 percent margin at every edge and its full base visible. No lettering, logos, packaging, overlays, watermarks or recognizable franchise imagery. Square image.",
         "material": "matte designer vinyl with ceramic finish",
         "visibleInvariants": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth.",
-        "rearDesign": "Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms.",
+        "rearDesign": "Plain ivory rear shell with central head/body seam. Mint strap from anatomical left shoulder to right hip satchel. Yellow pear stays left hand. Same crown branch, two leaves and buds, cuffed boots and apricot round plinth.",
         "rearDesignStatus": "fixed AI proposal; author pending"
       },
       "authorApproval": "pending",
@@ -68,38 +68,223 @@
           }
         },
         "REAR": {
-          "status": "reject",
-          "reason": "第二次仍有硬性漂移：側面抬動原手臂與袋面飾件；背面憑空增加第二個側袋與交叉背帶。兩次均退回，圖庫留空。",
-          "runId": "29a07bc6a5cb6ece6b6d6b91a01e15bee99aad82e46819441db2b7f3c80632f9",
-          "sha256": "b4ee4ca60e6a621908164434a0419f1f38dbdedc53d62f7b44643f0ac949f6a6",
+          "status": "complete",
+          "reason": "依新標準複核作者接受的 PR21 背面：後腦／背部、配件解剖左右及底座主形色一致；細節為固定提案。作者正式簽核 pending。",
+          "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-001-PR21-rear.jpg",
+          "sha256": "9b489e33b1fd9b80c76d23d070047d7b79bde1af08ccd22e7296fd4785eeb296",
           "sourceSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
-          "path": "work/comfyui-figura/runs/29a07bc6a5cb6ece6b6d6b91a01e15bee99aad82e46819441db2b7f3c80632f9/output.png",
-          "reviewedAt": 1795137407.6562023,
-          "generation": {
-            "mode": "flux-reference",
-            "tool": "local ComfyUI",
-            "promptId": "4e31be25-a4c2-40fa-a0c0-b8c89d88a4a3",
-            "createdAt": "2026-11-20T01:12:07Z",
-            "masterSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
-            "modelHashes": {
-              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
-              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
-              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+          "externalSource": {
+            "kind": "PR21-author-accepted-rear-proposal",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "reviewedAgainstMasterSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
+            "outputSha256": "9b489e33b1fd9b80c76d23d070047d7b79bde1af08ccd22e7296fd4785eeb296",
+            "sourcePath": "src/brand/figure-render-samples/figura-ai-001-r1-rear-960.jpg",
+            "sourceRecord": {
+              "key": "001-rear",
+              "productKey": "FIGURA-AI-001",
+              "designRevision": "r1",
+              "view": "rear",
+              "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same ivory pear robot, plum crescent visor and pale eyes/tiny smile, one five-petal cream blossom with yellow stamens and TWO pale round buds on brown head sprig and TWO green leaves; mint satchel at ANATOMICAL RIGHT HIP with gold crescent, tiny white flower, gold snap, gold buckle on mint strap crossing its chest from anatomical left shoulder, yellow fruit in ANATOMICAL LEFT hand, purple mitt hands, brown ankle boots, apricot low cylindrical base. Do not swap sides, add limbs, redesign sprig, change base thickness or move the feet. From a straight rear view, satchel remains at the figure's anatomical RIGHT HIP, which is VIEWER RIGHT in this rear image; fruit stays in anatomical LEFT hand, VIEWER LEFT. Green strap crosses the back from anatomical LEFT shoulder to RIGHT hip. Rear ivory shell is a simple smooth rounded panel with one vertical molded seam, no new symbols or mechanical parts. Sprig turns with the head/body; do not rotate its blossom to face the camera. Do not invent a second bag. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted PVC/ABS collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+              "referenceKeys": [
+                "001-main"
+              ],
+              "crop": [
+                147,
+                120,
+                960,
+                960
+              ],
+              "label": "月梨信差 · 背面提案",
+              "alt": "月梨信差，AI 生成虛構公仔概念圖，背面設計提案，含完整底座",
+              "reviewStatus": "提案／未完成造型定稿",
+              "reviewNote": "左右持物未互換；後殼接縫與背帶路徑是背面設計提案，尚未完成全角度造型定稿。",
+              "source": {
+                "localArchive": "work/figure-render-samples/originals/001-rear.png",
+                "sha256": "a31b1c83b473912a8fd442c984029d747f89e626a3cfe2c63218af9829270437",
+                "width": 1254,
+                "height": 1254
+              },
+              "references": [
+                {
+                  "key": "001-main",
+                  "sha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3"
+                }
+              ],
+              "derivatives": [
+                {
+                  "file": "figura-ai-001-r1-rear-320.webp",
+                  "format": "webp",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 5358,
+                  "sha256": "74d3030e3bc7304a31b6bf6d7bc15eaa08d436d71fe5ac74ce17b10abca50355"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-320.avif",
+                  "format": "avif",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 2944,
+                  "sha256": "0a988a3be11a014a0bb510022a5849171849bbaee522627df7971791cb5c1fff"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-640.webp",
+                  "format": "webp",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 13782,
+                  "sha256": "ea431ded9af7bab3f6fbc2e94f851aa4d89ed161fa731fb9c17947b33e790b71"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-640.avif",
+                  "format": "avif",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 6089,
+                  "sha256": "83564217989820cf2b6bc6587bdd1853697282ecfb6593403d0846d96ea58614"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-960.webp",
+                  "format": "webp",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 24364,
+                  "sha256": "2e3bfc088aa2e7d76a54d2bf839208d561e6cdad998da2f88bcda149615c5419"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-960.avif",
+                  "format": "avif",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 9254,
+                  "sha256": "ef6d26c9f7cab548edd1286cf445067103854114ee10a02160a404606222e4a4"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-960.jpg",
+                  "format": "jpg",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 52019,
+                  "sha256": "9b489e33b1fd9b80c76d23d070047d7b79bde1af08ccd22e7296fd4785eeb296"
+                }
+              ]
             },
-            "workflowSha256": "e1a320fc679050b837887f327447fe441fe81fe0ca1074857338708a0791bb78",
-            "outputSha256": "b4ee4ca60e6a621908164434a0419f1f38dbdedc53d62f7b44643f0ac949f6a6",
-            "outputBytes": 466533,
-            "authorApproval": "pending",
-            "prompt": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark. Back view at 180 degrees of the same fixed miniature. Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign.",
-            "seed": 2026212001,
-            "width": 768,
-            "height": 768,
-            "steps": 4,
-            "sampler": "euler",
-            "guidance": {
-              "node": "BasicGuider",
-              "cfg": null
+            "at": 1795365333.5986097
+          },
+          "generation": {
+            "tool": "built-in ImageGen, prior PR21",
+            "mode": "existing-ai-rear-proposal",
+            "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same ivory pear robot, plum crescent visor and pale eyes/tiny smile, one five-petal cream blossom with yellow stamens and TWO pale round buds on brown head sprig and TWO green leaves; mint satchel at ANATOMICAL RIGHT HIP with gold crescent, tiny white flower, gold snap, gold buckle on mint strap crossing its chest from anatomical left shoulder, yellow fruit in ANATOMICAL LEFT hand, purple mitt hands, brown ankle boots, apricot low cylindrical base. Do not swap sides, add limbs, redesign sprig, change base thickness or move the feet. From a straight rear view, satchel remains at the figure's anatomical RIGHT HIP, which is VIEWER RIGHT in this rear image; fruit stays in anatomical LEFT hand, VIEWER LEFT. Green strap crosses the back from anatomical LEFT shoulder to RIGHT hip. Rear ivory shell is a simple smooth rounded panel with one vertical molded seam, no new symbols or mechanical parts. Sprig turns with the head/body; do not rotate its blossom to face the camera. Do not invent a second bag. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted PVC/ABS collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+            "seed": null,
+            "modelVersion": null,
+            "sourceRecord": {
+              "key": "001-rear",
+              "productKey": "FIGURA-AI-001",
+              "designRevision": "r1",
+              "view": "rear",
+              "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same ivory pear robot, plum crescent visor and pale eyes/tiny smile, one five-petal cream blossom with yellow stamens and TWO pale round buds on brown head sprig and TWO green leaves; mint satchel at ANATOMICAL RIGHT HIP with gold crescent, tiny white flower, gold snap, gold buckle on mint strap crossing its chest from anatomical left shoulder, yellow fruit in ANATOMICAL LEFT hand, purple mitt hands, brown ankle boots, apricot low cylindrical base. Do not swap sides, add limbs, redesign sprig, change base thickness or move the feet. From a straight rear view, satchel remains at the figure's anatomical RIGHT HIP, which is VIEWER RIGHT in this rear image; fruit stays in anatomical LEFT hand, VIEWER LEFT. Green strap crosses the back from anatomical LEFT shoulder to RIGHT hip. Rear ivory shell is a simple smooth rounded panel with one vertical molded seam, no new symbols or mechanical parts. Sprig turns with the head/body; do not rotate its blossom to face the camera. Do not invent a second bag. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted PVC/ABS collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+              "referenceKeys": [
+                "001-main"
+              ],
+              "crop": [
+                147,
+                120,
+                960,
+                960
+              ],
+              "label": "月梨信差 · 背面提案",
+              "alt": "月梨信差，AI 生成虛構公仔概念圖，背面設計提案，含完整底座",
+              "reviewStatus": "提案／未完成造型定稿",
+              "reviewNote": "左右持物未互換；後殼接縫與背帶路徑是背面設計提案，尚未完成全角度造型定稿。",
+              "source": {
+                "localArchive": "work/figure-render-samples/originals/001-rear.png",
+                "sha256": "a31b1c83b473912a8fd442c984029d747f89e626a3cfe2c63218af9829270437",
+                "width": 1254,
+                "height": 1254
+              },
+              "references": [
+                {
+                  "key": "001-main",
+                  "sha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3"
+                }
+              ],
+              "derivatives": [
+                {
+                  "file": "figura-ai-001-r1-rear-320.webp",
+                  "format": "webp",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 5358,
+                  "sha256": "74d3030e3bc7304a31b6bf6d7bc15eaa08d436d71fe5ac74ce17b10abca50355"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-320.avif",
+                  "format": "avif",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 2944,
+                  "sha256": "0a988a3be11a014a0bb510022a5849171849bbaee522627df7971791cb5c1fff"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-640.webp",
+                  "format": "webp",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 13782,
+                  "sha256": "ea431ded9af7bab3f6fbc2e94f851aa4d89ed161fa731fb9c17947b33e790b71"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-640.avif",
+                  "format": "avif",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 6089,
+                  "sha256": "83564217989820cf2b6bc6587bdd1853697282ecfb6593403d0846d96ea58614"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-960.webp",
+                  "format": "webp",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 24364,
+                  "sha256": "2e3bfc088aa2e7d76a54d2bf839208d561e6cdad998da2f88bcda149615c5419"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-960.avif",
+                  "format": "avif",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 9254,
+                  "sha256": "ef6d26c9f7cab548edd1286cf445067103854114ee10a02160a404606222e4a4"
+                },
+                {
+                  "file": "figura-ai-001-r1-rear-960.jpg",
+                  "format": "jpg",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 52019,
+                  "sha256": "9b489e33b1fd9b80c76d23d070047d7b79bde1af08ccd22e7296fd4785eeb296"
+                }
+              ]
             }
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "2e5bc5e6-f18a-4f42-9ca5-7e4e0dc25c61",
+              "expectedVersion": 10,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "月梨信差，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "9b489e33b1fd9b80c76d23d070047d7b79bde1af08ccd22e7296fd4785eeb296",
+            "imageId": "2d77775a-d747-4b06-829a-9b5c731e8f19",
+            "version": 11,
+            "publicUrl": "/api/catalog/products/2c75810a-a0a0-4212-aa5c-4f62d087b964/image/2d77775a-d747-4b06-829a-9b5c731e8f19",
+            "servedSha256": "07a730d80264e2ad696340e059cca76e2e223b1d63cb344ae1fe971576113ec8",
+            "verifiedAt": 1795365459.7666786
           }
         },
         "FACE": {
@@ -125,7 +310,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/2c75810a-a0a0-4212-aa5c-4f62d087b964/image/4d38e4b2-f519-4cb4-9f9e-c0dd7cce123b",
             "servedSha256": "b1bca4cbc5b157ce17ec44871855bf32cd724c7e08ff987c7bb4fecc8f441270",
-            "verifiedAt": 1795137409.262086
+            "verifiedAt": 1795365459.7905526
           },
           "generation": {
             "mode": "crop",
@@ -187,7 +372,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/2c75810a-a0a0-4212-aa5c-4f62d087b964/image/bec5653f-34c1-45a7-8fcc-54710e6b998e",
             "servedSha256": "f278a5f8d63f0bda3295d7895d7ece3994f17a3d799d604e9cfde5520f49c26f",
-            "verifiedAt": 1795137409.2785804
+            "verifiedAt": 1795365459.8170884
           },
           "generation": {
             "mode": "crop",
@@ -249,7 +434,7 @@
             "version": 8,
             "publicUrl": "/api/catalog/products/2c75810a-a0a0-4212-aa5c-4f62d087b964/image/51b0b64d-fd24-4cc1-ba37-14ffbfa8a5cc",
             "servedSha256": "230ec6838fdee0498ba1ef51cfa7eaabedb88285a7bd54ad3fc61741757f8713",
-            "verifiedAt": 1795137409.3321185
+            "verifiedAt": 1795365459.8660538
           },
           "generation": {
             "mode": "scene-composite",
@@ -385,6 +570,41 @@
                 "cfg": null
               }
             }
+          },
+          {
+            "status": "reject",
+            "reason": "第二次仍有硬性漂移：側面抬動原手臂與袋面飾件；背面憑空增加第二個側袋與交叉背帶。兩次均退回，圖庫留空。",
+            "runId": "29a07bc6a5cb6ece6b6d6b91a01e15bee99aad82e46819441db2b7f3c80632f9",
+            "sha256": "b4ee4ca60e6a621908164434a0419f1f38dbdedc53d62f7b44643f0ac949f6a6",
+            "sourceSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
+            "path": "work/comfyui-figura/runs/29a07bc6a5cb6ece6b6d6b91a01e15bee99aad82e46819441db2b7f3c80632f9/output.png",
+            "reviewedAt": 1795137407.6562023,
+            "generation": {
+              "mode": "flux-reference",
+              "tool": "local ComfyUI",
+              "promptId": "4e31be25-a4c2-40fa-a0c0-b8c89d88a4a3",
+              "createdAt": "2026-11-20T01:12:07Z",
+              "masterSha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270",
+              "modelHashes": {
+                "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+                "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+                "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+              },
+              "workflowSha256": "e1a320fc679050b837887f327447fe441fe81fe0ca1074857338708a0791bb78",
+              "outputSha256": "b4ee4ca60e6a621908164434a0419f1f38dbdedc53d62f7b44643f0ac949f6a6",
+              "outputBytes": 466533,
+              "authorApproval": "pending",
+              "prompt": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark. Back view at 180 degrees of the same fixed miniature. Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign.",
+              "seed": 2026212001,
+              "width": 768,
+              "height": 768,
+              "steps": 4,
+              "sampler": "euler",
+              "guidance": {
+                "node": "BasicGuider",
+                "cfg": null
+              }
+            }
           }
         ],
         "SCENE": [
@@ -428,8 +648,22 @@
       "publicationSession": {
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
-        "state": "restored"
-      }
+        "state": "restored",
+        "lastUnpublishVersion": 10
+      },
+      "characterSheetHistory": [
+        {
+          "at": 1795365333.592804,
+          "reason": "Fix rear proposal from author-accepted PR21 reference before this round",
+          "previous": {
+            "sourceBrief": "Use case: product-mockup. Asset type: square e-commerce cover photo for one fictional collectible figure. Create an original designer-art toy called a moon orchard courier: a small friendly pear-shaped ivory ceramic robot with a plum-colored crescent visor, a short mint satchel, tiny clay boots and a pale apricot round plinth, standing in a three-quarter pose. Show exactly one complete physical vinyl-and-ceramic collectible. Calm muted lilac seamless studio backdrop, soft diffuse catalog lighting, finely painted matte surfaces, crisp contact shadow, professional 70 mm product photography. Center the standing figure with 15 percent margin at every edge and its full base visible. No lettering, logos, packaging, overlays, watermarks or recognizable franchise imagery. Square image.",
+            "material": "matte designer vinyl with ceramic finish",
+            "visibleInvariants": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth.",
+            "rearDesign": "Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms.",
+            "rearDesignStatus": "fixed AI proposal; author pending"
+          }
+        }
+      ]
     },
     {
       "productKey": "FIGURA-AI-002",
@@ -969,30 +1203,29 @@
           }
         },
         "REAR": {
-          "status": "reject",
-          "reason": "重試仍把燈架與尾巴分成兩條結構，後背飾件及尾部接點不同；兩次退回，側背圖庫留空。",
-          "runId": "240b2c1983ccb863d6f5a47f53e04c62a02e3a2738b82de9f58fcf5f77194c6c",
-          "sha256": "53a6b1b8789969ce210327611d996e131758655dca94c49849896eb9a25752bc",
+          "status": "complete",
+          "reason": "2026-11-23 新標準：明確後腦、背部及圓台後側；藏青貓、金色紋飾、燈籠尾輪廓與主要比例保持，背披為已記錄同材色提案；細部差異可接受。作者 pending。",
+          "runId": "62004fde302eb2340314bb19bd622118204753b021c576100760d30b04cc14a4",
+          "sha256": "edd1f0670402d3e03262942ba27b0ca4500da11a0f505119a8c62d01abd36b81",
           "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
-          "path": "work/comfyui-figura/runs/240b2c1983ccb863d6f5a47f53e04c62a02e3a2738b82de9f58fcf5f77194c6c/output.png",
-          "reviewedAt": 1795138757.285014,
+          "path": "work/comfyui-figura/runs/62004fde302eb2340314bb19bd622118204753b021c576100760d30b04cc14a4/output.png",
           "generation": {
             "mode": "flux-reference",
             "tool": "local ComfyUI",
-            "promptId": "d59e30a8-fb15-4ab9-a843-355cbfbbd257",
-            "createdAt": "2026-11-20T01:30:02Z",
+            "promptId": "047dd3a6-e890-49bc-a4f0-c106c562e236",
+            "createdAt": "2026-11-22T16:35:47Z",
             "masterSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
             "modelHashes": {
               "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
               "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
               "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
             },
-            "workflowSha256": "c79c4831ca661e7847e6312abe2b30cde63ea23b23a16236c8a4e6463921544b",
-            "outputSha256": "53a6b1b8789969ce210327611d996e131758655dca94c49849896eb9a25752bc",
-            "outputBytes": 565985,
+            "workflowSha256": "06f364a737228f5eb3f21b1a624526515cafaeec5766cb06fedd7d978293c2ce",
+            "outputSha256": "edd1f0670402d3e03262942ba27b0ca4500da11a0f505119a8c62d01abd36b81",
+            "outputBytes": 583811,
             "authorApproval": "pending",
-            "prompt": "Navy blue four-legged cat, large pointed ears with apricot interiors, amber eyes, gold brow/cheek/haunch flourishes; orange knotted neck cord and tassels. Curled upright dark tail suspends one orange lantern with gold frame. Low dark brown round plinth with gold edge and gold scrolling front motif. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. View the same fixed miniature from its BACK at 180 degrees. Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation.",
-            "seed": 2026212003,
+            "prompt": "Navy blue four-legged cat, large pointed ears with apricot interiors, amber eyes, gold brow/cheek/haunch flourishes; orange knotted neck cord and tassels. Curled upright dark tail suspends one orange lantern with gold frame. Low dark brown round plinth with gold edge and gold scrolling front motif. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark.",
+            "seed": 20261123003,
             "width": 768,
             "height": 768,
             "steps": 4,
@@ -1001,6 +1234,24 @@
               "node": "BasicGuider",
               "cfg": null
             }
+          },
+          "reviewedAt": 1795365457.0446236,
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "1288eca4-d163-4985-aa76-8cf796ce2a41",
+              "expectedVersion": 8,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "杏燈巡夜貓，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "edd1f0670402d3e03262942ba27b0ca4500da11a0f505119a8c62d01abd36b81",
+            "imageId": "fe73c808-6563-45c8-9280-7c70b27ba66b",
+            "version": 9,
+            "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/fe73c808-6563-45c8-9280-7c70b27ba66b",
+            "servedSha256": "7fe07f9200869d8192a7a56887078aee4766f06645ae8a0f586c2620dd19054f",
+            "verifiedAt": 1795365460.6820316
           }
         },
         "FACE": {
@@ -1033,7 +1284,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/77dd8186-3709-4947-bcc3-d96a5a300d34",
             "servedSha256": "e6e6befa95a3e290508bb627cbfa38d732bf64be99e6896338fbce878cc99700",
-            "verifiedAt": 1795138759.0904384
+            "verifiedAt": 1795365460.7201
           },
           "generation": {
             "mode": "crop",
@@ -1102,7 +1353,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/bd77c547-9e38-48a0-a2cb-ea1796cbdb89",
             "servedSha256": "eba2c60f17f5cd29da17af065640a709f0a578c30df6019b61d32155bafa07b7",
-            "verifiedAt": 1795138759.129398
+            "verifiedAt": 1795365460.7480054
           },
           "generation": {
             "mode": "crop",
@@ -1164,7 +1415,7 @@
             "version": 6,
             "publicUrl": "/api/catalog/products/44fcd350-9ada-4761-83d5-29ee3d909197/image/7d9b3574-0c7c-4d3c-bbf5-024d418f48cd",
             "servedSha256": "46baa3abab0aba29e4d0493e7a72422e16343636c16ec157f0463299ce80a915",
-            "verifiedAt": 1795138759.1593564
+            "verifiedAt": 1795365460.8092427
           },
           "generation": {
             "mode": "scene-composite",
@@ -1331,13 +1582,49 @@
                 "cfg": null
               }
             }
+          },
+          {
+            "status": "reject",
+            "reason": "重試仍把燈架與尾巴分成兩條結構，後背飾件及尾部接點不同；兩次退回，側背圖庫留空。",
+            "runId": "240b2c1983ccb863d6f5a47f53e04c62a02e3a2738b82de9f58fcf5f77194c6c",
+            "sha256": "53a6b1b8789969ce210327611d996e131758655dca94c49849896eb9a25752bc",
+            "sourceSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+            "path": "work/comfyui-figura/runs/240b2c1983ccb863d6f5a47f53e04c62a02e3a2738b82de9f58fcf5f77194c6c/output.png",
+            "reviewedAt": 1795138757.285014,
+            "generation": {
+              "mode": "flux-reference",
+              "tool": "local ComfyUI",
+              "promptId": "d59e30a8-fb15-4ab9-a843-355cbfbbd257",
+              "createdAt": "2026-11-20T01:30:02Z",
+              "masterSha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12",
+              "modelHashes": {
+                "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+                "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+                "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+              },
+              "workflowSha256": "c79c4831ca661e7847e6312abe2b30cde63ea23b23a16236c8a4e6463921544b",
+              "outputSha256": "53a6b1b8789969ce210327611d996e131758655dca94c49849896eb9a25752bc",
+              "outputBytes": 565985,
+              "authorApproval": "pending",
+              "prompt": "Navy blue four-legged cat, large pointed ears with apricot interiors, amber eyes, gold brow/cheek/haunch flourishes; orange knotted neck cord and tassels. Curled upright dark tail suspends one orange lantern with gold frame. Low dark brown round plinth with gold edge and gold scrolling front motif. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. View the same fixed miniature from its BACK at 180 degrees. Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation.",
+              "seed": 2026212003,
+              "width": 768,
+              "height": 768,
+              "steps": 4,
+              "sampler": "euler",
+              "guidance": {
+                "node": "BasicGuider",
+                "cfg": null
+              }
+            }
           }
         ]
       },
       "publicationSession": {
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
-        "state": "restored"
+        "state": "restored",
+        "lastUnpublishVersion": 8
       }
     },
     {
@@ -13707,10 +13994,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -13906,6 +14191,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -13943,10 +14238,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -14142,6 +14435,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -14179,10 +14482,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -14378,6 +14679,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -14415,10 +14726,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -14614,6 +14923,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -14651,10 +14970,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -14892,6 +15209,14 @@
             },
             "reviewedAt": 1795142812.5654817
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -14936,10 +15261,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -15135,6 +15458,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -15172,10 +15505,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -15371,6 +15702,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -15408,10 +15749,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -15607,6 +15946,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -15644,10 +15993,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -15843,6 +16190,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -15880,10 +16237,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -16079,6 +16434,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -16116,10 +16481,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -16315,6 +16678,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -16352,10 +16725,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -16616,6 +16987,14 @@
             },
             "reviewedAt": 1795143185.6047637
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -16660,10 +17039,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -16859,6 +17236,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -16896,10 +17283,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -17095,6 +17480,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -17132,10 +17527,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -17331,6 +17724,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -17368,10 +17771,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -17567,6 +17968,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -17604,10 +18015,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -17803,6 +18212,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -17840,10 +18259,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -18039,6 +18456,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -18076,10 +18503,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -18275,6 +18700,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -18312,10 +18747,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -18511,6 +18944,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -18548,10 +18991,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -18747,6 +19188,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -18784,10 +19235,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -19025,6 +19474,14 @@
             },
             "reviewedAt": 1795143358.5661695
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -19069,10 +19526,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -19268,6 +19723,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -19305,10 +19770,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -19546,6 +20009,14 @@
             },
             "reviewedAt": 1795143358.7665894
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -19590,10 +20061,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -19789,6 +20258,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -19826,10 +20305,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -20025,6 +20502,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -20062,10 +20549,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -20261,6 +20746,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -20298,10 +20793,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -20497,6 +20990,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -20534,10 +21037,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -20733,6 +21234,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -20770,10 +21281,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -21011,6 +21520,14 @@
             },
             "reviewedAt": 1795154243.763651
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -21055,10 +21572,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -21254,6 +21769,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -21291,10 +21816,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -21490,6 +22013,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -21511,7 +22044,7 @@
         "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure dressed in thick charcoal workwear and burnt orange safety gloves with a small ceramic welding mask held on waist, resin base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
         "material": "hand-painted sculpted resin with small craft detail",
         "visibleInvariants": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets.",
-        "rearDesign": "Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets.",
+        "rearDesign": "Charcoal coverall with central back seam, two small rear trouser patch pockets with copper corner rivets, same belt and thigh pockets. Right hand on right hip; welding mask cradled left arm. Dark curly bun, orange gloves, brown boots and gray riveted round diamond plate base. Based on author-accepted PR21 rear proposal.",
         "rearDesignStatus": "fixed AI proposal; author pending"
       },
       "authorApproval": "pending",
@@ -21556,38 +22089,223 @@
           }
         },
         "REAR": {
-          "status": "reject",
-          "reason": "第二次雖保留持物左右，髮束／髮髻、焊罩塗裝及褲褶仍重設，不能證實同一雕塑。兩次退回，側背圖庫留空。",
-          "runId": "2f029586d7741ec06b044ddff9a0b1d5a5dcc2d69d7d21b61b5e1557a9f12b0b",
-          "sha256": "73739acc6ce95cd9820e6ce65231ec5faef8c5d003035e814457b4a60bd3928d",
+          "status": "complete",
+          "reason": "依新標準複核作者接受的 PR21 背面：後腦／背部、配件解剖左右及底座主形色一致；細節為固定提案。作者正式簽核 pending。",
+          "path": "work/catalog-gallery/rear-20261123/FIGURA-AI-068-PR21-rear.jpg",
+          "sha256": "21affab5f200a556189bbae8f3e1fdd1c483beeb08e07d14415dfe644619c5d9",
           "sourceSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
-          "path": "work/comfyui-figura/runs/2f029586d7741ec06b044ddff9a0b1d5a5dcc2d69d7d21b61b5e1557a9f12b0b/output.png",
-          "reviewedAt": 1795137407.8749495,
-          "generation": {
-            "mode": "flux-reference",
-            "tool": "local ComfyUI",
-            "promptId": "e380930b-d263-44d4-9b92-0a72d70efda0",
-            "createdAt": "2026-11-20T01:15:22Z",
-            "masterSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
-            "modelHashes": {
-              "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
-              "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
-              "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+          "externalSource": {
+            "kind": "PR21-author-accepted-rear-proposal",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "reviewedAgainstMasterSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
+            "outputSha256": "21affab5f200a556189bbae8f3e1fdd1c483beeb08e07d14415dfe644619c5d9",
+            "sourcePath": "src/brand/figure-render-samples/figura-ai-068-r1-rear-960.jpg",
+            "sourceRecord": {
+              "key": "068-rear",
+              "productKey": "FIGURA-AI-068",
+              "designRevision": "r1",
+              "view": "rear",
+              "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same adult female resin mechanic: face, dark brown wavy pinned bun and tendrils, head turned to anatomical LEFT, charcoal one-piece rolled sleeve coverall, two chest flap pockets, thigh cargo pockets, knee pads, brass snaps, belt with rectangular brass buckle, burnt orange gloves, brown lace-up work boots. Anatomical RIGHT hand remains ON HIP, anatomical LEFT arm keeps the same cream worn welding helmet with rectangular plum lens cradled at LEFT HIP. Same dark diamond-plate round base with riveted edge and identical stance. No side swaps or moved feet. Straight rear view: anatomical RIGHT hand still on hip, which is VIEWER RIGHT in a rear view. Anatomical LEFT hand still cradles helmet at left hip, VIEWER LEFT. Head still turns toward anatomical LEFT; the face is mostly hidden, only a small left profile may be visible. Same bun silhouette. Proposed rear garment design is a center-back seam, waist belt, two modest rectangular rear patch pockets. No extra tools, pouches, backpack, logos, hair length changes, or new seams beyond this fixed rear design. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted resin collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+              "referenceKeys": [
+                "068-main"
+              ],
+              "crop": [
+                147,
+                120,
+                960,
+                960
+              ],
+              "label": "冷熔鍋爐姊 · 背面提案",
+              "alt": "冷熔鍋爐姊，AI 生成虛構公仔概念圖，背面設計提案，含完整底座",
+              "reviewStatus": "提案／未完成造型定稿",
+              "reviewNote": "持物與叉腰左右保留；新增的背袋、後縫線屬背面提案，未驗證同一幾何模型。",
+              "source": {
+                "localArchive": "work/figure-render-samples/originals/068-rear.png",
+                "sha256": "43eede9674bbb71253b3e75b7bcf389d23f436dad1a91ceb6d6cfcfa3bf8739b",
+                "width": 1254,
+                "height": 1254
+              },
+              "references": [
+                {
+                  "key": "068-main",
+                  "sha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c"
+                }
+              ],
+              "derivatives": [
+                {
+                  "file": "figura-ai-068-r1-rear-320.webp",
+                  "format": "webp",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 7414,
+                  "sha256": "05e47a181377a1191ff6f8a172a39f8246639a5c222c31c4bd560e3cf0c5b285"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-320.avif",
+                  "format": "avif",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 4573,
+                  "sha256": "3620ee614856563fe57773c362d23dd25235b7f543dbd2357e6677bd25f8acb4"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-640.webp",
+                  "format": "webp",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 23860,
+                  "sha256": "29aa4d6818082c114d01db3a11d84a4225d22971b8265f80e190eea2ae153373"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-640.avif",
+                  "format": "avif",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 13228,
+                  "sha256": "a23d571f86e8430985726f958e5b3871c440b6d6e8c460a2d12a95d722a19280"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-960.webp",
+                  "format": "webp",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 44864,
+                  "sha256": "a839f59be8c7f67d3895c6f89b181cb8b9f04ed36050e6e2e6282c35bf83aeba"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-960.avif",
+                  "format": "avif",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 22963,
+                  "sha256": "7434858df41d47876d3bfc42069a46e8c071f5da6a5065fe7884693260b690dd"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-960.jpg",
+                  "format": "jpg",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 86081,
+                  "sha256": "21affab5f200a556189bbae8f3e1fdd1c483beeb08e07d14415dfe644619c5d9"
+                }
+              ]
             },
-            "workflowSha256": "c9b3ea74e9ca346eaa455848c8a57918f1376ab9ae0a0fec3e577b557cf5c227",
-            "outputSha256": "73739acc6ce95cd9820e6ce65231ec5faef8c5d003035e814457b4a60bd3928d",
-            "outputBytes": 501721,
-            "authorApproval": "pending",
-            "prompt": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark. Back view at 180 degrees of the same fixed miniature. Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign.",
-            "seed": 2026212068,
-            "width": 768,
-            "height": 768,
-            "steps": 4,
-            "sampler": "euler",
-            "guidance": {
-              "node": "BasicGuider",
-              "cfg": null
+            "at": 1795365333.603113
+          },
+          "generation": {
+            "tool": "built-in ImageGen, prior PR21",
+            "mode": "existing-ai-rear-proposal",
+            "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same adult female resin mechanic: face, dark brown wavy pinned bun and tendrils, head turned to anatomical LEFT, charcoal one-piece rolled sleeve coverall, two chest flap pockets, thigh cargo pockets, knee pads, brass snaps, belt with rectangular brass buckle, burnt orange gloves, brown lace-up work boots. Anatomical RIGHT hand remains ON HIP, anatomical LEFT arm keeps the same cream worn welding helmet with rectangular plum lens cradled at LEFT HIP. Same dark diamond-plate round base with riveted edge and identical stance. No side swaps or moved feet. Straight rear view: anatomical RIGHT hand still on hip, which is VIEWER RIGHT in a rear view. Anatomical LEFT hand still cradles helmet at left hip, VIEWER LEFT. Head still turns toward anatomical LEFT; the face is mostly hidden, only a small left profile may be visible. Same bun silhouette. Proposed rear garment design is a center-back seam, waist belt, two modest rectangular rear patch pockets. No extra tools, pouches, backpack, logos, hair length changes, or new seams beyond this fixed rear design. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted resin collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+            "seed": null,
+            "modelVersion": null,
+            "sourceRecord": {
+              "key": "068-rear",
+              "productKey": "FIGURA-AI-068",
+              "designRevision": "r1",
+              "view": "rear",
+              "prompt": "Use case: identity-preserve, product-mockup. Square studio catalog view of the EXACT SAME miniature physical collectible as the attached approved main reference. Camera moves to a strict 180-degree REAR view, full back to camera, not front, not a mirror. Keep exact sculpt identity, material, proportions, clothing and fixed pose. EXACT same adult female resin mechanic: face, dark brown wavy pinned bun and tendrils, head turned to anatomical LEFT, charcoal one-piece rolled sleeve coverall, two chest flap pockets, thigh cargo pockets, knee pads, brass snaps, belt with rectangular brass buckle, burnt orange gloves, brown lace-up work boots. Anatomical RIGHT hand remains ON HIP, anatomical LEFT arm keeps the same cream worn welding helmet with rectangular plum lens cradled at LEFT HIP. Same dark diamond-plate round base with riveted edge and identical stance. No side swaps or moved feet. Straight rear view: anatomical RIGHT hand still on hip, which is VIEWER RIGHT in a rear view. Anatomical LEFT hand still cradles helmet at left hip, VIEWER LEFT. Head still turns toward anatomical LEFT; the face is mostly hidden, only a small left profile may be visible. Same bun silhouette. Proposed rear garment design is a center-back seam, waist belt, two modest rectangular rear patch pockets. No extra tools, pouches, backpack, logos, hair length changes, or new seams beyond this fixed rear design. All front-only details should be naturally occluded rather than moved onto the back. Use the same realistic painted resin collectible materials, sculpted surfaces, controlled satin paint and miniature scale, not a living character or illustration. Figure including full round plinth occupies ~62 percent of square canvas height, matching the reference's generous full-body framing. Warm off-white seamless #f3f1ed, soft upper-left softbox and right fill, grounded contact shadow, whole figure in sharp focus. Complete base and head with generous margin. No typography, watermarks, extra figures, extra props or packaging. Raster AI concept, not real 3D. Hidden rear design is a proposal for evaluation.",
+              "referenceKeys": [
+                "068-main"
+              ],
+              "crop": [
+                147,
+                120,
+                960,
+                960
+              ],
+              "label": "冷熔鍋爐姊 · 背面提案",
+              "alt": "冷熔鍋爐姊，AI 生成虛構公仔概念圖，背面設計提案，含完整底座",
+              "reviewStatus": "提案／未完成造型定稿",
+              "reviewNote": "持物與叉腰左右保留；新增的背袋、後縫線屬背面提案，未驗證同一幾何模型。",
+              "source": {
+                "localArchive": "work/figure-render-samples/originals/068-rear.png",
+                "sha256": "43eede9674bbb71253b3e75b7bcf389d23f436dad1a91ceb6d6cfcfa3bf8739b",
+                "width": 1254,
+                "height": 1254
+              },
+              "references": [
+                {
+                  "key": "068-main",
+                  "sha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c"
+                }
+              ],
+              "derivatives": [
+                {
+                  "file": "figura-ai-068-r1-rear-320.webp",
+                  "format": "webp",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 7414,
+                  "sha256": "05e47a181377a1191ff6f8a172a39f8246639a5c222c31c4bd560e3cf0c5b285"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-320.avif",
+                  "format": "avif",
+                  "width": 320,
+                  "height": 320,
+                  "bytes": 4573,
+                  "sha256": "3620ee614856563fe57773c362d23dd25235b7f543dbd2357e6677bd25f8acb4"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-640.webp",
+                  "format": "webp",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 23860,
+                  "sha256": "29aa4d6818082c114d01db3a11d84a4225d22971b8265f80e190eea2ae153373"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-640.avif",
+                  "format": "avif",
+                  "width": 640,
+                  "height": 640,
+                  "bytes": 13228,
+                  "sha256": "a23d571f86e8430985726f958e5b3871c440b6d6e8c460a2d12a95d722a19280"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-960.webp",
+                  "format": "webp",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 44864,
+                  "sha256": "a839f59be8c7f67d3895c6f89b181cb8b9f04ed36050e6e2e6282c35bf83aeba"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-960.avif",
+                  "format": "avif",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 22963,
+                  "sha256": "7434858df41d47876d3bfc42069a46e8c071f5da6a5065fe7884693260b690dd"
+                },
+                {
+                  "file": "figura-ai-068-r1-rear-960.jpg",
+                  "format": "jpg",
+                  "width": 960,
+                  "height": 960,
+                  "bytes": 86081,
+                  "sha256": "21affab5f200a556189bbae8f3e1fdd1c483beeb08e07d14415dfe644619c5d9"
+                }
+              ]
             }
+          },
+          "upload": {
+            "status": "acknowledged",
+            "request": {
+              "requestId": "6879ac69-380e-415f-a212-7c0b5df9e991",
+              "expectedVersion": 10,
+              "expectedActorId": 1,
+              "operation": "ADD",
+              "type": "REAR",
+              "alt": "冷熔鍋爐姊，AI 生成示意圖，REAR；非實物攝影"
+            },
+            "sourceSha256": "21affab5f200a556189bbae8f3e1fdd1c483beeb08e07d14415dfe644619c5d9",
+            "imageId": "61ece6e0-3088-4d57-8441-7801103a0c6b",
+            "version": 11,
+            "publicUrl": "/api/catalog/products/b45b215b-7695-4a0e-a527-3fdfb51bd63d/image/61ece6e0-3088-4d57-8441-7801103a0c6b",
+            "servedSha256": "7ca5e42d2c92f51b3a7b1b1398328c2d5729ab81c1875f77d160b29f076b40b0",
+            "verifiedAt": 1795365461.2590985
           }
         },
         "FACE": {
@@ -21613,7 +22331,7 @@
             "version": 4,
             "publicUrl": "/api/catalog/products/b45b215b-7695-4a0e-a527-3fdfb51bd63d/image/195beb3c-5d2f-4b90-9352-d4376a40d386",
             "servedSha256": "f7de9a0fff135bab70cd53cf38c8ef82f4304b53c485a8879da2a001bbb25175",
-            "verifiedAt": 1795137411.3059196
+            "verifiedAt": 1795365461.275401
           },
           "generation": {
             "mode": "crop",
@@ -21675,7 +22393,7 @@
             "version": 5,
             "publicUrl": "/api/catalog/products/b45b215b-7695-4a0e-a527-3fdfb51bd63d/image/0f20ae9c-73f4-4fa0-adac-000f97df8fe8",
             "servedSha256": "9f6e1f07f2e4853ff145a2e2cd8cdc4f4e3fed0e19830d4376222f49b57f339a",
-            "verifiedAt": 1795137411.323687
+            "verifiedAt": 1795365461.288925
           },
           "generation": {
             "mode": "crop",
@@ -21737,7 +22455,7 @@
             "version": 8,
             "publicUrl": "/api/catalog/products/b45b215b-7695-4a0e-a527-3fdfb51bd63d/image/8685830e-acb4-40fd-8174-646dbc0e87f7",
             "servedSha256": "a082a8c0d2067e16826c19acc9d3def14da9eaf4f383617fc2a835ba8c13d9d0",
-            "verifiedAt": 1795137411.3612115
+            "verifiedAt": 1795365461.325311
           },
           "generation": {
             "mode": "scene-composite",
@@ -21873,6 +22591,41 @@
                 "cfg": null
               }
             }
+          },
+          {
+            "status": "reject",
+            "reason": "第二次雖保留持物左右，髮束／髮髻、焊罩塗裝及褲褶仍重設，不能證實同一雕塑。兩次退回，側背圖庫留空。",
+            "runId": "2f029586d7741ec06b044ddff9a0b1d5a5dcc2d69d7d21b61b5e1557a9f12b0b",
+            "sha256": "73739acc6ce95cd9820e6ce65231ec5faef8c5d003035e814457b4a60bd3928d",
+            "sourceSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
+            "path": "work/comfyui-figura/runs/2f029586d7741ec06b044ddff9a0b1d5a5dcc2d69d7d21b61b5e1557a9f12b0b/output.png",
+            "reviewedAt": 1795137407.8749495,
+            "generation": {
+              "mode": "flux-reference",
+              "tool": "local ComfyUI",
+              "promptId": "e380930b-d263-44d4-9b92-0a72d70efda0",
+              "createdAt": "2026-11-20T01:15:22Z",
+              "masterSha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235",
+              "modelHashes": {
+                "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+                "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+                "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+              },
+              "workflowSha256": "c9b3ea74e9ca346eaa455848c8a57918f1376ab9ae0a0fec3e577b557cf5c227",
+              "outputSha256": "73739acc6ce95cd9820e6ce65231ec5faef8c5d003035e814457b4a60bd3928d",
+              "outputBytes": 501721,
+              "authorApproval": "pending",
+              "prompt": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark. Back view at 180 degrees of the same fixed miniature. Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets. Full original base and silhouette, 8 percent safe margins, same catalog studio. No face visible. Do not redesign.",
+              "seed": 2026212068,
+              "width": 768,
+              "height": 768,
+              "steps": 4,
+              "sampler": "euler",
+              "guidance": {
+                "node": "BasicGuider",
+                "cfg": null
+              }
+            }
           }
         ],
         "SCENE": [
@@ -21916,8 +22669,22 @@
       "publicationSession": {
         "originalStatus": "PUBLISHED",
         "beforeVersion": 2,
-        "state": "restored"
-      }
+        "state": "restored",
+        "lastUnpublishVersion": 10
+      },
+      "characterSheetHistory": [
+        {
+          "at": 1795365333.5929742,
+          "reason": "Fix rear proposal from author-accepted PR21 reference before this round",
+          "previous": {
+            "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure dressed in thick charcoal workwear and burnt orange safety gloves with a small ceramic welding mask held on waist, resin base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
+            "material": "hand-painted sculpted resin with small craft detail",
+            "visibleInvariants": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets.",
+            "rearDesign": "Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets.",
+            "rearDesignStatus": "fixed AI proposal; author pending"
+          }
+        }
+      ]
     },
     {
       "productKey": "FIGURA-AI-069",
@@ -21954,10 +22721,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -22153,6 +22918,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -22190,10 +22965,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -22420,6 +23193,14 @@
             },
             "reviewedAt": 1795154244.746237
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -22464,10 +23245,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -22663,6 +23442,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -22700,10 +23489,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -22899,6 +23686,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -22936,10 +23733,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -23135,6 +23930,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -23172,10 +23977,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -23371,6 +24174,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -23408,10 +24221,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -23607,6 +24418,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -23644,10 +24465,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -23874,6 +24693,14 @@
             },
             "reviewedAt": 1795154404.7022574
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -23918,10 +24745,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -24117,6 +24942,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -24154,10 +24989,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -24353,6 +25186,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -24390,10 +25233,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -24589,6 +25430,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -24626,10 +25477,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -24825,6 +25674,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -24862,10 +25721,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -25061,6 +25918,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -25098,10 +25965,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -25297,6 +26162,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -25334,10 +26209,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -25533,6 +26406,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -25570,10 +26453,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -25769,6 +26650,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -25806,10 +26697,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -26047,6 +26936,14 @@
             },
             "reviewedAt": 1795154582.702202
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -26091,10 +26988,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -26303,6 +27198,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -26340,10 +27245,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -26539,6 +27442,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -26576,10 +27489,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -26775,6 +27686,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -26812,10 +27733,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -27011,6 +27930,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -27048,10 +27977,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -27247,6 +28174,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -27284,10 +28221,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -27514,6 +28449,14 @@
             },
             "reviewedAt": 1795154583.4988966
           }
+        ],
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
         ]
       },
       "publicationSession": {
@@ -27558,10 +28501,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -27757,6 +28698,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -27794,10 +28745,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -27993,6 +28942,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -28030,10 +28989,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -28229,6 +29186,16 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
     },
     {
@@ -28266,10 +29233,8 @@
           "authorApproval": "pending"
         },
         "REAR": {
-          "status": "blank",
-          "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
-          "attempted": false,
-          "authorApproval": "pending"
+          "status": "pending",
+          "reason": "New required rear-view policy; fixed character sheet before generation"
         },
         "FACE": {
           "status": "complete",
@@ -28465,33 +29430,1185 @@
         "beforeVersion": 2,
         "state": "restored",
         "lastUnpublishVersion": 3
+      },
+      "attempts": {
+        "REAR": [
+          {
+            "status": "blank",
+            "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+            "attempted": false,
+            "authorApproval": "pending"
+          }
+        ]
       }
-    }
-  ],
-  "excluded": [
+    },
     {
       "id": "b5f17969-8fbf-4e42-9493-aa2968e4f333",
+      "productKey": "ELPSY-001",
       "title": "ELPSY 限定收藏模型",
-      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
-      "evidence": "App 串接驗證用合成收藏品"
+      "initiallyImageLess": true,
+      "sharedDesignKey": "ELPSY-MOSS-SURVEYOR-r1",
+      "sharedDesignEvidence": {
+        "title": "ELPSY 限定收藏模型",
+        "brand": "ELPSY",
+        "category": "公仔",
+        "description": "App 串接驗證用合成收藏品",
+        "work": null,
+        "skus": [
+          {
+            "label": "標準款",
+            "priceTwd": 1280
+          }
+        ]
+      },
+      "master": {
+        "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+        "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+        "imageId": null,
+        "width": 1480,
+        "height": 1480,
+        "format": "PNG",
+        "bytes": 1885363
+      },
+      "characterSheet": {
+        "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+        "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+        "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+        "rearDesignStatus": "fixed before generation, author pending",
+        "material": "fictional satin painted ceramic/PVC miniature"
+      },
+      "slots": {
+        "MAIN": {
+          "status": "pass",
+          "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
+          "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+          "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "externalSource": {
+            "kind": "new-original-master",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "reviewedAgainstMasterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "at": 1795365333.620096,
+            "generation": {
+              "tool": "built-in imagegen",
+              "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+              "seed": null,
+              "modelVersion": null,
+              "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+              "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+              "authorApproval": "pending"
+            },
+            "padding": {
+              "sourceSha256": "56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852",
+              "workflow": {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                  }
+                },
+                "2": {
+                  "class_type": "EmptyImage",
+                  "inputs": {
+                    "width": 1480,
+                    "height": 1480,
+                    "batch_size": 1,
+                    "color": 15987181
+                  }
+                },
+                "3": {
+                  "class_type": "ImageCompositeMasked",
+                  "inputs": {
+                    "destination": [
+                      "2",
+                      0
+                    ],
+                    "source": [
+                      "1",
+                      0
+                    ],
+                    "x": 113,
+                    "y": 113,
+                    "resize_source": false,
+                    "mask": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "4": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "3",
+                      0
+                    ],
+                    "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                  }
+                },
+                "5": {
+                  "class_type": "SolidMask",
+                  "inputs": {
+                    "value": 1.0,
+                    "width": 1254,
+                    "height": 1254
+                  }
+                },
+                "6": {
+                  "class_type": "FeatherMask",
+                  "inputs": {
+                    "mask": [
+                      "5",
+                      0
+                    ],
+                    "left": 32,
+                    "top": 32,
+                    "right": 32,
+                    "bottom": 32
+                  }
+                }
+              },
+              "operation": "113px canvas; blend only 32px original background border, clear of figure; no stretching or foreground repainting",
+              "status": "complete",
+              "promptId": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+              "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+              "history": {
+                "prompt": [
+                  1,
+                  "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                  {
+                    "1": {
+                      "class_type": "LoadImage",
+                      "inputs": {
+                        "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                      }
+                    },
+                    "2": {
+                      "class_type": "EmptyImage",
+                      "inputs": {
+                        "width": 1480,
+                        "height": 1480,
+                        "batch_size": 1,
+                        "color": 15987181
+                      }
+                    },
+                    "3": {
+                      "class_type": "ImageCompositeMasked",
+                      "inputs": {
+                        "destination": [
+                          "2",
+                          0
+                        ],
+                        "source": [
+                          "1",
+                          0
+                        ],
+                        "x": 113,
+                        "y": 113,
+                        "resize_source": false,
+                        "mask": [
+                          "6",
+                          0
+                        ]
+                      }
+                    },
+                    "4": {
+                      "class_type": "SaveImage",
+                      "inputs": {
+                        "images": [
+                          "3",
+                          0
+                        ],
+                        "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                      }
+                    },
+                    "5": {
+                      "class_type": "SolidMask",
+                      "inputs": {
+                        "value": 1.0,
+                        "width": 1254,
+                        "height": 1254
+                      }
+                    },
+                    "6": {
+                      "class_type": "FeatherMask",
+                      "inputs": {
+                        "mask": [
+                          "5",
+                          0
+                        ],
+                        "left": 32,
+                        "top": 32,
+                        "right": 32,
+                        "bottom": 32
+                      }
+                    }
+                  },
+                  {
+                    "create_time": 1795365276664
+                  },
+                  [
+                    "4"
+                  ]
+                ],
+                "outputs": {
+                  "4": {
+                    "images": [
+                      {
+                        "filename": "elpsy-master-margins-20261123-blended_00001_.png",
+                        "subfolder": "figura",
+                        "type": "output"
+                      }
+                    ]
+                  }
+                },
+                "status": {
+                  "status_str": "success",
+                  "completed": true,
+                  "messages": [
+                    [
+                      "execution_start",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276666
+                      }
+                    ],
+                    [
+                      "execution_cached",
+                      {
+                        "nodes": [],
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276671
+                      }
+                    ],
+                    [
+                      "execution_success",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365277000
+                      }
+                    ]
+                  ]
+                },
+                "meta": {
+                  "4": {
+                    "node_id": "4",
+                    "display_node": "4",
+                    "parent_node": null,
+                    "real_node_id": "4"
+                  }
+                }
+              }
+            }
+          },
+          "generation": {
+            "tool": "built-in imagegen",
+            "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+            "seed": null,
+            "modelVersion": null,
+            "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+            "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+            "authorApproval": "pending"
+          }
+        },
+        "ANGLE": {
+          "status": "blank",
+          "reason": "本輪選擇性，優先完成必要 REAR"
+        },
+        "REAR": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "FACE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "DETAIL": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "SCENE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        }
+      }
     },
     {
       "id": "1adcd535-d094-4585-84e8-aa385f949653",
+      "productKey": "ELPSY-002",
       "title": "ELPSY 限定收藏模型",
-      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
-      "evidence": "App 串接驗證用合成收藏品"
+      "initiallyImageLess": true,
+      "sharedDesignKey": "ELPSY-MOSS-SURVEYOR-r1",
+      "sharedDesignEvidence": {
+        "title": "ELPSY 限定收藏模型",
+        "brand": "ELPSY",
+        "category": "公仔",
+        "description": "App 串接驗證用合成收藏品",
+        "work": null,
+        "skus": [
+          {
+            "label": "標準款",
+            "priceTwd": 1280
+          }
+        ]
+      },
+      "master": {
+        "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+        "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+        "imageId": null,
+        "width": 1480,
+        "height": 1480,
+        "format": "PNG",
+        "bytes": 1885363
+      },
+      "characterSheet": {
+        "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+        "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+        "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+        "rearDesignStatus": "fixed before generation, author pending",
+        "material": "fictional satin painted ceramic/PVC miniature"
+      },
+      "slots": {
+        "MAIN": {
+          "status": "pass",
+          "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
+          "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+          "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "externalSource": {
+            "kind": "new-original-master",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "reviewedAgainstMasterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "at": 1795365333.6201947,
+            "generation": {
+              "tool": "built-in imagegen",
+              "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+              "seed": null,
+              "modelVersion": null,
+              "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+              "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+              "authorApproval": "pending"
+            },
+            "padding": {
+              "sourceSha256": "56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852",
+              "workflow": {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                  }
+                },
+                "2": {
+                  "class_type": "EmptyImage",
+                  "inputs": {
+                    "width": 1480,
+                    "height": 1480,
+                    "batch_size": 1,
+                    "color": 15987181
+                  }
+                },
+                "3": {
+                  "class_type": "ImageCompositeMasked",
+                  "inputs": {
+                    "destination": [
+                      "2",
+                      0
+                    ],
+                    "source": [
+                      "1",
+                      0
+                    ],
+                    "x": 113,
+                    "y": 113,
+                    "resize_source": false,
+                    "mask": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "4": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "3",
+                      0
+                    ],
+                    "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                  }
+                },
+                "5": {
+                  "class_type": "SolidMask",
+                  "inputs": {
+                    "value": 1.0,
+                    "width": 1254,
+                    "height": 1254
+                  }
+                },
+                "6": {
+                  "class_type": "FeatherMask",
+                  "inputs": {
+                    "mask": [
+                      "5",
+                      0
+                    ],
+                    "left": 32,
+                    "top": 32,
+                    "right": 32,
+                    "bottom": 32
+                  }
+                }
+              },
+              "operation": "113px canvas; blend only 32px original background border, clear of figure; no stretching or foreground repainting",
+              "status": "complete",
+              "promptId": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+              "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+              "history": {
+                "prompt": [
+                  1,
+                  "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                  {
+                    "1": {
+                      "class_type": "LoadImage",
+                      "inputs": {
+                        "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                      }
+                    },
+                    "2": {
+                      "class_type": "EmptyImage",
+                      "inputs": {
+                        "width": 1480,
+                        "height": 1480,
+                        "batch_size": 1,
+                        "color": 15987181
+                      }
+                    },
+                    "3": {
+                      "class_type": "ImageCompositeMasked",
+                      "inputs": {
+                        "destination": [
+                          "2",
+                          0
+                        ],
+                        "source": [
+                          "1",
+                          0
+                        ],
+                        "x": 113,
+                        "y": 113,
+                        "resize_source": false,
+                        "mask": [
+                          "6",
+                          0
+                        ]
+                      }
+                    },
+                    "4": {
+                      "class_type": "SaveImage",
+                      "inputs": {
+                        "images": [
+                          "3",
+                          0
+                        ],
+                        "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                      }
+                    },
+                    "5": {
+                      "class_type": "SolidMask",
+                      "inputs": {
+                        "value": 1.0,
+                        "width": 1254,
+                        "height": 1254
+                      }
+                    },
+                    "6": {
+                      "class_type": "FeatherMask",
+                      "inputs": {
+                        "mask": [
+                          "5",
+                          0
+                        ],
+                        "left": 32,
+                        "top": 32,
+                        "right": 32,
+                        "bottom": 32
+                      }
+                    }
+                  },
+                  {
+                    "create_time": 1795365276664
+                  },
+                  [
+                    "4"
+                  ]
+                ],
+                "outputs": {
+                  "4": {
+                    "images": [
+                      {
+                        "filename": "elpsy-master-margins-20261123-blended_00001_.png",
+                        "subfolder": "figura",
+                        "type": "output"
+                      }
+                    ]
+                  }
+                },
+                "status": {
+                  "status_str": "success",
+                  "completed": true,
+                  "messages": [
+                    [
+                      "execution_start",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276666
+                      }
+                    ],
+                    [
+                      "execution_cached",
+                      {
+                        "nodes": [],
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276671
+                      }
+                    ],
+                    [
+                      "execution_success",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365277000
+                      }
+                    ]
+                  ]
+                },
+                "meta": {
+                  "4": {
+                    "node_id": "4",
+                    "display_node": "4",
+                    "parent_node": null,
+                    "real_node_id": "4"
+                  }
+                }
+              }
+            }
+          },
+          "generation": {
+            "tool": "built-in imagegen",
+            "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+            "seed": null,
+            "modelVersion": null,
+            "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+            "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+            "authorApproval": "pending"
+          }
+        },
+        "ANGLE": {
+          "status": "blank",
+          "reason": "本輪選擇性，優先完成必要 REAR"
+        },
+        "REAR": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "FACE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "DETAIL": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "SCENE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        }
+      }
     },
     {
       "id": "cd2aeb7f-d8b5-4848-89fe-82bb69683d9c",
+      "productKey": "ELPSY-003",
       "title": "ELPSY 限定收藏模型",
-      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
-      "evidence": "App 串接驗證用合成收藏品"
+      "initiallyImageLess": true,
+      "sharedDesignKey": "ELPSY-MOSS-SURVEYOR-r1",
+      "sharedDesignEvidence": {
+        "title": "ELPSY 限定收藏模型",
+        "brand": "ELPSY",
+        "category": "公仔",
+        "description": "App 串接驗證用合成收藏品",
+        "work": null,
+        "skus": [
+          {
+            "label": "標準款",
+            "priceTwd": 1280
+          }
+        ]
+      },
+      "master": {
+        "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+        "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+        "imageId": null,
+        "width": 1480,
+        "height": 1480,
+        "format": "PNG",
+        "bytes": 1885363
+      },
+      "characterSheet": {
+        "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+        "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+        "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+        "rearDesignStatus": "fixed before generation, author pending",
+        "material": "fictional satin painted ceramic/PVC miniature"
+      },
+      "slots": {
+        "MAIN": {
+          "status": "pass",
+          "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
+          "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+          "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "externalSource": {
+            "kind": "new-original-master",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "reviewedAgainstMasterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "at": 1795365333.6202612,
+            "generation": {
+              "tool": "built-in imagegen",
+              "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+              "seed": null,
+              "modelVersion": null,
+              "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+              "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+              "authorApproval": "pending"
+            },
+            "padding": {
+              "sourceSha256": "56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852",
+              "workflow": {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                  }
+                },
+                "2": {
+                  "class_type": "EmptyImage",
+                  "inputs": {
+                    "width": 1480,
+                    "height": 1480,
+                    "batch_size": 1,
+                    "color": 15987181
+                  }
+                },
+                "3": {
+                  "class_type": "ImageCompositeMasked",
+                  "inputs": {
+                    "destination": [
+                      "2",
+                      0
+                    ],
+                    "source": [
+                      "1",
+                      0
+                    ],
+                    "x": 113,
+                    "y": 113,
+                    "resize_source": false,
+                    "mask": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "4": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "3",
+                      0
+                    ],
+                    "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                  }
+                },
+                "5": {
+                  "class_type": "SolidMask",
+                  "inputs": {
+                    "value": 1.0,
+                    "width": 1254,
+                    "height": 1254
+                  }
+                },
+                "6": {
+                  "class_type": "FeatherMask",
+                  "inputs": {
+                    "mask": [
+                      "5",
+                      0
+                    ],
+                    "left": 32,
+                    "top": 32,
+                    "right": 32,
+                    "bottom": 32
+                  }
+                }
+              },
+              "operation": "113px canvas; blend only 32px original background border, clear of figure; no stretching or foreground repainting",
+              "status": "complete",
+              "promptId": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+              "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+              "history": {
+                "prompt": [
+                  1,
+                  "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                  {
+                    "1": {
+                      "class_type": "LoadImage",
+                      "inputs": {
+                        "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                      }
+                    },
+                    "2": {
+                      "class_type": "EmptyImage",
+                      "inputs": {
+                        "width": 1480,
+                        "height": 1480,
+                        "batch_size": 1,
+                        "color": 15987181
+                      }
+                    },
+                    "3": {
+                      "class_type": "ImageCompositeMasked",
+                      "inputs": {
+                        "destination": [
+                          "2",
+                          0
+                        ],
+                        "source": [
+                          "1",
+                          0
+                        ],
+                        "x": 113,
+                        "y": 113,
+                        "resize_source": false,
+                        "mask": [
+                          "6",
+                          0
+                        ]
+                      }
+                    },
+                    "4": {
+                      "class_type": "SaveImage",
+                      "inputs": {
+                        "images": [
+                          "3",
+                          0
+                        ],
+                        "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                      }
+                    },
+                    "5": {
+                      "class_type": "SolidMask",
+                      "inputs": {
+                        "value": 1.0,
+                        "width": 1254,
+                        "height": 1254
+                      }
+                    },
+                    "6": {
+                      "class_type": "FeatherMask",
+                      "inputs": {
+                        "mask": [
+                          "5",
+                          0
+                        ],
+                        "left": 32,
+                        "top": 32,
+                        "right": 32,
+                        "bottom": 32
+                      }
+                    }
+                  },
+                  {
+                    "create_time": 1795365276664
+                  },
+                  [
+                    "4"
+                  ]
+                ],
+                "outputs": {
+                  "4": {
+                    "images": [
+                      {
+                        "filename": "elpsy-master-margins-20261123-blended_00001_.png",
+                        "subfolder": "figura",
+                        "type": "output"
+                      }
+                    ]
+                  }
+                },
+                "status": {
+                  "status_str": "success",
+                  "completed": true,
+                  "messages": [
+                    [
+                      "execution_start",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276666
+                      }
+                    ],
+                    [
+                      "execution_cached",
+                      {
+                        "nodes": [],
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276671
+                      }
+                    ],
+                    [
+                      "execution_success",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365277000
+                      }
+                    ]
+                  ]
+                },
+                "meta": {
+                  "4": {
+                    "node_id": "4",
+                    "display_node": "4",
+                    "parent_node": null,
+                    "real_node_id": "4"
+                  }
+                }
+              }
+            }
+          },
+          "generation": {
+            "tool": "built-in imagegen",
+            "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+            "seed": null,
+            "modelVersion": null,
+            "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+            "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+            "authorApproval": "pending"
+          }
+        },
+        "ANGLE": {
+          "status": "blank",
+          "reason": "本輪選擇性，優先完成必要 REAR"
+        },
+        "REAR": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "FACE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "DETAIL": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "SCENE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        }
+      }
     },
     {
       "id": "f81f1bbc-74e5-4669-a580-1c77b3911d8a",
+      "productKey": "ELPSY-004",
       "title": "ELPSY 限定收藏模型",
-      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
-      "evidence": "App 串接驗證用合成收藏品"
+      "initiallyImageLess": true,
+      "sharedDesignKey": "ELPSY-MOSS-SURVEYOR-r1",
+      "sharedDesignEvidence": {
+        "title": "ELPSY 限定收藏模型",
+        "brand": "ELPSY",
+        "category": "公仔",
+        "description": "App 串接驗證用合成收藏品",
+        "work": null,
+        "skus": [
+          {
+            "label": "標準款",
+            "priceTwd": 1280
+          }
+        ]
+      },
+      "master": {
+        "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+        "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+        "imageId": null,
+        "width": 1480,
+        "height": 1480,
+        "format": "PNG",
+        "bytes": 1885363
+      },
+      "characterSheet": {
+        "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+        "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+        "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+        "rearDesignStatus": "fixed before generation, author pending",
+        "material": "fictional satin painted ceramic/PVC miniature"
+      },
+      "slots": {
+        "MAIN": {
+          "status": "pass",
+          "reason": "原創苔石量測員，已檢查頭部、左右配件、材質、全底座與安全留白；作者 pending。",
+          "path": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+          "sha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+          "externalSource": {
+            "kind": "new-original-master",
+            "decision": "pass",
+            "reviewPolicy": "rear-2026-11-23",
+            "reviewedAgainstMasterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+            "at": 1795365333.6203258,
+            "generation": {
+              "tool": "built-in imagegen",
+              "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+              "seed": null,
+              "modelVersion": null,
+              "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+              "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+              "authorApproval": "pending"
+            },
+            "padding": {
+              "sourceSha256": "56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852",
+              "workflow": {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                  }
+                },
+                "2": {
+                  "class_type": "EmptyImage",
+                  "inputs": {
+                    "width": 1480,
+                    "height": 1480,
+                    "batch_size": 1,
+                    "color": 15987181
+                  }
+                },
+                "3": {
+                  "class_type": "ImageCompositeMasked",
+                  "inputs": {
+                    "destination": [
+                      "2",
+                      0
+                    ],
+                    "source": [
+                      "1",
+                      0
+                    ],
+                    "x": 113,
+                    "y": 113,
+                    "resize_source": false,
+                    "mask": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "4": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "3",
+                      0
+                    ],
+                    "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                  }
+                },
+                "5": {
+                  "class_type": "SolidMask",
+                  "inputs": {
+                    "value": 1.0,
+                    "width": 1254,
+                    "height": 1254
+                  }
+                },
+                "6": {
+                  "class_type": "FeatherMask",
+                  "inputs": {
+                    "mask": [
+                      "5",
+                      0
+                    ],
+                    "left": 32,
+                    "top": 32,
+                    "right": 32,
+                    "bottom": 32
+                  }
+                }
+              },
+              "operation": "113px canvas; blend only 32px original background border, clear of figure; no stretching or foreground repainting",
+              "status": "complete",
+              "promptId": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+              "outputSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+              "history": {
+                "prompt": [
+                  1,
+                  "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                  {
+                    "1": {
+                      "class_type": "LoadImage",
+                      "inputs": {
+                        "image": "figura-56441fda3d634a6feae40442679ab797d66de13a34312e3c9166cb739ad81852.png"
+                      }
+                    },
+                    "2": {
+                      "class_type": "EmptyImage",
+                      "inputs": {
+                        "width": 1480,
+                        "height": 1480,
+                        "batch_size": 1,
+                        "color": 15987181
+                      }
+                    },
+                    "3": {
+                      "class_type": "ImageCompositeMasked",
+                      "inputs": {
+                        "destination": [
+                          "2",
+                          0
+                        ],
+                        "source": [
+                          "1",
+                          0
+                        ],
+                        "x": 113,
+                        "y": 113,
+                        "resize_source": false,
+                        "mask": [
+                          "6",
+                          0
+                        ]
+                      }
+                    },
+                    "4": {
+                      "class_type": "SaveImage",
+                      "inputs": {
+                        "images": [
+                          "3",
+                          0
+                        ],
+                        "filename_prefix": "figura/elpsy-master-margins-20261123-blended"
+                      }
+                    },
+                    "5": {
+                      "class_type": "SolidMask",
+                      "inputs": {
+                        "value": 1.0,
+                        "width": 1254,
+                        "height": 1254
+                      }
+                    },
+                    "6": {
+                      "class_type": "FeatherMask",
+                      "inputs": {
+                        "mask": [
+                          "5",
+                          0
+                        ],
+                        "left": 32,
+                        "top": 32,
+                        "right": 32,
+                        "bottom": 32
+                      }
+                    }
+                  },
+                  {
+                    "create_time": 1795365276664
+                  },
+                  [
+                    "4"
+                  ]
+                ],
+                "outputs": {
+                  "4": {
+                    "images": [
+                      {
+                        "filename": "elpsy-master-margins-20261123-blended_00001_.png",
+                        "subfolder": "figura",
+                        "type": "output"
+                      }
+                    ]
+                  }
+                },
+                "status": {
+                  "status_str": "success",
+                  "completed": true,
+                  "messages": [
+                    [
+                      "execution_start",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276666
+                      }
+                    ],
+                    [
+                      "execution_cached",
+                      {
+                        "nodes": [],
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365276671
+                      }
+                    ],
+                    [
+                      "execution_success",
+                      {
+                        "prompt_id": "214710a0-6fb6-41a3-8f5b-0c7c08cf1b64",
+                        "timestamp": 1795365277000
+                      }
+                    ]
+                  ]
+                },
+                "meta": {
+                  "4": {
+                    "node_id": "4",
+                    "display_node": "4",
+                    "parent_node": null,
+                    "real_node_id": "4"
+                  }
+                }
+              }
+            }
+          },
+          "generation": {
+            "tool": "built-in imagegen",
+            "prompt": "Use case: product-mockup. Create ONE premium original miniature collectible studio catalog MASTER image, square 1:1. An original little ceramic moss surveyor robot: rounded-cube ivory head with a deep teal rounded-rectangular face visor and two simple amber oval eyes. Short stocky proportions, moss-green sculpted coat with one small copper front clasp, cream mitten hands; its anatomical LEFT mitten rests on one ochre leather satchel at its anatomical LEFT hip, strap runs from anatomical RIGHT shoulder to left hip. Anatomical RIGHT arm relaxed downward. Two chunky brown cuffed boots, on a low pale-apricot ROUNDED-SQUARE plinth. No other accessories or decorations. Painted satin ceramic/PVC toy surfaces, tiny sculpted seams, precise paint boundaries, unmistakably a solid designer figurine rather than live subject or illustration. Front three-quarter view, whole figure and entire base, centered occupying about 78–82% of square height, at least 8% clear margins above and below. Warm off-white seamless studio #f3f1ed, softbox upper left, right fill, crisp full subject focus, grounded shadow. Entirely original fictional character, no recognizable franchises, brands, lettering, logos, price, watermark or packaging. This is a flat AI concept illustration of a collectible, no real 3D asset. Render only one finished picture without any layout labels.",
+            "seed": null,
+            "modelVersion": null,
+            "outputPath": "work/catalog-gallery/rear-20261123/elpsy-master.png",
+            "outputHint": "Generated images are saved to C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214 as C:\\Users\\zeror\\.codex\\generated_images\\01a1f672-2915-7711-825a-9991699a6214\\exec-b95b211c-2917-4f9d-b8bb-79ad57dc4b4a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+            "authorApproval": "pending"
+          }
+        },
+        "ANGLE": {
+          "status": "blank",
+          "reason": "本輪選擇性，優先完成必要 REAR"
+        },
+        "REAR": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "FACE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "DETAIL": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        },
+        "SCENE": {
+          "status": "pending",
+          "reason": "新增主圖後補圖"
+        }
+      }
     }
   ],
   "batches": [
@@ -28668,7 +30785,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": 1795154691.9512904,
+  "updatedAt": "2026-11-22T16:37:41Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -28811,10 +30928,14 @@
       "FIGURA-AI-094",
       "FIGURA-AI-095"
     ],
-    "scope": "local 2D only; unsupported new-angle slots remain empty; no false failure claims"
+    "scope": "local 2D only; unsupported new-angle slots remain empty; no false failure claims",
+    "appliesTo": [
+      "ANGLE"
+    ],
+    "rearSupersededBy": "rear-2026-11-23"
   },
   "processedAt": 1795155014.4223838,
-  "processingStatus": "finished_with_policy_empty_angles",
+  "processingStatus": "rear-completion-in-progress",
   "interruptionNotes": [
     "User reported usage-quota interruption; resumed from saved batch 7. Pause duration was not measured; wall time includes waiting."
   ],
@@ -28856,5 +30977,188 @@
       "errors": 0
     },
     "authorApproval": "pending"
-  }
+  },
+  "policyHistory": [
+    {
+      "decidedAt": 1795142735.232099,
+      "reason": "本輪流程無法可靠生成同一雕塑的新角度：33 款側／背各重試後均有身份漂移，3 款官方 Base 試驗亦退回。依允許留空規則，本款未再產候選，保留空位；不是本款已實測失敗。後續需新的有效一致性方法及作者評估。",
+      "evidenceProducts": [
+        "FIGURA-AI-001",
+        "FIGURA-AI-002",
+        "FIGURA-AI-003",
+        "FIGURA-AI-004",
+        "FIGURA-AI-005",
+        "FIGURA-AI-006",
+        "FIGURA-AI-007",
+        "FIGURA-AI-008",
+        "FIGURA-AI-009",
+        "FIGURA-AI-010",
+        "FIGURA-AI-011",
+        "FIGURA-AI-012",
+        "FIGURA-AI-013",
+        "FIGURA-AI-014",
+        "FIGURA-AI-015",
+        "FIGURA-AI-016",
+        "FIGURA-AI-017",
+        "FIGURA-AI-018",
+        "FIGURA-AI-019",
+        "FIGURA-AI-020",
+        "FIGURA-AI-021",
+        "FIGURA-AI-022",
+        "FIGURA-AI-023",
+        "FIGURA-AI-024",
+        "FIGURA-AI-025",
+        "FIGURA-AI-026",
+        "FIGURA-AI-027",
+        "FIGURA-AI-028",
+        "FIGURA-AI-029",
+        "FIGURA-AI-030",
+        "FIGURA-AI-031",
+        "FIGURA-AI-032",
+        "FIGURA-AI-068"
+      ],
+      "additionalBaseTrials": [
+        "FIGURA-AI-001",
+        "FIGURA-AI-002",
+        "FIGURA-AI-068"
+      ],
+      "unattemptedProducts": [
+        "FIGURA-AI-036",
+        "FIGURA-AI-037",
+        "FIGURA-AI-038",
+        "FIGURA-AI-039",
+        "FIGURA-AI-040",
+        "FIGURA-AI-041",
+        "FIGURA-AI-042",
+        "FIGURA-AI-043",
+        "FIGURA-AI-044",
+        "FIGURA-AI-045",
+        "FIGURA-AI-046",
+        "FIGURA-AI-047",
+        "FIGURA-AI-048",
+        "FIGURA-AI-049",
+        "FIGURA-AI-050",
+        "FIGURA-AI-051",
+        "FIGURA-AI-052",
+        "FIGURA-AI-053",
+        "FIGURA-AI-054",
+        "FIGURA-AI-055",
+        "FIGURA-AI-056",
+        "FIGURA-AI-057",
+        "FIGURA-AI-058",
+        "FIGURA-AI-059",
+        "FIGURA-AI-060",
+        "FIGURA-AI-061",
+        "FIGURA-AI-062",
+        "FIGURA-AI-063",
+        "FIGURA-AI-064",
+        "FIGURA-AI-065",
+        "FIGURA-AI-066",
+        "FIGURA-AI-067",
+        "FIGURA-AI-069",
+        "FIGURA-AI-070",
+        "FIGURA-AI-071",
+        "FIGURA-AI-072",
+        "FIGURA-AI-073",
+        "FIGURA-AI-074",
+        "FIGURA-AI-075",
+        "FIGURA-AI-076",
+        "FIGURA-AI-077",
+        "FIGURA-AI-078",
+        "FIGURA-AI-079",
+        "FIGURA-AI-080",
+        "FIGURA-AI-081",
+        "FIGURA-AI-082",
+        "FIGURA-AI-083",
+        "FIGURA-AI-084",
+        "FIGURA-AI-085",
+        "FIGURA-AI-086",
+        "FIGURA-AI-087",
+        "FIGURA-AI-088",
+        "FIGURA-AI-089",
+        "FIGURA-AI-090",
+        "FIGURA-AI-091",
+        "FIGURA-AI-092",
+        "FIGURA-AI-093",
+        "FIGURA-AI-094",
+        "FIGURA-AI-095"
+      ],
+      "scope": "local 2D only; unsupported new-angle slots remain empty; no false failure claims"
+    }
+  ],
+  "rearCompletion20261123": {
+    "startedAt": 1795365333.5928001,
+    "policy": "rear-2026-11-23",
+    "criteria": "Clear rear view approximately 135–180 degrees, visible back/posterior head/base rear. Recognizably same silhouette/proportions, main palette, head/hair, anatomical accessory sides, base shape/color. Small sculpt/paint details may differ. Fixed recorded rear design only. Author pending.",
+    "required": "REAR for all published products; MAIN FACE DETAIL SCENE REAR for initially image-less products",
+    "pilot": [
+      "FIGURA-AI-001",
+      "FIGURA-AI-068",
+      "FIGURA-AI-003"
+    ],
+    "batches": [
+      {
+        "name": "pilot",
+        "keys": [
+          "FIGURA-AI-001",
+          "FIGURA-AI-003",
+          "FIGURA-AI-068"
+        ],
+        "at": 1795365461.482232,
+        "authorApproval": "pending"
+      }
+    ],
+    "authorApproval": "pending",
+    "delivery": "local commits only; user handles push/PR",
+    "imageLessDesignDecision": {
+      "sharedDesignKey": "ELPSY-MOSS-SURVEYOR-r1",
+      "reason": "All four published ELPSY records have identical title, brand, category, description, work=null, standard SKU and TWD1280 price; only product/SKU UUID differ.",
+      "signature": {
+        "title": "ELPSY 限定收藏模型",
+        "brand": "ELPSY",
+        "category": "公仔",
+        "description": "App 串接驗證用合成收藏品",
+        "work": null,
+        "skus": [
+          {
+            "label": "標準款",
+            "priceTwd": 1280
+          }
+        ]
+      },
+      "productIds": [
+        "b5f17969-8fbf-4e42-9493-aa2968e4f333",
+        "1adcd535-d094-4585-84e8-aa385f949653",
+        "cd2aeb7f-d8b5-4848-89fe-82bb69683d9c",
+        "f81f1bbc-74e5-4669-a580-1c77b3911d8a"
+      ]
+    }
+  },
+  "priorExcluded": [
+    {
+      "id": "b5f17969-8fbf-4e42-9493-aa2968e4f333",
+      "title": "ELPSY 限定收藏模型",
+      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
+      "evidence": "App 串接驗證用合成收藏品"
+    },
+    {
+      "id": "1adcd535-d094-4585-84e8-aa385f949653",
+      "title": "ELPSY 限定收藏模型",
+      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
+      "evidence": "App 串接驗證用合成收藏品"
+    },
+    {
+      "id": "cd2aeb7f-d8b5-4848-89fe-82bb69683d9c",
+      "title": "ELPSY 限定收藏模型",
+      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
+      "evidence": "App 串接驗證用合成收藏品"
+    },
+    {
+      "id": "f81f1bbc-74e5-4669-a580-1c77b3911d8a",
+      "title": "ELPSY 限定收藏模型",
+      "reason": "合成驗收／串接測試資料；不屬於原創 AI 虛構商品目錄",
+      "evidence": "App 串接驗證用合成收藏品"
+    }
+  ],
+  "excluded": []
 }

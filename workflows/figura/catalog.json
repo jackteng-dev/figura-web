@@ -13,7 +13,7 @@
       "sourceBrief": "Use case: product-mockup. Asset type: square e-commerce cover photo for one fictional collectible figure. Create an original designer-art toy called a moon orchard courier: a small friendly pear-shaped ivory ceramic robot with a plum-colored crescent visor, a short mint satchel, tiny clay boots and a pale apricot round plinth, standing in a three-quarter pose. Show exactly one complete physical vinyl-and-ceramic collectible. Calm muted lilac seamless studio backdrop, soft diffuse catalog lighting, finely painted matte surfaces, crisp contact shadow, professional 70 mm product photography. Center the standing figure with 15 percent margin at every edge and its full base visible. No lettering, logos, packaging, overlays, watermarks or recognizable franchise imagery. Square image.",
       "material": "matte designer vinyl with ceramic finish",
       "visibleInvariants": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth.",
-      "rearDesign": "Continue ivory shell with one simple vertical central rear seam. Mint satchel remains at anatomical right hip; diagonal strap follows left shoulder to right hip. Do not add a rear bag, pocket, buckle or decoration. Preserve flower and leaf branch count and existing boot forms.",
+      "rearDesign": "Plain ivory rear shell with central head/body seam. Mint strap from anatomical left shoulder to right hip satchel. Yellow pear stays left hand. Same crown branch, two leaves and buds, cuffed boots and apricot round plinth.",
       "rearDesignStatus": "fixed AI proposal; author pending"
     },
     "invariants": "Ivory pear-shaped courier robot; plum crescent visor with two pale eyes and smile. Blossom with two buds and two green leaves on the crown. Anatomical LEFT purple-gloved hand holds yellow pear; mint satchel on anatomical RIGHT hip; strap crosses from left shoulder. Gold rectangular strap buckle; crescent and single blossom on bag flap; crescent on belly. Brown cuffed boots. Low apricot round plinth. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark.",
@@ -226,9 +226,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112037,
+        "seed": 20261123037,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue leaf armor and cape around back, same two paired translucent wings attached between shoulder blades. Keep two antennae, left bud and right-knee-down pose. No sword, extra wings or new armor fins; same mossy circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue leaf armor and cape around back, same two paired translucent wings attached between shoulder blades. Keep two antennae, left bud and right-knee-down pose. No sword, extra wings or new armor fins; same mossy circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -286,9 +286,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112049,
+        "seed": 20261123049,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue navy/ivory back panels and exact gold star paint pattern, same orange ears and one segmented tail. Crescent remains at front, no rear pendant or device. Same four paws and ivory/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue navy/ivory back panels and exact gold star paint pattern, same orange ears and one segmented tail. Crescent remains at front, no rear pendant or device. Same four paws and ivory/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -346,9 +346,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112061,
+        "seed": 20261123061,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain ivory back and the same scarf wrap/ends at right side. Stove and single crank stay at front/left, no extra stove, handle or bag. Same seated hindfeet and wooden circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plain ivory back and the same scarf wrap/ends at right side. Stove and single crank stay at front/left, no extra stove, handle or bag. Same seated hindfeet and wooden circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -406,9 +406,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112073,
+        "seed": 20261123073,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory/brass rear plates with plain rivet seams and original burgundy scarf ends. Umbrella remains in left hand with same brass rib count and canopy shape; no second umbrella, bag or extra hand. Same boots and gray rock round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue ivory/brass rear plates with plain rivet seams and original burgundy scarf ends. Umbrella remains in left hand with same brass rib count and canopy shape; no second umbrella, bag or extra hand. Same boots and gray rock round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -466,9 +466,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112085,
+        "seed": 20261123085,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue lavender/cream back and the same striped curled tail, apron waist bow and ivory straps. One mint hexagonal box stays in front; no extra package or ornaments. Same cream round base and planted purple feet. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue lavender/cream back and the same striped curled tail, apron waist bow and ivory straps. One mint hexagonal box stays in front; no extra package or ornaments. Same cream round base and planted purple feet. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -706,9 +706,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112038,
+        "seed": 20261123038,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue translucent pink cap with the same white floral motifs, plain cream back with restrained continuation of existing botanical print. Strap continues from left shoulder to right bag; no additional red cross or bag. Same lavender boots and cork round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue translucent pink cap with the same white floral motifs, plain cream back with restrained continuation of existing botanical print. Strap continues from left shoulder to right bag; no additional red cross or bag. Same lavender boots and cork round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -766,9 +766,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112050,
+        "seed": 20261123050,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered purple cloak with restrained continuation of existing gold constellation lines, same sun clasp attachment and hem. No new insignia, text or rear equipment. Left map and raised-foot stance unchanged; same jagged rock and navy/gold base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue layered purple cloak with restrained continuation of existing gold constellation lines, same sun clasp attachment and hem. No new insignia, text or rear equipment. Left map and raised-foot stance unchanged; same jagged rock and navy/gold base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -826,9 +826,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112062,
+        "seed": 20261123062,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue dark green shirt and plain brown apron back straps with same brass fasteners, no rear pockets or added tools. Keep original two-handed nozzle grip, beret and stance; same pale circular stone base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue dark green shirt and plain brown apron back straps with same brass fasteners, no rear pockets or added tools. Keep original two-handed nozzle grip, beret and stance; same pale circular stone base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -886,9 +886,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112074,
+        "seed": 20261123074,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue dark layered back feathers beneath the same burgundy canister assembly and leather straps. Preserve canister count, gold bands, tail and two red feet; no extra package or wing. Same dark stepped round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue dark layered back feathers beneath the same burgundy canister assembly and leather straps. Preserve canister count, gold bands, tail and two red feet; no extra package or wing. Same dark stepped round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -946,9 +946,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112086,
+        "seed": 20261123086,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue olive dress with same botanical trim and burgundy shawl folds/fringe around back. Same updo, one teapot and one butterfly; no added bag, cup or shawl emblem. Preserve original foot pose and bronze floral round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue olive dress with same botanical trim and burgundy shawl folds/fringe around back. Same updo, one teapot and one butterfly; no added bag, cup or shawl emblem. Preserve original foot pose and bronze floral round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1006,9 +1006,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026212003,
+        "seed": 20261123003,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign. Correction for this retry: Preserve the exact original part count, ornament patterns, foot spacing and fixed pose. Do not create a second tail, leaf, bag, parcel or container. Do not change wing shapes, base outline or painted motifs. Right profile must be 90 degrees; back view must hide the face. Match the current master over any generic expectation."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue navy back and haunches with the same sparse gold flourishes. Tail stays attached at the rear and curves over the lantern; keep the same lantern suspension and silhouette. Back of neck cord is plain orange, no extra pendant or collar. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1298,9 +1298,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112039,
+        "seed": 20261123039,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered sage leaf cape on back with same paired moss antlers. Hands/shears stay in front at left side; no added garden tools, tail ornament or leaf backpack. Same short hoof stance and rough rectangular plinth. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue layered sage leaf cape on back with same paired moss antlers. Hands/shears stay in front at left side; no added garden tools, tail ornament or leaf backpack. Same short hoof stance and rough rectangular plinth. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1358,9 +1358,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112051,
+        "seed": 20261123051,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue navy back with same gold motifs and exactly the original lantern/fixture arrangement, tail and comet ornament. No additional chimney, star or propeller. Preserve support stem and crater/moon-phase circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue navy back with same gold motifs and exactly the original lantern/fixture arrangement, tail and comet ornament. No additional chimney, star or propeller. Preserve support stem and crater/moon-phase circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1418,9 +1418,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112063,
+        "seed": 20261123063,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain quilted ivory vest back and blue mechanical panels, same helmet gear crest and side fittings. Wrench stays in left hand, right gripper stays down; no added tool belt or pack. Same dark gray/gold-riveted round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plain quilted ivory vest back and blue mechanical panels, same helmet gear crest and side fittings. Wrench stays in left hand, right gripper stays down; no added tool belt or pack. Same dark gray/gold-riveted round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1478,9 +1478,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112075,
+        "seed": 20261123075,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue black/gold mechanical rear plates and the same winding key, four paws and fixed head direction. Clock arch remains one original stone arch behind dog, back is plain matching weathered stone with no new clock face or lettering. Same stepped circular gear-rim base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue black/gold mechanical rear plates and the same winding key, four paws and fixed head direction. Clock arch remains one original stone arch behind dog, back is plain matching weathered stone with no new clock face or lettering. Same stepped circular gear-rim base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1538,9 +1538,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112087,
+        "seed": 20261123087,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory rear mechanical plates and plain purple apron tie/hat band, same pink tail and original bent-leg pose. Right whisk and left bucket unchanged, no added utensils or pockets. Same purple round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue ivory rear mechanical plates and plain purple apron tie/hat band, same pink tail and original bent-leg pose. Right whisk and left bucket unchanged, no added utensils or pockets. Same purple round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1778,9 +1778,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112040,
+        "seed": 20261123040,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue the same irregular amber/teal glass-panel lattice across rear shell, identical height and gold seam thickness. Preserve short turtle limbs and existing silhouette; no extra appendage or shell ornament. Same matching circular mosaic base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue the same irregular amber/teal glass-panel lattice across rear shell, identical height and gold seam thickness. Preserve short turtle limbs and existing silhouette; no extra appendage or shell ornament. Same matching circular mosaic base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1838,9 +1838,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112052,
+        "seed": 20261123052,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue silver/brass segmented flank plates around back, same translucent fin count and curled tail-ring geometry. No new scales, gears, eyes or fins. Preserve the one clear acrylic rod and clear circular disk exactly; these must not disappear in compositing. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue silver/brass segmented flank plates around back, same translucent fin count and curled tail-ring geometry. No new scales, gears, eyes or fins. Preserve the one clear acrylic rod and clear circular disk exactly; these must not disappear in compositing. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1898,9 +1898,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112064,
+        "seed": 20261123064,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue layered maroon wing/back feathers and pale gold spots, same one looped tail and scarf wrap. No second tail or new feather crest, same two feet. Original cream/red botanical cylinder base unchanged. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue layered maroon wing/back feathers and pale gold spots, same one looped tail and scarf wrap. No second tail or new feather crest, same two feet. Original cream/red botanical cylinder base unchanged. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -1958,9 +1958,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112076,
+        "seed": 20261123076,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue salmon coat with simple center back seam and same hood/belt, right-hip compass pouch and original strap path. Both hands stay hips; no additional bag, symbols or rear pockets. Same tall boots and ivory stone round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue salmon coat with simple center back seam and same hood/belt, right-hip compass pouch and original strap path. Both hands stay hips; no additional bag, symbols or rear pockets. Same tall boots and ivory stone round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2125,9 +2125,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112088,
+        "seed": 20261123088,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory/green layered rear feathers and same short tail. Bow remains at front, the single clear floral pouch keeps its original attachment; no second pouch or ribbon. Same two orange feet and navy floral circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue ivory/green layered rear feathers and same short tail. Bow remains at front, the single clear floral pouch keeps its original attachment; no second pouch or ribbon. Same two orange feet and navy floral circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2365,9 +2365,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112041,
+        "seed": 20261123041,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue overlapping dark green wing/back feathers and original fern crown. Same neck curve, beak direction, two legs and purple boots; no new plumage, bag or perch. Same mossy dark round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue overlapping dark green wing/back feathers and original fern crown. Same neck curve, beak direction, two legs and purple boots; no new plumage, bag or perch. Same mossy dark round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2425,9 +2425,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112053,
+        "seed": 20261123053,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue olive suit with simple panel seams and same helmet rim/ear fittings. Key remains held across front by both hands; no oxygen tank, backpack or additional keys. Same boots, stance and sandy round bronze-rim base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue olive suit with simple panel seams and same helmet rim/ear fittings. Key remains held across front by both hands; no oxygen tank, backpack or additional keys. Same boots, stance and sandy round bronze-rim base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2485,9 +2485,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112065,
+        "seed": 20261123065,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue thick orange fleece and same short furry tail, paired horns and single copper cross-handle. Preserve all four wrapped lower legs and original stance. No saddle, new hose or additional horns; same brown/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue thick orange fleece and same short furry tail, paired horns and single copper cross-handle. Preserve all four wrapped lower legs and original stance. No saddle, new hose or additional horns; same brown/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2545,9 +2545,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112077,
+        "seed": 20261123077,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange/brown sculpted warts and plain ivory underside, same bell hat contour and restrained continuation of its gold/cream leaf paint. No added hat, flower or appendage; same four feet and teal engraved round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue orange/brown sculpted warts and plain ivory underside, same bell hat contour and restrained continuation of its gold/cream leaf paint. No added hat, flower or appendage; same four feet and teal engraved round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2605,9 +2605,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112089,
+        "seed": 20261123089,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange/brown tabby fur, same gray scarf wrap and ends at right side, original pink paw-tile arrangement above head. No added biscuits, bag or second tail. Same seated paws and lavender-blue round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue orange/brown tabby fur, same gray scarf wrap and ends at right side, original pink paw-tile arrangement above head. No added biscuits, bag or second tail. Same seated paws and lavender-blue round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2845,9 +2845,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112042,
+        "seed": 20261123042,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue sage vest with same gold leaf trim and center split over ivory blouse/trousers. Mushroom stem remains in right hand, left hand extended, same raised foot and cap/gill shapes. No additional parasol or floral props; same mossy rock base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue sage vest with same gold leaf trim and center split over ivory blouse/trousers. Mushroom stem remains in right hand, left hand extended, same raised foot and cap/gill shapes. No additional parasol or floral props; same mossy rock base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2905,9 +2905,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112054,
+        "seed": 20261123054,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue the same transparent triangular shell and internal tube paths around back with plain seams. Preserve gold spiral at front, two ears and existing limb joints; no additional visor, spiral or internal machinery. Same teal/ivory/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue the same transparent triangular shell and internal tube paths around back with plain seams. Preserve gold spiral at front, two ears and existing limb joints; no additional visor, spiral or internal machinery. Same teal/ivory/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -2965,9 +2965,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112066,
+        "seed": 20261123066,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue red/ivory segmented back under the same one saddle pack and rolled blanket, exactly four legs and one thin tail. No additional tank, wheel or blanket. Same rectangular ice-blue base and foot positions. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue red/ivory segmented back under the same one saddle pack and rolled blanket, exactly four legs and one thin tail. No additional tank, wheel or blanket. Same rectangular ice-blue base and foot positions. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3025,9 +3025,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112078,
+        "seed": 20261123078,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue burgundy segmented rear helmet/body plates and same exposed dark joints. Brass belt ring count and placement remain fixed, hands stay relaxed, no backpack or added fittings. Same maroon boots and riveted gray round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue burgundy segmented rear helmet/body plates and same exposed dark joints. Brass belt ring count and placement remain fixed, hands stay relaxed, no backpack or added fittings. Same maroon boots and riveted gray round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3085,9 +3085,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112090,
+        "seed": 20261123090,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue red/brown back feathers and original mechanical leg joints. Strap continues left shoulder to right bag; letter stays single at front, no additional mail or cap ornament. Same cream botanical round base and feet. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue red/brown back feathers and original mechanical leg joints. Strap continues left shoulder to right bag; letter stays single at front, no additional mail or cap ornament. Same cream botanical round base and feet. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3325,9 +3325,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112043,
+        "seed": 20261123043,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue sharp ivory/gray folded facets around back, same copper joints, paired ears and segmented tail curve. Fern remains held in front, no extra plant or bag. Same mossy round base, no smoothed living-animal fur. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue sharp ivory/gray folded facets around back, same copper joints, paired ears and segmented tail curve. Fern remains held in front, no extra plant or bag. Same mossy round base, no smoothed living-animal fur. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3385,9 +3385,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112055,
+        "seed": 20261123055,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plum sculpted fur and sparse existing gold constellation style over back; watch stays at chest, no rear pendant or chain clasp ornament. Same long ears, seated paws/tail and purple/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plum sculpted fur and sparse existing gold constellation style over back; watch stays at chest, no rear pendant or chain clasp ornament. Same long ears, seated paws/tail and purple/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3445,9 +3445,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112067,
+        "seed": 20261123067,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue orange/brown tabby stripes and plain green apron back with same cream straps and waist bow. Copper pot stays in front, no new handle, lid or second pot. Same seated tail and cream fluted round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue orange/brown tabby stripes and plain green apron back with same cream straps and waist bow. Copper pot stays in front, no new handle, lid or second pot. Same seated tail and cream fluted round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3505,9 +3505,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112079,
+        "seed": 20261123079,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory rear wing feathers with the same blue/gold ornamental style, preserve exact wing spread, feather contours and forked tail points. No new support or bird; same planted gold feet and cream/blue cylindrical base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue ivory rear wing feathers with the same blue/gold ornamental style, preserve exact wing spread, feather contours and forked tail points. No new support or bird; same planted gold feet and cream/blue cylindrical base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3565,9 +3565,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112091,
+        "seed": 20261123091,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain mustard apron back ties over ivory blouse and olive trousers, same headband/updo. Keep right hip hand and left cup, no headphones, rear tools or extra pockets. Same cream/terracotta round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plain mustard apron back ties over ivory blouse and olive trousers, same headband/updo. Keep right hip hand and left cup, no headphones, rear tools or extra pockets. Same cream/terracotta round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3904,9 +3904,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112044,
+        "seed": 20261123044,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue terracotta armor panels and existing vine paths around rear with plain pot-like center seam. Same single white lotus and small blossoms, no face, new plant pot or added vines. Same square carved stone altar and fixed stance. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue terracotta armor panels and existing vine paths around rear with plain pot-like center seam. Same single white lotus and small blossoms, no face, new plant pot or added vines. Same square carved stone altar and fixed stance. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3964,9 +3964,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112056,
+        "seed": 20261123056,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ochre cloak's existing folds and restrained botanical edge trim behind seated torso. Same long curls, spyglass and raised-knee pose, no new bag or staff. Keep original circular stone/moss base and all contact points. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue ochre cloak's existing folds and restrained botanical edge trim behind seated torso. Same long curls, spyglass and raised-knee pose, no new bag or staff. Keep original circular stone/moss base and all contact points. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -3991,7 +3991,7 @@
       "sourceBrief": "Use case: product-mockup. Asset type: square storefront cover for one original fictional collectible figure. Subject: an adult figure dressed in thick charcoal workwear and burnt orange safety gloves with a small ceramic welding mask held on waist, resin base. Render it as a single complete physical collectible made of hand-painted sculpted resin with small craft detail; no other figures or loose props. Show full head, limbs and included plinth, centered from a three-quarter eye-level angle with 12 percent breathing room. Use a warm neutral or icy gray seamless studio backdrop, soft catalog photography, realistic material and deliberate paint details, crisp focus and contact shadow. No text, logos, packaging, watermarks, graphic borders or recognizable franchise design. Square composition.",
       "material": "hand-painted sculpted resin with small craft detail",
       "visibleInvariants": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets.",
-      "rearDesign": "Continue plain charcoal rear torso with central seam and same belt, one pocket over each buttock and existing right-thigh utility pocket. No cross-body strap, bag or new harness. Same pinned curly bun, copper coverall hardware and base rivets.",
+      "rearDesign": "Charcoal coverall with central back seam, two small rear trouser patch pockets with copper corner rivets, same belt and thigh pockets. Right hand on right hip; welding mask cradled left arm. Dark curly bun, orange gloves, brown boots and gray riveted round diamond plate base. Based on author-accepted PR21 rear proposal.",
       "rearDesignStatus": "fixed AI proposal; author pending"
     },
     "invariants": "Adult woman mechanic, brown curly pinned hair, head turned to her anatomical LEFT. Charcoal weathered coveralls, two chest pockets, copper buttons and rectangular belt buckle; orange gloves and brown lace boots. Anatomical RIGHT hand on right hip; anatomical LEFT arm cradles cream weathered welding shield with purple rectangular window. Dark circular diamondplate base with side rivets. The attached CURRENT MASTER is the sole sculpt authority. This is a painted physical miniature, no living subject. Keep exact pose, all seams, accessories and surface paint. No mirroring, no writing or watermark.",
@@ -4084,9 +4084,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112080,
+        "seed": 20261123080,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue purple coat folds and restrained existing gold trim over plain ivory collar/back seam. Same teal gloves, single curved clear glass sheet and original grip; no additional panel, book or equipment. Same gear-relief round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue purple coat folds and restrained existing gold trim over plain ivory collar/back seam. Same teal gloves, single curved clear glass sheet and original grip; no additional panel, book or equipment. Same gear-relief round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4144,9 +4144,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112092,
+        "seed": 20261123092,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue sculpted golden back fur and same striped apron with navy waist bow. Rolling pin stays single at front, no extra tools or tongue changes. Same short planted feet and yellow round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue sculpted golden back fur and same striped apron with navy waist bow. Rolling pin stays single at front, no extra tools or tongue changes. Same short planted feet and yellow round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4384,9 +4384,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112045,
+        "seed": 20261123045,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue burgundy cloak folds and same gold border across back, hood intact. No new large emblem or rear device. Left ring instrument and right lowered hand unchanged; same green hexagonal base and foot spacing. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue burgundy cloak folds and same gold border across back, hood intact. No new large emblem or rear device. Left ring instrument and right lowered hand unchanged; same green hexagonal base and foot spacing. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4444,9 +4444,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112057,
+        "seed": 20261123057,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue lavender/ivory rear fuselage with same wing plates and open gold lattice tail, exactly four legs and one head dish. No second dish, propeller or tail wheel. Same ivory/gold sunray round plinth. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue lavender/ivory rear fuselage with same wing plates and open gold lattice tail, exactly four legs and one head dish. No second dish, propeller or tail wheel. Same ivory/gold sunray round plinth. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4504,9 +4504,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112069,
+        "seed": 20261123069,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue dark navy angular rear panels and original icy spine plate, same single curled ice-gear tail/spokes. No additional tail, wing or head fittings. Keep four low-set feet and original dark round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue dark navy angular rear panels and original icy spine plate, same single curled ice-gear tail/spokes. No additional tail, wing or head fittings. Keep four low-set feet and original dark round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4564,9 +4564,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112081,
+        "seed": 20261123081,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue teal rear body/ear plates with same ivory flourishes and gold bands. One saddle/reservoir only, same water level and raised seat back; spout/droplet stay at front. No extra tusk, tank or leg; same gray circular paver base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue teal rear body/ear plates with same ivory flourishes and gold bands. One saddle/reservoir only, same water level and raised seat back; spout/droplet stay at front. No extra tusk, tank or leg; same gray circular paver base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4624,9 +4624,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112093,
+        "seed": 20261123093,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain brown wood-like back and the same lavender scarf wrap/leaf trim, preserve scarf-end count and positions. Spoon remains left, right arm stays lowered; no new spoon or carving. Same two-step wooden round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plain brown wood-like back and the same lavender scarf wrap/leaf trim, preserve scarf-end count and positions. Spoon remains left, right arm stays lowered; no new spoon or carving. Same two-step wooden round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4864,9 +4864,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112046,
+        "seed": 20261123046,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue green frog back and same headphone arch/leaf decals; music player stays in front, cable follows original coil path. No extra player, cup or sound symbols. Same planted feet and botanical circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue green frog back and same headphone arch/leaf decals; music player stays in front, cable follows original coil path. No extra player, cup or sound symbols. Same planted feet and botanical circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4924,9 +4924,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112058,
+        "seed": 20261123058,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue salmon jumpsuit panels and same gray patches, belt and pouch locations. Keep right hip hand and left armillary orb, no backpack or extra tools. Same curly tied hair and purple/gold round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue salmon jumpsuit panels and same gray patches, belt and pouch locations. Keep right hip hand and left armillary orb, no backpack or extra tools. Same curly tied hair and purple/gold round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -4984,9 +4984,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112070,
+        "seed": 20261123070,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue green cap and plain ivory/green robot back panels. Preserve two hands on the one handle, same cart panels/wheels and one teapot/lid/spout. No added parcel, cup or second kettle. Same ivory round base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue green cap and plain ivory/green robot back panels. Preserve two hands on the one handle, same cart panels/wheels and one teapot/lid/spout. No added parcel, cup or second kettle. Same ivory round base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5147,9 +5147,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112082,
+        "seed": 20261123082,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue plain ivory/orange fur and teal cape with same gold wave border, clasp stays at front. Preserve two ears, one book and paw positions; no second book or backpack. Same teal/gold circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue plain ivory/orange fur and teal cape with same gold wave border, clasp stays at front. Preserve two ears, one book and paw positions; no second book or backpack. Same teal/gold circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5207,9 +5207,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112094,
+        "seed": 20261123094,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue ivory back, same paired green horns and leaf collar. Preserve both raised paws, original corn-kernel cradle and curled green husk sides; do not add a tail, leaf or second cradle. Same lavender round base and seated pose. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue ivory back, same paired green horns and leaf collar. Preserve both raised paws, original corn-kernel cradle and curled green husk sides; do not add a tail, leaf or second cradle. Same lavender round base and seated pose. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5447,9 +5447,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112047,
+        "seed": 20261123047,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue cream fur mass and the same single tail wrapping original purple petal. Keep original paw contact points, head direction and petal outline; no additional petals or tails. Same gray/white marble disk base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue cream fur mass and the same single tail wrapping original purple petal. Keep original paw contact points, head direction and petal outline; no additional petals or tails. Same gray/white marble disk base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5619,9 +5619,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112059,
+        "seed": 20261123059,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue teal folded panels and original dark mechanical joints around back, same gold accent marks and one segmented tail. No extra ears, tail or wing plates. Keep four paws and same elongated wavy rock base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue teal folded panels and original dark mechanical joints around back, same gold accent marks and one segmented tail. No extra ears, tail or wing plates. Keep four paws and same elongated wavy rock base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5679,9 +5679,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112071,
+        "seed": 20261123071,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue brown sculpted fur and plain ivory sweater back under the same brown backpack and scarf. Thermos remains single and held at front, right-hip pouch unchanged; no new flask or equipment. Same carved tan circular base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue brown sculpted fur and plain ivory sweater back under the same brown backpack and scarf. Thermos remains single and held at front, right-hip pouch unchanged; no new flask or equipment. Same carved tan circular base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5739,9 +5739,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112083,
+        "seed": 20261123083,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue gray fur/mechanical joints and original brown harness with same shoulder clock guards. Preserve one curled segmented tail and all four roof contact points. No added clock, tool or tail. Same rectangular red tile roof and carved base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue gray fur/mechanical joints and original brown harness with same shoulder clock guards. Preserve one curled segmented tail and all four roof contact points. No added clock, tool or tail. Same rectangular red tile roof and carved base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5799,9 +5799,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112095,
+        "seed": 20261123095,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue golden brown sculpted fur and one curved tail behind. Plate remains one and held at front with the same two gold paws; no additional plate, clothing or ornaments. Same apricot botanical circular base and foot spacing. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue golden brown sculpted fur and one curved tail behind. Plate remains one and held at front with the same two gold paws; no additional plate, clothing or ornaments. Same apricot botanical circular base and foot spacing. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -5979,9 +5979,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112036,
+        "seed": 20261123036,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Rear kiosk is closed teal paneling with the same gold rectangular trim and roof/finial. No new door handle, lettering, rear window or second cat. Cat stays inside original front window with paws on counter; same round brass base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Rear kiosk is closed teal paneling with the same gold rectangular trim and roof/finial. No new door handle, lettering, rear window or second cat. Cat stays inside original front window with paws on counter; same round brass base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -6039,9 +6039,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112048,
+        "seed": 20261123048,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue yellow segmented spotted body and same antennae/spectacle arms. Book stack count, color order, cart wheel/frame geometry and stance stay fixed; no extra books or limbs. Same curled green leaf base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue yellow segmented spotted body and same antennae/spectacle arms. Book stack count, color order, cart wheel/frame geometry and stance stay fixed; no extra books or limbs. Same curled green leaf base. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -6099,9 +6099,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112060,
+        "seed": 20261123060,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue black/gold mane and existing shard placement, same two horns and one amber head disk. Preserve raised hoof, all crystal clusters and tail silhouette; no added halo, horns or crystals. Same jagged veined black rock pedestal. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue black/gold mane and existing shard placement, same two horns and one amber head disk. Preserve raised hoof, all crystal clusters and tail silhouette; no added halo, horns or crystals. Same jagged veined black rock pedestal. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -6159,9 +6159,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112072,
+        "seed": 20261123072,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue mustard overall back with two plain vertical shoulder straps and waist join over ivory blouse. Keep bent pose, same headphone band, right iron and left cloth grip. Original cloth pattern, curved ironing pedestal and shared circular base must all remain; no added furniture. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue mustard overall back with two plain vertical shoulder straps and waist join over ivory blouse. Keep bent pose, same headphone band, right iron and left cloth grip. Original cloth pattern, curved ironing pedestal and shared circular base must all remain; no added furniture. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -6219,9 +6219,9 @@
       },
       "rear": {
         "mode": "flux-reference",
-        "seed": 2026112084,
+        "seed": 20261123084,
         "size": 768,
-        "prompt": "View the same fixed miniature from its BACK at 180 degrees. Continue green/gold scrollwork around back and cream neck tufts with no new emblem. Preserve original antler branches and exact mint-disk count/positions, four hooves and tail. Same oblong stone/gold-vine base, no added vegetation or disks. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Continue green/gold scrollwork around back and cream neck tufts with no new emblem. Preserve original antler branches and exact mint-disk count/positions, four hooves and tail. Same oblong stone/gold-vine base, no added vegetation or disks. Complete figure/base, 8 percent margins, warm off-white studio, no text/watermark."
       },
       "scene": {
         "mode": "scene-composite",
@@ -6256,6 +6256,246 @@
         "seed": 2026112099,
         "size": 960,
         "prompt": "Remove the entire toy, figure, accessories, plinth, base and all product shadows from the reference. Show an EMPTY walnut collector cabinet shelf. Uniform warm gray cabinet back wall, soft warm light upper left and cool rim at right, flat walnut horizontal shelf occupies bottom 20 percent of the square frame. No objects, no people, no toys, no sculptures, no letters or watermark. Eye level product display background, crisp wood grain, minimal."
+      }
+    }
+  },
+  "ELPSY-001": {
+    "designRevision": "elpsy-moss-surveyor-r1",
+    "master": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+    "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+    "masterCrop": [
+      0,
+      0,
+      1480,
+      1480
+    ],
+    "characterSheet": {
+      "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+      "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+      "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+      "rearDesignStatus": "fixed before generation, author pending",
+      "material": "fictional satin painted ceramic/PVC miniature"
+    },
+    "invariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth. Preserve identity, anatomical sides and silhouette. No text or watermark.",
+    "shots": {
+      "face": {
+        "mode": "crop",
+        "crop": [
+          360,
+          100,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "detail": {
+        "mode": "crop",
+        "crop": [
+          400,
+          660,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "side": {
+        "mode": "flux-reference",
+        "seed": 2026212001,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-reference",
+        "seed": 20261123991,
+        "size": 768,
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth. Whole figure and base with 8 percent margins, no text/watermark."
+      },
+      "scene": {
+        "mode": "scene-composite",
+        "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
+        "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+        "uploadedBackground": "BACKGROUND.png",
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+      }
+    }
+  },
+  "ELPSY-002": {
+    "designRevision": "elpsy-moss-surveyor-r1",
+    "master": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+    "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+    "masterCrop": [
+      0,
+      0,
+      1480,
+      1480
+    ],
+    "characterSheet": {
+      "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+      "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+      "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+      "rearDesignStatus": "fixed before generation, author pending",
+      "material": "fictional satin painted ceramic/PVC miniature"
+    },
+    "invariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth. Preserve identity, anatomical sides and silhouette. No text or watermark.",
+    "shots": {
+      "face": {
+        "mode": "crop",
+        "crop": [
+          360,
+          100,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "detail": {
+        "mode": "crop",
+        "crop": [
+          400,
+          660,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "side": {
+        "mode": "flux-reference",
+        "seed": 2026212001,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-reference",
+        "seed": 20261123991,
+        "size": 768,
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth. Whole figure and base with 8 percent margins, no text/watermark."
+      },
+      "scene": {
+        "mode": "scene-composite",
+        "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
+        "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+        "uploadedBackground": "BACKGROUND.png",
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+      }
+    }
+  },
+  "ELPSY-003": {
+    "designRevision": "elpsy-moss-surveyor-r1",
+    "master": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+    "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+    "masterCrop": [
+      0,
+      0,
+      1480,
+      1480
+    ],
+    "characterSheet": {
+      "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+      "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+      "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+      "rearDesignStatus": "fixed before generation, author pending",
+      "material": "fictional satin painted ceramic/PVC miniature"
+    },
+    "invariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth. Preserve identity, anatomical sides and silhouette. No text or watermark.",
+    "shots": {
+      "face": {
+        "mode": "crop",
+        "crop": [
+          360,
+          100,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "detail": {
+        "mode": "crop",
+        "crop": [
+          400,
+          660,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "side": {
+        "mode": "flux-reference",
+        "seed": 2026212001,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-reference",
+        "seed": 20261123991,
+        "size": 768,
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth. Whole figure and base with 8 percent margins, no text/watermark."
+      },
+      "scene": {
+        "mode": "scene-composite",
+        "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
+        "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+        "uploadedBackground": "BACKGROUND.png",
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
+      }
+    }
+  },
+  "ELPSY-004": {
+    "designRevision": "elpsy-moss-surveyor-r1",
+    "master": "work/catalog-gallery/rear-20261123/elpsy-master-padded-blended.png",
+    "masterSha256": "f30fd81c56e9eb35365b4f0e1b53336f75d2ce569f71b24c01064cc025b2fd04",
+    "masterCrop": [
+      0,
+      0,
+      1480,
+      1480
+    ],
+    "characterSheet": {
+      "sourceBrief": "Original ceramic miniature surveyor robot; rounded cube ivory head, deep teal rounded rectangular visor, two amber oval eyes; short moss-green coat with copper front clasp; cream mittens, left mitten at one ochre satchel at anatomical LEFT hip, strap from anatomical RIGHT shoulder; right arm relaxed; chunky brown boots; low apricot rounded-square plinth. No logos, text or watermarks. Fixed rear: plain back head central seam, moss coat simple central seam, strap from right shoulder to left hip, no new ornaments or pockets.",
+      "visibleInvariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth.",
+      "rearDesign": "Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth.",
+      "rearDesignStatus": "fixed before generation, author pending",
+      "material": "fictional satin painted ceramic/PVC miniature"
+    },
+    "invariants": "Ivory rounded cube robot head, deep teal rounded rectangular visor with two amber oval eyes and round ivory ear caps. Moss-green hooded short coat, copper square front clasp and two low front patch pockets. Cream mittens; anatomical LEFT hand rests on one ochre satchel at LEFT hip, brown strap from RIGHT shoulder. Right arm relaxed. Brown cuffed boots and low apricot rounded-square plinth. Preserve identity, anatomical sides and silhouette. No text or watermark.",
+    "shots": {
+      "face": {
+        "mode": "crop",
+        "crop": [
+          360,
+          100,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "detail": {
+        "mode": "crop",
+        "crop": [
+          400,
+          660,
+          760,
+          760
+        ],
+        "size": 760
+      },
+      "side": {
+        "mode": "flux-reference",
+        "seed": 2026212001,
+        "size": 768,
+        "prompt": "Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+      },
+      "rear": {
+        "mode": "flux-reference",
+        "seed": 20261123991,
+        "size": 768,
+        "prompt": "Move the camera BEHIND this same fixed miniature, rear or rear three-quarter view between 135 and 180 degrees. Show the BACK of the head and torso, both shoulders from behind and the rear of the ORIGINAL BASE. Back occupies most of the view; no frontal eyes or chest. Keep original silhouette, proportions, main paint colors, head/hair, anatomical sides of accessories and base geometry/colors. No mirroring, new props or different pose. Hidden rear design: Plain ivory posterior head with one central seam and same round ears; moss coat hood and simple central back seam, no back pockets or emblems. Strap from anatomical RIGHT shoulder to LEFT hip satchel, left hand at bag; right arm down. Same boots and apricot rounded-square plinth. Whole figure and base with 8 percent margins, no text/watermark."
+      },
+      "scene": {
+        "mode": "scene-composite",
+        "background": "work/comfyui-figura/runs/935907bfd3e3d059a7be136b0bb3e16955de3a57b7d274d1f6b7b5874c3bd543/output.png",
+        "backgroundSha256": "96bd813a5c38fb304f1fa8f39490753a1afadd0ae033409dfe26b71e918e4278",
+        "uploadedBackground": "BACKGROUND.png",
+        "maskModel": "figura-birefnet-e2bf8e4460fc.safetensors"
       }
     }
   }

@@ -292,11 +292,27 @@ def report():
 
 
 def reviewed_source(product, slot):
+    if slot['status'] == 'pass' and slot.get('externalSource'):
+        proof = slot['externalSource']
+        is_rear = slot is product['slots'].get('REAR') and product['productKey'] in ('FIGURA-AI-001', 'FIGURA-AI-068') and proof.get('kind') == 'PR21-author-accepted-rear-proposal'
+        is_main = slot is product['slots'].get('MAIN') and product.get('initiallyImageLess') is True and proof.get('kind') == 'new-original-master'
+        source = (ROOT / slot['path']).resolve()
+        if (not (is_rear or is_main) or not source.is_relative_to((ROOT / 'work').resolve())
+                or proof.get('decision') != 'pass' or proof.get('reviewPolicy') != 'rear-2026-11-23'
+                or proof.get('reviewedAgainstMasterSha256') != product['master']['sha256']
+                or proof.get('outputSha256') != slot['sha256'] or comfy.sha(source) != slot['sha256']):
+            raise ValueError('External source requires an explicit, hash-bound review')
+        return source
     if slot['status'] != 'pass' or not re.fullmatch('[0-9a-f]{64}', slot['runId']):
         raise ValueError('Only reviewed candidates may be uploaded')
     state = json.loads((comfy.WORK / 'runs' / slot['runId'] / 'run.json').read_text('utf-8'))
     source = ROOT / slot['path']
-    if (state.get('status') != 'complete' or state.get('review', {}).get('decision') != 'pass'
+    reassessment = slot.get('reassessment', {})
+    reassessed = (slot is product['slots'].get('REAR') and reassessment.get('policy') == 'rear-2026-11-23'
+                  and reassessment.get('decision') == 'pass' and reassessment.get('runId') == slot['runId']
+                  and reassessment.get('masterSha256') == product['master']['sha256']
+                  and reassessment.get('outputSha256') == slot['sha256'])
+    if (state.get('status') != 'complete' or (state.get('review', {}).get('decision') != 'pass' and not reassessed)
             or state['productKey'] != product['productKey']
             or state['masterSha256'] != product['master']['sha256']
             or state['outputSha256'] != slot['sha256'] or comfy.sha(source) != slot['sha256']):
@@ -420,11 +436,14 @@ def upload(keys):
                 parts = []
                 for k, v in state['request'].items():
                     parts.append((f'--{boundary}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n').encode())
-                parts += [(f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="reviewed.png"\r\nContent-Type: image/png\r\n\r\n').encode(), source.read_bytes(), (f'\r\n--{boundary}--\r\n').encode()]
+                extension, media = ('jpg', 'jpeg') if source.suffix.lower() in ('.jpg', '.jpeg') else ('png', 'png')
+                parts += [(f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="reviewed.{extension}"\r\nContent-Type: image/{media}\r\n\r\n').encode(), source.read_bytes(), (f'\r\n--{boundary}--\r\n').encode()]
                 result = api.request(path + '/image', b''.join(parts), 'POST', headers={'Content-Type': 'multipart/form-data; boundary=' + boundary})
                 image_id = result['event']['imageId']
                 state.update(status='acknowledged', imageId=image_id, version=result['current']['version'])
                 slot['status'] = 'complete'
+                if t == 'MAIN' and p.get('initiallyImageLess') and p['master'].get('imageId') is None:
+                    p['master']['imageId'] = image_id
                 save(m)
             uploads_finished = True
         finally:
