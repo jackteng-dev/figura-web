@@ -294,10 +294,10 @@ def report():
 def reviewed_source(product, slot):
     if slot['status'] == 'pass' and slot.get('externalSource'):
         proof = slot['externalSource']
-        is_rear = slot is product['slots'].get('REAR') and (
+        is_rear = slot is product.get('slots', {}).get('REAR') and (
             (product['productKey'] in ('FIGURA-AI-001', 'FIGURA-AI-068') and proof.get('kind') == 'PR21-author-accepted-rear-proposal')
             or (proof.get('kind') == 'new-reference-rear' and proof.get('actualReferenceMasterSha256') == product['master']['sha256']))
-        is_main = slot is product['slots'].get('MAIN') and product.get('initiallyImageLess') is True and proof.get('kind') == 'new-original-master'
+        is_main = slot is product.get('slots', {}).get('MAIN') and product.get('initiallyImageLess') is True and proof.get('kind') == 'new-original-master'
         source = (ROOT / slot['path']).resolve()
         if (not (is_rear or is_main) or not source.is_relative_to((ROOT / 'work').resolve())
                 or proof.get('decision') != 'pass' or proof.get('reviewPolicy') != 'rear-2026-11-23'
@@ -310,7 +310,7 @@ def reviewed_source(product, slot):
     state = json.loads((comfy.WORK / 'runs' / slot['runId'] / 'run.json').read_text('utf-8'))
     source = ROOT / slot['path']
     reassessment = slot.get('reassessment', {})
-    reassessed = (slot is product['slots'].get('REAR') and reassessment.get('policy') == 'rear-2026-11-23'
+    reassessed = (slot is product.get('slots', {}).get('REAR') and reassessment.get('policy') == 'rear-2026-11-23'
                   and reassessment.get('decision') == 'pass' and reassessment.get('runId') == slot['runId']
                   and reassessment.get('masterSha256') == product['master']['sha256']
                   and reassessment.get('outputSha256') == slot['sha256'])

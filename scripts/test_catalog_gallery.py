@@ -48,6 +48,13 @@ class GallerySafety(unittest.TestCase):
                 state['review']['decision'] = 'reject'
                 save()
                 with self.assertRaises(ValueError): gallery.reviewed_source(product, slot)
+                product['slots'] = {'REAR': slot}
+                slot['reassessment'] = dict(policy='rear-2026-11-23', decision='pass', runId=run_id,
+                                            masterSha256='master', outputSha256=digest)
+                self.assertEqual(gallery.reviewed_source(product, slot), source)
+                product['slots'] = {'FACE': slot}
+                with self.assertRaises(ValueError): gallery.reviewed_source(product, slot)
+                slot.pop('reassessment')
                 state['review']['decision'] = 'pass'
                 state['masterSha256'] = 'other master'
                 save()
@@ -55,6 +62,24 @@ class GallerySafety(unittest.TestCase):
                 state['masterSha256'] = 'master'
                 save()
                 source.write_bytes(b'modified after review')
+                with self.assertRaises(ValueError): gallery.reviewed_source(product, slot)
+
+    def test_external_rear_is_bound_to_reference_bytes_and_slot(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp); (root / 'work').mkdir()
+            source = root / 'work/rear.png'; source.write_bytes(b'generated rear')
+            digest = gallery.comfy.sha(source)
+            proof = dict(kind='new-reference-rear', decision='pass', reviewPolicy='rear-2026-11-23',
+                         actualReferenceMasterSha256='master', reviewedAgainstMasterSha256='master', outputSha256=digest)
+            slot = dict(status='pass', path='work/rear.png', sha256=digest, externalSource=proof)
+            product = dict(productKey='fixture', master={'sha256': 'master'}, slots={'REAR': slot})
+            with patch.object(gallery, 'ROOT', root):
+                self.assertEqual(gallery.reviewed_source(product, slot), source)
+                product['slots'] = {'FACE': slot}
+                with self.assertRaises(ValueError): gallery.reviewed_source(product, slot)
+                product['slots'] = {'REAR': slot}; proof['actualReferenceMasterSha256'] = 'other'
+                with self.assertRaises(ValueError): gallery.reviewed_source(product, slot)
+                proof['actualReferenceMasterSha256'] = 'master'; source.write_bytes(b'changed')
                 with self.assertRaises(ValueError): gallery.reviewed_source(product, slot)
 
     def test_unknown_upload_keeps_draft_and_reuses_uuid_on_resume(self):
