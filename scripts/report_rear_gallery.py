@@ -31,6 +31,9 @@ def main():
     counts = {t: dict(collections.Counter(p['slots'][t]['status'] for p in m['products'])) for t in ['MAIN', 'ANGLE', 'REAR', 'FACE', 'DETAIL', 'SCENE']}
     unfinished = [p['productKey'] for p in m['products'] if p['slots']['REAR']['status'] != 'complete']
     complete = not unfinished
+    if complete:
+        assert integrity['allRequiredUploaded'] and integrity['servedImages'] == 495
+        assert all(c['images'] == 5 for c in browser['checks'])
     assert all(p['slots']['REAR']['status'] in ('complete', 'pass') for p in m['products'])
     assert all(p['publicationSession']['state'] == 'restored' for p in m['products'])
     if 'validationHistory' not in m:
@@ -41,7 +44,7 @@ def main():
     m['processingStatus'] = 'required-local-galleries-complete' if complete else 'awaiting-local-storage-recovery'
     m['processedAt'] = time.time()
     phase.update(visualReviewStatus='all-99-required-rear-sources-accepted', uploadStatus='complete' if complete else 'blocked-local-storage', counts=counts, remainingUploads=unfinished, elapsedWallSeconds=m['processedAt']-phase['startedAt'], authorApproval='pending')
-    phase['storageIncident'] = dict(
+    phase.setdefault('storageIncident', dict(
         status='unresolved' if unfinished else 'resolved', failedProduct='FIGURA-AI-052',
         apiError='HTTP503: 圖片儲存暫時無法使用，請重試同一操作',
         directProbe=dict(endpoint='http://127.0.0.1:18333', headBucket=200, putSmallObject=500, error='InternalError', deleteProbe=204),
@@ -49,13 +52,24 @@ def main():
         dockerCli='permission denied connecting to docker_engine named pipe',
         dockerDesktop='Automatic approval review rejected launch: Computer Use was not approved to use Docker Desktop',
         recovery='052 failed POST returned synchronously; unchanged draft version and absent request event verified before publication restored. Old failed UUID preserved; future upload obtains new UUID for new draft version.',
-        apiRestarted=False, containersChanged=False, pendingSourcesRetained=True)
+        apiRestarted=False, containersChanged=False, pendingSourcesRetained=True))
+    incident = phase['storageIncident']
+    incident['status'] = 'resolved' if complete else 'unresolved'
+    if complete:
+        incident.setdefault('resolvedAt', time.time())
+        incident['resolution'] = dict(
+            source='author report followed by 21 successful gallery uploads and all-99 public readback',
+            confirmedCause='All 12 volumes filled; -volume.max=12 prevented new volume allocation',
+            authorAction='Recreated only seaweed container using ignored figura-api/work/compose.seaweed-capacity.yml; -volume.max=60',
+            authorReportedAvailableVolumes=48, existingImagesPreserved=True,
+            agentRestartedApi=False, agentOperatedDocker=False, regeneratedImages=0)
     m['finalValidation'] = dict(date='2026-11-23', status='all-required-uploaded' if complete else 'verified-current-state-upload-incomplete',
         integrity='docs/verification/catalog-gallery-integrity-2026-11-23.json', servedImages=integrity['servedImages'],
         reviewedRequiredSources=495, browser='docs/verification/catalog-gallery-browser-2026-11-23.json',
         browserChecks=len(browser['checks']), comparison='docs/verification/catalog-gallery-comparison-2026-11-23.json',
         pythonChecks=11, webProductionBuild='passed', buildExitCode=build['exitCode'], missingMainOrEmptyGallery=[], authorApproval='pending')
     for p in m['products']:
+        p.setdefault('authorApproval', m['authorApproval'])
         a = p['slots']['ANGLE']
         if 'priorPolicyReason' not in a:
             a['priorPolicyReason'] = a.get('reason')
@@ -72,12 +86,18 @@ def main():
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
     def get(path):
         with opener.open('http://127.0.0.1:18188'+path, timeout=15) as r: return json.load(r)
-    queue = get('/queue'); assert not queue['queue_running'] and not queue['queue_pending']
-    env['final'] = dict(at=time.time(), protectedFiles=protected, protectedFilesUnchanged=True, queue=queue,
-        system=get('/system_stats'), freeDiskBytes=shutil.disk_usage('D:/').free, newItems=[], newCustomNodes=[],
-        newPackages=[], gpuOomObserved=False, restartCount=0, leftRunning=True, loopbackOnly=True,
-        builtInImageGeneration=dict(tool='built-in imagegen', installedModels=[], modelVersion=None, seed=None,
-            note='Provider does not expose model version/seed. Actual prompts, reference/output SHA and local paths retained per slot; no invented model version or weights license.'))
+    if not complete:
+        queue = get('/queue'); assert not queue['queue_running'] and not queue['queue_pending']
+        env['final'] = dict(at=time.time(), protectedFiles=protected, protectedFilesUnchanged=True, queue=queue,
+            system=get('/system_stats'), freeDiskBytes=shutil.disk_usage('D:/').free, newItems=[], newCustomNodes=[],
+            newPackages=[], gpuOomObserved=False, restartCount=0, leftRunning=True, loopbackOnly=True,
+            builtInImageGeneration=dict(tool='built-in imagegen', installedModels=[], modelVersion=None, seed=None,
+                note='Provider does not expose model version/seed. Actual prompts, reference/output SHA and local paths retained per slot; no invented model version or weights license.'))
+    else:
+        env['uploadResumeVerification'] = dict(at=time.time(), protectedFiles=protected, protectedFilesUnchanged=True,
+            newItems=[], newCustomNodes=[], newPackages=[], regeneratedImages=0, operatedComfyUi=False,
+            operatedDocker=False, storageResolution=incident['resolution'], servedImages=495,
+            integrity='catalog-gallery-integrity-2026-11-23.json')
     gallery.comfy.write(env_path, env)
     methods = collections.Counter('PR21 approved proposal' if p['slots']['REAR'].get('externalSource',{}).get('kind')=='PR21-author-accepted-rear-proposal' else 'built-in reference generation' if p['slots']['REAR'].get('externalSource') else 'ComfyUI reassessment' if p['slots']['REAR'].get('reassessment') else 'ComfyUI new reference generation' for p in m['products'])
     lines = ['# 2026-11-23 必要背面與無圖商品補齊', '',
@@ -94,19 +114,21 @@ def main():
         '新增套件／custom node／模型：**無**，無新下載、來源／授權／大小／SHA 新增清單為空。沿用既有 Klein 4B FP8、Qwen CPU encoder、Flux2 VAE、BiRefNet；既有模型來源與授權記於 2026-11-20 inventory。內建產圖無本機安裝權重，版本／seed 未由工具提供，記 null。', '',
         'ComfyUI 原先停止，啟動於 127.0.0.1:18188；使用既有 12GB 設定，未發現本輪 GPU OOM，未重啟、未終止其他 GPU 程式。文生圖.json、ae.safetensors.corrupt 的大小及 SHA 再驗一致。API 沒有重啟。', '',
         '已退回的本輪候選問題包含：仍顯正臉、配件換手、額外袋／桶／鍋、尾巴方向或數量錯誤、姿態與底座漂移；保留每次原因，改用同一 master 參考重產後逐件檢查。', '',
-        '未解決：本機 S3 HEAD bucket 200，但極小 PUT 500 InternalError、測試 DELETE 204；圖庫 POST 503。demo 設定 12 × 128 MiB volume，容量配置是待確認假說，無法取得儲存端日誌確認。Docker CLI 管線拒絕存取；自動核准審查拒絕 Docker Desktop（Computer Use was not approved to use Docker Desktop）。未更改容器、ACL 或安全設定。', '',
-        '052 失敗請求已確認沒有 audit event 且 draft version 未變，再恢復公開；已保存失敗 UUID 與版本證據，續傳會用新草稿版本的 UUID。其餘待上傳來源未遺失，不需重新產圖。', '',
+        ('已解決：作者確認原 12 個 volume 全滿，-volume.max=12 阻止擴充；透過忽略的 figura-api/work/compose.seaweed-capacity.yml 只重建 seaweed，改為 -volume.max=60，作者回報 48 個可用 volume。既有圖片保留。本輪直接續傳 21 張原已通過圖片，全部成功，沒有重產，也未由 agent 操作 Docker 或重啟 API／網頁。先前 S3 PUT 500／圖庫 POST 503 與 Docker 存取拒絕保留為歷史事件。' if complete else '未解決：本機 S3 HEAD bucket 200，但極小 PUT 500 InternalError、測試 DELETE 204；圖庫 POST 503。demo 設定 12 × 128 MiB volume，容量配置是待確認假說。Docker CLI 管線拒絕存取；自動核准審查拒絕 Docker Desktop（Computer Use was not approved to use Docker Desktop）。未更改容器、ACL 或安全設定。'), '',
+        '052 先前失敗請求已確認沒有 audit event 且 draft version 未變，再恢復公開；失敗 UUID 與版本證據保留。'+('本次以新草稿版本的 UUID 成功續傳；21 個來源路徑、SHA 及生成紀錄與續傳前一致。' if complete else '續傳會用新草稿版本的 UUID，來源保留，不需重產。'), '',
         f'本輪牆鐘時間至此 {phase["elapsedWallSeconds"]/3600:.2f} 小時，包含工具等待及儲存診斷，非純 GPU 時間。', '',
-        f'驗證：11 項 Python guard 通過、Web production build exit 0；99 件 × 桌面／手機 = {len(browser["checks"])} 筆瀏覽器檢查通過；{integrity["servedImages"]} 張現有供圖 SHA 與全部 495 個必要來源檢查通過。比較頁 99 列各 6 圖位、AI alt 與三款（含待上傳圖／ELPSY）解碼通過。待上傳 {len(unfinished)} 張尚未出現在本機商品頁。', '',
+        f'驗證：11 項 Python guard 通過、Web production build exit 0；99 件 × 桌面／手機 = {len(browser["checks"])} 筆瀏覽器檢查通過；{integrity["servedImages"]} 張現有供圖 SHA 與全部 495 個必要來源檢查通過。比較頁 99 列各 6 圖位、AI alt 與三款（含續傳圖／ELPSY）解碼通過。'+('全部 99 件各有 MAIN／REAR／FACE／DETAIL／SCENE，圖片均可讀，待上傳 0 張。' if complete else f'待上傳 {len(unfinished)} 張尚未出現在本機商品頁。'), '',
         '驗證期間 npm.ps1 受既有 ExecutionPolicy 限制，改用 npm.cmd，未變更安全設定；初次瀏覽器檢查與 dist 重建重疊出現頁面 404，建置完成後依序重跑，198 項通過。既有 legacy script／chunk 警告保留，沒有無關改動。', '',
-        '## 續傳', '', '先由有本機 Docker 權限的環境診斷／修復 SeaweedFS 寫入；不可刪 volume／重建空 DB。儲存恢復後：', '',
+        '## 續傳', '', ('21 件續傳已完成，沒有未完成必要圖位，不需再次執行上傳。保留以下本機驗證／報告指令：' if complete else '先由有本機 Docker 權限的環境診斷／修復 SeaweedFS 寫入；不可刪 volume／重建空 DB。儲存恢復後：'), '',
         '```powershell', '& D:\\ComfyUI\\python_embeded\\python.exe scripts/catalog_gallery.py upload',
         '& D:\\ComfyUI\\python_embeded\\python.exe scripts/rear_gallery_round.py checkpoint --name rear-storage-recovered --keys '+' '.join(unfinished),
-        '& D:\\ComfyUI\\python_embeded\\python.exe scripts/verify_catalog_gallery_integrity.py',
+        '& D:\\ComfyUI\\python_embeded\\python.exe scripts/verify_catalog_gallery_integrity.py --require-complete',
         'node scripts/verify_catalog_gallery.mjs', '& D:\\ComfyUI\\python_embeded\\python.exe scripts/report_rear_gallery.py',
         '& D:\\ComfyUI\\python_embeded\\python.exe scripts/catalog_gallery.py report', '```', '',
         '上傳工具只處理 pass；已 complete 不再上傳，來源 SHA 或其他人圖庫變更時停止。每批 commit。本輪依作者指示只 commit，未 push、未修改 PR、未 merge／force push。', '',
         '## 每件商品', '', '| 商品 | REAR | ANGLE | 背面檢查記錄 |', '|---|---|---|---|']
+    if complete:
+        lines = [line for line in lines if not line.endswith('scripts/catalog_gallery.py upload') and 'checkpoint --name rear-storage-recovered' not in line]
     for p in m['products']:
         rear=p['slots']['REAR']; angle=p['slots']['ANGLE']
         status='完成（本機）' if rear['status']=='complete' else '通過，儲存 503 待上傳'

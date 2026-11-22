@@ -2,11 +2,11 @@
 
 **2026-11-23 目前範圍：99 筆全部納入。** 作者要求四筆原先排除的 ELPSY 也補圖；比對資料相同後，共用原創「苔石量測員」設計，各自五種必要圖位已入庫。舊排除原因保存在 `priorExcluded`，目前 `excluded=[]`。唯一目錄來源仍為 `127.0.0.1:19092/figura/api/catalog/products`。不連正式 DB，不建立 3D／360，不改 `src/assets/`；作者簽核 pending。
 
-REAR 必要，以 135°–180° 明確背後視角、關鍵輪廓／配色／頭部／角色自己的配件左右／底座核對，小細節可有差異。逐款先固定 character sheet 背部設計。ANGLE 選擇性，舊拒收與留空維持。先完成 001／003／068 試點後續做全部商品；目前 99 個 REAR 來源均已通過，78 個入庫，21 個待上傳。
+REAR 必要，以 135°–180° 明確背後視角、關鍵輪廓／配色／頭部／角色自己的配件左右／底座核對，小細節可有差異。逐款先固定 character sheet 背部設計。ANGLE 選擇性，舊拒收與留空維持。先完成 001／003／068 試點後續做全部商品；目前 **99 個 REAR 全部入庫，待上傳 0 件**。MAIN／FACE／DETAIL／SCENE 也各 99 件完成，共 495 張本機供圖。
 
-**目前續跑阻礙：本機 SeaweedFS 寫入 500，圖庫 POST 503。** 讀取與 HEAD bucket 可用，但極小測試 PUT 也失敗。Docker CLI 管線拒絕存取，開啟 Docker Desktop 又遭自動核准審查拒絕；沒有變更容器或安全設定。需有 Docker 權限的環境先診斷儲存端，不能刪除 volume 或重建資料。052 的失敗操作已核對無 event、原版本未變，再恢復公開；99 商品均公開。詳見 [本輪逐件報告](verification/catalog-gallery-rear-report-2026-11-23.md)。
+**儲存阻礙已解決。** 作者確認 12 個 volume 全滿、`-volume.max=12` 阻止擴充，使用忽略的 `figura-api/work/compose.seaweed-capacity.yml` 只重建 seaweed，改為 `-volume.max=60`，回報 48 個可用 volume。Agent 沿用原檔續傳剩餘 21 張，未重產、未操作 Docker 或重啟 API／網頁。失敗操作與原版本證據保留；99 商品均公開。詳見 [本輪逐件報告](verification/catalog-gallery-rear-report-2026-11-23.md)。
 
-儲存恢復後執行 `catalog_gallery.py upload`，只上傳 `pass`，不重新生成或重傳 `complete`。再執行 `verify_catalog_gallery_integrity.py`、`node scripts/verify_catalog_gallery.mjs`、`report_rear_gallery.py`、`catalog_gallery.py report`，更新 HANDOFF 並 commit。預覽為 `http://127.0.0.1:15176`。build 與瀏覽器檢查應依序執行，避免 preview 讀到正在重建的 dist。
+本輪必要圖位無待辦，不需再次上傳。重驗時執行 `verify_catalog_gallery_integrity.py --require-complete`、`node scripts/verify_catalog_gallery.mjs`、`report_rear_gallery.py`、`catalog_gallery.py report`。`--require-complete` 要求每款五個必要圖位都在公開圖庫，缺任一張即失敗。上傳工具仍只處理 `pass`，不重新生成或重傳 `complete`。預覽為 `http://127.0.0.1:15176`。build 與瀏覽器檢查應依序執行，避免 preview 讀到正在重建的 dist。
 
 `rear_gallery_round.py checkpoint-reviewed` 只保存已檢查來源的批次；`checkpoint` 才要求已完成上傳，兩者不可混稱。內建產圖使用同一 master，實際 prompt、reference/output SHA 及本機路徑保存在各槽；seed／model version 未由工具提供，記 null。`reviewed_source` 要求該 REAR 的明確政策與 hash 證據，不能以生成成功自動採用。
 

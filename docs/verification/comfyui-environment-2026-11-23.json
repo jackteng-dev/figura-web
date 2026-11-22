@@ -195,5 +195,39 @@
       "seed": null,
       "note": "Provider does not expose model version/seed. Actual prompts, reference/output SHA and local paths retained per slot; no invented model version or weights license."
     }
+  },
+  "uploadResumeVerification": {
+    "at": 1795370379.7184932,
+    "protectedFiles": [
+      {
+        "path": "D:\\ComfyUI\\ComfyUI\\user\\default\\workflows\\文生圖.json",
+        "bytes": 7918,
+        "sha256": "cd4e51f75d586025fd72d8700f0d48405441cbf724f8c01b755bd554b3ef4052"
+      },
+      {
+        "path": "D:\\ComfyUI\\ComfyUI\\models\\vae\\ae.safetensors.corrupt",
+        "bytes": 424213896,
+        "sha256": "32d511d48256976eafeac27caf5d9eaceba80f4206ec14101f47dbf4bbe0f343"
+      }
+    ],
+    "protectedFilesUnchanged": true,
+    "newItems": [],
+    "newCustomNodes": [],
+    "newPackages": [],
+    "regeneratedImages": 0,
+    "operatedComfyUi": false,
+    "operatedDocker": false,
+    "storageResolution": {
+      "source": "author report followed by 21 successful gallery uploads and all-99 public readback",
+      "confirmedCause": "All 12 volumes filled; -volume.max=12 prevented new volume allocation",
+      "authorAction": "Recreated only seaweed container using ignored figura-api/work/compose.seaweed-capacity.yml; -volume.max=60",
+      "authorReportedAvailableVolumes": 48,
+      "existingImagesPreserved": true,
+      "agentRestartedApi": false,
+      "agentOperatedDocker": false,
+      "regeneratedImages": 0
+    },
+    "servedImages": 495,
+    "integrity": "catalog-gallery-integrity-2026-11-23.json"
   }
 }

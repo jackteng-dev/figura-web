@@ -1,5 +1,6 @@
 """Read-only verification of all saved local gallery sources and served bytes."""
 import hashlib
+import argparse
 import copy
 import importlib.util
 import json
@@ -17,6 +18,9 @@ def digest(path):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--require-complete', action='store_true', help='Require all five mandatory slots in every local public gallery')
+    args = parser.parse_args()
     manifest = json.loads(gallery.MANIFEST.read_text('utf-8'))
     assert manifest['scope'] == gallery.BASE + '/api/catalog/products'
     assert manifest['authorApproval'] == 'pending' and len(manifest['products']) == 99
@@ -37,6 +41,8 @@ def main():
         images = api.request('/api/catalog/products/' + product['id'] + '/image')
         expected = {kind for kind, slot in product['slots'].items() if slot['status'] == 'complete'}
         assert {'MAIN', 'FACE', 'DETAIL', 'SCENE'} <= expected <= required
+        if args.require_complete:
+            assert expected == required, (product['productKey'], 'missing mandatory image')
         assert len(images) == len(expected) and {image['type'] for image in images} == expected
         assert next(image['id'] for image in images if image['primary']) == product['master']['imageId']
         reviewed = copy.deepcopy(product)
@@ -75,7 +81,8 @@ def main():
     report = dict(at=time.time(), api=gallery.BASE, scope='read-only local demo; no login or mutation',
                   catalogRows=len(catalog), products=len(checks), excludedRows=len(manifest['excluded']),
                   servedImages=sum(len(c['images']) for c in checks),
-                  missingMainOrEmptyGallery=[], allRequiredUploaded=all(c['rearStatus'] == 'complete' for c in checks),
+                  missingMainOrEmptyGallery=[], requireComplete=args.require_complete,
+                  allRequiredUploaded=all(c['rearStatus'] == 'complete' for c in checks),
                   authorApproval='pending', checks=checks)
     target = ROOT / 'docs/verification/catalog-gallery-integrity-2026-11-23.json'
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

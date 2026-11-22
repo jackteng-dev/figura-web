@@ -35693,7 +35693,8 @@
             "reason": "新增主圖後補圖"
           }
         ]
-      }
+      },
+      "authorApproval": "pending"
     },
     {
       "id": "1adcd535-d094-4585-84e8-aa385f949653",
@@ -36235,7 +36236,8 @@
             "reason": "新增主圖後補圖"
           }
         ]
-      }
+      },
+      "authorApproval": "pending"
     },
     {
       "id": "cd2aeb7f-d8b5-4848-89fe-82bb69683d9c",
@@ -36777,7 +36779,8 @@
             "reason": "新增主圖後補圖"
           }
         ]
-      }
+      },
+      "authorApproval": "pending"
     },
     {
       "id": "f81f1bbc-74e5-4669-a580-1c77b3911d8a",
@@ -37319,7 +37322,8 @@
             "reason": "新增主圖後補圖"
           }
         ]
-      }
+      },
+      "authorApproval": "pending"
     }
   ],
   "batches": [
@@ -37496,7 +37500,7 @@
       "result": "reviewed slots uploaded and read back; failed side/rear retained as rejected with reasons; author pending"
     }
   ],
-  "updatedAt": "2026-11-22T17:55:47Z",
+  "updatedAt": "2026-11-22T17:59:39Z",
   "sharedSceneBackground": {
     "mode": "flux-reference",
     "tool": "local ComfyUI",
@@ -37645,8 +37649,8 @@
     ],
     "rearSupersededBy": "rear-2026-11-23"
   },
-  "processedAt": 1795369851.507883,
-  "processingStatus": "awaiting-local-storage-recovery",
+  "processedAt": 1795370379.3787534,
+  "processingStatus": "required-local-galleries-complete",
   "interruptionNotes": [
     "User reported usage-quota interruption; resumed from saved batch 7. Pause duration was not measured; wall time includes waiting."
   ],
@@ -37660,9 +37664,9 @@
   },
   "finalValidation": {
     "date": "2026-11-23",
-    "status": "verified-current-state-upload-incomplete",
+    "status": "all-required-uploaded",
     "integrity": "docs/verification/catalog-gallery-integrity-2026-11-23.json",
-    "servedImages": 474,
+    "servedImages": 495,
     "reviewedRequiredSources": 495,
     "browser": "docs/verification/catalog-gallery-browser-2026-11-23.json",
     "browserChecks": 198,
@@ -38032,7 +38036,7 @@
       }
     ],
     "visualReviewStatus": "all-99-required-rear-sources-accepted",
-    "uploadStatus": "blocked-local-storage",
+    "uploadStatus": "complete",
     "counts": {
       "MAIN": {
         "complete": 99
@@ -38042,8 +38046,7 @@
         "blank": 63
       },
       "REAR": {
-        "complete": 78,
-        "pass": 21
+        "complete": 99
       },
       "FACE": {
         "complete": 99
@@ -38055,32 +38058,10 @@
         "complete": 99
       }
     },
-    "remainingUploads": [
-      "FIGURA-AI-052",
-      "FIGURA-AI-057",
-      "FIGURA-AI-058",
-      "FIGURA-AI-060",
-      "FIGURA-AI-062",
-      "FIGURA-AI-064",
-      "FIGURA-AI-067",
-      "FIGURA-AI-069",
-      "FIGURA-AI-072",
-      "FIGURA-AI-076",
-      "FIGURA-AI-079",
-      "FIGURA-AI-084",
-      "FIGURA-AI-087",
-      "FIGURA-AI-088",
-      "FIGURA-AI-089",
-      "FIGURA-AI-090",
-      "FIGURA-AI-091",
-      "FIGURA-AI-092",
-      "FIGURA-AI-093",
-      "FIGURA-AI-094",
-      "FIGURA-AI-095"
-    ],
-    "elapsedWallSeconds": 4517.915082931519,
+    "remainingUploads": [],
+    "elapsedWallSeconds": 5045.78595328331,
     "storageIncident": {
-      "status": "unresolved",
+      "status": "resolved",
       "failedProduct": "FIGURA-AI-052",
       "apiError": "HTTP503: 圖片儲存暫時無法使用，請重試同一操作",
       "directProbe": {
@@ -38096,7 +38077,49 @@
       "recovery": "052 failed POST returned synchronously; unchanged draft version and absent request event verified before publication restored. Old failed UUID preserved; future upload obtains new UUID for new draft version.",
       "apiRestarted": false,
       "containersChanged": false,
-      "pendingSourcesRetained": true
+      "pendingSourcesRetained": true,
+      "resolvedAt": 1795370333.5660737,
+      "resolution": {
+        "source": "author report followed by 21 successful gallery uploads and all-99 public readback",
+        "confirmedCause": "All 12 volumes filled; -volume.max=12 prevented new volume allocation",
+        "authorAction": "Recreated only seaweed container using ignored figura-api/work/compose.seaweed-capacity.yml; -volume.max=60",
+        "authorReportedAvailableVolumes": 48,
+        "existingImagesPreserved": true,
+        "agentRestartedApi": false,
+        "agentOperatedDocker": false,
+        "regeneratedImages": 0
+      }
+    },
+    "resumeVerification": {
+      "at": 1795370197.7030215,
+      "baselineCommit": "c361351",
+      "resumedKeys": [
+        "FIGURA-AI-052",
+        "FIGURA-AI-057",
+        "FIGURA-AI-058",
+        "FIGURA-AI-060",
+        "FIGURA-AI-062",
+        "FIGURA-AI-064",
+        "FIGURA-AI-067",
+        "FIGURA-AI-069",
+        "FIGURA-AI-072",
+        "FIGURA-AI-076",
+        "FIGURA-AI-079",
+        "FIGURA-AI-084",
+        "FIGURA-AI-087",
+        "FIGURA-AI-088",
+        "FIGURA-AI-089",
+        "FIGURA-AI-090",
+        "FIGURA-AI-091",
+        "FIGURA-AI-092",
+        "FIGURA-AI-093",
+        "FIGURA-AI-094",
+        "FIGURA-AI-095"
+      ],
+      "products": 21,
+      "regeneratedImages": 0,
+      "sourcePathsHashesAndGenerationRecordsUnchanged": true,
+      "allMastersUnchanged": true
     }
   },
   "priorExcluded": [

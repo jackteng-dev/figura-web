@@ -1,6 +1,6 @@
 # Figura 本機 ComfyUI 商品圖流程
 
-**2026-11-23 必要背面續作：** 沿用本 runner／workflow，REAR 改以明確背後 135°–180° 與關鍵身份判斷；ANGLE 選擇性。先固定每款背部設計，001／003／068 三件試點後擴展全目錄。99 件均已有通過的 REAR 來源，78 件已入庫、21 件因本機 S3 寫入 500／圖庫 503 待續傳。四件原無圖 ELPSY 共用原創設計，五圖位均已入庫。本輪沒有新增套件、節點或模型；ComfyUI 維持 127.0.0.1:18188，內建產圖另保留實際提示及參考／輸出 SHA。詳 [本輪逐件報告](verification/catalog-gallery-rear-report-2026-11-23.md)、[環境紀錄](verification/comfyui-environment-2026-11-23.json)、[續跑說明](CATALOG_GALLERY_RUNBOOK.md)。以下兩款樣本結論是 2026-11-19 歷史，不能套用為目前 REAR 全空；作者簽核仍 pending。
+**2026-11-23 必要背面完成：** 沿用本 runner／workflow，REAR 改以明確背後 135°–180° 與關鍵身份判斷；ANGLE 選擇性。先固定每款背部設計，001／003／068 三件試點後擴展全目錄。作者修復 SeaweedFS volume 容量限制後，最後 21 張以原已通過來源續傳，未重產；目前 99 件 REAR 全部入庫。四件原無圖 ELPSY 共用原創設計，全部 99 件五個必要圖位完成，共 495 張本機供圖。本輪沒有新增套件、節點或模型；ComfyUI 原生成階段僅綁 127.0.0.1:18188，續傳階段未操作 ComfyUI／Docker 或重啟 API／網頁，內建產圖另保留實際提示及參考／輸出 SHA。詳 [本輪逐件報告](verification/catalog-gallery-rear-report-2026-11-23.md)、[環境紀錄](verification/comfyui-environment-2026-11-23.json)、[續跑說明](CATALOG_GALLERY_RUNBOOK.md)。以下兩款樣本結論是 2026-11-19 歷史，不能套用為目前 REAR 全空；作者簽核仍 pending。
 
 2026-11-19。延續已合併 PR #21；不重新設計角色、不替換正式商品、不操作正式 DB。這套流程產出點陣概念圖，不是可量測的 3D 模型。
 

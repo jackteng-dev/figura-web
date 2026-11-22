@@ -1,13 +1,14 @@
 {
-  "at": 1795369463.8565695,
+  "at": 1795370171.9303508,
   "api": "http://127.0.0.1:19092/figura",
   "scope": "read-only local demo; no login or mutation",
   "catalogRows": 99,
   "products": 99,
   "excludedRows": 0,
-  "servedImages": 474,
+  "servedImages": 495,
   "missingMainOrEmptyGallery": [],
-  "allRequiredUploaded": false,
+  "requireComplete": true,
+  "allRequiredUploaded": true,
   "authorApproval": "pending",
   "checks": [
     {
@@ -2158,7 +2159,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2185,6 +2186,12 @@
           "imageId": "7eda8f3f-d093-4c9e-908a-42995105b569",
           "bytes": 1750756,
           "sha256": "a8c6955135fa30accc2a2a2bf25536fb09546619b87e1b191f12cd17e05229e1"
+        },
+        {
+          "type": "REAR",
+          "imageId": "f0b729e1-c96e-45c3-a778-b6e6332955cf",
+          "bytes": 2671260,
+          "sha256": "b2dc01e265ed930e2b16bba5ddbc480facf7eeda99248aff9872f230ec0169c5"
         }
       ]
     },
@@ -2362,7 +2369,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2389,6 +2396,12 @@
           "imageId": "5838ea7c-21e7-49a7-b612-8a8a618a0eab",
           "bytes": 1688204,
           "sha256": "13e0f8eda1a3ed3d8909f057f232df407115f65d82e43bd91164cbcc3deaa64a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "836261a4-b66d-4ab2-a581-f49ccd10a10e",
+          "bytes": 2427203,
+          "sha256": "53a99e037d4818c604b808083c7e877bc770cb43e00fb8a6ecf76687f831d134"
         }
       ]
     },
@@ -2398,7 +2411,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2425,6 +2438,12 @@
           "imageId": "895b098e-99d0-41c3-af01-228d091b4ecf",
           "bytes": 1594424,
           "sha256": "b330e926126263c768f983eb1d63060a578f261d39c93f549b512ebe1ddd0391"
+        },
+        {
+          "type": "REAR",
+          "imageId": "0f0ea029-6898-4ed7-a51b-da7c36da3b50",
+          "bytes": 2327212,
+          "sha256": "aebaaa1394bc38f87554c88370ea47d1da5cd7a50ebb2bf6078adb62ca1d2262"
         }
       ]
     },
@@ -2476,7 +2495,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2503,6 +2522,12 @@
           "imageId": "01e78321-f1c2-4f60-be1e-cb8d9694ef72",
           "bytes": 1870113,
           "sha256": "55fc5a9837811551337bad1bc34667d724b8135ab513d3410190efbb7a4a6c8a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "2eebb4c5-aa2a-4cb0-90f9-0003368c21c3",
+          "bytes": 2703669,
+          "sha256": "a5fb83e0a60124e0814f4a7412f6d54000e8ab5c1f1ba6352467156bd842ca8a"
         }
       ]
     },
@@ -2554,7 +2579,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2581,6 +2606,12 @@
           "imageId": "34f63b29-be4d-4f6d-a898-568471b37979",
           "bytes": 1518514,
           "sha256": "02d9acdd92c7684b3fcfebf9ee8a4585e7090af021bd2e4701764111da128471"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4ac577f5-0983-4e3a-9c98-3bca233f16cc",
+          "bytes": 2263414,
+          "sha256": "69df23ee591e462ee09d6e5ad748ae3de9f992421ade955a9fc6de319856b659"
         }
       ]
     },
@@ -2632,7 +2663,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2659,6 +2690,12 @@
           "imageId": "cda1de4a-af08-4f35-b927-968aeadfd595",
           "bytes": 1898678,
           "sha256": "e12dd4a9158fdf3f844435885e7492a68e62fa9eb3eff473e3a38084d7b03a84"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6272ade4-abe4-443a-a5ef-175c0dae2d8a",
+          "bytes": 2923820,
+          "sha256": "1413bf9513518e8ee69a1379d363dc7aa0c75305364d4d2ceb58ef7f7ae0d733"
         }
       ]
     },
@@ -2752,7 +2789,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2779,6 +2816,12 @@
           "imageId": "010d6b2b-15a0-4695-84ae-4f050afecd9a",
           "bytes": 1666125,
           "sha256": "3ead4c46c1cb8691edbf3594d00f8653f007e3d8234bcce68a512c64639c427f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "988edfa4-dfed-4a68-90bb-1070b243d2a9",
+          "bytes": 2544931,
+          "sha256": "e164e2e01c8e4fceb7bca1c996d360d917e53c93cc0d95eb2a5d9d3f5e2b959d"
         }
       ]
     },
@@ -2830,7 +2873,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2857,6 +2900,12 @@
           "imageId": "8cbfd125-63a0-46b2-b219-438928d78769",
           "bytes": 1602062,
           "sha256": "a194f355283081d824bc7fd5d25761d11614ee013c0c3f84ca9e0d29753c4c9f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "9c23bda4-e429-4267-893a-03b0af1dd7fb",
+          "bytes": 2660900,
+          "sha256": "3e0e39896029c3cf6724c204ba3fad26bc0dab41531f6f78e3199d3b2cc0cede"
         }
       ]
     },
@@ -2950,7 +2999,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -2977,6 +3026,12 @@
           "imageId": "edbc7db7-5132-4897-91da-53d5e033973c",
           "bytes": 1760063,
           "sha256": "f7861957c0e285574b502ae2a8b0811ecac135fd9af640816ff1a2b0e3067196"
+        },
+        {
+          "type": "REAR",
+          "imageId": "321fae5e-282f-4a33-a45e-6079125cddb5",
+          "bytes": 2668695,
+          "sha256": "0b16a4cd424f2cfdae0fbbf1ebe5b46d6eb3bfe853f6217206dfd99aaffa56b7"
         }
       ]
     },
@@ -3112,7 +3167,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3139,6 +3194,12 @@
           "imageId": "68389e9a-d1af-4ece-9ed7-940832b74c6d",
           "bytes": 1639979,
           "sha256": "96e30e0328d1b7719d872b6ad2cdb5207e8afc6f8e28e1ef29889cfeb3ded889"
+        },
+        {
+          "type": "REAR",
+          "imageId": "e5590641-b609-4231-940e-70596ef17bf8",
+          "bytes": 2368394,
+          "sha256": "161238fd5015a48aa95a72e963203748b3745e39f803b05136129c5557fdab11"
         }
       ]
     },
@@ -3232,7 +3293,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3259,6 +3320,12 @@
           "imageId": "6dfcbb41-316e-4c2a-abb9-fb673ad44f90",
           "bytes": 1624219,
           "sha256": "46958e5c5fb8a177f54944da575b8d71c0078e8367511f7b776eb34237f2e3fe"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5f8b7571-dc08-4d82-bf0e-2590b25cc1cc",
+          "bytes": 2484554,
+          "sha256": "5e29df36f9bfa78f2371cd65b2f617f7b8d2075e0f4a9bbb4eaa1f13c0dd3cc2"
         }
       ]
     },
@@ -3436,7 +3503,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3463,6 +3530,12 @@
           "imageId": "b484d104-b57d-41d1-84b0-41bbc533a4dd",
           "bytes": 1676747,
           "sha256": "c8b1f9f43733cdf9cb86436013d8242e66edd2b7dbe23ed4263deb20b91c3b00"
+        },
+        {
+          "type": "REAR",
+          "imageId": "0e8595ac-6d18-4acd-9a03-6c67bc337e6a",
+          "bytes": 2536998,
+          "sha256": "8399bdf5c6bbfa9a8cf396792ccff5b7f19dec2eb9cccf20021cf62e12de55dd"
         }
       ]
     },
@@ -3556,7 +3629,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3583,6 +3656,12 @@
           "imageId": "7f52192c-c960-4979-bd5f-d099ab414367",
           "bytes": 1614190,
           "sha256": "a85442dce59b885a7e7d02b2f1b178baddf75fbb4583a65d4d4108e59b051927"
+        },
+        {
+          "type": "REAR",
+          "imageId": "f08e54d5-c26d-4b3e-afa6-dafa21b6eeb3",
+          "bytes": 2546076,
+          "sha256": "aa00b5ad1a20ae1102ae7105198b2d9c64ebcb6552083636214ca55a0435479d"
         }
       ]
     },
@@ -3592,7 +3671,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3619,6 +3698,12 @@
           "imageId": "79523834-abb8-45bc-b2b2-b2aa893d5463",
           "bytes": 1702632,
           "sha256": "cb5c53029ca96e57fbf927fd218a6587c801279b9693bda2273b141b1231cdb7"
+        },
+        {
+          "type": "REAR",
+          "imageId": "43840e31-08e5-4d7d-ae64-f42db655cf93",
+          "bytes": 2470643,
+          "sha256": "a0e4ab1cce7d5449a958bf853fa2ab4f100c36296db49d859b82c3120a0984be"
         }
       ]
     },
@@ -3628,7 +3713,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3655,6 +3740,12 @@
           "imageId": "421fc7cc-e2f3-4e53-ba16-bc834c20d49d",
           "bytes": 1671153,
           "sha256": "05a975ee1e1a133807925d98a3c35281b81a4bcabd153c3b6a224e704c4322ec"
+        },
+        {
+          "type": "REAR",
+          "imageId": "67c7894b-3745-49a7-a7ca-d15cf443bace",
+          "bytes": 918297,
+          "sha256": "bcd9b8c2ae7bd89d92dd2202410ffb3041d9470649834de29c8a5405db77f230"
         }
       ]
     },
@@ -3664,7 +3755,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3691,6 +3782,12 @@
           "imageId": "55a2da2e-1e8e-48a6-a585-f8842105501c",
           "bytes": 1823553,
           "sha256": "bf0e2eed79defcdf4583c44e7dd0a2168b8786233354675fd041edaae90585b3"
+        },
+        {
+          "type": "REAR",
+          "imageId": "154c49c2-280d-4de9-9bdb-0e71d1e09ec6",
+          "bytes": 931773,
+          "sha256": "9fc7ae669285a21f0bb80c497f9952eeb95d08b9e24f8eb7ec25ab6fa5c1af75"
         }
       ]
     },
@@ -3700,7 +3797,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3727,6 +3824,12 @@
           "imageId": "1156c547-e67d-488e-a6f3-208e48354a33",
           "bytes": 1562160,
           "sha256": "662a835f59ea56c3e7649d8369c7a34c0ae2fa7324e18eb02f5a697b68809225"
+        },
+        {
+          "type": "REAR",
+          "imageId": "9ad1c7d1-1986-41ab-a5ec-0b10fc5d9590",
+          "bytes": 2258752,
+          "sha256": "e0e675f2ea2200ba6ca305b18a5ff007ac821009ffc634f6b8e3f6a72760503a"
         }
       ]
     },
@@ -3736,7 +3839,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3763,6 +3866,12 @@
           "imageId": "85caa10d-8a07-4c0b-80db-b786f61493f4",
           "bytes": 1860818,
           "sha256": "053c9999e2a6f07b5c1ec7c204aa6ee5792a32679b1cb9636d69176ccdc41f0c"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4dc7559b-a26b-4467-88e8-62176e49b049",
+          "bytes": 786083,
+          "sha256": "c05e5874bc1aa6af0218048711aebe69c0de1d914223eb0639fe9b32d9f78670"
         }
       ]
     },
@@ -3772,7 +3881,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3799,6 +3908,12 @@
           "imageId": "1cb2192e-b6d5-4a3d-97a9-9fb310b96c6c",
           "bytes": 1570817,
           "sha256": "feb9a0ce0168d9201f70e39a1e1a6899374eb8db402cb2955e5731220adf9e8f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "09cbb746-c6db-44cb-b0cc-a147845f5b94",
+          "bytes": 831260,
+          "sha256": "868c44a547cd3ba5a9c3f595dbf176bd211823adce07ce2898948f2fdd82bce7"
         }
       ]
     },
@@ -3808,7 +3923,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3835,6 +3950,12 @@
           "imageId": "6cb9e110-3f03-44cf-ac98-1affc08d336e",
           "bytes": 1640098,
           "sha256": "3c7ea1191dc5034e5428457337a48ebe58dadd918cc5d0e31b19983637332803"
+        },
+        {
+          "type": "REAR",
+          "imageId": "b5cdd838-a57b-45bf-881a-2faa4dae5515",
+          "bytes": 833143,
+          "sha256": "cf12bc31f7018b0c0deda4f7cfaeeb672352caf9a8b1ee657e0efdaf3c21cb66"
         }
       ]
     },
@@ -3844,7 +3965,7 @@
       "newOriginalMaster": false,
       "reviewedOnly": true,
       "requiredSourcesReviewed": true,
-      "rearStatus": "pass",
+      "rearStatus": "complete",
       "noAngleUploads": true,
       "publicationRestored": true,
       "images": [
@@ -3871,6 +3992,12 @@
           "imageId": "047e85c5-5c51-406d-84f7-bbb8780413c1",
           "bytes": 1785005,
           "sha256": "0fdd78c3d918df6911385e8599a67b71b9914b8b06a8f17513ffebfb4a663f90"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4050a5e0-f1de-4cb1-aa4a-a5ede724693c",
+          "bytes": 2842718,
+          "sha256": "68e1806799f904dd98d879dd0ff775ed19133df2447d58f791bde6949d272bb7"
         }
       ]
     },

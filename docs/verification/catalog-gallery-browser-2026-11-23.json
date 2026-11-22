@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-22T17:48:49.888Z",
+  "date": "2026-11-22T17:58:31.181Z",
   "url": "http://127.0.0.1:15176",
   "scope": "real existing loopback demo, read-only, no API mocks",
   "authorApproval": "pending",
@@ -569,7 +569,7 @@
     {
       "key": "FIGURA-AI-052",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -624,7 +624,7 @@
     {
       "key": "FIGURA-AI-057",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -635,7 +635,7 @@
     {
       "key": "FIGURA-AI-058",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -657,7 +657,7 @@
     {
       "key": "FIGURA-AI-060",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -679,7 +679,7 @@
     {
       "key": "FIGURA-AI-062",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -701,7 +701,7 @@
     {
       "key": "FIGURA-AI-064",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -734,7 +734,7 @@
     {
       "key": "FIGURA-AI-067",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -756,7 +756,7 @@
     {
       "key": "FIGURA-AI-069",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -789,7 +789,7 @@
     {
       "key": "FIGURA-AI-072",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -833,7 +833,7 @@
     {
       "key": "FIGURA-AI-076",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -866,7 +866,7 @@
     {
       "key": "FIGURA-AI-079",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -921,7 +921,7 @@
     {
       "key": "FIGURA-AI-084",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -954,7 +954,7 @@
     {
       "key": "FIGURA-AI-087",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -965,7 +965,7 @@
     {
       "key": "FIGURA-AI-088",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -976,7 +976,7 @@
     {
       "key": "FIGURA-AI-089",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -987,7 +987,7 @@
     {
       "key": "FIGURA-AI-090",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -998,7 +998,7 @@
     {
       "key": "FIGURA-AI-091",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1009,7 +1009,7 @@
     {
       "key": "FIGURA-AI-092",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1020,7 +1020,7 @@
     {
       "key": "FIGURA-AI-093",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1031,7 +1031,7 @@
     {
       "key": "FIGURA-AI-094",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1042,7 +1042,7 @@
     {
       "key": "FIGURA-AI-095",
       "width": 1440,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1658,7 +1658,7 @@
     {
       "key": "FIGURA-AI-052",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1713,7 +1713,7 @@
     {
       "key": "FIGURA-AI-057",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1724,7 +1724,7 @@
     {
       "key": "FIGURA-AI-058",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1746,7 +1746,7 @@
     {
       "key": "FIGURA-AI-060",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1768,7 +1768,7 @@
     {
       "key": "FIGURA-AI-062",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1790,7 +1790,7 @@
     {
       "key": "FIGURA-AI-064",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1823,7 +1823,7 @@
     {
       "key": "FIGURA-AI-067",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1845,7 +1845,7 @@
     {
       "key": "FIGURA-AI-069",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1878,7 +1878,7 @@
     {
       "key": "FIGURA-AI-072",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1922,7 +1922,7 @@
     {
       "key": "FIGURA-AI-076",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -1955,7 +1955,7 @@
     {
       "key": "FIGURA-AI-079",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2010,7 +2010,7 @@
     {
       "key": "FIGURA-AI-084",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2043,7 +2043,7 @@
     {
       "key": "FIGURA-AI-087",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2054,7 +2054,7 @@
     {
       "key": "FIGURA-AI-088",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2065,7 +2065,7 @@
     {
       "key": "FIGURA-AI-089",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2076,7 +2076,7 @@
     {
       "key": "FIGURA-AI-090",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2087,7 +2087,7 @@
     {
       "key": "FIGURA-AI-091",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2098,7 +2098,7 @@
     {
       "key": "FIGURA-AI-092",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2109,7 +2109,7 @@
     {
       "key": "FIGURA-AI-093",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2120,7 +2120,7 @@
     {
       "key": "FIGURA-AI-094",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2131,7 +2131,7 @@
     {
       "key": "FIGURA-AI-095",
       "width": 390,
-      "images": 4,
+      "images": 5,
       "originalMain": true,
       "aiLabel": true,
       "decodedAll": true,
@@ -2183,5 +2183,23 @@
       "noOverflow": true,
       "zoom": true
     }
-  ]
+  ],
+  "comparison": {
+    "rows": 99,
+    "positionsPerRow": 6,
+    "checks": [
+      {
+        "key": "FIGURA-AI-001",
+        "acceptedSourcesDecoded": true
+      },
+      {
+        "key": "FIGURA-AI-052",
+        "acceptedSourcesDecoded": true
+      },
+      {
+        "key": "ELPSY-001",
+        "acceptedSourcesDecoded": true
+      }
+    ]
+  }
 }
