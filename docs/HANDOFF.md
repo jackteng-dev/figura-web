@@ -1,5 +1,51 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-23：99 件必要 2D 圖組全數入本機圖庫（作者簽核 pending）
+
+依作者新要求，REAR 改以明確 135°–180° 背後方向及關鍵身份判斷，小紋理差異可接受；ANGLE 選擇性。保留 2026-11-20 舊拒收紀錄與政策歷史，新採用另記 `rear-2026-11-23`，不改寫舊 run review。先完成 001／003／068 三件試點並本機上傳後繼續全目錄。
+
+- 作者修復儲存後，剩餘 21 個已通過 REAR 分兩批（10／11 件）以原檔續傳完成。**MAIN／REAR／FACE／DETAIL／SCENE 各 99 件，共 495 張本機供圖，沒有待產圖／待審查／待上傳的必要圖位。** 21 件的路徑、SHA 與生成紀錄對照 `c361351` 皆相同，未重產，99 件 master 紀錄不變。ANGLE 選擇性，36 件舊候選退回、63 件未新增候選留空。
+- 四件 ELPSY 無圖商品的標題／品牌／分類／說明／款式與 TWD1280 價格皆同，只有 product／SKU UUID 不同，因此共用原創「苔石量測員」設計。四件 MAIN／FACE／DETAIL／SCENE／REAR 已上傳並讀回；舊排除紀錄保留在 priorExcluded。
+- ComfyUI 原先未執行，已以原 portable 啟動，僅聽 127.0.0.1:18188；保留既有模型、節點與使用者 workflow。API 沿用作者已啟動的 19092 demo，未重啟。新背面混用本機 Klein 參考圖流程與內建 ImageGen；沒有新增模型／套件。種子或內建模型版本未提供者記 null。
+- 原圖與完整 prompts 在忽略 work，manifest 保存實際來源／輸出 SHA、背面提案、重新審查及上傳 UUID。`rear_gallery_round.py` 提供明確複核／內建候選採用與 checkpoint；圖庫 gate 僅允許 hash 綁定的 REAR 放寬。原 run review 未改寫，外部來源必須綁定正確 master，MAIN 例外只允許原無圖 ELPSY。
+- **儲存故障已解決。** 作者確認 12 個 volume 全滿且 `-volume.max=12` 阻止擴充，使用忽略的 `figura-api/work/compose.seaweed-capacity.yml` 只重建 seaweed，改為 `-volume.max=60`，回報 48 個可用 volume；既有圖片保留。先前 PUT 500／圖庫 POST 503 與 Docker 拒絕存取記錄保留為歷史。此次 agent 沒有操作 Docker、ComfyUI 或重啟 API／網頁。
+- 052 先前失敗 POST 已核對無 audit event 且草稿版本未變後恢復公開，失敗 UUID／版本證據保留，本次以新草稿版本的 UUID 續傳成功。**99 件商品全部公開，每件皆有 MAIN 與 REAR，沒有缺主圖或空白圖庫。** 無必要圖位續傳待辦。
+- 驗證：6 項圖庫 guard＋5 項 runner guard 通過，Web production build exit 0；99 件 × 1440／390px 共 198 筆真本機瀏覽器檢查通過，495 張供圖與 495 個必要來源 SHA 核對通過。`--require-complete` 明確要求每款五個必要圖位，缺圖即失敗。比較頁 99 列各六圖位，抽樣含續傳 REAR 與 ELPSY 可解碼。原生成階段無 OOM，文生圖.json／ae.safetensors.corrupt SHA 不變。
+- [逐件 REAR／ANGLE 與問題報告](verification/catalog-gallery-rear-report-2026-11-23.md)、[六圖位比較頁](catalog-gallery-comparison.html)、[manifest](verification/catalog-gallery-manifest.json)、[環境紀錄](verification/comfyui-environment-2026-11-23.json)、[供圖驗證](verification/catalog-gallery-integrity-2026-11-23.json)、[瀏覽器驗證](verification/catalog-gallery-browser-2026-11-23.json)。比較頁顯示 99 件各五個完成必要圖位，ANGLE 保留歷史退回／留空說明；原圖留本機 work，Git 不含圖片。
+- 本輪依作者要求只 commit，未 push／修改 PR／merge／force push；作者簽核仍 pending。下一步由作者在本機人工簽核；沒有正式部署或自動簽核，也沒有 3D／360。下方 2026-11-20 的遠端阻礙與側背全空是歷史紀錄。
+
+## 2026-11-20：全目錄 2D 圖組已處理（側／背留空、作者 pending）
+
+分支 `codex/comfyui-product-gallery`。本機圖庫 API 以 `figura-api/codex/product-gallery` 的 `73c2606`、JDK21 重新 package，使用私有 `work/demo.env`，只連 `13306/figura_shop_demo`、17379 Redis、18333 SeaweedFS；V24 僅本機 demo。API `127.0.0.1:19092`、Web 預覽 `http://127.0.0.1:15181/shop`、ComfyUI `127.0.0.1:18188`；未連正式 DB、未修改後端來源、未正式部署。
+
+- 本機公開 API 99 筆中，95 件虛構商品全部處理，4 件 App 合成串接資料排除並記錄證據。MAIN 95 張沿用，FACE／DETAIL／SCENE 各新增 95 張，共 285 張上傳本機；目前每款四張採用，不能說六張已補滿。ANGLE／REAR 各 36 件候選退回、59 件未產候選留空；全部不上傳。依 `angleProductionPolicy` 保留流程限制與個別原因，作者人工簽核一律 pending。
+- 三件試點及每批約十件均 checkpoint commit，可依 manifest 續跑而不重產已完成圖片。manifest 保存 master SHA、character sheet／固定背面提案、prompt／seed／工作流／模型與輸出 SHA、候選審查、UUID／版本、上傳及公開讀回。三款額外官方 Base 側視試驗仍漂移，全部退回，未擴大為全庫 Base 重產。無 3D 或 360。
+- 特寫使用原圖不放大裁切，與 ComfyUI 相同 PyAV RGB 解碼逐像素核對；情境保留原像素前景合成木展示台，漏掉底座或支架時退回修復保護遮罩。原圖／輸出／日誌全在忽略的 work，未修改 src/assets 或 package-lock.json。頁面及 alt 有「AI 生成示意圖」，未宣稱實物攝影。
+- 新增官方 BiRefNet（MIT，444,473,596 bytes）及 FLUX.2 Klein Base 4B FP8（Apache-2.0，4,089,498,488 bytes）；固定 revision、來源、商用授權全文、大小與 SHA-256 見環境紀錄。無新套件／custom node、未覆寫原模型或使用者 workflow。GPU 編碼試驗近 11.1GB 顯存下停滯且中止未返回，記錄受控重啟一次後恢復 CPU 編碼；未終止其他 GPU 程式，沒有推論 OOM 回報。
+- 最終驗證：95 件 × 1440／390px 共 190 組真實瀏覽器檢查通過；380 張目前供應圖片及全部 master／來源 SHA 核對通過，原 MAIN 不變、無退回圖混入。Python 原 runner 5 checks＋圖庫 gate／恢復 5 checks 通過，5 個保護遮罩重新計算 SHA 通過；最終 Web production build 通過。配對 API 本輪 Maven package 324 tests：46 pass／278 opt-in skip，0 failure/error；不能把 skip 當 pass。
+- 已處理的問題：Windows 原子檔案鎖重試、005 上傳前保存失敗後過早復刊造成 UUID 版本過期（核對 audit 後修復，未重複上傳）、裁切解碼色差誤報、快速切圖停留舊 responsive image、裁切過緊與遮罩漏掉底座。未知 ACK 現維持同一草稿版本續跑。Chrome 受限帳戶 sandbox GPU 子程序被拒，唯讀檢查使用專用 headless profile；未修改產品安全設定。
+- 文件：[逐件結果／模型／問題與牆鐘時間](verification/catalog-gallery-report-2026-11-20.md)、[六圖位比較頁](catalog-gallery-comparison.html)、[manifest](verification/catalog-gallery-manifest.json)、[環境紀錄](verification/comfyui-environment-2026-11-20.json)、[續跑說明](CATALOG_GALLERY_RUNBOOK.md)。比較頁引用本機 work 圖片，clone 不含原圖。使用額度中斷等待包含在牆鐘時間內，不冒稱純 GPU 運算時間。
+- 遠端交付仍受阻：最終驗證 commit `769260c` 已保存；最後 Git push 以 exit 128 失敗，原因為 wincredman 無法保存憑證、無法取得密碼。改用 GitHub 連接器更新 PR 說明亦被「requires approval, but approval policy is never」拒絕。既有 [PR #22](https://github.com/jackteng-dev/figura-web/pull/22) 為 base main 的 draft，遠端 head 仍 `38b4899`，尚未包含本輪後續提交或新說明。詳細結果記在 manifest `remoteDelivery`；準備好的 PR 說明為 `docs/verification/catalog-gallery-pr-2026-11-20.md`。未 merge main、未 force push，後續需可用 Git 憑證／寫入政策才能推送及更新。
+
+下一步為作者在本機逐件人工簽核；側／背仍需有效一致性方法，是否增加 3D 由作者另行評估。本輪沒有自動代作者簽核或正式上架。
+
+
+## 2026-11-19：ComfyUI 本機流程與商品多圖（未合併／未部署）
+
+分支 `codex/comfyui-product-gallery`，起點 `ba2ceed`（PR #21 已合併）。配對 API 分支 `codex/product-gallery`／V24。交付為 PR，**本輪不 merge、不部署、不改正式 DB**。未改 `package-lock.json`、`src/assets/`，無 Web CD 受保護檔變更。
+
+- **環境**：自行查到 portable `D:\ComfyUI`，既有服務 `127.0.0.1:18188`、RTX 3080 Ti 12GB。API／節點／模型 SHA 盤點完成；未下載模型、安裝節點、更新設定或對外開 port。既有 Flux.2 Klein 4B FP8＋Qwen＋Flux2 VAE 實際完成參考圖編輯；IPAdapter SDXL／ControlNet 權重存在，未冒稱已測 Depth／OpenPose。
+- **可重用流程**：`scripts/comfyui_figura.py`＋`workflows/figura/`，商品／revision／Master SHA／圖片類型／尺寸／prompt／seed、完整 API workflow、job ID、模型 hash 與輸出紀錄。相同工作重用、未知 POST 不盲目重送、已知 job 可恢復 polling；輸出 fsync 後不可覆寫原子發布，衍生檔 staging 完成後才發布。輸出 JPEG／WebP／AVIF；人工 signoff 獨立記錄，沒有自動簽核。
+- **兩款結果**：原 r1 主圖沿用；每款由 ComfyUI 產生主圖與三張原像素特寫候選，無生成新造型、無放大。八張共 54 個衍生檔、1,077,114 bytes。兩張新側面與兩張新情境仍漂移，四張均退回，背面未生成；不宣稱全角度幾何一致。Codex 視覺 pass 的八張仍待作者人工簽核，只用於本機隔離測試。見 `docs/COMFYUI_FIGURA_WORKFLOW.md`、`docs/comfyui-figure-samples.html` 與 `src/brand/comfyui-figure-samples/review-manifest.json`。
+- **員工後台**：`ImagePanel.vue` 改多檔預覽、逐張上傳／用途、排序、主圖、替換、移除與新舊圖片 audit。僅草稿／具權限；未知 ACK 保留 File／UUID／body，ACK 後讀取失敗只重讀；每筆寫入同時做員工身分 precondition，由後端與 Principal 在交易內核對。pending 只在頁面記憶體，重整先核對圖組及紀錄。
+- **顧客展示**：`ProductGallery.vue`，主圖＋縮圖、native dialog 放大、關閉焦點恢復、鍵盤、橫向滑動、固定比例、Lazy Loading、responsive srcset、失敗提示。商品及圖組平行讀取，保留舊 `image` fallback；列表／App 原單主圖欄位不變。
+- **格式限制**：API 使用安全重編碼 PNG／JPEG 與 320／640／1024 寬衍生檔（不放大）；**本機匯出的 WebP／AVIF 未接進線上 API**，不可把靜態比較頁說成正式 AVIF 供圖。精確側／背、作者最終簽核、真機 CWV 與正式部署仍未完成。
+- **本機驗證**：`npm run build`（vue-tsc＋Vite）通過；Python 流程 guard 5 項通過（loopback、裁切／放大拒絕、hash／review gate、輸出中斷、匯出中斷恢復與不可覆寫）。Chrome headless 真 production dist → 新隔離 API／MySQL／Redis／SeaweedFS，46 項通過：1440／390px 圖組切換／放大／鍵盤／滑動／fallback、不溢出，真員工多檔上傳／排序／主圖／替換／移除，已提交回應遺失同 body 重試僅一筆 event、ACK 後 GET 失敗只讀；比較頁 8 AVIF＋4 退回 WebP 皆可解碼。結果 `docs/verification/comfyui-gallery-2026-11-19.json`；本機 LCP 抽樣約 120–196ms，非正式 CWV 或手機實機證據。
+- **配對回歸**：API 完整 package 324 項、322 通過、2 舊 migration fixture opt-in skip、0 failure/error；App 保持遠端 main `0d518b2` 且未改檔，lockfile 補齊快取後 analyze 0 issue、27 tests pass／2 live skip、Web release build 通過，未做 Android／iOS 裝置測試。
+- **唯讀審查**：原 CLI 本機 inspection runner 無法啟動，改提供完整 diff／新增程式給 Codex CLI 做靜態唯讀審查。修正 actor 競爭、legacy 刪主圖未遞補、output／export 中斷恢復四項 P2；覆審無 P0／P1／P2 阻斷問題。審查沒有自行執行測試，測試證據如上。
+- **續作／限制**：先由作者比較圖組並 signoff；新 API V24 屬 `src/main/resources/` 受保護路徑，作者須安排伺服器受控 schema／contract switch 後才能 merge。舊版回退期間需暫停圖片寫入與舊 cleanup；詳 API `docs/PRODUCT_GALLERY_API.md`。本輪沒有批次替換商品。原始資料、credentials、模型與 raw logs 只在忽略的 work／本機 ComfyUI。
+
+
 ## 2026-11-19：擬真公仔 AI 圖片規範與兩款一致性樣本
 
 分支 `codex/figure-render-spec`，基於遠端 main `73fc22e`。本輪僅試作，不重做商品資料庫。未修改後端、`package-lock.json` 或 `src/assets/`，無資料契約切換。

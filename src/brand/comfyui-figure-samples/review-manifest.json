@@ -1,0 +1,1379 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "humanApproval": null,
+  "runs": [
+    {
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+      "runId": "4370eb3b9ab0c13de9fe0e42e12df10d5f6f8e290a003cac2dcb6253e41b6367",
+      "shot": "accessory",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:17:38Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "3ae067d7-2ad0-4875-8400-5f7e5e07c65d",
+      "outputSha256": "caacc8907cf3a8157eb86423b76286494966be57fe5f7bcbca72d76055b80ef4",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 220,
+            "y": 350,
+            "width": 500,
+            "height": 500
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 500,
+            "height": 500,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/4370eb3b9ab0c13de9fe0e42e12df10d5f6f8e290a003cac2dcb6253e41b6367"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+      "runId": "2e27ff1a0c2da86af40601e13f24a77644a2c0120cffa9f4ab3f1a506b14db76",
+      "shot": "base",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:18:04Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "5f2dcf26-ae6d-4007-b215-06f8b4112263",
+      "outputSha256": "ef42ea06af627b41c4513ce67b011ba1bfb5e1eb3e09e63097df4b28e2ef566d",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 230,
+            "y": 480,
+            "width": 480,
+            "height": 480
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 480,
+            "height": 480,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/2e27ff1a0c2da86af40601e13f24a77644a2c0120cffa9f4ab3f1a506b14db76"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+      "runId": "2d62b19e7f06e5ea54e5fc500f401850ab458622863743f7c2c1a0134ee38b3c",
+      "shot": "face",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:17:08Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "014d6e10-f424-4b12-914c-c01fd3309a20",
+      "outputSha256": "9cbe7b8bd767fdf95956945b47ef62537bef5ba10263f4dc53d8cfce71faa9e9",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 270,
+            "y": 100,
+            "width": 430,
+            "height": 430
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 430,
+            "height": 430,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/2d62b19e7f06e5ea54e5fc500f401850ab458622863743f7c2c1a0134ee38b3c"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+      "runId": "a0df252a84ba324a9dcba7a17473256ce8d21e6ef56e1fef51294846c786d946",
+      "shot": "main",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:16:57Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "c293d0e5-b03f-4273-a119-37827d0ac7a3",
+      "outputSha256": "127d97f2f20d8fd36d0704266a21f94a85ccc9c3078274f25e770e677dc64ef4",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 960,
+            "height": 960,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/a0df252a84ba324a9dcba7a17473256ce8d21e6ef56e1fef51294846c786d946"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+      "runId": "f17a12195ff4744c1986bdf8e3fd9c5082d0088e696a5a28b066ba77df83e7b7",
+      "shot": "scene",
+      "mode": "flux-reference",
+      "createdAt": "2026-11-19T15:17:06Z",
+      "review": {
+        "decision": "reject",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Rejected for gallery: proportions/paint/weathering and accessory details drift despite reference. Scene study only."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "645a5e2e-8d9d-4294-ba8f-f1d9a1b0e1a7",
+      "outputSha256": "695b6f91314268c003bd8525fdafd7016042fed047be2c3307f32c0b198bd2c3",
+      "modelHashes": {
+        "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+        "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+        "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+      },
+      "preview": "rejected-studies/figura-ai-001-scene.webp",
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "4": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen_3_4b.safetensors",
+            "type": "flux2",
+            "device": "cpu"
+          }
+        },
+        "5": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "6": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "4",
+              0
+            ],
+            "text": "The reference is a painted PVC/ABS pear-shaped ivory courier robot on an apricot circular base. Plum visor with two eyes and smile, one blossom sprig with two leaves and two buds, mint green satchel on its anatomical right hip, gold buckle and crescent, anatomical left hand holding one yellow pear, purple gloves, brown boots. This is an AI concept image of a fictional miniature, not a living subject.  Keep exactly this physical collectible sculpt and fixed pose. Place it on a walnut collector display shelf with warm softbox and subtle cool rim light. One complete miniature and its complete original base only, no other objects or figures. Preserve all shapes, left/right accessories and paint. Square product photo, no text."
+          }
+        },
+        "8": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "BasicGuider",
+          "inputs": {
+            "model": [
+              "3",
+              0
+            ],
+            "conditioning": [
+              "8",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 768,
+            "batch_size": 1
+          }
+        },
+        "11": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "12": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 2026111901
+          }
+        },
+        "13": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": 768,
+            "height": 768
+          }
+        },
+        "14": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "12",
+              0
+            ],
+            "guider": [
+              "9",
+              0
+            ],
+            "sampler": [
+              "11",
+              0
+            ],
+            "sigmas": [
+              "13",
+              0
+            ],
+            "latent_image": [
+              "10",
+              0
+            ]
+          }
+        },
+        "15": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "14",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "15",
+              0
+            ],
+            "filename_prefix": "figura/f17a12195ff4744c1986bdf8e3fd9c5082d0088e696a5a28b066ba77df83e7b7"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-001",
+      "designRevision": "r1",
+      "masterSha256": "ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3",
+      "runId": "8f62cc63ca264522d86ddf7fab79a79e85af6c303130e18934f1f595079fdcd0",
+      "shot": "side",
+      "mode": "flux-reference",
+      "createdAt": "2026-11-19T15:15:28Z",
+      "review": {
+        "decision": "reject",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Rejected: camera direction is closer to profile, but sculpt/accessory orientation and unseen seams drift. Not the same verified physical model."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "ebe9dd2f-3c52-47cb-a9c2-07da0183a62d",
+      "outputSha256": "f1a5b98f280175a53d1c5324f39a67b1bd291f6b67e8da47a610063626f6b949",
+      "modelHashes": {
+        "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+        "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+        "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+      },
+      "preview": "rejected-studies/figura-ai-001-side.webp",
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-ed2376703a8e875e5b9233e3187c973245f72a14f22bc6c40040a226a39326c3.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "4": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen_3_4b.safetensors",
+            "type": "flux2",
+            "device": "cpu"
+          }
+        },
+        "5": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "6": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "4",
+              0
+            ],
+            "text": "The reference is a painted PVC/ABS pear-shaped ivory courier robot on an apricot circular base. Plum visor with two eyes and smile, one blossom sprig with two leaves and two buds, mint green satchel on its anatomical right hip, gold buckle and crescent, anatomical left hand holding one yellow pear, purple gloves, brown boots. This is an AI concept image of a fictional miniature, not a living subject.  Rotate only the camera to view the same fixed physical sculpt from its right side at 90 degrees. Do not change the pose, sculpt, face, accessories, colors or base. Complete figure and full base, warm white studio, no text. Single square product photo, crisp painted miniature surface."
+          }
+        },
+        "8": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "BasicGuider",
+          "inputs": {
+            "model": [
+              "3",
+              0
+            ],
+            "conditioning": [
+              "8",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 768,
+            "batch_size": 1
+          }
+        },
+        "11": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "12": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 2026111901
+          }
+        },
+        "13": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": 768,
+            "height": 768
+          }
+        },
+        "14": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "12",
+              0
+            ],
+            "guider": [
+              "9",
+              0
+            ],
+            "sampler": [
+              "11",
+              0
+            ],
+            "sigmas": [
+              "13",
+              0
+            ],
+            "latent_image": [
+              "10",
+              0
+            ]
+          }
+        },
+        "15": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "14",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "15",
+              0
+            ],
+            "filename_prefix": "figura/8f62cc63ca264522d86ddf7fab79a79e85af6c303130e18934f1f595079fdcd0"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+      "runId": "3ddd65332d5087acbd0203f2f6b1d93a154441e2bc2aadf938318011fb0a52f6",
+      "shot": "accessory",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:18:11Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "3dff446a-993d-48fe-8024-d02cf1a99bc9",
+      "outputSha256": "c7c824f820ef489c2e75445c23030c68f059b13fec5eceaa5c248aa93a4dfeed",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 300,
+            "y": 210,
+            "width": 380,
+            "height": 380
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 380,
+            "height": 380,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/3ddd65332d5087acbd0203f2f6b1d93a154441e2bc2aadf938318011fb0a52f6"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+      "runId": "84dc77d9af42705597b1661c4217afa1be6f6f5dc3548507e089b531ddc926d5",
+      "shot": "base",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:18:13Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "1b26cb2a-b77f-4c28-b109-50f3c804eb37",
+      "outputSha256": "7cbbaf73c8f5694acbfe147e203cc1b8ceb0d77883256f1780e3ae832e6063f6",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 260,
+            "y": 560,
+            "width": 400,
+            "height": 400
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 400,
+            "height": 400,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/84dc77d9af42705597b1661c4217afa1be6f6f5dc3548507e089b531ddc926d5"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+      "runId": "6b340f84fa73abab81703f1e3bd024bd68b06f17ff261bc24dad43498106344c",
+      "shot": "face",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:18:09Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "be5523a8-b986-4c90-aa2f-9acad4b901b0",
+      "outputSha256": "c5c2009aa5eb9ef907335f5895a7fa55f16f74b22eb3578e60a09ac0bf5c3836",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 310,
+            "y": 60,
+            "width": 350,
+            "height": 350
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 350,
+            "height": 350,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/6b340f84fa73abab81703f1e3bd024bd68b06f17ff261bc24dad43498106344c"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+      "runId": "e47b95fd5072daae882ff7b1d4ec1f244667f3d622239bca37b0abf36e35f629",
+      "shot": "main",
+      "mode": "crop",
+      "createdAt": "2026-11-19T15:18:06Z",
+      "review": {
+        "decision": "pass",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Approved-master pixel crop, no synthesized details or upscaling; consistent r1 reference. Technical visual pass, author acceptance pending."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "0cfd4b97-ba29-48f8-bb19-3b81fb05108d",
+      "outputSha256": "a9c94e2f067bb13887fdba612c9000970474d548421713fd4439368aeda496ee",
+      "modelHashes": {},
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "x": 0,
+            "y": 0,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "4": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 960,
+            "height": 960,
+            "crop": "disabled"
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "4",
+              0
+            ],
+            "filename_prefix": "figura/e47b95fd5072daae882ff7b1d4ec1f244667f3d622239bca37b0abf36e35f629"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+      "runId": "0775348f969426dba5311ae071d30fc799a2933dfb8840e903c6f44a0da3fe28",
+      "shot": "scene",
+      "mode": "flux-reference",
+      "createdAt": "2026-11-19T15:17:37Z",
+      "review": {
+        "decision": "reject",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Rejected for gallery: proportions/paint/weathering and accessory details drift despite reference. Scene study only."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "ad788b28-5b71-40f0-959c-970fa78cd65b",
+      "outputSha256": "4b71c50a05af123b7bfb57508dfa9f9c0eb4a26e408038f465fdc75de159456a",
+      "modelHashes": {
+        "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+        "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+        "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+      },
+      "preview": "rejected-studies/figura-ai-068-scene.webp",
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "4": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen_3_4b.safetensors",
+            "type": "flux2",
+            "device": "cpu"
+          }
+        },
+        "5": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "6": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "4",
+              0
+            ],
+            "text": "The reference is a painted resin collectible of an adult woman mechanic, sculpted brown pinned curly hair, head turned to her anatomical left, charcoal coveralls with two chest pockets and copper hardware, orange gloves, brown work boots, anatomical right hand on hip, anatomical left arm cradling one cream welding mask with a purple rectangular window, dark weathered circular diamondplate base with rivets. This is an AI concept image of a fictional miniature, not a living subject.  Keep exactly this physical collectible sculpt and fixed pose. Place it on a walnut collector display shelf with warm softbox and subtle cool rim light. One complete miniature and its complete original base only, no other objects or figures. Preserve all shapes, left/right accessories and paint. Square product photo, no text."
+          }
+        },
+        "8": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "BasicGuider",
+          "inputs": {
+            "model": [
+              "3",
+              0
+            ],
+            "conditioning": [
+              "8",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 768,
+            "batch_size": 1
+          }
+        },
+        "11": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "12": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 2026111968
+          }
+        },
+        "13": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": 768,
+            "height": 768
+          }
+        },
+        "14": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "12",
+              0
+            ],
+            "guider": [
+              "9",
+              0
+            ],
+            "sampler": [
+              "11",
+              0
+            ],
+            "sigmas": [
+              "13",
+              0
+            ],
+            "latent_image": [
+              "10",
+              0
+            ]
+          }
+        },
+        "15": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "14",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "15",
+              0
+            ],
+            "filename_prefix": "figura/0775348f969426dba5311ae071d30fc799a2933dfb8840e903c6f44a0da3fe28"
+          }
+        }
+      }
+    },
+    {
+      "productKey": "FIGURA-AI-068",
+      "designRevision": "r1",
+      "masterSha256": "b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c",
+      "runId": "a9274029a0692e7ad3e1d79ae5e3f5177c104217d761ae78b99bac67bdc434a3",
+      "shot": "side",
+      "mode": "flux-reference",
+      "createdAt": "2026-11-19T15:16:34Z",
+      "review": {
+        "decision": "reject",
+        "reviewer": "Codex visual QA (human approval pending)",
+        "note": "Rejected: camera direction is closer to profile, but sculpt/accessory orientation and unseen seams drift. Not the same verified physical model."
+      },
+      "humanApproval": null,
+      "status": "complete",
+      "promptId": "ed9f308b-9e69-4c2c-a82b-2fe8b11d91ee",
+      "outputSha256": "659676bec4a86c5ce987f2aecde72d4c0e5e3d479ef61f94366a02564a88d81e",
+      "modelHashes": {
+        "models/diffusion_models/flux-2-klein-4b-fp8.safetensors": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+        "models/text_encoders/qwen_3_4b.safetensors": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+        "models/vae/flux2-vae.safetensors": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+      },
+      "preview": "rejected-studies/figura-ai-068-side.webp",
+      "workflow": {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "figura-b71a4a40d1c4df8f76d02699e9f1a87852ae9c052f0673a546dd482532d5f45c.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "x": 147,
+            "y": 120,
+            "width": 960,
+            "height": 960
+          }
+        },
+        "3": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "4": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen_3_4b.safetensors",
+            "type": "flux2",
+            "device": "cpu"
+          }
+        },
+        "5": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "6": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "4",
+              0
+            ],
+            "text": "The reference is a painted resin collectible of an adult woman mechanic, sculpted brown pinned curly hair, head turned to her anatomical left, charcoal coveralls with two chest pockets and copper hardware, orange gloves, brown work boots, anatomical right hand on hip, anatomical left arm cradling one cream welding mask with a purple rectangular window, dark weathered circular diamondplate base with rivets. This is an AI concept image of a fictional miniature, not a living subject.  Rotate only the camera to view the same fixed physical sculpt from its right side at 90 degrees. Do not change the pose, sculpt, face, accessories, colors or base. Complete figure and full base, warm white studio, no text. Single square product photo, crisp painted miniature surface."
+          }
+        },
+        "8": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "BasicGuider",
+          "inputs": {
+            "model": [
+              "3",
+              0
+            ],
+            "conditioning": [
+              "8",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 768,
+            "height": 768,
+            "batch_size": 1
+          }
+        },
+        "11": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "12": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 2026111968
+          }
+        },
+        "13": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": 768,
+            "height": 768
+          }
+        },
+        "14": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "12",
+              0
+            ],
+            "guider": [
+              "9",
+              0
+            ],
+            "sampler": [
+              "11",
+              0
+            ],
+            "sigmas": [
+              "13",
+              0
+            ],
+            "latent_image": [
+              "10",
+              0
+            ]
+          }
+        },
+        "15": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "14",
+              0
+            ],
+            "vae": [
+              "5",
+              0
+            ]
+          }
+        },
+        "20": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "15",
+              0
+            ],
+            "filename_prefix": "figura/a9274029a0692e7ad3e1d79ae5e3f5177c104217d761ae78b99bac67bdc434a3"
+          }
+        }
+      }
+    }
+  ]
+}

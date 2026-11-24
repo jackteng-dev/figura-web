@@ -2,6 +2,12 @@
 
 2026-11-19。適用範圍：Figura 的 AI 虛構展示商品，先完成兩款樣本，再決定是否擴大。本文的「擬真 3D 公仔渲染風格」描述**點陣圖片的視覺效果**，不代表存在可旋轉、量測、列印或製造的 3D 模型。
 
+### 2026-11-23 作者要求更新（目前適用）
+
+全部本機上架商品必須至少有一張 REAR。背後角度可約 135°–180°，須明確看見背部、後腦／頭部後側與底座背側；不再以精確 180° 或每一處紋理完全相同作為必要條件。關鍵身份仍是輪廓比例、主要配色、髮型／頭型、配件的解剖左右及底座形色；換邊、主要配件增減、姿態／輪廓明顯改變仍須退回。未知背面先固定於 character sheet，同款只採一種提案，不能用鏡像充角度。ANGLE 為選擇性，無圖商品須先設計 MAIN，再補 FACE／DETAIL／SCENE／REAR。
+
+先前三件試點通過後擴大；舊候選可依新標準逐張重新檢查，但保留舊審查、原 prompt／輸出及拒收原因，以獨立 hash 綁定的 `rear-2026-11-23` reassessment 記錄新決定，不能改寫歷史或把放寬套用到 FACE／DETAIL。所有圖仍標示 AI 生成示意圖，作者最終簽核 pending；本輪只有 2D，不建立模型／360。
+
 ## 1. 統一的視覺方向
 
 - 主體必須像放在桌面上的實體收藏模型。PVC 使用細緻半霧面塗裝；ABS 配件可有較硬、略亮的反射；樹脂雕像呈現雕刻髮束、雕塑衣褶、手工塗裝與適度舊化。虛構材質是造型設定，不能當成實際商品材質保證。
@@ -86,7 +92,7 @@ Banner 另指定「same approved miniature sculpt, collector display stage, cine
 - 命名：`figura-ai-001-r1-main-1024.webp`、`...-side-640.avif`。變更設計必須換 revision，禁止把不同版混成同一商品圖組。
 - 原始生成結果留在忽略的 `work/figure-render-samples/originals/`；新可追蹤樣本放 `src/brand/figure-render-samples/`，不改 `src/assets/`。
 
-**目前介面限制：** 商品 API 只允許一張目前主圖，接受 PNG／JPEG，上傳後重新編碼；公開圖讀取為 `no-store`。現行 `ProductCover.vue` 不支援多格式 `srcset`。因此本輪的多角度、WebP／AVIF 是獨立評估素材，**尚未接上商品圖片 API、正式首頁或 CDN 快取**。後續需先設計多圖／派生格式安全契約及稽核，再實作，不能把 WebP 直接送進目前上傳端點，或繞過既有 S3 與版本控制。
+**介面進度：** PR #21 時只支援一張 PNG／JPEG 主圖，沒有多圖或 srcset。本輪已在功能分支新增多圖 API／後台與前台，保留舊單圖投影；詳 [ComfyUI 流程與限制](COMFYUI_FIGURA_WORKFLOW.md)。API 仍只接受並安全重編碼 PNG／JPEG，提供較小尺寸；WebP／AVIF 仍是本機衍生與獨立比較素材，未接到線上 API。配對 API PR 包含受保護的 V24 schema，尚未合併或部署，不把功能分支成果宣稱為正式站狀態。
 
 `<picture>` 的格式選擇與 fallback 行為依據 [MDN 官方文件](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture)。
 

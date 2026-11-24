@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-19",
+  "source": "Local process command line, listening socket, /system_stats, /object_info and local file SHA-256",
+  "api": "http://127.0.0.1:18188",
+  "loopbackOnly": true,
+  "comfyuiVersion": "0.27.0",
+  "pythonVersion": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+  "pytorchVersion": "2.12.0+cu130",
+  "gpu": [
+    {
+      "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 12884377600,
+      "vram_free": 2189139432,
+      "torch_vram_total": 33554432,
+      "torch_vram_free": 24395240
+    }
+  ],
+  "ramBytes": 34134056960,
+  "ramFreeAtInitialProbeBytes": 5748166656,
+  "models": [
+    {
+      "file": "models/checkpoints/Illustrious-XL-v1.0.safetensors",
+      "bytes": 6938040736,
+      "sha256": "735cf3fefcbdc4f7817f53247e38b836ffd27c7641af6d8daa21d245242cb4bd"
+    },
+    {
+      "file": "models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+      "bytes": 2528373448,
+      "sha256": "6ca9667da1ca9e0b0f75e46bb030f7e011f44f86cbfb8d5a36590fcd7507b030"
+    },
+    {
+      "file": "models/controlnet/controlnet-union-sdxl-1.0-promax.safetensors",
+      "bytes": 2513342408,
+      "sha256": "9fae2e50cb431bfcbe05822b59ec2228df545ef27f711dea8949e9f4ed9f7cdc"
+    },
+    {
+      "file": "models/diffusion_models/flux-2-klein-4b-fp8.safetensors",
+      "bytes": 4070624520,
+      "sha256": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6"
+    },
+    {
+      "file": "models/diffusion_models/z_image_turbo_bf16.safetensors",
+      "bytes": 12309866400,
+      "sha256": "2407613050b809ffdff18a4ac99af83ea6b95443ecebdf80e064a79c825574a6"
+    },
+    {
+      "file": "models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors",
+      "bytes": 847517512,
+      "sha256": "3f5062b8400c94b7159665b21ba5c62acdcd7682262743d7f2aefedef00e6581"
+    },
+    {
+      "file": "models/text_encoders/qwen_3_4b.safetensors",
+      "bytes": 8044982048,
+      "sha256": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a"
+    },
+    {
+      "file": "models/vae/ae.safetensors",
+      "bytes": 335304388,
+      "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38"
+    },
+    {
+      "file": "models/vae/flux2-vae.safetensors",
+      "bytes": 336213556,
+      "sha256": "d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5"
+    },
+    {
+      "file": "models/vae_approx/taef1_decoder.safetensors",
+      "bytes": 2464414,
+      "sha256": "bb41500b646d5b8b592b7f3ca5d20d888c3075e209d178d99af609cd7e02a1d4"
+    },
+    {
+      "file": "models/vae_approx/taef1_encoder.safetensors",
+      "bytes": 2464424,
+      "sha256": "19f5a854ce575fd0a1c0a52938410cf5fb4dc4b8ae71c8887533646d8fe47030"
+    },
+    {
+      "file": "models/vae_approx/taesd3_decoder.safetensors",
+      "bytes": 2464414,
+      "sha256": "e940e227e2a41919f0735ec423129724666f8b949c8bbce7a04b78ecfb4667de"
+    },
+    {
+      "file": "models/vae_approx/taesd3_encoder.safetensors",
+      "bytes": 2464424,
+      "sha256": "e5c96f3476bd26fe73e96d701a694f40d7ab48a290494cbbf70a3697d09cab4a"
+    },
+    {
+      "file": "models/vae_approx/taesdxl_decoder.safetensors",
+      "bytes": 2450590,
+      "sha256": "ae5256b046b01d577279ed93a55bbb1fb2689e55aa14cfc0f7f841e0160202a5"
+    },
+    {
+      "file": "models/vae_approx/taesdxl_encoder.safetensors",
+      "bytes": 2450568,
+      "sha256": "3d78013286676a1a51074831230f90972e573698fe4b11416d6f28e0cd5bbe7e"
+    },
+    {
+      "file": "models/vae_approx/taesd_decoder.safetensors",
+      "bytes": 2450590,
+      "sha256": "d903e7cc3ae58f21d985a3498a841fa8b230edccff7ac5d27607b0c557945c6f"
+    },
+    {
+      "file": "models/vae_approx/taesd_encoder.safetensors",
+      "bytes": 2450568,
+      "sha256": "a6b8c0fda4aad50784e543389e0239c72c5e31e9775c9e612ea8333bf3a77dcb"
+    }
+  ],
+  "customNodes": [
+    "ComfyUI_IPAdapter_plus"
+  ],
+  "savedWorkflowCount": 1,
+  "capabilities": {
+    "fluxReferenceEdit": "executed, both side and scene attempts rejected for identity drift",
+    "ipadapterSDXL": "nodes and matching weights present; not used by this workflow",
+    "controlnetSDXLUnion": "nodes and weights present; not exercised",
+    "depthOpenPose": "core pose nodes present; no dedicated preprocessor/depth/pose weights verified; not claimed operational",
+    "inpaint": "core masked VAE nodes present; no local mask correction tested"
+  },
+  "downloads": []
+}

@@ -1,0 +1,7 @@
+{
+  "1": {"class_type":"LoadImage","inputs":{"image":"REFERENCE.png"}},
+  "2": {"class_type":"ImageCrop","inputs":{"image":["1",0],"x":147,"y":120,"width":960,"height":960}},
+  "3": {"class_type":"ImageCrop","inputs":{"image":["2",0],"x":0,"y":0,"width":960,"height":960}},
+  "4": {"class_type":"ImageScale","inputs":{"image":["3",0],"upscale_method":"lanczos","width":960,"height":960,"crop":"disabled"}},
+  "20": {"class_type":"SaveImage","inputs":{"images":["4",0],"filename_prefix":"figura/crop"}}
+}

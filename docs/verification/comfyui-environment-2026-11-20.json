@@ -1,0 +1,643 @@
+{
+  "date": "2026-11-20",
+  "newItems": [
+    {
+      "name": "BiRefNet",
+      "version": "e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4",
+      "source": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/model.safetensors",
+      "officialRepository": "https://huggingface.co/ZhengPeng7/BiRefNet",
+      "license": "MIT",
+      "licenseSource": "https://github.com/ZhengPeng7/BiRefNet/blob/main/LICENSE",
+      "licenseText": "MIT License\n\nCopyright (c) 2024 ZhengPeng\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "bytes": 444473596,
+      "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+      "path": "D:\\ComfyUI\\ComfyUI\\models\\background_removal\\figura-birefnet-e2bf8e4460fc.safetensors",
+      "purpose": "Core ComfyUI foreground mask; preserve original product pixels in cabinet scene composites"
+    },
+    {
+      "name": "FLUX.2 Klein Base 4B FP8",
+      "version": "103db268c10d4d3921101b46057671f9ac460da6",
+      "source": "https://huggingface.co/black-forest-labs/FLUX.2-klein-base-4b-fp8/resolve/103db268c10d4d3921101b46057671f9ac460da6/flux-2-klein-base-4b-fp8.safetensors",
+      "officialRepository": "https://huggingface.co/black-forest-labs/FLUX.2-klein-base-4b-fp8",
+      "license": "Apache-2.0",
+      "licenseSource": "https://huggingface.co/black-forest-labs/FLUX.2-klein-base-4b-fp8/resolve/103db268c10d4d3921101b46057671f9ac460da6/LICENSE.md",
+      "licenseText": "                             Apache License\n                       Version 2.0, January 2004\n                    http://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n  \"License\" shall mean the terms and conditions for use, reproduction,\n  and distribution as defined by Sections 1 through 9 of this document.\n\n  \"Licensor\" shall mean the copyright owner or entity authorized by\n  the copyright owner that is granting the License.\n\n  \"Legal Entity\" shall mean the union of the acting entity and all\n  other entities that control, are controlled by, or are under common\n  control with that entity. For the purposes of this definition,\n  \"control\" means (i) the power, direct or indirect, to cause the\n  direction or management of such entity, whether by contract or\n  otherwise, or (ii) ownership of fifty percent (50%) or more of the\n  outstanding shares, or (iii) beneficial ownership of such entity.\n\n  \"You\" (or \"Your\") shall mean an individual or Legal Entity\n  exercising permissions granted by this License.\n\n  \"Source\" form shall mean the preferred form for making modifications,\n  including but not limited to software source code, documentation\n  source, and configuration files.\n\n  \"Object\" form shall mean any form resulting from mechanical\n  transformation or translation of a Source form, including but\n  not limited to compiled object code, generated documentation,\n  and conversions to other media types.\n\n  \"Work\" shall mean the work of authorship, whether in Source or\n  Object form, made available under the License, as indicated by a\n  copyright notice that is included in or attached to the work\n  (an example is provided in the Appendix below).\n\n  \"Derivative Works\" shall mean any work, whether in Source or Object\n  form, that is based on (or derived from) the Work and for which the\n  editorial revisions, annotations, elaborations, or other modifications\n  represent, as a whole, an original work of authorship. For the purposes\n  of this License, Derivative Works shall not include works that remain\n  separable from, or merely link (or bind by name) to the interfaces of,\n  the Work and Derivative Works thereof.\n\n  \"Contribution\" shall mean any work of authorship, including\n  the original version of the Work and any modifications or additions\n  to that Work or Derivative Works thereof, that is intentionally\n  submitted to Licensor for inclusion in the Work by the copyright owner\n  or by an individual or Legal Entity authorized to submit on behalf of\n  the copyright owner. For the purposes of this definition, \"submitted\"\n  means any form of electronic, verbal, or written communication sent\n  to the Licensor or its representatives, including but not limited to\n  communication on electronic mailing lists, source code control systems,\n  and issue tracking systems that are managed by, or on behalf of, the\n  Licensor for the purpose of discussing and improving the Work, but\n  excluding communication that is conspicuously marked or otherwise\n  designated in writing by the copyright owner as \"Not a Contribution.\"\n\n  \"Contributor\" shall mean Licensor and any individual or Legal Entity\n  on behalf of whom a Contribution has been received by Licensor and\n  subsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\n  this License, each Contributor hereby grants to You a perpetual,\n  worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n  copyright license to reproduce, prepare Derivative Works of,\n  publicly display, publicly perform, sublicense, and distribute the\n  Work and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\n  this License, each Contributor hereby grants to You a perpetual,\n  worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n  (except as stated in this section) patent license to make, have made,\n  use, offer to sell, sell, import, and otherwise transfer the Work,\n  where such license applies only to those patent claims licensable\n  by such Contributor that are necessarily infringed by their\n  Contribution(s) alone or by combination of their Contribution(s)\n  with the Work to which such Contribution(s) was submitted. If You\n  institute patent litigation against any entity (including a\n  cross-claim or counterclaim in a lawsuit) alleging that the Work\n  or a Contribution incorporated within the Work constitutes direct\n  or contributory patent infringement, then any patent licenses\n  granted to You under this License for that Work shall terminate\n  as of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\n  Work or Derivative Works thereof in any medium, with or without\n  modifications, and in Source or Object form, provided that You\n  meet the following conditions:\n\n  (a) You must give any other recipients of the Work or\n      Derivative Works a copy of this License; and\n\n  (b) You must cause any modified files to carry prominent notices\n      stating that You changed the files; and\n\n  (c) You must retain, in the Source form of any Derivative Works\n      that You distribute, all copyright, patent, trademark, and\n      attribution notices from the Source form of the Work,\n      excluding those notices that do not pertain to any part of\n      the Derivative Works; and\n\n  (d) If the Work includes a \"NOTICE\" text file as part of its\n      distribution, then any Derivative Works that You distribute must\n      include a readable copy of the attribution notices contained\n      within such NOTICE file, excluding those notices that do not\n      pertain to any part of the Derivative Works, in at least one\n      of the following places: within a NOTICE text file distributed\n      as part of the Derivative Works; within the Source form or\n      documentation, if provided along with the Derivative Works; or,\n      within a display generated by the Derivative Works, if and\n      wherever such third-party notices normally appear. The contents\n      of the NOTICE file are for informational purposes only and\n      do not modify the License. You may add Your own attribution\n      notices within Derivative Works that You distribute, alongside\n      or as an addendum to the NOTICE text from the Work, provided\n      that such additional attribution notices cannot be construed\n      as modifying the License.\n\n  You may add Your own copyright statement to Your modifications and\n  may provide additional or different license terms and conditions\n  for use, reproduction, or distribution of Your modifications, or\n  for any such Derivative Works as a whole, provided Your use,\n  reproduction, and distribution of the Work otherwise complies with\n  the conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\n  any Contribution intentionally submitted for inclusion in the Work\n  by You to the Licensor shall be under the terms and conditions of\n  this License, without any additional terms or conditions.\n  Notwithstanding the above, nothing herein shall supersede or modify\n  the terms of any separate license agreement you may have executed\n  with Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\n  names, trademarks, service marks, or product names of the Licensor,\n  except as required for reasonable and customary use in describing the\n  origin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\n  agreed to in writing, Licensor provides the Work (and each\n  Contributor provides its Contributions) on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n  implied, including, without limitation, any warranties or conditions\n  of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n  PARTICULAR PURPOSE. You are solely responsible for determining the\n  appropriateness of using or redistributing the Work and assume any\n  risks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\n  whether in tort (including negligence), contract, or otherwise,\n  unless required by applicable law (such as deliberate and grossly\n  negligent acts) or agreed to in writing, shall any Contributor be\n  liable to You for damages, including any direct, indirect, special,\n  incidental, or consequential damages of any character arising as a\n  result of this License or out of the use or inability to use the\n  Work (including but not limited to damages for loss of goodwill,\n  work stoppage, computer failure or malfunction, or any and all\n  other commercial damages or losses), even if such Contributor\n  has been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\n  the Work or Derivative Works thereof, You may choose to offer,\n  and charge a fee for, acceptance of support, warranty, indemnity,\n  or other liability obligations and/or rights consistent with this\n  License. However, in accepting such obligations, You may act only\n  on Your own behalf and on Your sole responsibility, not on behalf\n  of any other Contributor, and only if You agree to indemnify,\n  defend, and hold each Contributor harmless for any liability\n  incurred by, or claims asserted against, such Contributor by reason\n  of your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n",
+      "bytes": 4089498488,
+      "sha256": "44bab3a86fe98b85d21dd2a4729ebdc3ae51fb8a39f76e457e18c724219e6840",
+      "path": "D:\\ComfyUI\\ComfyUI\\models\\diffusion_models\\figura-klein-base-4b-fp8-103db268c10d.safetensors",
+      "purpose": "Bounded additional reference-angle pilot using undistilled 4B weights; no automatic adoption",
+      "freeDiskBeforeDownloadBytes": 216015876096
+    }
+  ],
+  "newCustomNodes": [],
+  "restarted": true,
+  "priorEnvironment": "comfyui-environment-2026-11-19.json",
+  "userWorkflowsModified": false,
+  "existingModelsModified": false,
+  "freeDiskAfterDownloadBytes": 216312143872,
+  "resourceSamples": [
+    {
+      "at": 1795139284.8102787,
+      "ramFreeBytes": 9124728832,
+      "gpu": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 12884377600,
+          "vram_free": 11538399232,
+          "torch_vram_total": 33554432,
+          "torch_vram_free": 25034752
+        }
+      ],
+      "freeDiskBytes": 216071979008
+    },
+    {
+      "at": 1795155018.233158,
+      "ramFreeBytes": 10187616256,
+      "gpu": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 12884377600,
+          "vram_free": 11076306038,
+          "torch_vram_total": 100663296,
+          "torch_vram_free": 87229558
+        }
+      ],
+      "freeDiskBytes": 211524091904
+    }
+  ],
+  "runtimeArgv": [
+    "ComfyUI\\main.py",
+    "--windows-standalone-build",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "18188",
+    "--disable-auto-launch"
+  ],
+  "loopbackOnly": true,
+  "basePilotTemplate": {
+    "installedPackageVersion": "0.11.1",
+    "file": "image_flux2_klein_image_edit_4b_base.json",
+    "sha256": "a62c1ca772d9118d29e60318a586e4faee58a8972d9926bfe1f4042a3a46ae56",
+    "steps": 20,
+    "cfg": 5,
+    "negativeReferenceLatent": true
+  },
+  "controlledRestarts": [
+    {
+      "at": 1795142643.8946364,
+      "reason": "own GPU text-encoder experiment remained busy near VRAM limit despite /interrupt; restore original CPU setting",
+      "before": {
+        "pid": 15336,
+        "args": [
+          "D:\\ComfyUI\\python_embeded\\python.exe",
+          "-s",
+          "ComfyUI\\main.py",
+          "--windows-standalone-build",
+          "--listen",
+          "127.0.0.1",
+          "--port",
+          "18188",
+          "--disable-auto-launch"
+        ],
+        "queue": {
+          "queue_running": [
+            [
+              807,
+              "06f1ce47-eaa6-4cf0-9f7d-ca85c57e4927",
+              {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-b21119677195824dc73d2adeffe9b622ed3843cc137515772ff9bcbb85fbc0e0.png"
+                  }
+                },
+                "2": {
+                  "class_type": "ImageCrop",
+                  "inputs": {
+                    "image": [
+                      "1",
+                      0
+                    ],
+                    "x": 0,
+                    "y": 0,
+                    "width": 960,
+                    "height": 960
+                  }
+                },
+                "3": {
+                  "class_type": "UNETLoader",
+                  "inputs": {
+                    "unet_name": "flux-2-klein-4b-fp8.safetensors",
+                    "weight_dtype": "default"
+                  }
+                },
+                "4": {
+                  "class_type": "CLIPLoader",
+                  "inputs": {
+                    "clip_name": "qwen_3_4b.safetensors",
+                    "type": "flux2",
+                    "device": "default"
+                  }
+                },
+                "5": {
+                  "class_type": "VAELoader",
+                  "inputs": {
+                    "vae_name": "flux2-vae.safetensors"
+                  }
+                },
+                "6": {
+                  "class_type": "VAEEncode",
+                  "inputs": {
+                    "pixels": [
+                      "2",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "7": {
+                  "class_type": "CLIPTextEncode",
+                  "inputs": {
+                    "clip": [
+                      "4",
+                      0
+                    ],
+                    "text": "Small brown/ivory mechanical sparrow with glossy dark beak/eyes, brown feather-shaped wing panels, ivory belly, orange clawed feet and exposed circular bronze shoulder/leg joints. One teal whistle pendant at front of brown neck strap. Two rusted metal tail vanes. Low oval gray/brown stone base. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. Change only the camera: show the same fixed collectible in its anatomical RIGHT profile at approximately 90 degrees, looking toward its right side. Preserve all sculpt geometry, fixed pose, colors, accessories and base; no mirrored anatomy. Full figure and base, 8 percent margins, warm off-white studio, crisp miniature paint. No text, logos or watermark."
+                  }
+                },
+                "8": {
+                  "class_type": "ReferenceLatent",
+                  "inputs": {
+                    "conditioning": [
+                      "7",
+                      0
+                    ],
+                    "latent": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "9": {
+                  "class_type": "BasicGuider",
+                  "inputs": {
+                    "model": [
+                      "3",
+                      0
+                    ],
+                    "conditioning": [
+                      "8",
+                      0
+                    ]
+                  }
+                },
+                "10": {
+                  "class_type": "EmptyFlux2LatentImage",
+                  "inputs": {
+                    "width": 768,
+                    "height": 768,
+                    "batch_size": 1
+                  }
+                },
+                "11": {
+                  "class_type": "KSamplerSelect",
+                  "inputs": {
+                    "sampler_name": "euler"
+                  }
+                },
+                "12": {
+                  "class_type": "RandomNoise",
+                  "inputs": {
+                    "noise_seed": 2026112033
+                  }
+                },
+                "13": {
+                  "class_type": "Flux2Scheduler",
+                  "inputs": {
+                    "steps": 4,
+                    "width": 768,
+                    "height": 768
+                  }
+                },
+                "14": {
+                  "class_type": "SamplerCustomAdvanced",
+                  "inputs": {
+                    "noise": [
+                      "12",
+                      0
+                    ],
+                    "guider": [
+                      "9",
+                      0
+                    ],
+                    "sampler": [
+                      "11",
+                      0
+                    ],
+                    "sigmas": [
+                      "13",
+                      0
+                    ],
+                    "latent_image": [
+                      "10",
+                      0
+                    ]
+                  }
+                },
+                "15": {
+                  "class_type": "VAEDecode",
+                  "inputs": {
+                    "samples": [
+                      "14",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "20": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "15",
+                      0
+                    ],
+                    "filename_prefix": "figura/8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561"
+                  }
+                }
+              },
+              {
+                "figuraRunId": "8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561",
+                "client_id": "8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561",
+                "create_time": 1795142259722
+              },
+              [
+                "20"
+              ]
+            ]
+          ],
+          "queue_pending": [
+            [
+              808,
+              "7819a03f-f2d3-4438-8a98-2dbedce4d1d5",
+              {
+                "1": {
+                  "class_type": "LoadImage",
+                  "inputs": {
+                    "image": "figura-7581c59260c6a55a76a5e553779c839e2fb5faa2edcfd491eee51d1f4a4fc8ac.png"
+                  }
+                },
+                "2": {
+                  "class_type": "ImageCrop",
+                  "inputs": {
+                    "image": [
+                      "1",
+                      0
+                    ],
+                    "x": 0,
+                    "y": 0,
+                    "width": 960,
+                    "height": 960
+                  }
+                },
+                "3": {
+                  "class_type": "UNETLoader",
+                  "inputs": {
+                    "unet_name": "flux-2-klein-4b-fp8.safetensors",
+                    "weight_dtype": "default"
+                  }
+                },
+                "4": {
+                  "class_type": "CLIPLoader",
+                  "inputs": {
+                    "clip_name": "qwen_3_4b.safetensors",
+                    "type": "flux2",
+                    "device": "cpu"
+                  }
+                },
+                "5": {
+                  "class_type": "VAELoader",
+                  "inputs": {
+                    "vae_name": "flux2-vae.safetensors"
+                  }
+                },
+                "6": {
+                  "class_type": "VAEEncode",
+                  "inputs": {
+                    "pixels": [
+                      "2",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "7": {
+                  "class_type": "CLIPTextEncode",
+                  "inputs": {
+                    "clip": [
+                      "4",
+                      0
+                    ],
+                    "text": "Stocky ivory shaggy ram with brown hooves, pale face and two large curled green/cream marbled horns. Copper patterned collar and one oval green gemstone pendant at chest. Stands on irregular dark gray/amber veined rock pedestal. The attached CURRENT MASTER is the sole sculpt authority. This is a painted miniature. Preserve exact fixed pose, sculpt proportions, anatomical sides and paint boundaries. No mirror, no writing or watermark. View the same fixed miniature from its BACK at 180 degrees. Continue layered ivory fleece across back and haunches, same paired curled marbled horns. Collar back has plain matching copper pattern; pendant remains only at front. No added saddle, pack or ornaments; same irregular veined rock base. Full original figure and base, 8 percent safe margins, warm off-white studio. No visible face, no redesign."
+                  }
+                },
+                "8": {
+                  "class_type": "ReferenceLatent",
+                  "inputs": {
+                    "conditioning": [
+                      "7",
+                      0
+                    ],
+                    "latent": [
+                      "6",
+                      0
+                    ]
+                  }
+                },
+                "9": {
+                  "class_type": "BasicGuider",
+                  "inputs": {
+                    "model": [
+                      "3",
+                      0
+                    ],
+                    "conditioning": [
+                      "8",
+                      0
+                    ]
+                  }
+                },
+                "10": {
+                  "class_type": "EmptyFlux2LatentImage",
+                  "inputs": {
+                    "width": 768,
+                    "height": 768,
+                    "batch_size": 1
+                  }
+                },
+                "11": {
+                  "class_type": "KSamplerSelect",
+                  "inputs": {
+                    "sampler_name": "euler"
+                  }
+                },
+                "12": {
+                  "class_type": "RandomNoise",
+                  "inputs": {
+                    "noise_seed": 2026112035
+                  }
+                },
+                "13": {
+                  "class_type": "Flux2Scheduler",
+                  "inputs": {
+                    "steps": 4,
+                    "width": 768,
+                    "height": 768
+                  }
+                },
+                "14": {
+                  "class_type": "SamplerCustomAdvanced",
+                  "inputs": {
+                    "noise": [
+                      "12",
+                      0
+                    ],
+                    "guider": [
+                      "9",
+                      0
+                    ],
+                    "sampler": [
+                      "11",
+                      0
+                    ],
+                    "sigmas": [
+                      "13",
+                      0
+                    ],
+                    "latent_image": [
+                      "10",
+                      0
+                    ]
+                  }
+                },
+                "15": {
+                  "class_type": "VAEDecode",
+                  "inputs": {
+                    "samples": [
+                      "14",
+                      0
+                    ],
+                    "vae": [
+                      "5",
+                      0
+                    ]
+                  }
+                },
+                "20": {
+                  "class_type": "SaveImage",
+                  "inputs": {
+                    "images": [
+                      "15",
+                      0
+                    ],
+                    "filename_prefix": "figura/95344b7a214cae5b40a940ab915d5fc0819a2373b5c120558f53cb2507412dea"
+                  }
+                }
+              },
+              {
+                "figuraRunId": "95344b7a214cae5b40a940ab915d5fc0819a2373b5c120558f53cb2507412dea",
+                "client_id": "95344b7a214cae5b40a940ab915d5fc0819a2373b5c120558f53cb2507412dea",
+                "create_time": 1795142301957
+              },
+              [
+                "20"
+              ]
+            ]
+          ]
+        },
+        "system": {
+          "system": {
+            "os": "win32",
+            "ram_total": 34134056960,
+            "ram_free": 14216306688,
+            "comfyui_version": "0.27.0",
+            "required_frontend_version": "1.45.20",
+            "installed_templates_version": "0.11.1",
+            "required_templates_version": "0.11.1",
+            "comfy_package_versions": [
+              {
+                "name": "comfyui-frontend-package",
+                "installed": "1.45.20",
+                "required": "1.45.20"
+              },
+              {
+                "name": "comfyui-workflow-templates",
+                "installed": "0.11.1",
+                "required": "0.11.1"
+              },
+              {
+                "name": "comfyui-embedded-docs",
+                "installed": "0.5.6",
+                "required": "0.5.6"
+              },
+              {
+                "name": "comfy-kitchen",
+                "installed": "0.2.16",
+                "required": "0.2.16"
+              },
+              {
+                "name": "comfy-aimdo",
+                "installed": "0.4.10",
+                "required": "0.4.10"
+              }
+            ],
+            "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+            "pytorch_version": "2.12.0+cu130",
+            "embedded_python": true,
+            "deploy_environment": "local-portable",
+            "argv": [
+              "ComfyUI\\main.py",
+              "--windows-standalone-build",
+              "--listen",
+              "127.0.0.1",
+              "--port",
+              "18188",
+              "--disable-auto-launch"
+            ]
+          },
+          "devices": [
+            {
+              "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+              "type": "cuda",
+              "index": 0,
+              "vram_total": 12884377600,
+              "vram_free": 1185074664,
+              "torch_vram_total": 402653184,
+              "torch_vram_free": 356130280
+            }
+          ]
+        }
+      },
+      "after": {
+        "at": 1795142682.3233685,
+        "pid": 25128,
+        "system": {
+          "system": {
+            "os": "win32",
+            "ram_total": 34134056960,
+            "ram_free": 14049918976,
+            "comfyui_version": "0.27.0",
+            "required_frontend_version": "1.45.20",
+            "installed_templates_version": "0.11.1",
+            "required_templates_version": "0.11.1",
+            "comfy_package_versions": [
+              {
+                "name": "comfyui-frontend-package",
+                "installed": "1.45.20",
+                "required": "1.45.20"
+              },
+              {
+                "name": "comfyui-workflow-templates",
+                "installed": "0.11.1",
+                "required": "0.11.1"
+              },
+              {
+                "name": "comfyui-embedded-docs",
+                "installed": "0.5.6",
+                "required": "0.5.6"
+              },
+              {
+                "name": "comfy-kitchen",
+                "installed": "0.2.16",
+                "required": "0.2.16"
+              },
+              {
+                "name": "comfy-aimdo",
+                "installed": "0.4.10",
+                "required": "0.4.10"
+              }
+            ],
+            "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
+            "pytorch_version": "2.12.0+cu130",
+            "embedded_python": true,
+            "deploy_environment": "local-portable",
+            "argv": [
+              "ComfyUI\\main.py",
+              "--windows-standalone-build",
+              "--listen",
+              "127.0.0.1",
+              "--port",
+              "18188",
+              "--disable-auto-launch"
+            ]
+          },
+          "devices": [
+            {
+              "name": "cuda:0 NVIDIA GeForce RTX 3080 Ti : cudaMallocAsync",
+              "type": "cuda",
+              "index": 0,
+              "vram_total": 12884377600,
+              "vram_free": 11639193600,
+              "torch_vram_total": 0,
+              "torch_vram_free": 0
+            }
+          ]
+        },
+        "resubmittedKnownUnexecutedPrompt": "b20a2bac-2ae7-48ee-b93c-f40e925152f8"
+      }
+    }
+  ],
+  "performanceExperiment": {
+    "runId": "8e7a8ebbdc2e45471246b7e5814488b40e6edbb3473d2c78c367837fa02cc561",
+    "change": "CLIPLoader device default instead of cpu, same models and reference",
+    "result": "stalled near VRAM limit, /interrupt did not return, controlled restart; no output adopted",
+    "observedGpuUsedMiB": 11153,
+    "oomReported": false,
+    "productionSetting": "restored CLIPLoader cpu",
+    "note": "Queued product job was confirmed never running before restart; exact workflow resubmitted with old/new prompt IDs retained"
+  },
+  "finalModelChecks": [
+    {
+      "name": "BiRefNet",
+      "bytes": 444473596,
+      "sha256": "9ab37426bf4de0567af6b5d21b16151357149139362e6e8992021b8ce356a154",
+      "verifiedAt": 1795155014.7940736
+    },
+    {
+      "name": "FLUX.2 Klein Base 4B FP8",
+      "bytes": 4089498488,
+      "sha256": "44bab3a86fe98b85d21dd2a4729ebdc3ae51fb8a39f76e457e18c724219e6840",
+      "verifiedAt": 1795155018.1918352
+    }
+  ],
+  "finalListenerEvidence": [
+    {
+      "address": "127.0.0.1",
+      "port": 15181,
+      "pid": 28128
+    },
+    {
+      "address": "127.0.0.1",
+      "port": 18188,
+      "pid": 25128
+    },
+    {
+      "address": "127.0.0.1",
+      "port": 19092,
+      "pid": 53204
+    }
+  ]
+}

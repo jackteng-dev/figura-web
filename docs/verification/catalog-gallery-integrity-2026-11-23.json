@@ -1,0 +1,4173 @@
+{
+  "at": 1795370171.9303508,
+  "api": "http://127.0.0.1:19092/figura",
+  "scope": "read-only local demo; no login or mutation",
+  "catalogRows": 99,
+  "products": 99,
+  "excludedRows": 0,
+  "servedImages": 495,
+  "missingMainOrEmptyGallery": [],
+  "requireComplete": true,
+  "allRequiredUploaded": true,
+  "authorApproval": "pending",
+  "checks": [
+    {
+      "key": "FIGURA-AI-001",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "bb2977d0-ac7b-40d7-908b-368cfe84c7e3",
+          "bytes": 47974,
+          "sha256": "199364ca25c816c2d2da0220182686a3771d8c7c70d62b7f69a5ee774eaa3270"
+        },
+        {
+          "type": "FACE",
+          "imageId": "4d38e4b2-f519-4cb4-9f9e-c0dd7cce123b",
+          "bytes": 286098,
+          "sha256": "b1bca4cbc5b157ce17ec44871855bf32cd724c7e08ff987c7bb4fecc8f441270"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "bec5653f-34c1-45a7-8fcc-54710e6b998e",
+          "bytes": 395019,
+          "sha256": "f278a5f8d63f0bda3295d7895d7ece3994f17a3d799d604e9cfde5520f49c26f"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "51b0b64d-fd24-4cc1-ba37-14ffbfa8a5cc",
+          "bytes": 1574132,
+          "sha256": "230ec6838fdee0498ba1ef51cfa7eaabedb88285a7bd54ad3fc61741757f8713"
+        },
+        {
+          "type": "REAR",
+          "imageId": "2d77775a-d747-4b06-829a-9b5c731e8f19",
+          "bytes": 41009,
+          "sha256": "07a730d80264e2ad696340e059cca76e2e223b1d63cb344ae1fe971576113ec8"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-002",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "745e2a91-35c4-4012-8bfc-d339d9c8e8f8",
+          "bytes": 93661,
+          "sha256": "4d6b53d92d97a4d317a17b65cb821e1a3b88e76a23e8b8a0bbe22976995fd4e7"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "3ce7c7e3-8d08-40bb-af30-7b66707145d6",
+          "bytes": 670702,
+          "sha256": "8bf2d3f8bb3d9410da563daa3e9bc08ed5facd61d774adb303ca790b31640ed3"
+        },
+        {
+          "type": "FACE",
+          "imageId": "8320c891-20b4-47db-89d2-4da3972aaccb",
+          "bytes": 430329,
+          "sha256": "9a18392879c0e8acb3f2feef6e1b03d13eedde142b43ff03f56bb14e09f4f7be"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "fd79ee50-1fd5-4589-99b9-9adc019694b8",
+          "bytes": 1962806,
+          "sha256": "dc78573580e17ad85ab8a741afd2637f6f29130e2202bc830bf1df52b32ef895"
+        },
+        {
+          "type": "REAR",
+          "imageId": "a137348b-a41c-4bf0-bb20-77754b1781af",
+          "bytes": 2666643,
+          "sha256": "3796e6f9634fcdffd89364b95de1c27707506b4d627b6938385f956d01e7bca8"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-003",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ce9800f8-45e4-47c1-8d86-041cf55cde6b",
+          "bytes": 77472,
+          "sha256": "569c443e82f1f4047cdc6d16aa4c14810407ca44afb130f7f73ce4faa673ca12"
+        },
+        {
+          "type": "FACE",
+          "imageId": "77dd8186-3709-4947-bcc3-d96a5a300d34",
+          "bytes": 304084,
+          "sha256": "e6e6befa95a3e290508bb627cbfa38d732bf64be99e6896338fbce878cc99700"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "bd77c547-9e38-48a0-a2cb-ea1796cbdb89",
+          "bytes": 502633,
+          "sha256": "eba2c60f17f5cd29da17af065640a709f0a578c30df6019b61d32155bafa07b7"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "7d9b3574-0c7c-4d3c-bbf5-024d418f48cd",
+          "bytes": 1691676,
+          "sha256": "46baa3abab0aba29e4d0493e7a72422e16343636c16ec157f0463299ce80a915"
+        },
+        {
+          "type": "REAR",
+          "imageId": "fe73c808-6563-45c8-9280-7c70b27ba66b",
+          "bytes": 839127,
+          "sha256": "7fe07f9200869d8192a7a56887078aee4766f06645ae8a0f586c2620dd19054f"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-004",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d416b110-93fb-42bc-9c06-f89341c59a48",
+          "bytes": 94903,
+          "sha256": "699ad31151a7218fd51245bd910fd1cb5f43424ae055ada7d82d8c543dde7a51"
+        },
+        {
+          "type": "FACE",
+          "imageId": "aaa00260-aa03-4254-9cb9-6c3c89a1c348",
+          "bytes": 528124,
+          "sha256": "15ec2640ca057815453aa9edb170f457125a4de82e302791464dadbc790b195a"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "1abd38cd-0499-430f-bff8-d96abf7cd090",
+          "bytes": 724327,
+          "sha256": "ecb7a9765057a41f5217a53759e9b72916f6449c5e9068835ae2cf8249fcc0b5"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "94c603b3-185f-483a-ac0a-31fb9bdffc0d",
+          "bytes": 2052767,
+          "sha256": "3e3583b68af6bc20648d9ce64c438955dd3e106eedb68cbb8936f82bdbb61132"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5107c56d-8186-46cc-a406-5bd30f916d51",
+          "bytes": 1051471,
+          "sha256": "bba43de15a60778215512d875f0b7f13e2cad3daca9a2b60c8b0ea8bf8b9bd20"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-005",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ce92e2ee-91d5-4b74-8750-4d52ea800fdf",
+          "bytes": 61448,
+          "sha256": "488aecf3884220b46ac2f51cb442c956f76e16b28ce0cb40acc8b96515012a55"
+        },
+        {
+          "type": "FACE",
+          "imageId": "ed8c52ee-36d6-493b-84f1-76bb6b260e79",
+          "bytes": 414662,
+          "sha256": "3136e4375321fa8b2b9b93965ac4d3851bc6c660dfb0fd4f45fda99fbe1240c6"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "e6af3f5d-acfa-43c0-b5a7-e452e5bb4ca4",
+          "bytes": 314840,
+          "sha256": "8ed2bf7463a50d5cd0b19b2a6a69ad3344969e8d147df4ce7a25700fcd8d4f24"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "abc4744c-4f32-4d8e-9632-339f03c82e94",
+          "bytes": 1592164,
+          "sha256": "7c8f4242f63b095787c51874f4c83aa9584d880ed98d6a5c9b127db27548c40d"
+        },
+        {
+          "type": "REAR",
+          "imageId": "702ee3e1-8cd5-4912-b317-5be725b88b13",
+          "bytes": 2308363,
+          "sha256": "c5330632fe4554bdcfbfc0fe71d6cbd23cc51c6c0357c12dcdeeef0cbc6be547"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-006",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "19dff60b-fb1f-4f8d-b928-d729b969273e",
+          "bytes": 67010,
+          "sha256": "b1203170f12e328b7e4dd21a9dac74cad44e76794ffa6dd3fda4841147fece3f"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d72dcf74-9f54-4bbf-9eb7-878fe0fff6e3",
+          "bytes": 431836,
+          "sha256": "75ace83c46d8f0d6dadf8c9a63dd166106e87a0108c5a96e32b3072ea081ce04"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "a8afb736-11fa-438c-aac8-9a0976f5d64e",
+          "bytes": 448379,
+          "sha256": "781c831b2154c9463a6cd4ec9f21db1c30810a1e24b9922b41bbb5744ed538eb"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "9636faa8-7c41-4fe8-a057-5890fc1a7879",
+          "bytes": 1663117,
+          "sha256": "52e6f5c0f68cc9d73d32d587db79d8b8d53a154e83665fc150177514bc891c1b"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5e215506-35f7-4a13-9f0d-c69e07a68150",
+          "bytes": 857756,
+          "sha256": "2219c4cd9a75ef3db06a94fea38d3ab4c4de9c6341ecc6933c6db8093f970c9e"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-007",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "e27c9f94-160a-4cda-a2b8-0efb8ce8d600",
+          "bytes": 53651,
+          "sha256": "aa04fa75e7ed3d034fc69fb443553731b28773492f0c93985e20f307a8774322"
+        },
+        {
+          "type": "FACE",
+          "imageId": "56751cf5-72e9-452e-8ba9-6b069b671c73",
+          "bytes": 338860,
+          "sha256": "449328c433244cbba837b8253257f24675ce69589aa171632c78f2aef7f68668"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "a69d77c0-d690-448e-ae6e-36499f7a1170",
+          "bytes": 363562,
+          "sha256": "a7364aefdf0166a3513fc0781e2e9b9b2bf3267289888f965b6daa70d0545ae7"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "51bc8b8c-f43c-40b2-a08b-49dbd7ecbe3f",
+          "bytes": 1617226,
+          "sha256": "8964d54d39bef8e72fe7668adc4a957c20292b632c37c7b6983e51362c18ded0"
+        },
+        {
+          "type": "REAR",
+          "imageId": "c1e36156-8e3c-4752-b25c-ebf9b8654ca0",
+          "bytes": 2360187,
+          "sha256": "3261a55a8164e77f25f5eca313f2f298325dc711f75f3c3cbb8ec24de1dbba70"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-008",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d3bc08c8-3601-4f1d-909c-46c1a1af5f05",
+          "bytes": 92937,
+          "sha256": "21fbdcfc89df3e814c0ce466dbfa2aaff4d08789a88421d912a6b0e314f3a8ca"
+        },
+        {
+          "type": "FACE",
+          "imageId": "bf254d6c-164e-4026-95dd-62773f781cc0",
+          "bytes": 444319,
+          "sha256": "0b1aeb837d7ce1f71c5701e4ba18d803e2f1b932b97b6ea049299bb23c459611"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "ce29eaae-d5c9-484d-a943-fb7056511d71",
+          "bytes": 657478,
+          "sha256": "738187297d19fbe2663ca2bdc2f7ad8515e13f49539c7aff52686a23c364bdfc"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "e68d9190-d45f-4bef-aa86-25a3843075e7",
+          "bytes": 1962412,
+          "sha256": "8d33e796a09ebf5452345cfa72fce9184da08ac96dc36d6443baf3a72f77f49e"
+        },
+        {
+          "type": "REAR",
+          "imageId": "20d10963-b3b3-4b4e-90ff-9a01bfd83e05",
+          "bytes": 1051905,
+          "sha256": "1f1ae26f15d40c09cf46b66cd67a16959836b12279240d695bf957ec55af54df"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-009",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "f07b48ff-db27-4ccd-9884-4da8ba253536",
+          "bytes": 82168,
+          "sha256": "4615de139ee3cf858adfc199c3d5f31a80ec40b6e3386e8289d602ce1806c10a"
+        },
+        {
+          "type": "FACE",
+          "imageId": "0af37c24-6b4d-4567-ac42-6a86ff52a84d",
+          "bytes": 396075,
+          "sha256": "19380f2ce84305b4e38958d6b7654354944099751cd1d1c64a805cb5cbf5e202"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "7f4c3676-4ea9-4a9a-9a02-03e9af69f2b8",
+          "bytes": 507281,
+          "sha256": "a76b02dea15f88615f15bce3c11712bbbac36b84a4c6961bc8a3c65d7f798100"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "85198fae-bf68-4537-b20a-e8c15f87b385",
+          "bytes": 1803398,
+          "sha256": "a167115f1b70c5c39cd1d58aabac9349bd6bfb752ee9de0d40d46bb008f737f5"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5a688c86-394f-4285-8ed6-f10aeeaf321a",
+          "bytes": 1009008,
+          "sha256": "b86aeda7ec1ed083dfd1329ce021b7395838481f8f2eca964a8386a9a0e69bb2"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-010",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4966c00a-0600-450f-85c1-03026d699be2",
+          "bytes": 86427,
+          "sha256": "6cd24038d4a5bc1526ffe6b1a1b3db4e18f2b6149226285d6320be1850b409bd"
+        },
+        {
+          "type": "FACE",
+          "imageId": "e0a87aff-ec63-4c84-a1cd-9301e4e6c6cc",
+          "bytes": 477869,
+          "sha256": "6d52ee22be7811a464e6e05367ac0f90d40e6037d795bcedb2767a0119c16404"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "a39ae68f-1938-48c7-9613-f995e5fbc40e",
+          "bytes": 647020,
+          "sha256": "a729f3910cce23167db8c9dedac03f3f3473bd4343b51673543237638be00925"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "bc8e5f23-d85f-48b9-bb22-cde3c3d2b4f0",
+          "bytes": 1925222,
+          "sha256": "a4eb50d33792c9536df0a50f1ce7ee0283336879a0391546d1d07f81cb0bccea"
+        },
+        {
+          "type": "REAR",
+          "imageId": "90dc8de9-127f-41b9-a10c-f3d92bcfcc7c",
+          "bytes": 3083872,
+          "sha256": "78c9d9461dd326d7986aa76dfcb99babc1191c3973be8f3979fb34ab4dfe29df"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-011",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ce81f31d-14a8-4009-bf44-865a60b8f8f1",
+          "bytes": 87648,
+          "sha256": "7d644b00816e98134af31e8ed48fb7fabbd9320b62370c5a5ce1b884d8a59cba"
+        },
+        {
+          "type": "FACE",
+          "imageId": "1d319d55-eb38-43bb-9b4f-23c55b8b0637",
+          "bytes": 562538,
+          "sha256": "c229b266e8b2fce34bd09927bc334f332521d9f786cdaa4fad76303f0553e805"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "2a2f186d-1c6b-4a9a-84d6-66e247ab474b",
+          "bytes": 585222,
+          "sha256": "223b261b44067ae274916d77d993c5629fbd8b5c0ebdf4c18b34415fcc6082f1"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "0bdc5b61-0c1e-4951-b742-3432758be5db",
+          "bytes": 1884928,
+          "sha256": "eb0805d15b5b76a49df2dfb024acfc1f26d2916def6cf43c8af3bdc0b550602a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4d71bedf-ea18-4f1d-9a24-1391ca51c746",
+          "bytes": 940022,
+          "sha256": "07ea736bb1b4896ba2356c56057da6ee9609e6ea051f6540e8beed6c8f0cdd69"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-012",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "fad31461-360b-4c72-a6c0-d74ef16f2067",
+          "bytes": 57183,
+          "sha256": "acb3edcafac23c54c57350bc0727849869c295f3c2e9159d2ddaff67e8fb7e57"
+        },
+        {
+          "type": "FACE",
+          "imageId": "da34739a-bac7-4d50-af15-ac80b1555b29",
+          "bytes": 349234,
+          "sha256": "e37e217a0d93bb0526d20db03d3132a5cb6f2dae0d0d670359a2dc8d47d99672"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "9501f7b6-38e9-49e2-9f0b-917af8e26d7c",
+          "bytes": 472068,
+          "sha256": "ff5b828caac050e7cb1501f24b154affa2b9500eff2d2a48c61dec6e98db097c"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "8af16e8b-1fb7-41d1-b707-751f4427d1c5",
+          "bytes": 1610776,
+          "sha256": "6bb51052bdb5085927030d4f0cba80ba7c9850edabcb364ca1cd0f74bcda1c51"
+        },
+        {
+          "type": "REAR",
+          "imageId": "026e3801-9997-4c86-acc3-651f7851db37",
+          "bytes": 2478347,
+          "sha256": "9d840c636e0b4b61766d96bd9cc1d6d0bfffae7fcf4d578b7aa1bc4c4579c4a9"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-013",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "1d6ee4e9-7114-440c-b84b-71ba8312b9f9",
+          "bytes": 86626,
+          "sha256": "7a450a83da77d0475e0c9b4ec382d7f0e8f4746f55b911bc0177cb85b2233e52"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d4b78649-6e70-42d5-9cd1-cac26c119a8a",
+          "bytes": 345826,
+          "sha256": "883f2dd951d9286e543f4ea1690e99b25c98b0a4a31919f17370ac0b09e781d7"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "821a0605-b25a-4c2b-8084-f4efb4821fd4",
+          "bytes": 688624,
+          "sha256": "4624ba71b659575bfa5f8a9c3fea55aed6156815bb97f27b8620e02a5cadf4ea"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "707fd0c8-bf51-4b83-8a7a-807bcfed9918",
+          "bytes": 1893469,
+          "sha256": "f198ee2780762596855ca5e1dd77d1a5ac4097b2c7e99c53cc8c6dfc9c88a5e2"
+        },
+        {
+          "type": "REAR",
+          "imageId": "c5bb1484-b0c9-41f7-a259-dd8a4cefe91b",
+          "bytes": 1033338,
+          "sha256": "fc546cb9ca7b255b176e32ba6d7d5a56f3f8b548b840ba48ccbe4c03b930991e"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-014",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "1553ff96-2bd2-421d-baa5-a3f6ab7d687b",
+          "bytes": 67659,
+          "sha256": "983bf4fc9caaf577e16975893ccaab0f7f03bf5a51aee75607f40447654a1eab"
+        },
+        {
+          "type": "FACE",
+          "imageId": "a4ea26bd-b87b-4016-96e7-58e7b5b1ce90",
+          "bytes": 278055,
+          "sha256": "2e8eda570a90068853b226c38938f1b7fcf0238cc8bbad2cb689e554b623d9eb"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "8821985c-840f-49e2-a894-8c730966526c",
+          "bytes": 491625,
+          "sha256": "4788c0d987a4f81066a0bd98b30b45706d2f003761d2fdbc6330da1a440c6fdd"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "7d07a22d-eb6f-4edc-9574-066f301ac084",
+          "bytes": 1712418,
+          "sha256": "c77d7475a67321fb27328555b118eb0e62c2f9c4509a095e3d89858dd67bd771"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5510fad0-baef-4bd0-88e9-03d7d604d19d",
+          "bytes": 2574008,
+          "sha256": "4d72ea16cd400c7c38f6f3446f77f9902075f2a99396a0a580dec172d47881a6"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-015",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ef7e6bb9-5805-4ac2-95e6-213d3356f620",
+          "bytes": 83598,
+          "sha256": "d9d66cedef8336d077fddef82a5e61ae0e661e75ceebfe92bbfe0d9620f53deb"
+        },
+        {
+          "type": "FACE",
+          "imageId": "060e41af-a379-4863-987e-7b897732438c",
+          "bytes": 515495,
+          "sha256": "02f848db4dff2f55de0ee36c92298ad5f87555629cd941d3d2e42bd00cfaed72"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "ea69bc27-dc81-4eaf-91db-1087ab5e247f",
+          "bytes": 591852,
+          "sha256": "b7e8729491b77e77b6e9d0e328467a7ad443708de759fdb2dd9818c99339b8f8"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "cf81dc8a-318b-476b-9cfe-dfff2381e57d",
+          "bytes": 1824315,
+          "sha256": "f07c7447c0b7ff0e8c1c431a0c2e88b2f078bbd41ee6b292293396352695104b"
+        },
+        {
+          "type": "REAR",
+          "imageId": "a052604c-31c3-46d1-a4a6-713815da6cd0",
+          "bytes": 962792,
+          "sha256": "05d8aafa28d6e50a01b1e1eb9e72c92f973507be1f6c868aa7abb62da5a15157"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-016",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "1e554803-85dd-4c63-b35e-a7722580e078",
+          "bytes": 90185,
+          "sha256": "da52ca60af91bc3249ed409fb50dfa434470fbb3cb70c888b4fc48c4d34f6cab"
+        },
+        {
+          "type": "FACE",
+          "imageId": "0cb5bb75-3d41-447b-b619-613ac3af5bd0",
+          "bytes": 483970,
+          "sha256": "3e2e6ba5b621d9c802a98111beeee7b4671ac0332754000abd79a14db8c2a597"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "401253af-5eea-4f02-8c4f-da8abcbc5baf",
+          "bytes": 598986,
+          "sha256": "6398e1674a7848580182f3222911de03d7734ae21fc2ccfae8da963053be947d"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "207e0089-7e35-48d4-b6b0-254128c69e39",
+          "bytes": 1804068,
+          "sha256": "d76e58eb6b4c40c2420fc4af6e26e7bb8d7791b196e6e8cd9de43ff459a3ca81"
+        },
+        {
+          "type": "REAR",
+          "imageId": "c52a2e30-2fe1-40b7-b8a8-8bdb22b011ed",
+          "bytes": 830698,
+          "sha256": "e6f36382de9228c10cda72dd8d2fb69cd65fdcbc103d5e0014f244b9544b30a5"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-017",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "e98b04bb-3f04-48b2-8f35-4d7ec435c0c3",
+          "bytes": 76125,
+          "sha256": "ba94ea9684f93152e3c7013075b0429ebe3f02598c7be8813ef7fdd1cbc7b787"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d2d78ff6-d08b-487d-a455-f4717d38a38f",
+          "bytes": 446695,
+          "sha256": "3cd0873b92acc6a84681cda43f765461bdc9abbdcd2d15d93496e195f1083b69"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "2e9a1663-d570-4869-9c9f-e16521835b16",
+          "bytes": 540737,
+          "sha256": "7d1d5aaf0e0bb2f36905db29c68cce4d57a6f107ecb887205434583a8a0c0502"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "a6699694-0f57-42ce-b40b-e69f920e2498",
+          "bytes": 1721156,
+          "sha256": "b0d81500c441717e32337d1604255bc296b4ff460420a31d9eb2835534a227dc"
+        },
+        {
+          "type": "REAR",
+          "imageId": "3d0c3077-79cf-4598-87dd-74f030b17554",
+          "bytes": 2883992,
+          "sha256": "8613943e3364f007ec642e068f9da6ded6d921016d50be11ec9e1e23c89eca7c"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-018",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "02d3a4fd-2db0-469d-b0e3-e45367d37ba7",
+          "bytes": 54392,
+          "sha256": "17446362fdb8ba4f2263d03e6875798e8f2b2a3b05ce1b5ecc4d6fc67f6d3f5a"
+        },
+        {
+          "type": "FACE",
+          "imageId": "7f7c4891-bc67-4f6b-8c30-54441819be86",
+          "bytes": 262695,
+          "sha256": "d696cc1073d0b23d5d19961b62036792a10554f70d5ce275fd41b97d0d2b2d77"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "ced79943-eb7c-45c4-92bb-05e482f78e29",
+          "bytes": 307562,
+          "sha256": "05cbb96e84524ee48a347bbb9cb005783d99a55afe5365f2f3efdde765c9157a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "d5329ddc-ba43-4951-b2e0-7733f9f9d715",
+          "bytes": 1550722,
+          "sha256": "bdbf9145bff2ab1ffd948ba0477fc40094fbf5a16f7443f2d54a8bfbcc44eb29"
+        },
+        {
+          "type": "REAR",
+          "imageId": "957c3481-7be2-40d8-a5a0-1c8d0296e0e3",
+          "bytes": 909899,
+          "sha256": "3fba37481c59c76c8d10a84633db2ad2da9bd5f4fee5d773f8479d2104f691fa"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-019",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "9264be78-b161-472d-8e3b-63bd533e6b08",
+          "bytes": 64397,
+          "sha256": "3b45b524978d2ff452a95927611f6270a8523d58735b4cbfe10c2f25ed079f58"
+        },
+        {
+          "type": "FACE",
+          "imageId": "cf3064ef-fded-4796-a811-8100d55e9533",
+          "bytes": 351998,
+          "sha256": "b82c92c0352541e75d54e07c57e853205e395b28694a582b3985b798b9e530fe"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "986c5f17-f73e-40d6-b083-6853317f7ad2",
+          "bytes": 550073,
+          "sha256": "1480319dbdb756a2f0a8bdbfc028c25e1b5a2d5f8daa92a1977a0fdcaba7a4ba"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "fd207e14-3abb-437a-89ce-5a9df1de925c",
+          "bytes": 1713876,
+          "sha256": "3b6a834475974ba19c396cafccbb47e2935208c6b96cf16a31a6ce6276258041"
+        },
+        {
+          "type": "REAR",
+          "imageId": "28d1ec53-ecb4-436f-9653-a94432087fe8",
+          "bytes": 2715504,
+          "sha256": "c664b0ebc8313ad5aecda6b56b5e5b7c0fe8ed9142504e5295b486b7eb7f51dd"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-020",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "e9f2dde9-8cba-40c2-b29d-4033cd5284fb",
+          "bytes": 70194,
+          "sha256": "bbdfd35445bd2a5a5d8d33bd67f283deb1d26dd55e30552df23dd572563dde54"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d3867f8b-27c6-45b0-ac17-dfb00c9126d7",
+          "bytes": 317456,
+          "sha256": "c0723545ec3f5b958eb99b855f7b594e2907a3dfe0ba0edfeb59894522bd2199"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "1ad32839-bce7-41ce-afb1-8b7c641e65ae",
+          "bytes": 427213,
+          "sha256": "918c3969e9177295fbb1656c5ff249e6e128c6d41318031da9a7f9f55ed5ab31"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "017ea6ee-b060-4ae8-ab1f-95e0fff4f837",
+          "bytes": 1699814,
+          "sha256": "18508d4a894826f064afa27489585f0d3eb7744180ffe11b22a0538333c4da72"
+        },
+        {
+          "type": "REAR",
+          "imageId": "a4c4a6d1-d883-42c7-9ee8-78a1960fa9f1",
+          "bytes": 2499830,
+          "sha256": "0d27644a36ecf184f6191f4bbfb3f31b483540c60252c0fe6b03a0e65bc97bc7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-021",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "756584c4-6c0f-4ae6-9ad3-d1284f0b9148",
+          "bytes": 86678,
+          "sha256": "15100423e868e37b21484ae3f5b0e2d9cf35a077a0f1bec274680e63ce563835"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d0b4d115-6ded-42b7-a109-dc3986b10f39",
+          "bytes": 514581,
+          "sha256": "5efb4928bedb484dad26917e710aebd7553468b75a85a41a37e22c154ea17b48"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "551fe536-a94a-47eb-ac90-971da114cab2",
+          "bytes": 598925,
+          "sha256": "54799a2ea7fed9f2a92ae6888eac1f5f342e6be6fc58728dd9639b6f6fcb17b1"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "61dea3bd-95c9-4893-99fe-bc6cc2a266c2",
+          "bytes": 1864188,
+          "sha256": "72597ff81082b03cb00ebd6152e6991047426466cb2cb90d7107d96d9dd79d5e"
+        },
+        {
+          "type": "REAR",
+          "imageId": "63c57d57-d38d-4820-9878-6a1f9a5e774f",
+          "bytes": 2823912,
+          "sha256": "90ec04595db28f66c9e5797718c4329b1af04796d739035387d12f3c1ace8982"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-022",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4d886098-2451-46c1-b203-586bd99a5753",
+          "bytes": 78089,
+          "sha256": "b668bec025c476b679cfc66ab00706491ffb11e162dc57d0850f8802819d33cd"
+        },
+        {
+          "type": "FACE",
+          "imageId": "e134bf05-1e69-4626-ba8a-c483da91f059",
+          "bytes": 510138,
+          "sha256": "c457ec61249ded708c91236d148b52b6e6fe7941ec2905beb1a3ca1cf782cac6"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "05775651-f5e1-4c6f-8c2d-462166896e8b",
+          "bytes": 528393,
+          "sha256": "b19f4745a9a7ba67046c816aaa85af1221f84b0c35978530f1aeade2cfbdd758"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "a44c019b-d04a-4b3b-b252-bf8dec3b4781",
+          "bytes": 1818608,
+          "sha256": "ad8a7a4c6600e9cca06d08294bf3767ce93e572d4302bca03cd62f3e865254bb"
+        },
+        {
+          "type": "REAR",
+          "imageId": "471a63a4-460b-4ebb-861c-ec0a0fd9408c",
+          "bytes": 823735,
+          "sha256": "7dfa294543bbb69dcc06913e9b885a7eeea7eadcf3e74f255f64dd5863046d2f"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-023",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "b288322f-8759-4854-b1de-f41b93a4e513",
+          "bytes": 61947,
+          "sha256": "3a5bafd2de429f1799e4d6a34517b1d7b18da13edc11abf7b112e43ebd7aa47a"
+        },
+        {
+          "type": "FACE",
+          "imageId": "eac753be-a33d-428b-b05a-e7e12ecbffad",
+          "bytes": 178949,
+          "sha256": "8e8aa3651776e1da720cea50a64b0e66b91faf37b902413be185a6302668fb0b"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "26e3c168-3054-4344-96ad-286ae9b8ecd8",
+          "bytes": 431037,
+          "sha256": "6ee0b86d82226b84cb65e539b0533a6bebcd059a2b997f32f87b057801ef63d1"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "ea55b8e4-5113-40b4-9506-1e091b53487b",
+          "bytes": 1616091,
+          "sha256": "710b67d502c7d5d6ef533849b05f3f300adb0419948b990a8a370e6fceba3e56"
+        },
+        {
+          "type": "REAR",
+          "imageId": "c0be17f0-2e1e-4a46-ab48-81715e03600a",
+          "bytes": 723469,
+          "sha256": "74d517b151ba3ffb5b90f1b9ecae8a3903aeb85e59e6054668395d3c2981aaa9"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-024",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "b69f535c-8db5-423d-b8c9-9ee2d92b3147",
+          "bytes": 78418,
+          "sha256": "cd7631a51875b0dafc9b6628eecf3ab232f3bcf2fc6389a084bac2aef9639c4a"
+        },
+        {
+          "type": "FACE",
+          "imageId": "0dfdd33b-50d6-4ee6-b368-14f8d5361c10",
+          "bytes": 482047,
+          "sha256": "c88cd2dde707b5616671e69739d0573769e3febcbcf33422c05df47e1382ba8e"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "53b4b416-5d81-4f97-ac9a-18e0414b3f8c",
+          "bytes": 637244,
+          "sha256": "50f335030158a22e9032abc0c3fe761b6de157c536a5917a63bcd2cef3db4652"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "fa87b9c2-a7a5-463c-beff-90e4fb1e6b0a",
+          "bytes": 1855110,
+          "sha256": "c96d2bd56a650f45accac520d56ef10827ffcb007f2edba7c466d5c03868a3c9"
+        },
+        {
+          "type": "REAR",
+          "imageId": "3848c2ba-e22c-4d0c-897a-949356b6d9bf",
+          "bytes": 981973,
+          "sha256": "2cdfb358b4d579865dc5e08a0ab1d8c93768e80c12a9313a1117efba4e6374aa"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-025",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4eb8e772-166b-4104-a735-d845dc4856ab",
+          "bytes": 70740,
+          "sha256": "f5f9ecb8cef8d928c8800214d89ab2526fd8df3344edd71b42413a4a0ff9bcf6"
+        },
+        {
+          "type": "FACE",
+          "imageId": "312faafc-3de8-4375-8feb-d4fccf33d246",
+          "bytes": 348634,
+          "sha256": "f9ecf49c82cd98f589b4a67f5a4eae78ad58d6e4c86b367b2bdd69d59d0c7edc"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "b25eba86-5deb-4496-97c1-28718afe64ac",
+          "bytes": 436321,
+          "sha256": "26b344b823b435359eebf1a88f19e93d45cbc8773405bfdbc49473355ddebea5"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "5f2c19f3-f951-4667-a6c2-332d0c6b786e",
+          "bytes": 1715562,
+          "sha256": "386237a81f2b6be7f1219cfe1cc42eb1013996b41b818ea3e277c8b9c9894061"
+        },
+        {
+          "type": "REAR",
+          "imageId": "82c27d61-a006-4215-8142-fcdb71b6d7fa",
+          "bytes": 2606985,
+          "sha256": "bb698c76026d8cea3594be2b09f1beb371034e8ba0d38bf6765e6c2f379e68cf"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-026",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "93f4cae3-698e-4666-8e83-f6a422d05003",
+          "bytes": 89809,
+          "sha256": "aafa1696edbf2c8c09cad6ac8a37fe1e6f53909769e8af03a92059bb78191a02"
+        },
+        {
+          "type": "FACE",
+          "imageId": "72e886ce-75c6-45b8-b348-f2aa47b9ed11",
+          "bytes": 375825,
+          "sha256": "d39f8d313e11f40cba9702987652cb0a8b6f5633882e2c96ac742ff58b9499ec"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "17901c91-ea32-468c-bc7b-67d16bda7f5d",
+          "bytes": 610321,
+          "sha256": "30a410179e800e8b92c03c6bd4943f6ae7b55d6c4e010010c29868adacba30af"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "0bee45ed-9f1f-4c97-9886-6dc389c84bf2",
+          "bytes": 1865693,
+          "sha256": "a6360c8aa631909c231a093f2aa382267fe825435f4b9349c07df1bdbeae8f55"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6127c021-5ede-4751-b6b6-dc67299fd21b",
+          "bytes": 1097682,
+          "sha256": "3fc8b9f4c480f85d4095ef3e0507c64cf74e3e854fdb3f5c59156d98beeb2b5a"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-027",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "9c8decad-c25f-479e-b561-e7863ec30878",
+          "bytes": 95631,
+          "sha256": "43a42d6ac6907265760a2d499f30628bd8f67a74bea2a67bfb26ba2ff8519016"
+        },
+        {
+          "type": "FACE",
+          "imageId": "7fb7579a-511e-4ecd-a510-7bc6ac87427a",
+          "bytes": 413290,
+          "sha256": "c69ca14370d0b3f16e813e1caaa586d85f4e8729ab85442349ef9158b8c054f0"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "01323c01-c540-4d93-8e4c-47ee84afa38b",
+          "bytes": 601697,
+          "sha256": "595d0dce52513ad91a16ea7b5d11d99bb3b63503c5922622f2e929ef79ca5b22"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "b51a0f20-0517-4e47-b2f6-2ec74d182485",
+          "bytes": 1834070,
+          "sha256": "024a381323de64c71b9b18bd6f60ac2ce8685e8d8b027ca006254e0147f1dd12"
+        },
+        {
+          "type": "REAR",
+          "imageId": "03158e81-4328-4e36-9b7c-297b379fb856",
+          "bytes": 943560,
+          "sha256": "50c438de5dc58323b9f9a653bc286e2d29b968e16c98a8a100ab17036ac16b3b"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-028",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "26910f88-f61b-4835-8caf-35f389a21b03",
+          "bytes": 101275,
+          "sha256": "6a9b65259a73648ae7c0332cf49b79b5197a3d5dc1b25ef68fd76ffd0c608196"
+        },
+        {
+          "type": "FACE",
+          "imageId": "a685ef75-d29b-44e2-a80f-dcf6a8af4396",
+          "bytes": 408476,
+          "sha256": "e951af0c3d6171f73ed28ad5db0cb07881e8624a2f986789bb1c95963dcd0bad"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "75311d7a-333c-4202-8ee6-711443be85db",
+          "bytes": 669316,
+          "sha256": "1a16b9097411696f6f0d4b5e8c8f37381423a1527fb9d28c4bd654e23d86244e"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "1b96d015-b24c-4411-a624-40c756a8e938",
+          "bytes": 1895890,
+          "sha256": "9788352c5de8f6fdbb8a87ab620e41ba4c1fb8d0a573b792bb4007c63e6753a6"
+        },
+        {
+          "type": "REAR",
+          "imageId": "1eacba79-7dd9-4291-982b-9df1950a5694",
+          "bytes": 3048295,
+          "sha256": "fddbbdca99c125709d8c527970040ed3c02c828d3cb0f9b41fed0364e13ea102"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-029",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "9108c919-77ac-4af2-9609-01abe15dbcc1",
+          "bytes": 106242,
+          "sha256": "ede237ec31300e589315068213dcc47c614ac6dd854e39a8ebdf28bb045c78ea"
+        },
+        {
+          "type": "FACE",
+          "imageId": "fd2af2f7-69ea-4039-a281-4e70b6156b2c",
+          "bytes": 446918,
+          "sha256": "2c7ad246293f45caed490f02b17c216dd2fa0f9543765e9b5146cc9ed7cf3195"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "493d701c-c3db-4292-9384-3c01786fbc9f",
+          "bytes": 752630,
+          "sha256": "4b2c645721a77c8627a836d65dc7acbe3e46bb785da45bcc331691a5487d77e6"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "e857039e-b542-431a-9ac6-b7ff199490ff",
+          "bytes": 2090787,
+          "sha256": "0c8ac9d0d673289f96f3f63191039354b217efd5072cf026bbfe66f71df5a860"
+        },
+        {
+          "type": "REAR",
+          "imageId": "2d8afc88-f76a-45d9-a662-cd1dd4cb794d",
+          "bytes": 940050,
+          "sha256": "71eb57582b3b6e2c93267597cd5b0bdf60570eb0727e49f220ad47aa1a5d0728"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-030",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "e33b1366-8138-44d1-b763-57ed6c373db9",
+          "bytes": 83170,
+          "sha256": "391b418dc102a6bdc55c1f75652e04ade3031f596e890fb8ddca4c263ec1d1d0"
+        },
+        {
+          "type": "FACE",
+          "imageId": "2cd6c53c-c7f6-4720-abb9-7544e3c607a7",
+          "bytes": 499657,
+          "sha256": "c88280078f285550436aee783dd6d20adaee97b744c22f842dbca64cf03d864f"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "71ba127e-615b-4c62-ba5e-4fe45396a501",
+          "bytes": 526959,
+          "sha256": "ab2cacc70cc0492d815f62ee3ee9cfa5581c286edc4bcd40af3dd3cd309ca33d"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "8d832edb-75a5-4470-8059-6fcf4f16a932",
+          "bytes": 1739530,
+          "sha256": "98561f6b9b3d5981c69cc5964e9eaa4a3c5e8b1d83ecc8454bee84aacffc7766"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6ae59502-fcea-4bce-9209-d7ccf9cc595c",
+          "bytes": 2986060,
+          "sha256": "6e8a351e768e48ff4b1ffe2b8b5b8ebd856115f868b0705c56c17fae6e613e21"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-031",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "01fb3def-75bb-4cdf-a6d9-6625d240dc59",
+          "bytes": 103729,
+          "sha256": "90ff214c595259022928b7d42acc52aae625e276be2956171778a28d7132280a"
+        },
+        {
+          "type": "FACE",
+          "imageId": "eca39fd6-efbb-436d-972e-a7c6eecd4af2",
+          "bytes": 471617,
+          "sha256": "0f9d9ad879ca31dba30976816bc12158f7a8007e7787fb133b6679bd68da9a5b"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "a265c3fe-e7c9-44ca-88e6-cf878de24ec0",
+          "bytes": 635825,
+          "sha256": "fa66314a1548279324db2a2c0355ccd9860aa60f4a5e2f1a7cee2839bd3eb233"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "15cd434b-0884-4fa1-b762-21b1d0e26a91",
+          "bytes": 1919711,
+          "sha256": "6c4514faa04d32e91ee9f578f2a349af5919a12f5b4fa78dde2d8ef4fe5933d3"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5335df46-2012-4657-a161-0642d4d50b76",
+          "bytes": 895820,
+          "sha256": "b50bb42fa12f61cddc94df8d2a1d7397bf6c28ee51018d1ff6c985be9f6cde7c"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-032",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "65034256-f16d-4d83-b9d1-72f1c0d564f1",
+          "bytes": 73088,
+          "sha256": "1960f7a6a3ec1368bbe53458a36f79a48b8d76e5dcda7e8c1b4231a1f7ac678c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "736f5dc1-704f-44ba-97bb-3ee5f14c21ce",
+          "bytes": 278174,
+          "sha256": "b78691e8173b803505b421d06c4510424a87f5f50b14c830be3b055f4b503a25"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "9d1294b5-1349-4f4f-9e19-dd6cd6adab11",
+          "bytes": 499524,
+          "sha256": "4d5e5635295232f572addad92702d2524a3d4d6291301904dc6aaed6363df165"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "67258293-0268-49fd-bc1f-8d1ca3e5b261",
+          "bytes": 1728662,
+          "sha256": "196c9f9e7037a2dbb2b0a823f8ac3b732f6a9cd11eb20dc079943fb7d7e94945"
+        },
+        {
+          "type": "REAR",
+          "imageId": "1e43bb40-b394-4334-be89-7a6836ddb446",
+          "bytes": 861779,
+          "sha256": "b8d563a18a29ea190aa60ea13261d38ef4029c0f159c9eb13a582b2979163674"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-033",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "1ee0a8d7-edd0-4954-a0fb-b275c0a01987",
+          "bytes": 85455,
+          "sha256": "b21119677195824dc73d2adeffe9b622ed3843cc137515772ff9bcbb85fbc0e0"
+        },
+        {
+          "type": "FACE",
+          "imageId": "27c5196c-8d67-4949-8f66-6ceff4414b69",
+          "bytes": 390373,
+          "sha256": "ea5ede4c8d8a841e5d234c2a1814f32afb6f64093bb8f946a6b87ac9d5447153"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "1eab8c8e-42dc-400e-ad51-d4d51f1bee0e",
+          "bytes": 581660,
+          "sha256": "8a5ceefdb6336fb68a2d4dbf10c375279168873077dc7893e0194f0094d5542a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "7d4ce9d1-8df3-4fb1-b89e-67ec5f4ff793",
+          "bytes": 1814690,
+          "sha256": "3b5f7340c98a12be2b393608a4b5b5433b4897325097f4b0719a12f71ebdd32c"
+        },
+        {
+          "type": "REAR",
+          "imageId": "902789d4-c079-45f5-8959-9a6234e4e287",
+          "bytes": 927959,
+          "sha256": "8c6f98372c2786996d6e44f26680ec6c1a7f2345b88cceedf4082d2af64d7487"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-034",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "902ec201-9ad1-44cd-92fc-5e8c0cfb9f3a",
+          "bytes": 94016,
+          "sha256": "2b0ddca1fa9e6d4a72520b682db81bd51600e74a505b2260bdda87defc6339ad"
+        },
+        {
+          "type": "FACE",
+          "imageId": "a19e17c7-3893-4226-9018-2a475d042891",
+          "bytes": 427077,
+          "sha256": "9d3b4af9cfda22f9c50334e60fa7fe0d0e1513df9bffddfa44e1c0b2fcb65d13"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "569c5d08-2129-4796-a37a-f688d2b24c89",
+          "bytes": 596325,
+          "sha256": "6c6a69d0bae0548685e1583a46cdda5b8379a5c5d2990d346c411e3227f883c7"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "327a8eb6-5b91-4881-8ed1-25c47ebdb2e9",
+          "bytes": 1794978,
+          "sha256": "39e91b202b6f211537306e55ef6babd07720ebe7aae3214f5e3c776eb8b39d86"
+        },
+        {
+          "type": "REAR",
+          "imageId": "3e3912c8-0f9e-40e2-bc36-a1b6fece8ef7",
+          "bytes": 845430,
+          "sha256": "50d54e3d441822ae7f0d9da9706056785385fd0ef3603ae93a77768770f2ccf2"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-035",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "c8bb5119-f67b-4b0e-a514-d36d954431fe",
+          "bytes": 104196,
+          "sha256": "7581c59260c6a55a76a5e553779c839e2fb5faa2edcfd491eee51d1f4a4fc8ac"
+        },
+        {
+          "type": "FACE",
+          "imageId": "565b11ff-d2d8-40eb-92e7-6f66f1c73024",
+          "bytes": 558586,
+          "sha256": "2056fce00024d540f23ba45336161f1d3c241fe0237b0fbe2ec713fe92a63c72"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "faf22c86-c683-4fee-b531-4630fa6dcdd9",
+          "bytes": 696680,
+          "sha256": "c70cba1aa20512386747e926cc2523be11333a06251e7511048717df98aee16a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "dc24a1ca-44c0-41e3-8473-a40b51e6b167",
+          "bytes": 1986216,
+          "sha256": "64ed465dc9caf383775cdb75f4cd8197c1b64894f5549ae9ee7502e8a09673f2"
+        },
+        {
+          "type": "REAR",
+          "imageId": "f0a6cb98-9373-48d2-aa9a-ad29c9c142f5",
+          "bytes": 1091110,
+          "sha256": "6af08f73d75ebfe6e4eca660de47972d0d6548aadb9cf1d0ead37f43aae3b39a"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-036",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "bfe7cb91-899a-4143-8545-2eb05abf4a33",
+          "bytes": 87896,
+          "sha256": "ee72c6932720694fa6be62d6fa66b34dd27ae818ced59e1ecbdc70bd262a7e17"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d1295eb8-c57d-48e8-9bd3-00745c1f4ed5",
+          "bytes": 515409,
+          "sha256": "bf3462495c4be792853d22f513b2636f343c9e13e4204a579887b754966503a5"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "8a73f071-0f8f-4ede-b9f0-16d3dd77648b",
+          "bytes": 571516,
+          "sha256": "bf9606bf0788be5769596498986eff061a9e9712f8c467632e3fc7779fe4807a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "4a8302d6-550f-432a-9a82-4353b5346cd4",
+          "bytes": 1775024,
+          "sha256": "8d680c7ba132a6e33594e5021f1220b5eebc0af83425ce03c2de74ae73ef4ee0"
+        },
+        {
+          "type": "REAR",
+          "imageId": "89af7200-0f49-478f-ae39-34eab3d555cc",
+          "bytes": 1002031,
+          "sha256": "bdd82f9d8a89e0cd1fd9aaa957fc742c3b15b01589110322974a4e091f6f1aeb"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-037",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "39469518-ec99-405c-ae8a-faf3b9225085",
+          "bytes": 86988,
+          "sha256": "b0c289b88f6c01e1c29f2d1eb30bb182231a030323d271e342df9322c6ed0af8"
+        },
+        {
+          "type": "FACE",
+          "imageId": "65c51002-1327-4f0e-ad27-7f7f33eb7d7c",
+          "bytes": 372926,
+          "sha256": "17e078afe9cbafd184a1f66d86e05ba445b31f84768adb9232ebcce884a69245"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "ae0adb3f-336d-4d8d-890f-ec64730b143c",
+          "bytes": 662742,
+          "sha256": "22551bdf670d930e279f6979c59312c490cc4c206beae0f8ede570e32b30d43e"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "81733e2d-3646-4e4d-aeaa-0d8a851f1fb1",
+          "bytes": 1853880,
+          "sha256": "0d8119ae930d0f1031ac3175514bcf90be9b157a7abbfe50cc0c27f44a504aff"
+        },
+        {
+          "type": "REAR",
+          "imageId": "02cfce3b-10ed-4874-b59c-0f36a127a3cc",
+          "bytes": 3054261,
+          "sha256": "07d05aa87ddd8c07f3f2318cfcfa6b822045d3e27edc4566413d8f4e6f3b6a37"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-038",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "28ed164f-9a03-4f89-a618-c983f3147056",
+          "bytes": 58810,
+          "sha256": "ee1b858aaac45390fedd465566a7ebc4eeddbaf102a00d9bc1a02c467028dc56"
+        },
+        {
+          "type": "FACE",
+          "imageId": "3333739d-ddc7-40ab-b6f0-be25827692b2",
+          "bytes": 345177,
+          "sha256": "86ef0ae66f7d07c476c3c3295d8653ac132db20449c6ff5787cb0fe19d35524a"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "4be8ac54-c0d2-4dcb-a5c2-c293cb20332a",
+          "bytes": 404803,
+          "sha256": "1b8c0ac8496b42d263f807c7dbcaf5ac96ab4ec934174ce1e8288238d2baa6dd"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "5f13c7ef-3342-48e0-be04-0f34fdf8f399",
+          "bytes": 1627307,
+          "sha256": "b345482b1708bfbd244710593eca1bd8e5b99b5070e0af700d0b4cd2bdd4835a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6beadc46-1776-4f5b-a4b7-b7bbc432d86a",
+          "bytes": 2392280,
+          "sha256": "c6107c1e5c4ba0c20b23bf1e4e8a75d62198b99c7c33150ce06279e315087df2"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-039",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "25de22c3-03e1-4d62-94fa-b31e44a9452a",
+          "bytes": 69292,
+          "sha256": "ed799de9d75442457bed69decc4dd5d790e02fdc4e833916de59036274b0eacd"
+        },
+        {
+          "type": "FACE",
+          "imageId": "f860f3eb-8e21-48b5-9e6b-dded6ef93cb6",
+          "bytes": 464819,
+          "sha256": "1bc7cd04d6f8034f7613fd1d0507377d43e1652a9506e1e299ebff723d41898d"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "5d443049-9599-46f4-a9c4-6bdc43201313",
+          "bytes": 436662,
+          "sha256": "405273413186413fc4d6a3c265de88380dca1caa060c7dfb027e88910ca61ab3"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "9ef0ae4c-cdb8-4308-a24b-b61d15cb1d59",
+          "bytes": 1726566,
+          "sha256": "d61530066c4273bd48f0f0de09b07a46f699bb4396d829a010833cd5ca5a8503"
+        },
+        {
+          "type": "REAR",
+          "imageId": "e20c3c24-7231-4ba4-b9a5-f2f64de92e2b",
+          "bytes": 925755,
+          "sha256": "0f2a78b71550b7c49fa571e92c32e23018ec0b91730dc13aba1b5650677d6f51"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-040",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "f1b71a87-59bf-4741-9e7e-becb9a51008e",
+          "bytes": 123555,
+          "sha256": "13f7459def44f2abb67773fc9fbe8f22f4cd6071bc2d4fd0900de20f27788645"
+        },
+        {
+          "type": "FACE",
+          "imageId": "a16ac13e-3b3e-4e16-82e8-920e9ecb5109",
+          "bytes": 488643,
+          "sha256": "777a7a4d7d653db29f7ee4235edff5e147d63265ebc33a2e3cf07f195efb0561"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "cb138843-36c5-4fe0-91d8-901bbd64e01a",
+          "bytes": 697131,
+          "sha256": "414ba9812361ff5e913e119797e109a8ebd6f8aa899489f5944a5192f2352e43"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "a4ef6882-5bff-4ca3-926a-5919f10df656",
+          "bytes": 2181670,
+          "sha256": "4d09b8d67d5f17b72f4d021a384cbdc174b67b84822a6b9325d22791c3120feb"
+        },
+        {
+          "type": "REAR",
+          "imageId": "3337cbc8-6236-4199-8cba-d36139cb2f38",
+          "bytes": 1165677,
+          "sha256": "637daa7639fd888369fd17033f3520d467457e54d8a8b9503ea322eae80ea6f7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-041",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "141947a1-85f2-46be-ab80-886c8f7049ea",
+          "bytes": 69303,
+          "sha256": "c596c90a73e9faa8c5e34de09274beca48e6a9c82f79d0367c914bc31eb35e54"
+        },
+        {
+          "type": "FACE",
+          "imageId": "c8757a2f-243b-42c4-8a59-c9b106acf79e",
+          "bytes": 365528,
+          "sha256": "be706c88fc32ac4b0ed0c2b2316c15da8cea4a4ac96cca0bfd35da8ea4923e55"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "959b87c7-cdc0-4e7c-85e7-92b02344c782",
+          "bytes": 428800,
+          "sha256": "aca3513105deae3fc00d924e29229227d6613333b96dd7631f87d1a4076bb163"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "96b3ff63-bbac-4c8c-822f-43925da55b90",
+          "bytes": 1674097,
+          "sha256": "8bda28dad846dec64b5a4df15ee9d62403f39cf628b1bfd073df23b00e48a30a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "03ff1bcf-8be7-453a-bcba-d66ce741ccb9",
+          "bytes": 702021,
+          "sha256": "32abcdd23dd8898e5d138c7fb3d7b76dc8deffeab07067f8d4fda0efb5b2c0f5"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-042",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "9ec6cf80-ae35-4345-b1bc-57ad9f280d2d",
+          "bytes": 64587,
+          "sha256": "4c8633c7a20ab3f6293a12e6815ebffc1f03ac06de01838afda9d7d10074d890"
+        },
+        {
+          "type": "FACE",
+          "imageId": "7225ce3b-5eaf-4a5b-bd14-07a834236f11",
+          "bytes": 325609,
+          "sha256": "f77da30d7088f16dcc2ebb4e237e5386b6492f7afa5a9d0d37f895aafb1156f2"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "0d5b9de7-4c14-4b65-932a-d8dc8eb5fab8",
+          "bytes": 385295,
+          "sha256": "0654d8797548ba64386cff97fb7f7987f30dd255cb992b9aa3efa84e805b2d57"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "05b7e025-2009-44aa-bbed-4732ab3f3a22",
+          "bytes": 1661833,
+          "sha256": "3454eec82f64a4217af66e93ab0be5067392fb2a71c5cc675a572408aa576e20"
+        },
+        {
+          "type": "REAR",
+          "imageId": "88f227a2-ef56-4b43-ad3f-ca5faa531121",
+          "bytes": 2432359,
+          "sha256": "c6f6a371c4052bdd008fb873acee12c2061fe864751e8112a0de4167c9a37828"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-043",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d06f216b-6d18-4cbc-a71c-7dd1b8f423cb",
+          "bytes": 67368,
+          "sha256": "3ce946a3e831ccb328b9328722d7a45e079324524a1afbf711d1f48628cb6f94"
+        },
+        {
+          "type": "FACE",
+          "imageId": "f1f91a96-bc50-4af5-b984-789bd4c55d27",
+          "bytes": 282934,
+          "sha256": "becb140930ad7cb3bcfc40554af33a040594c371d0535df5350d1bff48db4172"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "2df33603-9a88-4d42-9a39-57da59405b27",
+          "bytes": 447476,
+          "sha256": "659e3e1863825b7f31fcea5498b5c81dbc55a768b332b1a92ca5c6aa6516d794"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "3fb17884-465e-4d0e-a1a7-836cfda417aa",
+          "bytes": 1649282,
+          "sha256": "0ecdb88dfe306b90e34882c1d19452a819f7bf727764759c110228c527f40f31"
+        },
+        {
+          "type": "REAR",
+          "imageId": "1eb4f283-e7e9-4b79-bf8a-cecd66f6d4f9",
+          "bytes": 816434,
+          "sha256": "d9ca601f59b131f48c9333c0179de5b073855444efb26e153cf4d5ffa86f9dd0"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-044",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "92300d9d-7c61-46aa-9f1e-89a03d46e65e",
+          "bytes": 91146,
+          "sha256": "f1c006ded254cd11005e814e91c510d1deb3ff4a7c7c5ebb85aaff393da9c9ae"
+        },
+        {
+          "type": "FACE",
+          "imageId": "6fd8b30f-92ee-4d14-8740-b7377b7516f7",
+          "bytes": 503415,
+          "sha256": "d83ac95e022909a9362a8254ff3f1282b79bcfe992b67605537be6cb9d332d01"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "db6ed482-a6c2-4c75-a238-2a4c11c29c37",
+          "bytes": 661172,
+          "sha256": "9e04dda26f071f59b1edaa097a7741c1b5ef344f9279c289ed65e2fe354262c9"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "e60d65e8-efb9-4419-921f-7ab79be590be",
+          "bytes": 1932078,
+          "sha256": "dbdd12e7c4bfd6467abc0ef52dfcdf096608e8c131690c36221c68bf977150b4"
+        },
+        {
+          "type": "REAR",
+          "imageId": "3809030b-b447-40cf-bfb0-51f3861762fe",
+          "bytes": 917138,
+          "sha256": "312b0eee81031891ae323f9f8476122e2f00746865d83f85dd808923a395cbd7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-045",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d49385fa-baa3-47ed-a896-3810893b6ea9",
+          "bytes": 72626,
+          "sha256": "a1679d7e64a76e45f01af161c47418e2a7066809a970173eac1d2288efba18f0"
+        },
+        {
+          "type": "FACE",
+          "imageId": "69adafcc-8cc4-4f88-a618-a06211aadd38",
+          "bytes": 312642,
+          "sha256": "cdb066afb4581adedc6fb3e5a438419e18eb8089c7e1c29c953d6776131dbbeb"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "68eea1e2-d1c4-47d1-8a74-fdab392efafa",
+          "bytes": 463594,
+          "sha256": "23db2c89e8b6ff3dff5291adc3e0ac052d472f67340708004e4ef4a5d6ed7cb5"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "550312ae-5b34-4977-b323-c889bb798379",
+          "bytes": 1700119,
+          "sha256": "0d1a3870b3871947d39534e0918454fb36b9a1867ddb14806a804cc1d5a88542"
+        },
+        {
+          "type": "REAR",
+          "imageId": "19c4f5d7-9c78-4b78-a5d6-f23ae41bc852",
+          "bytes": 2656018,
+          "sha256": "f96d507eb192e7065427202156a68da0460bf2b8a983f2f8c18cb948a4f86640"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-046",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "8b57b376-91f4-435c-8106-4b42151b884d",
+          "bytes": 79892,
+          "sha256": "17d9c945de1b5b09ac27f21248e2ff543c0e1ae20008bc0ce8a718c892e51f3d"
+        },
+        {
+          "type": "FACE",
+          "imageId": "52e3db80-e9f2-45c7-9f4e-04086c43ca1f",
+          "bytes": 425634,
+          "sha256": "db70443a5a98b37bbcb5ed2573ec041970591b27c784ad078d24a7bfe09dff60"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "f21f815c-1fe2-4f4b-adfd-808f2425f84b",
+          "bytes": 617914,
+          "sha256": "ef26e189d2c5ce658bab2b22db04fd7fd9f9ec1f8a4889594576f96318429ea1"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "f0e637ae-db61-4f2a-ace6-c80ecc419ea8",
+          "bytes": 1842078,
+          "sha256": "55e2a9ea8f492cfc512445b18a9d9125b1604071f672613ffd6f8e4edf6b26da"
+        },
+        {
+          "type": "REAR",
+          "imageId": "1ec3fbda-4226-4836-b3e1-95b7ee5c580b",
+          "bytes": 2902029,
+          "sha256": "916b69d497db21c1eccf5dc3b1e79c971c7ae64d240331e1b583c89abafb69a9"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-047",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4dfc8dc6-e5be-488d-a3a6-7411e063b971",
+          "bytes": 69329,
+          "sha256": "550c6e186ae249c3f8899bdc20dc33d67f741eb7440a40c2bde378a81362d616"
+        },
+        {
+          "type": "FACE",
+          "imageId": "c4c1012f-e2bf-4e59-bfb8-1473408253ca",
+          "bytes": 361500,
+          "sha256": "cecadc7f07f66ae20feb73d89281f59e111ccbd0fc750d284145f04839b082cf"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "7bc38dbc-aec3-410a-b8e0-98005c862ca7",
+          "bytes": 566099,
+          "sha256": "893200c43af47300b367aec4b5b28a2b8fd6ea803159902e70f7d5456f576a65"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "05aa6e04-bc8b-40f1-87dd-3d627512c5e7",
+          "bytes": 1757432,
+          "sha256": "4270e07cc533e89937d0eea3210e567a604d2a9a08432ad02375b2b34ea51296"
+        },
+        {
+          "type": "REAR",
+          "imageId": "1d7c9ce1-6a48-4acb-a582-8026f2da9a76",
+          "bytes": 2843952,
+          "sha256": "49a792b77e87362a11ba9b7ac1d53e77e69a827c7075a1323f37a894c36002b5"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-048",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "19b8778f-98aa-4dfc-83d3-c057bdfddd57",
+          "bytes": 75528,
+          "sha256": "73f9d665012e5c7f1bad670a4175f81c6b44ec51f8a17a0315130ab54b2b2205"
+        },
+        {
+          "type": "FACE",
+          "imageId": "47d22343-c670-4b45-91b0-5c657282615b",
+          "bytes": 351069,
+          "sha256": "3055688a5db7cf4384951e60dadd18a9e1a5931d52b6a417f4d8379f4daedf57"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "ed678359-5177-4f1a-92a7-eff562bd39bf",
+          "bytes": 640183,
+          "sha256": "11fb5ba94d52ebd1c8432c288ead08bb9319a3898a2630b457ff74573992c108"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "e7d661c9-91c0-4918-b336-1e3bfbc23f39",
+          "bytes": 1843361,
+          "sha256": "3a0f089d8b775c63e8153ce474ee09e305f4d2615a857eece8526d306210bab7"
+        },
+        {
+          "type": "REAR",
+          "imageId": "70679643-eb9a-4a5a-9cca-a8dd0ee3240e",
+          "bytes": 1128628,
+          "sha256": "d550488e2d4cc7e87d9a0a5aea3f100afd79d5564bbef0a57426069e6fc48ca0"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-049",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "8d910454-8346-4525-8808-0e0a47ecf55f",
+          "bytes": 77204,
+          "sha256": "4ee60b6736896f21a6e88f10fd66a70848b87cc56144a51c1c329709a5d88829"
+        },
+        {
+          "type": "FACE",
+          "imageId": "ce1b2ed9-851e-4eb2-b452-4a0076326f79",
+          "bytes": 409098,
+          "sha256": "43ec12b1c69d388500c2cb2ac57f26639f78c88b50726eb772924ba26c96d24e"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "4de0bbc9-3545-4044-a7ad-b548dd602f3b",
+          "bytes": 504773,
+          "sha256": "a68f1092bfd7c0ab37d86c73084456b33709d5f2de032fee6262a6349ff44952"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "f5b25925-7061-4ce6-bc64-ca1fa814becb",
+          "bytes": 1731504,
+          "sha256": "753bbb53e091d22f6fb865a786ca9e1194da1c0a900fc2d47b160d5c456771e4"
+        },
+        {
+          "type": "REAR",
+          "imageId": "516c5ed5-e6eb-48ee-8faa-223970d11977",
+          "bytes": 2764092,
+          "sha256": "8af91bbb97ac05f18da890add3f79723f95e28d8fbeeaba7841d0adae2710775"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-050",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "eea79069-6351-4d6b-8fc7-ddd3ddc45fee",
+          "bytes": 73322,
+          "sha256": "7415d114bdedaf30953443b55368a929f48922ec8f1e19bc87d4eceb915297d4"
+        },
+        {
+          "type": "FACE",
+          "imageId": "c03092b2-2a09-46ca-a1a5-ca321d9f5ca1",
+          "bytes": 327500,
+          "sha256": "51815162a5dde589e6bf073ed016e2cf901fbf0ccd7ab0386d1c4ca3bf64d108"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "6f3ef5c3-e856-4b87-bade-177cd1968a4b",
+          "bytes": 553316,
+          "sha256": "060cdd14f470853a9fb7b4218009204beb2290c30f119df23314f7071818088b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "f9583588-2e4c-49be-998f-6af9e14699a2",
+          "bytes": 1782320,
+          "sha256": "ab0ebf9c15cf2d62b4b4b175a074610cf3aeb0ab83d1d4e1892a744e8ea096a6"
+        },
+        {
+          "type": "REAR",
+          "imageId": "0543fae5-9eed-49aa-aa6c-4ee8b4978dc1",
+          "bytes": 2793638,
+          "sha256": "d9b5593d1a888a602efeb1aa0d0e6351870cd87423804bcdefa5d2b288f7990e"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-051",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4b6c5aa8-9d21-4e9b-8632-8d22a68ce063",
+          "bytes": 84920,
+          "sha256": "50370ab31b68af8e2fbbd0ce7810850564ecec584f7816ea2b060125d3c6c270"
+        },
+        {
+          "type": "FACE",
+          "imageId": "3410a3bc-8833-4602-b007-b311c90a77c3",
+          "bytes": 420597,
+          "sha256": "7e412a7ed597d69b5b062c59c38a4bc1d2e4c58cef148a45e584dd6d51115d90"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "78de442b-4c4e-439b-817e-5581d4be9be3",
+          "bytes": 456439,
+          "sha256": "9ceb27c86e210fcfb7b473d3a11ec2f95696e12849f3c211199c42ae2fc636bf"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "e05d51f8-b60e-47ed-b1e8-3c4c9a4c36dc",
+          "bytes": 1721838,
+          "sha256": "8d5f859ea8519f721a74ffefd05f2a6dfe73b90fdfa08d7c5100772a6b5c2180"
+        },
+        {
+          "type": "REAR",
+          "imageId": "d4775a96-3e4d-4713-aa35-1d8777e71ce3",
+          "bytes": 2489704,
+          "sha256": "a89c7ea13a68539f679557c2097f84f0bb59bf6cdc968a23af3a60b61dc2ba55"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-052",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "6f1e2367-7b62-4702-8461-a0b7e047f2b5",
+          "bytes": 79121,
+          "sha256": "7df7d30a933f19685d33b03ab8e2c2b2eb62f66bca2448e65c4cf5f3f92feb9f"
+        },
+        {
+          "type": "FACE",
+          "imageId": "cbc15b95-ec03-4631-bb1a-829326b3f729",
+          "bytes": 478686,
+          "sha256": "2a7a345b73d16e10bd7daba15d2c5f62537157b365a09820fd09e7964c04a613"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "f6325723-305d-4618-9fc3-707112047057",
+          "bytes": 383654,
+          "sha256": "c9c0ab7e616aa96a541332b8e0f6f72999b53189b46f608ac760197cee769c03"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "7eda8f3f-d093-4c9e-908a-42995105b569",
+          "bytes": 1750756,
+          "sha256": "a8c6955135fa30accc2a2a2bf25536fb09546619b87e1b191f12cd17e05229e1"
+        },
+        {
+          "type": "REAR",
+          "imageId": "f0b729e1-c96e-45c3-a778-b6e6332955cf",
+          "bytes": 2671260,
+          "sha256": "b2dc01e265ed930e2b16bba5ddbc480facf7eeda99248aff9872f230ec0169c5"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-053",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "c31ed3d1-c17f-4b71-b9f7-f1f5f1cd2ccd",
+          "bytes": 64285,
+          "sha256": "93673f82efc3f3baa4542e4763eab73c5f7f60919c26159f6d0b2c174f600ee9"
+        },
+        {
+          "type": "FACE",
+          "imageId": "7c77f157-9edb-4193-81c2-533a035c8ce7",
+          "bytes": 429192,
+          "sha256": "a3d209cddd0f32f8e9fe150e873dbd4bbbcb8566f14d00e7af8efc958291494b"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "6e31c067-afa2-4670-925b-98a46da5ee5d",
+          "bytes": 456507,
+          "sha256": "f9a702d7e23dba9f1bc51ffae617e8a993ad74fdaeed1df40671fdcfc6554133"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "25d3e471-5d7f-43a6-8315-60644414275e",
+          "bytes": 1695712,
+          "sha256": "d691fb739fa60626443b29210d29d28140dc941fd378682b71790488441f4ab4"
+        },
+        {
+          "type": "REAR",
+          "imageId": "e5b5074e-2645-4acd-a3a8-88002d6e3abe",
+          "bytes": 658862,
+          "sha256": "fa4ea20b62e07c326356a870e511636ceef0921fe2d6c66e78b14754ef47cea7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-054",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ebf0cb89-f2b4-4680-8e04-c1c7a64dfda5",
+          "bytes": 69754,
+          "sha256": "8d495aff1a4caa5d3cf5bca4f42f2915f3c618149ebff7fcd3cca76504269497"
+        },
+        {
+          "type": "FACE",
+          "imageId": "013fd305-74f4-436f-83e1-68f02cf275e8",
+          "bytes": 461802,
+          "sha256": "9a2f57456d380b2bf2cbafc237ebff7b58190af3559b6a2a7d6fcc19a7cd9272"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "1603c3c4-c224-47a3-b8fe-cbb8587ba4e6",
+          "bytes": 462597,
+          "sha256": "704846c52077bad2909c071f049a52520a1e0ed6cbe15b18e0055f9791daab10"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "0a0f4091-3f39-4aae-87d4-ea6bde993e61",
+          "bytes": 1677210,
+          "sha256": "536ff4062bdaca00701f865e10832f8da0abb044a9af597852059a79ed18f848"
+        },
+        {
+          "type": "REAR",
+          "imageId": "b66dddb7-4a35-4f42-b80f-09f2c6713704",
+          "bytes": 956762,
+          "sha256": "cc126edeb2de24ca5a568a8edcf92a9485dd826235c79907e27e580545659d37"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-055",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4550be3c-a490-467f-a86e-fe4caac32955",
+          "bytes": 51894,
+          "sha256": "d85ad354e077b168251c06f9aac2ed04e9dc8cf5a555aabb262dd4578009a01c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "3901ed63-e62d-4297-a2a7-76b6f89bd1db",
+          "bytes": 242045,
+          "sha256": "ddc4c04d44d2f242628aa8f904069c263a503e2bf50ece110515df44388693db"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "9f5c63c3-2dbc-48da-a2c6-b57fe78ff46d",
+          "bytes": 376370,
+          "sha256": "6e491f61a60995992a31eebabc1b0a9b898edd312636506ffa0c3394f295834a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "ca2074d4-31de-4e9d-9384-284af8f46e66",
+          "bytes": 1500460,
+          "sha256": "2ce8fa5b93eb2eb75ce219ef8d4dddbf4a0792ada8b7236f3a0d4e80441a82b8"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5a4ad272-bd58-42d0-8e8f-ef7de7fa67a4",
+          "bytes": 659373,
+          "sha256": "40bf16893ad75b089f7df490f088a6a13547523f74d2d4da0ed594ad2394f87e"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-056",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "4e19c11a-7384-4451-bab2-072e875cf1f1",
+          "bytes": 105121,
+          "sha256": "72412a12c7ee8b8e91e41ce6783f6f8829709db8a57ce39515b894ac4320fc30"
+        },
+        {
+          "type": "FACE",
+          "imageId": "6717e712-3de3-4232-9205-d360a3ec33d1",
+          "bytes": 436239,
+          "sha256": "e9680afaf6b192d82ad2d200682e14bb2fbd793b58f812a8dea9be8f550eb3bd"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "55a31869-f748-4437-afd2-0161b02c1617",
+          "bytes": 745009,
+          "sha256": "4ea81aa3c3ef2322d72f92b6c45b1012416d81042e906d97a60e60b2d4eb97b0"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "177115ec-1370-4390-93ea-dcbe3815c6d4",
+          "bytes": 2055158,
+          "sha256": "baa3f9345f463600c59913724ec62bc041c09d4be4e68c571860ef942e0549b3"
+        },
+        {
+          "type": "REAR",
+          "imageId": "032d1fa8-a07c-41ff-b07f-a1b4fdcba062",
+          "bytes": 970656,
+          "sha256": "de4a40aa4df11bef49aeedb81a28c9bac26bd5cbd2be18830396c14615c7938c"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-057",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "38347b10-5531-499c-a322-a72c1e47a235",
+          "bytes": 72966,
+          "sha256": "1019877a8a0cd345f6136b00cb3ca1ee81e43b965bfae0602bd7d4eac144e070"
+        },
+        {
+          "type": "FACE",
+          "imageId": "ec6cc219-daec-42ec-a50f-32f7b9ecfaa2",
+          "bytes": 324901,
+          "sha256": "b43e54763dd0637d7116f7a600c4f2fb87855478d7494471c8c820de33b2f888"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "62dc8e7f-14ca-4399-8530-c7111abc2eac",
+          "bytes": 503872,
+          "sha256": "d0b3191d55957125ef03311d0b0b3d51684a1562fa7844d2259e7dd1933fad55"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "5838ea7c-21e7-49a7-b612-8a8a618a0eab",
+          "bytes": 1688204,
+          "sha256": "13e0f8eda1a3ed3d8909f057f232df407115f65d82e43bd91164cbcc3deaa64a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "836261a4-b66d-4ab2-a581-f49ccd10a10e",
+          "bytes": 2427203,
+          "sha256": "53a99e037d4818c604b808083c7e877bc770cb43e00fb8a6ecf76687f831d134"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-058",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "8d18dca1-e23c-410a-99ff-056ab1870876",
+          "bytes": 56885,
+          "sha256": "7b85f6e1e25380db4efba15335e98bcffcd1c21fa668d3f3849d8735c39ac7c0"
+        },
+        {
+          "type": "FACE",
+          "imageId": "51b8c474-735b-46d7-a018-f9136bb37423",
+          "bytes": 280287,
+          "sha256": "dafc86569f3f91a675ce9a442f672ea690851ee68684f633b102cd81bb51ee49"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "37896d90-4127-4d7a-aee1-92122afea0cb",
+          "bytes": 333182,
+          "sha256": "2820e0d5069af199b322c7f12c51990e835943701c0b93b975e3cb2888cfc3ec"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "895b098e-99d0-41c3-af01-228d091b4ecf",
+          "bytes": 1594424,
+          "sha256": "b330e926126263c768f983eb1d63060a578f261d39c93f549b512ebe1ddd0391"
+        },
+        {
+          "type": "REAR",
+          "imageId": "0f0ea029-6898-4ed7-a51b-da7c36da3b50",
+          "bytes": 2327212,
+          "sha256": "aebaaa1394bc38f87554c88370ea47d1da5cd7a50ebb2bf6078adb62ca1d2262"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-059",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "eb23213e-5ee9-4a3e-8ebe-e2b93606617d",
+          "bytes": 81274,
+          "sha256": "8e51cd922c15039681e66af930e02f64ae634933f7f3574b48e6c81452a77338"
+        },
+        {
+          "type": "FACE",
+          "imageId": "965f35fe-0fd1-4ce0-8241-2f95c84c652b",
+          "bytes": 338435,
+          "sha256": "1dadce8c5bd94dba1feaf765d1a37a3c59738d1d184848b6ed90a179e7109098"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "f150d58f-4165-49c0-8180-2a9d71efa1b4",
+          "bytes": 609092,
+          "sha256": "29fb15ffa647b72e5289ec02ff8c66ac2961658bce1d1941f4ace04b75696d59"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "acd2a3d4-b64c-4427-83af-115d435c5add",
+          "bytes": 1819991,
+          "sha256": "b635b4035d34ea2173a9486a3525520400b53f2c6de1c32ae139bcbe4df70641"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4272d582-3340-4917-855d-f318db973de0",
+          "bytes": 817537,
+          "sha256": "5f6cd5283acb51351033acf6589aa9797f88c902af7f10b0ad46f7c787bc2fb6"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-060",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "51e186a2-4d07-46c0-a98a-081b860afa5d",
+          "bytes": 89419,
+          "sha256": "3d10840e8985abc9d43997662d0bf4f2ca904d83439c9fe826bfec92533e3999"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d2352cc0-9d9b-4aea-9d94-9689e7ac9feb",
+          "bytes": 475263,
+          "sha256": "5623c4c193d50da35728dbf62936bddfd22bd8ba3f8f2b4860df4462b64100d1"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "87998f3f-84eb-4e97-ba46-c633d1b88f48",
+          "bytes": 624515,
+          "sha256": "8a4fa4df323cc06c7fa15b77956b78a9466dfc2ce116069807b7ddf3e2cc8ea6"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "01e78321-f1c2-4f60-be1e-cb8d9694ef72",
+          "bytes": 1870113,
+          "sha256": "55fc5a9837811551337bad1bc34667d724b8135ab513d3410190efbb7a4a6c8a"
+        },
+        {
+          "type": "REAR",
+          "imageId": "2eebb4c5-aa2a-4cb0-90f9-0003368c21c3",
+          "bytes": 2703669,
+          "sha256": "a5fb83e0a60124e0814f4a7412f6d54000e8ab5c1f1ba6352467156bd842ca8a"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-061",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "a4483552-0a27-4cb1-bee9-90b6e2b0ad11",
+          "bytes": 66713,
+          "sha256": "393e1aa32ebb68e504a50ff4357b063f88433505cd72b3f541d3dbecc86ed336"
+        },
+        {
+          "type": "FACE",
+          "imageId": "ffd180cf-10a4-44eb-add0-ef1f9eee0237",
+          "bytes": 324511,
+          "sha256": "a0fdc3ba8630b7fa022ec6a2b17aab7fe59bfc323367e073fbe5c38aa77d0c29"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "53dc93c7-6a0e-403e-96a2-3a1637f95108",
+          "bytes": 553929,
+          "sha256": "fe7a1c4e93584948fb6d6ade80234740ad301654b1494569895c293e6de1e158"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "5b3f6fa9-ee3e-4416-93cf-3eef58c1a93d",
+          "bytes": 1638498,
+          "sha256": "31384d9636be6dd9e50118c9a1506e4dfe73ccd35699c7af53d8e81802ba132c"
+        },
+        {
+          "type": "REAR",
+          "imageId": "32acfc8e-6340-4b79-8bea-843d4001b832",
+          "bytes": 844943,
+          "sha256": "81a6c45b5bf6dc11a548897a36a4cba9e2ea52d2b2fe31fe9749658e9693baf4"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-062",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "aecae186-8dc7-4470-9468-acf8ed017ba5",
+          "bytes": 51126,
+          "sha256": "4872bec5b01121b3d0e755602fd6459a85e1ea7f267ce57436c0f706818e480c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "f33ec42b-20fe-4455-af2e-15c3c7791b5e",
+          "bytes": 245715,
+          "sha256": "da513dbf8c582ae22d3807158903a3f3135f40cb759180b7e257c38b1ad16ba6"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "9916be53-d667-4094-bb85-587131177f99",
+          "bytes": 311504,
+          "sha256": "a24db4467ee91aadacd0e5e75d5457fc9737736f80c34b5fd82cbbcf99493f8e"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "34f63b29-be4d-4f6d-a898-568471b37979",
+          "bytes": 1518514,
+          "sha256": "02d9acdd92c7684b3fcfebf9ee8a4585e7090af021bd2e4701764111da128471"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4ac577f5-0983-4e3a-9c98-3bca233f16cc",
+          "bytes": 2263414,
+          "sha256": "69df23ee591e462ee09d6e5ad748ae3de9f992421ade955a9fc6de319856b659"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-063",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "6e8d45df-a030-46c5-a1b4-b8962001d664",
+          "bytes": 84990,
+          "sha256": "ae7315f375baa12cddca4ea863c6b63d942bf535e8d3565e79d7618ff9c8c90c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "f3e14ebe-3003-45ce-b189-ea6d807f73dc",
+          "bytes": 489901,
+          "sha256": "3228fbc309e6e0a60469526e642ce115cad3c98401656e9c672ec8f8875bada7"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "79bd5247-96d3-421e-b107-c828e876afcb",
+          "bytes": 544710,
+          "sha256": "4bd5ea1fb82fcc4dd4feb42f83483097a2346f54af664e177a71d8ad16cd4c16"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "87814021-fad0-491c-a834-873efe7c2540",
+          "bytes": 1799937,
+          "sha256": "04764118fb34022b269e0090cfa006b006b654f0ddf788a5eeeb25f8b7607039"
+        },
+        {
+          "type": "REAR",
+          "imageId": "379eae81-4f97-4fd0-a497-29d4ab652a65",
+          "bytes": 850158,
+          "sha256": "80ce2391818b21d01c66c9099f58d6649f2024423da4bd7c6eeeb7a0680de5f1"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-064",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "7484b5dc-9cfa-4d7b-bf47-8fc78630d068",
+          "bytes": 87063,
+          "sha256": "01e78050599951c487436bb5c82d52e0fa32343df5c4791798f9860169a19e95"
+        },
+        {
+          "type": "FACE",
+          "imageId": "1e4b221f-49c0-4a68-ba43-a8ad959da311",
+          "bytes": 443159,
+          "sha256": "e4e7a17709060b40995e7a2b242d51740a6a583120aefea6412c917a0b73bbb4"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "d8180736-077d-4f25-909c-f2f6a77c7bf1",
+          "bytes": 599789,
+          "sha256": "7b94da524173f45aac3015cb11cd76171f7b6c42a864d8e1d50d0ea95171fc59"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "cda1de4a-af08-4f35-b927-968aeadfd595",
+          "bytes": 1898678,
+          "sha256": "e12dd4a9158fdf3f844435885e7492a68e62fa9eb3eff473e3a38084d7b03a84"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6272ade4-abe4-443a-a5ef-175c0dae2d8a",
+          "bytes": 2923820,
+          "sha256": "1413bf9513518e8ee69a1379d363dc7aa0c75305364d4d2ceb58ef7f7ae0d733"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-065",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "3d1dfebd-672d-40d4-9c65-c3982d936346",
+          "bytes": 80539,
+          "sha256": "63e890e5f3d1e54c754039e01dce82ebec2d8e72eee0a41116e853bc7737e334"
+        },
+        {
+          "type": "FACE",
+          "imageId": "fb7670b9-e076-4a08-a1ee-b6f51f066efc",
+          "bytes": 474950,
+          "sha256": "67dfeabb83de3b9537344c9de251e644d9cd8e302d657d398775b46c7ff811c4"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "caed7e0d-1bdb-443b-a2ea-2a392af5dc9e",
+          "bytes": 553845,
+          "sha256": "0e35e3ae8140abbce89b3ee4e6bd3e9dc9b6ee6a9cedde086f2346f3def4644e"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "a3a661c2-5342-4480-9c08-6f339ecdbc4c",
+          "bytes": 1841571,
+          "sha256": "0c0329b9512d3a48b6b7e592a7781af5ab8ccf292a7dfe752cf1172b624f0ab9"
+        },
+        {
+          "type": "REAR",
+          "imageId": "ea13a1f0-86eb-4684-81ab-3038b19cd8c6",
+          "bytes": 1025295,
+          "sha256": "ade09c11fbf8df055a6040de07f70b03026ec4a10d59f4d49d0fb76c66fbe346"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-066",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "9d47f4f3-1777-432a-951f-0d57e9bca848",
+          "bytes": 79856,
+          "sha256": "857394ff6dac9a535e4e13a5f70cb19c6f9eddb665dab72c23d8dbbc50922fee"
+        },
+        {
+          "type": "FACE",
+          "imageId": "5d5e00b3-c0cb-4e4e-860c-0830fa94b191",
+          "bytes": 380114,
+          "sha256": "9e19da4418ac341885d6c05843994eb10b307ca7f99c4dc887f5393f26311899"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "43b65239-152d-41b1-a0cb-8a49032e6b7f",
+          "bytes": 461767,
+          "sha256": "4f6379823e6e8f371fb15a3d46225413c3d17eec98b3c9fbeba0657586607f59"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "e53075de-ef77-47e0-84d0-4b9a02ba2e38",
+          "bytes": 1714630,
+          "sha256": "26efd9ef0d5b7ff1bbd244134e977f12654aa7f2e593a56ed488dedeaff5f99f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "65edcf37-a97c-494d-bdf5-fd1178e87e8f",
+          "bytes": 750210,
+          "sha256": "e17f2fa79ea68f05e2d8e7d2331de08150b0d1cd4b48827b29001ca5610c3c26"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-067",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "3703a4b3-3771-4b21-a9e8-153b504f6c21",
+          "bytes": 57426,
+          "sha256": "ce8768ffa650988608e5ab39028684538de37d503f7809e158ad1a8344d514f2"
+        },
+        {
+          "type": "FACE",
+          "imageId": "3d8af404-2c9f-46ab-beb6-a437fe3b6895",
+          "bytes": 361912,
+          "sha256": "45f30014f8981b46c858e7ead7d7cd3dc5cf897c85ddded59b5bbae2847b33db"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "82cc6559-da41-4dce-90d6-80f0e0620863",
+          "bytes": 438668,
+          "sha256": "514d74f356e993d378d3d7cad6c310770bc544e9cda4508371a6897d70eab824"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "010d6b2b-15a0-4695-84ae-4f050afecd9a",
+          "bytes": 1666125,
+          "sha256": "3ead4c46c1cb8691edbf3594d00f8653f007e3d8234bcce68a512c64639c427f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "988edfa4-dfed-4a68-90bb-1070b243d2a9",
+          "bytes": 2544931,
+          "sha256": "e164e2e01c8e4fceb7bca1c996d360d917e53c93cc0d95eb2a5d9d3f5e2b959d"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-068",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d7ab288c-4a04-434b-a946-7e0162ce29f9",
+          "bytes": 68490,
+          "sha256": "ba3a21dfd7e7fd6b5ef32cecd9466d75a96ca20ef3d289e6ccfa6dffe49b4235"
+        },
+        {
+          "type": "FACE",
+          "imageId": "195beb3c-5d2f-4b90-9352-d4376a40d386",
+          "bytes": 337565,
+          "sha256": "f7de9a0fff135bab70cd53cf38c8ef82f4304b53c485a8879da2a001bbb25175"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "0f20ae9c-73f4-4fa0-adac-000f97df8fe8",
+          "bytes": 395319,
+          "sha256": "9f6e1f07f2e4853ff145a2e2cd8cdc4f4e3fed0e19830d4376222f49b57f339a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "8685830e-acb4-40fd-8174-646dbc0e87f7",
+          "bytes": 1668116,
+          "sha256": "a082a8c0d2067e16826c19acc9d3def14da9eaf4f383617fc2a835ba8c13d9d0"
+        },
+        {
+          "type": "REAR",
+          "imageId": "61ece6e0-3088-4d57-8441-7801103a0c6b",
+          "bytes": 57944,
+          "sha256": "7ca5e42d2c92f51b3a7b1b1398328c2d5729ab81c1875f77d160b29f076b40b0"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-069",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "c9d2472c-c07e-4e04-836e-c1b60b2b1991",
+          "bytes": 82906,
+          "sha256": "feb8b0cc8a94f276cd96dd8712628bca8aaac63ae7b0766d3d17317cf57d9aad"
+        },
+        {
+          "type": "FACE",
+          "imageId": "bf03fafc-8b2e-4c09-932f-29cab3a61709",
+          "bytes": 309388,
+          "sha256": "77cd224587916e8f416b06eaae0fae17150c6f87a72ac5adbac8313ea53db02c"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "10237cef-bf47-4d39-98f4-cde660247b38",
+          "bytes": 468872,
+          "sha256": "f4512d4404202117de2d61c9c09abda8e2b26349a331b79aba6f0a2d53708082"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "8cbfd125-63a0-46b2-b219-438928d78769",
+          "bytes": 1602062,
+          "sha256": "a194f355283081d824bc7fd5d25761d11614ee013c0c3f84ca9e0d29753c4c9f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "9c23bda4-e429-4267-893a-03b0af1dd7fb",
+          "bytes": 2660900,
+          "sha256": "3e0e39896029c3cf6724c204ba3fad26bc0dab41531f6f78e3199d3b2cc0cede"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-070",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ed941c77-a737-4a6d-a3ca-09e32c2926e8",
+          "bytes": 72342,
+          "sha256": "5fd2976c8291b3b6b4455f246c742c4fb03e7d55235e076036a037da4fb21838"
+        },
+        {
+          "type": "FACE",
+          "imageId": "3bdc83a2-3e3a-423d-b144-118b001caffe",
+          "bytes": 364880,
+          "sha256": "b59717543f504ed526ed37539faca6224985e252e3c674263d57f5cfce22c6c7"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "21398957-6446-462a-9b2c-34d5d73e24fb",
+          "bytes": 546379,
+          "sha256": "0fc347566ce74bcf2f0c585c09e5e039fb7a3a7c4fd1d4d420aa58c104e87219"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "d8d9429f-ec57-4f50-a380-978a5f3b0083",
+          "bytes": 1715955,
+          "sha256": "d3925ab014e9a7eebc909f16c628daa2b28d6911f471d77b425691488c007585"
+        },
+        {
+          "type": "REAR",
+          "imageId": "12f1d78f-0943-4e03-b0a1-113e1909d7c8",
+          "bytes": 805224,
+          "sha256": "cb2f14393157adb80be7d0663bd675188d8ba1dc69cd136e0edb21ad2d82bdb2"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-071",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "bceba124-9e45-4735-a0b0-ed1987a00188",
+          "bytes": 102265,
+          "sha256": "0d47fdeee67bea6debbcf89319bdb59b1755640d18910aabeacd1fefb3bbd53e"
+        },
+        {
+          "type": "FACE",
+          "imageId": "325161c1-1249-4386-8016-966c96928378",
+          "bytes": 477191,
+          "sha256": "ef1364745806cc41286b51ad2a0d3578eb3ebd87b7b20a253ab2ec1df0513966"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "08b58eed-4736-401b-a03f-e07e940b7940",
+          "bytes": 679684,
+          "sha256": "1c32ab9053e60216d9df6eb17fa56479d7e34307eb6405226c69966bd23037ab"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "64f5a33e-7029-4645-aa70-4f6b69223f33",
+          "bytes": 1950859,
+          "sha256": "c507098351c8a9bc73956b47fc7bfa8aa73abae96f4088c035832151a3fbb665"
+        },
+        {
+          "type": "REAR",
+          "imageId": "fd765ee6-5935-4ae9-b9c5-1fd97de4d0ba",
+          "bytes": 952005,
+          "sha256": "fa93a304c0468a5483688c58dd4ae10646c056c63ec6a88a8abf0a59b272967f"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-072",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "37431692-7eb3-44f9-9372-d5dae5a1b13e",
+          "bytes": 72692,
+          "sha256": "99254470094dacbe6540cd30d9646af0bdc97344f142cd9301f4bc12919b001d"
+        },
+        {
+          "type": "FACE",
+          "imageId": "88e79b4b-d67a-4d07-877a-7497f496f4d1",
+          "bytes": 340765,
+          "sha256": "6337c3d5bba641d8cdc4122888b0769e4caca5313b2326cf81bd71f86f5dfd2e"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "cfc891ad-a53a-41f1-adff-1f77570503da",
+          "bytes": 573517,
+          "sha256": "7e6008b73bfdc0a6617bce13587689d5919f341e5ec09b6df5b1dc3c80bc775d"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "edbc7db7-5132-4897-91da-53d5e033973c",
+          "bytes": 1760063,
+          "sha256": "f7861957c0e285574b502ae2a8b0811ecac135fd9af640816ff1a2b0e3067196"
+        },
+        {
+          "type": "REAR",
+          "imageId": "321fae5e-282f-4a33-a45e-6079125cddb5",
+          "bytes": 2668695,
+          "sha256": "0b16a4cd424f2cfdae0fbbf1ebe5b46d6eb3bfe853f6217206dfd99aaffa56b7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-073",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "bde54e5b-1c4d-439e-be2a-aa38bdc64a82",
+          "bytes": 66088,
+          "sha256": "67cec11c239a62a746dca1eb4d81f739b8e3f91c09c604b39aa15088a3248f8c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "6b768d7e-4823-49be-9dfb-681e904481cc",
+          "bytes": 381017,
+          "sha256": "c048ea656dcf053e047272003e8995f54bf860bbe149a2c1f61b6364407fbce8"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "db595e98-14d0-4cd8-bd49-584b305be279",
+          "bytes": 411740,
+          "sha256": "7e87fa30d82c5069dee93d1b5b473fb4af7fe1cfb0fb4a8dbae8ed53032060f2"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "b9f70aeb-56eb-44fb-9547-0183b240b088",
+          "bytes": 1676718,
+          "sha256": "2f1e34bbd7e03445184a76aebbf25a4ec57501e9db8a3e17c169b081f5493334"
+        },
+        {
+          "type": "REAR",
+          "imageId": "df784811-07a1-4b84-ba9c-39659ff25e19",
+          "bytes": 850735,
+          "sha256": "4e2d0b3f4cdd5e9049eb20c11602a75e6795194844df0172226a1ffc65dd7428"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-074",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "eebc8ef5-12f8-4ae9-8808-3b7d841dfc1d",
+          "bytes": 67265,
+          "sha256": "de0d123308c004318e14f821628bd4f9a25351e1227ac1277de36efc5189ac0c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "25e2e02b-ccbd-43d6-a03e-bb663e49d77f",
+          "bytes": 394878,
+          "sha256": "8c98926733e44e3dd37ec7757434862d0c75fd2b0d0da474c56718a480ebf09a"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "72ad69a9-15be-4f34-a512-3b9d1461cb33",
+          "bytes": 419729,
+          "sha256": "221cba8a389ff8260d35f5d5a94b4d61961bd789a303c729e863760645ad6db8"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "36afad1e-6c46-4551-9f83-44029dd49989",
+          "bytes": 1621712,
+          "sha256": "1fb420e867c89be14009983ea0b930665c17e10db974bf4b5672fc55f9a3534d"
+        },
+        {
+          "type": "REAR",
+          "imageId": "f260adfb-17fc-4f66-8a54-e959ff3034bd",
+          "bytes": 1087412,
+          "sha256": "f9a8ca01e93ce78304d1907940319ae797180c6155b2bca9c4901911f84874a9"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-075",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "6ae7c180-2ec1-4dbf-93a5-0914a03e4ace",
+          "bytes": 101182,
+          "sha256": "fb2328f500350f9c3e98bb780e244a06f1a34765f50034f0af896483a743e5d9"
+        },
+        {
+          "type": "FACE",
+          "imageId": "77293652-c525-472f-9407-f0971e072246",
+          "bytes": 319636,
+          "sha256": "dbbfa2f5c8ace94d50b2493ae53e34f715396dc140ff1a8d4d4a1f07fcebebfe"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "49dae700-b89f-4427-8101-16a7410f1aa7",
+          "bytes": 577234,
+          "sha256": "9b2cc934b2296c37eaf314a9834cf01c82d8243941c553d11284d81a8d129da6"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "44296986-a4de-4774-868a-ce797f2f9730",
+          "bytes": 1895917,
+          "sha256": "bed9d4c9d9346995f0103d1b3c70e8b5fee3d4901a5a009e001eda731e80b47c"
+        },
+        {
+          "type": "REAR",
+          "imageId": "8b08ec6a-758a-41d7-a5a3-b8771fe9f663",
+          "bytes": 1086491,
+          "sha256": "c036777eb7dbbc680636f57480201a94a425f8deae129f9cebb91f39e785583c"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-076",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "eae605b9-654d-4400-9108-2e9415e99d64",
+          "bytes": 61750,
+          "sha256": "09a8968bf565d349fa9f353092618a83c26e8f937cc390a9459392dbe6b5c8bf"
+        },
+        {
+          "type": "FACE",
+          "imageId": "fff60ab7-cd7b-4ba4-a18a-7b1cf7ec5912",
+          "bytes": 269819,
+          "sha256": "708723ec63c9a18a9934e6f6327c0b1fe76d7fa56a3725e52a5440cd446808e2"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "03ea0b45-6497-45e7-8972-94bc3debdf22",
+          "bytes": 382119,
+          "sha256": "a123908117fe61140429529ea2a47ce06b34991c874621dab022ac20c24f0803"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "68389e9a-d1af-4ece-9ed7-940832b74c6d",
+          "bytes": 1639979,
+          "sha256": "96e30e0328d1b7719d872b6ad2cdb5207e8afc6f8e28e1ef29889cfeb3ded889"
+        },
+        {
+          "type": "REAR",
+          "imageId": "e5590641-b609-4231-940e-70596ef17bf8",
+          "bytes": 2368394,
+          "sha256": "161238fd5015a48aa95a72e963203748b3745e39f803b05136129c5557fdab11"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-077",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "ed1105d3-8377-4715-8f95-69062d8a4f03",
+          "bytes": 71931,
+          "sha256": "c2dd9c9fcb4afed4ea3ab30998aeeffad52ab92eb001ebc92dd14f86fbc457a3"
+        },
+        {
+          "type": "FACE",
+          "imageId": "2f00725f-a8cc-4062-8bd2-3305f133a793",
+          "bytes": 526257,
+          "sha256": "d05d781ad453bdeb7d35bce2e9be0d6736e199182aec3cc9365caa40373620d5"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "304cd4af-d95b-4118-b973-482f5eec0a9e",
+          "bytes": 560061,
+          "sha256": "c5de3d6fd37447c1153381455a4c34caf332ddf6e2d399041e9daca2af52bc7a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "115a5264-d0b2-49c4-b3fc-fffe0cd059b5",
+          "bytes": 1798040,
+          "sha256": "78b57b530ee09f21de7069b720abda4abf0702c233e13c0fbf975345651cd480"
+        },
+        {
+          "type": "REAR",
+          "imageId": "ac857624-0565-4cfb-9c29-bf6bc5899baa",
+          "bytes": 927860,
+          "sha256": "dfbad2c14e4ba226b820311db038dfa8d13633ca8632fd6fcd0828a5bf7965be"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-078",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "dd4cd6bb-b69b-471e-8806-71e1b7d35bf2",
+          "bytes": 57722,
+          "sha256": "ab567cd64aa43c753c9eab21d9be1ce5bb5b947c624b46047ec4343377a1335c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "8840d8f9-cfaf-4374-9645-2211dfb787a5",
+          "bytes": 287452,
+          "sha256": "1062e5d56368eba931587f507e0cf2a585867ef87399688455449ce8e53c6d36"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "f3b32e17-9a84-46ba-95f8-f9afecf4769b",
+          "bytes": 398744,
+          "sha256": "745a73357a5c1555a21d5d450dbf01681a60970fd3a672f1d8caa80157009ec6"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "9d4c06d4-1db2-4e3d-80c8-7276dae2c25a",
+          "bytes": 1570578,
+          "sha256": "6d1d4af5692e448aa800a036c8425a5e8512b9751fbc0c80a249680c69959dc0"
+        },
+        {
+          "type": "REAR",
+          "imageId": "246c4d10-ca77-482d-8f85-b3c74ef53e23",
+          "bytes": 704429,
+          "sha256": "b0369842d7cc0fba970bb42bebeb1b8a4c413eac19baf0c1403a91ef2a68c45a"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-079",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "a10f6def-c873-4958-ad67-57bac263772d",
+          "bytes": 61740,
+          "sha256": "06bd28fc392c6a96e74cdcd9eb0193d567a028c73836203bb34f8f98ebc3d8b1"
+        },
+        {
+          "type": "FACE",
+          "imageId": "a427503a-8424-496a-98dd-2c8aa7faeffe",
+          "bytes": 285972,
+          "sha256": "f15e40bcb0397e5e25ee629544f644933ddb2cce2074d9755ef557050442a67d"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "7d03de2b-182b-45c4-877b-ea9275bfdd5d",
+          "bytes": 423831,
+          "sha256": "77791c4147158c4d206b9596bcea94cae16bb61e2f8dbf01f6c612cd7a269fd6"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "6dfcbb41-316e-4c2a-abb9-fb673ad44f90",
+          "bytes": 1624219,
+          "sha256": "46958e5c5fb8a177f54944da575b8d71c0078e8367511f7b776eb34237f2e3fe"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5f8b7571-dc08-4d82-bf0e-2590b25cc1cc",
+          "bytes": 2484554,
+          "sha256": "5e29df36f9bfa78f2371cd65b2f617f7b8d2075e0f4a9bbb4eaa1f13c0dd3cc2"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-080",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "6a89827b-affb-4619-8d0d-8c0c15d06df0",
+          "bytes": 68519,
+          "sha256": "bd51a7553aa7125fddb9065140604b399c8dbec2552c879a117ed44c367eec6a"
+        },
+        {
+          "type": "FACE",
+          "imageId": "c1b79c6e-c7d4-4006-8ff0-7235646f5618",
+          "bytes": 304978,
+          "sha256": "020c21ee4d25c29256ec738de18d461155274a7ced10991ff1c284f97162761a"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "80fce44e-0389-4fe1-91b0-99dd36c7bfd2",
+          "bytes": 444586,
+          "sha256": "c3cad2b52cbb5a3a761b845d52897194daffe7b7aa1aa75d80efc1c062a66e8e"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "1eda035a-a2d1-4eec-a02c-d46876f1b082",
+          "bytes": 1689303,
+          "sha256": "daea6b81e9ed20eca1059e65353466b2d94a24be8a6d420c18313a1c7d85430b"
+        },
+        {
+          "type": "REAR",
+          "imageId": "3d87d019-9636-4a91-baf2-7dc6e15fbf5d",
+          "bytes": 885526,
+          "sha256": "6d11b28aae7cb0b56912d193e9c07f01ae332fa4aa243a7e9d957f5a5c4030a0"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-081",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "1a10b93c-0953-46fa-bcfb-2c7f6d8a9fef",
+          "bytes": 95331,
+          "sha256": "a100bc3cd04a9c7912159c50d4bbba72d308c12052e74b007d9bd12650cb7eee"
+        },
+        {
+          "type": "FACE",
+          "imageId": "eb42b07e-eb9a-42a2-82c2-c084196c8b4a",
+          "bytes": 445952,
+          "sha256": "20981ac00e5a585db5b74119c775d71b6bd7ee1416273f5930ad0516dc86fbe4"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "007a0351-9630-40fa-9cf4-f74eb4a1317a",
+          "bytes": 616424,
+          "sha256": "006393d6df9fa1b2f5e613d83751d89aef851ccbd50abef23432cbc67665e0d9"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "5b18a9d9-c8af-4432-b2f1-970b0baecab5",
+          "bytes": 1917257,
+          "sha256": "060f96d73182c90c13090c520d58dd53b8a78fe3ca51425e8f789dd2928c5ff5"
+        },
+        {
+          "type": "REAR",
+          "imageId": "761bc77e-c444-4d5d-a0be-3da757ff5d16",
+          "bytes": 945614,
+          "sha256": "eb073d344988a1f7277b044dcb1391558603ff3a9c75e90f3ecf4bd5e4458af3"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-082",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "f52f204f-12cb-490b-9294-649a0f89ba82",
+          "bytes": 60106,
+          "sha256": "79629b81193b0672842c260d757b4287068521b1556cfb99b52a6342c69ede52"
+        },
+        {
+          "type": "FACE",
+          "imageId": "fdd942d1-d9a1-4e50-9eb3-9fff53355936",
+          "bytes": 304497,
+          "sha256": "bf051fe6522fce95fd2798e7960277454c1fed38fc6e30832b26ad699f49124c"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "51b59adf-19c2-4305-be49-8bfa7f361c8a",
+          "bytes": 486125,
+          "sha256": "a117d3ed95f258dd42fe1dbb3804cac0c67019a161d501452788e1b42c3f240a"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "6f2ceb1d-aa4d-4f8e-8292-368f65d75e95",
+          "bytes": 1651624,
+          "sha256": "99c93be4363707c3cb3360a0596e86a7a661cf22665b37183af8945960718d39"
+        },
+        {
+          "type": "REAR",
+          "imageId": "c29442da-0b91-4f00-8a24-e26505082bb7",
+          "bytes": 987108,
+          "sha256": "7496bc3c8a52d5db532a91f277e7d90f2a1e2fe194de6073bdf76745bfcdee3d"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-083",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "046d0414-a3d4-4a8d-b342-30a98e7fee2b",
+          "bytes": 88260,
+          "sha256": "e8fd5de0057b6df72f389b9eb78eeabd2cf40bf8e723a418b05de84488e33103"
+        },
+        {
+          "type": "FACE",
+          "imageId": "3ffa1846-21dc-4049-923f-dddc97693c71",
+          "bytes": 332442,
+          "sha256": "6916de88e5ece3eb0550415ee3023e6565374d1fe1a7e572ce10c5b0f9c33ef3"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "2c150321-bfef-4538-94ab-667746c79a51",
+          "bytes": 592641,
+          "sha256": "b8086005226cae1669923e5f1da81837776a8da13e2bab505f0214191ccb5b40"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "70d000d7-cd66-471c-b4f6-71b13735ea7b",
+          "bytes": 1854107,
+          "sha256": "b5ef0e8a5c475b4590133ee6e6a5e6986adfd3201e746da15be162d895917848"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6d42058f-ab68-4331-a6d5-7b8da3c4f856",
+          "bytes": 931624,
+          "sha256": "6f158decb724da1c2258d426bc563ccb82de80e3012e46a58381de6dbf64cba7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-084",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "38e70443-a5ef-4a19-beb7-53ca45d0c551",
+          "bytes": 68941,
+          "sha256": "bbd3d2f46e215dd420e50dcbda033df33acb743dddc2151b8052e718b335a14d"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d67a7fe9-f888-4dae-9178-4bc44f59d0d9",
+          "bytes": 296300,
+          "sha256": "c35456e79252d823afa1376010a462a48606270d2b42e37c86e30f864d3f73a7"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "2fa94906-9fd0-46e3-b743-e2f6f7acddcd",
+          "bytes": 474268,
+          "sha256": "8710fc2e061709bcb400a9b4812a64e312c07b1a2d528a0e436c04e1fd22b88b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "b484d104-b57d-41d1-84b0-41bbc533a4dd",
+          "bytes": 1676747,
+          "sha256": "c8b1f9f43733cdf9cb86436013d8242e66edd2b7dbe23ed4263deb20b91c3b00"
+        },
+        {
+          "type": "REAR",
+          "imageId": "0e8595ac-6d18-4acd-9a03-6c67bc337e6a",
+          "bytes": 2536998,
+          "sha256": "8399bdf5c6bbfa9a8cf396792ccff5b7f19dec2eb9cccf20021cf62e12de55dd"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-085",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "af5058a1-0776-456c-abbb-d95d59044053",
+          "bytes": 61048,
+          "sha256": "e713ad3d645369009193733b80ec2caa74773cf2bc5c5c1e745308c54ac99a2e"
+        },
+        {
+          "type": "FACE",
+          "imageId": "aa0df300-c47c-4b91-a7b5-291c5fb40139",
+          "bytes": 469846,
+          "sha256": "4fa5f68c487665de76a1beea079caedec6a0bab7b1bf4be24d015046fbb13fb8"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "6c269c31-a259-4cf5-b7cc-375d5623180c",
+          "bytes": 519945,
+          "sha256": "f3773fdce8665d29a99139bf03e84b1c2e6e17f4eaebc61dc30a08bcb693ee50"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "f805324a-f799-4cd4-b42b-d05f17962d95",
+          "bytes": 1657376,
+          "sha256": "2e709c02b3be2d384c7a23af22afac30f6ced8b7e291f5bde379a78af1dd9fec"
+        },
+        {
+          "type": "REAR",
+          "imageId": "5808c840-4364-4dcc-94aa-34e9ea7f22c7",
+          "bytes": 938151,
+          "sha256": "8170f19b63de32e9713f40961a20b3099653cb692ab776fe3c2d39831c83176e"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-086",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "9c85130f-145d-4a18-a964-463c58ea9ae9",
+          "bytes": 66481,
+          "sha256": "8741f9382dfa497e1a4455ba8f72cb4f35ec0e73cdc28bb44fe8d3051c773766"
+        },
+        {
+          "type": "FACE",
+          "imageId": "d4a569f1-3eaf-4e4f-9993-3e1bee202631",
+          "bytes": 293019,
+          "sha256": "ba9757cec3904acaa57ffd1688a43477741632b84a8a22cdfba7046c6610ca23"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "2acccd61-84bf-4b85-869d-0e8a1072a7b6",
+          "bytes": 453615,
+          "sha256": "92bfb38600a26748e04a67517168378268a7047a9073111d74e8237b66fc1a1b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "dc1f1957-78ee-4689-bd41-71ce63a1403f",
+          "bytes": 1725287,
+          "sha256": "20f3a20045a79bf76e2b7294275e24a95e1a9c0a7a5c060505fc9745390595c0"
+        },
+        {
+          "type": "REAR",
+          "imageId": "890751ff-caa5-4e96-81c2-1f2fd169870b",
+          "bytes": 747031,
+          "sha256": "7951c400311c2c6da3f3c03c46c589720415e1990f7fced615a199805766b8a8"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-087",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "0350ada8-3713-4447-958f-1ebcbf2d195a",
+          "bytes": 65393,
+          "sha256": "898c167cb3dbabc52b0879248de75a8956c0113744f0cc897232eac4906fde33"
+        },
+        {
+          "type": "FACE",
+          "imageId": "e26bf6fd-b4de-4b4e-9484-be07369dd408",
+          "bytes": 322271,
+          "sha256": "3ba61a59a7bb01feb66c5d2908a91691ade51908d09635325adb78b9abb5b2e0"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "8ecb92c9-f193-4825-baad-95c092a70706",
+          "bytes": 443504,
+          "sha256": "6604bfb1c510ab42b180cf6d4d1390fc1206ddf17544fa38f414501d83675b49"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "7f52192c-c960-4979-bd5f-d099ab414367",
+          "bytes": 1614190,
+          "sha256": "a85442dce59b885a7e7d02b2f1b178baddf75fbb4583a65d4d4108e59b051927"
+        },
+        {
+          "type": "REAR",
+          "imageId": "f08e54d5-c26d-4b3e-afa6-dafa21b6eeb3",
+          "bytes": 2546076,
+          "sha256": "aa00b5ad1a20ae1102ae7105198b2d9c64ebcb6552083636214ca55a0435479d"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-088",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "17c59cbd-77ee-4ece-8dca-c3117df597e3",
+          "bytes": 60992,
+          "sha256": "8d84af6b7cf3161c92315b21e39b501b8b888f94784bb9da93b157990c11ab3b"
+        },
+        {
+          "type": "FACE",
+          "imageId": "297e5ebd-0521-4769-8b8f-7316eee45c93",
+          "bytes": 263749,
+          "sha256": "da925c5136c5f33690b6794163cf9677d142bc18b217d3081e3ddd82d2b86316"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "ff846182-f957-4f4a-8fde-e3b4aad203ef",
+          "bytes": 508705,
+          "sha256": "2db87e8a6c6aaae88e7a28d5eff1d4c0bb284a8544f45462fa0c1cf8bd37a7be"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "79523834-abb8-45bc-b2b2-b2aa893d5463",
+          "bytes": 1702632,
+          "sha256": "cb5c53029ca96e57fbf927fd218a6587c801279b9693bda2273b141b1231cdb7"
+        },
+        {
+          "type": "REAR",
+          "imageId": "43840e31-08e5-4d7d-ae64-f42db655cf93",
+          "bytes": 2470643,
+          "sha256": "a0e4ab1cce7d5449a958bf853fa2ab4f100c36296db49d859b82c3120a0984be"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-089",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "a2a0c3a9-f415-4c46-980d-94d1eb508d30",
+          "bytes": 56120,
+          "sha256": "ce20ebdb063d033c224d62b7ab32f6ed050f9d97f8265b0fc12fee001b4ad3fa"
+        },
+        {
+          "type": "FACE",
+          "imageId": "8037e3a2-df5d-4b23-a259-26dff7a99ad9",
+          "bytes": 352153,
+          "sha256": "8ff2286bc3304062f1f058635b760de1e24ff268429ac5bf55b664e4c69d7d63"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "7898077f-3cb5-49a9-91bc-3cc8ac4600ba",
+          "bytes": 461476,
+          "sha256": "8be8f65357aa4dad0187fbdcd4dd30c728fbbb4f4f5c0f407c5d64ef8a1d1358"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "421fc7cc-e2f3-4e53-ba16-bc834c20d49d",
+          "bytes": 1671153,
+          "sha256": "05a975ee1e1a133807925d98a3c35281b81a4bcabd153c3b6a224e704c4322ec"
+        },
+        {
+          "type": "REAR",
+          "imageId": "67c7894b-3745-49a7-a7ca-d15cf443bace",
+          "bytes": 918297,
+          "sha256": "bcd9b8c2ae7bd89d92dd2202410ffb3041d9470649834de29c8a5405db77f230"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-090",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d0d076d5-8696-4d12-aa12-478e8401e134",
+          "bytes": 78438,
+          "sha256": "07634a3ac2c8195e1021785680b0edc3124a400ef87d06b69653d48c371c77c5"
+        },
+        {
+          "type": "FACE",
+          "imageId": "e3fdfbad-7802-40be-a7f9-0646aa5e45f7",
+          "bytes": 479488,
+          "sha256": "519253448820a31317a63ee946eb3b584bed4c06b4cb323c6e6b601b4ae33134"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "8b960a61-c2d4-48a3-bdd7-f49da7dad634",
+          "bytes": 541266,
+          "sha256": "f47dcfec46b21a77ab8e1c6778b3ddf7bbe99e1f17540c5d6117f792fc40cb7e"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "55a2da2e-1e8e-48a6-a585-f8842105501c",
+          "bytes": 1823553,
+          "sha256": "bf0e2eed79defcdf4583c44e7dd0a2168b8786233354675fd041edaae90585b3"
+        },
+        {
+          "type": "REAR",
+          "imageId": "154c49c2-280d-4de9-9bdb-0e71d1e09ec6",
+          "bytes": 931773,
+          "sha256": "9fc7ae669285a21f0bb80c497f9952eeb95d08b9e24f8eb7ec25ab6fa5c1af75"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-091",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "a4805b44-7121-4cfc-b371-5671f53e973e",
+          "bytes": 49268,
+          "sha256": "bdaa0ca8ec5e8330103d301e8c79edf2bcbd9e48f94ff76ef593bba685f08a24"
+        },
+        {
+          "type": "FACE",
+          "imageId": "041e1225-a7ba-4f3a-97b0-74658f16d2fe",
+          "bytes": 232368,
+          "sha256": "a3da6743156d55e6e2810a449e525f0c5a7e70e48f625773cf2f25ecef1aa81e"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "c73d29cb-0232-4228-8e1a-2f5d54cf7e43",
+          "bytes": 316634,
+          "sha256": "65a844c134e2fa73965eb630f0f66a1659650140b86497771e9b53b61fea39fd"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "1156c547-e67d-488e-a6f3-208e48354a33",
+          "bytes": 1562160,
+          "sha256": "662a835f59ea56c3e7649d8369c7a34c0ae2fa7324e18eb02f5a697b68809225"
+        },
+        {
+          "type": "REAR",
+          "imageId": "9ad1c7d1-1986-41ab-a5ec-0b10fc5d9590",
+          "bytes": 2258752,
+          "sha256": "e0e675f2ea2200ba6ca305b18a5ff007ac821009ffc634f6b8e3f6a72760503a"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-092",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "bc8d2ee6-4b85-4c24-8637-38d68fb782ba",
+          "bytes": 80682,
+          "sha256": "8d65ed30eef88f573c9431048a72211919c071d2e34d160554fac7830243c857"
+        },
+        {
+          "type": "FACE",
+          "imageId": "6da9e228-72b7-4cc8-8a77-353c664f598d",
+          "bytes": 526451,
+          "sha256": "eb38214642c0728fea05a00cbcfa5911284cb54f139aeaed1caf5106b83ad006"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "c36cccc0-6613-4eb6-9684-85ae03a76c34",
+          "bytes": 562131,
+          "sha256": "0d15b9ef59b98e5cef1269f2de4ae5126b29d038d0d9be83754c99e0d0709a80"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "85caa10d-8a07-4c0b-80db-b786f61493f4",
+          "bytes": 1860818,
+          "sha256": "053c9999e2a6f07b5c1ec7c204aa6ee5792a32679b1cb9636d69176ccdc41f0c"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4dc7559b-a26b-4467-88e8-62176e49b049",
+          "bytes": 786083,
+          "sha256": "c05e5874bc1aa6af0218048711aebe69c0de1d914223eb0639fe9b32d9f78670"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-093",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "cbb02fe8-ecd9-4697-b80e-8513f890ac91",
+          "bytes": 56000,
+          "sha256": "6ef9162e004a7d2e2c7a17bb8f28efd92b506b54cacd48331c7181f6f6fadb04"
+        },
+        {
+          "type": "FACE",
+          "imageId": "8fd320f8-b345-42a7-9abb-ef382e7eeb9f",
+          "bytes": 351388,
+          "sha256": "f212789986005f5f014f4b188bd6364d0a7f22d42960ec8ad6218d38b6b63cb0"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "785d7229-1ecd-422c-8844-ef82c2c6079b",
+          "bytes": 408568,
+          "sha256": "7bc042b81b3e7bc4ae66a119a72bda8e530f951ff397f923387017c6ac903111"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "1cb2192e-b6d5-4a3d-97a9-9fb310b96c6c",
+          "bytes": 1570817,
+          "sha256": "feb9a0ce0168d9201f70e39a1e1a6899374eb8db402cb2955e5731220adf9e8f"
+        },
+        {
+          "type": "REAR",
+          "imageId": "09cbb746-c6db-44cb-b0cc-a147845f5b94",
+          "bytes": 831260,
+          "sha256": "868c44a547cd3ba5a9c3f595dbf176bd211823adce07ce2898948f2fdd82bce7"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-094",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "91063793-d71b-4b1a-853f-e0cdbaae11e0",
+          "bytes": 58249,
+          "sha256": "3911bb65820296eb96756ba295ba1e1e3e0daeee657b2a62cac969b24d350500"
+        },
+        {
+          "type": "FACE",
+          "imageId": "f3a55bd1-d279-4e1b-873f-3238299bb20b",
+          "bytes": 374256,
+          "sha256": "e7b01257c6a3bb1c4bc248773ea17b4c358336d982641505ba89fa4331adabb8"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "0674c745-53fb-4a2b-816c-bcb9387aa669",
+          "bytes": 489497,
+          "sha256": "f346b341371fc3f8e36163c5ecd5798250919d826cd1fd61dcff1c6dfd761f5c"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "6cb9e110-3f03-44cf-ac98-1affc08d336e",
+          "bytes": 1640098,
+          "sha256": "3c7ea1191dc5034e5428457337a48ebe58dadd918cc5d0e31b19983637332803"
+        },
+        {
+          "type": "REAR",
+          "imageId": "b5cdd838-a57b-45bf-881a-2faa4dae5515",
+          "bytes": 833143,
+          "sha256": "cf12bc31f7018b0c0deda4f7cfaeeb672352caf9a8b1ee657e0efdaf3c21cb66"
+        }
+      ]
+    },
+    {
+      "key": "FIGURA-AI-095",
+      "originalMainUnchanged": true,
+      "newOriginalMaster": false,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "d91a58c3-1bf6-4e6b-9277-da867f2ab29b",
+          "bytes": 64766,
+          "sha256": "a63e285312d4468c3d0cc7b9e8477d2efb86017b93ec73633aec8022045b5f67"
+        },
+        {
+          "type": "FACE",
+          "imageId": "bec52dc5-b018-4f5a-a6d7-57bd98739983",
+          "bytes": 408658,
+          "sha256": "6be918ed053c73b034cd1cfb65390a77b859cdd0e0cefe392a507213c0a6f3e6"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "25d80575-cc8d-418d-87e7-7e9854e75be7",
+          "bytes": 578074,
+          "sha256": "8a62efe115e6fe75db73d2afeb0bdfd6eba3e5dd36b01965a93c5869763eb2f2"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "047e85c5-5c51-406d-84f7-bbb8780413c1",
+          "bytes": 1785005,
+          "sha256": "0fdd78c3d918df6911385e8599a67b71b9914b8b06a8f17513ffebfb4a663f90"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4050a5e0-f1de-4cb1-aa4a-a5ede724693c",
+          "bytes": 2842718,
+          "sha256": "68e1806799f904dd98d879dd0ff775ed19133df2447d58f791bde6949d272bb7"
+        }
+      ]
+    },
+    {
+      "key": "ELPSY-001",
+      "originalMainUnchanged": false,
+      "newOriginalMaster": true,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "dbfdaffd-5788-4d01-ab3d-02de843d7d13",
+          "bytes": 2716762,
+          "sha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "7b944193-d869-4a55-aa17-dd89f21fed05",
+          "bytes": 1160744,
+          "sha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "6ac92dfa-885a-4ab4-9e06-214c59077ffa",
+          "bytes": 1202325,
+          "sha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "a8eb634c-82b7-4166-b4b6-d79b91a45149",
+          "bytes": 3633375,
+          "sha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2"
+        },
+        {
+          "type": "REAR",
+          "imageId": "8d8f328d-9be1-4172-a271-977a880ea1a4",
+          "bytes": 2211289,
+          "sha256": "c2a25cf5c4a7834c4a9ebd1630bde0397014583359b0b63547b5f50a78b87159"
+        }
+      ]
+    },
+    {
+      "key": "ELPSY-002",
+      "originalMainUnchanged": false,
+      "newOriginalMaster": true,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "fca1a98b-6a0c-49bf-b78d-66c749e1b30a",
+          "bytes": 2716762,
+          "sha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "2c1199e5-e2e1-4d78-b268-ca9d41231f0e",
+          "bytes": 1160744,
+          "sha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "c3422368-6870-45fd-8ed3-d742924496bb",
+          "bytes": 1202325,
+          "sha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "7df06a6f-e9df-468e-9713-8556e39eb4c9",
+          "bytes": 3633375,
+          "sha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2"
+        },
+        {
+          "type": "REAR",
+          "imageId": "6c2c6cb4-0b78-4dc8-ac00-4570a8a18f43",
+          "bytes": 2211289,
+          "sha256": "c2a25cf5c4a7834c4a9ebd1630bde0397014583359b0b63547b5f50a78b87159"
+        }
+      ]
+    },
+    {
+      "key": "ELPSY-003",
+      "originalMainUnchanged": false,
+      "newOriginalMaster": true,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "21f7e80c-1279-421b-a955-0587c3c3c635",
+          "bytes": 2716762,
+          "sha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "715a9240-9141-4eef-aeb9-5397e8bd5cd2",
+          "bytes": 1160744,
+          "sha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "30a802df-a8b4-4417-8747-417a35fe8fc7",
+          "bytes": 1202325,
+          "sha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "19a4f6bf-8537-42ed-8282-226d95338a7d",
+          "bytes": 3633375,
+          "sha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2"
+        },
+        {
+          "type": "REAR",
+          "imageId": "03fd0905-c128-4069-aae4-5fd76abe110d",
+          "bytes": 2211289,
+          "sha256": "c2a25cf5c4a7834c4a9ebd1630bde0397014583359b0b63547b5f50a78b87159"
+        }
+      ]
+    },
+    {
+      "key": "ELPSY-004",
+      "originalMainUnchanged": false,
+      "newOriginalMaster": true,
+      "reviewedOnly": true,
+      "requiredSourcesReviewed": true,
+      "rearStatus": "complete",
+      "noAngleUploads": true,
+      "publicationRestored": true,
+      "images": [
+        {
+          "type": "MAIN",
+          "imageId": "e2a83056-912b-4b9a-a840-a90994258435",
+          "bytes": 2716762,
+          "sha256": "7f530a8290c9a79b39e96eb08167bf59be05221ead5d625d3d1014b6cb9f7d2c"
+        },
+        {
+          "type": "FACE",
+          "imageId": "ded9873d-0076-4d4e-b935-215dbbf00671",
+          "bytes": 1160744,
+          "sha256": "a5b27598ad12d066037bbc6c7c9ed1ba3a1302ee385f3a463552281b930a260c"
+        },
+        {
+          "type": "DETAIL",
+          "imageId": "58658790-a366-415f-8530-bde8a4b68b8f",
+          "bytes": 1202325,
+          "sha256": "d61a2cc30b9fc0c1a57eeb8b747b66b62113f721ee8ce9d7c32ee8d5ecf68d4b"
+        },
+        {
+          "type": "SCENE",
+          "imageId": "092049f3-e255-4229-950f-8b4cc469588d",
+          "bytes": 3633375,
+          "sha256": "3798b9a4c9e27e9deec03119104e6dec0955e53980a66374a6b057817b138cc2"
+        },
+        {
+          "type": "REAR",
+          "imageId": "4d7e6ee1-b3c9-453a-bd78-8b37ffe807ec",
+          "bytes": 2211289,
+          "sha256": "c2a25cf5c4a7834c4a9ebd1630bde0397014583359b0b63547b5f50a78b87159"
+        }
+      ]
+    }
+  ]
+}
