@@ -1,5 +1,12 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-25：員工後台強制雙因素（併入 PR #23，依賴 API V31）
+
+- `Login.vue`：密碼 → 驗證碼或備援碼；未綁定者強制進入綁定畫面（顯示金鑰與 otpauth 連結，未加 QR 套件以免動到 `package-lock.json`）→ 綁定後一次性顯示 10 組備援碼，勾選已保存才進入後台。伺服器不會在沒有第二因素時發 session。
+- `StaffSecurity.vue`：狀態、剩餘備援碼、以 TOTP 重新產生；移除自行停用。
+- 員工管理（`AccessManagement.vue`）：有 `access.mfa.reset` 權限者可重設其他員工的雙因素（填原因、不可重設自己、未確認時同 requestId 重試）。
+- `npm run build` 通過。尚未以瀏覽器實際走完整綁定流程（見 PR 說明）。
+
 ## 2026-11-25：Commerce V2 Phase 1–7（分支 `feat/commerce-v2-specs`，未合併；依賴 API V25–V30）
 
 - **顧客**：後端搜尋列表（舊網址相容）、規格表、收藏（訪客 localStorage，登入合併）、到貨／開賣提醒、`/shop/favorites`、`/shop/notifications`、`/shop/shipments`（合併寄送、倉庫暫存、物流追蹤）、`/shop/support`、`/shop/pages`（未發布顯示條款審核中）、`/shop/guides`。
