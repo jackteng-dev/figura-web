@@ -85,6 +85,14 @@ export type BuyState =
   | { kind: 'stock-pre' | 'pre'; batch: PublicBatch }
   | { kind: 'pre-full'; batch: PublicBatch }
 export function buyState(p: PublicProduct): BuyState {
+  // 後端搜尋結果已帶開放中的預購摘要；舊資料來源才回頭查已載入的批次
+  if (p.preorder !== undefined) {
+    const stock = p.availability === 'IN_STOCK'
+    const pb = p.preorder ? { id: p.preorder.batchId, productId: p.id, deadlineAt: p.preorder.deadlineAt, priceTwd: p.preorder.priceTwd } as unknown as PublicBatch : null
+    if (pb && p.preorder!.orderingEnabled) return { kind: stock ? 'stock-pre' : 'pre', batch: pb }
+    if (stock) return { kind: 'stock' }
+    return pb ? { kind: 'pre-full', batch: pb } : { kind: 'out' }
+  }
   const open = batchesByProduct.value.get(p.id)?.[0]
   const stock = inStock(p)
   if (open) return { kind: stock ? 'stock-pre' : 'pre', batch: open }

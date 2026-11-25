@@ -4,7 +4,7 @@ import ProductGallery from './ProductGallery.vue'
 import {publicGallery,type GalleryImage} from '@/api/gallery'
 import ProductCard from './ProductCard.vue'
 import { useRoute, useRouter } from 'vue-router'
-import { publicProduct, money, type PublicProduct } from '@/api/catalog'
+import { publicProduct, money, scaleLabel, MATERIAL_LABELS, TYPE_LABELS, EDITION_LABELS, AVAILABILITY_LABELS, type PublicProduct } from '@/api/catalog'
 import { getCart,setCartItem,setCartPreorder } from '@/api/shopping'
 import { getCustomer,CustomerApiError } from '@/api/customer'
 import { taipeiTime, termsText } from '@/api/preorders'
@@ -12,6 +12,23 @@ import { useCatalog, daysLeft, shortDate } from './useCatalog'
 import { addGuest, serverCount, countOf, MAX_PRE_QTY } from './guestCart'
 const quantity=ref(1),adding=ref(false),message=ref(''),addError=ref(''),uncertain=ref(false)
 const galleryImages=ref<GalleryImage[]>([]),galleryError=ref('')
+// 規格表：只列出有資料的欄位；AI 概念商品的設定材質另列並標示為概念設定，不當作製造規格
+const isAiConcept = computed(() => product.value?.contentOrigin === 'AI_CONCEPT' || !!product.value?.description.startsWith('AI 生成概念圖｜展示商品'))
+const specRows = computed(() => {
+  const p = product.value; if (!p) return [] as { k: string; v: string }[]
+  const s = p.specs
+  const release = s?.releaseDate ? s.releaseDate.replace(/-/g, '/') : s?.releaseMonth ? s.releaseMonth.replace('-', ' 年 ') + ' 月' : ''
+  const rows: [string, string | null | undefined][] = [
+    ['角色', s?.characterName], ['作品／系列', p.work], ['品牌', p.brand], ['製造商', s?.manufacturer], ['分類', p.category],
+    ['商品類型', s?.productType ? TYPE_LABELS[s.productType] || s.productType : null], ['比例', s?.scale ? scaleLabel(s.scale) : null],
+    ['全高', s?.heightMm ? `約 ${s.heightMm} mm` : null], ['尺寸', s?.dimensions],
+    ['材質', s?.materials?.length ? s.materials.map(m => MATERIAL_LABELS[m] || m).join('、') : null],
+    ['設定材質（概念）', isAiConcept.value && s?.conceptMaterials?.length ? s.conceptMaterials.map(m => MATERIAL_LABELS[m] || m).join('、') + '（AI 概念設定，非實際製造規格）' : null],
+    ['版本', s?.edition ? EDITION_LABELS[s.edition] || s.edition : null], ['限定商品', s?.limited ? '是' : null],
+    ['預計發售', release ? release + '（預定，可能變更）' : null], ['款式', p.skus.map(x => x.label).join('、')]
+  ]
+  return rows.filter(([, v]) => v).map(([k, v]) => ({ k, v: v as string }))
+})
 const route = useRoute(), product = ref<PublicProduct>(), selected = ref(''), error = ref(''), loading = ref(false)
 const catalog = useCatalog(), router = useRouter()
 let request = 0
@@ -114,6 +131,11 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
             <router-link :to="{ path: '/shop/products', query: { category: product.category } }">{{ product.category }}</router-link>
           </div>
           <h1>{{ product.title }}</h1>
+          <p v-if="product.availability || isAiConcept" class="status-line">
+            <span v-if="product.availability" class="avail" :class="'a-' + product.availability">{{ AVAILABILITY_LABELS[product.availability] }}</span>
+            <span v-if="product.specs?.limited" class="avail a-limited">限定</span>
+            <span v-if="isAiConcept" class="ai-tag">AI 虛構展示商品</span>
+          </p>
           <div class="price-row"><span class="price">{{ preorderOnly ? preorderPrice : displayPrice }}</span><span class="muted">含稅・運費 NT$ 0</span></div>
 
           <template v-if="preorderOnly">
@@ -180,14 +202,21 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
       <h2 id="desc-title">商品介紹</h2>
       <div class="desc-body">
         <p class="product-description">{{ product.description || '尚無商品介紹。' }}</p>
-        <table>
-          <tbody>
-            <tr><th scope="row">品牌</th><td>{{ product.brand }}</td></tr>
-            <tr v-if="product.work"><th scope="row">作品</th><td>{{ product.work }}</td></tr>
-            <tr><th scope="row">類型</th><td>{{ product.category }}</td></tr>
-            <tr><th scope="row">款式</th><td>{{ product.skus.map(s => s.label).join('、') }}</td></tr>
-          </tbody>
-        </table>
+        <div class="spec-block">
+          <h3 id="spec-title">商品規格</h3>
+          <table aria-labelledby="spec-title" data-testid="spec-table">
+            <tbody>
+              <tr v-for="r in specRows" :key="r.k"><th scope="row">{{ r.k }}</th><td>{{ r.v }}</td></tr>
+            </tbody>
+          </table>
+          <template v-if="product.specs?.accessories?.length">
+            <h3>配件與附屬品</h3>
+            <ul class="accessories"><li v-for="a in product.specs.accessories" :key="a">{{ a }}</li></ul>
+          </template>
+          <p v-if="product.specs?.specNote" class="spec-note">{{ product.specs.specNote }}</p>
+          <p v-if="isAiConcept" class="ai-note" role="note">此為 AI 生成的虛構展示商品，名稱、系列、圖片與設定皆為概念內容，非實物攝影，也不是實際製造規格。</p>
+          <p v-else-if="specRows.length < 6" class="muted spec-missing">未列出的規格目前尚未提供。</p>
+        </div>
       </div>
     </section>
 
@@ -251,6 +280,16 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
 .desc h2 { font-size: 20px; margin: 0 0 16px; }
 .desc-body { display: flex; flex-wrap: wrap; gap: 32px; }
 .product-description { flex: 2 1 420px; white-space: pre-wrap; margin: 0; color: #2b2e38; }
+.spec-block { flex: 1 1 320px; min-width: 0; }
+.spec-block h3 { font-size: 16px; margin: 0 0 8px; }
+.spec-block table { width: 100%; }
+.accessories { margin: 0 0 12px; padding-left: 20px; }
+.spec-note { white-space: pre-wrap; font-size: 14px; color: #4b5060; }
+.ai-note { font-size: 13px; background: #f3f0ff; color: #4c1d95; border-radius: 10px; padding: 8px 12px; }
+.status-line { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+.avail, .ai-tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+.a-IN_STOCK { background: #e7f6ec; color: #166534; } .a-PREORDER { background: #fff1e8; color: #9a3412; } .a-SOLD_OUT { background: #eceef4; color: #4b5060; } .a-limited { background: #fef3c7; color: #92400e; }
+.ai-tag { background: #f3f0ff; color: #4c1d95; }
 .desc table { flex: 1 1 260px; border-collapse: collapse; font-size: 14px; align-self: flex-start; }
 .desc th { text-align: left; font-weight: 500; color: #4b5060; padding: 10px 16px 10px 0; width: 64px; }
 .desc tr { border-bottom: 1px solid #eceef4; }
