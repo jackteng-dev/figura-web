@@ -2,7 +2,7 @@
 
 ## 2026-11-25：員工後台強制雙因素（併入 PR #23，依賴 API V31）
 
-- `Login.vue`：密碼 → 驗證碼或備援碼；未綁定者強制進入綁定畫面（顯示金鑰與 otpauth 連結，未加 QR 套件以免動到 `package-lock.json`）→ 綁定後一次性顯示 10 組備援碼，勾選已保存才進入後台。伺服器不會在沒有第二因素時發 session。
+- `Login.vue`：密碼 → 驗證碼或備援碼；未綁定者強制進入綁定畫面：顯示 QR code（`src/utils/qrcode.ts`，移植 Nayuki MIT 演算法、不加 npm 套件、在瀏覽器本機產生），金鑰預設隱藏，按「無法掃描？手動輸入金鑰」才顯示並可複製。QR 輸出經獨立撰寫的 Python 解碼器驗證（版本 1–10、多種遮罩與多區塊，含真實 otpauth 連結），內容與 RS 校驗皆正確→ 綁定後一次性顯示 10 組備援碼，勾選已保存才進入後台。伺服器不會在沒有第二因素時發 session。
 - `StaffSecurity.vue`：狀態、剩餘備援碼、以 TOTP 重新產生；移除自行停用。
 - 員工管理（`AccessManagement.vue`）：有 `access.mfa.reset` 權限者可重設其他員工的雙因素（填原因、不可重設自己、未確認時同 requestId 重試）。
 - `npm run build` 通過。尚未以瀏覽器實際走完整綁定流程（見 PR 說明）。

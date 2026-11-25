@@ -1,11 +1,12 @@
 <script setup lang="ts">
 // 員工登入（強制雙因素）：密碼正確後，已綁定者輸入驗證碼或備援碼；未綁定者必須先完成綁定。完成前不發 session。
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { adminLoginService, adminMfaLogin, adminMfaSetup, adminMfaEnroll } from '@/api/user'
 import type { LoginData } from '@/types/user'
 import PasswordField from '@/components/PasswordField.vue'
+import { qrSvg } from '@/utils/qrcode'
 const router = useRouter()
 const pending = ref(false)
 const registerData = ref<LoginData>({ username: '', password: '', rememberMe: false, deviceId: '' })
@@ -54,7 +55,12 @@ async function enroll() {
 }
 async function finish() { if (!saved.value) return; backupCodes.value = []; ElMessage.success('已完成雙因素綁定'); await router.push('/home') }
 function copyCodes() { navigator.clipboard?.writeText(backupCodes.value.join('\n')).then(() => ElMessage.success('已複製備援碼'), () => ElMessage.error('無法複製，請手動抄寫')) }
-function restart() { step.value = 'password'; challenge.value = ''; setupToken.value = ''; code.value = ''; secret.value = ''; otpauth.value = '' }
+// QR code 在瀏覽器本機產生（不送到任何外部服務）；金鑰預設隱藏，按「手動輸入」才顯示
+const qr = computed(() => otpauth.value ? 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(qrSvg(otpauth.value, 'M')) : '')
+const showSecret = ref(false)
+const groupedSecret = computed(() => secret.value.replace(/(.{4})/g, '$1 ').trim())
+function copySecret() { navigator.clipboard?.writeText(secret.value).then(() => ElMessage.success('已複製金鑰'), () => ElMessage.error('無法複製，請手動輸入')) }
+function restart() { step.value = 'password'; challenge.value = ''; setupToken.value = ''; code.value = ''; secret.value = ''; otpauth.value = ''; showSecret.value = false }
 </script>
 <template>
   <div class="fg-admin fg-login">
@@ -83,8 +89,15 @@ function restart() { step.value = 'password'; challenge.value = ''; setupToken.v
         <h1>設定雙因素驗證</h1>
         <p>後台規定所有員工都要綁定驗證器 App（Google Authenticator、Microsoft Authenticator 等），完成後才能進入後台。</p>
         <ol class="steps">
-          <li>在驗證器 App 選「輸入設定金鑰」，帳戶名稱填 Figura，金鑰如下（請勿截圖或分享）：<code class="secret">{{ secret.replace(/(.{4})/g, '$1 ').trim() }}</code>
-            <small>手機上可直接 <a :href="otpauth">加入驗證器</a></small></li>
+          <li>用驗證器 App 掃描 QR code（請勿截圖或分享）：
+            <img v-if="qr" :src="qr" class="qr" width="200" height="200" alt="雙因素驗證設定 QR code，請用驗證器 App 掃描">
+            <button v-if="!showSecret" type="button" class="btn btn-link manual" :aria-expanded="showSecret" aria-controls="manual-secret" @click="showSecret = true">無法掃描？手動輸入金鑰</button>
+            <div v-else id="manual-secret" class="manual-box">
+              <span class="hint">在 App 選「輸入設定金鑰」，帳戶名稱填 Figura，類型選「以時間為準」：</span>
+              <div class="secret-row"><code class="secret" aria-label="設定金鑰">{{ groupedSecret }}</code><button type="button" class="btn btn-outline-secondary btn-sm" @click="copySecret">複製</button></div>
+              <button type="button" class="btn btn-link manual" @click="showSecret = false">隱藏金鑰</button>
+            </div>
+          </li>
           <li>輸入 App 顯示的 6 位數驗證碼。</li>
         </ol>
         <div>
@@ -149,7 +162,12 @@ function restart() { step.value = 'password'; challenge.value = ''; setupToken.v
 .muted { font-size: 12px; color: #4b5060; }
 .submit { padding: 14px; font-size: 16px; font-weight: 900; }
 .steps { padding-left: 20px; display: grid; gap: 8px; }
-.secret { display: block; font-size: 17px; letter-spacing: 1px; background: #f6f7fb; padding: 8px 10px; border-radius: 6px; word-break: break-all; margin: 6px 0; }
+.secret { display: block; flex: 1; font-size: 17px; letter-spacing: 1px; background: #f6f7fb; padding: 8px 10px; border-radius: 6px; word-break: break-all; margin: 0; }
+.qr { display: block; width: 200px; height: 200px; margin: 10px auto; image-rendering: pixelated; border: 1px solid #e3e5ec; border-radius: 8px; }
+.manual { padding: 0; font-size: 14px; }
+.manual-box { display: grid; gap: 6px; margin-top: 6px; }
+.manual-box .hint { font-size: 13px; color: #4b5060; }
+.secret-row { display: flex; gap: 8px; align-items: center; }
 .codes { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .codes code { font-size: 15px; letter-spacing: 1px; }
 @media (max-width: 860px) {
