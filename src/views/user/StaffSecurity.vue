@@ -32,7 +32,7 @@ onMounted(load)
    <p><strong>雙因素驗證：{{ status.enabled ? '已綁定' : '未綁定' }}</strong>　剩餘備援碼 {{ status.backupCodesRemaining }} 組</p>
    <p v-if="status.backupAckPending && !batch" class="warn" role="alert">你的帳號需要保存備援碼才能使用後台。原本的備援碼已無法再次顯示，請輸入驗證碼重新產生，下載後勾選確認。</p>
    <p v-else-if="status.backupCodesRemaining <= 3 && !batch" class="warn">備援碼所剩不多，建議重新產生。</p>
-   <RecoveryCodesPanel v-if="batch" :codes="batch.codes" :username="batch.username" :generated-at="batch.generatedAt" :required="batch.required" continue-label="完成" @done="done" />
+   <RecoveryCodesPanel v-if="batch" :codes="batch.codes" :username="batch.username" :generated-at="batch.generatedAt" :required="batch.required" :batch-id="batch.batchId" continue-label="完成" @done="done" />
    <template v-else>
     <h2>重新產生備援碼</h2>
     <p class="hint">需要驗證器 App 目前的驗證碼（不接受備援碼）。重新產生後，舊的備援碼立即全部失效。</p>

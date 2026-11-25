@@ -5,7 +5,7 @@ import { ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { mfaBackupAck } from '@/api/user'
 import { downloadRecoveryCodes, RECOVERY_FILE_NAME } from '@/utils/recoveryCodes'
-const props = defineProps<{ codes: string[]; username: string; generatedAt: string; required: boolean; continueLabel?: string }>()
+const props = defineProps<{ codes: string[]; username: string; generatedAt: string; required: boolean; batchId: string; continueLabel?: string }>()
 const emit = defineEmits<{ done: [] }>()
 const downloaded = ref(false), saved = ref(false), busy = ref(false)
 function download() {
@@ -17,7 +17,7 @@ function download() {
 async function proceed() {
   if (busy.value || (props.required && !(downloaded.value && saved.value))) return
   busy.value = true
-  try { await mfaBackupAck(downloaded.value, saved.value); emit('done') }
+  try { await mfaBackupAck(props.batchId, downloaded.value, saved.value); emit('done') }
   catch { /* API 已顯示錯誤 */ }
   finally { busy.value = false }
 }
@@ -26,7 +26,7 @@ async function skip() {
   try { await ElMessageBox.confirm('略過後就無法再看到這組備援碼（之後可在「帳號安全」用驗證碼重新產生）。確定略過？', '略過下載備援碼', { confirmButtonText: '略過', cancelButtonText: '返回', type: 'warning' }) }
   catch { return }
   busy.value = true
-  try { await mfaBackupAck(false, false); emit('done') } catch { /* API 已顯示錯誤 */ } finally { busy.value = false }
+  try { await mfaBackupAck(props.batchId, false, false); emit('done') } catch { /* API 已顯示錯誤 */ } finally { busy.value = false }
 }
 </script>
 <template>

@@ -12,7 +12,7 @@ const router = useRouter()
 const pending = ref(false)
 const registerData = ref<LoginData>({ username: '', password: '', rememberMe: false, deviceId: '' })
 type Step = 'password' | 'verify' | 'enroll' | 'codes'
-const step = ref<Step>('password'), challenge = ref(''), setupToken = ref(''), code = ref(''), secret = ref(''), otpauth = ref(''), backup = ref<{ codes: string[]; username: string; generatedAt: string; required: boolean }>()
+const step = ref<Step>('password'), challenge = ref(''), setupToken = ref(''), code = ref(''), secret = ref(''), otpauth = ref(''), backup = ref<{ codes: string[]; username: string; generatedAt: string; required: boolean; batchId: string }>()
 async function login() {
   if (pending.value) return
   if (!registerData.value.username.trim() || !registerData.value.password) { ElMessage.error('請輸入帳號與密碼'); return }
@@ -50,7 +50,7 @@ async function enroll() {
     const r = await adminMfaEnroll(setupToken.value, code.value.trim())
     secret.value = ''; otpauth.value = ''; code.value = ''
     // 備援碼只放在記憶體；完成後清除
-    backup.value = { codes: r?.backupCodes || [], username: r?.username || registerData.value.username, generatedAt: r?.backupCodesGeneratedAt || new Date().toISOString(), required: !!r?.backupCodesRequired }
+    backup.value = { codes: r?.backupCodes || [], username: r?.username || registerData.value.username, generatedAt: r?.backupCodesGeneratedAt || new Date().toISOString(), required: !!r?.backupCodesRequired, batchId: r?.backupBatchId || '' }
     step.value = 'codes'
   }
   catch { code.value = '' }
@@ -111,7 +111,7 @@ function restart() { step.value = 'password'; challenge.value = ''; setupToken.v
       </form>
       <div v-else-if="step === 'codes'" class="login-card">
         <h1>保存備援碼</h1>
-        <RecoveryCodesPanel v-if="backup" :codes="backup.codes" :username="backup.username" :generated-at="backup.generatedAt" :required="backup.required" @done="finish" />
+        <RecoveryCodesPanel v-if="backup" :codes="backup.codes" :username="backup.username" :generated-at="backup.generatedAt" :required="backup.required" :batch-id="backup.batchId" @done="finish" />
       </div>
       <form v-else class="login-card" @submit.prevent="login">
         <h1>員工登入</h1>
