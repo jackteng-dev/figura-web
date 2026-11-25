@@ -1,10 +1,13 @@
 # ELPSY Shop Vue 網站交接
 
-## 2026-11-25：Commerce V2 Phase 1–3（分支 `feat/commerce-v2-specs`，未合併）
+## 2026-11-25：Commerce V2 Phase 1–7（分支 `feat/commerce-v2-specs`，未合併；依賴 API V25–V30）
 
-- 商品列表改用後端搜尋（網址即狀態，舊參數 type／category／brand／work／min／max／sort 相容）、facets、分頁；商品頁規格表（只顯示有資料的列，AI 概念商品另標示）；後台 `SpecsEditor`。
-- 收藏（未登入存在裝置 localStorage，登入後合併）、商品頁到貨／開賣提醒、`/shop/favorites`、`/shop/notifications`（通知匣＋Email 偏好）、頁首未讀數。
-- `npm run build` 通過；本機 15176 以 headless Edge 驗證列表搜尋、規格表、收藏按鈕；收藏／提醒／通知 API 經同源代理實測。Browser pane 因視窗未顯示無法使用。未改 `src/assets/`、`package-lock.json`。
+- **顧客**：後端搜尋列表（舊網址相容）、規格表、收藏（訪客 localStorage，登入合併）、到貨／開賣提醒、`/shop/favorites`、`/shop/notifications`、`/shop/shipments`（合併寄送、倉庫暫存、物流追蹤）、`/shop/support`、`/shop/pages`（未發布顯示條款審核中）、`/shop/guides`。
+- **後台**：`SpecsEditor`、私人倉庫、運費調整、政策頁（四眼發布）、客服單、出貨單測試物流追蹤（`TrackingPanel`）、營運報表／低庫存、營運狀態、`/admin/security`（TOTP）與登入第二步。新選單依 V28–V30 權限碼（warehouse.read、shipping.adjustments.read、pages.read、support.read、reports.*、ops.status）動態掛載。
+- **SEO**：`src/seo/head.ts` 換頁時向 `/api/seo/meta` 取 head；`index.html` 已放 SSI 標記（gateway 未開 SSI 前不作用）；`public/robots.txt`。部署變更與 Search Console 見 `docs/SEO_DEPLOYMENT.md`（`showcase-publish.py` 未改，需作者審核）。
+- **驗證**：每階段 `npm run build`（含 vue-tsc）通過；本機 15176＋新 API 以 headless Edge 驗證列表、規格表、收藏按鈕、指南頁 JSON-LD、購物車 noindex；收藏／提醒／通知 API 經同源代理實測。Browser pane 因視窗未顯示無法使用。**新後台頁未以員工帳號在瀏覽器實際點過**（本機限制），nginx SSI 未在本機實測（沒有 nginx image）。
+- 未改 `src/assets/`、`package-lock.json`。
+- 下一步：API 受控切換上線後合併；作者審核 gateway SSI；政策內容撰寫與審核。
 
 ## 2026-11-23：99 件必要 2D 圖組全數入本機圖庫（作者簽核 pending）
 
