@@ -39,6 +39,7 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'addresses', component: () => import('@/views/shop/CustomerAddresses.vue') },
     { path: 'guides', component: () => import('@/views/shop/ShopGuides.vue'), meta: { public: true } },
     { path: 'guides/:slug', component: () => import('@/views/shop/ShopGuides.vue'), meta: { public: true } },
+    { path: 'shipments', component: () => import('@/views/shop/CustomerShipments.vue') },
     { path: 'favorites', component: () => import('@/views/shop/CustomerFavorites.vue') },
     { path: 'notifications', component: () => import('@/views/shop/CustomerNotifications.vue') },
     { path: ':pathMatch(.*)*', component: NotFound, meta: { public: true } }
@@ -52,7 +53,7 @@ const router = createRouter({ history: createWebHistory(), routes: [
   ] },
   { path: '/:pathMatch(.*)*', component: NotFound }
 ] })
-const components = new Map<string, any>([['preorders.arrivals.read', () => import('@/views/preorders/PreorderArrivalsAdmin.vue')], ['preorder-orders.read', () => import('@/views/preorders/PreorderOrdersAdmin.vue')], ['preorders.read', () => import('@/views/preorders/PreorderAdmin.vue')], ['notifications.read', () => import('@/views/notifications/NotificationAdmin.vue')], ['masters.read', () => import('@/views/catalog/MastersAdmin.vue')], ['access.staff.read', UserAccountVue], ['access.roles.read', RoleListVue], ['access.permissions.read', PermissionListVue], ['access.audit.read', () => import('@/views/role/AccessAudit.vue')], ['catalog.read.list', () => import('@/views/catalog/ProductAdmin.vue')], ['orders.read.list', () => import('@/views/orders/StaffOrders.vue')], ['shipments.read', () => import('@/views/orders/ShipmentsAdmin.vue')], ['shipping.methods.read', () => import('@/views/orders/ShippingMethodsAdmin.vue')]])
+const components = new Map<string, any>([['preorders.arrivals.read', () => import('@/views/preorders/PreorderArrivalsAdmin.vue')], ['preorder-orders.read', () => import('@/views/preorders/PreorderOrdersAdmin.vue')], ['preorders.read', () => import('@/views/preorders/PreorderAdmin.vue')], ['notifications.read', () => import('@/views/notifications/NotificationAdmin.vue')], ['masters.read', () => import('@/views/catalog/MastersAdmin.vue')], ['access.staff.read', UserAccountVue], ['access.roles.read', RoleListVue], ['access.permissions.read', PermissionListVue], ['access.audit.read', () => import('@/views/role/AccessAudit.vue')], ['catalog.read.list', () => import('@/views/catalog/ProductAdmin.vue')], ['orders.read.list', () => import('@/views/orders/StaffOrders.vue')], ['shipments.read', () => import('@/views/orders/ShipmentsAdmin.vue')], ['shipping.methods.read', () => import('@/views/orders/ShippingMethodsAdmin.vue')], ['warehouse.read', () => import('@/views/orders/WarehouseAdmin.vue')], ['shipping.adjustments.read', () => import('@/views/orders/AdjustmentsAdmin.vue')]])
 let signature = ''
 let removeRoutes: (() => void)[] = []
 export function addDynamicRoutes(permissions: Permission[]) {
