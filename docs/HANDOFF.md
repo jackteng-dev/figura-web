@@ -1,5 +1,11 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-25：Commerce V2 Phase 1–3（分支 `feat/commerce-v2-specs`，未合併）
+
+- 商品列表改用後端搜尋（網址即狀態，舊參數 type／category／brand／work／min／max／sort 相容）、facets、分頁；商品頁規格表（只顯示有資料的列，AI 概念商品另標示）；後台 `SpecsEditor`。
+- 收藏（未登入存在裝置 localStorage，登入後合併）、商品頁到貨／開賣提醒、`/shop/favorites`、`/shop/notifications`（通知匣＋Email 偏好）、頁首未讀數。
+- `npm run build` 通過；本機 15176 以 headless Edge 驗證列表搜尋、規格表、收藏按鈕；收藏／提醒／通知 API 經同源代理實測。Browser pane 因視窗未顯示無法使用。未改 `src/assets/`、`package-lock.json`。
+
 ## 2026-11-23：99 件必要 2D 圖組全數入本機圖庫（作者簽核 pending）
 
 依作者新要求，REAR 改以明確 135°–180° 背後方向及關鍵身份判斷，小紋理差異可接受；ANGLE 選擇性。保留 2026-11-20 舊拒收紀錄與政策歷史，新採用另記 `rear-2026-11-23`，不改寫舊 run review。先完成 001／003／068 三件試點並本機上傳後繼續全目錄。
