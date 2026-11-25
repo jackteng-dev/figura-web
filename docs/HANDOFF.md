@@ -1,5 +1,12 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-25：MFA 備援碼下載（併入 PR #23，依賴 API V32–V33）
+
+- `RecoveryCodesPanel.vue`＋`utils/recoveryCodes.ts`：一次性顯示 10 組備援碼，「下載備援碼」在瀏覽器端以當次回應產生 UTF-8 `Figura-MFA-Recovery-Codes.txt`（標題、帳號、產生日期、備援碼、保存提醒），Blob URL 立即釋放；不經伺服器、不放 URL、不寫入 localStorage／sessionStorage／pinia。移除「複製全部」。
+- 系統管理員／店長（伺服器回 `required=true`）：必須先下載、勾選「我已妥善保存」才能進入；其他員工可「略過」（確認對話框）。確認時帶批次 ID。
+- 待確認的管理員：路由守衛與 API 攔截器（403 `MFA_BACKUP_ACK_REQUIRED`）導向「帳號安全」，以 TOTP 重新產生後下載並確認。
+- 介面文字只說「已觸發下載」，不宣稱檔案已保存。`npm run build` 通過；文件內容以 Node 產生範例檢查（UTF-8、CRLF）。未在瀏覽器實際走完流程。
+
 ## 2026-11-25：員工後台強制雙因素（併入 PR #23，依賴 API V31）
 
 - `Login.vue`：密碼 → 驗證碼或備援碼；未綁定者強制進入綁定畫面：顯示 QR code（`src/utils/qrcode.ts`，移植 Nayuki MIT 演算法、不加 npm 套件、在瀏覽器本機產生），金鑰預設隱藏，按「無法掃描？手動輸入金鑰」才顯示並可複製。QR 輸出經獨立撰寫的 Python 解碼器驗證（版本 1–10、多種遮罩與多區塊，含真實 otpauth 連結），內容與 RS 校驗皆正確→ 綁定後一次性顯示 10 組備援碼，勾選已保存才進入後台。伺服器不會在沒有第二因素時發 session。
