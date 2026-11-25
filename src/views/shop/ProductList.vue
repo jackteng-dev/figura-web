@@ -21,7 +21,7 @@ const sort = computed(() => str('sort') || (q.value ? 'relevance' : 'new'))
 const minP = computed(() => Number(str('min')) || 0)
 const maxP = computed(() => Number(str('max')) || 0)
 const page = computed(() => Math.max(1, Number(str('page')) || 1))
-const SORTS: Record<string, string> = { new: 'NEWEST', 'price-asc': 'PRICE_ASC', 'price-desc': 'PRICE_DESC', 'release-asc': 'RELEASE_ASC', 'release-desc': 'RELEASE_DESC', relevance: 'RELEVANCE', stock: 'NEWEST' }
+const SORTS: Record<string, string> = { new: 'NEWEST', 'price-asc': 'PRICE_ASC', 'price-desc': 'PRICE_DESC', 'release-asc': 'RELEASE_ASC', 'release-desc': 'RELEASE_DESC', relevance: 'RELEVANCE', stock: 'STOCK_FIRST' }
 const TYPES: Record<string, Availability> = { stock: 'IN_STOCK', pre: 'PREORDER', out: 'SOLD_OUT' }
 
 function setQuery(patch: Record<string, string | undefined>) {
@@ -44,7 +44,7 @@ const criteria = computed<ProductSearch>(() => ({
   limited: str('limited') === '1' || undefined,
   sort: SORTS[sort.value] || 'NEWEST'
 }))
-// 全站選項（不受目前條件影響）用來把名稱對應成 ID；條件內選項與筆數另外查
+// 全站選項（不帶任何條件查詢一次）只用來把網址上的名稱對應成 ID；條件內選項與筆數另外查
 const allFacets = ref<Facets>()
 let controller: AbortController | undefined
 async function run() {
@@ -57,7 +57,6 @@ async function run() {
     const s = { ...criteria.value, ...ids, page: page.value, pageSize: PAGE_SIZE }
     const [result, f] = await Promise.all([searchProducts(s, signal), productFacets(s, signal)])
     products.value = result.items; total.value = result.total; facets.value = f
-    if (!allFacets.value && !q.value && !Object.values(ids).some(x => x.length)) allFacets.value = f
   } catch (e: any) {
     if (e?.name !== 'AbortError') error.value = e?.message || '商品暫時無法載入，請稍後重試。'
   } finally { if (!signal.aborted) loading.value = false }
@@ -165,9 +164,10 @@ function submitSearch() { setQuery({ q: searchInput.value.trim() || undefined, s
           </template>
           <span v-else class="muted">瀏覽全部商品</span>
           <label for="list-sort" class="sort-label">排序</label>
-          <select id="list-sort" :value="sort === 'stock' ? 'new' : sort" @change="setQuery({ sort: ($event.target as HTMLSelectElement).value === (q ? 'relevance' : 'new') ? undefined : ($event.target as HTMLSelectElement).value })">
+          <select id="list-sort" :value="sort" @change="setQuery({ sort: ($event.target as HTMLSelectElement).value === (q ? 'relevance' : 'new') ? undefined : ($event.target as HTMLSelectElement).value })">
             <option v-if="q" value="relevance">相關度</option>
             <option value="new">最新上架</option>
+            <option value="stock">有現貨優先</option>
             <option value="price-asc">價格低→高</option>
             <option value="price-desc">價格高→低</option>
             <option value="release-asc">發售日：近→遠</option>

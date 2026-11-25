@@ -1,17 +1,17 @@
 <script setup lang="ts">
 // 商品規格編輯（Commerce V2）：所有欄位選填，留空＝未提供，請勿填入未確認的規格。
 // AI 虛構展示商品的「設定材質」只是概念描述，不會出現在公開的材質規格或結構化資料。
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { SCALES, scaleLabel, MATERIAL_LABELS, TYPE_LABELS, EDITION_LABELS, type ProductSpecs } from '@/api/catalog'
 const specs = defineModel<ProductSpecs>({ required: true })
 const accessoriesText = computed({
   get: () => specs.value.accessories.join('\n'),
   set: v => { specs.value.accessories = v.split('\n') }
 })
-const releaseKind = computed({
-  get: () => specs.value.releaseDate ? 'date' : 'month',
-  set: v => { if (v === 'date') specs.value.releaseMonth = null; else specs.value.releaseDate = null }
-})
+// 輸入模式獨立保存：切換時才清掉另一欄（日期與月份只能擇一）
+const releaseKind = ref<'date' | 'month'>(specs.value.releaseDate ? 'date' : 'month')
+watch(() => specs.value, s => { releaseKind.value = s.releaseDate ? 'date' : 'month' })
+watch(releaseKind, v => { if (v === 'date') specs.value.releaseMonth = null; else specs.value.releaseDate = null })
 function toggle(list: string[], code: string) { const i = list.indexOf(code); i >= 0 ? list.splice(i, 1) : list.push(code) }
 </script>
 
