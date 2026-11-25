@@ -43,11 +43,15 @@ export const userAvatarUpdateService = function (formData: FormData) {
   )
 }
 
-// ---- Commerce V2 Phase 7：員工雙因素（TOTP） ----
-export interface MfaStatus { available: boolean; enabled: boolean; pendingSetup: boolean }
-/** 雙因素第二步：密碼正確後以 challenge＋6 位數驗證碼換取 session。 */
+// ---- 員工後台強制雙因素（TOTP）：未綁定者密碼正確後必須先綁定，完成前不發 session ----
+export interface MfaStatus { available: boolean; enabled: boolean; backupCodesRemaining: number }
+/** 已綁定：以 challenge＋6 位數驗證碼（或一次性備援碼）換取 session。 */
 export const adminMfaLogin = (challenge: string, code: string) => request.post('/admin/login/mfa', { challenge, code })
+/** 未綁定：以綁定 token 產生密鑰（重新呼叫會換一組）。 */
+export const adminMfaSetup = async (setupToken: string) => (await request.post<any, { data: { secret: string; otpauthUri: string } }>('/admin/login/mfa/setup', { setupToken })).data
+/** 未綁定：驗證碼正確後完成綁定並發 session，回傳只顯示一次的備援碼。 */
+export const adminMfaEnroll = async (setupToken: string, code: string) => (await request.post<any, { data: { backupCodes?: string[] } }>('/admin/login/mfa/enroll', { setupToken, code })).data
 export const mfaStatus = async () => (await request.get<any, { data: MfaStatus }>('/admin/mfa')).data
-export const mfaSetup = async () => (await request.post<any, { data: { secret: string; otpauthUri: string } }>('/admin/mfa/setup')).data
-export const mfaConfirm = async (code: string) => (await request.post<any, { data: MfaStatus }>('/admin/mfa/confirm', { code })).data
-export const mfaDisable = async (code: string) => (await request.post<any, { data: MfaStatus }>('/admin/mfa/disable', { code })).data
+export const mfaRegenerateBackupCodes = async (code: string) => (await request.post<any, { data: string[] }>('/admin/mfa/backup-codes', { code })).data
+/** 管理員重設其他員工的雙因素（對方 session 立即失效，下次登入重新綁定）。 */
+export const staffMfaReset = async (staffId: number, note: string, requestId: string) => (await request.post<any, { data: { staffId: number; replayed: boolean } }>(`/admin/access/staff/${staffId}/mfa/reset`, { requestId, note })).data
