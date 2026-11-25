@@ -19,7 +19,7 @@ async function logout() { if(pending.value)return;pending.value=true;error.value
   <template v-if="store.profile?.phone"><dt>手機</dt><dd>{{ store.profile.phone }}</dd></template>
  </dl>
  <p v-if="resendMsg" class="shop-success" role="status">{{ resendMsg }}</p><p v-if="error" class="shop-error" role="alert">{{ error }}</p>
- <p><router-link to="/shop/my-orders">我的訂單 →</router-link></p><p><router-link to="/shop/cart">我的購物車 →</router-link></p><p><router-link to="/shop/addresses">管理收件地址 →</router-link></p>
+ <p><router-link to="/shop/my-orders">我的訂單 →</router-link></p><p><router-link to="/shop/cart">我的購物車 →</router-link></p><p><router-link to="/shop/addresses">管理收件地址 →</router-link></p><p><router-link to="/shop/favorites">我的收藏 →</router-link></p><p><router-link to="/shop/notifications">通知與通知設定 →</router-link></p>
  <button class="shop-button" style="margin-top:24px;background:#4b5060" :disabled="pending" @click="logout">登出會員</button></section>
 </template>
 <style scoped>

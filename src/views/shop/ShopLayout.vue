@@ -6,6 +6,7 @@ import { useCatalog } from './useCatalog'
 import { getCustomer } from '@/api/customer'
 import { getCart } from '@/api/shopping'
 import { guestCount, serverCount, countOf, rememberReturn } from './guestCart'
+import { unreadCount, refreshUnread } from './useNotices'
 const route = useRoute(), router = useRouter(), customer = useCustomerStore(), { categories, load } = useCatalog()
 const keyword = ref(typeof route.query.q === 'string' ? route.query.q : '')
 watch(() => route.query.q, q => { keyword.value = typeof q === 'string' ? q : '' })
@@ -27,7 +28,7 @@ onMounted(() => {
   const loadCount = () => getCart().then(c => { serverCount.value = countOf(c) }).catch(() => {})
   if (!customer.profile) getCustomer().then(p => { customer.profile = p }).catch(() => {})
   // 登入（或靜默讀到登入狀態）後讀一次伺服器購物車件數；登出時歸零
-  watch(() => customer.profile?.id, id => { if (id) loadCount(); else serverCount.value = null }, { immediate: true })
+  watch(() => customer.profile?.id, id => { if (id) { loadCount(); refreshUnread() } else { serverCount.value = null; unreadCount.value = 0 } }, { immediate: true })
 })
 </script>
 
@@ -50,6 +51,8 @@ onMounted(() => {
         <nav class="shop-member" aria-label="會員">
           <router-link v-if="memberName" to="/shop/account" class="member-link">{{ memberName }}</router-link>
           <router-link v-else to="/shop/login" class="member-link" @click="loginFromHere">登入 / 註冊</router-link>
+          <router-link to="/shop/favorites" class="member-link hide-sm">收藏</router-link>
+          <router-link v-if="customer.profile" to="/shop/notifications" class="member-link">通知<span v-if="unreadCount" class="notice-count"><span class="visually-hidden">，未讀</span>{{ unreadCount > 99 ? '99+' : unreadCount }}<span class="visually-hidden"> 則</span></span></router-link>
           <router-link to="/shop/my-orders" class="member-link hide-sm">我的訂單</router-link>
           <router-link to="/shop/cart" class="cart-link">購物車<span v-if="cartCount" class="cart-count"><span class="visually-hidden">，</span>{{ cartCount > 99 ? '99+' : cartCount }}<span class="visually-hidden"> 件</span></span></router-link>
         </nav>
@@ -77,7 +80,7 @@ onMounted(() => {
       <div class="shop-footer-grid">
         <div><div class="foot-logo">Figura<span>.</span></div>公仔・PVC・GK 收藏專門店</div>
         <div><div class="foot-title">購物</div><router-link to="/shop/products">所有商品</router-link><br><router-link to="/shop/preorders">預購情報</router-link><br><router-link to="/shop/cart">購物車</router-link></div>
-        <div><div class="foot-title">會員</div><router-link to="/shop/my-orders">我的訂單（現貨＋預購）</router-link><br><router-link to="/shop/addresses">收件地址</router-link></div>
+        <div><div class="foot-title">會員</div><router-link to="/shop/my-orders">我的訂單（現貨＋預購）</router-link><br><router-link to="/shop/addresses">收件地址</router-link><br><router-link to="/shop/favorites">我的收藏</router-link><br><router-link to="/shop/notifications">通知與設定</router-link></div>
         <div><div class="foot-title">其他</div><router-link to="/shop/account">會員中心</router-link></div>
       </div>
       <p class="foot-note">付款、配送、退貨與退款皆為模擬演練，不會實際收款或轉帳。</p>
@@ -126,6 +129,7 @@ onMounted(() => {
 .shop-shell .cart-link { background: var(--orange); color: #fff; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 10px; }
 .shop-shell .cart-link:hover { background: #9a3412; color: #fff; }
 .shop-shell .cart-link { display: inline-flex; align-items: center; gap: 6px; }
+.notice-count { margin-left: 4px; background: #be123c; color: #fff; font-size: 11px; font-weight: 900; padding: 1px 6px; border-radius: 999px; }
 .cart-count { background: #fff; color: #9a3412; font-size: 12px; font-weight: 900; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
 
 .shop-cats { background: var(--navy); }

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import FavoriteButton from './FavoriteButton.vue'
+import ProductAlertPanel from './ProductAlertPanel.vue'
 import { computed, nextTick, ref, watch } from 'vue'
 import ProductGallery from './ProductGallery.vue'
 import {publicGallery,type GalleryImage} from '@/api/gallery'
@@ -137,6 +139,8 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
             <span v-if="isAiConcept" class="ai-tag">AI 虛構展示商品</span>
           </p>
           <div class="price-row"><span class="price">{{ preorderOnly ? preorderPrice : displayPrice }}</span><span class="muted">含稅・運費 NT$ 0</span></div>
+          <div class="engage-row"><FavoriteButton :product-id="product.id" :title="product.title" /></div>
+          <ProductAlertPanel :product-id="product.id" />
 
           <template v-if="preorderOnly">
             <div class="preorder-only">
@@ -280,6 +284,7 @@ const step = (d: number) => { const n = (Number(quantity.value) || 1) + d; quant
 .desc h2 { font-size: 20px; margin: 0 0 16px; }
 .desc-body { display: flex; flex-wrap: wrap; gap: 32px; }
 .product-description { flex: 2 1 420px; white-space: pre-wrap; margin: 0; color: #2b2e38; }
+.engage-row { margin: 8px 0 0; }
 .spec-block { flex: 1 1 320px; min-width: 0; }
 .spec-block h3 { font-size: 16px; margin: 0 0 8px; }
 .spec-block table { width: 100%; }

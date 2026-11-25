@@ -37,6 +37,8 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'buy-now', redirect: to => ({ path: '/shop/checkout', query: to.query }) },
     { path: 'cart', component: () => import('@/views/shop/CustomerCart.vue'), meta: { public: true } },
     { path: 'addresses', component: () => import('@/views/shop/CustomerAddresses.vue') },
+    { path: 'favorites', component: () => import('@/views/shop/CustomerFavorites.vue') },
+    { path: 'notifications', component: () => import('@/views/shop/CustomerNotifications.vue') },
     { path: ':pathMatch(.*)*', component: NotFound, meta: { public: true } }
   ] },
   { path: '/admin/login', name: 'login', component: LoginVue, meta: { title: '員工登入' } },
