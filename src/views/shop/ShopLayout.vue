@@ -81,6 +81,7 @@ onMounted(() => {
         <div><div class="foot-logo">Figura<span>.</span></div>公仔・PVC・GK 收藏專門店</div>
         <div><div class="foot-title">購物</div><router-link to="/shop/products">所有商品</router-link><br><router-link to="/shop/preorders">預購情報</router-link><br><router-link to="/shop/cart">購物車</router-link></div>
         <div><div class="foot-title">會員</div><router-link to="/shop/my-orders">我的訂單（現貨＋預購）</router-link><br><router-link to="/shop/addresses">收件地址</router-link><br><router-link to="/shop/favorites">我的收藏</router-link><br><router-link to="/shop/notifications">通知與設定</router-link></div>
+        <div><div class="foot-title">指南</div><router-link to="/shop/guides/shopping">購物流程與常見問題</router-link><br><router-link to="/shop/guides/preorder">預購怎麼運作</router-link><br><router-link to="/shop/guides/materials">公仔常見材質</router-link><br><router-link to="/shop/guides/scale">比例與尺寸</router-link><br><router-link to="/shop/guides/ai-concept">AI 概念展示商品</router-link></div>
         <div><div class="foot-title">其他</div><router-link to="/shop/account">會員中心</router-link></div>
       </div>
       <p class="foot-note">付款、配送、退貨與退款皆為模擬演練，不會實際收款或轉帳。</p>

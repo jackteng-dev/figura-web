@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <!-- [Head] start -->
 
 <head>
+  <!-- SEO：正式 gateway 開啟 nginx SSI 時，以 /__seo/head（API /seo/head）取代下方預設值；未開啟 SSI 時這些註解不作用，顯示預設值。見 docs/SEO_DEPLOYMENT.md -->
+  <!--# block name="seo_head_default" -->
   <title>Figura｜公仔與收藏品</title>
+  <meta name="description" content="Figura 公仔與收藏品：現貨、預購批次、規格清楚標示。本站目前為展示用沙盒，付款與配送皆為模擬演練。">
+  <!--# endblock -->
+  <!--# block name="seo_empty" --><!--# endblock -->
+  <!--# include virtual="/__seo/head" stub="seo_head_default" -->
   <!-- [Meta] -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description"
-    content="Figura：公仔與收藏品電商，含顧客購物網站與員工管理後台。">
-  <meta name="keywords"
-    content="Figura, 公仔, 收藏品, 電商, Vue">
-  <meta name="author" content="CodedThemes">
 
   <!-- [Favicon] icon -->
   <link rel="icon" href="/src/assets/images/favicon.svg" type="image/x-icon"> <!-- [Google Font] Family -->
@@ -22,7 +23,8 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <!-- 爬蟲可讀的頁面內容（與畫面相同）；Vue 掛載時整塊取代 -->
+  <div id="app"><!--# include virtual="/__seo/body" stub="seo_empty" --></div>
   <script src="/src/assets/js/plugins/simplebar.min.js"></script>
   <!-- <script src="/src/assets/js/pcoded.js"></script> -->
   <!-- <script src="/src/assets/js/fonts/custom-font.js"></script> -->
