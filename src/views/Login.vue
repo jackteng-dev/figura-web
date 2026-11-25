@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
-import { adminLoginService } from '@/api/user'
+import { adminLoginService, adminMfaLogin } from '@/api/user'
 import type { LoginData } from '@/types/user'
 import PasswordField from '@/components/PasswordField.vue'
 const router = useRouter()
@@ -15,10 +15,24 @@ async function login() {
   registerData.value.deviceId = localStorage.getItem('deviceId') || crypto.randomUUID()
   localStorage.setItem('deviceId', registerData.value.deviceId)
   pending.value = true
-  try { await adminLoginService(registerData.value); ElMessage.success('登入成功'); await router.push('/home') }
+  try {
+    const r: any = await adminLoginService(registerData.value)
+    // 已啟用雙因素：密碼正確只拿到 challenge，需再輸入驗證碼
+    if (r?.data?.mfaRequired) { challenge.value = r.data.mfaChallenge; registerData.value.password = ''; return }
+    ElMessage.success('登入成功'); await router.push('/home')
+  }
   catch { /* API 已顯示錯誤，保留畫面供重試。 */ }
   finally { pending.value = false }
 }
+const challenge = ref(''), code = ref('')
+async function verify() {
+  if (pending.value || !/^\d{6}$/.test(code.value)) return
+  pending.value = true
+  try { await adminMfaLogin(challenge.value, code.value); ElMessage.success('登入成功'); await router.push('/home') }
+  catch { code.value = '' /* 錯誤由 API 顯示；連錯 5 次需重新登入 */ }
+  finally { pending.value = false }
+}
+function restart() { challenge.value = ''; code.value = '' }
 </script>
 <template>
   <div class="fg-admin fg-login">
@@ -32,7 +46,17 @@ async function login() {
       <router-link to="/shop" class="back">← 回到商店</router-link>
     </section>
     <section class="form-side">
-      <form class="login-card" @submit.prevent="login">
+      <form v-if="challenge" class="login-card" @submit.prevent="verify">
+        <h1>雙因素驗證</h1>
+        <p>請輸入驗證器 App 顯示的 6 位數驗證碼（5 分鐘內有效）。</p>
+        <div>
+          <label class="form-label" for="login-mfa">驗證碼</label>
+          <input id="login-mfa" v-model="code" class="form-control" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="\d{6}" required>
+        </div>
+        <button type="submit" class="btn btn-primary submit" :disabled="pending || code.length !== 6">驗證並登入</button>
+        <button type="button" class="btn btn-link" @click="restart">重新輸入帳號密碼</button>
+      </form>
+      <form v-else class="login-card" @submit.prevent="login">
         <h1>員工登入</h1>
         <div>
           <label class="form-label" for="login-username">使用者</label>

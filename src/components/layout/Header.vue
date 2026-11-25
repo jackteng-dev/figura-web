@@ -65,6 +65,7 @@ const logout = () => {
         <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
       </button>
       <div v-if="menuOpen" class="fg-user-menu" role="menu">
+        <router-link role="menuitem" to="/admin/security" @click="menuOpen = false">帳號安全（雙因素）</router-link>
         <a role="menuitem" href="/shop" target="_blank" rel="noopener" @click="menuOpen = false">前往商店 ↗</a>
         <button role="menuitem" type="button" class="danger" @click="logout">登出</button>
       </div>

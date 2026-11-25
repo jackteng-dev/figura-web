@@ -42,3 +42,12 @@ export const userAvatarUpdateService = function (formData: FormData) {
   }
   )
 }
+
+// ---- Commerce V2 Phase 7：員工雙因素（TOTP） ----
+export interface MfaStatus { available: boolean; enabled: boolean; pendingSetup: boolean }
+/** 雙因素第二步：密碼正確後以 challenge＋6 位數驗證碼換取 session。 */
+export const adminMfaLogin = (challenge: string, code: string) => request.post('/admin/login/mfa', { challenge, code })
+export const mfaStatus = async () => (await request.get<any, { data: MfaStatus }>('/admin/mfa')).data
+export const mfaSetup = async () => (await request.post<any, { data: { secret: string; otpauthUri: string } }>('/admin/mfa/setup')).data
+export const mfaConfirm = async (code: string) => (await request.post<any, { data: MfaStatus }>('/admin/mfa/confirm', { code })).data
+export const mfaDisable = async (code: string) => (await request.post<any, { data: MfaStatus }>('/admin/mfa/disable', { code })).data
