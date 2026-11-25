@@ -2,6 +2,7 @@
 // 出貨單（Phase 5）：合併／分開寄的包裹，整張出貨單一起出貨與送達。測試物流，不會實際寄送。
 import { onMounted, ref } from 'vue'
 import { useUserInfoStore } from '@/stores/userInfo'
+import TrackingPanel from './TrackingPanel.vue'
 import { money } from '@/api/catalog'
 import { taipeiTime } from '@/api/preorders'
 import { shipments, shipmentDetail, shipmentCommand, shipmentStatus, waitingText, type Shipment, type ShipmentDetail, type ShipmentCommand } from '@/api/shipping'
@@ -83,6 +84,7 @@ onMounted(load)
     <button v-if="selected.canDeliver && has('shipments.deliver.mock') && !pending" type="button" :disabled="sending || stale || !note.trim()" @click="act('deliver')">整張標記送達</button>
     <button v-if="pending" type="button" :disabled="sending" @click="act(pending.action)">重試同一操作</button>
    </form>
+   <TrackingPanel v-if="['SHIPPED', 'DELIVERED'].includes(selected.shipment.status)" :key="selected.shipment.id" :shipment-id="selected.shipment.id" :method="selected.shipment.method" staff />
    <h3>出貨紀錄</h3>
    <p v-if="!selected.events.length">尚無整張出貨紀錄。</p>
    <details v-for="e in selected.events" :key="e.requestId"><summary>{{ taipeiTime(e.createdAt) }} · {{ e.action === 'SHIP' ? '出貨' : '送達' }} · {{ e.actorUsername }}</summary><p>操作 ID：{{ e.requestId }}</p><p>原因：{{ e.note }}</p><p>貨件號：{{ e.trackingNumber }}</p></details>

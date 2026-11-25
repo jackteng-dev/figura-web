@@ -2,6 +2,7 @@
 // 我的出貨（Commerce V2 Phase 5）：合併寄送與私人倉庫暫存。只搬移包裹，不改訂單金額與付款。
 import { computed, onMounted, ref } from 'vue'
 import { CustomerApiError } from '@/api/customer'
+import TrackingPanel from '@/views/orders/TrackingPanel.vue'
 import { money } from '@/api/catalog'
 import { myShipments, mergeShipments, holdShipment, shipmentStatus, waitingText, type CustomerShipment } from '@/api/shipping'
 const items = ref<CustomerShipment[]>([]), total = ref(0), storageDays = ref(0), loading = ref(false), busy = ref(false)
@@ -65,6 +66,7 @@ onMounted(load)
             <span class="orders">{{ i.shipment.orders.map(o => o.title).join('、') }}</span>
             <span v-if="i.shipment.heldAt" class="held">暫存在私人倉庫，期限 {{ date(i.shipment.storageUntil) }}</span>
             <span v-if="i.blockedReason" class="muted small">{{ i.blockedReason }}</span>
+            <details v-if="['SHIPPED', 'DELIVERED'].includes(i.shipment.status)"><summary>物流追蹤</summary><TrackingPanel :shipment-id="i.shipment.id" :method="i.shipment.method" /></details>
           </div>
           <div class="acts">
             <button v-if="i.canHold" type="button" :disabled="busy || !!pending" @click="run('hold', i.shipment.id)">暫存到倉庫</button>
