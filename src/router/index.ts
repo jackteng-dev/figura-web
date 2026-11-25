@@ -88,6 +88,8 @@ router.beforeEach(async (to) => {
   try {
     const result = await getUserInfoService()
     store.setInfo(result.data); store.setPermissions(result.data.permissions || [])
+    // 系統管理員／店長尚未完成備援碼保存確認：只能停在帳號安全頁（伺服器也會拒絕業務 API）
+    if (result.data.mfaBackupAckPending && to.path !== '/admin/security') return '/admin/security'
     if (addDynamicRoutes(store.permissions)) return { path: to.fullPath, replace: true }
     if (to.meta.permission && !store.permissions.some(p => (p.code || p.name) === to.meta.permission)) return '/not-found'
     return true

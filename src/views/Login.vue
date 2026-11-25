@@ -7,11 +7,12 @@ import { adminLoginService, adminMfaLogin, adminMfaSetup, adminMfaEnroll } from 
 import type { LoginData } from '@/types/user'
 import PasswordField from '@/components/PasswordField.vue'
 import { qrSvg } from '@/utils/qrcode'
+import RecoveryCodesPanel from '@/components/RecoveryCodesPanel.vue'
 const router = useRouter()
 const pending = ref(false)
 const registerData = ref<LoginData>({ username: '', password: '', rememberMe: false, deviceId: '' })
 type Step = 'password' | 'verify' | 'enroll' | 'codes'
-const step = ref<Step>('password'), challenge = ref(''), setupToken = ref(''), code = ref(''), secret = ref(''), otpauth = ref(''), backupCodes = ref<string[]>([]), saved = ref(false)
+const step = ref<Step>('password'), challenge = ref(''), setupToken = ref(''), code = ref(''), secret = ref(''), otpauth = ref(''), backup = ref<{ codes: string[]; username: string; generatedAt: string; required: boolean }>()
 async function login() {
   if (pending.value) return
   if (!registerData.value.username.trim() || !registerData.value.password) { ElMessage.error('請輸入帳號與密碼'); return }
@@ -48,13 +49,14 @@ async function enroll() {
   try {
     const r = await adminMfaEnroll(setupToken.value, code.value.trim())
     secret.value = ''; otpauth.value = ''; code.value = ''
-    backupCodes.value = r?.backupCodes || []; step.value = 'codes'
+    // 備援碼只放在記憶體；完成後清除
+    backup.value = { codes: r?.backupCodes || [], username: r?.username || registerData.value.username, generatedAt: r?.backupCodesGeneratedAt || new Date().toISOString(), required: !!r?.backupCodesRequired }
+    step.value = 'codes'
   }
   catch { code.value = '' }
   finally { pending.value = false }
 }
-async function finish() { if (!saved.value) return; backupCodes.value = []; ElMessage.success('已完成雙因素綁定'); await router.push('/home') }
-function copyCodes() { navigator.clipboard?.writeText(backupCodes.value.join('\n')).then(() => ElMessage.success('已複製備援碼'), () => ElMessage.error('無法複製，請手動抄寫')) }
+async function finish() { backup.value = undefined; ElMessage.success('已完成雙因素綁定'); await router.push('/home') }
 // QR code 在瀏覽器本機產生（不送到任何外部服務）；金鑰預設隱藏，按「手動輸入」才顯示
 const qr = computed(() => otpauth.value ? 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(qrSvg(otpauth.value, 'M')) : '')
 const showSecret = ref(false)
@@ -109,11 +111,7 @@ function restart() { step.value = 'password'; challenge.value = ''; setupToken.v
       </form>
       <div v-else-if="step === 'codes'" class="login-card">
         <h1>保存備援碼</h1>
-        <p>手機遺失或無法使用時，可用以下任一組備援碼登入，<strong>每組只能用一次，這是唯一一次顯示</strong>。請存放在密碼管理工具或安全的地方。</p>
-        <ul class="codes"><li v-for="c in backupCodes" :key="c"><code>{{ c }}</code></li></ul>
-        <button type="button" class="btn btn-outline-secondary" @click="copyCodes">複製全部</button>
-        <label class="check"><input v-model="saved" type="checkbox"> 我已妥善保存備援碼</label>
-        <button type="button" class="btn btn-primary submit" :disabled="!saved" @click="finish">進入後台</button>
+        <RecoveryCodesPanel v-if="backup" :codes="backup.codes" :username="backup.username" :generated-at="backup.generatedAt" :required="backup.required" @done="finish" />
       </div>
       <form v-else class="login-card" @submit.prevent="login">
         <h1>員工登入</h1>
