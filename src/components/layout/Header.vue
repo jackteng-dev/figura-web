@@ -6,6 +6,7 @@ import { useUserInfoStore } from '@/stores/userInfo'
 import { adminLogoutService } from '@/api/user'
 import router from '@/router'
 
+defineProps<{ collapsed?: boolean }>()
 const emit = defineEmits<{ menu: [] }>()
 const route = useRoute()
 const userInfoStore = useUserInfoStore()
@@ -13,9 +14,11 @@ const menuOpen = ref(false)
 const menuRoot = ref<HTMLElement>()
 
 const GROUP_OF: Record<string, string> = {
-  '/admin/orders': '營運', '/admin/notifications': '營運', '/admin/products': '商品', '/admin/masters': '商品',
+  '/admin/orders': '營運', '/admin/shipments': '營運', '/admin/warehouse': '營運', '/admin/shipping-adjustments': '營運', '/admin/notifications': '營運', '/admin/support-tickets': '營運',
+  '/admin/products': '商品', '/admin/masters': '商品', '/admin/low-stock': '商品',
   '/admin/preorders': '預購', '/admin/preorder-orders': '預購', '/admin/preorder-arrivals': '預購',
-  '/admin/account': '系統', '/admin/roles': '系統', '/admin/permissions': '系統', '/admin/access/audit': '系統'
+  '/admin/reports': '報表', '/admin/ops': '報表', '/admin/shipping-methods': '設定', '/admin/site-pages': '設定',
+  '/admin/account': '系統', '/admin/roles': '系統', '/admin/permissions': '系統', '/admin/access/audit': '系統', '/admin/security': '我的帳號'
 }
 // 頁面標題以一般文字顯示（不是 heading），避免和各頁自己的 h1 重複。
 const crumb = computed(() => {
@@ -52,7 +55,7 @@ const logout = () => {
 
 <template>
   <header class="fg-topbar">
-    <button type="button" class="fg-menu-btn" aria-label="開啟選單" @click="emit('menu')">
+    <button type="button" class="fg-menu-btn" :class="{ 'show-desktop': collapsed }" :aria-label="collapsed ? '展開選單' : '開啟選單'" :title="collapsed ? '展開選單' : undefined" aria-controls="fg-sidebar" @click="emit('menu')">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
     </button>
     <nav class="fg-crumb" aria-label="目前位置">
@@ -75,6 +78,7 @@ const logout = () => {
 
 <style scoped>
 .fg-topbar { position: sticky; top: 0; z-index: 30; background: #fff; border-bottom: 1px solid #e3e5ec; padding: 10px 24px; display: flex; align-items: center; gap: 14px; min-height: 64px; box-sizing: border-box; }
+.fg-menu-btn.show-desktop { display: inline-flex; }
 .fg-menu-btn { display: none; width: 44px; height: 44px; border: 0; background: #f3f4f8; border-radius: 10px; align-items: center; justify-content: center; cursor: pointer; }
 .fg-menu-btn svg, .chev { width: 22px; height: 22px; fill: none; stroke: #15161a; stroke-width: 2; }
 .chev { width: 16px; height: 16px; stroke: #4b5060; }

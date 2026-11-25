@@ -4,16 +4,18 @@ import { useRoute } from 'vue-router'
 import { useUserInfoStore } from '@/stores/userInfo'
 import type { Permission } from '@/types/user'
 
-defineProps<{ open: boolean }>()
-const emit = defineEmits<{ close: [] }>()
+defineProps<{ open: boolean; collapsed: boolean }>()
+const emit = defineEmits<{ close: []; collapse: [] }>()
 const route = useRoute()
 const store = useUserInfoStore()
 
 // 選單仍由權限決定；這裡只負責把已授權的頁面分組與排序。
 const GROUPS: { label: string; paths: string[] }[] = [
-  { label: '營運', paths: ['/admin/orders', '/admin/notifications'] },
-  { label: '商品', paths: ['/admin/products', '/admin/masters'] },
+  { label: '營運', paths: ['/admin/orders', '/admin/shipments', '/admin/warehouse', '/admin/shipping-adjustments', '/admin/notifications', '/admin/support-tickets'] },
+  { label: '商品', paths: ['/admin/products', '/admin/masters', '/admin/low-stock'] },
   { label: '預購', paths: ['/admin/preorders', '/admin/preorder-orders', '/admin/preorder-arrivals'] },
+  { label: '報表', paths: ['/admin/reports', '/admin/ops'] },
+  { label: '設定', paths: ['/admin/shipping-methods', '/admin/site-pages'] },
   { label: '系統', paths: ['/admin/account', '/admin/roles', '/admin/permissions', '/admin/access/audit'] }
 ]
 const groups = computed(() => {
@@ -32,11 +34,17 @@ const active = (path: string) => route.path === path || route.path.startsWith(pa
 </script>
 
 <template>
-  <nav class="fg-sidebar" :class="{ open }" aria-label="後台選單">
-    <router-link to="/home" class="fg-brand" @click="emit('close')">
-      <span class="mark" aria-hidden="true">F</span>
-      <span class="words"><span class="name">Figura<span>.</span></span><span class="sub">員工後台</span></span>
-    </router-link>
+  <nav id="fg-sidebar" class="fg-sidebar" :class="{ open, collapsed }" aria-label="後台選單">
+    <div class="fg-brand-row">
+      <router-link to="/home" class="fg-brand" @click="emit('close')">
+        <span class="mark" aria-hidden="true">F</span>
+        <span class="words"><span class="name">Figura<span>.</span></span><span class="sub">員工後台</span></span>
+      </router-link>
+      <!-- 桌機：收合側欄；手機：關閉選單 -->
+      <button type="button" class="fg-collapse" aria-label="收合選單" aria-controls="fg-sidebar" title="收合選單" @click="open ? emit('close') : emit('collapse')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /><path d="M20 6l-6 6 6 6" /></svg>
+      </button>
+    </div>
     <div class="fg-nav">
       <div class="fg-group">
         <router-link to="/home" class="fg-link" :class="{ on: route.path === '/home' }" @click="emit('close')">工作首頁</router-link>
@@ -52,7 +60,12 @@ const active = (path: string) => route.path === path || route.path.startsWith(pa
 
 <style scoped>
 .fg-sidebar { width: 248px; flex: none; background: #1b1f3b; color: #c9cce0; padding: 20px 14px; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 0; height: 100vh; overflow-y: auto; box-sizing: border-box; z-index: 40; }
-.fg-brand { display: flex; align-items: center; gap: 10px; padding: 0 8px; color: #fff !important; text-decoration: none; }
+.fg-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fg-brand { display: flex; align-items: center; gap: 10px; padding: 0 8px; color: #fff !important; text-decoration: none; min-width: 0; }
+.fg-collapse { width: 36px; height: 36px; flex: none; border: 0; border-radius: 10px; background: transparent; color: #c9cce0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.fg-collapse:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.fg-collapse:focus-visible { outline: 2px solid #ffd23f; outline-offset: 2px; }
+.fg-collapse svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .mark { width: 36px; height: 36px; background: #ffd23f; color: #1b1f3b; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; }
 .words { display: flex; flex-direction: column; line-height: 1.2; }
 .name { font-weight: 900; font-size: 19px; }
@@ -66,6 +79,7 @@ const active = (path: string) => route.path === path || route.path.startsWith(pa
 .fg-link.on { background: #2a2f57; color: #fff !important; font-weight: 700; box-shadow: inset 3px 0 0 #ffd23f; }
 .fg-shop-link { font-size: 13px; color: #c9cce0 !important; text-decoration: none; padding: 10px 12px; border: 1px solid #3a4070; border-radius: 10px; text-align: center; }
 .fg-shop-link:hover { color: #fff !important; border-color: #ffd23f; }
+@media (min-width: 992px) { .fg-sidebar.collapsed { display: none; } }
 @media (max-width: 991.98px) {
   .fg-sidebar { position: fixed; left: 0; top: 0; transform: translateX(-100%); visibility: hidden; transition: transform .2s, visibility .2s; }
   .fg-sidebar.open { transform: none; visibility: visible; box-shadow: 8px 0 24px rgba(0, 0, 0, .2); }

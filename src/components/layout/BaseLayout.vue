@@ -8,15 +8,22 @@ import Header from '@/components/layout/Header.vue'
 const route = useRoute()
 const navOpen = ref(false)
 watch(() => route.fullPath, () => { navOpen.value = false })
+// 桌機側欄收合：只記在這台裝置的瀏覽器（介面偏好），讀寫失敗時預設展開
+const KEY = 'fgSidebarCollapsed'
+const collapsed = ref(false)
+try { collapsed.value = localStorage.getItem(KEY) === '1' } catch { /* 無法使用 storage 時維持展開 */ }
+watch(collapsed, v => { try { localStorage.setItem(KEY, v ? '1' : '0') } catch { /* 忽略 */ } })
+const desktop = () => window.matchMedia('(min-width: 992px)').matches
+function openMenu() { if (desktop()) collapsed.value = false; else navOpen.value = true }
 </script>
 
 <template>
   <div class="fg-admin fg-shell">
     <a class="fg-skip" href="#fg-main">跳到主要內容</a>
-    <Sidebar :open="navOpen" @close="navOpen = false" />
+    <Sidebar :open="navOpen" :collapsed="collapsed" @close="navOpen = false" @collapse="collapsed = true" />
     <div v-if="navOpen" class="fg-scrim" aria-hidden="true" @click="navOpen = false"></div>
     <div class="fg-body">
-      <Header @menu="navOpen = true" />
+      <Header :collapsed="collapsed" @menu="openMenu" />
       <main id="fg-main" class="fg-main"><router-view /></main>
     </div>
   </div>
