@@ -37,6 +37,14 @@ const router = createRouter({ history: createWebHistory(), routes: [
     { path: 'buy-now', redirect: to => ({ path: '/shop/checkout', query: to.query }) },
     { path: 'cart', component: () => import('@/views/shop/CustomerCart.vue'), meta: { public: true } },
     { path: 'addresses', component: () => import('@/views/shop/CustomerAddresses.vue') },
+    { path: 'guides', component: () => import('@/views/shop/ShopGuides.vue'), meta: { public: true } },
+    { path: 'guides/:slug', component: () => import('@/views/shop/ShopGuides.vue'), meta: { public: true } },
+    { path: 'pages', component: () => import('@/views/shop/ShopPolicies.vue'), meta: { public: true } },
+    { path: 'pages/:slug', component: () => import('@/views/shop/ShopPolicies.vue'), meta: { public: true } },
+    { path: 'support', component: () => import('@/views/shop/CustomerSupport.vue') },
+    { path: 'shipments', component: () => import('@/views/shop/CustomerShipments.vue') },
+    { path: 'favorites', component: () => import('@/views/shop/CustomerFavorites.vue') },
+    { path: 'notifications', component: () => import('@/views/shop/CustomerNotifications.vue') },
     { path: ':pathMatch(.*)*', component: NotFound, meta: { public: true } }
   ] },
   { path: '/admin/login', name: 'login', component: LoginVue, meta: { title: '員工登入' } },
@@ -44,11 +52,12 @@ const router = createRouter({ history: createWebHistory(), routes: [
   { path: '/', component: LayoutVue, name: 'Layout', redirect: '/home', children: [
     { path: '/home', component: MainVue, meta: { title: '工作首頁' } },
     { path: '/admin/user/resetPassword', component: UserResetPasswordVue },
-    { path: '/admin/user/info', component: UserInfoVue }
+    { path: '/admin/user/info', component: UserInfoVue },
+    { path: '/admin/security', component: () => import('@/views/user/StaffSecurity.vue'), meta: { title: '帳號安全' } }
   ] },
   { path: '/:pathMatch(.*)*', component: NotFound }
 ] })
-const components = new Map<string, any>([['preorders.arrivals.read', () => import('@/views/preorders/PreorderArrivalsAdmin.vue')], ['preorder-orders.read', () => import('@/views/preorders/PreorderOrdersAdmin.vue')], ['preorders.read', () => import('@/views/preorders/PreorderAdmin.vue')], ['notifications.read', () => import('@/views/notifications/NotificationAdmin.vue')], ['masters.read', () => import('@/views/catalog/MastersAdmin.vue')], ['access.staff.read', UserAccountVue], ['access.roles.read', RoleListVue], ['access.permissions.read', PermissionListVue], ['access.audit.read', () => import('@/views/role/AccessAudit.vue')], ['catalog.read.list', () => import('@/views/catalog/ProductAdmin.vue')], ['orders.read.list', () => import('@/views/orders/StaffOrders.vue')], ['shipments.read', () => import('@/views/orders/ShipmentsAdmin.vue')], ['shipping.methods.read', () => import('@/views/orders/ShippingMethodsAdmin.vue')]])
+const components = new Map<string, any>([['preorders.arrivals.read', () => import('@/views/preorders/PreorderArrivalsAdmin.vue')], ['preorder-orders.read', () => import('@/views/preorders/PreorderOrdersAdmin.vue')], ['preorders.read', () => import('@/views/preorders/PreorderAdmin.vue')], ['notifications.read', () => import('@/views/notifications/NotificationAdmin.vue')], ['masters.read', () => import('@/views/catalog/MastersAdmin.vue')], ['access.staff.read', UserAccountVue], ['access.roles.read', RoleListVue], ['access.permissions.read', PermissionListVue], ['access.audit.read', () => import('@/views/role/AccessAudit.vue')], ['catalog.read.list', () => import('@/views/catalog/ProductAdmin.vue')], ['orders.read.list', () => import('@/views/orders/StaffOrders.vue')], ['shipments.read', () => import('@/views/orders/ShipmentsAdmin.vue')], ['shipping.methods.read', () => import('@/views/orders/ShippingMethodsAdmin.vue')], ['warehouse.read', () => import('@/views/orders/WarehouseAdmin.vue')], ['shipping.adjustments.read', () => import('@/views/orders/AdjustmentsAdmin.vue')], ['pages.read', () => import('@/views/support/SitePagesAdmin.vue')], ['support.read', () => import('@/views/support/SupportAdmin.vue')], ['reports.sales', () => import('@/views/ops/ReportsAdmin.vue')], ['reports.low-stock', () => import('@/views/ops/ReportsAdmin.vue')], ['ops.status', () => import('@/views/ops/OpsStatus.vue')]])
 let signature = ''
 let removeRoutes: (() => void)[] = []
 export function addDynamicRoutes(permissions: Permission[]) {
@@ -79,6 +88,8 @@ router.beforeEach(async (to) => {
   try {
     const result = await getUserInfoService()
     store.setInfo(result.data); store.setPermissions(result.data.permissions || [])
+    // 系統管理員／店長尚未完成備援碼保存確認：只能停在帳號安全頁（伺服器也會拒絕業務 API）
+    if (result.data.mfaBackupAckPending && to.path !== '/admin/security') return '/admin/security'
     if (addDynamicRoutes(store.permissions)) return { path: to.fullPath, replace: true }
     if (to.meta.permission && !store.permissions.some(p => (p.code || p.name) === to.meta.permission)) return '/not-found'
     return true

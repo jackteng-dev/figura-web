@@ -1,0 +1,19 @@
+# Figura：只開放公開商店頁；會員、購物車、結帳與員工後台不索引。
+# 與 API /api/seo/robots.txt 相同；Googlebot、Bingbot、OAI-SearchBot 適用相同規則。
+User-agent: *
+Allow: /shop
+Allow: /api/catalog/products/
+Disallow: /shop/cart
+Disallow: /shop/checkout
+Disallow: /shop/account
+Disallow: /shop/my-orders
+Disallow: /shop/orders
+Disallow: /shop/preorder-orders
+Disallow: /shop/addresses
+Disallow: /shop/favorites
+Disallow: /shop/notifications
+Disallow: /admin
+Disallow: /api/
+Allow: /api/seo/sitemap.xml
+
+Sitemap: https://figura.jackteng.dev/api/seo/sitemap.xml

@@ -1,13 +1,18 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+// 員工登入（強制雙因素）：密碼正確後，已綁定者輸入驗證碼或備援碼；未綁定者必須先完成綁定。完成前不發 session。
+import { computed, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
-import { adminLoginService } from '@/api/user'
+import { adminLoginService, adminMfaLogin, adminMfaSetup, adminMfaEnroll } from '@/api/user'
 import type { LoginData } from '@/types/user'
 import PasswordField from '@/components/PasswordField.vue'
+import { qrSvg } from '@/utils/qrcode'
+import RecoveryCodesPanel from '@/components/RecoveryCodesPanel.vue'
 const router = useRouter()
 const pending = ref(false)
 const registerData = ref<LoginData>({ username: '', password: '', rememberMe: false, deviceId: '' })
+type Step = 'password' | 'verify' | 'enroll' | 'codes'
+const step = ref<Step>('password'), challenge = ref(''), setupToken = ref(''), code = ref(''), secret = ref(''), otpauth = ref(''), backup = ref<{ codes: string[]; username: string; generatedAt: string; required: boolean; batchId: string }>()
 async function login() {
   if (pending.value) return
   if (!registerData.value.username.trim() || !registerData.value.password) { ElMessage.error('請輸入帳號與密碼'); return }
@@ -15,10 +20,49 @@ async function login() {
   registerData.value.deviceId = localStorage.getItem('deviceId') || crypto.randomUUID()
   localStorage.setItem('deviceId', registerData.value.deviceId)
   pending.value = true
-  try { await adminLoginService(registerData.value); ElMessage.success('登入成功'); await router.push('/home') }
+  try {
+    const r: any = await adminLoginService(registerData.value)
+    registerData.value.password = ''
+    if (r?.data?.mfaRequired) { challenge.value = r.data.mfaChallenge; step.value = 'verify'; return }
+    if (r?.data?.mfaSetupRequired) {
+      setupToken.value = r.data.mfaSetupToken
+      const s = await adminMfaSetup(setupToken.value)
+      secret.value = s.secret; otpauth.value = s.otpauthUri; step.value = 'enroll'; return
+    }
+    // 伺服器不會在沒有雙因素的情況下發 session；收到其他回應視為異常
+    ElMessage.error('登入流程異常，請重新登入'); restart()
+  }
   catch { /* API 已顯示錯誤，保留畫面供重試。 */ }
   finally { pending.value = false }
 }
+const codeOk = () => /^\d{6}$/.test(code.value.trim()) || /^[A-Za-z2-9]{5}-?[A-Za-z2-9]{5}$/.test(code.value.trim())
+async function verify() {
+  if (pending.value || !codeOk()) return
+  pending.value = true
+  try { await adminMfaLogin(challenge.value, code.value.trim()); ElMessage.success('登入成功'); await router.push('/home') }
+  catch { code.value = '' /* 錯誤由 API 顯示；同一次登入最多 5 次，過期請重新登入 */ }
+  finally { pending.value = false }
+}
+async function enroll() {
+  if (pending.value || !/^\d{6}$/.test(code.value.trim())) return
+  pending.value = true
+  try {
+    const r = await adminMfaEnroll(setupToken.value, code.value.trim())
+    secret.value = ''; otpauth.value = ''; code.value = ''
+    // 備援碼只放在記憶體；完成後清除
+    backup.value = { codes: r?.backupCodes || [], username: r?.username || registerData.value.username, generatedAt: r?.backupCodesGeneratedAt || new Date().toISOString(), required: !!r?.backupCodesRequired, batchId: r?.backupBatchId || '' }
+    step.value = 'codes'
+  }
+  catch { code.value = '' }
+  finally { pending.value = false }
+}
+async function finish() { backup.value = undefined; ElMessage.success('已完成雙因素綁定'); await router.push('/home') }
+// QR code 在瀏覽器本機產生（不送到任何外部服務）；金鑰預設隱藏，按「手動輸入」才顯示
+const qr = computed(() => otpauth.value ? 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(qrSvg(otpauth.value, 'M')) : '')
+const showSecret = ref(false)
+const groupedSecret = computed(() => secret.value.replace(/(.{4})/g, '$1 ').trim())
+function copySecret() { navigator.clipboard?.writeText(secret.value).then(() => ElMessage.success('已複製金鑰'), () => ElMessage.error('無法複製，請手動輸入')) }
+function restart() { step.value = 'password'; challenge.value = ''; setupToken.value = ''; code.value = ''; secret.value = ''; otpauth.value = ''; showSecret.value = false }
 </script>
 <template>
   <div class="fg-admin fg-login">
@@ -32,7 +76,44 @@ async function login() {
       <router-link to="/shop" class="back">← 回到商店</router-link>
     </section>
     <section class="form-side">
-      <form class="login-card" @submit.prevent="login">
+      <form v-if="step === 'verify'" class="login-card" @submit.prevent="verify">
+        <h1>雙因素驗證</h1>
+        <p>請輸入驗證器 App 顯示的 6 位數驗證碼。手機不在身邊時，可輸入一組備援碼（每組只能用一次）。</p>
+        <div>
+          <label class="form-label" for="login-mfa">驗證碼或備援碼</label>
+          <input id="login-mfa" v-model="code" class="form-control" autocomplete="one-time-code" maxlength="11" required>
+        </div>
+        <button type="submit" class="btn btn-primary submit" :disabled="pending || !codeOk()">驗證並登入</button>
+        <button type="button" class="btn btn-link" @click="restart">重新輸入帳號密碼</button>
+        <p class="muted">遺失手機與備援碼時，請聯絡系統管理員重設雙因素。</p>
+      </form>
+      <form v-else-if="step === 'enroll'" class="login-card" @submit.prevent="enroll">
+        <h1>設定雙因素驗證</h1>
+        <p>後台規定所有員工都要綁定驗證器 App（Google Authenticator、Microsoft Authenticator 等），完成後才能進入後台。</p>
+        <ol class="steps">
+          <li>用驗證器 App 掃描 QR code（請勿截圖或分享）：
+            <img v-if="qr" :src="qr" class="qr" width="200" height="200" alt="雙因素驗證設定 QR code，請用驗證器 App 掃描">
+            <button v-if="!showSecret" type="button" class="btn btn-link manual" :aria-expanded="showSecret" aria-controls="manual-secret" @click="showSecret = true">無法掃描？手動輸入金鑰</button>
+            <div v-else id="manual-secret" class="manual-box">
+              <span class="hint">在 App 選「輸入設定金鑰」，帳戶名稱填 Figura，類型選「以時間為準」：</span>
+              <div class="secret-row"><code class="secret" aria-label="設定金鑰">{{ groupedSecret }}</code><button type="button" class="btn btn-outline-secondary btn-sm" @click="copySecret">複製</button></div>
+              <button type="button" class="btn btn-link manual" @click="showSecret = false">隱藏金鑰</button>
+            </div>
+          </li>
+          <li>輸入 App 顯示的 6 位數驗證碼。</li>
+        </ol>
+        <div>
+          <label class="form-label" for="enroll-code">驗證碼</label>
+          <input id="enroll-code" v-model="code" class="form-control" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="\d{6}" required>
+        </div>
+        <button type="submit" class="btn btn-primary submit" :disabled="pending || code.trim().length !== 6">完成綁定</button>
+        <button type="button" class="btn btn-link" @click="restart">取消並重新登入</button>
+      </form>
+      <div v-else-if="step === 'codes'" class="login-card">
+        <h1>保存備援碼</h1>
+        <RecoveryCodesPanel v-if="backup" :codes="backup.codes" :username="backup.username" :generated-at="backup.generatedAt" :required="backup.required" :batch-id="backup.batchId" @done="finish" />
+      </div>
+      <form v-else class="login-card" @submit.prevent="login">
         <h1>員工登入</h1>
         <div>
           <label class="form-label" for="login-username">使用者</label>
@@ -78,6 +159,15 @@ async function login() {
 .check input { width: 18px; height: 18px; }
 .muted { font-size: 12px; color: #4b5060; }
 .submit { padding: 14px; font-size: 16px; font-weight: 900; }
+.steps { padding-left: 20px; display: grid; gap: 8px; }
+.secret { display: block; flex: 1; font-size: 17px; letter-spacing: 1px; background: #f6f7fb; padding: 8px 10px; border-radius: 6px; word-break: break-all; margin: 0; }
+.qr { display: block; width: 200px; height: 200px; margin: 10px auto; image-rendering: pixelated; border: 1px solid #e3e5ec; border-radius: 8px; }
+.manual { padding: 0; font-size: 14px; }
+.manual-box { display: grid; gap: 6px; margin-top: 6px; }
+.manual-box .hint { font-size: 13px; color: #4b5060; }
+.secret-row { display: flex; gap: 8px; align-items: center; }
+.codes { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.codes code { font-size: 15px; letter-spacing: 1px; }
 @media (max-width: 860px) {
   .brand-side { padding: 28px 24px; gap: 20px; flex-basis: 100%; }
   .big { font-size: 28px; }

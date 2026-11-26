@@ -30,6 +30,11 @@ instance.interceptors.response.use(response => {
       if (await refreshing) return instance(config)
     } catch { /* 服務故障交由下方顯示。 */ }
   }
+  if (error.response?.status === 403 && error.response?.data?.errorCode === 'MFA_BACKUP_ACK_REQUIRED') {
+    ElMessage.warning('請先下載並確認保存雙因素備援碼')
+    if (router.currentRoute.value.path !== '/admin/security') await router.push('/admin/security')
+    return Promise.reject(error)
+  }
   ElMessage.error(error.response?.data?.message || '服務暫時無法使用')
   if (error.response?.status === 401 && !sessionEndpoint) {
     const { useUserInfoStore } = await import('@/stores/userInfo')

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { staffMfaReset } from '@/api/user'
 import { computed, onMounted, ref } from 'vue'
 import { useUserInfoStore } from '@/stores/userInfo'
 import { staffList, roleList, permissionCatalog, accessAudit, accessWrite, type Staff, type AccessRole, type Capability, type AccessEvent, type AccessMode } from '@/api/access'
@@ -11,6 +12,14 @@ const ready=ref(false), editing=ref(false), editId=ref<number>(), version=ref(0)
 type Pending={path:string;method:'POST'|'PUT';body:Record<string,unknown>}
 const pending=ref<Pending>(), sending=ref(false)
 const title=computed(()=>({staff:'員工管理',roles:'角色管理',permissions:'權限目錄',audit:'存取稽核'})[props.mode])
+// 重設員工雙因素：對方 session 立即失效、下次登入重新綁定。結果未確認時保留同一 requestId 重送。
+const resetPending=ref<{id:number;note:string;requestId:string}>()
+async function resetMfa(u:Staff){
+ if(!resetPending.value){const note=window.prompt(`重設 ${u.username} 的雙因素驗證？\n對方目前的登入會立即失效，下次登入需重新綁定。請輸入原因：`);if(!note||!note.trim())return;resetPending.value={id:u.id,note:note.trim(),requestId:crypto.randomUUID()}}
+ const p=resetPending.value;error.value='';message.value=''
+ try{const r=await staffMfaReset(p.id,p.note,p.requestId);resetPending.value=undefined;message.value=r.replayed?'已核對，沒有重複重設。':'已重設雙因素，對方下次登入需重新綁定。'}
+ catch(e:any){const st=e.response?.status;if(st&&st>=400&&st<500)resetPending.value=undefined;error.value=failure(e)+(resetPending.value?'（結果未確認，請再按一次重試）':'')}
+}
 function failure(e:any){return e.response?.data?.message||e.message||'無法連線，請稍後核對。'}
 async function load(){loading.value=true;error.value='';ready.value=false;try{
  if(props.mode==='staff'){const result=await staffList(page.value);staff.value=result.items;total.value=result.total}
@@ -59,7 +68,7 @@ onMounted(load)
    <button type="submit" :disabled="sending||(!pending&&mode==='staff'&&!selected.length)">{{ pending?'重試同一操作':'保存設定' }}</button><button type="button" @click="editing=false;password=''" :disabled="!!pending||sending">關閉編輯</button>
    <p v-if="pending">待核對操作：{{ pending.body.requestId }}。重試使用原內容，請勿重整後直接另送一筆。</p>
   </form>
-  <div class="access-table" v-if="mode==='staff'"><table><thead><tr><th>員工</th><th>狀態</th><th>角色</th><th>版本</th><th>操作</th></tr></thead><tbody><tr v-for="u in staff" :key="u.id"><td>{{ u.username }} (#{{u.id}})</td><td>{{u.enabled?'啟用':'停用'}}</td><td>{{roleNames(u.roleIds)}}</td><td>{{u.version}}</td><td><button v-if="manager" @click="begin(u)" :disabled="!!pending||!ready">編輯 {{u.username}}</button></td></tr></tbody></table></div>
+  <div class="access-table" v-if="mode==='staff'"><table><thead><tr><th>員工</th><th>狀態</th><th>角色</th><th>版本</th><th>操作</th></tr></thead><tbody><tr v-for="u in staff" :key="u.id"><td>{{ u.username }} (#{{u.id}})</td><td>{{u.enabled?'啟用':'停用'}}</td><td>{{roleNames(u.roleIds)}}</td><td>{{u.version}}</td><td><button v-if="manager" @click="begin(u)" :disabled="!!pending||!ready">編輯 {{u.username}}</button> <button v-if="has('access.mfa.reset')&&u.id!==user.info?.id" type="button" @click="resetMfa(u)" :disabled="!!resetPending&&resetPending.id!==u.id">{{ resetPending?.id===u.id?'重試重設':'重設雙因素' }}</button></td></tr></tbody></table></div>
   <div class="access-table" v-if="mode==='roles'"><table><thead><tr><th>角色</th><th>說明</th><th>狀態</th><th>權限數</th><th>版本</th><th>操作</th></tr></thead><tbody><tr v-for="r in roles" :key="r.id"><td>{{r.name}} (#{{r.id}})</td><td>{{r.description}}</td><td>{{r.enabled?'啟用':'停用'}}</td><td>{{r.permissionIds.length}}</td><td>{{r.version}}</td><td><button v-if="manager" @click="begin(r)" :disabled="!!pending||!ready">編輯 {{r.name}}</button></td></tr></tbody></table></div>
   <ul v-if="mode==='permissions'" class="capabilities"><li v-for="c in capabilities" :key="c.id"><strong>{{c.name}}</strong> · {{c.code}}<p>{{c.description}}</p></li></ul>
   <div v-if="mode==='audit'"><details v-for="e in events" :key="e.requestId" class="audit-event"><summary>{{e.createdAt}} · {{e.actorUsername}} · {{e.action}} #{{e.targetId}}</summary><p>操作 ID：{{e.requestId}}</p><p>原因：{{e.note}}</p><h3>修改前</h3><pre>{{pretty(e.beforeState)}}</pre><h3>修改後</h3><pre>{{pretty(e.afterState)}}</pre></details></div>

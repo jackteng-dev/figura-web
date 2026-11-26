@@ -1,5 +1,28 @@
 # ELPSY Shop Vue 網站交接
 
+## 2026-11-25：MFA 備援碼下載（併入 PR #23，依賴 API V32–V33）
+
+- `RecoveryCodesPanel.vue`＋`utils/recoveryCodes.ts`：一次性顯示 10 組備援碼，「下載備援碼」在瀏覽器端以當次回應產生 UTF-8 `Figura-MFA-Recovery-Codes.txt`（標題、帳號、產生日期、備援碼、保存提醒），Blob URL 立即釋放；不經伺服器、不放 URL、不寫入 localStorage／sessionStorage／pinia。移除「複製全部」。
+- 系統管理員／店長（伺服器回 `required=true`）：必須先下載、勾選「我已妥善保存」才能進入；其他員工可「略過」（確認對話框）。確認時帶批次 ID。
+- 待確認的管理員：路由守衛與 API 攔截器（403 `MFA_BACKUP_ACK_REQUIRED`）導向「帳號安全」，以 TOTP 重新產生後下載並確認。
+- 介面文字只說「已觸發下載」，不宣稱檔案已保存。`npm run build` 通過；文件內容以 Node 產生範例檢查（UTF-8、CRLF）。未在瀏覽器實際走完流程。
+
+## 2026-11-25：員工後台強制雙因素（併入 PR #23，依賴 API V31）
+
+- `Login.vue`：密碼 → 驗證碼或備援碼；未綁定者強制進入綁定畫面：顯示 QR code（`src/utils/qrcode.ts`，移植 Nayuki MIT 演算法、不加 npm 套件、在瀏覽器本機產生），金鑰預設隱藏，按「無法掃描？手動輸入金鑰」才顯示並可複製。QR 輸出經獨立撰寫的 Python 解碼器驗證（版本 1–10、多種遮罩與多區塊，含真實 otpauth 連結），內容與 RS 校驗皆正確→ 綁定後一次性顯示 10 組備援碼，勾選已保存才進入後台。伺服器不會在沒有第二因素時發 session。
+- `StaffSecurity.vue`：狀態、剩餘備援碼、以 TOTP 重新產生；移除自行停用。
+- 員工管理（`AccessManagement.vue`）：有 `access.mfa.reset` 權限者可重設其他員工的雙因素（填原因、不可重設自己、未確認時同 requestId 重試）。
+- `npm run build` 通過。尚未以瀏覽器實際走完整綁定流程（見 PR 說明）。
+
+## 2026-11-25：Commerce V2 Phase 1–7（分支 `feat/commerce-v2-specs`，未合併；依賴 API V25–V30）
+
+- **顧客**：後端搜尋列表（舊網址相容）、規格表、收藏（訪客 localStorage，登入合併）、到貨／開賣提醒、`/shop/favorites`、`/shop/notifications`、`/shop/shipments`（合併寄送、倉庫暫存、物流追蹤）、`/shop/support`、`/shop/pages`（未發布顯示條款審核中）、`/shop/guides`。
+- **後台**：`SpecsEditor`、私人倉庫、運費調整、政策頁（四眼發布）、客服單、出貨單測試物流追蹤（`TrackingPanel`）、營運報表／低庫存、營運狀態、`/admin/security`（TOTP）與登入第二步。新選單依 V28–V30 權限碼（warehouse.read、shipping.adjustments.read、pages.read、support.read、reports.*、ops.status）動態掛載。
+- **SEO**：`src/seo/head.ts` 換頁時向 `/api/seo/meta` 取 head；`index.html` 已放 SSI 標記（gateway 未開 SSI 前不作用）；`public/robots.txt`。部署變更與 Search Console 見 `docs/SEO_DEPLOYMENT.md`（`showcase-publish.py` 未改，需作者審核）。
+- **驗證**：每階段 `npm run build`（含 vue-tsc）通過；本機 15176＋新 API 以 headless Edge 驗證列表、規格表、收藏按鈕、指南頁 JSON-LD、購物車 noindex；收藏／提醒／通知 API 經同源代理實測。Browser pane 因視窗未顯示無法使用。**新後台頁未以員工帳號在瀏覽器實際點過**（本機限制），nginx SSI 未在本機實測（沒有 nginx image）。
+- 未改 `src/assets/`、`package-lock.json`。
+- 下一步：API 受控切換上線後合併；作者審核 gateway SSI；政策內容撰寫與審核。
+
 ## 2026-11-23：99 件必要 2D 圖組全數入本機圖庫（作者簽核 pending）
 
 依作者新要求，REAR 改以明確 135°–180° 背後方向及關鍵身份判斷，小紋理差異可接受；ANGLE 選擇性。保留 2026-11-20 舊拒收紀錄與政策歷史，新採用另記 `rear-2026-11-23`，不改寫舊 run review。先完成 001／003／068 三件試點並本機上傳後繼續全目錄。

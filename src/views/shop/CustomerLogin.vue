@@ -6,6 +6,7 @@ import PasswordField from '@/components/PasswordField.vue'
 import { useCustomerStore } from '@/stores/customer'
 import { guestLines, mergeGuestCart, takeReturn, reloadGuest } from './guestCart'
 import SocialLogin from './SocialLogin.vue'
+import { mergeGuestFavorites } from './useFavorites'
 const router=useRouter(),route=useRoute(),store=useCustomerStore()
 const identifier=ref(typeof route.query.login==='string'?route.query.login:''),password=ref(''),remember=ref(false),pending=ref(false),error=ref('')
 async function submit() {
@@ -19,6 +20,7 @@ async function submit() {
     reloadGuest()
     const hadGuest=guestLines.value.length>0
     if(hadGuest&&store.profile)await mergeGuestCart(store.profile.id).catch(()=>null)
+    await mergeGuestFavorites()
     await router.replace(takeReturn()||(hadGuest?'/shop/cart':'/shop/account'))
   } catch(e) {
     // 401：一律只說帳號或密碼不正確，不透露帳號是否存在、是否為其他身分（如員工）的帳號
