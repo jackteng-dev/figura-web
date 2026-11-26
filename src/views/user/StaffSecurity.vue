@@ -1,14 +1,27 @@
 <script setup lang="ts">
 // 帳號安全：後台強制雙因素。查看狀態與剩餘備援碼；以目前驗證碼重新產生備援碼（舊碼立即失效）並下載。
 // 系統管理員／店長若尚未完成備援碼保存確認，會被導到這裡：原始備援碼無法再次取得，只能重新產生後下載並確認。
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { mfaStatus, mfaRegenerateBackupCodes, type MfaStatus, type BackupCodes } from '@/api/user'
+import { getUserInfoService, mfaStatus, mfaRegenerateBackupCodes, type MfaStatus, type BackupCodes } from '@/api/user'
+import { accountKind, remaining, securityView, type AccountKind } from '@/utils/sandbox'
 import RecoveryCodesPanel from '@/components/RecoveryCodesPanel.vue'
 const router = useRouter()
 const status = ref<MfaStatus>(), code = ref(''), batch = ref<BackupCodes>(), busy = ref(false), error = ref(''), message = ref('')
 const failure = (e: any) => e.response?.data?.message || e.message || '暫時無法連線。'
-async function load() { try { status.value = await mfaStatus() } catch (e) { error.value = failure(e) } }
+// 公開沙盒帳號類型只影響顯示；共用展示帳號的安全設定由 API 拒絕（403），這裡只是不提供按鈕
+const kind = ref<AccountKind>('STAFF'), expiresAt = ref<string>(), now = ref(Date.now())
+const view = computed(() => securityView(kind.value))
+const countdown = computed(() => remaining(expiresAt.value, now.value))
+let timer: number | undefined
+async function load() {
+  try {
+    const [s, me] = await Promise.all([mfaStatus(), getUserInfoService()])
+    status.value = s; kind.value = accountKind((me as any)?.data?.accountKind); expiresAt.value = (me as any)?.data?.sandboxExpiresAt
+  } catch (e) { error.value = failure(e) }
+}
+onMounted(() => { timer = window.setInterval(() => { now.value = Date.now() }, 1000) })
+onUnmounted(() => window.clearInterval(timer))
 async function regenerate() {
   busy.value = true; error.value = ''; message.value = ''
   try { batch.value = await mfaRegenerateBackupCodes(code.value.trim()); code.value = '' }
@@ -28,7 +41,11 @@ onMounted(load)
   <h1>帳號安全</h1>
   <p>後台規定所有員工使用雙因素驗證：每次登入都需要驗證器 App 的 6 位數驗證碼（或一組備援碼）。</p>
   <p v-if="error" role="alert">{{ error }}</p><p v-if="message" role="status">{{ message }}</p>
-  <template v-if="status">
+  <p v-if="view.sharedNotice" class="sandbox" role="note"><strong>共用展示帳號：已停用安全設定變更。</strong>這個帳號由公開沙盒的所有訪客共用，免雙因素登入，不能綁定驗證器、產生備援碼或修改密碼。想體驗雙因素流程，請在登入頁選「體驗 MFA 安全設計」。</p>
+  <p v-if="view.showCountdown" class="sandbox" role="status">
+   <strong>MFA 展示臨時帳號</strong>：{{ countdown ? `剩餘 ${countdown} 後自動刪除` : '已到期，請重新建立展示帳號' }}。可以登出後重新登入試用驗證碼，或用一組備援碼登入（每組只能用一次）。
+  </p>
+  <template v-if="status && view.canManage">
    <p><strong>雙因素驗證：{{ status.enabled ? '已綁定' : '未綁定' }}</strong>　剩餘備援碼 {{ status.backupCodesRemaining }} 組</p>
    <p v-if="status.backupAckPending && !batch" class="warn" role="alert">你的帳號需要保存備援碼才能使用後台。原本的備援碼已無法再次顯示，請輸入驗證碼重新產生，下載後勾選確認。</p>
    <p v-else-if="status.backupCodesRemaining <= 3 && !batch" class="warn">備援碼所剩不多，建議重新產生。</p>
@@ -47,6 +64,7 @@ onMounted(load)
 </template>
 <style scoped>
 .security { display: grid; gap: 8px; max-width: 620px; }
+.sandbox { background: #e0f2fe; padding: 10px 12px; border-radius: 6px; }
 .warn { background: #fef3c7; padding: 8px 12px; border-radius: 6px; }
 .hint { font-size: 13px; color: #4b5060; }
 </style>

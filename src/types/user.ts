@@ -40,4 +40,8 @@ export interface UserInfo {
   userPic: string
   userRole: string
   username: string
+  /** 公開沙盒帳號類型（只供顯示；授權由 API 判斷）。 */
+  accountKind?: 'STAFF' | 'SANDBOX_SHARED' | 'SANDBOX_MFA_DEMO'
+  /** MFA 展示臨時帳號的到期時間。 */
+  sandboxExpiresAt?: string
 }

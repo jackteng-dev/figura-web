@@ -1,5 +1,24 @@
 # ELPSY Shop Vue 網站交接
 
+
+## 2026-11-26：公開沙盒 MFA 展示入口（分支 `feat/sandbox-mfa-demo`，依賴 API V34，未合併）
+
+- **員工登入頁**：
+  - 只有 `GET /api/sandbox/config` 回報沙盒模式時，才顯示「公開沙盒展示」區塊。正式環境該端點 404，以安靜的 axios 請求讀取、失敗一律不顯示。
+  - 「快速體驗後台」只顯示說明；帳密由沙盒說明框提供，前端不內建。
+  - 「體驗 MFA 安全設計」建立臨時帳號，一次性顯示帳號、密碼（可複製）與到期時間，只放在記憶體。之後以該帳號走正式綁定流程，完成後提示可登出重登、試用備援碼。
+  - 共用帳號登入回 `accountKind=SANDBOX_SHARED` 時直接進後台；其他沒有 MFA 的回應仍視為異常。
+- **帳號安全頁**：
+  - `SANDBOX_SHARED` 顯示「共用展示帳號：已停用安全設定變更」，隱藏備援碼產生等操作。
+  - `SANDBOX_MFA_DEMO` 顯示到期倒數。
+  - 純顯示；安全由 API 403 保證。
+- **沒有任何略過 MFA 的 UI。**
+- **重要檔案**：`src/utils/sandbox.ts`（純函式）、`src/api/sandbox.ts`、`src/views/Login.vue`、`src/views/user/StaffSecurity.vue`、`src/types/user.ts`。
+- **測試**：
+  - `npm test`：Node 內建 `node --test` 搭配 type stripping，沒有新增套件，`package-lock.json` 不變。`tests/sandbox.test.ts` 4 項：正式模式不顯示入口、只認布林 true、accountKind 三種畫面、倒數。
+  - `npm run build` 通過。
+- **未動**：`src/assets/`、`package-lock.json`、`scripts/showcase-publish.py`。
+
 ## 2026-11-25：MFA 備援碼下載（併入 PR #23，依賴 API V32–V33）
 
 - `RecoveryCodesPanel.vue`＋`utils/recoveryCodes.ts`：一次性顯示 10 組備援碼，「下載備援碼」在瀏覽器端以當次回應產生 UTF-8 `Figura-MFA-Recovery-Codes.txt`（標題、帳號、產生日期、備援碼、保存提醒），Blob URL 立即釋放；不經伺服器、不放 URL、不寫入 localStorage／sessionStorage／pinia。移除「複製全部」。
